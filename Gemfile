@@ -17,19 +17,25 @@ gem 'redcarpet'
 gem 'table_print' #for orderly viewing of db contents
 gem 'kaminari' #for pagination
 
-gem 'paperclip'
-
 # Make it look good
 gem 'sass-rails', '~> 4.0.3'
 gem 'font-awesome-rails'
 gem 'simple_form'
+gem 'paperclip'
 gem 'bourbon'
 gem 'neat'
 gem 'bitters'
 gem 'refills'
 
+
 # Authenticate, talk with API
 gem 'httparty'
+gem 'twitter'
+gem 'songkickr'
+gem 'foursquare2'
+gem 'yelp'
+gem 'instagram'
+gem 'redditkit', '~> 1.0.1'
 
 
 

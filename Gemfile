@@ -27,6 +27,10 @@ gem 'neat'
 gem 'bitters'
 gem 'refills'
 
+# Authenticate, talk with API, clean up the data
+gem 'httparty'
+
+
 group :development, :test do
   gem 'dotenv-rails'
   gem 'better_errors'
@@ -41,4 +45,11 @@ group :development, :test do
   gem 'timecop'
   gem 'poltergeist'
   gem 'did_you_mean'
+end
+
+group :test do
+  gem 'rspec'
+  gem 'shoulda'
+  gem 'capybara'
+  gem 'simplecov', :require => false
 end

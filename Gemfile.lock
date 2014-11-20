@@ -97,6 +97,7 @@ GEM
       faraday (~> 0.8)
       faraday_middleware (>= 0.8)
       hashie (>= 1.0, < 3.0.0)
+    geocoder (1.2.6)
     hashie (2.1.2)
     hike (1.2.3)
     htmlentities (4.3.2)
@@ -345,6 +346,7 @@ DEPENDENCIES
   faker
   font-awesome-rails
   foursquare2
+  geocoder
   httparty
   instagram
   jbuilder (~> 2.0)

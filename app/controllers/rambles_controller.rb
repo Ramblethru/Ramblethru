@@ -1,6 +1,7 @@
 class RamblesController < ApplicationController
 
     def show
+        @ramble = Ramble.find(params[:id])
     end
 
     def create

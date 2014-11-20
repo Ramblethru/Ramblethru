@@ -27,8 +27,13 @@ gem 'neat'
 gem 'bitters'
 gem 'refills'
 
+# authenticate
+gem 'omniauth-google-oauth2'
+gem 'omniauth-twitter'
+gem 'bcrypt-ruby', '~> 3.1.2'
 
-# Authenticate, talk with API
+
+# talk with APIs
 gem 'httparty'
 gem 'twitter'
 gem 'songkickr'
@@ -36,8 +41,6 @@ gem 'foursquare2'
 gem 'yelp'
 gem 'instagram'
 gem 'redditkit', '~> 1.0.1'
-
-
 
 group :development, :test do
   gem 'dotenv-rails'

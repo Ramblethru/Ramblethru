@@ -41,6 +41,7 @@ gem 'foursquare2'
 gem 'yelp'
 gem 'instagram'
 gem 'redditkit', '~> 1.0.1'
+gem 'geocoder'
 
 group :development, :test do
   gem 'dotenv-rails'

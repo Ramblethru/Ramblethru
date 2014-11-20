@@ -18,6 +18,7 @@ gem 'jquery-ui-rails'
 gem 'table_print'
 gem 'kaminari'
 gem 'redcarpet'
+gem 'paperclip'
 
 # Make it look good
 gem 'font-awesome-rails'
@@ -27,8 +28,9 @@ gem 'neat'
 gem 'bitters'
 gem 'refills'
 
-# Authenticate, talk with API, clean up the data
+# Authenticate, talk with API
 gem 'httparty'
+
 
 
 group :development, :test do

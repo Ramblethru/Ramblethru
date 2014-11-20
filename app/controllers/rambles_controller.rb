@@ -5,15 +5,20 @@ class RamblesController < ApplicationController
     end
 
     def create
+        @ramble = Ramble.create(ramble_params)
     end
 
     def update
+        @ramble.update(ramble_params)
+        redirect_to @ramble
     end
 
     def edit
     end
 
     def destroy
+        @ramble.destroy
+        redirect_to rambles_url
     end
 
     private

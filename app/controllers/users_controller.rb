@@ -9,17 +9,21 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.new(user_params)
-        redirect_to @user
-    end
-
-    def edit
+        @user = User.create(user_params)
     end
 
     def update
+        @user.update(user_params)
+        redirect_to @user
     end
 
     def destroy
+        @user.destroy
+        redirect_to users_url, notice: 'User was successfully destroyed.'
+        end
+    end
+
+    def edit
     end
 
     private

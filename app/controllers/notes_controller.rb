@@ -13,15 +13,20 @@ class NotesController < ApplicationController
   end
 
   def create
+    @note = Note.create(note_params)
   end
 
   def update
+    @note.update(note_params)
+    redirect_to @notes
   end
 
   def edit
   end
 
   def destroy
+    @note.destroy
+    redirect_to notes_url
   end
 
   private

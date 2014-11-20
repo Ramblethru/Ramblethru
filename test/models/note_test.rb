@@ -1,7 +1,5 @@
 require 'test_helper'
 
 class NoteTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  should validate_presence_of(:body)
 end

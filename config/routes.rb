@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  get 'login/show'
-
   get 'login/create'
-
   get 'login/destroy'
+
+  resources :users
+  resources :rambles do
+    resource :notes
+  end
+  resource :discover, :only => [:show]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

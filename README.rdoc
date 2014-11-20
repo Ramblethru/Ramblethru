@@ -1,19 +1,23 @@
-== README
+== Ramblethru README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Adventure awaits.
 
-Things you may want to cover:
+* Ramblethru uses Mailcatcher to send users email notifications. One does not simply include it in the gemfile.
 
-* Ruby version
+* Built with Ruby 2.1.3.
+
+* Uses Bourbon/Neat/Bitters/Refills to look good. Drink it in.
+
+* The database is PostgreSQL.
+
+* Uses RSpec for testing.
+
+
+Other items suggested to mention that have yet to be mentioned:
 
 * System dependencies
 
 * Configuration
-
-* Database creation
-
-* Database initialization
 
 * How to run the test suite
 

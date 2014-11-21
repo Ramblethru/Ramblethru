@@ -20,6 +20,7 @@ $visual-grid-opacity: 0.4 !default;
  * file per style scope.
  *
  *= require_self
+ *= require mapbox
  */
 
 .pagename {

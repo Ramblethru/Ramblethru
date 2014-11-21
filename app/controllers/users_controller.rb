@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     def create
         @user = User.find_or_create_by_auth_hash(auth_hash)
         self.current_user = @user
-        redirect_to root_url    
+        redirect_to root_url
     end
 
     def update

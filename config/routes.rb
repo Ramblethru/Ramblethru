@@ -2,11 +2,12 @@ Rails.application.routes.draw do
   get 'login/create'
   get 'login/destroy'
 
+  resource :discover, :only => [:show]
   resources :users
   resources :rambles do
     resource :notes
   end
-  resource :discover, :only => [:show]
+
 
   get '/auth/:provider/callback', to: 'users#create'
 

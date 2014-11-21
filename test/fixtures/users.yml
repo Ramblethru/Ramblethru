@@ -3,7 +3,7 @@
 one:
   name: MyString
   email: MyString
-  photo: 
+  photo: MyString
   bio: MyText
   lives_in: MyString
   username: MyString
@@ -12,7 +12,7 @@ one:
 two:
   name: MyString
   email: MyString
-  photo: 
+  photo: MyString
   bio: MyText
   lives_in: MyString
   username: MyString

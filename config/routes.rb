@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
   root 'home#index'
   delete 'logout' => 'logins#destroy'
-  get '/auth/:provider/callback', to: 'users#create'
+  get '/auth/:provider/callback', to: 'users#create_auth'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

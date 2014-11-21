@@ -1,18 +1,22 @@
 class LoginsController < ApplicationController
+  include LoginsHelper
+  def new
+  end
 
   def create
-    @user = User.find_by(email: params[:email])
-    if @user && @user.authenticate(params[:password])
-      session[:current_user_id] = @user.id
-      redirect_to root_path, notice: "You have logged in!"
+    user = User.find_by(email: params[:session][:email])
+    if user && user.authenticate(params[:session][:password])
+      login(user)
+      flash[:notice] = "You've successfully logged in."
+      redirect_to root_path
     else
-      render :new
+      flash.now[:error] = 'Invalid email/password combination'
+      render 'new'
     end
   end
 
   def destroy
-    session[:current_user_id] = nil
+    log_out
     redirect_to root_url, :notice => "You have logged out!"
   end
-
 end

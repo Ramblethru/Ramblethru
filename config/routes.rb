@@ -1,22 +1,25 @@
 Rails.application.routes.draw do
-  get 'login/create'
-  get 'login/destroy'
 
-  resource :discover, :only => [:show]
+
+
   resources :users
   resources :rambles do
     resource :notes
   end
 
 
+
   get '/auth/:provider/callback', to: 'users#create'
 
+  resource :discover, :only => [:show]
+  root 'home#index'
+  resources :logins, :only => [:new, :create]
+  delete 'logout' => 'logins#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

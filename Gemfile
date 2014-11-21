@@ -25,6 +25,7 @@ gem 'bourbon'
 gem 'neat'
 gem 'bitters'
 gem 'refills'
+gem 'mapbox-rails'
 
 # authenticate
 gem 'omniauth-google-oauth2'

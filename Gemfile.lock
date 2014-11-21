@@ -129,6 +129,7 @@ GEM
       activesupport (>= 3.0.0)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mapbox-rails (1.6.1.1)
     memoizable (0.4.2)
       thread_safe (~> 0.3, >= 0.3.1)
     method_source (0.8.2)
@@ -351,6 +352,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   kaminari
+  mapbox-rails
   neat
   omniauth-google-oauth2
   omniauth-twitter

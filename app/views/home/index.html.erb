@@ -43,4 +43,9 @@
 </div>
 	<div class="login-register">
 		<h1>LOGIN/SIGNUP FORM HERE</h1>
+		<% if !logged_in? %>
+			<%= link_to "Login with Foursquare", "/auth/foursquare" %>
+		<% else %>
+			<h3>Welcome,</h3><%= current_user.name %>!
+		<% end %>
 	</div>

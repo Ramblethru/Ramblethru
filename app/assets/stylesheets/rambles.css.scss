@@ -1,3 +1,29 @@
 // Place all the styles related to the rambles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.container {
+    @include outer-container; 
+}
+.ramble-title {
+	text-align: center;
+}
+.ramble-notes {
+	@include span-columns(4);
+	text-align: center;
+	padding-top: 10px;
+}
+.api-feed {
+	@include span-columns(4);
+	text-align: center;
+	padding-top: 10px;
+	float: right;
+}
+div.map {
+	margin: 0 auto;
+}
+.recommended-notes {
+	padding: 10px;
+}

@@ -1,2 +1,0 @@
-class DiscoverController < ApplicationController
-end

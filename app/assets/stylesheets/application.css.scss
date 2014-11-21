@@ -1,3 +1,7 @@
+$visual-grid: true;
+$visual-grid-color: #EEE !default;
+$visual-grid-index: back !default;
+$visual-grid-opacity: 0.4 !default;
 @import "bourbon";
 @import "base/base";
 @import "neat";
@@ -18,3 +22,35 @@
  *= require_self
  *= require mapbox
  */
+
+.pagename {
+   text-align: center;
+}
+
+.map {
+   background: url("http://rainelaw.files.wordpress.com/2007/11/torino_google-map.png");
+   height: 450px;
+   width: 800px;
+   margin-left:250px;
+}
+
+.ramble {
+  color:white;
+  font-weight:bold;
+}
+
+.ramble span {
+  color:black;
+}
+
+.notes {
+  padding-top:35px;
+}
+
+.api {
+  padding-top:30px;
+}
+
+.ramble {
+  padding-top:30px;
+}

@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
   resources :logins, :only => [:new, :create]
+  get 'login/create'
+  get 'login/destroy'
+  resource :discover, :only => [:show]
   resources :users
   resources :rambles do
     resource :notes
   end
-  resource :discover, :only => [:show]
   root 'home#index'
   delete 'logout' => 'logins#destroy'
+  get '/auth/:provider/callback', to: 'users#create'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

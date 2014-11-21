@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
+  resources :logins, :only => [:new, :create]
   get 'login/create'
   get 'login/destroy'
-
   resource :discover, :only => [:show]
   resources :users
   resources :rambles do
     resource :notes
   end
-
-
+  root 'home#index'
+  delete 'logout' => 'logins#destroy'
   get '/auth/:provider/callback', to: 'users#create'
 
 
@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -7,6 +7,10 @@ $visual-grid-opacity: 0.4 !default;
 @import "neat";
 @import "home";
 @import "users";
+@import "rambles";
+@import "discovers";
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -23,42 +27,14 @@ $visual-grid-opacity: 0.4 !default;
  *= require mapbox
  */
 
-.pagename {
-   text-align: center;
-}
 
-.map {
-   background: url("http://rainelaw.files.wordpress.com/2007/11/torino_google-map.png");
-   height: 450px;
-   width: 800px;
-   margin-left:250px;
-}
 
-.ramble {
-  color:white;
-  font-weight:bold;
-}
-
-.ramble span {
-  color:black;
-}
-
-.notes {
-  padding-top:35px;
-}
-
-.api {
-  padding-top:30px;
-}
-
-.ramble {
-  padding-top:30px;
-}
 
 @media (max-width: 500px) {
   body {
     background: red;
   }
+  
 }
 
 .topbar {

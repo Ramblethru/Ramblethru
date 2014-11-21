@@ -1,3 +1,36 @@
 // Place all the styles related to the discovers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.pagename {
+   text-align: center;
+}
+
+.map {
+   background: url("http://rainelaw.files.wordpress.com/2007/11/torino_google-map.png");
+   height: 450px;
+   width: 800px;
+   margin: 0 auto;
+}
+
+.ramble {
+  color:white;
+  font-weight:bold;
+}
+
+.ramble span {
+  color:black;
+}
+
+.notes {
+  padding-top:35px;
+}
+
+.api {
+  padding-top:30px;
+}
+
+.ramble {
+  padding-top:30px;
+}

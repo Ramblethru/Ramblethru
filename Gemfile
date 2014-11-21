@@ -7,9 +7,10 @@ gem 'pg'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
+# gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'spring',        group: :development
+# gem 'spring',        group: :development
 gem 'rails_12factor',   group: :production
 gem 'jquery-ui-rails'
 gem 'redcarpet'
@@ -28,6 +29,7 @@ gem 'refills'
 
 # authenticate
 gem 'omniauth-google-oauth2'
+gem 'omniauth-foursquare'
 gem 'omniauth-twitter'
 gem 'bcrypt', '~> 3.1.2'
 

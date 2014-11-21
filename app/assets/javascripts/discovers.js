@@ -7,5 +7,11 @@ $.ajax({
 	success: function(data) {
 		$('.foursq').append('<div class="yelpapi">' + '<a href="' + data.response.groups[0].items[0].venue.url + '"' + '>' + data.response.groups[0].items[0].venue.name +
 		'</a>' + " - " + "rating " + data.response.groups[0].items[0].venue.rating);
+		$('.foursq').append('<div class="yelpapi">' + '<a href="' + data.response.groups[0].items[1].venue.url + '"' + '>' + data.response.groups[0].items[1].venue.name +
+		'</a>' + " - " + "rating " + data.response.groups[0].items[1].venue.rating);
+		$('.foursq').append('<div class="yelpapi">' + '<a href="' + data.response.groups[0].items[2].venue.url + '"' + '>' + data.response.groups[0].items[2].venue.name +
+		'</a>' + " - " + "rating " + data.response.groups[0].items[2].venue.rating);
+		$('.foursq').append('<div class="yelpapi">' + '<a href="' + data.response.groups[0].items[3].venue.url + '"' + '>' + data.response.groups[0].items[3].venue.name +
+		'</a>' + " - " + "rating " + data.response.groups[0].items[3].venue.rating);
 	}
 });

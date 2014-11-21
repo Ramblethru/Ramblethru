@@ -53,3 +53,9 @@ $visual-grid-opacity: 0.4 !default;
 .ramble {
   padding-top:30px;
 }
+
+@media (max-width: 500px) {
+  body {
+    background: red;
+  }
+}

@@ -1,6 +1,11 @@
+<% if logged_in? %>
+<%= @current_user.name %>
+<%= link_to "Log out", logout_path, :method => :delete %>
+<% else %>
 <%= link_to "Sign up", new_user_path %> |
 <%= link_to "Log in", new_login_path %> |
-<%= link_to "Log out", logout_path, :method => :delete %>
+<% end %>
+
 <div class="hero">
 	<div class="header-title">
 		<h1>Adventure Awaits</h1>
@@ -20,7 +25,7 @@
 	<div class="homepage-about">
 		<h1>What We Do</h1>
 	</div>
-    
+
 	<div class="homepage-about-each">
 		<div class="discover">
 			<h4>Discover</h4>
@@ -35,7 +40,7 @@
 					I am cooler text.
 				</article>
 		</div>
-		
+
 		<div class="go">
 			<h4>Go</h4>
 				<article>
@@ -43,7 +48,7 @@
 				</article>
 		</div>
 
-	</div>	
+	</div>
 </div>
 	<div class="login-register">
 		<h1>LOGIN/SIGNUP FORM HERE</h1>

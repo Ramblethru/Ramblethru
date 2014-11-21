@@ -56,7 +56,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'timecop'
   gem 'poltergeist'
-  gem 'did_you_mean'
+  # gem 'did_you_mean', '~> 0.7.0'
   gem 'phantomjs'
 end
 

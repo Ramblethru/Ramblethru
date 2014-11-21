@@ -1,3 +1,46 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.hero {
+	background: url("http://placekitten.com/1450/450");
+	height: 450px;
+}
+.header-title {
+	text-align: center;
+	padding-top: 10px;
+	color: white;
+	h1 {
+	margin-bottom: 0px;
+	}
+}
+.header-subtitle {
+	text-align: center;
+	color: white;
+}
+.location-search {
+	width: 30%;
+	margin: 0 auto;
+}
+.search-form {
+	text-align: center;
+	padding: 10px;
+}
+.container {
+    @include outer-container; 
+	
+}
+.homepage-about {
+	text-align: center;
+}
+.homepage-about-each {
+	text-align: center;
+	}
+.discover, .create, .go {
+	@include span-columns(4);
+}
+.login-register {
+	text-align: center;
+	padding-top: 20px;
+}

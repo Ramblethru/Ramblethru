@@ -74,8 +74,6 @@ GEM
     coffee-script-source (1.8.0)
     colored (1.2)
     debug_inspector (0.0.2)
-    did_you_mean (0.7.0)
-      binding_of_caller
     diff-lcs (1.2.5)
     docile (1.1.5)
     dotenv (1.0.2)
@@ -341,7 +339,6 @@ DEPENDENCIES
   bourbon
   capybara
   coffee-rails (~> 4.0.0)
-  did_you_mean
   dotenv-rails
   faker
   font-awesome-rails

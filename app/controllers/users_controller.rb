@@ -1,26 +1,33 @@
 class UsersController < ApplicationController
 
     def show
-        @user = User.find(params[:id])
+      @user = User.find(params[:id])
     end
 
     def new
-        @user = User.new
+      @user = User.new
     end
 
     def create
-        @user = User.create(user_params)
+      @user = User.new(user_params)
+      if @user.save
+        flash[:success] = 'User Created'
+        redirect_to new_login_path
+      else
+        flash[:error] = 'There was a problem creating your account.'
+        render :new
+      end
     end
 
     def update
-        @user.update(user_params)
-        redirect_to @user
+      @user.update(user_params)
+      redirect_to @user
     end
 
     def destroy
-        @user.destroy
-        redirect_to users_url, notice: 'User was successfully destroyed.'
-        end
+      @user.destroy
+      redirect_to users_url, notice: 'User was successfully destroyed.'
+      end
     end
 
     def edit
@@ -29,6 +36,6 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:name, :email, :photo, :bio, :lives_in, :username, :password_digest)
+      params.require(:user).permit(:name, :email, :photo, :bio, :lives_in, :username, :password_digest)
     end
 end

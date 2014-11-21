@@ -1,4 +1,4 @@
-<%= form_for(@user) do |f| %>
+<%= simple_form_for @user do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -9,39 +9,17 @@
       </ul>
     </div>
   <% end %>
-<div class="negative_formwrap">
   <div class="row">
-    <div class="small-12 columns">
-      <div class="field">
-        <%= f.label :name, nil, class: 'post_label' %><br>
-        <%= f.text_field :name %>
-      </div>
-    </div>
+    <h2>Register or <%= link_to "login", login_create_path %></h2>
   </div>
-  <div class="large-12 columns">
-    <div class="field">
-      <%= f.label :email, nil, class: 'post_label' %><br>
-      <%= f.text_field :email %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="small-6 columns">
-      <div class="field">
-        <%= f.label :password, nil, class: 'post_label' %><br>
-        <%= f.password_field :password %>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="small-6 columns">
-      <div class="field">
-        <%= f.label :password_confirmation, nil, class: 'post_label' %><br>
-        <%= f.password_field :password_confirmation %>
-      </div>
-    </div>
-  </div>
-</div>
-  <div class="actions">
-    <%= f.button :submit, class: "radius small" %>
-  </div>
+  <%= f.input :name %>
+  <%= f.input :username %>
+  <%= f.input :email, placeholder: 'user@domain.com' %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
+  <%= f.input :bio, placeholder: 'Provide a bio here if desired' %>
+  <%= f.input :lives_in %>
+  <p><b>(Photo stuff should go in this neck-of-the-woods)</b></p>
+  <%= f.button :submit, "Register" %>
+
 <% end %>

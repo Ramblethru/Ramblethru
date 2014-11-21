@@ -9,11 +9,7 @@
       </ul>
     </div>
   <% end %>
-  <div class="row">
-    <h2>Register or <%= link_to "login", logins_path %></h2>
-  </div>
   <%= f.input :name %>
-  <%= f.input :username %>
   <%= f.input :email, placeholder: 'user@domain.com' %>
   <%= f.input :password %>
   <%= f.input :password_confirmation %>

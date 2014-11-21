@@ -1,4 +1,3 @@
-<div class="content">
-  <p><h2>Register for a new account</h2></p>
-    <%= render "users/register_form" %>
-</div>
+<h2>Register</h2>
+<h4>(or <%= link_to "login", new_login_path %>)</h4>
+<%= render "users/register_form" %>

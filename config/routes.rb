@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'login/create'
-  get 'login/destroy'
-
+  resources :logins, :only => [:new, :create, :destroy]
   resources :users
   resources :rambles do
     resource :notes

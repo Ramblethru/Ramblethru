@@ -29,6 +29,7 @@ gem 'refills'
 
 # authenticate
 gem 'omniauth-google-oauth2'
+gem 'omniauth-foursquare'
 gem 'omniauth-twitter'
 gem 'bcrypt', '~> 3.1.2'
 

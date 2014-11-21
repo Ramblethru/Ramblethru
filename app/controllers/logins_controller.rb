@@ -1,5 +1,6 @@
 class LoginsController < ApplicationController
   include LoginsHelper
+  
   def new
   end
 
@@ -16,7 +17,7 @@ class LoginsController < ApplicationController
   end
 
   def destroy
-    log_out
+    session[:current_user_id] = nil
     redirect_to root_url, :notice => "You have logged out!"
   end
 end

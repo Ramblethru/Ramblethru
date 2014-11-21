@@ -10,7 +10,7 @@
 <body>
   <div class="topbar">
     <% if logged_in? %>
-    <%= @current_user.name %>
+    <%= current_user.name %>
     <%= link_to "Log out", logout_path, :method => :delete %>
     <% else %>
     <%= link_to "Sign up", new_user_path %> |

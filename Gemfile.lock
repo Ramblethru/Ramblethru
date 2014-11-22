@@ -377,7 +377,7 @@ DEPENDENCIES
   redcarpet
   redditkit (~> 1.0.1)
   refills
-  rspec-rails
+  rspec-rails (~> 3.0)
   rubocop
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

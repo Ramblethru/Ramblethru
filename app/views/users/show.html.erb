@@ -1,0 +1,15 @@
+<div class="usershow">
+	<h1> <%= current_user.name %>'s Profile page </h1>
+	<div class="photo"><img src="http://www.aaanything.net/wp-content/uploads/2011/04/funny_dog_face_2.jpg">
+	</div>
+	<div class="userinfo">
+		<div class="name">
+		Name:
+		<%= current_user.name %>
+		</div>
+		<div class="bio">
+			<h5>BIO:</h5><p>
+			<%= current_user.bio %></p>
+		</div>
+	</div>
+</div>

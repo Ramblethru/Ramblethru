@@ -5,7 +5,10 @@
   <div class="notes"><h4>NOTES</h4></div>
   <div class="noteboxes">Create note partial here</div>
   <div class="api">API FEED GOES HERE</div>
-  <div class="foursq">Yelp recommended places:</div>
+  <div class="foursq">Foursquare recommended places:</div>
+  <div class="yelp">Yelp recommended places:
+  <%= @yelp.businesses.first.name %>
+  </div>
   <div class="ramble">
     <button type="button" onclick="alert('Saved!')">Save this ramble</button>
    <span>or</span></div>

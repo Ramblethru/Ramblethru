@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :rambles do
     resource :notes
   end
+  resources :notes, :only => [:index]
   root 'home#index'
   delete 'logout' => 'logins#destroy'
   get '/auth/:provider/callback', to: 'users#create_auth'

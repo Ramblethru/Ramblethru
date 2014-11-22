@@ -14,10 +14,10 @@ class NotesController < ApplicationController
   end
 
   def create
-    @note = Note.new(note_params)
-    binding.pry
+    @ramble = Ramble.find(params[:ramble_id])
+    @note = @ramble.notes.create(note_params)
     if @note.save
-      redirect_to ramble_path(@note.ramble_id), success: "Your note was recorded."
+      redirect_to @ramble, success: "Your note was recorded."
     else
       redirect_to root_path, alert: "Sorry, you must enter something.  Anything at all."
     end
@@ -39,6 +39,6 @@ class NotesController < ApplicationController
   private
 
   def note_params
-    params.require(:note).permit(:body, :ramble_id)
+    params.require(:note).permit(:body, :user_id, :ramble_id)
   end
 end

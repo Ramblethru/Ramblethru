@@ -11,6 +11,7 @@
   	<div class="ramble-notes">
 		<h2>NOTES</h2>
 		<%= render "notes/note_form" %>
+		<h3>ALL YOUR NOTES HERE</h3>
  		<% if @ramble.notes != nil %> 
  			<% @ramble.notes.each do |note| %>
 				<%= note.body %>
@@ -19,7 +20,7 @@
 			<%= link_to "Home", root_path %>
 		<% end %>
 
-		<h3>ALL YOUR NOTES HERE</h3>
+		
 	</div>
 	<div class="api-feed">
 		<h2>API FEED</h2>

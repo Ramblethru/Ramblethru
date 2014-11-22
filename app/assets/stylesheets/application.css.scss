@@ -8,6 +8,7 @@ $visual-grid-opacity: 0.4 !default;
 @import "home";
 @import "users";
 @import "rambles";
+@import "notes";
 @import "discovers";
 
 
@@ -34,7 +35,7 @@ $visual-grid-opacity: 0.4 !default;
   body {
     background: red;
   }
-  
+
 }
 
 .topbar {

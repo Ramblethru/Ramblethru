@@ -14,7 +14,7 @@
 		<h3>ALL YOUR NOTES HERE</h3>
  		<% if @ramble.notes != nil %> 
  			<% @ramble.notes.each do |note| %>
-				<%= note.body %>
+				<div class="notebody"> - <%= note.body %></div>
 			<% end %>
 		<% else %>
 			<%= link_to "Home", root_path %>

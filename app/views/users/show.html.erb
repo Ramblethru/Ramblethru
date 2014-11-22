@@ -1,15 +1,31 @@
 <div class="usershow">
-	<h1> <%= current_user.name %>'s Profile page </h1>
+	<h1> My Profile </h1>
 	<div class="photo"><img src="http://www.aaanything.net/wp-content/uploads/2011/04/funny_dog_face_2.jpg">
+		<%= link_to 'Edit', '#' %>
 	</div>
 	<div class="userinfo">
 		<div class="name">
-		Name:
-		<%= current_user.name %>
+			<%= current_user.name %>
 		</div>
 		<div class="bio">
-			<h5>BIO:</h5><p>
-			<%= current_user.bio %></p>
+			<h5>BIO:</h5>
+			<%= current_user.bio %><br>
+			<%= link_to 'Edit Bio', '#' %>
 		</div>
+	</div>
+	<div class="container">
+		<div class="usertrips">
+			<h3> My Rambles(dropdown?) </h3>
+			<div class="userrambles">
+				<p>Ramble1</p>
+				<p>Ramble2</p>
+			</div>
+			<div class="usernotes">
+				<p>Notes1</p>
+				<p>Notes2</p>
+			</div>
+		</div>
+	</div>
+	<div class="saved"><a href='#'>View saved notes(dropdown? Not here? Something?)</a>
 	</div>
 </div>

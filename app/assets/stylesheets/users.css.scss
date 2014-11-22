@@ -16,16 +16,48 @@
 
 .userinfo {
 	float:right;
-	margin-right:400px;
-	margin-top:180px;
+	margin-right:300px;
+	margin-top:30px;
 	// border:1px solid black;
 }
 
 .name {
-	font-weight:900;
+	font-size:30px;
+	font-weight:bold;
 	margin-bottom:100px;
 }
 
 .bio {
 	max-width: 300px;
+}
+
+.userrambles p{
+	@include span-columns(6);
+}
+
+.usertrips {
+	text-align:center;
+	margin-top:40px;
+}
+
+.usertrips p {
+	display: inline-block;
+}
+
+.usertrips h3 {
+	margin-bottom:70px;
+}
+
+.usernotes p {
+	padding-top:30px;
+	@include span-columns(6);
+}
+
+.saved {
+	text-align:center;
+	margin-top:30px;
+}
+
+.container {
+	@include outer-container;
 }

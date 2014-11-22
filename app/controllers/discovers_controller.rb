@@ -5,7 +5,6 @@ class DiscoversController < ApplicationController
          }
     	@yelp = Yelp.client.search('San Francisco', params)
 							
-
 	end
 	
 end

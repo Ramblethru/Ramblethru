@@ -18,6 +18,10 @@ class DiscoversController < ApplicationController
     # client= Instagram.client(:client_id => 'ea93d7b97c444c9bbfcf23cbbcb63ee4')
     # @searched = Instagram.client.user_media_feed(777)
 							
-	end
+      @reddit = HTTParty.get("http://www.reddit.com/api/subreddits_by_topic.json?query=durham")	
+      @reddit_data = JSON.parse(@reddit.body)
+
+
+  end
 	
 end

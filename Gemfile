@@ -62,7 +62,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'rspec'
+  gem 'rspec-rails'
   gem 'shoulda'
   gem 'capybara'
   gem 'simplecov', :require => false

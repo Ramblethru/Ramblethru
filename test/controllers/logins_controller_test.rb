@@ -5,7 +5,7 @@ class LoginsControllerTest < ActionController::TestCase context 'GET :new' do
 
   should respond_with(:ok)
   should render_template(:new)
-end
+  end
 
   def valid_login_info
     { email: users(:one).email,

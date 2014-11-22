@@ -16,10 +16,21 @@ class NotesController < ApplicationController
   def create
     @ramble = Ramble.find(params[:ramble_id])
     @note = @ramble.notes.create(note_params)
-    if @note.save
-      redirect_to @ramble, success: "Your note was recorded."
-    else
-      redirect_to root_path, alert: "Sorry, you must enter something.  Anything at all."
+    respond_to do |format|
+      format.html do
+        if @note.save
+          redirect_to @ramble, success: "Your note was recorded."
+        else
+          redirect_to root_path, alert: "Sorry, you must enter something.  Anything at all."
+        end
+      end
+      format.js do
+        if @note.save
+          render :create, status: :created
+        else
+          render :create, status: :not_found
+        end
+      end
     end
   end
 

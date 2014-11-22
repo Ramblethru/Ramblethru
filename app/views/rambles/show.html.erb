@@ -6,30 +6,31 @@
 	<h1>NAME OF YOUR RAMBLE HERE</h1>
 	<% end %>
 </div>
-  <div class="map"></div>
-  <div class="container">
-  	<div class="ramble-notes">
+<div class="map"></div>
+<div class="container">
+	<div class="ramble-notes">
 		<h2>NOTES</h2>
 		<%= render "notes/note_form" %>
 		<h3>ALL YOUR NOTES HERE</h3>
- 		<% if @ramble.notes != nil %> 
- 			<% @ramble.notes.each do |note| %>
-				<div class="notebody"> - <%= note.body %></div>
-			<% end %>
+		<% if @ramble.notes != nil %> 
+		<% @ramble.notes.each do |note| %>
+		<div class="notebody">
+			<%= note.body %>
+		</div>
+		<% end %>
 		<% else %>
-			<%= link_to "Home", root_path %>
+		<%= link_to "Home", root_path %>
 		<% end %>
 
 		
 	</div>
 	<div class="api-feed">
 		<h2>API FEED</h2>
-			<h4>Foursquare</h4>
-			<div class="foursq"></div>
+		<h4>Foursquare</h4>
+		<div class="foursq"></div>
 
 		<div class="recommended-notes">
 			<h4>RELEVANT NOTES GO HERE</h4>
 		</div>
 	</div>
-
-  </div>
+</div>

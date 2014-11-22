@@ -11,7 +11,7 @@
 			<input type="submit" value="Search">
 		</div>
 	</form>
-	<%= link_to "Discover", discover_path, :class => "discover" %> 
+	<%= link_to "Discover", discover_path, :class => "discover" %>
 	</div>
 <div class="container">
 	<div class="homepage-about">
@@ -45,7 +45,8 @@
 	<div class="login-register">
 		<h1>LOGIN/SIGNUP FORM HERE</h1>
 		<% if !logged_in? %>
-			<%= link_to "Login with Foursquare", "/auth/foursquare" %>
+			<%= link_to "Sign in with Foursquare", "/auth/foursquare" %>
+      <br><%= link_to "Sign in with Twitter", "/auth/twitter"%>
 		<% else %>
 			<h3>Welcome,</h3><%= current_user.name %>!
 		<% end %>

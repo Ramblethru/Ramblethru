@@ -28,7 +28,10 @@
         <input id="tags_1" type="text" class="tags" value="restaurant,hotel,museum,show,park,trail,bar,durham nc" /></p>
     </form>
   </div>
-  <div class="foursq">Foursquare recommended places:</div>
+  <div class="foursq">Foursquare recommended places/tips:<br>
+    <%= @foursquare_venue %>:<br>
+    <%= link_to @foursquare_tip, @foursquare_tip_url %>
+  </div>
   <br><div class="yelp">Yelp recommended places:
   <br><%= @yelp.businesses.first.name %>
 </div>
@@ -41,6 +44,9 @@
   <li><%= r["name"] %></li>
   <% end %>
 </div>
+
+
+
 <div class="ramble">
   <%= button_to 'Save this Ramble', { :controller => 'rambles', :action => 'create'} %>
   <span>or</span></div>

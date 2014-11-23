@@ -5,8 +5,16 @@
   <div class="notes"><h4>NOTES</h4></div>
   <div class="noteboxes">Create note partial here</div>
   <div class="foursq">Foursquare recommended places/tips:<br>
-    <%= @foursquare_venue %>:<br>
-    <%= link_to @foursquare_tip, @foursquare_tip_url %>
+     <% f = @foursquare_tip.each do |f| %>
+        <li><div class="title"><%= f["venue"]["name"] %></div></li>
+        <% @foursquare_tip_url.each do |t| %>
+            <% t["tips"] %>
+              <% t["tips"].each do |f| %>
+                <%= f["text"] %>
+        
+                <% end %>
+          <% end %>
+          <% end %>
   </div>
   <br><div class="yelp">Yelp recommended places:
   <br><%= @yelp.businesses.first.name %>

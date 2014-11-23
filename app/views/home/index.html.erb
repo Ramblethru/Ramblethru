@@ -11,7 +11,7 @@
 			<input type="submit" value="Search">
 		</div>
 	</form>
-	<%= link_to "Discover", discover_path, :class => "discover" %>
+	
 	</div>
 <div class="container">
 	<div class="homepage-about">
@@ -20,7 +20,7 @@
 
 	<div class="homepage-about-each">
 		<div class="discover">
-			<h4>Discover</h4>
+			<h4><%= link_to "Discover", discover_path, :class => "discover" %></h4>
 				<article>
 					I am some cool text.
 				</article>

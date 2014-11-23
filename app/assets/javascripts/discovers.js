@@ -15,14 +15,8 @@ $.ajax({
 		'</a>' + " - " + "rating " + data.response.groups[0].items[3].venue.rating);
 	}
 });
-
-
-// $.ajax({
-// 	type: 'GET',
-// 	dataType: "json",
-// 	url: 'http://api.yelp.com/v2/search?term=food&bounds=37.900000,-122.500000|37.788022,-122.399797&limit=3',
-// 	success: function(data) {
-// 		$('.yelp').append('<div class="yelp">' + '<a href="' + data.response.groups[0].items[0].businesses + '"' + '>'); 
-		
-// 	}
-// });
+	
+$('.tag1').tagsInput({
+    // my parameters here
+});
+$('.tag1').addTag('foo');

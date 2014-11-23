@@ -18,7 +18,7 @@
       <% end %>
   </div>
   <div class="ramble">
-    <button type="button" onclick="alert('Saved!')">Save this ramble</button>
+    <%= button_to 'Save this Ramble', { :controller => 'rambles', :action => 'create'} %>
    <span>or</span></div>
   <form class="search-form">
     <div class="location-search">

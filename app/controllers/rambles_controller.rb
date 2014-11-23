@@ -5,7 +5,7 @@ class RamblesController < ApplicationController
     end
 
     def create
-        @ramble = Ramble.create(ramble_params)
+        @ramble = @current_user.ramble.create(ramble_params)
     end
 
     def update
@@ -24,6 +24,6 @@ class RamblesController < ApplicationController
     private
 
     def ramble_params
-      params.require(:ramble).permit(:start_date, :end_date, :name, :destination)
+      params.require(:ramble).permit(:start_date, :end_date, :name, :destination, :user_id)
     end
 end

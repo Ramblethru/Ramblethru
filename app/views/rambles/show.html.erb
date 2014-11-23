@@ -11,7 +11,6 @@
 	<div class="ramble-notes">
 		<h2>NOTES</h2>
 		<%= render "notes/note_form" %>
-		<h3>ALL YOUR NOTES HERE</h3>
 		<% if @ramble.notes != nil %> 
 		<% @ramble.notes.each do |note| %>
 		<div class="notebody">

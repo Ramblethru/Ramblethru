@@ -15,9 +15,8 @@ $.ajax({
 		'</a>' + " - " + "rating " + data.response.groups[0].items[3].venue.rating);
 	}
 });
-
-
-$(document).on('ready', function () {
-2		$("#tags").tagsInput({width: '100%',
-3			height: '1rem'});
-
+	
+$('.tag1').tagsInput({
+    // my parameters here
+});
+$('.tag1').addTag('foo');

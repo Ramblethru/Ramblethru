@@ -7,24 +7,28 @@
   <div class="foursq">Foursquare recommended places:</div>
   <br><div class="yelp">Yelp recommended places:
   <br><%= @yelp.businesses.first.name %>
-  </div>
-  <br><div class="instagram">Instagram:<br>
-    <%= link_to image_tag @results %>
-  </div>
-  <br>
-  <div class="reddit">Reddit:<br>
-    <% @reddit_data.each do |r| %>
-      <li><%= r["name"] %></li>
-      <% end %>
-  </div>
-  <div class="ramble">
-    <%= button_to 'Save this Ramble', { :controller => 'rambles', :action => 'create'} %>
-   <span>or</span></div>
+</div>
+<br><div class="instagram">Instagram:<br>
+<%= link_to image_tag @results %>
+</div>
+<br>
+<div class="reddit">Reddit:<br>
+  <% @reddit_data.each do |r| %>
+  <li><%= r["name"] %></li>
+  <% end %>
+</div>
+<div class="ramble">
+  <%= button_to 'Save this Ramble', { :controller => 'rambles', :action => 'create'} %>
+  <span>or</span></div>
   <form class="search-form">
     <div class="location-search">
       <input type="text" placeholder="Search for more">
       <input type="submit" value="Search">
     </div>
   </form>
-  <input name="tags" class="tags" value="foo,bar,baz" />
+  <div class="tags">
+    <p> Add tags here
+      <input class="tag1" placeholder="Search for more" />
+    </p>
+  </div>
 </div>

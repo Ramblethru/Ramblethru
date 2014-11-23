@@ -1,4 +1,5 @@
 class NotesController < ApplicationController
+   include Taggable
 
   def index
     @notes = Note.all

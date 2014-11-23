@@ -12,6 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.tagsinput
 //= require_tree .
 //= require mapbox.js
+//= require jquery.tagsinput

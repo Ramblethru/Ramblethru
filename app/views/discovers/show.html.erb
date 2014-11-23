@@ -4,11 +4,46 @@
   <div class="map"></div>
   <div class="notes"><h4>NOTES</h4></div>
   <div class="noteboxes">Create note partial here</div>
-  <div class="api">API FEED GOES HERE</div>
-  <div class="foursq">Yelp recommended places:</div>
-  <div class="ramble">
-    <button type="button" onclick="alert('Saved!')">Save this ramble</button>
-   <span>or</span></div>
+  <div class="tag-div">
+    <link rel="stylesheet" type="text/css" href="http://xoxco.com/projects/code/tagsinput/jquery.tagsinput.css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://xoxco.com/projects/code/tagsinput/jquery.tagsinput.js"></script>
+    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js'></script>
+    <script type="text/javascript">
+      function onAddTag(tag) {
+        alert("Added a tag: " + tag);
+      }
+      function onRemoveTag(tag) {
+        alert("Removed a tag: " + tag);
+      }
+      function onChangeTag(input,tag) {
+        alert("Changed a tag: " + tag);
+      }
+      $(function() {
+        $('#tags_1').tagsInput({width:'auto'});
+      });
+    </script>
+    <form>
+      <p><label>Tags (important point: a tag can't have a comma inside of it, since commas are used as a separator between tags)</label>
+        <input id="tags_1" type="text" class="tags" value="restaurant,hotel,museum,show,park,trail,bar,durham nc" /></p>
+    </form>
+  </div>
+  <div class="foursq">Foursquare recommended places:</div>
+  <br><div class="yelp">Yelp recommended places:
+  <br><%= @yelp.businesses.first.name %>
+</div>
+<br><div class="instagram">Instagram:<br>
+<%= link_to image_tag @results %>
+</div>
+<br>
+<div class="reddit">Reddit:<br>
+  <% @reddit_data.each do |r| %>
+  <li><%= r["name"] %></li>
+  <% end %>
+</div>
+<div class="ramble">
+  <%= button_to 'Save this Ramble', { :controller => 'rambles', :action => 'create'} %>
+  <span>or</span></div>
   <form class="search-form">
     <div class="location-search">
       <input type="text" placeholder="Search for more">

@@ -1,20 +1,19 @@
 Rails.application.routes.draw do
 
-
-
   resources :users
   resources :rambles do
-    resource :notes
+    resources :notes, shallow: true
   end
-
-
 
   get '/auth/:provider/callback', to: 'users#create'
 
   resource :discover, :only => [:show]
+  resources :notes, :only => [:index]
   root 'home#index'
   resources :logins, :only => [:new, :create]
   delete 'logout' => 'logins#destroy'
+  get '/auth/:provider/callback', to: 'users#create_auth'
+  # post '/users/:user_id/rambles/new' => 'rambles#new', as: 'new_user_ramble_post'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -3,12 +3,9 @@ class User < ActiveRecord::Base
   has_many :rambles
   has_many :notes, through: :rambles
 
-  validates :name, presence: true
-  validates :email,
-            presence: true,
-            uniqueness: { case_sensitive: false },
-            format: { with: /\A[\w\-\.]+@[\w\-\.]+\Z/,
-                      message: 'must be a valid email address' }
+  # validates :name, presence: true
+  # validates :email, presence: true
+           
 
   has_secure_password
 
@@ -23,9 +20,15 @@ class User < ActiveRecord::Base
                                             uid: auth_hash["uid"])
     auth.update!(token: auth_hash["credentials"]["token"])
 
+
+    unless auth.user
+      auth.create_user!(email: auth_hash["info"]["email"],
+                        name: auth_hash["info"]["name"])
+                        
+  
       auth.save!
+    end
 
     auth.user
   end
-
 end

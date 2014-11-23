@@ -7,6 +7,11 @@ $visual-grid-opacity: 0.4 !default;
 @import "neat";
 @import "home";
 @import "users";
+@import "rambles";
+@import "notes";
+@import "discovers";
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -20,36 +25,40 @@ $visual-grid-opacity: 0.4 !default;
  * file per style scope.
  *
  *= require_self
+ *= require mapbox
+ *= require jquery.tagsinput
  */
 
-.pagename {
-   text-align: center;
+
+
+
+@media (max-width: 500px) {
+  body {
+    background: red;
+  }
+
 }
 
-.map {
-   background: url("http://rainelaw.files.wordpress.com/2007/11/torino_google-map.png");
-   height: 450px;
-   width: 800px;
-   margin-left:250px;
-}
-
-.ramble {
-  color:white;
+.topbar {
   font-weight:bold;
 }
 
-.ramble span {
-  color:black;
+.login-register {
+  width: 350px;
+  background: gainsboro;
+  margin: 45px auto 30px auto;
+  border-radius: 20px;
+  padding: 25px 25px 25px 25px;
 }
+  a {
+    font-weight: bold;
+  }
 
-.notes {
-  padding-top:35px;
-}
+  .or-signup {
+    margin: -20px 0 15px 0;
+  }
 
-.api {
-  padding-top:30px;
-}
-
-.ramble {
-  padding-top:30px;
+.tag-div {
+  width: 350px;
+  margin: 30px auto 30px auto;
 }

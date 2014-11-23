@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .hero {
 	background: url("http://placekitten.com/1450/450");
 	height: 450px;
@@ -28,8 +27,8 @@
 	padding: 10px;
 }
 .container {
-    @include outer-container; 
-	
+    @include outer-container;
+
 }
 .homepage-about {
 	text-align: center;
@@ -43,4 +42,8 @@
 .login-register {
 	text-align: center;
 	padding-top: 20px;
+}
+a.discover {
+	text-align: center;
+	width: 100%;
 }

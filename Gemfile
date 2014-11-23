@@ -26,6 +26,8 @@ gem 'bourbon'
 gem 'neat'
 gem 'bitters'
 gem 'refills'
+gem 'mapbox-rails'
+gem 'tagsinput-rails'
 
 # authenticate
 gem 'omniauth-google-oauth2'
@@ -39,7 +41,7 @@ gem 'httparty'
 gem 'twitter'
 gem 'songkickr'
 gem 'foursquare2'
-gem 'yelp'
+gem 'yelp', require: 'yelp'
 gem 'instagram'
 gem 'redditkit', '~> 1.0.1'
 gem 'geocoder'
@@ -59,10 +61,10 @@ group :development, :test do
   gem 'poltergeist'
   # gem 'did_you_mean', '~> 0.7.0'
   gem 'phantomjs'
+  gem 'rspec-rails', '~>3.0'
 end
 
 group :test do
-  gem 'rspec'
   gem 'shoulda'
   gem 'capybara'
   gem 'simplecov', :require => false

@@ -1,3 +1,63 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.photo {
+	width:400px;
+	margin-left:125px;
+	margin-top:40px;
+	display: inline-block;
+	// border:1px solid black;
+}
+
+.usershow h1 {
+	text-align:center;
+}
+
+.userinfo {
+	float:right;
+	margin-right:300px;
+	margin-top:30px;
+	// border:1px solid black;
+}
+
+.name {
+	font-size:30px;
+	font-weight:bold;
+	margin-bottom:100px;
+}
+
+.bio {
+	max-width: 300px;
+}
+
+.userrambles p{
+	@include span-columns(6);
+}
+
+.usertrips {
+	text-align:center;
+	margin-top:40px;
+}
+
+.usertrips p {
+	display: inline-block;
+}
+
+.usertrips h3 {
+	margin-bottom:70px;
+}
+
+.usernotes p {
+	padding-top:30px;
+	@include span-columns(6);
+}
+
+.saved {
+	text-align:center;
+	margin-top:30px;
+}
+
+.container {
+	@include outer-container;
+}

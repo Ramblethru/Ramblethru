@@ -2,6 +2,7 @@ class NotesController < ApplicationController
 
   def index
     @notes = Note.all
+
   end
 
   def show
@@ -13,7 +14,24 @@ class NotesController < ApplicationController
   end
 
   def create
-    @note = Note.create(note_params)
+    @ramble = Ramble.find(params[:ramble_id])
+    @note = @ramble.notes.create(note_params)
+    respond_to do |format|
+      format.html do
+        if @note.save
+          redirect_to @ramble, success: "Your note was recorded."
+        else
+          redirect_to root_path, alert: "Sorry, you must enter something.  Anything at all."
+        end
+      end
+      format.js do
+        if @note.save
+          render :create, status: :created
+        else
+          render :create, status: :not_found
+        end
+      end
+    end
   end
 
   def update
@@ -32,6 +50,6 @@ class NotesController < ApplicationController
   private
 
   def note_params
-    params.require(:note).permit(:body)
+    params.require(:note).permit(:body, :user_id, :ramble_id)
   end
 end

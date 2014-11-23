@@ -12,15 +12,16 @@
 			<input type="submit" value="Search">
 		</div>
 	</form>
-</div>
+	
+	</div>
 <div class="container">
 	<div class="homepage-about">
-		<h1>What We Do</h1>
+			<h1>What We Do</h1>
 	</div>
 
 	<div class="homepage-about-each">
 		<div class="discover">
-			<h4>Discover</h4>
+			<h4><%= link_to "Discover", discover_path, :class => "discover" %></h4>
 				<article>
 					I am some cool text.
 				</article>
@@ -43,14 +44,20 @@
 	</div>
 </div>
 	<div class="login-register">
-		<h1>LOGIN/SIGNUP FORM HERE</h1>
 		<% if !logged_in? %>
-			<%= link_to "Login with Foursquare", "/auth/foursquare" %>
+      <h1>Log in</h1>
+      <div class="or-signup">(or <%= link_to "sign up for a new account", new_user_path %>)</div>
+
+      <%= render "/logins/login_form" %>
+			<br><%= link_to "Log in with Foursquare", "/auth/foursquare" %>
+      <br><%= link_to "Log in with Twitter", "/auth/twitter"%>
 		<% else %>
 			<h3>Welcome,</h3><%= current_user.name %>!
 		<% end %>
 	</div>
 
+
 <%= link_to "Sign up", new_user_path %> |
 <%= link_to "Log in", new_login_path %> |
 <%= link_to "Log out", logout_path, :method => :delete %>
+

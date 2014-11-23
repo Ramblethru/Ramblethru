@@ -17,12 +17,7 @@ $.ajax({
 });
 
 
-// $.ajax({
-// 	type: 'GET',
-// 	dataType: "json",
-// 	url: 'http://api.yelp.com/v2/search?term=food&bounds=37.900000,-122.500000|37.788022,-122.399797&limit=3',
-// 	success: function(data) {
-// 		$('.yelp').append('<div class="yelp">' + '<a href="' + data.response.groups[0].items[0].businesses + '"' + '>'); 
-		
-// 	}
-// });
+$(document).on('ready', function () {
+2		$("#tags").tagsInput({width: '100%',
+3			height: '1rem'});
+

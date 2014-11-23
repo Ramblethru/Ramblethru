@@ -1,6 +1,8 @@
 class Note < ActiveRecord::Base
 
-  has_and_belongs_to_many :tags
+  acts_as_taggable # Alias for acts_as_taggable_on :tags
+  acts_as_taggable_on :ramble
+
   belongs_to :user
   belongs_to :ramble
 

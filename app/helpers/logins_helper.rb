@@ -1,9 +1,5 @@
 module LoginsHelper
-<<<<<<< HEAD
-  def login(user)
-=======
 	def login(user)
->>>>>>> dheckman-master
     session[:current_user_id] = user.id
   end
 

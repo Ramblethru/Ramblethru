@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resource :discover, :only => [:show]
   resources :users
   resources :rambles do
-    resource :notes
+    resources :notes, shallow: true
   end
   resources :notes, :only => [:index]
   root 'home#index'

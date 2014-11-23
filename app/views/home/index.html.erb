@@ -43,10 +43,10 @@
 	</div>
 </div>
 	<div class="login-register">
-		<h1>LOGIN/SIGNUP FORM HERE</h1>
 		<% if !logged_in? %>
+      <h1>LOGIN</h1>
       <%= render "/logins/login_form" %>
-			<%= link_to "Sign in with Foursquare", "/auth/foursquare" %>
+			<br><%= link_to "Sign in with Foursquare", "/auth/foursquare" %>
       <br><%= link_to "Sign in with Twitter", "/auth/twitter"%>
 		<% else %>
 			<h3>Welcome,</h3><%= current_user.name %>!

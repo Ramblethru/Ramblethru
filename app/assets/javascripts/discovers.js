@@ -15,8 +15,3 @@ $.ajax({
 		'</a>' + " - " + "rating " + data.response.groups[0].items[3].venue.rating);
 	}
 });
-	
-$('.tag1').tagsInput({
-    // my parameters here
-});
-$('.tag1').addTag('foo');

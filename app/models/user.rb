@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+
   has_many :rambles
   has_many :notes, through: :rambles
 
@@ -7,7 +8,6 @@ class User < ActiveRecord::Base
            
 
   has_secure_password
-
 
   has_attached_file :photo, :styles => { :medium => "300x300>",
                                          :thumb => "100x100>" }
@@ -20,11 +20,12 @@ class User < ActiveRecord::Base
                                             uid: auth_hash["uid"])
     auth.update!(token: auth_hash["credentials"]["token"])
 
+
     unless auth.user
       auth.create_user!(email: auth_hash["info"]["email"],
                         name: auth_hash["info"]["name"])
                         
-                        
+  
       auth.save!
     end
 

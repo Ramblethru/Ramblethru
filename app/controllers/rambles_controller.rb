@@ -1,8 +1,24 @@
 class RamblesController < ApplicationController
+    include HTTParty
 
     def show
         @ramble = Ramble.find(params[:id])
     end
+
+    # def search
+    #     if ramble_params[:destination]
+    #         location = Geocoder.coordinates(remote_ip)
+    #         latitude = location[0]
+    #         longitude = location[1]
+    #         api_response(latitude, longitude)
+    #     elsif location_params[:destination].empty?
+    #         @error = "Please enter a valid address."
+    #         render 'new'
+    #     else
+    #         location = Geocoder.search(location_params[:destination]).first
+    #         api_response(location.latitude, location.longitude)
+    #     end
+    # end
 
     def new
         @ramble = Ramble.new

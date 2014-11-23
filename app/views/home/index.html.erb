@@ -5,10 +5,13 @@
 	<div class="header-subtitle">
 		<h4>plan your ramble</h4>
 	</div>
-	<form class="search-form">
+	<%= form_tag("/rambles/search", method: "get") do %>
 		<div class="location-search">
-			<input type="text" placeholder="search by city, state">
-			<input type="submit" value="Search">
+			<%= text_field_tag :destination, nil, placeholder: "Search by your City or Street Address..." %>
+			<div class="actions">
+        		<%= submit_tag "Search" %>
+      		</div>
+    <% end %>
 		</div>
 	</form>
 	

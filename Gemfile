@@ -59,10 +59,10 @@ group :development, :test do
   gem 'poltergeist'
   # gem 'did_you_mean', '~> 0.7.0'
   gem 'phantomjs'
+  gem 'rspec-rails', '~>3.0'
 end
 
 group :test do
-  gem 'rspec-rails'
   gem 'shoulda'
   gem 'capybara'
   gem 'simplecov', :require => false

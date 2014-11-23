@@ -4,15 +4,19 @@
   <div class="map"></div>
   <div class="notes"><h4>NOTES</h4></div>
   <div class="noteboxes">Create note partial here</div>
-  <div class="api">API FEED GOES HERE</div>
   <div class="foursq">Foursquare recommended places:</div>
-  <div class="yelp">Yelp recommended places:
+  <br><div class="yelp">Yelp recommended places:
   <br><%= @yelp.businesses.first.name %>
   </div>
-  <div class="instagram">Instagram recommended places:<br>
-  <%= link_to image_tag @results %>
+  <br><div class="instagram">Instagram:<br>
+    <%= link_to image_tag @results %>
   </div>
-
+  <br>
+  <div class="reddit">Reddit:<br>
+    <% @reddit_data.each do |r| %>
+      <li><%= r["name"] %></li>
+      <% end %>
+  </div>
   <div class="ramble">
     <button type="button" onclick="alert('Saved!')">Save this ramble</button>
    <span>or</span></div>

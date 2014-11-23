@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
-  resources :logins, :only => [:new, :create]
 
-  resource :discover, :only => [:show]
   resources :users
   resources :rambles do
     resources :notes, shallow: true
   end
+
+  get '/auth/:provider/callback', to: 'users#create'
+
+  resource :discover, :only => [:show]
   resources :notes, :only => [:index]
   root 'home#index'
+  resources :logins, :only => [:new, :create]
   delete 'logout' => 'logins#destroy'
   get '/auth/:provider/callback', to: 'users#create_auth'
   # post '/users/:user_id/rambles/new' => 'rambles#new', as: 'new_user_ramble_post'

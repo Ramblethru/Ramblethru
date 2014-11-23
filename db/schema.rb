@@ -32,8 +32,10 @@ ActiveRecord::Schema.define(version: 20141121044202) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.integer  "ramble_id"
   end
 
+  add_index "notes", ["ramble_id"], name: "index_notes_on_ramble_id", using: :btree
   add_index "notes", ["user_id"], name: "index_notes_on_user_id", using: :btree
 
   create_table "rambles", force: true do |t|

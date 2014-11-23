@@ -26,6 +26,7 @@ gem 'neat'
 gem 'bitters'
 gem 'refills'
 gem 'mapbox-rails'
+gem 'tagsinput-rails'
 
 # authenticate
 gem 'omniauth-google-oauth2'

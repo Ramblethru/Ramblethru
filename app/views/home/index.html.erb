@@ -44,10 +44,12 @@
 </div>
 	<div class="login-register">
 		<% if !logged_in? %>
-      <h1>LOGIN</h1>
+      <h1>Log in</h1>
+      <div class="or-signup">(or <%= link_to "sign up for a new account", new_user_path %>)</div>
+
       <%= render "/logins/login_form" %>
-			<br><%= link_to "Sign in with Foursquare", "/auth/foursquare" %>
-      <br><%= link_to "Sign in with Twitter", "/auth/twitter"%>
+			<br><%= link_to "Log in with Foursquare", "/auth/foursquare" %>
+      <br><%= link_to "Log in with Twitter", "/auth/twitter"%>
 		<% else %>
 			<h3>Welcome,</h3><%= current_user.name %>!
 		<% end %>

@@ -45,7 +45,14 @@ $visual-grid-opacity: 0.4 !default;
 .login-register {
   width: 350px;
   background: gainsboro;
-  margin: 45px auto 0 auto;
+  margin: 45px auto 30px auto;
   border-radius: 20px;
   padding: 25px 25px 25px 25px;
 }
+  a {
+    font-weight: bold;
+  }
+
+  .or-signup {
+    margin: -20px 0 15px 0;
+  }

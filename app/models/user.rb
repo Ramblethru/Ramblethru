@@ -10,8 +10,9 @@ class User < ActiveRecord::Base
   has_secure_password
 
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
-  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
-
+  validates_attachment :avatar,
+  :content_type => { :content_type => ["image/jpeg", "image/png"] }
+  
   has_many :authorizations
 
   def self.find_or_create_by_auth_hash(auth_hash)

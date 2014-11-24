@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   resources :logins, :only => [:new, :create]
   get 'logout' => 'logins#destroy'
   get '/auth/:provider/callback', to: 'users#create_auth'
-  
+  get '/users/:id/edit_bio', to: 'users#edit_bio', as: :edit_bio
+  get '/users/:id/edit_name', to: 'users#edit_name', as: :edit_name
   # post '/users/:user_id/rambles/new' => 'rambles#new', as: 'new_user_ramble_post'
 
   # The priority is based upon order of creation: first created -> highest priority.

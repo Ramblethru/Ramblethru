@@ -1,0 +1,4 @@
+<%= simple_form_for current_user do |f| %>
+<%= f.input :bio, placeholder: current_user.bio %>
+<%= f.button :submit, "Submit change" %>
+<% end %>

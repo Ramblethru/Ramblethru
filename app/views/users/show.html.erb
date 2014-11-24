@@ -11,11 +11,12 @@
 	<div class="userinfo">
 		<div class="name">
 			<%= @user.name %>
+			<%= link_to 'Edit Name', edit_name_path(@user) %>
 		</div>
 		<div class="bio">
 			<h5>BIO:</h5>
 			<%= @user.bio %><br>
-			<%= link_to 'Edit Bio', '#' %>
+			<%= link_to 'Edit Bio', edit_bio_path(@user) %>
 		</div>
 	</div>
 	<div class="container">

@@ -1,0 +1,5 @@
+<%= simple_form_for [@ramble, @ramble.notes.build] do |f| %>
+  <%= f.input :body, label: false, placeholder: "Your body text" %>
+
+  <%= f.button :submit, "Add tag", :class => "radius" %>
+<% end %>

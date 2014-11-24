@@ -13,10 +13,12 @@
   <div class="topbar">
     <% if logged_in? %>
     Bienvenue, <%= current_user.name %>! |
-    <%= link_to "Log out", logout_path, :method => :delete %>
+    <%= link_to "Log out", logout_path, :method => :delete %> |
+      <%= link_to "Home", root_path %>
     <% else %>
     <%= link_to "Sign up", new_user_path %> |
-    <%= link_to "Log in", new_login_path %>
+    <%= link_to "Log in", new_login_path %> |
+    <%= link_to "Home", root_path %>
     <% end %>
   </div>
 <%= yield %>

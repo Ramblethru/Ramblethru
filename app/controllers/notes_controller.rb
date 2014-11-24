@@ -1,4 +1,5 @@
 class NotesController < ApplicationController
+   include Taggable
 
   def index
     @notes = Note.all
@@ -21,7 +22,7 @@ class NotesController < ApplicationController
         if @note.save
           redirect_to @ramble, success: "Your note was recorded."
         else
-          redirect_to root_path, alert: "Sorry, you must enter something.  Anything at all."
+          redirect_to root_path, alert: "Sorry, you must enter something. Anything at all."
         end
       end
       format.js do
@@ -50,6 +51,6 @@ class NotesController < ApplicationController
   private
 
   def note_params
-    params.require(:note).permit(:body, :user_id, :ramble_id)
+    params.require(:note).permit(:body, :user_id, :ramble_id, :tag_list)
   end
 end

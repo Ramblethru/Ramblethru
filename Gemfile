@@ -29,6 +29,8 @@ gem 'refills'
 gem 'mapbox-rails'
 gem 'tagsinput-rails'
 gem 'acts-as-taggable-on'
+gem 'momentjs-rails', '>= 2.8.1'
+
 
 # authenticate
 gem 'omniauth-google-oauth2'

@@ -83,21 +83,24 @@ var map = L.mapbox.map('map', 'daninyc.ka9776m1')
 
 
 
-<div class="ramble">
+
+<!-- Ramble creation
+ --><div class="ramble">
+      <h4>Like what you see? Create a ramble (itinerary) below! </h4>
 <%= simple_form_for Ramble.new do |f| %>
     <%= f.input :destination, label: false, placeholder: "Destination" %>
-    <%= f.input :start_date, label: false, :class=>"tag-input", :placeholder=>"From" %>
-    <%= f.input :end_date, label: false, :class=>"tag-input", :placeholder=>"To" %>
-
-  <%= button_to 'Save this Ramble', { :controller => 'rambles', :action => 'create'} %>
+    <%= f.text_field :start_date, label: false, placeholder: "Start Date",id: 'start_date' %> 
+    <%= f.text_field :end_date,label: false, placeholder: "End Date", id: 'end_date' %>
+    <%= button_to 'Save this Ramble', { :controller => 'rambles', :action => 'create'} %>
 
 <% end %>
+</div>
 
-  <span>or</span></div>
+
+  <span><h4>or</h4></span></div>
   <form class="search-form">
     <div class="location-search">
       <input type="text" placeholder="Search for more">
       <input type="submit" value="Search">
     </div>
   </form>
-</div>

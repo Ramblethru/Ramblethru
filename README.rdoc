@@ -1,12 +1,14 @@
 == Ramblethru README
 
+Assists with travel planning by leveraging the power of social media.
+
 Adventure awaits.
 
 * Ramblethru uses Mailcatcher to send users email notifications. One does not simply include it in the gemfile.
 
-* Built with Ruby 2.1.3.
+* Built with Ruby 2.1.3 and Rails 4.1.7.
 
-* Uses Bourbon/Neat/Bitters/Refills to look good. Drink it in.
+* Uses Bourbon/Neat/Bitters/Refills to look good.
 
 * The database is PostgreSQL.
 

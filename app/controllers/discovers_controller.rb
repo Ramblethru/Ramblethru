@@ -10,9 +10,10 @@ class DiscoversController < ApplicationController
     @yelp = Yelp.client.search('San Francisco', params)
 
     #Instagram
-   	instagram = HTTParty.get('https://api.instagram.com/v1/media/search?lat=40.7&lng=74.0&client_id=ea93d7b97c444c9bbfcf23cbbcb63ee4')
-   	instagram_data = JSON.parse(instagram.body)
-   	@results = instagram_data["data"][0]["images"]["thumbnail"]["url"]
+   	instagram = HTTParty.get('https://api.instagram.com/v1/media/search?lat=40.7&lng=74.0&count=8&client_id=ea93d7b97c444c9bbfcf23cbbcb63ee4')
+    instagram_data = JSON.parse(instagram.body)
+   	@instagram_images = instagram_data["data"]
+    # [0]["images"]["thumbnail"]["url"]
 				
     #Reddit    			
     reddit = HTTParty.get("http://www.reddit.com/api/subreddits_by_topic.json?query=newyorkcity")	

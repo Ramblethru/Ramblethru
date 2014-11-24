@@ -41,11 +41,12 @@ class NotesController < ApplicationController
   end
 
   def edit
+    @ramble = Ramble.find(params[:ramble_id])
   end
 
   def destroy
+    @note = Note.find(params[:id])
     @note.destroy
-    redirect_to notes_url
   end
 
   private

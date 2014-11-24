@@ -18,6 +18,7 @@
 		<% @ramble.notes.each do |note| %>
 		<div class="notebody">
 			<%= note.body %>
+			<%= link_to "Destroy", note_destroy_path(@ramble, @note) %></div>
 		</div>
 		<% end %>
 		<% else %>

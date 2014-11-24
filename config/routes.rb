@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :logins, :only => [:new, :create]
   get 'logout' => 'logins#destroy'
+  get '/rambles/:ramble_id/notes/destroy' => 'notes#destroy', as: :note_destroy
   get '/auth/:provider/callback', to: 'users#create_auth'
   
   # post '/users/:user_id/rambles/new' => 'rambles#new', as: 'new_user_ramble_post'

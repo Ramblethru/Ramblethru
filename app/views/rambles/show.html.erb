@@ -19,9 +19,7 @@
 		<% if @ramble.notes != nil %> 
 		<% @ramble.notes.each do |note| %>
 		<div class="notebody">
-			
 			Note: <%= note.body %> <p>Tag:<%= note.tag_list %> </p>
-
 		</div>
 		<% end %>
 		<% else %>

@@ -1,15 +1,20 @@
 <div class="usershow">
 	<h1> My Profile </h1>
-	<div class="photo"><img src="http://www.aaanything.net/wp-content/uploads/2011/04/funny_dog_face_2.jpg">
-		<%= link_to 'Edit', '#' %>
+	<div class="photo">
+		<%= image_tag @user.avatar.url(:medium) %>
+		<%= form_for @user do |form| %>
+		<%= form.file_field :avatar %>
+		<%= form.submit "Add" %>
+		<% end %>
+		
 	</div>
 	<div class="userinfo">
 		<div class="name">
-			<%= current_user.name %>
+			<%= @user.name %>
 		</div>
 		<div class="bio">
 			<h5>BIO:</h5>
-			<%= current_user.bio %><br>
+			<%= @user.bio %><br>
 			<%= link_to 'Edit Bio', '#' %>
 		</div>
 	</div>

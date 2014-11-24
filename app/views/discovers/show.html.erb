@@ -48,7 +48,13 @@
   <div class="yelp">
     <div class="title">Yelp:</div>
     <br>
-    <%= @yelp.businesses.first.name %>
+    <% @yelp.businesses.each do |y| %>
+      <li>
+        <%= link_to y.name, y.url %>
+        <%= link_to image_tag y.rating_img_url_small %>
+      </li>
+        <article><%= y.snippet_text %></article>
+      <% end %>
   </div>
 
 <br>

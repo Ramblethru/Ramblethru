@@ -5,9 +5,9 @@ class DiscoversController < ApplicationController
 	def show
     #Yelp
 		params = { term: 'food',
-           limit: 3,
+               limit: 5,
          }
-    @yelp = Yelp.client.search('San Francisco', params)
+    @yelp = Yelp.client.search('New York', params)
 
     #Instagram
    	instagram = HTTParty.get('https://api.instagram.com/v1/media/search?lat=40.7&lng=74.0&count=8&client_id=ea93d7b97c444c9bbfcf23cbbcb63ee4')

@@ -1,4 +1,5 @@
 class NotesController < ApplicationController
+   include Taggable
 
   def index
     @notes = Note.all
@@ -50,6 +51,6 @@ class NotesController < ApplicationController
   private
 
   def note_params
-    params.require(:note).permit(:body, :user_id, :ramble_id)
+    params.require(:note).permit(:body, :user_id, :ramble_id, :tag_list)
   end
 end

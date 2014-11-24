@@ -1,9 +1,11 @@
 <div class="ramble-title">
-	<% if @ramble.name %>
-	<%= @ramble.name %> - 
-	<%= @ramble.destination %>
+	<% if @ramble.destination %>
+		<%= @ramble.destination %>
 	<% else %>
-	<h1>NAME OF YOUR RAMBLE HERE</h1>
+		<h1>NAME OF YOUR RAMBLE HERE</h1>
+	<% end %>
+	<% if @ramble.start_date && @ramble.end_date %>
+		<br><%= @ramble.start_date %> - <%= @ramble.end_date %>
 	<% end %>
 </div>
 <div class="map">
@@ -17,8 +19,8 @@
 		<% if @ramble.notes != nil %> 
 		<% @ramble.notes.each do |note| %>
 		<div class="notebody">
-			<%= note.body %>
-			<%= link_to "Delete Note", note, method: :delete %>
+			
+			Note: <%= note.body %> <p>Tag:<%= note.tag_list %> </p>
 
 		</div>
 		<% end %>

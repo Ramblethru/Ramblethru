@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   # validates :email, presence: true
            
 
-  # has_secure_password
+  has_secure_password
 
   has_attached_file :photo, :styles => { :medium => "300x300>",
                                          :thumb => "100x100>" }

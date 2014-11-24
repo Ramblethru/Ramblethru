@@ -84,7 +84,15 @@ var map = L.mapbox.map('map', 'daninyc.ka9776m1')
 
 
 <div class="ramble">
+<%= simple_form_for Ramble.new do |f| %>
+    <%= f.input :destination, label: false, placeholder: "Destination" %>
+    <%= f.input :start_date, label: false, :class=>"tag-input", :placeholder=>"From" %>
+    <%= f.input :end_date, label: false, :class=>"tag-input", :placeholder=>"To" %>
+
   <%= button_to 'Save this Ramble', { :controller => 'rambles', :action => 'create'} %>
+
+<% end %>
+
   <span>or</span></div>
   <form class="search-form">
     <div class="location-search">

@@ -1,6 +1,8 @@
 class RamblesController < ApplicationController
     include HTTParty
 
+
+
     def show
         @ramble = Ramble.find(params[:id])
          #Yelp
@@ -48,8 +50,9 @@ class RamblesController < ApplicationController
     end
 
     def create
-        @ramble = current_user.rambles.create(ramble_params)
-        redirect_to @ramble
+        @ramble = Ramble.new(ramble_params)
+        @ramble.save!
+        redirect_to ramble_path(@ramble)
     end
 
     def update

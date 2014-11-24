@@ -19,11 +19,11 @@ class DiscoversController < ApplicationController
     @reddit_data = JSON.parse(reddit.body)
 
     #Foursquare
-    foursquare = HTTParty.get("http://api.foursquare.com/v2/venues/explore?near=NYC&limit=4&oauth_token=3SFP4NBFWJ2LIECDWGR5EU4FA5QXMP21LK2DNWT2GEUWCEIN&v=20141123")
+    foursquare = HTTParty.get("http://api.foursquare.com/v2/venues/explore?near=NYC&limit=5&oauth_token=3SFP4NBFWJ2LIECDWGR5EU4FA5QXMP21LK2DNWT2GEUWCEIN&v=20141123")
     foursquare_data = JSON.parse(foursquare.body)
+    @foursquare_venue = foursquare_data["response"]["groups"][0]["items"]
     @foursquare_tip = foursquare_data["response"]["groups"][0]["items"]
-    @foursquare_tip_url = foursquare_data["response"]["groups"][0]["items"]
-    @foursquare_venue = foursquare_data["response"]["groups"][0]["items"][0]["venue"]["name"]
+    @foursquare_venue_url = foursquare_data["response"]["groups"][0]["items"][0]["venue"]["name"]
 
   end
 	

@@ -29,16 +29,20 @@
     </form>
   </div>
   <div class="foursq">Foursquare recommended places/tips:<br>
-     <% f = @foursquare_tip.each do |f| %>
-        <li><div class="title"><%= f["venue"]["name"] %></div></li>
-        <% @foursquare_tip_url.each do |t| %>
-            <% t["tips"] %>
-              <% t["tips"].each do |f| %>
-                <%= f["text"] %>
-        
-                <% end %>
-          <% end %>
-          <% end %>
+     <% f = @foursquare_venue.each do |f| %>
+        <li>
+        <div class="title">
+          <%= f["venue"]["name"] %>
+        </div>
+        </li>
+          Address: <%= f["venue"]["location"]["address"] %><br>
+        <% f["tips"] %>
+        <% f["tips"].each do |g| %>
+        <article><%= link_to g["text"], g["canonicalUrl"] %></article>
+        <% end %>
+
+    <% end %>
+
   </div>
   <br><div class="yelp">Yelp recommended places:
   <br><%= @yelp.businesses.first.name %>

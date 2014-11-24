@@ -21,6 +21,10 @@
     <%= link_to "Home", root_path %>
     <% end %>
   </div>
+  <%= display_alert(:notice) %>
+  <%= display_alert(:alert) %>
 <%= yield %>
+  <%= javascript_include_tag "application" %>
+
 </body>
 </html>

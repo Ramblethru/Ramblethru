@@ -15,4 +15,11 @@ module LoginsHelper
     session.delete(:current_user_id)
     @current_user = nil
   end
+
+  def display_alert(type = :notice)
+    return unless flash[type]
+      content_tag(:div, 'data-alert' => 'data-alert', :class => "alert-box #{type}") do
+      flash[type]
+    end
+  end
 end

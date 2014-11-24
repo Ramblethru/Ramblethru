@@ -17,12 +17,7 @@
 	text-align: center;
 	padding-top: 10px;
 }
-.api-feed {
-	@include span-columns(4);
-	text-align: center;
-	padding-top: 10px;
-	float: right;
-}
+
 .map {
 	width: 50%;
 	margin: 0 auto;
@@ -38,4 +33,9 @@
 	padding-left:50px;
 	max-width:350px;
 }
-
+.api-feed{
+	@include span-columns(8);
+	text-align: center;
+	padding-top: 10px;
+	float: right;
+}

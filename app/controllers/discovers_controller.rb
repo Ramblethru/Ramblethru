@@ -28,5 +28,8 @@ class DiscoversController < ApplicationController
     @foursquare_venue_url = foursquare_data["response"]["groups"][0]["items"][0]["venue"]["name"]
 
   end
-	
+
+  def create_ramble
+    @ramble = Ramble.new(ramble_params)
+	end
 end

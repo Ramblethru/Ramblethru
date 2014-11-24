@@ -36,7 +36,13 @@
 }
 
 li {
-  font-weight: bold;
   text-decoration: none;
   list-style-type: none;
+}
+article {
+  width: 50%;
+  margin: 0 auto;
+}
+.title {
+  font-weight: bold;
 }

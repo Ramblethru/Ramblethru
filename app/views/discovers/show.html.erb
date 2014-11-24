@@ -29,27 +29,42 @@
     </form>
   </div>
   <div class="foursq">Foursquare recommended places/tips:<br>
-     <% f = @foursquare_tip.each do |f| %>
-        <li><div class="title"><%= f["venue"]["name"] %></div></li>
-        <% @foursquare_tip_url.each do |t| %>
-            <% t["tips"] %>
-              <% t["tips"].each do |f| %>
-                <%= f["text"] %>
-        
-                <% end %>
-          <% end %>
-          <% end %>
+     <% f = @foursquare_venue.each do |f| %>
+        <li>
+        <div class="title">
+          <%= f["venue"]["name"] %>
+        </div>
+        </li>
+          Address: <%= f["venue"]["location"]["address"] %><br>
+        <% f["tips"] %>
+        <% f["tips"].each do |g| %>
+        <article><%= link_to g["text"], g["canonicalUrl"] %></article>
+        <% end %>
+
+    <% end %>
+
   </div>
-  <br><div class="yelp">Yelp recommended places:
-  <br><%= @yelp.businesses.first.name %>
-</div>
-<br><div class="instagram">Instagram:<br>
-<%= link_to image_tag @results %>
-</div>
+  <br>
+  <div class="yelp">
+    <div class="title">Yelp:</div>
+    <br>
+    <%= @yelp.businesses.first.name %>
+  </div>
+
 <br>
-<div class="reddit">Reddit:<br>
+<div class="instagram">
+  <div class="title">Instagram:</div>
+  <br>
+  <% i = @instagram_images.each do |i| %>
+    <%= link_to image_tag i["images"]["thumbnail"]["url"] %>
+  <% end %>
+</div>
+
+<br>
+<div class="reddit">
+  <div class="title">Reddit:</div><br>
   <% @reddit_data.each do |r| %>
-  <li><%= r["name"] %></li>
+    <li><%= r["name"] %></li>
   <% end %>
 </div>
 

@@ -3,8 +3,8 @@ class User < ActiveRecord::Base
   has_many :rambles
   has_many :notes, through: :rambles
 
-  # validates :name, presence: true
-  # validates :email, presence: true
+  validates :name, presence: true
+  validates :email, presence: true
            
 
   has_secure_password
@@ -28,7 +28,6 @@ class User < ActiveRecord::Base
   
       auth.save!
     end
-
     auth.user
   end
 end

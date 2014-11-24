@@ -44,16 +44,27 @@
     <% end %>
 
   </div>
-  <br><div class="yelp">Yelp recommended places:
-  <br><%= @yelp.businesses.first.name %>
-</div>
-<br><div class="instagram">Instagram:<br>
-<%= link_to image_tag @results %>
-</div>
+  <br>
+  <div class="yelp">
+    <div class="title">Yelp:</div>
+    <br>
+    <%= @yelp.businesses.first.name %>
+  </div>
+
 <br>
-<div class="reddit">Reddit:<br>
+<div class="instagram">
+  <div class="title">Instagram:</div>
+  <br>
+  <% i = @instagram_images.each do |i| %>
+    <%= link_to image_tag i["images"]["thumbnail"]["url"] %>
+  <% end %>
+</div>
+
+<br>
+<div class="reddit">
+  <div class="title">Reddit:</div><br>
   <% @reddit_data.each do |r| %>
-  <li><%= r["name"] %></li>
+    <li><%= r["name"] %></li>
   <% end %>
 </div>
 

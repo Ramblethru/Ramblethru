@@ -45,7 +45,7 @@ class NotesController < ApplicationController
 
   def destroy
     @note.destroy
-    redirect_to notes_url
+    redirect_to ramble_url
   end
 
   private

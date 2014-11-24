@@ -1,9 +1,11 @@
 <div class="ramble-title">
-	<% if @ramble.name %>
-	<%= @ramble.name %> - 
-	<%= @ramble.destination %>
+	<% if @ramble.destination %>
+		<%= @ramble.destination %>
 	<% else %>
-	<h1>NAME OF YOUR RAMBLE HERE</h1>
+		<h1>NAME OF YOUR RAMBLE HERE</h1>
+	<% end %>
+	<% if @ramble.start_date && @ramble.end_date %>
+		<br><%= @ramble.start_date %> - <%= @ramble.end_date %>
 	<% end %>
 </div>
 <div class="map">
@@ -17,22 +19,67 @@
 		<% if @ramble.notes != nil %> 
 		<% @ramble.notes.each do |note| %>
 		<div class="notebody">
-			<%= note.body %>
+			
+			Note: <%= note.body %> <p>Tag:<%= note.tag_list %> </p>
+
 		</div>
 		<% end %>
 		<% else %>
 		<%= link_to "Home", root_path %>
 		<% end %>
 
-		
 	</div>
 	<div class="api-feed">
-		<h2>API FEED</h2>
-		<h4>Foursquare</h4>
-		<div class="foursq"></div>
+	<div class="foursq">
+    <div class="title">Foursquare:</div><br>
+     <% f = @foursquare_venue.each do |f| %>
+        <li>
+        <div class="title">
+          <%= f["venue"]["name"] %>
+        </div>
+        </li>
+          Address: <%= f["venue"]["location"]["address"] %><br>
+        <% f["tips"] %>
+        <% f["tips"].each do |g| %>
+        <article><%= link_to g["text"], g["canonicalUrl"] %></article>
+        <% end %>
+
+    <% end %>
+
+  </div>
+  <br>
+  <div class="yelp">
+    <div class="title">Yelp:</div>
+    <br>
+    <% @yelp.businesses.each do |y| %>
+      <li>
+        <%= link_to y.name, y.url %>
+        <%= link_to image_tag y.rating_img_url_small %>
+      </li>
+        <article><%= y.snippet_text %></article>
+      <% end %>
+  </div>
+
+<br>
+<div class="instagram">
+  <div class="title">Instagram:</div>
+  <br>
+  <% i = @instagram_images.each do |i| %>
+    <%= link_to image_tag i["images"]["thumbnail"]["url"] %>
+  <% end %>
+</div>
+
+<br>
+<div class="reddit">
+  <div class="title">Reddit:</div><br>
+  <% @reddit_thread.each do |r| %>
+    <li><%= link_to r["data"]["title"], r["data"]["url"] %></li>
+  <% end %>
+</div>
 
 		<div class="recommended-notes">
 			<h4>RELEVANT NOTES GO HERE</h4>
 		</div>
 	</div>
+</div>
 </div>

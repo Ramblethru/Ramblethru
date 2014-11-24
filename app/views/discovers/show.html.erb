@@ -63,8 +63,8 @@
 <br>
 <div class="reddit">
   <div class="title">Reddit:</div><br>
-  <% @reddit_data.each do |r| %>
-    <li><%= r["name"] %></li>
+  <% @reddit_thread.each do |r| %>
+    <li><%= link_to r["data"]["title"], r["data"]["url"] %></li>
   <% end %>
 </div>
 

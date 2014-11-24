@@ -13,7 +13,7 @@
 <body>
   <div class="topbar">
     <% if logged_in? %>
-    Bienvenue, <%= current_user.name %>! |
+    Bienvenue, <%= link_to current_user.name, user_path(current_user) %>! |
     <%= link_to "Log out", logout_path %> |
       <%= link_to "Home", root_path %>
     <% else %>

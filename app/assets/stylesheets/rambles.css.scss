@@ -6,6 +6,8 @@
 
 .container {
     @include outer-container; 
+    margin-top: 100px;
+
 }
 .ramble-title {
 	text-align: center;
@@ -21,7 +23,8 @@
 	padding-top: 10px;
 	float: right;
 }
-div.map {
+.map {
+	width: 50%;
 	margin: 0 auto;
 }
 .recommended-notes {

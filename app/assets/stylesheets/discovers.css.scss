@@ -7,12 +7,6 @@
    text-align: center;
 }
 
-.map {
-   background: url("http://rainelaw.files.wordpress.com/2007/11/torino_google-map.png");
-   height: 450px;
-   width: 800px;
-   margin: 0 auto;
-}
 
 .ramble {
   color:white;
@@ -45,4 +39,8 @@ article {
 }
 .title {
   font-weight: bold;
+}
+.map {
+  width: 50%;
+  margin: 0 auto;
 }

@@ -1,7 +1,9 @@
 <div class="pagename">
   <h1>Discover your destination</h1>
   <div class="location"> Location name </div>
-  <div class="map"></div>
+  <div class='map'>
+    <iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/daninyc.ka9776m1/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoiZGFuaW55YyIsImEiOiJsZGtFNGdnIn0.3NYblJVlOSsj0kll5c4aKA'></iframe>
+  </div>
   <div class="notes"><h4>NOTES</h4></div>
   <div class="noteboxes">Create note partial here</div>
   <div class="tag-div">
@@ -22,13 +24,18 @@
       $(function() {
         $('#tags_1').tagsInput({width:'auto'});
       });
-    </script>
+    L.mapbox.accessToken = 'pk.eyJ1IjoiZGFuaW55YyIsImEiOiJsZGtFNGdnIn0.3NYblJVlOSsj0kll5c4aKA';
+var map = L.mapbox.map('map', 'daninyc.ka9776m1')
+    .setView([40, -74.50], 9);
+        </script>
+
     <form>
       <p><label>Tags (important point: a tag can't have a comma inside of it, since commas are used as a separator between tags)</label>
         <input id="tags_1" type="text" class="tags" value="restaurant,hotel,museum,show,park,trail,bar,durham nc" /></p>
     </form>
   </div>
-  <div class="foursq">Foursquare recommended places/tips:<br>
+  <div class="foursq">
+    <div class="title">Foursquare:</div><br>
      <% f = @foursquare_venue.each do |f| %>
         <li>
         <div class="title">
@@ -48,7 +55,13 @@
   <div class="yelp">
     <div class="title">Yelp:</div>
     <br>
-    <%= @yelp.businesses.first.name %>
+    <% @yelp.businesses.each do |y| %>
+      <li>
+        <%= link_to y.name, y.url %>
+        <%= link_to image_tag y.rating_img_url_small %>
+      </li>
+        <article><%= y.snippet_text %></article>
+      <% end %>
   </div>
 
 <br>
@@ -63,8 +76,8 @@
 <br>
 <div class="reddit">
   <div class="title">Reddit:</div><br>
-  <% @reddit_data.each do |r| %>
-    <li><%= r["name"] %></li>
+  <% @reddit_thread.each do |r| %>
+    <li><%= link_to r["data"]["title"], r["data"]["url"] %></li>
   <% end %>
 </div>
 

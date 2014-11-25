@@ -66,14 +66,14 @@
     <%= link_to image_tag i["images"]["thumbnail"]["url"] %>
     <% end %>
   </div>
-
-  <br>
-  <div class="reddit">
-    <div class="title">Reddit:</div><br>
-    <% @reddit_thread.each do |r| %>
-    <li><%= link_to r["data"]["title"], r["data"]["url"] %></li>
-    <% end %>
-  </div>
+<br>
+<div class="reddit">
+  <div class="title">Reddit:</div><br>
+  <% @reddit_thread.each do |r| %>
+    <li><%= link_to r["data"]["title"], r["data"]["url"] %>
+    <%= button_to 'Save this Tip', { :controller => 'rambles', :action => 'add_api'} %></li>
+  <% end %>
+</div>
 
   <div class="recommended-notes">
    <h4>RELEVANT NOTES GO HERE</h4>

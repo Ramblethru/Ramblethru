@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141125010643) do
+ActiveRecord::Schema.define(version: 20141125170114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20141125010643) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "reddit_thread"
   end
 
   add_index "rambles", ["user_id"], name: "index_rambles_on_user_id", using: :btree

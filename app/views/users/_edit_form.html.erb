@@ -1,0 +1,12 @@
+<%= form_for(@user) do |f| %>
+	<%= f.label :name, nil, class: 'post_label' %><br>
+	<%= f.text_field :name %>
+	<%= f.label :email %>
+	<%= f.text_field :email %>
+	<%= f.label :password %>
+	<%= f.text_field :password %>
+	<%= f.button :submit, class: "radius small" %>
+
+<% end %>
+
+

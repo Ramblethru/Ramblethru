@@ -18,12 +18,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def update
-    @user = User.find(params[:id])
-    @user.update(user_params)
-    redirect_to @user
-  end
-
   def create_auth
     @user = User.find_or_create_by_auth_hash(auth_hash)
     self.current_user = @user
@@ -36,7 +30,23 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
+
+    render 'users/_edit_form'
   end
+
+  def update
+    @user = User.find(params[:id])
+      if @user.update(user_params)
+        flash[:notice] = 'User was successfully updated.' 
+        redirect_to @user
+
+      else
+        render :edit 
+      end
+  end
+
+ 
 
   protected
 

@@ -139,6 +139,8 @@ GEM
     minitest (5.4.3)
     mocha (1.1.0)
       metaclass (~> 0.0.1)
+    momentjs-rails (2.8.3)
+      railties (>= 3.1)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -369,6 +371,7 @@ DEPENDENCIES
   kaminari
   mapbox-rails
   mocha
+  momentjs-rails (>= 2.8.1)
   neat
   omniauth-foursquare
   omniauth-google-oauth2

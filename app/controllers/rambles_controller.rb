@@ -50,9 +50,8 @@ class RamblesController < ApplicationController
     end
 
     def create
-        if @current_user
-            @ramble = Ramble.new(ramble_params)
-            @ramble.save!
+        @ramble = Ramble.new(ramble_params)
+        if @ramble.save
             redirect_to ramble_path(@ramble)
         else
             flash[:notice] = "You must be logged in to create a ramble."

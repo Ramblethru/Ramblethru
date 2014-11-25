@@ -24,8 +24,8 @@
 // Calendar
 $(function (){
         $('#start_date').datepicker( {
-        	 dateFormat: "yy-mm-dd",
-        	 showButtonPanel: true,
+           dateFormat: "yy-mm-dd",
+           showButtonPanel: true,
            inline: true,  
            defaultDate: "+1w",
            numberOfMonths: 3,
@@ -35,7 +35,7 @@ $(function (){
 
         });
         $('#end_date').datepicker( {
-        	 dateFormat: "yy-mm-dd",
+           dateFormat: "yy-mm-dd",
            showButtonPanel: true,
            inline: true,  
            defaultDate: "+1w",

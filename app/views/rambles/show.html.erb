@@ -19,13 +19,13 @@
 		<% if @ramble.notes != nil %> 
 		<% @ramble.notes.each do |note| %>
 		<div class="notebody">
-<!-- 			Note: <%= note.body %> <p>Tag:<%= note.tag_list %> </p>
- -->		</div>
+			Note: <%= note.body %> <p>Tag:<%= note.tag_list %> </p>
+		</div>
 		<% end %>
 		<% else %>
 		<%= link_to "Home", root_path %>
 		<% end %>
-<div class="end"> </div>
+
 	</div>
 	<div class="api-feed">
 	<div class="foursq">
@@ -80,5 +80,4 @@
 		</div>
 	</div>
 </div>
-
 </div>

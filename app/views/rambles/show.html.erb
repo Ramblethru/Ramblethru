@@ -71,7 +71,8 @@
 <div class="reddit">
   <div class="title">Reddit:</div><br>
   <% @reddit_thread.each do |r| %>
-    <li><%= link_to r["data"]["title"], r["data"]["url"] %></li>
+    <li><%= link_to r["data"]["title"], r["data"]["url"] %>
+    <%= button_to 'Save this Tip', { :controller => 'rambles', :action => 'add_api'} %></li>
   <% end %>
 </div>
 

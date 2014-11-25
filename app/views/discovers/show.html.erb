@@ -6,34 +6,6 @@
   </div>
   <div class="notes"><h4>NOTES</h4></div>
   <div class="noteboxes">Create note partial here</div>
-  <div class="tag-div">
-    <link rel="stylesheet" type="text/css" href="http://xoxco.com/projects/code/tagsinput/jquery.tagsinput.css" />
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-    <script type="text/javascript" src="http://xoxco.com/projects/code/tagsinput/jquery.tagsinput.js"></script>
-    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js'></script>
-    <script type="text/javascript">
-      function onAddTag(tag) {
-        alert("Added a tag: " + tag);
-      }
-      function onRemoveTag(tag) {
-        alert("Removed a tag: " + tag);
-      }
-      function onChangeTag(input,tag) {
-        alert("Changed a tag: " + tag);
-      }
-      $(function() {
-        $('#tags_1').tagsInput({width:'auto'});
-      });
-    L.mapbox.accessToken = 'pk.eyJ1IjoiZGFuaW55YyIsImEiOiJsZGtFNGdnIn0.3NYblJVlOSsj0kll5c4aKA';
-var map = L.mapbox.map('map', 'daninyc.ka9776m1')
-    .setView([40, -74.50], 9);
-        </script>
-
-    <form>
-      <p><label>Tags (important point: a tag can't have a comma inside of it, since commas are used as a separator between tags)</label>
-        <input id="tags_1" type="text" class="tags" value="restaurant,hotel,museum,show,park,trail,bar,durham nc" /></p>
-    </form>
-  </div>
   <div class="foursq">
     <div class="title">Foursquare:</div><br>
      <% f = @foursquare_venue.each do |f| %>
@@ -47,9 +19,7 @@ var map = L.mapbox.map('map', 'daninyc.ka9776m1')
         <% f["tips"].each do |g| %>
         <article><%= link_to g["text"], g["canonicalUrl"] %></article>
         <% end %>
-
     <% end %>
-
   </div>
   <br>
   <div class="yelp">
@@ -63,37 +33,30 @@ var map = L.mapbox.map('map', 'daninyc.ka9776m1')
         <article><%= y.snippet_text %></article>
       <% end %>
   </div>
-
-<br>
-<div class="instagram">
-  <div class="title">Instagram:</div>
   <br>
-  <% i = @instagram_images.each do |i| %>
-    <%= link_to image_tag i["images"]["thumbnail"]["url"] %>
+  <div class="instagram">
+    <div class="title">Instagram:</div>
+    <br>
+    <% i = @instagram_images.each do |i| %>
+      <%= link_to image_tag i["images"]["thumbnail"]["url"] %>
+    <% end %>
+  </div>
+  <br>
+  <div class="reddit">
+    <div class="title">Reddit:</div><br>
+    <% @reddit_thread.each do |r| %>
+      <li><%= link_to r["data"]["title"], r["data"]["url"] %></li>
+    <% end %>
+  </div>
+  <div class="ramble">
+  <%= simple_form_for Ramble.new do |f| %>
+      <%= f.input :destination, label: false, placeholder: "Destination" %>
+      <%= f.input :start_date, label: false, :class=>"tag-input", :placeholder=>"From" %>
+      <%= f.input :end_date, label: false, :class=>"tag-input", :placeholder=>"To" %>
+    <%= button_to 'Save this Ramble', { :controller => 'rambles', :action => 'create'} %>
   <% end %>
-</div>
-
-<br>
-<div class="reddit">
-  <div class="title">Reddit:</div><br>
-  <% @reddit_thread.each do |r| %>
-    <li><%= link_to r["data"]["title"], r["data"]["url"] %></li>
-  <% end %>
-</div>
-
-
-
-<div class="ramble">
-<%= simple_form_for Ramble.new do |f| %>
-    <%= f.input :destination, label: false, placeholder: "Destination" %>
-    <%= f.input :start_date, label: false, :class=>"tag-input", :placeholder=>"From" %>
-    <%= f.input :end_date, label: false, :class=>"tag-input", :placeholder=>"To" %>
-
-  <%= button_to 'Save this Ramble', { :controller => 'rambles', :action => 'create'} %>
-
-<% end %>
-
-  <span>or</span></div>
+  <span>or</span>
+  </div>
   <form class="search-form">
     <div class="location-search">
       <input type="text" placeholder="Search for more">

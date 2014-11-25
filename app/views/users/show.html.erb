@@ -31,10 +31,13 @@
 			<h3> My Rambles(dropdown?) </h3>
 			<div class="userrambles">
 			<% @user.rambles.each do |r| %>
-				<%= r.destination %>
-				<%= r.start_date %> - <%= r.end_date %>
+				<%= link_to r.destination, ramble_path(r) %><br>
+				<%= r.start_date %> - <%= r.end_date %><br>
+				<% if r.reddit_thread != nil %>
+				Saved from Reddit: <%= r.reddit_thread %><br>
+				<% end %>
 				<% r.notes.each do |n| %>
-					<%= n.body %>
+					Note: <%= n.body %><br>
 					<% end %>
 				<% end %>
 				

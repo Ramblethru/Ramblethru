@@ -12,6 +12,7 @@ $visual-grid-opacity: 0.4 !default;
 @import "discovers";
 
 
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -28,6 +29,8 @@ $visual-grid-opacity: 0.4 !default;
  *= require jquery.tagsinput
  *= require_self
  *= require mapbox
+ *= require jquery-ui/datepicker
+ 
  */
 
 

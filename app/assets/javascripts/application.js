@@ -22,6 +22,7 @@
 
 
 // Calendar
+
 $(function (){
         $('#start_date').datepicker( {
            dateFormat: "yy-mm-dd",
@@ -47,8 +48,3 @@ $(function (){
         });
 
 });
-// $(function (){
-//         $('#end_date').datepicker(
-
-//         	);
-// });

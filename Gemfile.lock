@@ -143,6 +143,7 @@ GEM
     neat (1.5.1)
       bourbon (>= 3.1)
       sass (~> 3.2.19)
+    nifty-generators (0.4.6)
     nokogiri (1.6.4.1)
       mini_portile (~> 0.6.0)
     oauth (0.4.7)
@@ -366,6 +367,7 @@ DEPENDENCIES
   kaminari
   mapbox-rails
   neat
+  nifty-generators
   omniauth-foursquare
   omniauth-google-oauth2
   omniauth-twitter

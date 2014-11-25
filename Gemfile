@@ -62,6 +62,7 @@ group :development, :test do
   gem 'poltergeist'
   # gem 'did_you_mean', '~> 0.7.0'
   gem 'phantomjs'
+  gem 'nifty-generators', :group => :development
   gem 'rspec-rails', '~>3.0'
 end
 

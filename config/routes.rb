@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'users#create_auth'
   get '/users/:id/edit_bio', to: 'users#edit_bio', as: :edit_bio
   get '/users/:id/edit_name', to: 'users#edit_name', as: :edit_name
+  get '/users/:id/edit_lives_in', to: 'users#edit_lives_in', as: :edit_lives_in
   
   # post '/users/:user_id/rambles/new' => 'rambles#new', as: 'new_user_ramble_post'
 

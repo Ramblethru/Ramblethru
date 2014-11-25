@@ -15,5 +15,9 @@
   <%= f.input :password_confirmation %>
   <%= f.input :bio, placeholder: 'Provide a bio here if desired' %>
   <%= f.input :lives_in %>
+  <%= f.label :avatar %>
+  <%= f.file_field :avatar %>
   <%= f.button :submit, "Register" %>
+
+
 <% end %>

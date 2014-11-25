@@ -23,8 +23,14 @@
 		<div class="usertrips">
 			<h3> My Rambles(dropdown?) </h3>
 			<div class="userrambles">
-				<p>Ramble1</p>
-				<p>Ramble2</p>
+			<% @user.rambles.each do |r| %>
+				<%= r.destination %>
+				<%= r.start_date %> - <%= r.end_date %>
+				<% r.notes.each do |n| %>
+					<%= n.body %>
+					<% end %>
+				<% end %>
+				
 			</div>
 			<div class="usernotes">
 				<p>Notes1</p>

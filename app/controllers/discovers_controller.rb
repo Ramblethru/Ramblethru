@@ -14,9 +14,9 @@ class DiscoversController < ApplicationController
     instagram_data = JSON.parse(instagram.body)
    	@instagram_images = instagram_data["data"]
     # [0]["images"]["thumbnail"]["url"]
-				
-    #Reddit    			
-    reddit = HTTParty.get("http://www.reddit.com/r/subreddit/search.json?q=newyorkcity&limit=5&sort=top")	
+
+    #Reddit
+    reddit = HTTParty.get("http://www.reddit.com/r/subreddit/search.json?q=newyorkcity&limit=5&sort=top")
     reddit_data = JSON.parse(reddit.body)
     @reddit_thread = reddit_data["data"]["children"]
 

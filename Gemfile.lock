@@ -132,12 +132,18 @@ GEM
     mapbox-rails (1.6.1.1)
     memoizable (0.4.2)
       thread_safe (~> 0.3, >= 0.3.1)
+    metaclass (0.0.4)
     method_source (0.8.2)
     mime-types (2.4.3)
     mini_portile (0.6.1)
     minitest (5.4.3)
+<<<<<<< HEAD
     momentjs-rails (2.8.3)
       railties (>= 3.1)
+=======
+    mocha (1.1.0)
+      metaclass (~> 0.0.1)
+>>>>>>> a216e7eb6dadb6dbf0e8be138cf69ed77f6e839d
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -367,7 +373,11 @@ DEPENDENCIES
   jquery-ui-rails
   kaminari
   mapbox-rails
+<<<<<<< HEAD
   momentjs-rails (>= 2.8.1)
+=======
+  mocha
+>>>>>>> a216e7eb6dadb6dbf0e8be138cf69ed77f6e839d
   neat
   omniauth-foursquare
   omniauth-google-oauth2

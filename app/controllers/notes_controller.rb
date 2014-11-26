@@ -36,12 +36,15 @@ def create
 end
 
 def update
+  @ramble = Ramble.find(params[:ramble_id])
+  @note = @ramble.notes.find(params[:id])
   @note.update(note_params)
-  redirect_to @notes
+  redirect_to @ramble
 end
 
 def edit
   @ramble = Ramble.find(params[:ramble_id])
+  @note = @ramble.notes.find(params[:id])
 end
 
 def destroy

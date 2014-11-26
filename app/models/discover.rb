@@ -1,4 +1,4 @@
 class Discover < ActiveRecord::Base
-  # geocoded_by :address
-  # after_validation :geocode, :if => :address_changed?
+  geocoded_by :destination
+  after_validation :geocode, :if => :destination_changed?
 end

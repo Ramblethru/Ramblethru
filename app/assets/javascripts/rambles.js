@@ -4,6 +4,7 @@
   });
 
 
+
 $(function(){
         // Check the initial Poistion of the Sticky Header
         var stickyHeaderTop = $('.ramble-notes').offset().top;

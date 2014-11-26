@@ -17,6 +17,8 @@
 
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}" %>
 
+<%= link_to "Foursquare API info", "http://api.foursquare.com/v2/venues/explore?ll=#{@location.latitude},#{@location.longitude}&limit=5&oauth_token=3SFP4NBFWJ2LIECDWGR5EU4FA5QXMP21LK2DNWT2GEUWCEIN&v=20141123" %>
+
 <h3>Nearby locations</h3>
 <ul>
   <% for location in @location.nearbys(10) %>

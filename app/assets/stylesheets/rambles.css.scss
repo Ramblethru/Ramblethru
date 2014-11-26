@@ -16,6 +16,8 @@ text-align: center;
 @include span-columns(4);
 text-align: center;
 padding-top: 10px;
+max-height:650px;
+overflow: scroll;
 }
 
 .map {
@@ -31,7 +33,6 @@ margin-top:15px;
 margin-bottom:15px;
 text-align:left;
 padding-left:50px;
-max-width:350px;
 }
 .api-feed{
 @include span-columns(8);

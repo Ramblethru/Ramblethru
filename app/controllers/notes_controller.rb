@@ -50,7 +50,7 @@ end
 def destroy
   @note = Note.find(params[:id])
   @note.destroy
-  redirect_to ramble_url
+  redirect_to root_path
 end
 
 private

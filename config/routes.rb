@@ -7,13 +7,12 @@ Rails.application.routes.draw do
   resources :users
   resources :rambles do
     resources :notes#, shallow: true
-      delete 'delete_note' => 'notes#destroy'
-
+      get 'notes/:id/delete' => 'notes#destroy'
   end
 
   resource :discover, :only => [:show]
 
-  resources :notes, :only => [:index]
+  resources :notes, :only => [:index, :destroy]
 
   resources :logins, :only => [:new, :create]
   get 'logout' => 'logins#destroy'

@@ -38,4 +38,8 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
+
+  require 'jquery/modal/rails'
+  require 'jquery/modal/filters'
+  require 'jquery/modal/helpers'
 end

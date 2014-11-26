@@ -83,13 +83,13 @@
 <!-- Ramble creation
  --><div class="ramble">
       <h4>Like what you see? Create a ramble (itinerary) below! </h4>
-<%= simple_form_for Ramble.new do |f| %>
-    <%= f.input :destination, label: false, placeholder: "Destination" %>
-    <%= f.text_field :start_date, label: false, placeholder: "Start Date",id: 'start_date' %> 
-    <%= f.text_field :end_date,label: false, placeholder: "End Date", id: 'end_date' %>
-    <%= button_to 'Save this Ramble', { :controller => 'rambles', :action => 'create'} %>
+      <div id="demo-form" class="demo-description" style="display: none; ">
+  <p>
+  <%= render "/rambles/create" %>
+  </p>
+</div>
 
-<% end %>
+<%=  link_to_modal "Create", new_ramble_path, :class=>"button" %>
 </div>
 
 

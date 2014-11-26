@@ -1,7 +1,20 @@
 <%= simple_form_for Discover.new do |f| %>
     <%= f.input :destination, label: false, placeholder: "Destination" %>
-    <%= f.text_field :start_date, label: false, placeholder: "Start Date",id: 'start_date' %> 
-    <%= f.text_field :end_date,label: false, placeholder: "End Date", id: 'end_date' %>
-    <%= button_to 'Save this Ramble', { :controller => 'rambles', :action => 'create'} %>
+    <%= button_to 'Search', { :controller => 'discovers', :action => 'create'} %>
 
 <% end %>
+
+
+<!--
+<%= simple_form_for(@discover) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :destination %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+-->

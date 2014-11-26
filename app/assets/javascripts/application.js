@@ -17,10 +17,7 @@
 //= require_tree .
 //= require mapbox.js
 //= require moment
+
 //= require jquery-ui/datepicker
-
-
-
-// Calendar
-
+//= require jquery.modal
 

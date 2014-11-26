@@ -22,17 +22,17 @@
 			<% if note.body %> Note: <%= note.body %> <p>Tag:<%= note.tag_list %> </p>
       <%= link_to 'Edit note', edit_ramble_note_path(@ramble.id, note.id) %> ,
       <%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %><% end %>
-		</div>
-		<% end %>
-		<% else %>
-		<%= link_to "Home", root_path %>
-		<% end %>
+    </div>
+    <% end %>
+    <% else %>
+    <%= link_to "Home", root_path %>
+    <% end %>
     <div class="end"> </div>
-	</div>
-	<div class="api-feed">
-	<div class="foursq">
+  </div>
+  <div class="api-feed">
+   <div class="foursq">
     <div class="title">Foursquare:</div><br>
-    <% f = @foursquare_venue.each do |f| %>
+    <% @foursquare_venue.each do |f| %>
     <li>
       <div class="title">
         <%= f["venue"]["name"] %>
@@ -43,7 +43,6 @@
     <% f["tips"].each do |g| %>
     <article><%= link_to g["text"], g["canonicalUrl"] %></article>
     <% end %>
-
     <% end %>
 
   </div>
@@ -66,6 +65,7 @@
     <br>
     <% i = @instagram_images.each do |i| %>
     <%= link_to image_tag i["images"]["thumbnail"]["url"] %>
+    <%= button_to 'Save this Image', { :controller => 'rambles', :action => 'add_instagram'} %></li>
     <% end %>
   </div>
 

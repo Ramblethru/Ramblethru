@@ -1,25 +1,11 @@
-  $(".tag-input").tagsInput({
-    width: '100%',
-    height: '1rem',
-  });
+<%= simple_form_for Ramble.new do |f| %>
+    <%= f.input :destination, label: false, placeholder: "Destination" %>
+    <%= f.text_field :start_date, label: false, placeholder: "Start Date",id: 'start_date' %> 
+    <%= f.text_field :end_date,label: false, placeholder: "End Date", id: 'end_date' %>
+    <%= button_to 'Save this Ramble', { :controller => 'rambles', :action => 'create'} %>
 
-
-$(function(){
-        // Check the initial Poistion of the Sticky Header
-        var stickyHeaderTop = $('.ramble-notes').offset().top;
-
-        $(window).scroll(function(){
-                if( $(window).scrollTop() > stickyHeaderTop ) {
-                        $('.ramble-notes').css({position: 'fixed', top: '0px'});
-                        $('.end').css('display', 'block');
-                } else {
-                        $('.ramble-notes').css({position: 'static', top: '0px'});
-                        $('.end').css('display', 'none');
-                }
-        });
-  });
-
-
+<% end %>
+<script>
 $(function (){
         $('#start_date').datepicker( {
            dateFormat: "yy-mm-dd",
@@ -43,3 +29,6 @@ $(function (){
             $( "#from" ).datepicker( "option", "maxDate", selectedDate );
       }
         });
+
+});
+</script>

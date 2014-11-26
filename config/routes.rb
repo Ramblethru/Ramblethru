@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get '/users/:id/edit_lives_in', to: 'users#edit_lives_in', as: :edit_lives_in
 
   post 'rambles/:id/add_api', to: 'rambles#add_api', as: :add_api
+  post 'rambles/:id/add_instagram', to: 'rambles#add_instagram', as: :add_instagram
   
   # post '/users/:user_id/rambles/new' => 'rambles#new', as: 'new_user_ramble_post'
 

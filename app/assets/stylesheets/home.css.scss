@@ -47,3 +47,68 @@ a.discover {
 	text-align: center;
 	width: 100%;
 }
+.accordion-tabs-minimal {
+  $tab-border-color: $base-border-color;
+  $tab-border: 1px solid $tab-border-color;
+  $tab-content-background: $base-background-color;
+  $tab-active-background: $tab-content-background;
+  $tab-inactive-color: $base-background-color;
+  $tab-inactive-hover-color: darken($light-gray, 5);
+  $tab-mode: $medium-screen;
+  margin: 0 auto;
+  width: 50%;
+
+  @include clearfix;
+  margin-bottom: $base-spacing;
+
+  li.tab-header-and-content {
+    @include media($tab-mode) {
+      display: inline;
+    }
+  }
+
+  a.tab-link {
+    background-color: $tab-inactive-color;
+    border-top: $tab-border;
+    color: $dark-gray;
+    display: block;
+    font-weight: 400;
+    padding: $base-spacing/2 $gutter;
+
+    @include media($tab-mode) {
+      @include inline-block;
+      border-top: 0;
+    }
+
+    &:hover {
+      color: $base-link-color;
+    }
+
+    &:focus {
+      outline: none;
+    }
+    &.is-open {
+      margin: 0 auto;
+    }
+
+    &.is-active {
+      border-bottom: 0;
+
+      @include media($tab-mode) {
+        border: $tab-border;
+        border-bottom-color: $tab-active-background;
+        margin-bottom: -1px;
+      }
+    }
+  }
+
+  .tab-content {
+    display: none;
+    padding: $base-spacing $gutter;
+
+    @include media($tab-mode) {
+      border-top: $tab-border;
+      float: left;
+    }
+  }
+}

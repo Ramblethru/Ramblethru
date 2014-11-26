@@ -30,7 +30,7 @@
 	<div class="api-feed">
 	<div class="foursq">
     <div class="title">Foursquare:</div><br>
-     <% f = @foursquare_venue.each do |f| %>
+     <% @foursquare_venue.each do |f| %>
         <li>
         <div class="title">
           <%= f["venue"]["name"] %>
@@ -64,6 +64,8 @@
   <br>
   <% i = @instagram_images.each do |i| %>
     <%= link_to image_tag i["images"]["thumbnail"]["url"] %>
+    <%= button_to 'Save this Image', { :controller => 'rambles', :action => 'add_instagram'} %></li>
+
   <% end %>
 </div>
 

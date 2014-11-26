@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :rambles do
-    resources :notes, shallow: true
+    resources :notes#, shallow: true
       delete 'delete_note' => 'notes#destroy'
 
   end

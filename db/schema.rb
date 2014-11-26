@@ -87,10 +87,6 @@ ActiveRecord::Schema.define(version: 20141125170114) do
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
     t.text     "bio"
     t.string   "lives_in"
     t.string   "password_digest"

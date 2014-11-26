@@ -19,7 +19,8 @@
 		<% if @ramble.notes %> 
 		<% @ramble.notes.each do |note| %>
 		<div class="notebody">
-			Note: <%= note.body %> <p>Tag:<%= note.tag_list %> </p>
+			<% if note.body %> Note: <%= note.body %> <p>Tag:<%= note.tag_list %> </p>
+      <%= link_to 'Edit note', edit_ramble_note_path(@ramble.id, note.id) %> <% end %>
 		</div>
 		<% end %>
 		<% else %>
@@ -66,14 +67,14 @@
     <%= link_to image_tag i["images"]["thumbnail"]["url"] %>
     <% end %>
   </div>
-<br>
-<div class="reddit">
-  <div class="title">Reddit:</div><br>
-  <% @reddit_thread.each do |r| %>
-    <li><%= link_to r["data"]["title"], r["data"]["url"] %>
-    <%= button_to 'Save this Tip', { :controller => 'rambles', :action => 'add_api'} %></li>
-  <% end %>
-</div>
+
+  <br>
+  <div class="reddit">
+    <div class="title">Reddit:</div><br>
+    <% @reddit_thread.each do |r| %>
+    <li><%= link_to r["data"]["title"], r["data"]["url"] %></li>
+    <% end %>
+  </div>
 
   <div class="recommended-notes">
    <h4>RELEVANT NOTES GO HERE</h4>

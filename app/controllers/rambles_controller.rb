@@ -1,6 +1,8 @@
 class RamblesController < ApplicationController
     include HTTParty
 
+    before_action :authenticate
+
     def show
         yelp             
         instagram

@@ -19,9 +19,12 @@
 		<% if @ramble.notes %> 
 		<% @ramble.notes.each do |note| %>
 		<div class="notebody">
+      <div id="<%= dom_id(note) %>">
 			<% if note.body %> Note: <%= note.body %> <p>Tag:<%= note.tag_list %> </p>
       <%= link_to 'Edit note', edit_ramble_note_path(@ramble.id, note.id) %> ,
-      <%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %><% end %>
+      <%= link_to 'Destroy', note, method: :delete, remote: true %>
+      <% end %>
+    </div>
     </div>
     <% end %>
     <% else %>

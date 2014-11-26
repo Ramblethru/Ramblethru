@@ -1,12 +1,11 @@
-  $(".tag-input").tagsInput({
-    width: '100%',
-    height: '1rem',
-  });
+  // $(".tag-input").tagsInput({
+  //   width: '100%',
+  //   height: '1rem',
+  // });
 
 
 
 $(function(){
-        // Check the initial Poistion of the Sticky Header
         var stickyHeaderTop = $('.ramble-notes').offset().top;
 
         $(window).scroll(function(){
@@ -21,26 +20,26 @@ $(function(){
   });
 
 
-$(function (){
-        $('#start_date').datepicker( {
-           dateFormat: "yy-mm-dd",
-           showButtonPanel: true,
-           inline: true,  
-           defaultDate: "+1w",
-           numberOfMonths: 3,
-           onClose: function( selectedDate ) {
-            $( "#end_date" ).datepicker( "option", "minDate", selectedDate );
-      }
+// $(function (){
+//         $('#start_date').datepicker( {
+//            dateFormat: "yy-mm-dd",
+//            showButtonPanel: true,
+//            inline: true,  
+//            defaultDate: "+1w",
+//            numberOfMonths: 3,
+//            onClose: function( selectedDate ) {
+//             $( "#end_date" ).datepicker( "option", "minDate", selectedDate );
+//       }
 
-        });
-        $('#end_date').datepicker( {
-           dateFormat: "yy-mm-dd",
-           showButtonPanel: true,
-           inline: true,  
-           defaultDate: "+1w",
-           changeMonth: true,
-           numberOfMonths: 3,
-           onClose: function( selectedDate ) {
-            $( "#from" ).datepicker( "option", "maxDate", selectedDate );
-      }
-        });
+//         });
+//         $('#end_date').datepicker( {
+//            dateFormat: "yy-mm-dd",
+//            showButtonPanel: true,
+//            inline: true,  
+//            defaultDate: "+1w",
+//            changeMonth: true,
+//            numberOfMonths: 3,
+//            onClose: function( selectedDate ) {
+//             $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+//       }
+//         });

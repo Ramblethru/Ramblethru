@@ -49,8 +49,16 @@ end
 
 def destroy
   @note = Note.find(params[:id])
-  @note.destroy
-  redirect_to root_path
+  respond_to do |format|
+      format.html do
+        @note.destroy
+        redirect_to root_path
+      end
+      format.js do
+        @note.destroy
+        render 'notes/remove', status: :success
+      end
+    end
 end
 
 private

@@ -46,8 +46,6 @@ class UsersController < ApplicationController
       end
   end
 
- 
-
   protected
 
   def auth_hash

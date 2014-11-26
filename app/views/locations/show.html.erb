@@ -15,7 +15,15 @@
   <%= @location.longitude %>
 </p>
 
-<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}" %>
+<h2><b>
+  <%= link_to "Foursquare API info", "http://api.foursquare.com/v2/venues/explore?ll=#{@location.latitude},#{@location.longitude}&limit=5&oauth_token=3SFP4NBFWJ2LIECDWGR5EU4FA5QXMP21LK2DNWT2GEUWCEIN&v=20141123" %>
+</b></h2>
+
+<b>Passing (lon,lat) into a static Mapbox map <a href="https://www.mapbox.com/developers/api/static/#images">(Source)</a></b>
+  <iframe width='100%' height='300px' frameBorder='0' src='http://api.tiles.mapbox.com/v4/examples.map-zr0njcqy/<%= "#{@location.longitude}" %>,<%= "#{@location.latitude}" %>,13/500x300.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IlhHVkZmaW8ifQ.hAMX5hSW-QnTeRCMAy9A8Q'></iframe>
+
+
+
 
 <h3>Nearby locations</h3>
 <ul>

@@ -17,6 +17,8 @@
 	</form>
 	
 	</div>
+
+	
 <div class="container">
 	<div class="homepage-about">
 			<h1>What We Do</h1>
@@ -46,7 +48,20 @@
 
 	</div>
 </div>
-	<div class="login-register">
+<div id="demo-form" class="demo-description" style="display: none; ">
+  <p>
+    The basic dialog window is an overlay positioned within the viewport and is protected from page content
+    (like select elements) shining through with an iframe. It has a title bar and a content area, and can be moved,
+    resized and closed with the 'x' icon by default.
+  </p>
+</div>
+
+<%=  link_to_modal "New User", new_user_path, :class=>"button" %>
+
+
+
+
+	<!-- <div class="login-register">
 		<% if !logged_in? %>
       <h1>Log in</h1>
       <div class="or-signup">(or <%= link_to "sign up for a new account", new_user_path %>)</div>
@@ -54,7 +69,6 @@
       <%= render "/logins/login_form" %>
 			<br><%= link_to "Log in with Foursquare", "/auth/foursquare" %>
       <br><%= link_to "Log in with Twitter", "/auth/twitter"%>
-		<% else %>
-			<h3>Welcome,</h3><%= current_user.name %>!
+		
 		<% end %>
-	</div>
+	</div> -->

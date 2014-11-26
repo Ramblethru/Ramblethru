@@ -34,7 +34,11 @@
 				<%= link_to r.destination, ramble_path(r) %><br>
 				<%= r.start_date %> - <%= r.end_date %><br>
 				<% if r.reddit_thread != nil %>
-				Saved from Reddit: <%= r.reddit_thread %><br>
+				Saved from Reddit: <%= link_to r.reddit_thread, r.reddit_thread %>
+				<br>
+				<% end %>
+				<% if r.instagram_url != nil %>
+				Saved from Instagram:<br> <%= link_to image_tag r.instagram_url %><br>
 				<% end %>
 				<% r.notes.each do |n| %>
 					Note: <%= n.body %><br>
@@ -43,8 +47,7 @@
 				
 			</div>
 			<div class="usernotes">
-				<p>Notes1</p>
-				<p>Notes2</p>
+			
 			</div>
 		</div>
 	</div>

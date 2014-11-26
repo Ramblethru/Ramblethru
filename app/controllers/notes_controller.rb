@@ -1,58 +1,61 @@
 class NotesController < ApplicationController
-   include Taggable
+ include Taggable
 
-  def index
-    @notes = Note.all
+ def index
+  @notes = Note.all
 
-  end
+end
 
-  def show
-    @note = Note.find(params[:id])
-  end
+def show
+  @note = Note.find(params[:id])
+end
 
-  def new
-    @note = Note.new
-  end
+def new
+  @note = Note.new
+end
 
-  def create
-    @ramble = Ramble.find(params[:ramble_id])
-    @note = @ramble.notes.create(note_params)
-    respond_to do |format|
-      format.html do
-        if @note.save
-          redirect_to @ramble, success: "Your note was recorded."
-        else
-          redirect_to root_path, alert: "Sorry, you must enter something. Anything at all."
-        end
+def create
+  @ramble = Ramble.find(params[:ramble_id])
+  @note = @ramble.notes.create(note_params)
+  respond_to do |format|
+    format.html do
+      if @note.save
+        redirect_to @ramble, success: "Your note was recorded."
+      else
+        redirect_to root_path, alert: "Sorry, you must enter something. Anything at all."
       end
-      format.js do
-        if @note.save
-          render :create, status: :created
+    end
+    format.js do
+      if @note.save
+        render :create, status: :created
         else
           render :create, status: :not_found
-        end
       end
     end
   end
+end
 
-  def update
-    @note.update(note_params)
-    redirect_to @notes
-  end
+def update
+  @ramble = Ramble.find(params[:ramble_id])
+  @note = @ramble.notes.find(params[:id])
+  @note.update(note_params)
+  redirect_to @ramble
+end
 
-  def edit
-    @ramble = Ramble.find(params[:ramble_id])
-  end
+def edit
+  @ramble = Ramble.find(params[:ramble_id])
+  @note = @ramble.notes.find(params[:id])
+end
 
-  def destroy
-    @note = Note.find(params[:id])
-    @note.destroy
-    redirect_to ramble_url
-  end
+def destroy
+  @note = Note.find(params[:id])
+  @note.destroy
+  redirect_to root_path
+end
 
-  private
+private
 
-  def note_params
-    params.require(:note).permit(:body, :user_id, :ramble_id, :tag_list)
-  end
+def note_params
+  params.require(:note).permit(:body, :user_id, :ramble_id, :tag_list)
+end
 end

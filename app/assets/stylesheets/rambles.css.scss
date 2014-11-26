@@ -5,37 +5,37 @@
 
 
 .container {
-    @include outer-container; 
-    margin-top: 100px;
+@include outer-container; 
+margin-top: 100px;
 
 }
 .ramble-title {
-	text-align: center;
+text-align: center;
 }
 .ramble-notes {
-	@include span-columns(4);
-	text-align: center;
-	padding-top: 10px;
+@include span-columns(4);
+text-align: center;
+padding-top: 10px;
 }
 
 .map {
-	width: 50%;
-	margin: 0 auto;
+width: 50%;
+margin: 0 auto;
 }
 .recommended-notes {
-	padding: 10px;
+padding: 10px;
 }
 
 .notebody {
-	margin-top:15px;
-	margin-bottom:15px;
-	text-align:left;
-	padding-left:50px;
-	max-width:350px;
+margin-top:15px;
+margin-bottom:15px;
+text-align:left;
+padding-left:50px;
+max-width:350px;
 }
 .api-feed{
-	@include span-columns(8);
-	text-align: center;
-	padding-top: 10px;
-	float: right;
+@include span-columns(8);
+text-align: center;
+padding-top: 10px;
+float: right;
 }

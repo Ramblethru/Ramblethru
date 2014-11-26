@@ -1,47 +1,48 @@
 <div class="ramble-title">
 	<% if @ramble.destination %>
-		<%= @ramble.destination %>
-	<% else %>
-		<h1>NAME OF YOUR RAMBLE HERE</h1>
-	<% end %>
-	<% if @ramble.start_date && @ramble.end_date %>
-		<br><%= @ramble.start_date %> - <%= @ramble.end_date %>
-	<% end %>
+  <%= @ramble.destination %>
+  <% else %>
+  <h1>NAME OF YOUR RAMBLE HERE</h1>
+  <% end %>
+  <% if @ramble.start_date && @ramble.end_date %>
+  <br><%= @ramble.start_date %> - <%= @ramble.end_date %>
+  <% end %>
 </div>
 <div class="map">
-	 <iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/daninyc.ka9776m1/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoiZGFuaW55YyIsImEiOiJsZGtFNGdnIn0.3NYblJVlOSsj0kll5c4aKA'></iframe>
-	
+  <iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/daninyc.ka9776m1/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoiZGFuaW55YyIsImEiOiJsZGtFNGdnIn0.3NYblJVlOSsj0kll5c4aKA'></iframe>
+
 </div>
 <div class="container">
 	<div class="ramble-notes">
 		<h2>NOTES</h2>
 		<%= render "notes/note_form" %>
-		<% if @ramble.notes != nil %> 
+		<% if @ramble.notes %> 
 		<% @ramble.notes.each do |note| %>
 		<div class="notebody">
-			Note: <%= note.body %> <p>Tag:<%= note.tag_list %> </p>
-		</div>
-		<% end %>
-		<% else %>
-		<%= link_to "Home", root_path %>
-		<% end %>
-
-	</div>
-	<div class="api-feed">
-	<div class="foursq">
+			<% if note.body %> Note: <%= note.body %> <p>Tag:<%= note.tag_list %> </p>
+      <%= link_to 'Edit note', edit_ramble_note_path(@ramble.id, note.id) %> ,
+      <%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %><% end %>
+    </div>
+    <% end %>
+    <% else %>
+    <%= link_to "Home", root_path %>
+    <% end %>
+    <div class="end"> </div>
+  </div>
+  <div class="api-feed">
+   <div class="foursq">
     <div class="title">Foursquare:</div><br>
-     <% f = @foursquare_venue.each do |f| %>
-        <li>
-        <div class="title">
-          <%= f["venue"]["name"] %>
-        </div>
-        </li>
-          Address: <%= f["venue"]["location"]["address"] %><br>
-        <% f["tips"] %>
-        <% f["tips"].each do |g| %>
-        <article><%= link_to g["text"], g["canonicalUrl"] %></article>
-        <% end %>
-
+    <% @foursquare_venue.each do |f| %>
+    <li>
+      <div class="title">
+        <%= f["venue"]["name"] %>
+      </div>
+    </li>
+    Address: <%= f["venue"]["location"]["address"] %><br>
+    <% f["tips"] %>
+    <% f["tips"].each do |g| %>
+    <article><%= link_to g["text"], g["canonicalUrl"] %></article>
+    <% end %>
     <% end %>
 
   </div>
@@ -50,35 +51,35 @@
     <div class="title">Yelp:</div>
     <br>
     <% @yelp.businesses.each do |y| %>
-      <li>
-        <%= link_to y.name, y.url %>
-        <%= link_to image_tag y.rating_img_url_small %>
-      </li>
-        <article><%= y.snippet_text %></article>
-      <% end %>
+    <li>
+      <%= link_to y.name, y.url %>
+      <%= link_to image_tag y.rating_img_url_small %>
+    </li>
+    <article><%= y.snippet_text %></article>
+    <% end %>
   </div>
 
-<br>
-<div class="instagram">
-  <div class="title">Instagram:</div>
   <br>
-  <% i = @instagram_images.each do |i| %>
+  <div class="instagram">
+    <div class="title">Instagram:</div>
+    <br>
+    <% i = @instagram_images.each do |i| %>
     <%= link_to image_tag i["images"]["thumbnail"]["url"] %>
-  <% end %>
-</div>
+    <%= button_to 'Save this Image', { :controller => 'rambles', :action => 'add_instagram'} %></li>
+    <% end %>
+  </div>
 
-<br>
-<div class="reddit">
-  <div class="title">Reddit:</div><br>
-  <% @reddit_thread.each do |r| %>
-    <li><%= link_to r["data"]["title"], r["data"]["url"] %>
-    <%= button_to 'Save this Tip', { :controller => 'rambles', :action => 'add_api'} %></li>
-  <% end %>
-</div>
+  <br>
+  <div class="reddit">
+    <div class="title">Reddit:</div><br>
+    <% @reddit_thread.each do |r| %>
+    <li><%= link_to r["data"]["title"], r["data"]["url"] %></li>
+    <% end %>
+  </div>
 
-		<div class="recommended-notes">
-			<h4>RELEVANT NOTES GO HERE</h4>
-		</div>
-	</div>
+  <div class="recommended-notes">
+   <h4>RELEVANT NOTES GO HERE</h4>
+ </div>
+</w>
 </div>
 </div>

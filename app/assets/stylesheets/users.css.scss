@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$blue: #7f868e;
+
+
 .photo {
 	width:400px;
 	margin-left:125px;
@@ -61,3 +64,7 @@
 .container {
 	@include outer-container;
 }
+.userrambles {
+	background-color: rgba(127,134,142, .3);
+	border-radius: 5px;
+	}

@@ -15,9 +15,16 @@
   <%= @location.longitude %>
 </p>
 
+<h2><b>
+  <%= link_to "Foursquare API info", "http://api.foursquare.com/v2/venues/explore?ll=#{@location.latitude},#{@location.longitude}&limit=5&oauth_token=3SFP4NBFWJ2LIECDWGR5EU4FA5QXMP21LK2DNWT2GEUWCEIN&v=20141123" %>
+</b></h2>
+
+Attempt to pass (lon, lat) into Mapbox -- formatting is wrong but the coordinates are being passed in OK:
+  <iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/geocode/mapbox.places-v1/<%= "#{@location.longitude}" %>,<%= "#{@location.latitude}" %>.json?access_token=pk.eyJ1IjoiZGFuaW55YyIsImEiOiJsZGtFNGdnIn0.3NYblJVlOSsj0kll5c4aKA'></iframe>
+
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}" %>
 
-<%= link_to "Foursquare API info", "http://api.foursquare.com/v2/venues/explore?ll=#{@location.latitude},#{@location.longitude}&limit=5&oauth_token=3SFP4NBFWJ2LIECDWGR5EU4FA5QXMP21LK2DNWT2GEUWCEIN&v=20141123" %>
+
 
 <h3>Nearby locations</h3>
 <ul>

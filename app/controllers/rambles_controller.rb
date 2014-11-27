@@ -61,6 +61,7 @@ class RamblesController < ApplicationController
 
   def new
     @ramble = Ramble.new
+    render 'rambles/create'
   end
 
   def create
@@ -69,8 +70,8 @@ class RamblesController < ApplicationController
         @ramble.save!
         redirect_to ramble_path(@ramble)
     else
+        render 'logins/login_form'
         flash.now[:notice] = "You must be logged in to create a ramble."
-        render 'logins/new'
     end
   end
 

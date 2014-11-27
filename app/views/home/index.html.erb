@@ -8,7 +8,7 @@
 </div>
 
 <div class="container">
-	<div class="homepage-about"><h1>What We Do</h1>
+	<div class="homepage-about"><h1 class="what-we-do">What We Do</h1>
 		<div id="about">Something here.</div>
 	</div>
 		<article>
@@ -16,7 +16,7 @@
 
 	<section class="homepage-about-discover">
 		<div class="discover">
-			<h2>Discover</h2>
+			<h2 class="discover">Discover</h2>
 				<article>
 					<div id="discover-about">
             Explore recommendations from your peers about your destination.
@@ -28,7 +28,7 @@
 	</section>
 	<section class="homepage-about-create">
 		<div class="create">
-			<h2>Create</h2>
+			<h2 class="create">Create</h2>
 				<article>
 					<div id="create-about">Create a personalized itinerary around them.</div>
 				</article>
@@ -42,7 +42,7 @@
 	</section>
 	<section class="homepage-about-go">
 		<div class="go">
-			<h2>Go</h2>
+			<h2 class="go">Go</h2>
 				<article>
 					<span class="animated bounceInUp"><div id="go-about">Something here.</div></span>
 
@@ -55,15 +55,8 @@
 		</div>
 	</section>
 </div>
-<div id="demo-form" class="demo-description" style="display: none; ">
-  <p>
-    The basic dialog window is an overlay positioned within the viewport and is protected from page content
-    (like select elements) shining through with an iframe. It has a title bar and a content area, and can be moved,
-    resized and closed with the 'x' icon by default.
-  </p>
-</div>
 
-<%=  link_to_modal "New User", new_user_path, :class=>"button" %>
+
 
 	<!-- <div class="login-register">
 		<% if !logged_in? %>

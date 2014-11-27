@@ -68,12 +68,34 @@ body {
 background-image: url('http://i.imgur.com/9OUxrEd.png');
 }
 
-@media (max-width: 500px) {
-  body {
-    background: red;
+@media (max-width: 1221px) {
+  i.fa-foursquare, i.fa-instagram, i.fa-yelp, i.fa-reddit {
+    font-size: 90px;
+    padding: 0px;
+  }
+   h1.what-we-do, h2.discover, h2.go, h2.create {
+    font-size: 45px;
   }
 
 }
+
+@media (max-width: 500px) {
+  h1.what-we-do, h2.discover, h2.go, h2.create {
+    font-size: 25px;
+  }
+  i.fa-foursquare, i.fa-instagram, i.fa-yelp, i.fa-reddit {
+    font-size: 50px;
+    padding: 0px;
+    display: inline-block;
+  }
+  i.fa-bus, i.fa-car, i.fa-plane {
+    font-size: 60px;
+  }
+  section.homepage-about-go, .homepage-about-create, .homepage-about-discover {
+    height: 250px;
+  }
+}
+
 
 .topbar {
   font-weight:bold;

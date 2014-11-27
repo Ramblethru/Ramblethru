@@ -1,8 +1,12 @@
 <div class="pagename">
   <h1>Discover your destination</h1>
-  <div class="location"> Location name </div>
+  <div class="location">
+    <%= @discover.destination %>
+  </div>
   <div class='map'>
-    <iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/daninyc.ka9776m1/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoiZGFuaW55YyIsImEiOiJsZGtFNGdnIn0.3NYblJVlOSsj0kll5c4aKA'></iframe>
+    <!--<b>Passing (lon,lat) into a static Mapbox map <a href="https://www.mapbox.com/developers/api/static/#images">(Source)</a></b>-->
+    <iframe width='100%' height='300px' frameBorder='0' src='http://api.tiles.mapbox.com/v4/examples.map-zr0njcqy/<%= "#{@discover.longitude}" %>,<%= "#{@discover.latitude}" %>,13/500x300.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IlhHVkZmaW8ifQ.hAMX5hSW-QnTeRCMAy9A8Q'></iframe>
+    <!--<iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/daninyc.ka9776m1/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoiZGFuaW55YyIsImEiOiJsZGtFNGdnIn0.3NYblJVlOSsj0kll5c4aKA'></iframe>-->
   </div>
   <div class="notes"><h4>NOTES</h4></div>
   <div class="noteboxes">Create note partial here</div>
@@ -24,15 +28,14 @@
       $(function() {
         $('#tags_1').tagsInput({width:'auto'});
       });
-  
-        </script>
-
+    </script>
     <form>
-      <p><label>Tags (important point: a tag can't have a comma inside of it, since commas are used as a separator between tags)</label>
-        <input id="tags_1" type="text" class="tags" value="restaurant,hotel,museum,show,park,trail,bar,durham nc" /></p>
+      <p>
+        <label>Tags (important point: a tag can't have a comma inside of it, since commas are used as a separator between tags)</label>
+        <input id="tags_1" type="text" class="tags" value="restaurant,hotel,museum,show,park,trail,bar,durham nc" />
+      </p>
     </form>
   </div>
-
   <div class="foursq">
     <div class="title">Foursquare:</div><br>
      <% f = @foursquare_venue.each do |f| %>
@@ -75,29 +78,15 @@
       <li><%= link_to r["data"]["title"], r["data"]["url"] %></li>
     <% end %>
   </div>
-
-
-
-
-
-<!-- Ramble creation
- --><div class="ramble">
-      <h4>Like what you see? Create a ramble (itinerary) below! </h4>
-      <div id="demo-form" class="demo-description" style="display: none; ">
-  <p>
-  <%= render "/rambles/create" %>
-  </p>
-</div>
-
-<%=  link_to_modal "Create", new_ramble_path, :class=>"button" %>
-</div>
-
-
-  <span><h4>or</h4></span>
-  </div>
-  <form class="search-form">
-    <div class="location-search">
-      <input type="text" placeholder="Search for more">
-      <input type="submit" value="Search">
+  <div class="ramble">
+    <h4>Like what you see? Create a ramble (itinerary) below! </h4>
+    <div id="demo-form" class="demo-description" style="display: none; ">
+      <p><%= render "/rambles/create" %> </p>
     </div>
-  </form>
+    <%=  link_to_modal "Create", new_ramble_path, :class=>"button" %>
+  </div>
+  <span><h4>or</h4></span>
+  <div class="discover-bottom">
+    <%= render "/discovers/create" %>
+  </div>
+</div>

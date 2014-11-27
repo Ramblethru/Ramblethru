@@ -3,5 +3,8 @@
 	<div class="notebody">
     Note: <%= note.body %>
     <p>Tag: <%= note.tag_list %> </p>
+    <%= link_to 'Edit note', edit_ramble_note_path(@ramble.id, note.id) %> ,
+      <%= link_to 'Destroy', note, method: :delete, remote: true %>
 	</div>
+
 </div>

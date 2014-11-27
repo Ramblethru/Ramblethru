@@ -30,6 +30,8 @@ GEM
     acts-as-taggable-on (3.4.2)
       activerecord (>= 3.2, < 5)
     addressable (2.3.6)
+    animate-rails (1.0.7)
+      rails
     arel (5.0.1.20140414130214)
     ast (2.0.0)
     astrolabe (1.3.0)
@@ -358,6 +360,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on
   addressable
+  animate-rails
   bcrypt (~> 3.1.2)
   better_errors
   binding_of_caller

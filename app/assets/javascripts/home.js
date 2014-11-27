@@ -17,3 +17,12 @@ $(document).ready(function () {
     }
   });
 });
+
+$(document).ready(function() {
+  $('#map').usmap({
+  stateStyles: {'fill': '#eff0eb'}, 
+  stateHoverStyles: {fill: '#af703a'}, 
+  showLabels: false,
+
+});
+  });

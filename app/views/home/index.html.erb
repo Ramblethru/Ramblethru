@@ -1,45 +1,62 @@
 
 <div class="hero">
-	<div class="header-title">
-		<h1>Adventure Awaits</h1>
-	</div>
+	<div class="header-title"></div>
 	<div class="header-subtitle">
-		<h4>Plan your ramble</h4>
-	</div>
+    <h4>Plan your ramble</h4>
+  </div>
   <div class="discover-create">
     <%= render "/discovers/create" %>
   </div>
+
 </div>
 
-	
 <div class="container">
-	<div class="homepage-about">
-			<h1>What We Do</h1>
-	</div>
+	<div class="homepage-about"><h1>What We Do</h1>
+		<div id="about">Something here.</div>
 
-	<div class="homepage-about-each">
+	</div>
+		<article>
+		</article>
+
+	<section class="homepage-about-discover">
 		<div class="discover">
-			<h4>Discover</h4>
+			<h2>Discover</h2>
 				<article>
-					Explore recommendations from your peers about your destination.
+					<div id="discover-about">Explore recommendations from your peers about your destination.</div>
 				</article>
+			<div id="map"></div>
+			<div id="clicked-state"></div>
 		</div>
-
+	</section>
+	<section class="homepage-about-create">
 		<div class="create">
-			<h4>Create</h4>
+			<h2>Create</h2>
 				<article>
-					Create a personalized itinerary around them.
+					<div id="create-about">Create a personalized itinerary around them.</div>
 				</article>
+				<div class="font-awesome">
+					<i class="fa fa-foursquare fa-5x"></i>
+					<i class="fa fa-instagram fa-5x"></i>
+					<i class="fa fa-yelp fa-5x"></i>
+					<i class="fa fa-reddit fa-5x"></i>
+				</div>
 		</div>
-
+	</section>
+	<section class="homepage-about-go">
 		<div class="go">
-			<h4>Go</h4>
+			<h2>Go</h2>
 				<article>
-					Something here.
+					<span class="animated bounceInUp">
+            <div id="go-about animated">Something here.</div>
+          </span>
 				</article>
+				<ul>
+				<li><i class="fa fa-bus animated wobble"></i></li>
+				<li><i class="fa fa-plane animated lightSpeedIn"></i></li>
+				<li><i class="fa fa-car animated rollIn"></i></li>
+				</ul>
 		</div>
-
-	</div>
+	</section>
 </div>
 <div id="demo-form" class="demo-description" style="display: none; ">
   <p>
@@ -50,9 +67,6 @@
 </div>
 
 <%=  link_to_modal "New User", new_user_path, :class=>"button" %>
-
-
-
 
 	<!-- <div class="login-register">
 		<% if !logged_in? %>

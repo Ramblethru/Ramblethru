@@ -8,8 +8,8 @@ $dark-grey: #7f868e;
 $green: #2e7562;
 
 .hero {
-  background-color: $light-grey;
-	background: url('header.png');
+  background: url('header.png');
+  background-color: $green;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: top center;
@@ -48,7 +48,7 @@ div.container {
 }
 div.homepage-about {
 	text-align: center;
-  height: 450px;
+  height: 350px;
   font-family: 'menschmensch_regular';
   font-size: 40px;
   color: $green;
@@ -63,13 +63,14 @@ div.homepage-about {
   }
 }
 .homepage-about-discover, .homepage-about-go {
-	text-align: center;
-  height: 500px;
+  text-align: center;
+  height: 580px;
   background-color: $green;
   overflow-x: hidden;
 }
 .homepage-about-create {
   background-color: $light-grey;
+  background-image: url('http://i.imgur.com/9OUxrEd.png');
   text-align: center;
   height: 325px;
   overflow-x: hidden;
@@ -175,7 +176,7 @@ input#destination {
 }
 #map {
   margin: 0 auto;
-  height: 500px;
+  height: 350px;
   width: 500px;
 }
 #discover-about, #go-about {
@@ -188,7 +189,7 @@ input#destination {
 #create-about, #about {
   color: $dark-grey;
   width: 50%;
-  margin: 0 auto;
+  margin: 0 auto 25px;
   font-family: monospace, sans-serif;
   font-size: 16px;
   }
@@ -214,6 +215,7 @@ input#destination {
 }
 .fa-plane, .fa-bus, .fa-car {
   font-size: 100px;
+  color: $light-grey;
 }
 ul {
   margin-top: 30px;

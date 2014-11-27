@@ -2,7 +2,6 @@ require "instagram"
 require "addressable/uri"
 
 class DiscoversController < ApplicationController
-  require 'open-uri'
   before_action :set_discover, only: [:show]
 
   def new

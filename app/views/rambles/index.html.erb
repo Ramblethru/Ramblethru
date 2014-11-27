@@ -12,8 +12,12 @@
 		<% @ramble.each do |ramble| %>
 		<div class="rambles">
 			<divclass="rambles-title"><% ramble.notes.each do |note| %>
-			<div class="noteshow">Note: <%= note.body %></div>
-			<div class="tagshow">Tag: <%= note.tag_list %></div>
+			<div class="noteshow">
+				Note: <%= note.body %>
+			</div>
+			<div class="tagshow">
+				Tag: <%= note.tag_list %>
+			</div>
 			<% end %>
 		</div>
 	</div>

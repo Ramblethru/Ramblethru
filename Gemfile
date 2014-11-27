@@ -31,6 +31,7 @@ gem 'tagsinput-rails'
 gem 'acts-as-taggable-on'
 gem 'momentjs-rails', '>= 2.8.1'
 gem 'jquery-modal-rails'
+gem "animate-rails"
 
 # authenticate
 gem 'omniauth-google-oauth2'

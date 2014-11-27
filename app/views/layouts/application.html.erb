@@ -2,16 +2,25 @@
 <html>
 <head>
   <title>Ramblethru</title>
-  
   <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
+  <%= stylesheet_link_tag 'font-awesome-animatio.min.css' %>
   <%= stylesheet_link_tag 'normalize.css', media: 'all' %>
+  <link rel="stylesheet" href="animate.min.css">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+  <%= javascript_include_tag 'jquery.usmap' %>
+  <%= javascript_include_tag 'raphael' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="topbar">
+ 
+
+
+<%= yield %>
+ <%= display_alert(:notice) %>
+  <%= display_alert(:alert) %>
+<div class="topbar">
     <% if logged_in? %>
     Bienvenue, <%= link_to current_user.name, user_path(current_user) %>! |
       <%= link_to "Log out", logout_path %> |
@@ -24,9 +33,6 @@
       <%= link_to "New Location", new_location_path %>
     <% end %>
   </div>
-  <%= display_alert(:notice) %>
-  <%= display_alert(:alert) %>
-<%= yield %>
 
 </body>
 </html>

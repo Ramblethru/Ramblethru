@@ -2,6 +2,7 @@ class RamblesController < ApplicationController
     include HTTParty
 
     before_action :authenticate
+    # before_save { |ramble| ramble.destination.downcase! }
 
     def show
         yelp             
@@ -10,7 +11,6 @@ class RamblesController < ApplicationController
         foursquare
         @ramble = Ramble.find(params[:id])
     end
-    
 
     def yelp
         @ramble = Ramble.find(params[:id])

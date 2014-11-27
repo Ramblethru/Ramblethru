@@ -7,14 +7,14 @@ class Ramble < ActiveRecord::Base
 	has_many :notes, dependent: :destroy
 
 	# validates :name, presence: true
-	validates :destination, presence: true
+# "#{	validates :destination, presence: true
+#
+#   def self.search(query)
+#     #where(:destination, query)
+#     where("destination like ?", "%#{query}%")
+#   end}
 
-  def self.search(query)
-    #where(:destination, query)
-    where("destination like ?", "%#{query}%") 
-  end
-
-	def save_reddit_thread
+  def save_reddit_thread
     uri = Addressable::URI.parse("http://www.reddit.com/r/subreddit/search.json?q=#{@ramble.destination}&limit=5&sort=top")
     reddit = HTTParty.get(uri.normalize)
     reddit_data = JSON.parse(reddit.body)

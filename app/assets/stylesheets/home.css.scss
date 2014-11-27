@@ -2,8 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$orange: #af703a;
+$light-grey: #eff0eb;
+$dark-grey: #7f868e;
+$green: #2e7562;
+
 .hero {
-	background: url("http://placekitten.com/1450/450");
+  background-color: $light-grey;
+	background: url('header.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: top center;
 	height: 450px;
 }
 .header-title {
@@ -21,31 +30,67 @@
 .location-search {
 	width: 30%;
 	margin: 0 auto;
+  padding-top: 240px;
 }
 .search-form {
 	text-align: center;
 	padding: 10px;
 }
-.container {
-    @include outer-container;
+form {
+  display: inline;
+}
+div.container {
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: hidden !important;
+  max-width: 100%;
+  margin-top: 10px;
+}
+div.homepage-about {
+	text-align: center;
+  height: 450px;
+  font-family: 'menschmensch_regular';
+  font-size: 40px;
+  color: $green;
+  margin-top: 0;
+  h1 {
+  margin-top: 0;
+  }
+  h1 {
+    text-align: center;
+    font-family: 'menschmensch_regular';
+    margin-bottom: 0px;
+  }
+}
+.homepage-about-discover, .homepage-about-go {
+	text-align: center;
+  height: 500px;
+  background-color: $green;
+  overflow-x: hidden;
+}
+.homepage-about-create {
+  background-color: $light-grey;
+  text-align: center;
+  height: 325px;
+  overflow-x: hidden;
 
-}
-.homepage-about {
-	text-align: center;
-}
-.homepage-about-each {
-	text-align: center;
-	}
-.discover, .create, .go {
-	@include span-columns(4);
-}
+  }
+	
+
+div.discover:last-child {
+  margin-right: auto;
+  }
 .login-register {
 	text-align: center;
 	padding-top: 20px;
 }
-a.discover {
+a.discover, .create, h2 {
 	text-align: center;
 	width: 100%;
+  font-size: 60px;
+  font-family: 'menschmensch_regular';
+  color: $orange;
+  margin-top: 25px;
 }
 .accordion-tabs-minimal {
   $tab-border-color: $base-border-color;
@@ -111,4 +156,67 @@ a.discover {
       float: left;
     }
   }
+}
+input.input {
+  background-color: $orange;
+  font-family: 'menschmensch_regular';
+  font-weight: bold;
+  font-size: 20px;
+  width: 120px;
+  border-radius: 10px;
+}
+input#destination {
+  border: 4px solid $orange;
+  background-color: $light-grey;
+  font-family: 'menschmensch_regular';
+  font-size: 20px;
+  text-align: center;
+  border-radius: 20px;
+  height: 65px;
+  color: $green;
+}
+#map {
+  margin: 0 auto;
+  height: 500px;
+  width: 500px;
+}
+#discover-about, #go-about {
+  color: $light-grey;
+  width: 50%;
+  margin: 0 auto;
+  font-family: monospace, sans-serif;
+  font-size: 16px;
+}
+#create-about, #about {
+  color: $dark-grey;
+  width: 50%;
+  margin: 0 auto;
+  font-family: monospace, sans-serif;
+  font-size: 16px;
+  }
+.fa-foursquare, .fa-yelp {
+  color: $green;
+  font-size: 150px;
+  display: inline;
+  text-align: left;
+  padding-right: 200px;
+}
+.fa-instagram {
+  color: $orange;
+  font-size: 150px;
+  display: inline;
+  text-align: center;
+  padding-right: 200px;
+}
+.fa-reddit {
+  color: $orange;
+  font-size: 150px;
+  display: inline;
+  text-align: center;
+}
+.fa-plane, .fa-bus, .fa-car {
+  font-size: 100px;
+}
+ul {
+  margin-top: 30px;
 }

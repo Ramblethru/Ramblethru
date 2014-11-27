@@ -1,5 +1,5 @@
 <%= simple_form_for Discover.new do |f| %>
-    <%= f.input :destination, label: false, placeholder: "Search for your destination's City or Street Address..." %>
+    <%= f.input :destination, label: false, placeholder: "Search for your destination's City, ST..." %>
     <%= button_to 'Search', { :controller => 'discovers', :action => 'create'} %>
 
 <% end %>

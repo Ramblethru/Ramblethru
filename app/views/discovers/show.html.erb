@@ -72,13 +72,12 @@
     <% end %>
   </div>
   <br>
-  <!--commenting out for now since it's not working-->
- <div class="reddit">
+  <div class="reddit">
     <div class="title">Reddit:</div><br>
     <% @reddit_thread.each do |r| %>
       <li><%= link_to r["data"]["title"], r["data"]["url"] %></li>
     <% end %>
- </div>
+  </div>
   <div class="ramble">
     <h4>Like what you see? Create a ramble (itinerary) below! </h4>
     <div id="demo-form" class="demo-description" style="display: none; ">
@@ -87,11 +86,7 @@
     <%=  link_to_modal "Create", new_ramble_path, :class=>"button" %>
   </div>
   <span><h4>or</h4></span>
+  <div class="discover-bottom">
+    <%= render "/discovers/create" %>
+  </div>
 </div>
-  <form class="search-form">
-    <div class="location-search">
-      <input type="text" placeholder="Search for more">
-      <input type="submit" value="Search">
-    </div>
-  </form>
-

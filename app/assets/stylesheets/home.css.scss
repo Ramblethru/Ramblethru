@@ -15,17 +15,38 @@ $green: #2e7562;
   background-position: top center;
 	height: 450px;
 }
-.header-title {
+#header-title {
+  font-size: 150px;
+  margin: 0 auto;
+  text-align: center;
+  height: 180px;
+}
+#header-title-first {
 	text-align: center;
 	padding-top: 10px;
-	color: white;
-	h1 {
+	color: $orange;
+  display: inline;
 	margin-bottom: 0px;
+  font-family: 'menschmensch_bold';
+  -webkit-text-stroke: 5px $green;
+  font-size: 165px;
 	}
+
+#header-title-last {
+  display: inline;
+  color: $light-grey;
+  font-family: 'menschmensch_thin';
+
 }
 .header-subtitle {
-	text-align: center;
-	color: white;
+	text-align: right;
+	color: $orange;
+  font-family: 'dingleberry_solidregular';
+  font-size: 30px;
+  letter-spacing: 7px;
+  font-weight: bold;
+  margin-right: 340px;
+
 }
 .location-search {
 	width: 30%;
@@ -74,6 +95,7 @@ div.homepage-about {
   text-align: center;
   height: 325px;
   overflow-x: hidden;
+  margin-bottom: 20px;
 }
 
 div.discover:last-child {
@@ -164,7 +186,10 @@ input.input {
   width: 120px;
   border-radius: 10px;
 }
-input#destination {
+input.input:hover {
+  background-color: $dark-grey;
+}
+input#discover_destination {
   border: 4px solid $orange;
   background-color: $light-grey;
   font-family: 'menschmensch_regular';
@@ -219,4 +244,8 @@ input#destination {
 }
 ul {
   margin-top: 30px;
+}
+div.discover-create {
+  margin: 0 auto;
+
 }

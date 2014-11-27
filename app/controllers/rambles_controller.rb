@@ -1,3 +1,4 @@
+require "addressable/uri"
 class RamblesController < ApplicationController
     include HTTParty
 

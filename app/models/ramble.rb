@@ -8,7 +8,7 @@ class Ramble < ActiveRecord::Base
 	validates :destination, presence: true
 
   def self.search(query)
-    # where(:title, query) -> This would return an exact match of the query
+    #where(:destination, query)
     where("destination like ?", "%#{query}%") 
   end
 

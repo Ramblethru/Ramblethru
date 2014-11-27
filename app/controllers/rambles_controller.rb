@@ -43,8 +43,6 @@ end
 def index
     if params[:search]
     @ramble = Ramble.search(params[:search]).order("created_at DESC")
-  else
-    @ramble = Ramble.order("created_at DESC")
   end
 end
 

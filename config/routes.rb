@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       get 'notes/:id/delete' => 'notes#destroy'
   end
 
-  resource :discovers, :only => [:show, :create]
+  resources :discovers, :only => [:show, :create]
 
   resources :notes, :only => [:index, :destroy]
 

@@ -4,6 +4,19 @@ class DiscoversController < ApplicationController
 
   before_action :set_discover, only: [:show]
 
+  def new
+    @discover = Discover.new
+  end
+
+  def create
+    @discover = Discover.new(discover_params)
+    if @discover.save
+      redirect_to @discover
+      flash[:notice] = 'Discover page was successfully created.'
+    else
+      render :new
+    end
+  end
 
   def show
     #Yelp
@@ -29,20 +42,6 @@ class DiscoversController < ApplicationController
     @foursquare_venue = foursquare_data["response"]["groups"][0]["items"]
     @foursquare_tip = foursquare_data["response"]["groups"][0]["items"]
     @foursquare_venue_url = foursquare_data["response"]["groups"][0]["items"][0]["venue"]["name"]
-  end
-
-  def new
-    @discover = Discover.new
-  end
-
-  def create
-    @discover = Discover.new(discover_params)
-    if @discover.save
-      redirect_to @discover
-      flash[:notice] = 'Discover page was successfully created.'
-    else
-      render :new
-    end
   end
 
   def create_ramble

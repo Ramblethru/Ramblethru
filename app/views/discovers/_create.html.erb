@@ -1,20 +1,20 @@
 <%= simple_form_for Discover.new do |f| %>
-    <%= f.input :destination, label: false, placeholder: "Destination" %>
+    <%= f.input :destination, label: false, placeholder: "Search for your destination's City or Street Address..." %>
     <%= button_to 'Search', { :controller => 'discovers', :action => 'create'} %>
 
 <% end %>
 
 
 <!--
-<%= simple_form_for(@discover) do |f| %>
-  <%= f.error_notification %>
+<#= simple_form_for(@discover) do |f| %>
+  <#= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :destination %>
+    <#= f.input :destination %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <#= f.button :submit %>
   </div>
-<% end %>
+<# end %>
 -->

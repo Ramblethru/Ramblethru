@@ -6,17 +6,8 @@
 	<div class="header-subtitle">
 		<h4>Plan your ramble</h4>
 	</div>
-	<%= form_tag("/rambles/search", method: "get") do %>
-		<div class="location-search">
-			<%= text_field_tag :destination, nil, placeholder: "Search by your City or Street Address..." %>
-			<div class="actions">
-        <%= submit_tag "Search" %>
-      </div>
-    <% end %>
-		</div>
-	</form>
-	
-	</div>
+  <%= render "/discovers/create" %>
+</div>
 
 	
 <div class="container">
@@ -26,7 +17,7 @@
 
 	<div class="homepage-about-each">
 		<div class="discover">
-			<h4><%= link_to "Discover", discover_path, :class => "discover" %></h4>
+			<h4>Discover</h4>
 				<article>
 					Explore recommendations from your peers about your destination.
 				</article>

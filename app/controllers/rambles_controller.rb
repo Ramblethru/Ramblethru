@@ -4,6 +4,22 @@ class RamblesController < ApplicationController
   before_action :authenticate
   # before_save { |ramble| ramble.destination.downcase! }
 
+  def new
+    @ramble = Ramble.new
+    # render 'rambles/create'
+  end
+
+  def create
+    if current_user
+      @ramble = Ramble.new(ramble_params)
+      @ramble.save
+      redirect_to @ramble
+    else
+      render 'logins/new'
+      flash.now[:notice] = "You must be logged in to create a ramble."
+    end
+  end
+
   def show
     yelp
     instagram
@@ -43,36 +59,21 @@ class RamblesController < ApplicationController
 
   def index
     respond_to do |format|
-    format.html do
-      if params[:search]
-      @ramble = Ramble.search(params[:search]).order("created_at DESC")
-      else
-        redirect_to root_path, alert: "Sorry, you must enter something. Anything at all."
+      format.html do
+        if params[:search]
+          @ramble = Ramble.search(params[:search]).order("created_at DESC")
+        else
+          redirect_to root_path, alert: "Sorry, you must enter something. Anything at all."
+        end
       end
-    end
-    format.js do
-      if params[:search]
-        @ramble = Ramble.search(params[:search]).order("created_at DESC")
-        render :search, status: :created
-      else
-        render :create, status: :not_found
+      format.js do
+        if params[:search]
+          @ramble = Ramble.search(params[:search]).order("created_at DESC")
+          render :search, status: :created
+        else
+          render :create, status: :not_found
+        end
       end
-    end
-  end
-
-  def new
-    @ramble = Ramble.new
-    render 'rambles/create'
-  end
-
-  def create
-    if current_user
-      @ramble = Ramble.new(ramble_params)
-      @ramble.save
-      redirect_to @ramble
-    else
-      render 'logins/login_form'
-      flash.now[:notice] = "You must be logged in to create a ramble."
     end
   end
 
@@ -90,12 +91,11 @@ class RamblesController < ApplicationController
 
   def update
     @ramble = Ramble.find(params[:id])
-      if @ramble.update(ramble_params)
-        flash[:notice] = 'Ramble was successfully updated.'
-        redirect_to @ramble
-      else
-        render :edit
-      end
+    if @ramble.update(ramble_params)
+      flash[:notice] = 'Ramble was successfully updated.'
+      redirect_to @ramble
+    else
+      render :edit
     end
   end
 
@@ -114,7 +114,6 @@ class RamblesController < ApplicationController
 private
 
   def ramble_params
-    params.require(:ramble).permit(:start_date, :end_date, :name, :destination, :user_id, :reddit_thread)
+    params.require(:ramble).permit(:start_date, :end_date, :name, :destination, :user_id, :reddit_thread, :instagram_url, :latitude, :longitude)
   end
-
 end

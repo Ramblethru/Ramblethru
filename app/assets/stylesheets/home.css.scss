@@ -8,8 +8,8 @@ $dark-grey: #7f868e;
 $green: #2e7562;
 
 .hero {
-  background-color: $light-grey;
-	background: url('header.png');
+  background: url('header.png');
+  background-color: $green;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: top center;

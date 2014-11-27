@@ -1,9 +1,9 @@
 require "addressable/uri"
 class RamblesController < ApplicationController
-    include HTTParty
+  include HTTParty
+  before_action :authenticate
+  # before_save { |ramble| ramble.destination.downcase! }
 
-    before_action :authenticate
-    # before_save { |ramble| ramble.destination.downcase! }
   def show
     yelp
     instagram
@@ -51,7 +51,7 @@ class RamblesController < ApplicationController
       end
     end
     format.js do
-     if params[:search]
+      if params[:search]
         @ramble = Ramble.search(params[:search]).order("created_at DESC")
         render :search, status: :created
       else
@@ -67,12 +67,12 @@ class RamblesController < ApplicationController
 
   def create
     if current_user
-        @ramble = current_user.rambles.build(ramble_params)
-        @ramble.save!
-        redirect_to ramble_path(@ramble)
+      @ramble = Ramble.new(ramble_params)
+      @ramble.save
+      redirect_to @ramble
     else
-        render 'logins/login_form'
-        flash.now[:notice] = "You must be logged in to create a ramble."
+      render 'logins/login_form'
+      flash.now[:notice] = "You must be logged in to create a ramble."
     end
   end
 
@@ -90,11 +90,12 @@ class RamblesController < ApplicationController
 
   def update
     @ramble = Ramble.find(params[:id])
-    if @ramble.update(ramble_params)
-      flash[:notice] = 'Ramble was successfully updated.'
-      redirect_to @ramble
-    else
-      render :edit
+      if @ramble.update(ramble_params)
+        flash[:notice] = 'Ramble was successfully updated.'
+        redirect_to @ramble
+      else
+        render :edit
+      end
     end
   end
 
@@ -113,6 +114,7 @@ class RamblesController < ApplicationController
 private
 
   def ramble_params
-  params.require(:ramble).permit(:start_date, :end_date, :name, :destination, :user_id, :reddit_thread)
+    params.require(:ramble).permit(:start_date, :end_date, :name, :destination, :user_id, :reddit_thread)
   end
+
 end

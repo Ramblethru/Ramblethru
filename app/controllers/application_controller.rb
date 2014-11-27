@@ -19,6 +19,11 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
-  
+   def authenticate
+    current_user_id = session[:current_user_id]
+    unless current_user_id
+      redirect_to root_path, notice: "You must be logged in to view users rambles"
+    end
+  end
 
 end

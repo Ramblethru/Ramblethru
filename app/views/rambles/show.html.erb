@@ -21,8 +21,10 @@
 		<div class="notebody">
       <div id="<%= dom_id(note) %>">
        <% if note.body %> Note: <%= note.body %> <p>Tag:<%= note.tag_list %> </p>
+       <% if current_user.rambles.include?(@ramble) %>
        <%= link_to 'Edit note', edit_ramble_note_path(@ramble.id, note.id) %> ,
        <%= link_to 'Destroy', note, method: :delete, remote: true %>
+       <% end %>
        <% end %>
      </div>
    </div>

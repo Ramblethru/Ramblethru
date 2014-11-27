@@ -33,7 +33,6 @@ gem 'momentjs-rails', '>= 2.8.1'
 gem 'jquery-modal-rails'
 gem "animate-rails"
 
-
 # authenticate
 gem 'omniauth-google-oauth2'
 gem 'omniauth-foursquare'

@@ -20,4 +20,3 @@
 
 //= require jquery-ui/datepicker
 //= require jquery.modal
-

@@ -23,8 +23,8 @@
       <%= link_to "Log out", logout_path %> |
       <%= link_to "Home", root_path %> |
     <% else %>
-      <%= link_to "Sign up", new_user_path %> |
-      <%= link_to "Log in", new_login_path %> |
+      <%=  link_to_modal "New User", new_user_path, :class=>"button" %> |
+      <%=  link_to_modal "Sign in", new_login_path, :class=>"button" %> |
       <%= link_to "Home", root_path %> |
     <% end %>
   </div>

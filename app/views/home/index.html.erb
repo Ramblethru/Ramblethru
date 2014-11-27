@@ -8,17 +8,17 @@
 </div>
 
 <div class="container">
-	<div class="homepage-about"><h1>What We Do</h1>
+	<div class="homepage-about"><h1 class="what-we-do">What We Do</h1>
 		<div id="about">
       <p>By leveraging the power of social media, Ramblethru helps you find the best things to do at your destination. We believe that planning your trip should be intuitive and enjoyable. No more opening dozens of browser tabs to look at cluttered, confusing travel sites.</p>
       <p>Life's too short to not have adventures. Make the most of them with Ramblethru. <b>Adventure awaits.</b></p>
-     </div>
+    </div>
 	</div>
 		<article>
 		</article>
 	<section class="homepage-about-discover">
 		<div class="discover">
-			<h2>Discover</h2>
+			<h2 class="discover">Discover</h2>
 				<article>
 					<div id="discover-about">
             Explore recommendations from your peers about your destination.
@@ -30,7 +30,7 @@
 	</section>
 	<section class="homepage-about-create">
 		<div class="create">
-			<h2>Create</h2>
+			<h2 class="create">Create</h2>
 				<article>
 					<div id="create-about">Create a personalized itinerary around them.</div>
 				</article>
@@ -44,10 +44,10 @@
 	</section>
 	<section class="homepage-about-go">
 		<div class="go">
-			<h2>Go</h2>
+			<h2 class="go">Go</h2>
 				<article>
 					<span class="animated bounceInUp">
-            <div id="go-about-animated">
+            <div id="go-about">
               <p>When you're out and about, you can check your itinerary from your mobile device. No more worrying about missing something awesome.</p>
             </div>
           </span>
@@ -60,24 +60,12 @@
 		</div>
 	</section>
 </div>
-<div id="demo-form" class="demo-description" style="display: none; ">
-  <p>
-    The basic dialog window is an overlay positioned within the viewport and is protected from page content
-    (like select elements) shining through with an iframe. It has a title bar and a content area, and can be moved,
-    resized and closed with the 'x' icon by default.
-  </p>
-</div>
-
-<%=  link_to_modal "New User", new_user_path, :class=>"button" %>
-
 	<!-- <div class="login-register">
 		<% if !logged_in? %>
       <h1>Log in</h1>
       <div class="or-signup">(or <%= link_to "sign up for a new account", new_user_path %>)</div>
-
       <%= render "/logins/login_form" %>
 			<br><%= link_to "Log in with Foursquare", "/auth/foursquare" %>
       <br><%= link_to "Log in with Twitter", "/auth/twitter"%>
-		
 		<% end %>
 	</div> -->

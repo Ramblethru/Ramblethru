@@ -3,8 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :logged_in?, :current_user, :random_greeting
-
+  helper_method :logged_in?, :current_user
 
   def current_user
     @current_user ||= User.find_by(id: session[:current_user_id])
@@ -22,7 +21,7 @@ class ApplicationController < ActionController::Base
    def authenticate
     current_user_id = session[:current_user_id]
     unless current_user_id
-      redirect_to root_path, notice: "You must be logged in to view users rambles"
+      render 'logins/login_form', notice: "You must be logged in to view users rambles"
     end
   end
 

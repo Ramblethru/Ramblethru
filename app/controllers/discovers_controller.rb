@@ -30,11 +30,11 @@ class DiscoversController < ApplicationController
     @instagram_images = instagram_data["data"]
     # [0]["images"]["thumbnail"]["url"]
 
-    #URI.escape
+    #URI.escape???
     #Reddit
-    reddit = HTTParty.get("http://www.reddit.com/r/subreddit/search.json?q=#{@discover.destination}&limit=5&sort=top")
-    reddit_data = JSON.parse(reddit.body)
-    @reddit_thread = reddit_data["data"]["children"]
+    # reddit = HTTParty.get("http://www.reddit.com/r/subreddit/search.json?q=#{@discover.destination}&limit=5&sort=top")
+    # reddit_data = JSON.parse(reddit.body)
+    # @reddit_thread = reddit_data["data"]["children"]
 
     #Foursquare
     foursquare = HTTParty.get("http://api.foursquare.com/v2/venues/explore?ll=#{@discover.latitude},#{@discover.longitude}&limit=5&oauth_token=3SFP4NBFWJ2LIECDWGR5EU4FA5QXMP21LK2DNWT2GEUWCEIN&v=20141123")

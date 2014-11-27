@@ -20,37 +20,37 @@
 		<% @ramble.notes.each do |note| %>
 		<div class="notebody">
       <div id="<%= dom_id(note) %>">
-       <% if note.body %> Note: <%= note.body %> <p>Tag:<%= note.tag_list %> </p>
-       <% if current_user.rambles.include?(@ramble) %>
-       <%= link_to 'Edit note', edit_ramble_note_path(@ramble.id, note.id) %> ,
-       <%= link_to 'Destroy', note, method: :delete, remote: true %>
-       <% end %>
-       <% end %>
-     </div>
-   </div>
-   <% end %>
-   <% else %>
-   <%= link_to "Home", root_path %>
-   <% end %>
-   <div class="end">
-   </div>
- </div>
- <div class="api-feed">
-   <div class="foursq">
-    <div class="title">Foursquare:</div><br>
-    <% @foursquare_venue.each do |f| %>
-    <li>
-      <div class="title">
-        <%= f["venue"]["name"] %>
+        <% if note.body %> Note: <%= note.body %> <p>Tag:<%= note.tag_list %> </p>
+        <% if current_user.rambles.include?(@ramble) %>
+        <%= link_to 'Edit note', edit_ramble_note_path(@ramble.id, note.id) %> ,
+        <%= link_to 'Destroy', note, method: :delete, remote: true %>
+        <% end %>
+        <% end %>
       </div>
-    </li>
-    Address: <%= f["venue"]["location"]["address"] %><br>
-    <% f["tips"] %>
-    <% f["tips"].each do |g| %>
-    <article><%= link_to g["text"], g["canonicalUrl"] %></article>
+    </div>
     <% end %>
+    <% else %>
+    <%= link_to "Home", root_path %>
     <% end %>
-
+    <div class="end"></div>
+  </div>
+  <div class="api-feed">
+    <div class="foursq">
+      <div class="title">Foursquare:</div><br>
+        <% @foursquare_venue.each do |f| %>
+        <li>
+          <div class="title">
+            <%= f["venue"]["name"] %>
+          </div>
+        </li>
+        Address: <%= f["venue"]["location"]["address"] %><br>
+        <% f["tips"] %>
+        <% f["tips"].each do |g| %>
+        <article><%= link_to g["text"], g["canonicalUrl"] %></article>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
   <br>
   <div class="yelp">

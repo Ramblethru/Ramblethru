@@ -11,9 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :discovers, :only => [:show, :create]
-
   resources :notes, :only => [:index, :destroy]
-
   resources :logins, :only => [:new, :create]
   get 'logout' => 'logins#destroy'
   get '/auth/:provider/callback', to: 'users#create_auth'

@@ -10,10 +10,11 @@
     </div>
   <% end %>
 	</div>
-	<% @rambles.each do |ramble| %>
-  <div class="article">
-    <h1 class="article-title"><%= link_to ramble.destination, ramble %></h1>
-    <p class="article-content"><%= ramble.destination %></p>
+	<% @ramble.each do |ramble| %>
+  <div class="rambles">
+    <h1 class="rambles-title"><% ramble.notes.each do |note| %>
+    	<%= note.body %>
+    	<% end %></h1>
   </div>
 <% end %>
 </div>

@@ -2,36 +2,31 @@
 <div class="hero">
 	<div class="header-title"></div>
 	<div class="header-subtitle"></div>
-	<%= form_tag("/rambles/search", method: "get") do %>
-		<div class="location-search">
-			<%= text_field_tag :destination, nil, placeholder: "Search by your City or Street Address..." %>
-			<div class="actions">
-        		<%= submit_tag "GO", :class => "input" %>
-      		</div>
-      	</div>
-    <% end %>
+  <div class="discover-create">
+    <%= render "/discovers/create" %>
+  </div>
 </div>
 
 <div class="container">
 	<div class="homepage-about"><h1>What We Do</h1>
 		<div id="about">Something here.</div>
-
 	</div>
 		<article>
 		</article>
 
 	<section class="homepage-about-discover">
 		<div class="discover">
-			<h2><%= link_to "Discover", discover_path, :class => "discover" %></h2>
+			<h2>Discover</h2>
 				<article>
-					<div id="discover-about">Explore recommendations from your peers about your destination.</div>
+					<div id="discover-about">
+            Explore recommendations from your peers about your destination.
+          </div>
 				</article>
 			<div id="map"></div>
 			<div id="clicked-state"></div>
-
 		</div>
 	</section>
-	<section class="homepage-about-create"
+	<section class="homepage-about-create">
 		<div class="create">
 			<h2>Create</h2>
 				<article>
@@ -49,19 +44,17 @@
 		<div class="go">
 			<h2>Go</h2>
 				<article>
-					<span class="animated bounceInUp"><div id="go-about animated">Something here.</div></span>
+					<span class="animated bounceInUp">
+            <div id="go-about animated">Something here.</div>
+          </span>
 				</article>
 				<ul>
 				<li><i class="fa fa-bus animated wobble"></i></li>
 				<li><i class="fa fa-plane animated lightSpeedIn"></i></li>
 				<li><i class="fa fa-car animated rollIn"></i></li>
-
 				</ul>
-
-		</div> 
-
+		</div>
 	</section>
-	</div>
 </div>
 <div id="demo-form" class="demo-description" style="display: none; ">
   <p>
@@ -72,9 +65,6 @@
 </div>
 
 <%=  link_to_modal "New User", new_user_path, :class=>"button" %>
-
-
-
 
 	<!-- <div class="login-register">
 		<% if !logged_in? %>

@@ -14,9 +14,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
- 
-
-
 <%= yield %>
  <%= display_alert(:notice) %>
   <%= display_alert(:alert) %>
@@ -25,14 +22,11 @@
     Bienvenue, <%= link_to current_user.name, user_path(current_user) %>! |
       <%= link_to "Log out", logout_path %> |
       <%= link_to "Home", root_path %> |
-      <%= link_to "New Location", new_location_path %>
     <% else %>
       <%= link_to "Sign up", new_user_path %> |
       <%= link_to "Log in", new_login_path %> |
       <%= link_to "Home", root_path %> |
-      <%= link_to "New Location", new_location_path %>
     <% end %>
   </div>
-
 </body>
 </html>

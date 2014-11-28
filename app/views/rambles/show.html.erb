@@ -18,7 +18,7 @@
 	<div class="ramble-notes">
 		<h2>NOTES</h2>
 		<%= render "notes/note_form" %>
-		<% if @ramble.notes %> 
+		<% if @ramble.notes %>
 		<% @ramble.notes.each do |note| %>
 		<div class="notebody">
       <div id="<%= dom_id(note) %>">
@@ -113,6 +113,13 @@
 
   <div class="recommended-notes">
    <h4>RELEVANT NOTES GO HERE</h4>
+	<% ramble = Ramble.where(:destination => @ramble.destination)  %>
+	<% ramble.each do |r| %>
+	<% r.notes.each do |n| %>
+	<div class="nbody">Note: <%= n.body %></div>
+	<div class="ntag">Tag: <%= n.tag_list %></div>
+	<% end %>
+	<% end %>
  </div>
 </w>
 </div>

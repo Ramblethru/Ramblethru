@@ -19,7 +19,7 @@ $(document).ready(function () {
 });
 
 $(document).ready(function() {
-  $('#map').usmap({
+  $('#map-usa').usmap({
   stateStyles: {'fill': '#eff0eb'}, 
   stateHoverStyles: {fill: '#af703a'}, 
   showLabels: false,

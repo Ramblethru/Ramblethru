@@ -10,10 +10,8 @@ Rails.application.routes.draw do
       get 'notes/:id/delete' => 'notes#destroy'
   end
 
-  resource :discover, :only => [:show]
-
+  resources :discovers, :only => [:show, :create]
   resources :notes, :only => [:index, :destroy]
-
   resources :logins, :only => [:new, :create]
   get 'logout' => 'logins#destroy'
   get '/auth/:provider/callback', to: 'users#create_auth'

@@ -3,7 +3,6 @@ class NotesController < ApplicationController
 
  def index
   @notes = Note.all
-
 end
 
 def show
@@ -21,15 +20,13 @@ def create
     format.html do
       if @note.save
         redirect_to @ramble, success: "Your note was recorded."
-      else
-        redirect_to root_path, alert: "Sorry, you must enter something. Anything at all."
       end
     end
     format.js do
       if @note.save
         render :create, status: :created
-        else
-          render :create, status: :not_found
+      else
+        render :create, status: :not_found
       end
     end
   end
@@ -50,15 +47,15 @@ end
 def destroy
   @note = Note.find(params[:id])
   respond_to do |format|
-      format.html do
-        @note.destroy
-        redirect_to root_path
-      end
-      format.js do
-        @note.destroy
-        render 'notes/remove', status: :success
-      end
+    format.html do
+      @note.destroy
+      redirect_to root_path
     end
+    format.js do
+      @note.destroy
+      render 'notes/remove', status: :success
+    end
+  end
 end
 
 private

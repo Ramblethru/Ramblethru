@@ -1,89 +1,74 @@
 
 <div class="hero">
-	<div class="header-title"></div>
-	<div class="header-subtitle"></div>
-	<%= form_tag("/rambles/search", method: "get") do %>
-		<div class="location-search">
-			<%= text_field_tag :destination, nil, placeholder: "Search by your City or Street Address..." %>
-			<div class="actions">
-        		<%= submit_tag "GO", :class => "input" %>
-      		</div>
-      	</div>
-    <% end %>
+	<div id="header-title">
+		<div id="header-title-first">Ramble</div><div id="header-title-last">Thru</div>
+	</div>
+	<div class="header-subtitle">Adventure Awaits</div>
+  <div class="discover-create">
+    <%= render "/discovers/create" %>
+  </div>
 </div>
 
 <div class="container">
-	<div class="homepage-about"><h1>What We Do</h1>
-		<div id="about">Something here.</div>
-
+	<div class="homepage-about"><h1 class="what-we-do">What We Do</h1>
+		<div id="about">
+      <p>We believe that planning your trip should be intuitive and enjoyable.</p>
+      <p>Ramblethru helps you find the best things to do at your destination, without clutter or dozens of open browser tabs.</p>
+      <p>Life's too short to not have adventures. Make the most of them with Ramblethru. <b>Adventure awaits.</b></p>
+    </div>
 	</div>
 		<article>
 		</article>
-
 	<section class="homepage-about-discover">
 		<div class="discover">
-			<h2><%= link_to "Discover", discover_path, :class => "discover" %></h2>
+			<h2 class="discover">Discover</h2>
 				<article>
-					<div id="discover-about">Explore recommendations from your peers about your destination.</div>
+					<div id="discover-about">
+            Explore recommendations from your peers about your destination.
+          </div>
 				</article>
-			<div id="map"></div>
+			<div id="map-usa"></div>
 			<div id="clicked-state"></div>
-
 		</div>
 	</section>
-	<section class="homepage-about-create"
+	<section class="homepage-about-create">
 		<div class="create">
-			<h2>Create</h2>
+			<h2 class="create">Create</h2>
 				<article>
-					<div id="create-about">Create a personalized itinerary around them.</div>
+					<div id="create-about">Build a personalized itinerary around these recommendations.</div>
 				</article>
 				<div class="font-awesome">
-					<i class="fa fa-foursquare fa-5x"></i>
-					<i class="fa fa-instagram fa-5x"></i>
-					<i class="fa fa-yelp fa-5x"></i>
-					<i class="fa fa-reddit fa-5x"></i>
+          <a href="http://www.foursquare.com/"><i class="fa fa-foursquare fa-5x"></i></a>
+          <a href="http://www.instagram.com/"><i class="fa fa-instagram fa-5x"></i></a>
+					<a href="http://www.yelp.com/"><i class="fa fa-yelp fa-5x"></i></a>
+					<a href="http://www.reddit.com/"><i class="fa fa-reddit fa-5x"></i></a>
 				</div>
 		</div>
 	</section>
 	<section class="homepage-about-go">
 		<div class="go">
-			<h2>Go</h2>
+			<h2 class="go">Go</h2>
 				<article>
-					<span class="animated bounceInUp"><div id="go-about animated">Something here.</div></span>
+					<span class="animated bounceInUp">
+            <div id="go-about">
+              <p>When you're out and about, you can check your itinerary from your mobile device. No more worrying about missing something awesome.</p>
+            </div>
+          </span>
 				</article>
 				<ul>
 				<li><i class="fa fa-bus animated wobble"></i></li>
 				<li><i class="fa fa-plane animated lightSpeedIn"></i></li>
 				<li><i class="fa fa-car animated rollIn"></i></li>
-
 				</ul>
-
-		</div> 
-
+		</div>
 	</section>
-	</div>
 </div>
-<div id="demo-form" class="demo-description" style="display: none; ">
-  <p>
-    The basic dialog window is an overlay positioned within the viewport and is protected from page content
-    (like select elements) shining through with an iframe. It has a title bar and a content area, and can be moved,
-    resized and closed with the 'x' icon by default.
-  </p>
-</div>
-
-<%=  link_to_modal "New User", new_user_path, :class=>"button" %>
-
-
-
-
 	<!-- <div class="login-register">
 		<% if !logged_in? %>
       <h1>Log in</h1>
       <div class="or-signup">(or <%= link_to "sign up for a new account", new_user_path %>)</div>
-
       <%= render "/logins/login_form" %>
 			<br><%= link_to "Log in with Foursquare", "/auth/foursquare" %>
       <br><%= link_to "Log in with Twitter", "/auth/twitter"%>
-		
 		<% end %>
 	</div> -->

@@ -1,5 +1,8 @@
+require "addressable/uri"
 class RamblesController < ApplicationController
     include HTTParty
+
+    before_action :authenticate
 
     def show
         yelp             
@@ -33,58 +36,81 @@ class RamblesController < ApplicationController
         @foursquare_venue = foursquare_data["response"]["groups"][0]["items"]
         @foursquare_tip = foursquare_data["response"]["groups"][0]["items"]
         @foursquare_venue_url = foursquare_data["response"]["groups"][0]["items"][0]["venue"]["name"]
+
+
+  def new
+    @ramble = Ramble.new
+    # render 'rambles/create'
+  end
+
+  def create
+    if current_user
+      @ramble = Ramble.new(ramble_params)
+      @ramble.save
+      redirect_to @ramble
+    else
+      render 'logins/new'
+      flash.now[:notice] = "You must be logged in to create a ramble."
     end
+  end
 
+  
 
-    def new
-        @ramble = Ramble.new
+  def index
+    respond_to do |format|
+    format.html do
+      if params[:search]
+      @ramble = Ramble.search(params[:search]).order("created_at DESC")
     end
-
-    def create
-        if current_user
-            @ramble = current_user.rambles.build(ramble_params)
-            @ramble.save!
-            redirect_to ramble_path(@ramble)
-        else
-            flash.now[:notice] = "You must be logged in to create a ramble."
-            render 'logins/new'
-        end
     end
-
-    def add_api
-        @ramble = Ramble.find(params[:id])
-        @ramble.save_reddit_thread
-        redirect_to @ramble
-    end
-
-    def add_instagram
-        @ramble = Ramble.find(params[:id])
-        @ramble.save_instagram_url
-        redirect_to @ramble
-    end
-
-    def update
-       @ramble = Ramble.find(params[:id])
-      if @ramble.update(ramble_params)
-        flash[:notice] = 'Ramble was successfully updated.' 
-        redirect_to @ramble
-
+    format.js do
+     if params[:search]
+        @ramble = Ramble.search(params[:search]).order("created_at DESC")
+        render :search, status: :created
       else
-        render :edit 
+        render :create, status: :not_found
       end
     end
+  end
+  end
 
-    def edit
+  def add_api
+    @ramble = Ramble.find(params[:id])
+    @ramble.save_reddit_thread
+    redirect_to @ramble
+  end
+
+  def add_instagram
+    @ramble = Ramble.find(params[:id])
+    @ramble.save_instagram_url
+    redirect_to @ramble
+  end
+
+  def update
+    @ramble = Ramble.find(params[:id])
+    if @ramble.update(ramble_params)
+      flash[:notice] = 'Ramble was successfully updated.'
+      redirect_to @ramble
+    else
+      render :edit
     end
+  end
 
-    def destroy
-        @ramble.destroy
-        redirect_to rambles_url
-    end
+  def edit
+  end
 
-    private
+  def destroy
+    @ramble.destroy
+    redirect_to rambles_url
+  end
 
-    def ramble_params
-      params.require(:ramble).permit(:start_date, :end_date, :name, :destination, :user_id, :reddit_thread)
-    end
+  def find_ramble
+    Ramble.find(:all, :conditions => conditions)
+  end
+
+private
+
+  def ramble_params
+    params.require(:ramble).permit(:start_date, :end_date, :name, :destination, :user_id, :reddit_thread, :instagram_url, :latitude, :longitude)
+  end
 end

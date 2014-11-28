@@ -8,7 +8,7 @@
   <script type='text/javascript'>
     var latitude= '<%=@discover.latitude%>';
     var longitude= '<%=@discover.longitude%>';
-    var map = L.mapbox.map('map', 'gregurton.kbc7dghp').setView([latitude, longitude], 5);
+    var map = L.mapbox.map('map', 'gregurton.kbc7dghp').setView([latitude, longitude], 5).setZoom([14]);
   </script>
   <div class="notes"><h4>NOTES</h4></div>
   <div class="noteboxes">Display other people's relevant notes here</div>

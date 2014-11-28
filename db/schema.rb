@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141126000308) do
+ActiveRecord::Schema.define(version: 20141126184310) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(version: 20141126000308) do
   end
 
   add_index "authorizations", ["user_id"], name: "index_authorizations_on_user_id", using: :btree
+
+  create_table "discovers", force: true do |t|
+    t.string   "destination"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "locations", force: true do |t|
     t.string   "address"
@@ -61,6 +69,8 @@ ActiveRecord::Schema.define(version: 20141126000308) do
     t.integer  "user_id"
     t.string   "reddit_thread"
     t.string   "instagram_url"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "rambles", ["user_id"], name: "index_rambles_on_user_id", using: :btree
@@ -88,6 +98,10 @@ ActiveRecord::Schema.define(version: 20141126000308) do
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
     t.text     "bio"
     t.string   "lives_in"
     t.string   "password_digest"

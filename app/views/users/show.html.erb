@@ -29,10 +29,13 @@
 	<div class="container">
 		<div class="usertrips">
 			<h3> My Rambles(dropdown?) </h3>
+			
 			<div class="userrambles">
 			<% @user.rambles.each do |r| %>
 				<%= link_to r.destination, ramble_path(r) %><br>
+				<div class="show"><a href="#"> Show/hide notes </a></div>
 				<%= r.start_date %> - <%= r.end_date %><br>
+				<div class="noteshow">
 				<% if r.reddit_thread != nil %>
 				Saved from Reddit: <%= link_to r.reddit_thread, r.reddit_thread %>
 				<br>
@@ -40,9 +43,16 @@
 				<% if r.instagram_url != nil %>
 				Saved from Instagram:<br> <%= link_to image_tag r.instagram_url %><br>
 				<% end %>
+				
 				<% r.notes.each do |n| %>
 					Note: <%= n.body %><br>
 					<% end %>
+				</div>
+					<script type="text/javascript">
+ $(".show").click(function () {
+            $(".noteshow").toggle();
+        });
+</script>
 				<% end %>
 				
 			</div>

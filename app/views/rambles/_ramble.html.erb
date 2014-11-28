@@ -1,0 +1,19 @@
+<div class="row" id="<%= ramble.persisted? ? dom_id(ramble) : "ramble-new" %>">
+	<div class="container">
+		<% if @ramble %>
+		<% @ramble.each do |ramble| %>
+		<div class="rambles">
+			<divclass="rambles-title"><% ramble.notes.each do |note| %>
+			<div class="notesshow">
+				Note: <%= note.body %>
+			</div>
+			<div class="tagshow">
+				Tag: <%= note.tag_list %>
+			</div>
+			<% end %>
+		</div>
+	</div>
+	<% end %>
+	<% end %>
+</div>
+</div>

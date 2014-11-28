@@ -14,19 +14,36 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="top-bar">
+<% if logged_in? %>
+    Bienvenue, <%= link_to current_user.name, user_path(current_user), :class => "top-bar" %>! <i class="fa fa-compass animated swing"></i>
+
+      <%= link_to "Log out", logout_path, :class => "top-bar" %><i class="fa fa-compass animated swing"></i>
+
+      <%= link_to "Home", root_path, :class => "top-bar" %> 
+    <% else %>
+      <%=  link_to_modal "New User", new_user_path, :class=>"top-bar" %><i class="fa fa-compass animated swing"></i>
+      <%=  link_to_modal "Sign in", new_login_path, :class=>"top-bar" %><i class="fa fa-compass animated swing"></i>
+      <%= link_to "Home", root_path, :class => "top-bar" %>
+    <% end %> 
+</div>  
+ <ul class="menu">
+ <li title="menu"><a href="#" class="menu-button home">menu</a></li>
+ 
+ </ul>
+ <ul class="menu-bar">
+ <li><a href="#" class="menu-button">Menu</a></li>
+ <% if logged_in? %>
+    <li><%= link_to "Profile", user_path(current_user) %></li>
+ <% else %>
+    <li><%= link_to "Sign In", new_login_path %>
+  <% end %>
+ <li><%= link_to "Home", root_path %></li>
+ <li><a href="#">Editorial</a></li>
+ <li><a href="#">About</a></li>
+ </ul>
 <%= yield %>
  <%= display_alert(:notice) %>
   <%= display_alert(:alert) %>
-<div class="topbar">
-    <% if logged_in? %>
-    Bienvenue, <%= link_to current_user.name, user_path(current_user) %>! |
-      <%= link_to "Log out", logout_path %> |
-      <%= link_to "Home", root_path %> |
-    <% else %>
-      <%=  link_to_modal "New User", new_user_path, :class=>"button" %> |
-      <%=  link_to_modal "Sign in", new_login_path, :class=>"button" %> |
-      <%= link_to "Home", root_path %> |
-    <% end %>
-  </div>
 </body>
 </html>

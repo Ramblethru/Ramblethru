@@ -11,7 +11,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = 'User Created'
-      redirect_to new_login_path
+      session[:current_user_id] = @user.id
+      redirect_to root_path
     else
       flash[:error] = 'There was a problem creating your account.'
       render :new

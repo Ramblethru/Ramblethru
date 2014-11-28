@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
    def authenticate
     current_user_id = session[:current_user_id]
     unless current_user_id
-      render 'logins/login_form', notice: "You must be logged in to view users rambles"
+      render 'logins/new', notice: "You must be logged in to view users rambles"
     end
   end
 

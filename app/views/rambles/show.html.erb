@@ -12,7 +12,7 @@
 <script type='text/javascript'>
   var latitude= '<%=@ramble.latitude%>';
   var longitude= '<%=@ramble.longitude%>';
-  var map = L.mapbox.map('map', 'gregurton.kbc7dghp').setView([latitude, longitude], 5);
+  var map = L.mapbox.map('map', 'gregurton.kbc7dghp').setView([latitude, longitude], 5).setZoom([14]);
 </script>
 <div class="container">
 	<div class="ramble-notes">

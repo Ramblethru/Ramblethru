@@ -2,11 +2,11 @@ require "addressable/uri"
 class RamblesController < ApplicationController
   include HTTParty
   before_action :authenticate
-  # before_save { |ramble| ramble.destination.downcase! 
+  # before_save { |ramble| ramble.destination.downcase!
 
     def show
        @ramble = Ramble.find(params[:id])
-        yelp             
+        yelp
         instagram
         reddit
         foursquare
@@ -26,7 +26,7 @@ class RamblesController < ApplicationController
     end
 
     def reddit
-        reddit = HTTParty.get("http://www.reddit.com/r/subreddit/search.json?q=newyorkcity&limit=5&sort=top")   
+        reddit = HTTParty.get("http://www.reddit.com/r/subreddit/search.json?q=newyorkcity&limit=5&sort=top")
         reddit_data = JSON.parse(reddit.body)
         @reddit_thread = reddit_data["data"]["children"]
     end
@@ -55,7 +55,7 @@ class RamblesController < ApplicationController
     end
   end
 
-  
+
 
   def index
     respond_to do |format|

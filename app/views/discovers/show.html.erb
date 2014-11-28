@@ -6,25 +6,44 @@
 
   <div id='map' class='dark'></div>
   <script type='text/javascript'>
-    var latitude= '<%=@discover.latitude%>';
-    var longitude= '<%=@discover.longitude%>';
-    var map = L.mapbox.map('map', 'gregurton.kbc7dghp').setView([latitude, longitude], 5);
+  var latitude= '<%=@discover.latitude%>';
+  var longitude= '<%=@discover.longitude%>';
+  var map = L.mapbox.map('map', 'gregurton.kbc7dghp').setView([latitude, longitude], 5);
   </script>
-  <div class="notes"><h4>NOTES</h4></div>
-  <div class="noteboxes">Display other people's relevant notes here</div>
+  <div class="recommended-notes">
+    <div class="showhide"><a href="#"><h5> Show/hide notes relevant to your destination</h5></a>
+    </div>
+    <% ramble = Ramble.where(:destination => @discover.destination)  %>
+    <% ramble.each do |r| %>
+
+    <% if r.user_id != current_user.id %>
+    <% r.notes.each do |n| %>
+    <div class="show">
+      <div class="nbody">Note: <%= n.body %></div>
+      <div class="ntag">Tag: <%= n.tag_list %></div>
+    </div>
+    <script type="text/javascript">
+    $(".showhide").click(function () {
+      $(".show").toggle();
+    });
+    </script>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
   <div class="foursq">
     <div class="title">Foursquare:</div><br>
-     <% f = @foursquare_venue.each do |f| %>
-        <li>
-        <div class="title">
-          <%= f["venue"]["name"] %>
-        </div>
-        </li>
-          Address: <%= f["venue"]["location"]["address"] %><br>
-        <% f["tips"] %>
-        <% f["tips"].each do |g| %>
-        <article><%= link_to g["text"], g["canonicalUrl"] %></article>
-        <% end %>
+    <% f = @foursquare_venue.each do |f| %>
+    <li>
+      <div class="title">
+        <%= f["venue"]["name"] %>
+      </div>
+    </li>
+    Address: <%= f["venue"]["location"]["address"] %><br>
+    <% f["tips"] %>
+    <% f["tips"].each do |g| %>
+    <article><%= link_to g["text"], g["canonicalUrl"] %></article>
+    <% end %>
     <% end %>
   </div>
   <br>
@@ -32,28 +51,29 @@
     <div class="title">Yelp:</div>
     <br>
     <% @yelp.businesses.each do |y| %>
-      <li>
-        <%= link_to y.name, y.url %>
-        <%= link_to image_tag y.rating_img_url_small %>
-      </li>
-        <article><%= y.snippet_text %></article>
-      <% end %>
+    <li>
+      <%= link_to y.name, y.url %>
+      <%= link_to image_tag y.rating_img_url_small %>
+    </li>
+    <article><%= y.snippet_text %></article>
+    <% end %>
   </div>
   <br>
   <div class="instagram">
     <div class="title">Instagram:</div>
     <br>
     <% i = @instagram_images.each do |i| %>
-      <%= link_to image_tag i["images"]["thumbnail"]["url"] %>
+    <%= link_to image_tag i["images"]["thumbnail"]["url"] %>
     <% end %>
   </div>
   <br>
   <div class="reddit">
     <div class="title">Reddit:</div><br>
     <% @reddit_thread.each do |r| %>
-      <li><%= link_to r["data"]["title"], r["data"]["url"] %></li>
+    <li><%= link_to r["data"]["title"], r["data"]["url"] %></li>
     <% end %>
   </div>
+
   <div class="ramble">
     <h4>Like what you see? Create a ramble (itinerary) below! </h4>
     <div id="demo-form" class="demo-description" style="display: none; ">

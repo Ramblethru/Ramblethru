@@ -5,8 +5,9 @@
 </head>
 <body>
 	<h1> Thank you for using ramblethru, <%= @user.name %></h1>
+	<p> Destination - <%= @ramble.destination %>
 	<p>
-		To view your ramble, just follow this link: <%= link_to 'Ramble', @ramble %>.
+		To view your ramble, just follow this <%= link_to 'link', @ramble %>.
 	</p>
 </body>
 </html>

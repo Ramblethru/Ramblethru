@@ -1,7 +1,7 @@
 <div class="searchpage">
 	<div class="header">
 		<h3>Search for Notes on Locations you're interested in</h3>
-		<%= form_tag(rambles_path, :method => "get", class: "search-form", remote: true) do %>
+		<%= form_tag(rambles_path, :method => "get", class: "search-form") do %>
 		<div class="input-append">
 			<%= text_field_tag :search, params[:search], class: "span2", placeholder: "Enter Destination name" %>
 			<button class="btn" type="submit">Search</button>
@@ -12,8 +12,9 @@
 		<% if @ramble %>
 		<% @ramble.each do |ramble| %>
 		<div class="rambles">
-			<divclass="rambles-title"><% ramble.notes.each do |note| %>
-			<div class="noteshow">
+			<divclass="rambles-title">
+			<% ramble.notes.each do |note| %>
+			<div class="notesshow">
 				Note: <%= note.body %>
 			</div>
 			<div class="tagshow">

@@ -125,10 +125,46 @@ body {
   }
 
 }
+@media (max-width: 795px) {
+  #header-title-first, #header-title-last {
+    font-size: 120px;
+  }
+  #header-subtitle {
+    font-size: 25px;
+    text-align: center;
+    margin: 0px;
+  }
+}
+
+@media (max-width: 580px) {
+  #header-title-first, #header-title-last {
+    font-size: 90px;
+  }
+  #header-subtitle {
+    font-size: 20px;
+  }
+}
 
 @media (max-width: 500px) {
   h1.what-we-do, h2.discover, h2.go, h2.create {
     font-size: 25px;
+  }
+  #header-title-last {
+    font-size: 75px;
+  }
+  #header-title-first {
+    -webkit-text-stroke: 2px $green;
+    font-size: 75px;
+  }
+  #header-subtitle {
+    font-size: 15px;
+  }
+  div.discover-create {
+    width: 300px;
+  }
+  input#discover_destination {
+    font-size: 14px;
+    height: 45px;
   }
   i.fa-foursquare, i.fa-instagram, i.fa-yelp, i.fa-reddit {
     font-size: 50px;

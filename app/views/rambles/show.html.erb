@@ -1,6 +1,6 @@
 <div class="ramble-title">
 	<% if @ramble.destination %>
-  <%= @ramble.destination %>
+  <%= @ramble.destination.split.map(&:capitalize).join(' ') %>
   <% else %>
   <h1>NAME OF YOUR RAMBLE HERE</h1>
   <% end %>
@@ -33,6 +33,32 @@
     <%= link_to "Home", root_path %>
     <% end %>
     <div class="end"></div>
+  </div>
+  <div class="tag-div">
+    <link rel="stylesheet" type="text/css" href="http://xoxco.com/projects/code/tagsinput/jquery.tagsinput.css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://xoxco.com/projects/code/tagsinput/jquery.tagsinput.js"></script>
+    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js'></script>
+    <script type="text/javascript">
+      function onAddTag(tag) {
+        alert("Added a tag: " + tag);
+      }
+      function onRemoveTag(tag) {
+        alert("Removed a tag: " + tag);
+      }
+      function onChangeTag(input,tag) {
+        alert("Changed a tag: " + tag);
+      }
+      $(function() {
+        $('#tags_1').tagsInput({width:'auto'});
+      });
+    </script>
+    <form>
+      <p>
+        <label>Tags</label>
+        <input id="tags_1" type="text" class="tags" value="restaurant,hotel,museum,show,park,trail,bar,durham nc" />
+      </p>
+    </form>
   </div>
   <div class="api-feed">
     <div class="foursq">

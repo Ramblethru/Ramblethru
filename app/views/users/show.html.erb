@@ -6,7 +6,7 @@
 		<%= form.file_field :avatar %>
 		<%= form.submit "Add" %>
 		<% end %>
-		
+
 	</div>
 	<div class="userinfo">
 		<div class="name">
@@ -29,7 +29,7 @@
 	<div class="container">
 		<div class="usertrips">
 			<h3> My Rambles(dropdown?) </h3>
-			
+
 			<div class="userrambles">
 			<% @user.rambles.each do |r| %>
 				<%= link_to r.destination, ramble_path(r) %><br>
@@ -43,7 +43,7 @@
 				<% if r.instagram_url != nil %>
 				Saved from Instagram:<br> <%= link_to image_tag r.instagram_url %><br>
 				<% end %>
-				
+
 				<% r.notes.each do |n| %>
 					Note: <%= n.body %><br>
 					<% end %>
@@ -54,10 +54,10 @@
         });
 </script>
 				<% end %>
-				
+
 			</div>
 			<div class="usernotes">
-			
+
 			</div>
 		</div>
 	</div>

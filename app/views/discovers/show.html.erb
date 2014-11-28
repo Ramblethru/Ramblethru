@@ -54,6 +54,18 @@
       <li><%= link_to r["data"]["title"], r["data"]["url"] %></li>
     <% end %>
   </div>
+  <div class="recommended-notes">
+    <h4>RELEVANT NOTES GO HERE</h4>
+    <% ramble = Ramble.where(:destination => @discover.destination)  %>
+    <% ramble.each do |r| %>
+    <% if r.user_id != current_user.id %>
+    <% r.notes.each do |n| %>
+    <div class="nbody">Note: <%= n.body %></div>
+    <div class="ntag">Tag: <%= n.tag_list %></div>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
   <div class="ramble">
     <h4>Like what you see? Create a ramble (itinerary) below! </h4>
     <div id="demo-form" class="demo-description" style="display: none; ">

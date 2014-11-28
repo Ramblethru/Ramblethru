@@ -1,6 +1,4 @@
-<%= simple_form_for Discover.new do |f| %>
-    <%= f.input :destination, label: false, placeholder: "Search for your destination's City, ST...", :class => "destination" %>
-
+<%= simple_form_for Discover.new, :html => {:class => 'form-inline' } do |f| %>
+    <%= f.input :destination, label: false, placeholder: "Destination", :class => "destination" %>
     <%= button_to 'Search', { :controller => 'discovers', :action => 'create'}, :class => "input" %>
-
 <% end %>

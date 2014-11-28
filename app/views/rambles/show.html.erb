@@ -10,9 +10,9 @@
 </div>
 <div id='map' class='dark'></div>
 <script type='text/javascript'>
-var latitude= '<%=@ramble.latitude%>';
-var longitude= '<%=@ramble.longitude%>';
-var map = L.mapbox.map('map', 'gregurton.kbc7dghp').setView([latitude, longitude], 5);
+  var latitude= '<%=@ramble.latitude%>';
+  var longitude= '<%=@ramble.longitude%>';
+  var map = L.mapbox.map('map', 'gregurton.kbc7dghp').setView([latitude, longitude], 5).setZoom([14]);
 </script>
 <div class="container">
 	<div class="ramble-notes">
@@ -92,7 +92,6 @@ var map = L.mapbox.map('map', 'gregurton.kbc7dghp').setView([latitude, longitude
 	<article><%= y.snippet_text %></article>
 	<% end %>
 </div>
-
 <br>
 <div class="instagram">
 	<div class="title">Instagram:</div>

@@ -12,15 +12,18 @@
 		<% if @ramble %>
 		<% @ramble.each do |ramble| %>
 		<div class="rambles">
-			<divclass="rambles-title">
-			<% ramble.notes.each do |note| %>
-			<div class="notesshow">
-				Note: <%= note.body %>
-			</div>
-			<div class="tagshow">
-				Tag: <%= note.tag_list %>
-			</div>
-			<% end %>
+			<div class="rambles-title">
+			  <% ramble.notes.each do |note| %>
+      </div>
+			  <div class="notesshow">
+				  Note: <%= note.body %>
+			  </div>
+			  <div class="tagshow">
+				  Tag: <%= note.tag_list %>
+			  </div>
+			    <% end %>
+        <% end %>
+      </div>
 		</div>
 	</div>
 	<% end %>

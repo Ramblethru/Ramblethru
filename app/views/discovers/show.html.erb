@@ -6,9 +6,9 @@
 
   <div id='map' class='dark'></div>
   <script type='text/javascript'>
-  var latitude= '<%=@discover.latitude%>';
-  var longitude= '<%=@discover.longitude%>';
-  var map = L.mapbox.map('map', 'gregurton.kbc7dghp').setView([latitude, longitude], 5);
+    var latitude= '<%=@discover.latitude%>';
+    var longitude= '<%=@discover.longitude%>';
+    var map = L.mapbox.map('map', 'gregurton.kbc7dghp').setView([latitude, longitude], 5).setZoom([14]);
   </script>
   <div class="recommended-notes">
     <div class="showhide"><a href="#"><h5> Show/hide notes relevant to your destination</h5></a>

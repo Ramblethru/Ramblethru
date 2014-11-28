@@ -6,13 +6,7 @@ class Ramble < ActiveRecord::Base
 	belongs_to :user
 	has_many :notes, dependent: :destroy
 
-	# validates :name, presence: true
-# "#{	validates :destination, presence: true}
-
-  def self.search(query)
-    #where(:destination, query)
-    where("destination like ?", "%#{query}%")
-  end
+	# validates :name, :destination, :latitude, :longitude, presence: true
 
   def save_reddit_thread
     uri = Addressable::URI.parse("http://www.reddit.com/r/subreddit/search.json?q=#{@ramble.destination}&limit=5&sort=top")
@@ -30,6 +24,11 @@ class Ramble < ActiveRecord::Base
     self.instagram_url = instagram_data["data"][0]["images"]["thumbnail"]["url"]
     [] << self.instagram_url
     save!
+  end
+
+  def self.search(query)
+    #where(:destination, query)
+    where("destination like ?", "%#{query}%")
   end
 end
 

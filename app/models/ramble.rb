@@ -6,7 +6,7 @@ class Ramble < ActiveRecord::Base
 	belongs_to :user
 	has_many :notes, dependent: :destroy
 
-	validates :name, :destination, :latitude, :longitude, presence: true
+	# validates :name, :destination, :latitude, :longitude, presence: true
 
   def save_reddit_thread
     uri = Addressable::URI.parse("http://www.reddit.com/r/subreddit/search.json?q=#{@ramble.destination}&limit=5&sort=top")

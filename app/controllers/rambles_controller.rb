@@ -2,9 +2,9 @@ require "addressable/uri"
 class RamblesController < ApplicationController
     include HTTParty
 
-    before_action :authenticate
 
     def show
+       @ramble = Ramble.find(params[:id])
         yelp             
         instagram
         reddit
@@ -36,7 +36,7 @@ class RamblesController < ApplicationController
         @foursquare_venue = foursquare_data["response"]["groups"][0]["items"]
         @foursquare_tip = foursquare_data["response"]["groups"][0]["items"]
         @foursquare_venue_url = foursquare_data["response"]["groups"][0]["items"][0]["venue"]["name"]
-
+    end
 
   def new
     @ramble = Ramble.new
@@ -45,9 +45,9 @@ class RamblesController < ApplicationController
 
   def create
     if current_user
-      @ramble = Ramble.new(ramble_params)
-      @ramble.save
-      redirect_to @ramble
+      @ramble = current_user.rambles.build(ramble_params)
+      @ramble.save!
+      redirect_to ramble_path(@ramble)
     else
       render 'logins/new'
       flash.now[:notice] = "You must be logged in to create a ramble."

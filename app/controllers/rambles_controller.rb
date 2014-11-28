@@ -6,7 +6,7 @@ class RamblesController < ApplicationController
 
     def show
        @ramble = Ramble.find(params[:id])
-        yelp             
+        yelp
         instagram
         reddit
         foursquare
@@ -60,7 +60,7 @@ class RamblesController < ApplicationController
     end
   end
 
-  
+
 
   def index
     respond_to do |format|

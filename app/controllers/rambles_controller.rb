@@ -9,6 +9,7 @@ class RamblesController < ApplicationController
     end
 
     def yelp
+        @ramble = Ramble.find(params[:id])
         params = { term: 'food',
                    limit: 5,
                   }

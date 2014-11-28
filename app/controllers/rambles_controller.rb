@@ -59,22 +59,20 @@ class RamblesController < ApplicationController
 
   def index
     respond_to do |format|
-      format.html do
-        if params[:search]
-          @ramble = Ramble.search(params[:search]).order("created_at DESC")
-        else
-          redirect_to root_path, alert: "Sorry, you must enter something. Anything at all."
-        end
-      end
-      format.js do
-        if params[:search]
-          @ramble = Ramble.search(params[:search]).order("created_at DESC")
-          render :search, status: :created
-        else
-          render :create, status: :not_found
-        end
+    format.html do
+      if params[:search]
+      @ramble = Ramble.search(params[:search]).order("created_at DESC")
+    end
+    end
+    format.js do
+     if params[:search]
+        @ramble = Ramble.search(params[:search]).order("created_at DESC")
+        render :search, status: :created
+      else
+        render :create, status: :not_found
       end
     end
+  end
   end
 
   def add_api

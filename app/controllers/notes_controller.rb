@@ -20,8 +20,6 @@ def create
     format.html do
       if @note.save
         redirect_to @ramble, success: "Your note was recorded."
-      else
-        redirect_to root_path, alert: "Sorry, you must enter something. Anything at all."
       end
     end
     format.js do

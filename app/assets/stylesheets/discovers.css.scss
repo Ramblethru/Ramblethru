@@ -74,8 +74,11 @@ article {
 }
 
 .discover-bottom {
-  width: 375px;
+  width: 500px;
   margin: 50px auto 30px auto;
 }
 
-.form-inline div { display: inline-block }
+.form-inline div {
+  width: 375px;
+  display: inline-block;
+}

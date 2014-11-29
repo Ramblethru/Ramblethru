@@ -22,4 +22,13 @@ module LoginsHelper
       flash[type]
     end
   end
+
+  def store_return_to
+    session[:return_to] = request.url
+  end
+
+  def redirect_back
+    redirect_to(session[:return_to])
+    session[:return_to] = nil
+end
 end

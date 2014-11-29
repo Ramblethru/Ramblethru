@@ -1,5 +1,6 @@
 class LoginsController < ApplicationController
   include LoginsHelper
+  before_filter :store_return_to
   
   def new
   end
@@ -9,7 +10,7 @@ class LoginsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       login(user)
       flash.now[:notice] = "You've successfully logged in."
-      redirect_to root_path
+      redirect_to :back   
     else
       flash.now[:error] = 'Invalid email/password combination'
       render 'new'

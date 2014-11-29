@@ -61,7 +61,7 @@
       Address: <%= f["venue"]["location"]["address"] %><br>
       <% f["tips"] %>
       <% f["tips"].each do |g| %>
-      <article><%= link_to g["text"], g["canonicalUrl"], :class => "f-tips" %></article>
+      <article><%= link_to g["text"], g["canonicalUrl"], :class => "f-tips", :target => '_blank' %></article>
       <% end %>
     </div>
     <% end %>
@@ -73,8 +73,8 @@
     <br>
     <% @yelp.businesses.each do |y| %>
     <li>
-      <%= link_to y.name, y.url, :class => "y-name"  %>
-      <%= link_to image_tag y.rating_img_url_small%>
+      <%= link_to y.name, y.url, :class => "y-name", :target => '_blank'  %>
+      <%= image_tag y.rating_img_url_small%>
     </li>
     <article class="y-tips"><%= y.snippet_text %></article>
     <% end %>

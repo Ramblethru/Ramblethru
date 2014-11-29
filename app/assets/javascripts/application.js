@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.tagsinput
 //= require jquery-ui/effect-highlight
+//= require jquery-ui/effect-bounce
 //= require_tree .
 //= require mapbox.js
 //= require moment
@@ -25,8 +26,4 @@ $(document).ready(function(){
 $(".menu-button").click(function(){
 $(".menu-bar").toggleClass( "open" );
 })
-});
-
-$( ".fa").mouseover(function() {
-  $( ".fa").append('<i class="fa-compass icon-spin"></i>');
 });

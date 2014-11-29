@@ -26,6 +26,7 @@ $(".menu-button").click(function(){
 $(".menu-bar").toggleClass( "open" );
 })
 });
+
 $( ".fa").mouseover(function() {
   $( ".fa").append('<i class="fa-compass icon-spin"></i>');
 });

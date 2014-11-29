@@ -1,9 +1,9 @@
 <div class="pagename">
-  <h1>Discover your destination</h1>
+  <h1 class="discover">Discover your destination</h1>
   <div class="location">
-    <%= @discover.destination.split.map(&:capitalize).join(' ') %>
+    You searched: <%= @discover.destination.split.map(&:capitalize).join(' ') %>
   </div>
-
+</div>
   <div id='map' class='dark'></div>
   <script type='text/javascript'>
     var latitude= '<%=@discover.latitude%>';
@@ -31,36 +31,44 @@
     <% end %>
     <% end %>
   </div>
+<div class="container">
   <div class="foursq">
-    <div class="title">Foursquare:</div><br>
+    <div class="four-title">Foursquare <i class="fa fa-arrow-circle-o-down"></i>
+</i>
+</i></div>
+<br>
     <% f = @foursquare_venue.each do |f| %>
     <li>
-      <div class="title">
+      <div class="f-title">
         <%= f["venue"]["name"] %>
       </div>
     </li>
-    Address: <%= f["venue"]["location"]["address"] %><br>
-    <% f["tips"] %>
-    <% f["tips"].each do |g| %>
-    <article><%= link_to g["text"], g["canonicalUrl"] %></article>
-    <% end %>
+    <div class="f-tips">
+      Address: <%= f["venue"]["location"]["address"] %><br>
+      <% f["tips"] %>
+      <% f["tips"].each do |g| %>
+      <article><%= link_to g["text"], g["canonicalUrl"], :class => "f-tips" %></article>
+      <% end %>
+    </div>
     <% end %>
   </div>
   <br>
   <div class="yelp">
-    <div class="title">Yelp:</div>
+    <div class="y-title">Yelp <i class="fa fa-arrow-circle-o-down"></i>
+</div>
     <br>
     <% @yelp.businesses.each do |y| %>
     <li>
-      <%= link_to y.name, y.url %>
-      <%= link_to image_tag y.rating_img_url_small %>
+      <%= link_to y.name, y.url, :class => "y-name"  %>
+      <%= link_to image_tag y.rating_img_url_small%>
     </li>
-    <article><%= y.snippet_text %></article>
+    <article class="y-tips"><%= y.snippet_text %></article>
     <% end %>
   </div>
   <br>
   <div class="instagram">
-    <div class="title">Instagram:</div>
+    <div class="ins-title">Instagram <i class="fa fa-arrow-circle-o-down"></i>
+</div>
     <br>
     <% i = @instagram_images.each do |i| %>
     <%= link_to image_tag i["images"]["thumbnail"]["url"] %>
@@ -68,21 +76,23 @@
   </div>
   <br>
   <div class="reddit">
-    <div class="title">Reddit:</div><br>
+    <div class="red-title">Reddit <i class="fa fa-arrow-circle-o-down"></i>
+</div><br>
     <% @reddit_thread.each do |r| %>
-    <li><%= link_to r["data"]["title"], r["data"]["url"] %></li>
+    <li><%= link_to r["data"]["title"], r["data"]["url"], :class => "r-link" %></li>
     <% end %>
   </div>
 
   <div class="ramble">
-    <h4>Like what you see? Create a ramble (itinerary) below! </h4>
-    <div id="demo-form" class="demo-description" style="display: none; ">
-    </div>
-    <%= render '/rambles/create' %>
-    <%=  link_to_modal "Create", new_ramble_path, :class=>"button" %>
+    <h4 class="r-create">Like what you see? Create a ramble (itinerary) below! </h4>
+    
+    <i class="fa fa-arrow-right"></i>
+<%= link_to_modal "Create", new_ramble_path, :class=>"create" %> <i class="fa fa-arrow-left"></i>
+
   </div>
-  <span><h4>or</h4></span>
+  <span><h4 class="r-create">or search somewhere new</h4></span>
   <div class="discover-bottom">
     <%= render "/discovers/create" %>
   </div>
+</div>
 </div>

@@ -163,9 +163,10 @@ body {
   div.discover-create {
     width: 300px;
   }
-  input#discover_destination {
+  input.input {
     font-size: 14px;
     height: 45px;
+    margin-left: 60px;
   }
   i.fa-foursquare, i.fa-instagram, i.fa-yelp, i.fa-reddit {
     font-size: 50px;

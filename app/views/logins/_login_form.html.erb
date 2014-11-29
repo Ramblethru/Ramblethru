@@ -1,7 +1,9 @@
-<%= form_for(:session, url: logins_path) do |f| %>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.button :submit %>
-<% end %>
+<div class="login-form">
+	<%= form_for(:session, url: logins_path) do |f| %>
+	  <%= f.label :email, :class => "login-form" %>
+	  <%= f.email_field :email, :class => "login-form" %>
+	  <%= f.label :password, :class => "login-form" %>
+	  <%= f.password_field :password, :class => "login-form" %>
+	  <%= f.button :submit, :class => "login-button" %>
+	<% end %>
+</div>

@@ -12,7 +12,21 @@
 <script type='text/javascript'>
   var latitude= '<%=@ramble.latitude%>';
   var longitude= '<%=@ramble.longitude%>';
+  var destination='<%=@ramble.destination.split.map(&:capitalize).join(' ')%>';
   var map = L.mapbox.map('map', 'gregurton.kbc7dghp').setView([latitude, longitude], 5).setZoom([14]);
+  L.mapbox.markerLayer({
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [longitude, latitude ]
+    },
+    properties: {
+      title: destination,
+      description: 'Your destination!',
+      'marker-size': 'large',
+      'marker-color': '#af703a'
+    }
+  }).addTo(map);
 </script>
 <div class="container">
 	<div class="ramble-notes">

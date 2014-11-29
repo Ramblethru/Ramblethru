@@ -1,7 +1,8 @@
 <%= simple_form_for Ramble.new do |f| %>
+	<h1 class="ramble-create">Create a Ramble</h1>
     <%= f.input :destination, label: false, placeholder: "Destination" %>
     <%= f.text_field :start_date, label: false, placeholder: "Start Date",id: 'start_date' %>
     <%= f.text_field :end_date,label: false, placeholder: "End Date", id: 'end_date' %>
-    <%= button_to 'Save this Ramble', { :controller => 'rambles', :action => 'create'} %>
+    <%= button_to 'Save this Ramble', { :controller => 'rambles', :action => 'create'}, id: 'ramble-button' %>
 
 <% end %>

@@ -14,6 +14,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
   <div class="top-bar">
     <% if logged_in? %>
     Bienvenue, <%= link_to current_user.name, user_path(current_user), :class => "top-bar" %>!

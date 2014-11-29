@@ -41,7 +41,7 @@
               <% end %>
               <li><%= link_to "Home", root_path %></li>
               <li><a href="#">Editorial</a></li>
-              <li><a href="#">About</a></li>
+              <li><%= link_to "About", about_path %></a></li>
             </ul>
             <%= yield %>
             <%= display_alert(:notice) %>

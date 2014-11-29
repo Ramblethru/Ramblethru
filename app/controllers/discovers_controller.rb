@@ -27,7 +27,7 @@ class DiscoversController < ApplicationController
     #Instagram
     instagram = HTTParty.get("https://api.instagram.com/v1/media/search?lat=#{@discover.latitude}&lng=#{@discover.longitude}&count=8&client_id=ea93d7b97c444c9bbfcf23cbbcb63ee4")
     instagram_data = JSON.parse(instagram.body)
-    @instagram_images = instagram_data["data"]["images"]
+    @instagram_images = instagram_data["data"]
     # [0]["images"]["thumbnail"]["url"]
 
     #Reddit

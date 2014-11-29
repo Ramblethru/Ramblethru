@@ -213,28 +213,36 @@ a.y-name {
 .r-list {
   max-width: 450px;
   margin: 0 auto 0 auto;
-  text-align: left;
+  text-align: justify;
+  text-align-last: justify;
 }
-li {
+
+.r-list:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+}
+
+.r-list li {
   display: inline;
 }
-a {
+.r-list a {
   font-family: monospace, sans-serif;
   color: $light-grey;
   font-size: 18px;
 }
-a:hover {
+.r-list a:hover {
   color: $dark-grey;
 }
-a:active {
+.r-list a:active {
   color: $light-grey;
 }
 
-a:visited {
+.r-list a:visited {
   color: $light-grey;
 }
 
-a.create {
+.r-list a.create {
   font-family: 'menschmensch_regular';
   color: $orange;
   font-size: 35px;

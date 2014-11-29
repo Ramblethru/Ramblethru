@@ -35,11 +35,13 @@
  <li><a href="#" class="menu-button">Menu</a></li>
  <% if logged_in? %>
     <li><%= link_to "Profile", user_path(current_user) %></li>
+    <li><%= link_to_modal "Search", new_ramble_path %></a></li>
  <% else %>
-    <li><%= link_to "Sign In", new_login_path %>
+    <li><%= link_to_modal "Sign In", new_login_path %>
+    <li><%= link_to_modal "Search", discovers_path %></a></li>
+
   <% end %>
  <li><%= link_to "Home", root_path %></li>
- <li><%= link_to_modal "Search", new_ramble_path %></a></li>
  <li><a href="#">About</a></li>
  </ul>
 <%= yield %>

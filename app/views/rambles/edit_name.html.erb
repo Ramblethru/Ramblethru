@@ -1,0 +1,4 @@
+<%= simple_form_for @ramble do |f| %>
+<%= f.input :name, label:false, placeholder: "Give your ramble a name", id:'ramble_name' %>
+<%= f.button :submit, "Submit change", id: 'ramble-button' %>
+<% end %>

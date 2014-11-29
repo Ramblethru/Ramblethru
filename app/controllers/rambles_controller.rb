@@ -61,8 +61,6 @@ class RamblesController < ApplicationController
     end
   end
 
-
-
   def index
     respond_to do |format|
     format.html do
@@ -103,7 +101,8 @@ class RamblesController < ApplicationController
     end
   end
 
-  def edit
+  def edit_name
+    @ramble = Ramble.find(params[:id])
   end
 
   def destroy

@@ -8,9 +8,21 @@
   <script type='text/javascript'>
     var latitude= '<%=@discover.latitude%>';
     var longitude= '<%=@discover.longitude%>';
-    var destination='<%=@discover.destination%>';
+    var destination='<%=@discover.destination.split.map(&:capitalize).join(' ')%>';
     var map = L.mapbox.map('map', 'gregurton.kbc7dghp').setView([latitude, longitude], 5).setZoom([14]);
-    L.marker([latitude, longitude]).addTo(map);
+    L.mapbox.markerLayer({
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [longitude, latitude ]
+      },
+      properties: {
+        title: destination,
+        description: 'Your destination!',
+        'marker-size': 'large',
+        'marker-color': '#af703a'
+      }
+    }).addTo(map);
   </script>
   <div class="recommended-notes">
     <div class="showhide"><a href="#"><h5> Show/hide notes relevant to your destination</h5></a>

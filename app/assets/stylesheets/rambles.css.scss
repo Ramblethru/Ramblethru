@@ -8,9 +8,7 @@
 	@include outer-container;
 	margin-top: 100px;
 }
-.ramble-title {
-	text-align: center;
-}
+
 .ramble-notes {
 	@include span-columns(6);
 	text-align: center;
@@ -74,7 +72,7 @@ input#ramble-button {
 }
 .ramble-title {
   background-color: $green;
-  height: 150px;
+  height: 170px;
   margin-top: -37px;
   padding-top: 80px;
   color: $orange;
@@ -189,6 +187,9 @@ button {
 	background: $green;
 	margin: 10px !important;
 }
+button:hover {
+	background-color: $dark-grey;
+}
 #save {
   	font-family: 'menschmensch_regular';
   	color: $orange;
@@ -210,10 +211,21 @@ a.edit-note, a.delete-note {
 }
 .fa-pencil-square-o, .fa-trash {
 	color: $dark-grey;
+	font-size: 18px;
 }
 #no-notes {
 	font-family: monospace, sans-serif;
 	font-size: 18px;
 	margin-top: 10px;
 	color: $dark-grey;
+}
+#ramble-dest {
+	font-family: monospace, sans-serif;
+	font-color: $light-grey;
+	font-size: 18px;
+}
+.edit-ramble-name {
+	text-decoration: none;
+	font-size: 18px;
+	color: $light-grey;
 }

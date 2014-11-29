@@ -1,10 +1,13 @@
 <div class="ramble-title">
+	<%= @ramble.name %>
+	<%= link_to 'Edit', edit_ramble_name_path, :class => "edit-ramble-name" %>
 	<% if @ramble.destination %>
-	<%= current_user.name %>'s trip to: <%= @ramble.destination.split.map(&:capitalize).join(' ') %>
+	<div id="ramble-dest">
+	 	<%= @ramble.destination.split.map(&:capitalize).join(' ') %>
+	</div>
 	<% else %>
 	<h1>NAME OF YOUR RAMBLE HERE</h1>
 	<% end %>
-
 	<% if @ramble.start_date && @ramble.end_date %>
 	<div class="start-end">
 		From <%= @ramble.start_date %> to <%= @ramble.end_date %>
@@ -79,13 +82,17 @@
 			<div class="ramble-yelp">
 			<i class="fa fa-yelp ramble"></i>
 				<div id="yelp-title">Yelp:</div>
-					<% @yelp.businesses.each do |y| %>
-						<li>
-							<%= link_to y.name, y.url, :class => "yelp-venue-title" %>
-							<%= link_to image_tag y.rating_img_url_small %><hr>
-						</li>
-						<article class="yelp-venue-tip"><%= y.snippet_text %></article>
-						<hr class="y-tip">
+					<% if @yelp.businesses != nil %>
+						<% @yelp.businesses.each do |y| %>
+							<li>
+								<%= link_to y.name, y.url, :class => "yelp-venue-title" %>
+								<%= link_to image_tag y.rating_img_url_small %><hr>
+							</li>
+							<article class="yelp-venue-tip"><%= y.snippet_text %></article>
+							<hr class="y-tip">
+						<% end %>
+					<% else %>
+						Sorry, there are no Yelp results for this destination.
 					<% end %>
 			</div>
 			<div class="ramble-instagram">

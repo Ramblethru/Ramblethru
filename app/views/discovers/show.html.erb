@@ -14,7 +14,7 @@
       type: 'Feature',
       geometry: {
         type: 'Point',
-        coordinates: [longitude, latitude ]
+        coordinates: [longitude, latitude]
       },
       properties: {
         title: destination,
@@ -100,3 +100,5 @@
     <%= render "/discovers/create" %>
   </div>
 </div>
+
+<!--<a href="https://www.reddit.com/subreddits/search?q=#{@discover.destination.gsub!(' ', '%20')}">reddit search</a>-->

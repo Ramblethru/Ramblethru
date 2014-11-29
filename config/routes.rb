@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :locations
-
   root 'home#index'
 
   resources :users
@@ -9,7 +7,7 @@ Rails.application.routes.draw do
     resources :notes#, shallow: true
       get 'notes/:id/delete' => 'notes#destroy'
   end
-
+  resources :locations
   resources :discovers, :only => [:show, :create]
   resources :notes, :only => [:index, :destroy]
   resources :logins, :only => [:new, :create]
@@ -19,9 +17,11 @@ Rails.application.routes.draw do
   get '/users/:id/edit_name', to: 'users#edit_name', as: :edit_name
   get '/users/:id/edit_lives_in', to: 'users#edit_lives_in', as: :edit_lives_in
 
+  get '/rambles/:id/edit_name', to: 'rambles#edit_name', as: :edit_ramble_name
+
   post 'rambles/:id/add_api', to: 'rambles#add_api', as: :add_api
   post 'rambles/:id/add_instagram', to: 'rambles#add_instagram', as: :add_instagram
-  
+
   # post '/users/:user_id/rambles/new' => 'rambles#new', as: 'new_user_ramble_post'
 
   # The priority is based upon order of creation: first created -> highest priority.

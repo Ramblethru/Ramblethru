@@ -24,7 +24,7 @@ body {
 }
 
 #map {
-  width: 100%;
+  width: 60%;
   height: 450px;
   margin: 0 auto 0 auto;
 }
@@ -200,13 +200,15 @@ a.y-name {
 }
 .reddit {
   background-color: $green;
-  height: 300px;
+  height: 400px;
 }
 .r-desc {
   font-family: monospace, sans-serif;
   color: $orange;
   font-size: 16px;
   font-weight: bold;
+  width: 450px;
+  margin: 0 auto 0 auto;
 }
 .r-list {
   max-width: 450px;

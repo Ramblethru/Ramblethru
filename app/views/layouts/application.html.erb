@@ -18,7 +18,7 @@
 <% if logged_in? %>
     Bienvenue, <%= link_to current_user.name, user_path(current_user), :class => "top-bar" %>! <i class="fa fa-compass"></i>
 
-      <%= link_to "Log out", logout_path, :class => "top-bar" %><i class="fa fa-compass"></i>
+      <div class="fa"><%= link_to "Log out", logout_path, :class => "top-bar" %><i class="fa fa-compass"></i></div>
 
       <%= link_to "Home", root_path, :class => "top-bar" %>
     <% else %>

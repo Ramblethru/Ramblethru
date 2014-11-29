@@ -20,8 +20,8 @@ $(document).ready(function () {
 
 $(document).ready(function() {
   $('#map-usa').usmap({
-  stateStyles: {'fill': '#eff0eb'}, 
-  stateHoverStyles: {fill: '#af703a'}, 
+  stateStyles: {'fill': '#eff0eb'},
+  stateHoverStyles: {fill: '#af703a'},
   showLabels: false,
 
 });
@@ -33,3 +33,9 @@ $(".menu-button").click(function(){
 $(".menu-bar").toggleClass( "open" );
 })
 })
+// 
+// $(document).ready(function(){
+//   $('.fa-foursquare').mouseenter(function() {
+//     $(this).effect('bounce',1000);
+//   });
+// });

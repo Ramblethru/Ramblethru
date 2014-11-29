@@ -70,7 +70,7 @@ div.container {
 }
 div.homepage-about {
 	text-align: center;
-  height: 350px;
+  height: 280px;
   font-family: 'menschmensch_regular';
   font-size: 40px;
   color: $green;
@@ -89,6 +89,7 @@ div.homepage-about {
   height: 500px;
   background-color: $green;
   overflow-x: hidden;
+  margin-bottom: 0px;
 }
 .homepage-about-go {
   height: 580px;

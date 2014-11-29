@@ -1,7 +1,12 @@
 // Place all the styles related to the discovers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 $orange: #af703a;
+
+body {
+  text-align: center;
+}
 
 .pagename {
    text-align: center;
@@ -86,4 +91,135 @@ article {
 .show {
   display:none;
 }
+div.modal.current {
+  background: $light-grey;
+  margin-left: -245px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -170px;
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
+  border: 5px solid $dark-grey;
+  }
+.login-form {
+  width: 300px;
+  margin: 0 auto;
+  font-family: 'menschmensch_regular';
+  color: $orange;
+  font-size: 20px;
+}
+input.login-form {
+  font-family: monospace, sans-serif;
+  color: $dark-grey;
+  border: 2px solid $green;
+  border-radius: 10px;
+  background-color: transparent;
+}
+.login-button {
+  background-color: $orange;
+  color: $green;
+  height: 45px;
+  line-height: .8;
 
+  &:hover {
+    background-color: $dark-grey;
+  }
+}
+h2#login {
+  text-align: center;
+  font-size: 40px;
+}
+h2#register, a.register {
+  font-size: 30px;
+  color: $green;
+}
+a.close-modal {
+  text-align: center;
+  width: 100px;
+  margin-top: -35px;
+  font-family: 'menschmensch_regular';
+  color: $green;
+}
+.pagename {
+  background-color: $green;
+  height: 150px;
+  margin-top: -72px;
+}
+h1.discover {
+  color: $orange;
+  font-family: 'menschmensch_regular';
+  padding-top: 40px;
+  font-size: 50px;
+  margin-bottom: 0px;
+}
+.location {
+  color: $light-grey;
+  font-family: monospace, sans-serif;
+  font-size: 20px;
+}
+div.four-title, div.ins-title {
+  font-size: 40px;
+  font-family: 'menschmensch_regular';
+  color: $green;
+  margin-bottom: -20px;
+}
+.fa-arrow-circle-o-down {
+  color: $orange;
+}
+div.f-title {
+  color: $orange;
+  font-family: monospace, sans-serif;
+  font-size: 18px;
+}
+div.f-tips, a.f-tips {
+  font-family: monospace, sans-serif;
+  color: $dark-grey
+}
+.yelp {
+  background-color: $green;
+  padding-bottom: 20px;
+}
+div.y-title, div.red-title {
+  color: $orange;
+  font-family: 'menschmensch_regular';
+  font-size: 40px;
+  padding-top: 30px;
+}
+a.y-name {
+  font-family: monospace, sans-serif;
+  color: $dark-grey;
+  font-size: 18px;
+  }
+.y-tips {
+  font-family: monospace, sans-serif;
+  color: $orange;
+  font-size: 16px;
+  font-weight: bold;
+}
+.reddit {
+  background-color: $green;
+  height: 300px;
+}
+a.r-link {
+  font-family: monospace, sans-serif;
+  color: $dark-grey;
+  font-size: 18px;
+}
+a.create {
+  font-family: 'menschmensch_regular';
+  color: $orange;
+  font-size: 35px;
+}
+h4.r-create {
+  font-family: monospace, sans-serif;
+  color: $green;
+}
+.fa-arrow-right, .fa-arrow-left {
+  color: $green;
+  font-size: 30px;
+}
+div.discover-bottom {
+  margin-top: 0px;
+}

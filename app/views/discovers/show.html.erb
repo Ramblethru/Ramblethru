@@ -92,19 +92,19 @@
   <div class="reddit">
     <div class="red-title">Reddit <i class="fa fa-arrow-circle-o-down"></i>
     </div>
-    <br>A list of subreddits related to your destination:
+    <span class="r-desc">A list of subreddits related to your destination:</span>
     <br>
-    <ul>
-    <% @reddit_thread.each do |r| %>
-      <li>
-        <a href="http://www.reddit.com/r/<%= r["name"] %>">
-          <%= r["name"] %>
-        </a>
-      </li>
-    </ul>
-
-    <!--<li><#= link_to r["data"]["title"], r["data"]["url"], :class => "r-link" %></li>-->
-    <% end %>
+    <div class="r-list">
+      <ul>
+      <% @reddit_thread.each do |r| %>
+        <li>
+          <span class="r-link"><a href="http://www.reddit.com/r/<%= r["name"] %>" target="_blank"></span>
+            <%= r["name"] %>
+          </a>
+        </li>
+      <% end %>
+      </ul>
+    </div>
   </div>
   <div class="ramble">
     <h4 class="r-create">Like what you see? Create a ramble (itinerary) below! </h4>

@@ -23,29 +23,28 @@
       <span class="logspin1">
         <i class="fa fa-compass"></i>  <%= link_to "Home", root_path, :class => "top-bar" %></span>
         <% else %>
-        <span class="logspin2"><%=  link_to_modal "New User", new_user_path, :class=>"top-bar" %><span class="logspin"><i class="fa fa-compass"></i>
-        <%=  link_to_modal "Sign in", new_login_path, :class=>"top-bar" %></span>
-        <span class="logspin1">  <i class="fa fa-compass"></i>
-        <%= link_to "Home", root_path, :class => "top-bar" %></span>
-      </span>
-        <% end %>
-      </div>
-      <ul class="menu">
-        <li title="menu"><a href="#" class="menu-button home">menu</a></li>
-      </ul>
-      <ul class="menu-bar">
-        <li><a href="#" class="menu-button">Menu</a></li>
-        <% if logged_in? %>
-        <li><%= link_to "Profile", user_path(current_user) %></li>
-        <% else %>
-        <li><%= link_to "Sign In", new_login_path %>
-          <% end %>
-          <li><%= link_to "Home", root_path %></li>
-          <li><a href="#">Editorial</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-        <%= yield %>
-        <%= display_alert(:notice) %>
-        <%= display_alert(:alert) %>
-      </body>
-      </html>
+        <%=  link_to_modal "New User", new_user_path, :class=>"top-bar" %><span class="logspin"><i class="fa fa-compass"></i>
+          <%=  link_to_modal "Sign in", new_login_path, :class=>"top-bar" %></span>
+          <span class="logspin1">  <i class="fa fa-compass"></i>
+            <%= link_to "Home", root_path, :class => "top-bar" %></span>
+            <% end %>
+          </div>
+          <ul class="menu">
+            <li title="menu"><a href="#" class="menu-button home">menu</a></li>
+          </ul>
+          <ul class="menu-bar">
+            <li><a href="#" class="menu-button">Menu</a></li>
+            <% if logged_in? %>
+            <li><%= link_to "Profile", user_path(current_user) %></li>
+            <% else %>
+            <li><%= link_to "Sign In", new_login_path %>
+              <% end %>
+              <li><%= link_to "Home", root_path %></li>
+              <li><a href="#">Editorial</a></li>
+              <li><a href="#">About</a></li>
+            </ul>
+            <%= yield %>
+            <%= display_alert(:notice) %>
+            <%= display_alert(:alert) %>
+          </body>
+          </html>

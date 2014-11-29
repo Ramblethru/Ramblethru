@@ -46,7 +46,6 @@ class RamblesController < ApplicationController
 
   def new
     @ramble = Ramble.new
-    render 'rambles/create'
   end
 
   def create

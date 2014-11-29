@@ -137,10 +137,8 @@ h2#register, a.register {
 }
 a.close-modal {
   text-align: center;
-  display: block;
   width: 100px;
   margin-top: -35px;
-  margin-left: 180px;
   font-family: 'menschmensch_regular';
   color: $green;
 }
@@ -208,4 +206,20 @@ a.r-link {
   font-family: monospace, sans-serif;
   color: $dark-grey;
   font-size: 18px;
+}
+a.create {
+  font-family: 'menschmensch_regular';
+  color: $orange;
+  font-size: 35px;
+}
+h4.r-create {
+  font-family: monospace, sans-serif;
+  color: $green;
+}
+.fa-arrow-right, .fa-arrow-left {
+  color: $green;
+  font-size: 30px;
+}
+div.discover-bottom {
+  margin-top: 0px;
 }

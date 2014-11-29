@@ -84,12 +84,13 @@
   </div>
 
   <div class="ramble">
-    <h4>Like what you see? Create a ramble (itinerary) below! </h4>
-    <div id="demo-form" class="demo-description" style="display: none; ">
-    </div>
-    <%=  link_to_modal "Create", new_ramble_path, :class=>"form" %>
+    <h4 class="r-create">Like what you see? Create a ramble (itinerary) below! </h4>
+    
+    <i class="fa fa-arrow-right"></i>
+<%= link_to_modal "Create", new_ramble_path, :class=>"create" %> <i class="fa fa-arrow-left"></i>
+
   </div>
-  <span><h4>or</h4></span>
+  <span><h4 class="r-create">or search somewhere new</h4></span>
   <div class="discover-bottom">
     <%= render "/discovers/create" %>
   </div>

@@ -1,9 +1,7 @@
 <div class="ramble-title">
-	<% if @ramble.destination %>
-	<%= @ramble.destination.split.map(&:capitalize).join(' ') %>
-	<% else %>
-	<h1>NAME OF YOUR RAMBLE HERE</h1>
-	<% end %>
+	<h1>Name:<%= @ramble.name %></h1>
+	<%= link_to 'Edit name', edit_ramble_name_path %>
+	<%= @ramble.destination %>
 	<% if @ramble.start_date && @ramble.end_date %>
 	<br>From <%= @ramble.start_date %> to <%= @ramble.end_date %>
 	<% end %>

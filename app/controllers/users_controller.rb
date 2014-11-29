@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      UserMailer.user_created(@user).deliver
       flash[:success] = 'User Created'
       session[:current_user_id] = @user.id
       redirect_to root_path
@@ -39,11 +40,11 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
       if @user.update(user_params)
-        flash[:notice] = 'User was successfully updated.' 
+        flash[:notice] = 'User was successfully updated.'
         redirect_to @user
 
       else
-        render :edit 
+        render :edit
       end
   end
 

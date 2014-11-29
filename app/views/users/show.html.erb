@@ -33,7 +33,7 @@
 			<div class="userrambles">
 			<% @user.rambles.each do |r| %>
 				<%= link_to r.destination, ramble_path(r) %><br>
-				<div class="show"><a href="#"> Show/hide notes </a></div>
+				<div class="shows"><a href="#"> Show/hide notes </a></div>
 				<%= r.start_date %> - <%= r.end_date %><br>
 				<div class="noteshow">
 				<% if r.reddit_thread != nil %>
@@ -43,13 +43,13 @@
 				<% if r.instagram_url != nil %>
 				Saved from Instagram:<br> <%= link_to image_tag r.instagram_url %><br>
 				<% end %>
-
 				<% r.notes.each do |n| %>
 					Note: <%= n.body %><br>
+					Tag: <%= n.tag_list %>
 					<% end %>
 				</div>
 					<script type="text/javascript">
- $(".show").click(function () {
+ $(".shows").click(function () {
             $(".noteshow").toggle();
         });
 </script>

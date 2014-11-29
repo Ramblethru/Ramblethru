@@ -51,8 +51,10 @@ class RamblesController < ApplicationController
 
   def create
     if current_user
+      @user = current_user
       @ramble = current_user.rambles.build(ramble_params)
       @ramble.save!
+      RambleMailer.ramble_created(@ramble.user, @ramble).deliver
       redirect_to ramble_path(@ramble)
     else
       render 'logins/new'

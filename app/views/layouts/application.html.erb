@@ -1,50 +1,63 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Ramblethru</title>
-  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
-  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
-  <%= stylesheet_link_tag 'font-awesome-animatio.min.css' %>
-  <%= stylesheet_link_tag 'normalize.css', media: 'all' %>
-  <link rel="stylesheet" href="animate.min.css">
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
-  <%= javascript_include_tag 'jquery.usmap' %>
-  <%= javascript_include_tag 'raphael' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <div class="top-bar">
-    <% if logged_in? %>
-    Bienvenue, <%= link_to current_user.name, user_path(current_user), :class => "top-bar" %>!
-    <span class="logspin"><i class="fa fa-compass"></i>
-      <%= link_to "Log out", logout_path, :class => "top-bar" %></span>
-      <span class="logspin1">
-        <i class="fa fa-compass"></i>  <%= link_to "Home", root_path, :class => "top-bar" %></span>
-        <% else %>
-        <span class="logspin2"><%=  link_to_modal "New User", new_user_path, :class=>"top-bar" %><span class="logspin"><i class="fa fa-compass"></i>
-        <%=  link_to_modal "Sign in", new_login_path, :class=>"top-bar" %></span>
-        <span class="logspin1">  <i class="fa fa-compass"></i>
-        <%= link_to "Home", root_path, :class => "top-bar" %></span>
-      </span>
-        <% end %>
-      </div>
-      <ul class="menu">
-        <li title="menu"><a href="#" class="menu-button home">menu</a></li>
-      </ul>
-      <ul class="menu-bar">
-        <li><a href="#" class="menu-button">Menu</a></li>
+  <head>
+    <title>Ramblethru</title>
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
+    <%= stylesheet_link_tag 'font-awesome-animatio.min.css' %>
+    <%= stylesheet_link_tag 'normalize.css', media: 'all' %>
+    <link rel="stylesheet" href="animate.min.css">
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+    <%= javascript_include_tag 'jquery.usmap' %>
+    <%= javascript_include_tag 'raphael' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="top-bar">
+      <% if logged_in? %>
+        Bienvenue, <%= link_to current_user.name, user_path(current_user), :class => "top-bar" %>!
+        <span class="logspin">
+          <i class="fa fa-compass"></i>
+          <%= link_to "Log out", logout_path, :class => "top-bar" %>
+        </span>
+
+        <span class="logspin1">
+          <i class="fa fa-compass"></i>
+          <%= link_to "Home", root_path, :class => "top-bar" %>
+        </span>
+
+      <% else %>
+        <span class="logspin2">
+          <%=  link_to_modal "New User", new_user_path, :class=>"top-bar" %>
+        <span class="logspin">
+          <i class="fa fa-compass"></i>
+          <%=  link_to_modal "Sign in", new_login_path, :class=>"top-bar" %>
+        </span>
+
+        <span class="logspin1">
+          <i class="fa fa-compass"></i>
+          <%= link_to "Home", root_path, :class => "top-bar" %></span>
+        </span>
+
+      <% end %>
+    </div>
+    <ul class="menu">
+      <li title="menu"><a href="#" class="menu-button home">menu</a></li>
+    </ul>
+    <ul class="menu-bar">
+      <li><a href="#" class="menu-button">Menu</a></li>
         <% if logged_in? %>
-        <li><%= link_to "Profile", user_path(current_user) %></li>
+          <li><%= link_to "Profile", user_path(current_user) %></li>
         <% else %>
-        <li><%= link_to "Sign In", new_login_path %>
-          <% end %>
-          <li><%= link_to "Home", root_path %></li>
-          <li><a href="#">Editorial</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-        <%= yield %>
-        <%= display_alert(:notice) %>
-        <%= display_alert(:alert) %>
-      </body>
-      </html>
+          <li><%= link_to "Sign In", new_login_path %>
+        <% end %>
+      <li><%= link_to "Home", root_path %></li>
+      <li><a href="#">Editorial</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+    <%= yield %>
+    <%= display_alert(:notice) %>
+    <%= display_alert(:alert) %>
+  </body>
+</html>

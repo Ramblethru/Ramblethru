@@ -8,7 +8,21 @@
   <script type='text/javascript'>
     var latitude= '<%=@discover.latitude%>';
     var longitude= '<%=@discover.longitude%>';
+    var destination='<%=@discover.destination.split.map(&:capitalize).join(' ')%>';
     var map = L.mapbox.map('map', 'gregurton.kbc7dghp').setView([latitude, longitude], 5).setZoom([14]);
+    L.mapbox.markerLayer({
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [longitude, latitude]
+      },
+      properties: {
+        title: destination,
+        description: 'Your destination!',
+        'marker-size': 'large',
+        'marker-color': '#af703a'
+      }
+    }).addTo(map);
   </script>
   <div class="recommended-notes">
     <div class="showhide"><a href="#"><h5> Show/hide notes relevant to your destination</h5></a>
@@ -83,6 +97,8 @@
     <% end %>
   </div>
 
+  <!--<a href="https://www.reddit.com/subreddits/search?q=#{@discover.destination.gsub!(' ', '%20')}">reddit search</a>-->
+
   <div class="ramble">
     <h4 class="r-create">Like what you see? Create a ramble (itinerary) below! </h4>
     
@@ -95,4 +111,6 @@
     <%= render "/discovers/create" %>
   </div>
 </div>
-</div>
+
+
+

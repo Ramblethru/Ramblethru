@@ -304,7 +304,7 @@ section.toggle {
  margin: 0;
  padding: 0;
  background: transparent;
- z-index:10; 
+ z-index:10;
  overflow:hidden;
 
 }
@@ -367,7 +367,7 @@ section.toggle {
  line-height: 4em;
  text-align:center;
  color: $green;
- text-decoration:none; 
+ text-decoration:none;
  position: relative;
  font-family: 'menschmensch_regular';
  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -376,7 +376,7 @@ section.toggle {
 .menu-bar li:first-child a{
  height:4em;
  background: $orange;
- color: $green; 
+ color: $green;
  line-height:4
 }
 .para{
@@ -416,7 +416,7 @@ section.toggle {
     }
     .para{
     padding-left:5px;
-}  
+}
 }
 @media screen and (max-height: 34em){
   .menu li,
@@ -428,4 +428,15 @@ section.toggle {
   .menu{
         height:3.5em;
     }
+}
+.fa-compass {
+  -webkit-transition: -webkit-transform 0.8s ease-out;
+  -moz-transition: -moz-transform 0.8s ease-out;
+  transition: transform 0.8s ease-out;
+}
+
+.fa-compass:hover{
+  -webkit-transform: rotateZ(360deg);
+  -moz-transform: rotateZ(360deg);
+  transform: rotateZ(360deg);
 }

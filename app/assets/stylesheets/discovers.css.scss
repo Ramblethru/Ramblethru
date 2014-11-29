@@ -202,6 +202,9 @@ a.y-name {
   background-color: $green;
   height: 300px;
 }
+  li {
+    display: inline;
+  }
 a.r-link {
   font-family: monospace, sans-serif;
   color: $dark-grey;

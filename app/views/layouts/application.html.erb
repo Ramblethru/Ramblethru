@@ -20,13 +20,20 @@
     Bienvenue, <%= link_to current_user.name, user_path(current_user), :class => "top-bar" %>!
     <span class="logspin"><i class="fa fa-compass"></i>
       <%= link_to "Log out", logout_path, :class => "top-bar" %></span>
+      <% if current_page?('/') == false %>
       <span class="logspin1">
         <i class="fa fa-compass"></i>  <%= link_to "Home", root_path, :class => "top-bar" %></span>
+        <% end %>
         <% else %>
-        <%=  link_to_modal "New User", new_user_path, :class=>"top-bar" %><span class="logspin"><i class="fa fa-compass"></i>
-          <%=  link_to_modal "Sign in", new_login_path, :class=>"top-bar" %></span>
-          <span class="logspin1">  <i class="fa fa-compass"></i>
-            <%= link_to "Home", root_path, :class => "top-bar" %></span>
+        <span class="logspin">
+        <%=  link_to_modal "New User", new_user_path, :class=>"top-bar" %><i class="fa fa-compass"></i></span>
+        <span class="logspin1">
+          <%=  link_to_modal "Sign in", new_login_path, :class=>"top-bar" %>
+
+         <i class="fa fa-compass"></i></span>
+            <% if current_page?('/') == false %>
+            <%= link_to "Home", root_path, :class => "top-bar" %>
+            <% end %>
             <% end %>
           </div>
           <ul class="menu">

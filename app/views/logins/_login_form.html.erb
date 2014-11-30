@@ -6,4 +6,7 @@
 	  <%= f.password_field :password, :class => "login-form" %>
 	  <%= f.button :submit, :class => "login-button" %>
 	<% end %>
+	<%= link_to "Sign in with Foursquare", "/auth/foursquare", :class => "four-auth" %>
+	<%= link_to "Sign in with Twitter", "/auth/twitter", :class => "twit-auth" %>
+
 </div>

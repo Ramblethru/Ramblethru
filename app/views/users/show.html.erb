@@ -1,13 +1,18 @@
+<div class="all">
 <div class="usershow">
-<<<<<<< HEAD
+<div class="profile">
 	<h1 class="profile"> Your Profile </h1>
+</div>
 	<div class="photo">
-		<%= image_tag @user.avatar.url(:medium), :class => "user-img" %>
+	    <% if @user.avatar.file? %>
+			<%= image_tag @user.avatar.url(:medium), :class => "user-img" %>
+		<% else %>
+      		<img src="<%= asset_path ('missing.png') %>" />
+    	<% end %>
 		<%= form_for @user do |form| %>
-		<%= form.file_field :avatar %>
-		<%= form.submit "Add", :class => "user-img-add" %>
+			<%= form.file_field :avatar %>
+			<%= form.submit "Add", :class => "user-img-add" %>
 		<% end %>
-
 	</div>
 	<div class="userinfo">
 		<div class="name">
@@ -18,67 +23,39 @@
 			<span id="user-residence-label">Residence: </span>
 				<span id="user-residence"><%= @user.lives_in %></span>
 				<%= link_to 'Edit where you live', edit_lives_in_path, :class => "editresidence" %>
-=======
-	<h2> My Profile </h2>
-	<div class="photo">
-    <% if @user.avatar.file? %>
-      <%= image_tag @user.avatar.url(:medium) %>
-    <% else %>
-      <img src="<%= asset_path ('missing.png') %>" />
-    <% end %>
-    <div class="image-form">
-      <%= form_for @user do |form| %>
-      <%= form.file_field :avatar %>
-    </div>
-    <%= form.submit "Add" %>
-    <% end %>
-	</div>
-	<div class="userinfo">
-		<div class="name">
-			<h3><%= @user.name %></h3>
-				<h6><%= link_to 'Edit Name', edit_name_path %></h6>
-    </div>
 
-		<div class="lives-in">
-			<h5>Residence: <%= @user.lives_in %></h5>
-        <h6><%= link_to 'Edit where you live', edit_lives_in_path %></h6>
->>>>>>> d61b5a99c65fbc7918e59c68dccf56677ce9b4a7
 		</div>
     <br>
 		<div class="bio">
-<<<<<<< HEAD
 			<span id="user-bio-label">BIO:</span>
 			<span id="user-bio"><%= @user.bio %><br></span>
 			<%= link_to 'Edit Bio', edit_bio_path, :class => "editbio" %>
-=======
-			<h5>Bio:</h5> <%= @user.bio %>
-			<h6><%= link_to 'Edit Bio', edit_bio_path %></h6>
->>>>>>> d61b5a99c65fbc7918e59c68dccf56677ce9b4a7
+
 		</div>
 	</div>
 	<div class="container">
 		<div class="usertrips">
-			<h3> My Rambles </h3>
-      <br>(dropdown?)
-
+			<div id="my-rambles">Your Rambles</div>
 			<div class="userrambles">
-			<% @user.rambles.each do |r| %>
-				<%= link_to r.destination, ramble_path(r) %><br>
-				<div class="shows"><a href="#"> Show/hide notes </a></div>
-				<%= r.start_date %> - <%= r.end_date %><br>
-				<div class="noteshow">
-				<% if r.reddit_thread != nil %>
-				Saved from Reddit: <%= link_to r.reddit_thread, r.reddit_thread %>
-				<br>
-				<% end %>
-				<% if r.instagram_url != nil %>
-				Saved from Instagram:<br> <%= link_to image_tag r.instagram_url %><br>
-				<% end %>
-				<% r.notes.each do |n| %>
-					Note: <%= n.body %><br>
-					Tag: <%= n.tag_list %>
-					<% end %>
-				</div>
+				<% @user.rambles.each do |r| %>
+					<div class="each-ramble">
+					<div id="ramble-name-profile"><%= r.name %></div>
+					<%= link_to r.destination, ramble_path(r), :class => "r-dest" %>
+					<span id="dates"><%= r.start_date %> to <%= r.end_date %></span>
+						<a href="#"> <div class="shows">saved notes</div></a><hr class="ramble-divider">
+						<div class="noteshow">
+							<% if r.reddit_thread != nil %>
+								Saved from Reddit: <%= link_to r.reddit_thread, r.reddit_thread %>
+							<% end %>
+							<% if r.instagram_url != nil %>
+								Saved from Instagram:<%= link_to image_tag r.instagram_url %>
+							<% end %>
+							<% r.notes.each do |n| %>
+								Note: <%= n.body %><br>
+								Tag: <%= n.tag_list %>
+							<% end %>
+						</div>
+						</div>
 					<script type="text/javascript">
  $(".shows").click(function () {
             $(".noteshow").toggle();
@@ -87,12 +64,11 @@
 				<% end %>
 
 			</div>
-			<div class="usernotes">
+			<div class="usernotes"></div>
 
-			</div>
 		</div>
+	
 	</div>
-	<div class="saved"><a href='#'>All My Notes</a>
-    <br>(dropdown? Not here? Something?)
-	</div>
+
+</div>
 </div>

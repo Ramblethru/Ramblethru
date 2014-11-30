@@ -460,3 +460,10 @@ section.toggle {
 #green {
   color: $green;
 }
+a.four-auth, a.twit-auth {
+  color: $orange;
+  display: block;
+}
+input[type="text"]:focus {
+  background-color: transparent;
+}

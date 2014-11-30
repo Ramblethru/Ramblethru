@@ -143,14 +143,20 @@ L.mapbox.markerLayer({
 
 			<div class="ramble-reddit">
 				<i class="fa fa-reddit ramble"></i>
+				<div class="shows4">Show/hide Reddit</div>
 				<div id="red-title">Reddit:</div>
 				<% @reddit_thread.each do |r| %>
 				<li>
-					<article>
+					<article><span class="rshow">
 						<%= link_to r["data"]["title"], r["data"]["url"], :class => "reddit-thread-title" %>
-					</article>
+					</span></article>
 				</li>
 				<% end %>
+				<script type="text/javascript">
+				$(".shows4").click(function () {
+					$(".rshow").toggle();
+				});
+				</script>
 			</div>
 
 			<div class="recommended-notes">

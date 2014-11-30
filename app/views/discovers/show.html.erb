@@ -47,9 +47,7 @@
   </div>
 <div class="container">
   <div class="foursq">
-    <div class="four-title">Foursquare <i class="fa fa-arrow-circle-o-down"></i>
-</i>
-</i></div>
+    <div class="four-title">Foursquare <i class="fa fa-arrow-circle-o-down"></i></div>
 <br>
     <% f = @foursquare_venue.each do |f| %>
     <li>
@@ -67,17 +65,21 @@
     <% end %>
   </div>
   <br>
+  <% if @yelp.businesses != nil %>
   <div class="yelp">
-    <div class="y-title">Yelp <i class="fa fa-arrow-circle-o-down"></i>
-</div>
-    <br>
+    <div class="y-title">Yelp <i class="fa fa-arrow-circle-o-down"></i></div>
     <% @yelp.businesses.each do |y| %>
-    <li>
-      <%= link_to y.name, y.url, :class => "y-name", :target => '_blank'  %>
-      <%= image_tag y.rating_img_url_small%>
-    </li>
-    <article class="y-tips"><%= y.snippet_text %></article>
+      <li>
+        <%= link_to y.name, y.url, :class => "y-name",:target => '_blank'  %>
+        <%= image_tag y.rating_img_url_small %>
+      </li>
+      <% if y.snippet_text != nil %>
+        <article class="y-tips"><%= y.snippet_text %></article>
+      <% end %>
     <% end %>
+  <% else %>
+   Sorry, there are no Yelp results for this destination!
+  <% end %>
   </div>
   <br>
   <div class="instagram">

@@ -1,7 +1,7 @@
 <div class="ramble-title">
 	<% if @ramble.name !=nil %>
-	<%= @ramble.name %>
-	<%= link_to 'Edit', edit_ramble_name_path, :class => "edit-ramble-name" %>
+	<div class="shift"><%= @ramble.name %>
+	<%= link_to 'Edit', edit_ramble_name_path, :class => "edit-ramble-name" %></div>
 	<% else %>
 	<%= link_to 'Add a Name!', edit_ramble_name_path, :class => "edit-ramble-name" %>
 	<% end %>
@@ -67,23 +67,27 @@ L.mapbox.markerLayer({
 		<div class="api-feed">
 			<div id="feed-title">Recommendations</div>
 			<div class="foursq">
-				<i class="fa fa-foursquare ramble"></i>
-				<div class="shows1">Show/hide Foursquare</div>
-				<div id="four-title">Foursquare:</div>
+        <div class="shows1" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
+          <i class="fa fa-foursquare ramble"></i><br>
+          <!--<a href="">Show/hide</a>-->
+          <div id="four-title">Foursquare</div>
+        </div>
 				<% @foursquare_venue.each do |f| %>
-				<li>
-					<span class="fshow">	<div id="f-venue-title">
-						<%= f["venue"]["name"] %><hr>
-					</div>
-				</span>
-				</li>
-				<span class="fshow">
-				<span id="f-address">Address: <%= f["venue"]["location"]["address"] %></span>
-				<% f["tips"] %></span>
-				<% f["tips"].each do |g| %>
-				<span class="fshow">
-				<article><%= link_to g["text"], g["canonicalUrl"], :class => "four-tip"%></article><hr class="tip">
-			</span>
+        <div class="four-results">
+          <li>
+            <span class="fshow">	<div id="f-venue-title">
+              <%= f["venue"]["name"] %><hr>
+            </div>
+          </span>
+          </li>
+          <span class="fshow">
+          <span id="f-address">Address: <%= f["venue"]["location"]["address"] %></span>
+          <% f["tips"] %></span>
+          <% f["tips"].each do |g| %>
+          <span class="fshow">
+          <article><%= link_to g["text"], g["canonicalUrl"], :class => "four-tip"%></article><hr class="tip">
+        </span>
+        </div>
 				<% end %>
 				<% end %>
 				<script type="text/javascript">
@@ -94,25 +98,30 @@ L.mapbox.markerLayer({
 			</div>
 
 			<div class="ramble-yelp">
-				<i class="fa fa-yelp ramble"></i>
-				<div class="shows2">Show/hide Yelp</div>
-				<div id="yelp-title">Yelp:</div>
-				<% if @yelp.businesses != nil %>
-				<% @yelp.businesses.each do |y| %>
-				<li>
-					<span class="yshow">
-					<%= link_to y.name, y.url, :class => "yelp-venue-title" %>
-					<%= link_to image_tag y.rating_img_url_small %><hr>
-				</span>
-				</li>
-				<span class="yshow">
-				<article class="yelp-venue-tip"><%= y.snippet_text %></article>
-				<hr class="y-tip">
-			</span>
-				<% end %>
-				<% else %>
-				Sorry, there are no Yelp results for this destination.
-				<% end %>
+        <div class="shows2" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
+          <i class="fa fa-yelp ramble"></i><br>
+          <!--<a href="">Show/hide</a>-->
+          <div id="yelp-title">Yelp</div>
+        </div>
+         <% if @yelp.businesses != nil %>
+         <% @yelp.businesses.each do |y| %>
+         <div class="yelp-results">
+          <li>
+            <span class="yshow">
+              <%= link_to y.name, y.url, :class => "yelp-venue-title" %>
+              <%= link_to image_tag y.rating_img_url_small %><hr>
+            </span>
+          </li>
+          <span class="yshow">
+            <article class="yelp-venue-tip"><%= y.snippet_text %></article>
+            <hr class="y-tip">
+          </span>
+        </div>
+          <% end %>
+          <% else %>
+          Sorry, there are no Yelp results for this destination.
+          <% end %>
+
 				<script type="text/javascript">
 				$(".shows2").click(function () {
 					$(".yshow").toggle();
@@ -121,9 +130,11 @@ L.mapbox.markerLayer({
 			</div>
 
 			<div class="ramble-instagram">
-				<i class="fa fa-instagram ramble"></i>
-				<div class="shows3">Show/hide Instagram</div>
-				<div id="insta-title">Instagram:</div>
+        <div class="shows3" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
+          <i class="fa fa-instagram ramble"></i><br>
+          <!--<a href="">Show/hide</a>-->
+          <div id="insta-title">Instagram</div>
+        </div>
 				<div class="i-images">
 					<% i = @instagram_images.each do |i| %>
 					<span class="ishow">
@@ -142,16 +153,20 @@ L.mapbox.markerLayer({
 			</div>
 
 			<div class="ramble-reddit">
-				<i class="fa fa-reddit ramble"></i>
-				<div class="shows4">Show/hide Reddit</div>
-				<div id="red-title">Reddit:</div>
-				<% @reddit_thread.each do |r| %>
-				<li>
-					<article><span class="rshow">
-						<%= link_to r["data"]["title"], r["data"]["url"], :class => "reddit-thread-title" %>
-					</span></article>
-				</li>
-				<% end %>
+        <div class="shows4" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
+          <i class="fa fa-reddit ramble"></i><br>
+          <!--<a href="">Show/hide</a>-->
+          <div id="red-title">Reddit</div>
+        </div>
+        <div class="rshow">
+          <% @reddit_thread.each do |r| %>
+            <li>
+              <span class="rshow"><a href="http://www.reddit.com/r/<%= r["name"] %>" target="_blank"></span>
+              <%= r["name"] %>
+              </a>
+            </li>
+          <% end %>
+        </div>
 				<script type="text/javascript">
 				$(".shows4").click(function () {
 					$(".rshow").toggle();

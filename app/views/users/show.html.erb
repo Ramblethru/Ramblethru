@@ -1,34 +1,38 @@
 <div class="usershow">
-	<h1> My Profile </h1>
+	<h2> My Profile </h2>
 	<div class="photo">
-		<%= image_tag @user.avatar.url(:medium) %>
-		<%= form_for @user do |form| %>
-		<%= form.file_field :avatar %>
-		<%= form.submit "Add" %>
-		<% end %>
-
+    <% if @user.avatar.file? %>
+      <%= image_tag @user.avatar.url(:medium) %>
+    <% else %>
+      <img src="<%= asset_path ('missing.png') %>" />
+    <% end %>
+    <div class="image-form">
+      <%= form_for @user do |form| %>
+      <%= form.file_field :avatar %>
+    </div>
+    <%= form.submit "Add" %>
+    <% end %>
 	</div>
 	<div class="userinfo">
 		<div class="name">
-			<%= @user.name %>
-			<div class="editname">
-				<%= link_to 'Edit Name', edit_name_path %>
-			</div>
-		</div>
+			<h3><%= @user.name %></h3>
+				<h6><%= link_to 'Edit Name', edit_name_path %></h6>
+    </div>
+
 		<div class="lives-in">
-			<h5>Residence:<h5>
-				<%= link_to 'Edit where you live', edit_lives_in_path %>
-			<%= @user.lives_in %>
+			<h5>Residence: <%= @user.lives_in %></h5>
+        <h6><%= link_to 'Edit where you live', edit_lives_in_path %></h6>
 		</div>
+    <br>
 		<div class="bio">
-			<h5>BIO:</h5>
-			<%= @user.bio %><br>
-			<%= link_to 'Edit Bio', edit_bio_path %>
+			<h5>Bio:</h5> <%= @user.bio %>
+			<h6><%= link_to 'Edit Bio', edit_bio_path %></h6>
 		</div>
 	</div>
 	<div class="container">
 		<div class="usertrips">
-			<h3> My Rambles(dropdown?) </h3>
+			<h3> My Rambles </h3>
+      <br>(dropdown?)
 
 			<div class="userrambles">
 			<% @user.rambles.each do |r| %>
@@ -61,6 +65,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="saved"><a href='#'>View saved notes(dropdown? Not here? Something?)</a>
+	<div class="saved"><a href='#'>All My Notes</a>
+    <br>(dropdown? Not here? Something?)
 	</div>
 </div>

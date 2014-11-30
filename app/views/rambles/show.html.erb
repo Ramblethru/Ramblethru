@@ -44,8 +44,8 @@ L.mapbox.markerLayer({
 		<%= render "notes/note_form" %>
 		<% if @ramble.notes != nil %>
 		<% @ramble.notes.each do |note| %>
-		<div class="notebody">
-			<div id="<%= dom_id(note) %>">
+		<div id="<%= dom_id(note) %>">
+				<div class="notebody">
 				<% if note.body %><span id="note-label">Note: </span><span id="note-body">
 					<%= note.body %></span> <p><span id="tag-label">Tag(s): </span><span id="note-tag"><%= note.tag_list %></span></p>
 					<% if current_user.rambles.include?(@ramble) %>
@@ -173,4 +173,3 @@ L.mapbox.markerLayer({
 			</div>
 		</div>
 	</div>
-</div>

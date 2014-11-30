@@ -24,7 +24,7 @@ body {
 }
 
 #map {
-  width: 100%;
+  width: 60%;
   height: 450px;
   margin: 0 auto 0 auto;
 }
@@ -189,7 +189,7 @@ div.y-title, div.red-title {
 }
 a.y-name {
   font-family: monospace, sans-serif;
-  color: $dark-grey;
+  color: $light-grey;
   font-size: 18px;
   }
 .y-tips {
@@ -200,14 +200,49 @@ a.y-name {
 }
 .reddit {
   background-color: $green;
-  height: 350px;
+  height: 400px;
 }
-a.r-link {
+.r-desc {
   font-family: monospace, sans-serif;
-  color: $dark-grey;
+  color: $orange;
+  font-size: 16px;
+  font-weight: bold;
+  width: 450px;
+  margin: 0 auto 0 auto;
+}
+.r-list {
+  max-width: 450px;
+  margin: 0 auto 0 auto;
+  text-align: justify;
+  text-align-last: justify;
+}
+
+.r-list:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+}
+
+.r-list li {
+  display: inline;
+}
+.r-list a {
+  font-family: monospace, sans-serif;
+  color: $light-grey;
   font-size: 18px;
 }
-a.create {
+.r-list a:hover {
+  color: $dark-grey;
+}
+.r-list a:active {
+  color: $light-grey;
+}
+
+.r-list a:visited {
+  color: $light-grey;
+}
+
+.r-list a.create {
   font-family: 'menschmensch_regular';
   color: $orange;
   font-size: 35px;

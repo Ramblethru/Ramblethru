@@ -47,9 +47,7 @@
   </div>
 <div class="container">
   <div class="foursq">
-    <div class="four-title">Foursquare <i class="fa fa-arrow-circle-o-down"></i>
-</i>
-</i></div>
+    <div class="four-title">Foursquare <i class="fa fa-arrow-circle-o-down"></i></div>
 <br>
     <% f = @foursquare_venue.each do |f| %>
     <li>
@@ -61,26 +59,26 @@
       Address: <%= f["venue"]["location"]["address"] %><br>
       <% f["tips"] %>
       <% f["tips"].each do |g| %>
-      <article><%= link_to g["text"], g["canonicalUrl"], :class => "f-tips" %></article>
+      <article><%= link_to g["text"], g["canonicalUrl"], :class => "f-tips", :target => '_blank' %></article>
       <% end %>
     </div>
     <% end %>
   </div>
   <br>
   <% if @yelp.businesses != nil %>
-    <div class="yelp">
-      <div class="y-title">Yelp <i class="fa fa-arrow-circle-o-down"></i></div>
-      <% @yelp.businesses.each do |y| %>
-        <li>
-          <%= link_to y.name, y.url, :class => "y-name"  %>
-          <%= link_to image_tag y.rating_img_url_small %>
-        </li>
-        <% if y.snippet_text != nil %>
-          <article class="y-tips"><%= y.snippet_text %></article>
-        <% end %>
+  <div class="yelp">
+    <div class="y-title">Yelp <i class="fa fa-arrow-circle-o-down"></i></div>
+    <% @yelp.businesses.each do |y| %>
+      <li>
+        <%= link_to y.name, y.url, :class => "y-name",:target => '_blank'  %>
+        <%= image_tag y.rating_img_url_small %>
+      </li>
+      <% if y.snippet_text != nil %>
+        <article class="y-tips"><%= y.snippet_text %></article>
       <% end %>
+    <% end %>
   <% else %>
-    Sorry, there are no Yelp results for this destination!
+   Sorry, there are no Yelp results for this destination!
   <% end %>
   </div>
   <br>
@@ -95,14 +93,21 @@
   <br>
   <div class="reddit">
     <div class="red-title">Reddit <i class="fa fa-arrow-circle-o-down"></i>
-</div><br>
-    <% @reddit_thread.each do |r| %>
-    <li><%= link_to r["data"]["title"], r["data"]["url"], :class => "r-link" %></li>
-    <% end %>
+    </div>
+    <div class="r-desc">Local subreddits can be a great place to get information about a destination from locals. Here is a list of subreddits related to your destination:</div>
+    <br>
+    <div class="r-list">
+      <ul>
+      <% @reddit_thread.each do |r| %>
+        <li>
+          <span class="r-link"><a href="http://www.reddit.com/r/<%= r["name"] %>" target="_blank"></span>
+            <%= r["name"] %>
+          </a>
+        </li>
+      <% end %>
+      </ul>
+    </div>
   </div>
-
-  <!--<a href="https://www.reddit.com/subreddits/search?q=#{@discover.destination.gsub!(' ', '%20')}">reddit search</a>-->
-
   <div class="ramble">
     <h4 class="r-create">Like what you see? Create a ramble (itinerary) below! </h4>
     

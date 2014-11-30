@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
   post 'rambles/:id/add_api', to: 'rambles#add_api', as: :add_api
   post 'rambles/:id/add_instagram', to: 'rambles#add_instagram', as: :add_instagram
+  get '/about' => 'pages#about'
 
   # post '/users/:user_id/rambles/new' => 'rambles#new', as: 'new_user_ramble_post'
 

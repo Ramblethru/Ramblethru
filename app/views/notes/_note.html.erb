@@ -1,10 +1,14 @@
 <div class="row" id="<%= note.persisted? ? dom_id(note) : "note-new" %>">
 
 	<div class="notebody">
-    Note: <%= note.body %>
-    <p>Tag: <%= note.tag_list %> </p>
-    <%= link_to 'Edit note', edit_ramble_note_path(@ramble.id, note.id) %> ,
-      <%= link_to 'Destroy', note, method: :delete, remote: true %>
-	</div>
-
+			<% if note.body %><span id="note-label">Note: </span><span id="note-body">
+				<%= note.body %></span> <p><span id="tag-label">Tag(s): </span><span id="note-tag"><%= note.tag_list %></span></p>
+				<% if current_user.rambles.include?(@ramble) %>
+				<i class="fa fa-pencil-square-o"></i>
+				<%= link_to 'Edit', edit_ramble_note_path(@ramble.id, note.id), :class => "edit-note" %>
+				<i class="fa fa-trash"></i>
+				<%= link_to 'Delete', note, method: :delete, remote: true, :class => "delete-note" %>
+				<% end %>
+				<% end %>
+			</div>
 </div>

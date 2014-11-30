@@ -47,7 +47,7 @@ L.mapbox.markerLayer({
 		<div id="<%= dom_id(note) %>">
 				<div class="notebody">
 				<% if note.body %><span id="note-label">Note: </span><span id="note-body">
-					<%= note.body %></span> <p><span id="tag-label">Tag(s): </span><span id="note-tag"><%= note.tag_list %></span></p>
+					<%= note.body %></span> <br><br><p><span id="tag-label">Tag(s): </span><span id="note-tag"><%= note.tag_list %></span></p>
 					<% if current_user.rambles.include?(@ramble) %>
 					<i class="fa fa-pencil-square-o"></i>
 					<%= link_to 'Edit', edit_ramble_note_path(@ramble.id, note.id), :class => "edit-note" %>

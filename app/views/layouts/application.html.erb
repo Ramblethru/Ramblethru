@@ -19,7 +19,7 @@
     <% if logged_in? %>
     <span class="userpics">
       <% if current_user.avatar.file? %>
-      <%= image_tag current_user.avatar.url(:top) %>
+      <%= image_tag current_user.avatar.url(:top), :class => "userpics" %>
       <% else %>
       <img src="<%= asset_path ('missing.png') %>" />
       <% end %>

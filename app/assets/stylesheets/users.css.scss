@@ -12,7 +12,6 @@ div.all {
 	width: 400px;
 	height: auto;
 	border-radius: 10px;
-	background: $light-grey;
 	display: inline-block;
 	max-height: 450px;
 	max-width: 475px;
@@ -105,6 +104,13 @@ input#user_avatar {
 }
 input.user-img-add {
 	background: $orange;
+	color: $light-grey;
+	font-family:'menschmensch_regular';
+	height: 30px;
+	line-height: .5;
+	&:hover {
+		background: $green;
+	}
 }
 span#user-name-label, span#user-residence-label, span#user-bio-label {
 	font-family: 'menschmensch_regular';

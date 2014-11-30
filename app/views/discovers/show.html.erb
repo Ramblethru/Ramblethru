@@ -9,7 +9,7 @@
     var latitude= '<%=@discover.latitude%>';
     var longitude= '<%=@discover.longitude%>';
     var destination='<%=@discover.destination.split.map(&:capitalize).join(' ')%>';
-    var map = L.mapbox.map('map', 'gregurton.kbc7dghp').setView([latitude, longitude], 5).setZoom([14]);
+    var map = L.mapbox.map('map', 'daninyc.14e41ce7').setView([latitude, longitude], 5).setZoom([14]);
     L.mapbox.markerLayer({
       type: 'Feature',
       geometry: {

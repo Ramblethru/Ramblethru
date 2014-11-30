@@ -12,7 +12,7 @@ class LoginsController < ApplicationController
       flash.now[:notice] = "You've successfully logged in."
       redirect_to :back   
     else
-      flash.now[:error] = 'Invalid email/password combination'
+      flash.now[:notice] = 'Invalid email/password combination'
       render 'new'
     end
   end

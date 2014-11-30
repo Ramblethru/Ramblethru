@@ -2,3 +2,53 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.fa-linkedin-square, .fa-github-square, .fa-twitter-square, .fa-external-link-square {
+	color: $orange;
+}
+img.face {
+	border-radius: 50%;
+	border: 10px solid $orange;
+	&:hover {
+		-webkit-filter: grayscale(100%);
+	}
+}
+.name {
+	font-family: monospace, sans-serif;
+	color: $dark-grey;
+}
+.project-det {
+	font-family: monospace, sans-serif;
+	color: $green;
+	display: block;
+	font-size: 16px;
+}
+#about {
+	font-family: monospace, sans-serif;
+	color: $dark-grey;
+	font-size: 16px;
+}
+#about-project {
+	font-family: monospace, sans-serif;
+	font-size: 20px;
+	color: $dark-grey;
+	width: 50%;
+	margin: 0 auto;
+}
+.iconmelon,
+.im {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: block;
+  fill: $orange;
+  margin: 0 auto;
+}
+.iconmelon:after,
+.im:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

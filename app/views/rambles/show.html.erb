@@ -47,14 +47,17 @@ L.mapbox.markerLayer({
 		<div id="<%= dom_id(note) %>">
 				<div class="notebody">
 				<% if note.body %><span id="note-label">Note: </span><span id="note-body">
-					<%= note.body %></span> <br><br><p><span id="tag-label">Tag(s): </span><span id="note-tag"><%= note.tag_list %></span></p>
+					<%= note.body %></span><br><br>
+            <p><span id="tag-label">Tag(s): </span>
+              <!--<span id="note-tag"><#= note.tag_list %></span></p>-->
+               <span id="tag-each"><%= raw note.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></span></p>
 					<% if current_user.rambles.include?(@ramble) %>
 					<i class="fa fa-pencil-square-o"></i>
 					<%= link_to 'Edit', edit_ramble_note_path(@ramble.id, note.id), :class => "edit-note" %>
 					<i class="fa fa-trash"></i>
 					<%= link_to 'Delete', note, method: :delete, remote: true, :class => "delete-note" %>
 					<% end %>
-					<% end %>
+          <% end %>
 				</div>
 			</div>
 			<% end %>
@@ -69,7 +72,6 @@ L.mapbox.markerLayer({
 			<div class="foursq">
         <div class="shows1" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
           <i class="fa fa-foursquare ramble"></i><br>
-          <!--<a href="">Show/hide</a>-->
           <div id="four-title">Foursquare</div>
         </div>
 				<% @foursquare_venue.each do |f| %>
@@ -100,7 +102,6 @@ L.mapbox.markerLayer({
 			<div class="ramble-yelp">
         <div class="shows2" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
           <i class="fa fa-yelp ramble"></i><br>
-          <!--<a href="">Show/hide</a>-->
           <div id="yelp-title">Yelp</div>
         </div>
          <% if @yelp.businesses != nil %>
@@ -132,7 +133,6 @@ L.mapbox.markerLayer({
 			<div class="ramble-instagram">
         <div class="shows3" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
           <i class="fa fa-instagram ramble"></i><br>
-          <!--<a href="">Show/hide</a>-->
           <div id="insta-title">Instagram</div>
         </div>
 				<div class="i-images">
@@ -155,7 +155,6 @@ L.mapbox.markerLayer({
 			<div class="ramble-reddit">
         <div class="shows4" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
           <i class="fa fa-reddit ramble"></i><br>
-          <!--<a href="">Show/hide</a>-->
           <div id="red-title">Reddit</div>
         </div>
         <div class="rshow">
@@ -173,7 +172,6 @@ L.mapbox.markerLayer({
 				});
 				</script>
 			</div>
-
 			<div class="recommended-notes">
 				<h4>RELEVANT NOTES GO HERE</h4>
 				<% ramble = Ramble.where(:destination => @ramble.destination)  %>

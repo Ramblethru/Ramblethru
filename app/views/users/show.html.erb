@@ -15,11 +15,10 @@
 	</div>
 	<div class="userinfo">
 		<div class="name">
-			<%= @user.name %>
-			<div class="editname">
-				<%= link_to 'Edit Name', edit_name_path %>
-			</div>
-		</div>
+			<h3><%= @user.name %></h3>
+				<h6><%= link_to 'Edit Name', edit_name_path %></h6>
+    </div>
+
 		<div class="lives-in">
 			<h5>Residence: <%= @user.lives_in %></h5>
         <h6><%= link_to 'Edit where you live', edit_lives_in_path %></h6>

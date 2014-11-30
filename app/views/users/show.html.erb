@@ -37,7 +37,7 @@
 			<div class="userrambles">
 			<% @user.rambles.each do |r| %>
 				<%= link_to r.destination, ramble_path(r) %><br>
-				<div class="shows"><a href="#"> Show/hide notes </a></div>
+				<div class="shows"><a href=""> Show/hide notes </a></div>
 				<%= r.start_date %> - <%= r.end_date %><br>
 				<div class="noteshow">
 				<% if r.reddit_thread != nil %>

@@ -247,6 +247,9 @@ a.y-name {
   color: $orange;
   font-size: 35px;
 }
+a.create:hover {
+  color: $green;
+}
 h4.r-create {
   font-family: monospace, sans-serif;
   color: $green;

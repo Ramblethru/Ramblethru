@@ -4,13 +4,19 @@
 
 $blue: #7f868e;
 
+div.all {
+
+  }
 
 .photo {
 	width: 400px;
-	margin-left: 125px;
-	margin-top: 40px;
+	height: auto;
+	border-radius: 10px;
+	background: $light-grey;
 	display: inline-block;
-	// border:1px solid black;
+	max-height: 450px;
+	max-width: 475px;
+	margin-top: 30px;
 }
 
 .image-form {
@@ -22,14 +28,15 @@ $blue: #7f868e;
 }
 
 .userinfo {
-	float: right;
-	margin-right: 300px;
-	margin-top: 30px;
+	float:right;
+	margin-right:300px;
 	// border:1px solid black;
 }
 
 .name {
-	margin-bottom: 100px;
+	font-size:30px;
+	font-weight:bold;
+	margin-bottom:40px;
 }
 
 .bio {
@@ -37,12 +44,13 @@ $blue: #7f868e;
 }
 
 .userrambles p{
-	@include span-columns(6);
 }
 
 .usertrips {
-	text-align: center;
+	display: inline;
 	margin-top: 40px;
+	@include span-columns(12);
+
 }
 
 .usertrips p {
@@ -53,24 +61,110 @@ $blue: #7f868e;
 	margin-bottom: 70px;
 }
 
-.usernotes p {
-	padding-top: 30px;
-	@include span-columns(6);
-}
 
 .saved {
 	text-align: center;
-	margin-top: 30px;
+	@include span-columns(6);
+	margin-top: 40px;
 }
 
 .container {
-	@include outer-container;
 }
 .userrambles {
-	background-color: rgba(127,134,142, .3);
 	border-radius: 5px;
+	background-image: url('http://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg');
 	}
-	
+
 .noteshow {
 	display: none;
+	color: $dark-grey;
+	font-family: monospace, sans-serif;
+}
+h1.profile {
+	font-family: 'menschmensch_regular';
+	color: $orange;
+	font-size: 50px;
+	padding-top: 40px;
+}
+.usershow {
+
+}
+
+.userinfo {
+	margin-top: 30px;
+}
+img.user-img {
+	border: 8px solid $green;
+	border-radius: 10px;
+	margin-top: 40px;
+}
+input#user_avatar {
+	display: block;
+	margin: 0 auto;
+	width: 50%;
+}
+input.user-img-add {
+	background: $orange;
+}
+span#user-name-label, span#user-residence-label, span#user-bio-label {
+	font-family: 'menschmensch_regular';
+	color: $orange;
+	font-size: 30px;
+	font-weight: normal;
+}
+span#user-name, span#user-residence, span#user-bio {
+	font-family: monospace, sans-serif;
+	color: $dark-grey;
+	font-size: 20px;
+	font-weight: normal;
+}
+a.editname, a.editresidence, a.editbio {
+	font-family: 'menschmensch_regular';
+	color: $green;
+	font-size: 16px;
+	display: block;
+}
+.lives-in {
+	margin-bottom: 40px;
+}
+#my-rambles {
+	font-family: 'menschmensch_regular';
+	color: $orange;
+	font-size: 55px;
+}
+a.r-dest {
+	color: $green;
+	font-family: monospace, sans-serif;
+}
+#dates {
+	font-family: monospace, sans-serif;
+	color: $dark-grey;
+	display: block;
+}
+.shows {
+	font-family: monospace, sans-serif;
+	color: $orange;
+}
+hr.ramble-divider {
+	margin: 0 auto;
+}
+#ramble-name-profile {
+	display: block;
+	font-family: monospace, sans-serif;
+	color: $dark-grey;
+	font-size: 18px;
+	font-weight: bold;
+}
+.each-ramble {
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 5px;
+	max-width: 400px;
+	background-color: rgba(239,240,235,.7);
+	border-radius: 10px;
+}
+.profile {
+	background-color: $green;
+	margin-top: -37px;
+	height: 150px;
 }

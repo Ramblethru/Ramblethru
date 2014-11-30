@@ -17,6 +17,13 @@
 
   <div class="top-bar">
     <% if logged_in? %>
+    <span class="userpics">
+      <% if current_user.avatar.file? %>
+      <%= image_tag current_user.avatar.url(:top) %>
+      <% else %>
+      <img src="<%= asset_path ('missing.png') %>" />
+      <% end %>
+      </span>
     Bienvenue, <span class="logspin">
       <%= link_to current_user.name, user_path(current_user), :class => "top-bar" %>!
     <i class="fa fa-compass"></i></span>

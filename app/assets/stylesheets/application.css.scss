@@ -456,7 +456,9 @@ section.toggle {
   -moz-transform: rotateZ(360deg);
   transform: rotateZ(360deg);
 }
-
+.userpics {
+  border-radius: 75px;
+}
 #green {
   color: $green;
 }

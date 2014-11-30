@@ -230,6 +230,10 @@ a.edit-note, a.delete-note {
 	text-decoration: none;
 	font-size: 18px;
 	color: $light-grey;
+
+	&:hover {
+		color: $orange;
+	}
 }
 .fshow {
   display:none;

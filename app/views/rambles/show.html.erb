@@ -73,19 +73,21 @@ L.mapbox.markerLayer({
           <div id="four-title">Foursquare</div>
         </div>
 				<% @foursquare_venue.each do |f| %>
-				<li>
-					<span class="fshow">	<div id="f-venue-title">
-						<%= f["venue"]["name"] %><hr>
-					</div>
-				</span>
-				</li>
-				<span class="fshow">
-				<span id="f-address">Address: <%= f["venue"]["location"]["address"] %></span>
-				<% f["tips"] %></span>
-				<% f["tips"].each do |g| %>
-				<span class="fshow">
-				<article><%= link_to g["text"], g["canonicalUrl"], :class => "four-tip"%></article><hr class="tip">
-			</span>
+        <div class="four-results">
+          <li>
+            <span class="fshow">	<div id="f-venue-title">
+              <%= f["venue"]["name"] %><hr>
+            </div>
+          </span>
+          </li>
+          <span class="fshow">
+          <span id="f-address">Address: <%= f["venue"]["location"]["address"] %></span>
+          <% f["tips"] %></span>
+          <% f["tips"].each do |g| %>
+          <span class="fshow">
+          <article><%= link_to g["text"], g["canonicalUrl"], :class => "four-tip"%></article><hr class="tip">
+        </span>
+        </div>
 				<% end %>
 				<% end %>
 				<script type="text/javascript">
@@ -101,22 +103,25 @@ L.mapbox.markerLayer({
           <!--<a href="">Show/hide</a>-->
           <div id="yelp-title">Yelp</div>
         </div>
-				<% if @yelp.businesses != nil %>
-				<% @yelp.businesses.each do |y| %>
-				<li>
-					<span class="yshow">
-					<%= link_to y.name, y.url, :class => "yelp-venue-title" %>
-					<%= link_to image_tag y.rating_img_url_small %><hr>
-				</span>
-				</li>
-				<span class="yshow">
-				<article class="yelp-venue-tip"><%= y.snippet_text %></article>
-				<hr class="y-tip">
-			</span>
-				<% end %>
-				<% else %>
-				Sorry, there are no Yelp results for this destination.
-				<% end %>
+         <% if @yelp.businesses != nil %>
+         <% @yelp.businesses.each do |y| %>
+         <div class="yelp-results">
+          <li>
+            <span class="yshow">
+              <%= link_to y.name, y.url, :class => "yelp-venue-title" %>
+              <%= link_to image_tag y.rating_img_url_small %><hr>
+            </span>
+          </li>
+          <span class="yshow">
+            <article class="yelp-venue-tip"><%= y.snippet_text %></article>
+            <hr class="y-tip">
+          </span>
+        </div>
+          <% end %>
+          <% else %>
+          Sorry, there are no Yelp results for this destination.
+          <% end %>
+
 				<script type="text/javascript">
 				$(".shows2").click(function () {
 					$(".yshow").toggle();

@@ -290,8 +290,15 @@ a.edit-note, a.delete-note {
 .shows4 {
   width: 200px;
   background: rgba(255,255,255,0.5);
-  margin: 0 auto 0 auto;
+  margin: 0 auto 20px auto;
   padding: 10px 0 0 0;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
+.yelp-results {
+  margin-bottom: -15px;
+}
+
+.four-results {
+  margin-bottom: -15px;
+}

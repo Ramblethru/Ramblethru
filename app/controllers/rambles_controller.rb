@@ -26,10 +26,10 @@ class RamblesController < ApplicationController
     end
 
     def reddit
-      uri = Addressable::URI.parse("http://www.reddit.com/r/subreddit/search.json?q=#{@ramble.destination}&limit=5&sort=top")
+      uri = Addressable::URI.parse("http://www.reddit.com/api/subreddits_by_topic.json?query=#{@ramble.destination}")
       reddit = HTTParty.get(uri.normalize)
       reddit_data = JSON.parse(reddit.body)
-      @reddit_thread = reddit_data["data"]["children"]
+      @reddit_thread = reddit_data
     end
 
     def foursquare

@@ -1,7 +1,7 @@
 <div class="ramble-title">
 	<% if @ramble.name !=nil %>
-	<%= @ramble.name %>
-	<%= link_to 'Edit', edit_ramble_name_path, :class => "edit-ramble-name" %>
+	<div class="shift"><%= @ramble.name %>
+	<%= link_to 'Edit', edit_ramble_name_path, :class => "edit-ramble-name" %></div>
 	<% else %>
 	<%= link_to 'Add a Name!', edit_ramble_name_path, :class => "edit-ramble-name" %>
 	<% end %>
@@ -67,9 +67,11 @@ L.mapbox.markerLayer({
 		<div class="api-feed">
 			<div id="feed-title">Recommendations</div>
 			<div class="foursq">
-				<i class="fa fa-foursquare ramble"></i>
-				<div class="shows1">Show/hide Foursquare</div>
-				<div id="four-title">Foursquare:</div>
+        <div class="shows1" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
+          <i class="fa fa-foursquare ramble"></i><br>
+          <!--<a href="">Show/hide</a>-->
+          <div id="four-title">Foursquare</div>
+        </div>
 				<% @foursquare_venue.each do |f| %>
 				<li>
 					<span class="fshow">	<div id="f-venue-title">
@@ -94,9 +96,11 @@ L.mapbox.markerLayer({
 			</div>
 
 			<div class="ramble-yelp">
-				<i class="fa fa-yelp ramble"></i>
-				<div class="shows2">Show/hide Yelp</div>
-				<div id="yelp-title">Yelp:</div>
+        <div class="shows2" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
+          <i class="fa fa-yelp ramble"></i><br>
+          <!--<a href="">Show/hide</a>-->
+          <div id="yelp-title">Yelp</div>
+        </div>
 				<% if @yelp.businesses != nil %>
 				<% @yelp.businesses.each do |y| %>
 				<li>
@@ -121,9 +125,11 @@ L.mapbox.markerLayer({
 			</div>
 
 			<div class="ramble-instagram">
-				<i class="fa fa-instagram ramble"></i>
-				<div class="shows3">Show/hide Instagram</div>
-				<div id="insta-title">Instagram:</div>
+        <div class="shows3" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
+          <i class="fa fa-instagram ramble"></i><br>
+          <!--<a href="">Show/hide</a>-->
+          <div id="insta-title">Instagram</div>
+        </div>
 				<div class="i-images">
 					<% i = @instagram_images.each do |i| %>
 					<span class="ishow">
@@ -142,9 +148,11 @@ L.mapbox.markerLayer({
 			</div>
 
 			<div class="ramble-reddit">
-				<i class="fa fa-reddit ramble"></i>
-				<div class="shows4">Show/hide Reddit</div>
-				<div id="red-title">Reddit:</div>
+        <div class="shows4" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
+          <i class="fa fa-reddit ramble"></i><br>
+          <!--<a href="">Show/hide</a>-->
+          <div id="red-title">Reddit</div>
+        </div>
 				<% @reddit_thread.each do |r| %>
 				<li>
 					<article><span class="rshow">

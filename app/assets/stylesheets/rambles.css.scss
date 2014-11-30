@@ -81,6 +81,9 @@ input#ramble-button {
   font-size: 50px;
   margin-bottom: 0px;
 }
+  .shift {
+    padding-left: 55px;
+  }
 .start-end {
 	font-size: 18px;
 	font-family: monospace, sans-serif;
@@ -240,3 +243,48 @@ a.edit-note, a.delete-note {
 .rshow {
 	display:none;
 }
+
+.foursq {
+}
+
+.ramble-yelp {
+}
+
+.ramble-instagram {
+}
+
+.ramble-reddit {
+}
+
+.shows1 {
+  width: 200px;
+  background: rgba(255,255,255,0.5);
+  margin: 0 auto 0 auto;
+  padding: 10px 0 0 0;
+  border-radius: 20px;
+}
+
+.shows2 {
+  width: 200px;
+  background: rgba(255,255,255,0.5);
+  margin: 0 auto 0 auto;
+  padding: 10px 0 0 0;
+  border-radius: 20px;
+}
+
+.shows3 {
+  width: 200px;
+  background: rgba(255,255,255,0.5);
+  margin: 0 auto 0 auto;
+  padding: 10px 0 0 0;
+  border-radius: 20px;
+}
+
+.shows4 {
+  width: 200px;
+  background: rgba(255,255,255,0.5);
+  margin: 0 auto 0 auto;
+  padding: 10px 0 0 0;
+  border-radius: 20px;
+}
+

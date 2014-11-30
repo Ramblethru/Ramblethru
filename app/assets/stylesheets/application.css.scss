@@ -282,6 +282,7 @@ section.toggle {
   color: $light-grey;
   link-style-type: none;
   margin-right: 10px;
+  margin-top: -1px;
 
   a:hover {
     background-color: $orange;
@@ -457,7 +458,10 @@ section.toggle {
   transform: rotateZ(360deg);
 }
 .userpics {
-  border-radius: 75px;
+  border-radius: 30px;
+  margin-top: 0;
+  vertical-align: middle;
+  padding-top: 1px;
 }
 #green {
   color: $green;

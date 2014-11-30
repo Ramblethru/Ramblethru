@@ -60,7 +60,6 @@ L.mapbox.markerLayer({
 			<% end %>
 			<% else %>
 			You haven't created any notes yet!
-
 			<% end %>
 			<div class="end"></div>
 		</div>
@@ -69,49 +68,79 @@ L.mapbox.markerLayer({
 			<div id="feed-title">Recommendations</div>
 			<div class="foursq">
 				<i class="fa fa-foursquare ramble"></i>
+				<div class="shows1">Show/hide Foursquare</div>
 				<div id="four-title">Foursquare:</div>
 				<% @foursquare_venue.each do |f| %>
 				<li>
-					<div id="f-venue-title">
+					<span class="fshow">	<div id="f-venue-title">
 						<%= f["venue"]["name"] %><hr>
 					</div>
+				</span>
 				</li>
+				<span class="fshow">
 				<span id="f-address">Address: <%= f["venue"]["location"]["address"] %></span>
-				<% f["tips"] %>
+				<% f["tips"] %></span>
 				<% f["tips"].each do |g| %>
+				<span class="fshow">
 				<article><%= link_to g["text"], g["canonicalUrl"], :class => "four-tip"%></article><hr class="tip">
+			</span>
 				<% end %>
 				<% end %>
+				<script type="text/javascript">
+				$(".shows1").click(function () {
+					$(".fshow").toggle();
+				});
+				</script>
 			</div>
+
 			<div class="ramble-yelp">
 				<i class="fa fa-yelp ramble"></i>
+				<div class="shows2">Show/hide Yelp</div>
 				<div id="yelp-title">Yelp:</div>
 				<% if @yelp.businesses != nil %>
 				<% @yelp.businesses.each do |y| %>
 				<li>
+					<span class="yshow">
 					<%= link_to y.name, y.url, :class => "yelp-venue-title" %>
 					<%= link_to image_tag y.rating_img_url_small %><hr>
+				</span>
 				</li>
+				<span class="yshow">
 				<article class="yelp-venue-tip"><%= y.snippet_text %></article>
 				<hr class="y-tip">
+			</span>
 				<% end %>
 				<% else %>
 				Sorry, there are no Yelp results for this destination.
 				<% end %>
+				<script type="text/javascript">
+				$(".shows2").click(function () {
+					$(".yshow").toggle();
+				});
+				</script>
 			</div>
+
 			<div class="ramble-instagram">
 				<i class="fa fa-instagram ramble"></i>
+				<div class="shows3">Show/hide Instagram</div>
 				<div id="insta-title">Instagram:</div>
 				<div class="i-images">
 					<% i = @instagram_images.each do |i| %>
+					<span class="ishow">
 					<%= link_to image_tag i["images"]["thumbnail"]["url"], :class => "instagram-thumb" %>
 					<%= button_to 'Save this Image', { :controller => 'rambles', :action => 'add_instagram'}, :class => "insta-save" do %>
-					<i class="fa fa-star-o"></i> <span id="save">Save</span>
+					<i class="fa fa-star-o"></i> <span id="save">Save</span></span>
 					<% end %>
 					<hr class="i-tip">
 					<% end %>
+					<script type="text/javascript">
+					$(".shows3").click(function () {
+						$(".ishow").toggle();
+					});
+					</script>
 				</div>
 			</div>
+
 			<div class="ramble-reddit">
 				<i class="fa fa-reddit ramble"></i>
 				<div id="red-title">Reddit:</div>

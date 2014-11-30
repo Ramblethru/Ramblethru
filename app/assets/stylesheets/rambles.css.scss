@@ -195,7 +195,6 @@ button:hover {
   	color: $orange;
   	font-weight: bold;
   	font-size: 22px;
-
 }
 .fa-star-o {
 	color: $orange;
@@ -228,4 +227,13 @@ a.edit-note, a.delete-note {
 	text-decoration: none;
 	font-size: 18px;
 	color: $light-grey;
+}
+.fshow {
+	display:none;
+}
+.yshow {
+	display:none;
+}
+.ishow {
+	display:none;
 }

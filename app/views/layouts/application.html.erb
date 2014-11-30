@@ -121,8 +121,9 @@
               <% end %>
               <li><%= link_to "About", about_path %></a></li>
             </ul>
-            <%= yield %>
-            <%= display_alert(:notice) %>
+               <%= display_alert(:notice) %>
             <%= display_alert(:alert) %>
+            <%= yield %>
+         
           </body>
           </html>

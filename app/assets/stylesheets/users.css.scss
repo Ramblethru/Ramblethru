@@ -6,10 +6,13 @@ $blue: #7f868e;
 
 
 .photo {
-	width:400px;
-	margin-left:125px;
-	margin-top:40px;
+	width: 400px;
+	height: 375px;
+	border-radius: 10px;
+	background: $light-grey;
 	display: inline-block;
+	max-height: 450px;
+	max-width: 475px;
 	// border:1px solid black;
 }
 
@@ -20,14 +23,13 @@ $blue: #7f868e;
 .userinfo {
 	float:right;
 	margin-right:300px;
-	margin-top:30px;
 	// border:1px solid black;
 }
 
 .name {
 	font-size:30px;
 	font-weight:bold;
-	margin-bottom:100px;
+	margin-bottom:40px;
 }
 
 .bio {
@@ -71,4 +73,53 @@ $blue: #7f868e;
 	
 .noteshow {
 	display:none;
+}
+h1.profile {
+	font-family: 'menschmensch_regular';
+	color: $orange;
+	font-size: 35px;
+}
+.usershow {
+	@include outer-container;
+
+}
+.photo {
+
+}
+.userinfo {
+
+}
+img.user-img {
+	border: 8px solid $green;
+	border-radius: 10px;
+	margin-top: 40px;
+}
+input#user_avatar {
+	display: block;
+	margin: 0 auto;
+	width: 50%;
+}
+input.user-img-add {
+	background: $orange;
+}
+span#user-name-label, span#user-residence-label, span#user-bio-label {
+	font-family: 'menschmensch_regular';
+	color: $orange;
+	font-size: 30px;
+	font-weight: normal;
+}
+span#user-name, span#user-residence, span#user-bio {
+	font-family: monospace, sans-serif;
+	color: $dark-grey;
+	font-size: 20px;
+	font-weight: normal;
+}
+a.editname, a.editresidence, a.editbio {
+	font-family: 'menschmensch_regular';
+	color: $green;
+	font-size: 16px;
+	display: block;
+}
+.lives-in {
+	margin-bottom: 40px;
 }

@@ -1,29 +1,27 @@
 <div class="usershow">
-	<h1> My Profile </h1>
+	<h1 class="profile"> Your Profile </h1>
 	<div class="photo">
-		<%= image_tag @user.avatar.url(:medium) %>
+		<%= image_tag @user.avatar.url(:medium), :class => "user-img" %>
 		<%= form_for @user do |form| %>
 		<%= form.file_field :avatar %>
-		<%= form.submit "Add" %>
+		<%= form.submit "Add", :class => "user-img-add" %>
 		<% end %>
 
 	</div>
 	<div class="userinfo">
 		<div class="name">
-			<%= @user.name %>
-			<div class="editname">
-				<%= link_to 'Edit Name', edit_name_path %>
-			</div>
+			<span id="user-name-label">Name:</span> <span id="user-name"><%= @user.name %></span>
+				<%= link_to 'Edit Name', edit_name_path, :class => "editname" %>
 		</div>
 		<div class="lives-in">
-			<h5>Residence:<h5>
-				<%= link_to 'Edit where you live', edit_lives_in_path %>
-			<%= @user.lives_in %>
+			<span id="user-residence-label">Residence: </span>
+				<span id="user-residence"><%= @user.lives_in %></span>
+				<%= link_to 'Edit where you live', edit_lives_in_path, :class => "editresidence" %>
 		</div>
 		<div class="bio">
-			<h5>BIO:</h5>
-			<%= @user.bio %><br>
-			<%= link_to 'Edit Bio', edit_bio_path %>
+			<span id="user-bio-label">BIO:</span>
+			<span id="user-bio"><%= @user.bio %><br></span>
+			<%= link_to 'Edit Bio', edit_bio_path, :class => "editbio" %>
 		</div>
 	</div>
 	<div class="container">

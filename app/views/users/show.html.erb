@@ -2,11 +2,12 @@
 	<h2> My Profile </h2>
 	<div class="photo">
 		<%= image_tag @user.avatar.url(:medium) %>
-		<%= form_for @user do |form| %>
-		<%= form.file_field :avatar %>
-		<%= form.submit "Add" %>
-		<% end %>
-
+    <div class="image-form">
+      <%= form_for @user do |form| %>
+      <%= form.file_field :avatar %>
+    </div>
+    <%= form.submit "Add" %>
+    <% end %>
 	</div>
 	<div class="userinfo">
 		<div class="name">
@@ -16,14 +17,13 @@
 			</div>
 		</div>
 		<div class="lives-in">
-			<h5>Residence:<h5>
-				<%= link_to 'Edit where you live', edit_lives_in_path %>
-			<%= @user.lives_in %>
+			<h5>Residence: <%= @user.lives_in %></h5>
+        <h6><%= link_to 'Edit where you live', edit_lives_in_path %></h6>
 		</div>
+    <br>
 		<div class="bio">
-			<h5>BIO:</h5>
-			<%= @user.bio %><br>
-			<%= link_to 'Edit Bio', edit_bio_path %>
+			<h5>Bio:</h5> <%= @user.bio %>
+			<h6><%= link_to 'Edit Bio', edit_bio_path %></h6>
 		</div>
 	</div>
 	<div class="container">

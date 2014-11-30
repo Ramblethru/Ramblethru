@@ -1,5 +1,5 @@
 <div class="usershow">
-	<h1> My Profile </h1>
+	<h2> My Profile </h2>
 	<div class="photo">
 		<%= image_tag @user.avatar.url(:medium) %>
 		<%= form_for @user do |form| %>
@@ -28,7 +28,8 @@
 	</div>
 	<div class="container">
 		<div class="usertrips">
-			<h3> My Rambles(dropdown?) </h3>
+			<h3> My Rambles </h3>
+      <br>(dropdown?)
 
 			<div class="userrambles">
 			<% @user.rambles.each do |r| %>
@@ -61,6 +62,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="saved"><a href='#'>View saved notes(dropdown? Not here? Something?)</a>
+	<div class="saved"><a href='#'>All My Notes</a>
+    <br>(dropdown? Not here? Something?)
 	</div>
 </div>

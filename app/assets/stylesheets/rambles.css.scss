@@ -8,16 +8,17 @@
 	@include outer-container;
 	margin-top: 100px;
 }
-.ramble-title {
-	text-align: center;
-}
+
 .ramble-notes {
-	@include span-columns(4);
+	@include span-columns(6);
 	text-align: center;
 	padding-top: 10px;
-	max-width:345px;
+	max-width:500px;
 	max-height:650px;
 	overflow: scroll;
+	margin-left: 50px;
+	margin-top: -40px;
+	width: 400px;
 }
 .map {
 	width: 50%;
@@ -30,13 +31,16 @@
 	margin-top:15px;
 	margin-bottom:15px;
 	text-align:left;
-	padding-left:50px;
-}
-.api-feed{
-	@include span-columns(8);
+	padding-left:10px;
+	background: transparent;
+	border: 2px solid $green;
+
+ }
+.api-feed {
+	@include span-columns(7);
 	text-align: center;
-	padding-top: 10px;
 	float: right;
+	margin-top: 15px;
 }
 h1.ramble-create {
 	font-family: 'menschmensch_regular';
@@ -65,4 +69,163 @@ input#ramble-button {
   &:hover {
     background-color: $dark-grey;
   }
+}
+.ramble-title {
+  background-color: $green;
+  height: 170px;
+  margin-top: -37px;
+  padding-top: 80px;
+  color: $orange;
+  font-family: 'menschmensch_regular';
+  padding-top: 40px;
+  font-size: 50px;
+  margin-bottom: 0px;
+}
+.start-end {
+	font-size: 18px;
+	font-family: monospace, sans-serif;
+	color: $light-grey;
+}
+textarea#note_body, input#note_tag_list {
+	border: 2px solid $orange;
+	border-radius: 10px;
+	background: transparent;
+}
+input.btn.radius {
+	background-color: $orange;
+	font-family: 'menschmensch_regular';
+}
+h2.notes {
+	color: $green;
+}
+#note-label, #tag-label {
+	color: $green;
+	font-family: 'menschmensch_regular';
+	font-weight: bold;
+	font-size: 16px;
+}
+#note-body, #note-tag {
+	color: $dark-grey;
+	font-family: monospace, sans-serif;
+}
+div#feed-title {
+	font-size: 60px;
+	font-family: 'menschmensch_regular';
+	color: $green;
+	font-weight: bold;
+}
+#four-title, #insta-title {
+	color: $orange;
+  	font-family: 'menschmensch_regular';
+  	font-size: 40px;
+  	margin-top: -10px;
+  }
+#yelp-title, #red-title {
+	color: $green;
+  	font-family: 'menschmensch_regular';
+  	font-size: 40px;
+}
+div#f-venue-title {
+	font-family: monospace, sans-serif;
+	color: $green;
+	font-size: 18px;
+}
+#f-address {
+	font-family: monospace, sans-serif;
+	color: $orange;
+}
+hr {
+	width: 200px;
+	margin: 0 auto;
+}
+hr.tip {
+	width: 300px;
+	border: 3px solid $orange;
+}
+li {
+	padding-top: 15px;
+}
+a.four-tip, a.reddit-thread-title {
+	color: $dark-grey;
+	font-family: monospace, sans-serif;
+}
+i.fa.fa-foursquare.ramble, i.fa.fa-instagram.ramble {
+	font-size: 35px;
+	padding: 0px;
+	color: $orange;
+}
+i.fa.fa-yelp.ramble, i.fa.fa-reddit.ramble {
+	font-size: 35px;
+	padding: 0px;
+	color: $green;
+}
+.ramble-yelp {
+	margin-top: 20px;
+}
+.yelp-venue-title {
+	font-family: monospace, sans-serif;
+	color: $orange;
+	font-size: 18px;
+}
+.yelp-venue-tip {
+	color: $dark-grey;
+	font-family: monospace, sans-serif;
+	font-weight: bold;
+}
+hr.y-tip, hr.i-tip {
+	width: 300px;
+	border: 3px solid $green;
+	margin-bottom: 10px;
+}
+div.ramble-instagram {
+	margin-top: 20px;
+}
+img.instagram-thumb {
+	display: inline;
+}
+button {
+	background: $green;
+	margin: 10px !important;
+}
+button:hover {
+	background-color: $dark-grey;
+}
+#save {
+  	font-family: 'menschmensch_regular';
+  	color: $orange;
+  	font-weight: bold;
+  	font-size: 22px;
+
+}
+.fa-star-o {
+	color: $orange;
+	font-size: 22px;
+}
+.ramble-reddit {
+	margin-top: 20px;
+}
+a.edit-note, a.delete-note {
+	color: $dark-grey;
+	font-family: 'menschmensch_bold';
+
+}
+.fa-pencil-square-o, .fa-trash {
+	color: $dark-grey;
+	font-size: 18px;
+}
+#no-notes {
+	font-family: monospace, sans-serif;
+	font-size: 18px;
+	margin-top: 10px;
+	color: $dark-grey;
+}
+#ramble-dest {
+	font-family: monospace, sans-serif;
+	font-color: $light-grey;
+	font-size: 18px;
+}
+.edit-ramble-name {
+	text-decoration: none;
+	font-size: 18px;
+	color: $light-grey;
 }

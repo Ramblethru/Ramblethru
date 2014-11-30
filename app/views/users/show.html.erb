@@ -1,7 +1,11 @@
 <div class="usershow">
 	<h2> My Profile </h2>
 	<div class="photo">
-		<%= image_tag @user.avatar.url(:medium) %>
+    <% if @user.avatar.file? %>
+      <%= image_tag @user.avatar.url(:medium) %>
+    <% else %>
+      <img src="<%= asset_path ('missing.png') %>" />
+    <% end %>
     <div class="image-form">
       <%= form_for @user do |form| %>
       <%= form.file_field :avatar %>

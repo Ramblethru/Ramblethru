@@ -30,7 +30,6 @@
     <% ramble = Ramble.where(:destination => @discover.destination)  %>
     <% ramble.each do |r| %>
 
-    <% if r.user_id != current_user.id %>
     <% r.notes.each do |n| %>
     <div class="show">
       <div class="nbody">Note: <%= n.body %></div>
@@ -41,7 +40,6 @@
       $(".show").toggle();
     });
     </script>
-    <% end %>
     <% end %>
     <% end %>
   </div>

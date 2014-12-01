@@ -49,8 +49,8 @@
 								Saved from Instagram:<%= link_to image_tag r.instagram_url %>
 							<% end %>
 							<% r.notes.each do |n| %>
-								Note: <%= n.body %><br>
-								Tag: <%= n.tag_list %>
+								Note: <%= n.body %>
+								<div id="user-tag">Tag: <%= n.tag_list %></div>
 							<% end %>
 						</div>
             <% else %>

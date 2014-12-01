@@ -123,6 +123,13 @@
             <li><%= link_to "Search", rambles_path %></li>
               <li><%= link_to "About", about_path %></a></li>
             </ul>
+            <script type="text/javascript">
+            $(document).ready(function(){
+$(".menu-button").click(function(){
+$(".menu-bar").toggleClass( "open" );
+})
+});
+</script>
                <%= display_alert(:notice) %>
             <%= display_alert(:alert) %>
             <%= yield %>

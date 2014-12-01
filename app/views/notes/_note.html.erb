@@ -1,8 +1,27 @@
 <div class="row" id="<%= note.persisted? ? dom_id(note) : "note-new" %>">
 
 	<div class="notebody">
-			<% if note.body %><span id="note-label">Note: </span><span id="note-body">
-				<%= note.body %></span> <p><span id="tag-label">Tag(s): </span><span id="note-tag"><%= note.tag_list %></span></p>
+			<% if note.body %>
+      <p>
+        <span id="note-label">Title: </span>
+        <span id="note-title"><%= note.title %></span>
+      </p>
+      <p>
+        <span id="note-label">Address: </span>
+        <span id="note-address"><%= note.address %></span>
+      </p>
+      <p>
+        <span id="note-label">Note: </span>
+        <span id="note-body"><%= note.body %></span>
+      </p>
+      <p>
+        <span id="note-label">URL: </span>
+        <span id="note-url"><%= note.url %></span>
+      </p>
+      <p>
+        <span id="tag-label">Tag(s): </span>
+        <span id="note-tag"><%= note.tag_list %></span>
+      </p>
 				<% if current_user.rambles.include?(@ramble) %>
 				<i class="fa fa-pencil-square-o"></i>
 				<%= link_to 'Edit', edit_ramble_note_path(@ramble.id, note.id), :class => "edit-note" %>

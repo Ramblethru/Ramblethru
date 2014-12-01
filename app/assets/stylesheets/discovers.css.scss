@@ -8,9 +8,6 @@ body {
   text-align: center;
 }
 
-.pagename {
-   text-align: center;
-}
 
 .ramble {
   color: white;
@@ -144,13 +141,15 @@ a.close-modal {
 }
 .pagename {
   background-color: $green;
-  height: 150px;
-  margin-top: -72px;
+  height: 170px;
+  margin-top: -104px;
+  text-align: center;
+
 }
 h1.discover {
   color: $orange;
   font-family: 'menschmensch_regular';
-  padding-top: 40px;
+  padding-top: 70px;
   font-size: 50px;
   margin-bottom: 0px;
 }

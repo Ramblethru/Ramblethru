@@ -48,9 +48,8 @@
 			<div id="<%= dom_id(note) %>">
 				<div class="notebody">
 					<% if note.body %><span id="note-label">Note: </span><span id="note-body">
-						<%= note.body %></span><br><br>
+						<%= best_in_place note, :body %></span><br><br>
 						<p><span id="tag-label">Tag(s): </span>
-							<!--<span id="note-tag"><#= note.tag_list %></span></p>-->
 							<span id="tag-each"><%= raw note.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></span></p>
 							<% if current_user.rambles.include?(@ramble) %>
 							<i class="fa fa-pencil-square-o"></i>
@@ -77,8 +76,9 @@
 						</div>
 						<% @foursquare_venue.each do |f| %>
 						<div class="four-results">
+							<a class="foursquare-save" data-name="<%= f['venue']['name'] %>">Save Me!</a>
 							<li>
-								<span class="fshow">	<div id="f-venue-title">
+								<span class="fshow"><div id="f-venue-title">
 									<%= f["venue"]["name"] %><hr>
 								</div>
 							</span>
@@ -111,7 +111,8 @@
 							<li>
 								<span class="yshow">
 									<%= link_to y.name, y.url, :class => "yelp-venue-title" %>
-									<%= link_to image_tag y.rating_img_url_small %><hr>
+									<%= link_to image_tag y.rating_img_url_small %>
+									<span class="y-address"><%= y.location.address.pop %></span><hr>
 								</span>
 							</li>
 							<span class="yshow">

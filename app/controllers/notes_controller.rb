@@ -39,8 +39,14 @@ class NotesController < ApplicationController
   def update
     @ramble = Ramble.find(params[:ramble_id])
     @note = @ramble.notes.find(params[:id])
-    @note.update(note_params)
-    redirect_to @ramble
+    if @note.update(note_params)
+      respond_to do |format|
+        format.html { redirect_to @ramble}
+        format.json {render json: @ramble}
+      end
+    else
+      render :edit
+    end
   end
 
   def edit

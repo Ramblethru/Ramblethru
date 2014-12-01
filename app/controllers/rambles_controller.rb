@@ -2,6 +2,8 @@ require "addressable/uri"
 class RamblesController < ApplicationController
   include HTTParty
 
+  before_action :authenticate, only: [:new, :create]
+
     def show
        @ramble = Ramble.find(params[:id])
         yelp

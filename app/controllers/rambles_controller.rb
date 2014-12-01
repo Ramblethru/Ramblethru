@@ -90,8 +90,10 @@ class RamblesController < ApplicationController
   def update
     @ramble = Ramble.find(params[:id])
     if @ramble.update(ramble_params)
-      flash[:notice] = 'Ramble was successfully updated.'
-      redirect_to @ramble
+        respond_to do |format|
+          format.html { redirect_to @ramble}
+          format.json { render json: @ramble }
+        end
     else
       render :edit
     end

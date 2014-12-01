@@ -12,31 +12,28 @@
 			<%= form_for @user do |form| %>
 			<%= form.file_field :avatar %>
 			<%= form.submit "Add", :class => "user-img-add" %>
-			<% end %>
+		<% end %>
+	</div>
+	<div class="userinfo">
+		<div class="name">
+			<span id="user-name-label">Name:</span> <span id="user-name"><%= best_in_place @user, :name %></span>
+<!-- 				<%= link_to 'Edit Name', edit_name_path, :class => "editname" %>
+ -->		</div>
+		<div class="lives-in">
+			<span id="user-residence-label">Residence: </span>
+				<span id="user-residence"><%= best_in_place @user, :lives_in %></span>
 		</div>
-		<div class="userinfo">
-			<div class="name">
-				<span id="user-name-label">Name:</span> <span id="user-name"><%= @user.name %></span>
-				<%= link_to 'Edit Name', edit_name_path, :class => "editname" %>
-			</div>
-			<div class="lives-in">
-				<span id="user-residence-label">Residence: </span>
-				<span id="user-residence"><%= @user.lives_in %></span>
-				<%= link_to 'Edit where you live', edit_lives_in_path, :class => "editresidence" %>
-
-			</div>
-			<br>
-			<div class="bio">
-				<span id="user-bio-label">BIO:</span>
-				<span id="user-bio"><%= @user.bio %><br></span>
-				<%= link_to 'Edit Bio', edit_bio_path, :class => "editbio" %>
-			</div>
+    <br>
+		<div class="bio">
+			<span id="user-bio-label">BIO:</span>
+			<span id="user-bio"><%= best_in_place @user, :bio %><br></span>
 		</div>
-		<div class="container">
-			<div class="usertrips">
-				<div id="my-rambles">Your Rambles</div>
-				<div class="userrambles">
-					<% @user.rambles.each do |r| %>
+	</div>
+	<div class="container">
+		<div class="usertrips">
+			<div id="my-rambles">Your Rambles</div>
+			<div class="userrambles">
+				<% @user.rambles.each do |r| %>
 					<div class="each-ramble">
 						<div id="ramble-name-profile"><%= r.name %></div>
 						<%= link_to r.destination, ramble_path(r), :class => "r-dest" %>

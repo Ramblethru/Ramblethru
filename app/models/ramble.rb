@@ -6,6 +6,8 @@ class Ramble < ActiveRecord::Base
 	belongs_to :user
 	has_many :notes, dependent: :destroy
 
+  before_save { |ramble| ramble.destination.downcase! }
+
 	# validates :name, :destination, :latitude, :longitude, presence: true
 
   # def save_reddit_thread
@@ -28,7 +30,7 @@ class Ramble < ActiveRecord::Base
 
   def self.search(query)
     #where(:destination, query)
-    where("destination like ?", "%#{query}%")
+    where("destination like ?", "%#{query.downcase}%")
   end
 end
 

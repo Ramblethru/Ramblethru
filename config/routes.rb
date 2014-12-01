@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       get 'notes/:id/delete' => 'notes#destroy'
   end
   resources :locations
-  resources :discovers, :only => [:show, :create]
+  resources :discovers, :only => [:show, :create, :new]
   resources :notes, :only => [:index, :destroy]
   resources :logins, :only => [:new, :create]
   get 'logout' => 'logins#destroy'

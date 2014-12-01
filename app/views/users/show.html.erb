@@ -30,7 +30,6 @@
 				<span id="user-bio-label">BIO:</span>
 				<span id="user-bio"><%= @user.bio %><br></span>
 				<%= link_to 'Edit Bio', edit_bio_path, :class => "editbio" %>
-
 			</div>
 		</div>
 		<div class="container">
@@ -38,17 +37,15 @@
 				<div id="my-rambles">Your Rambles</div>
 				<div class="userrambles">
 					<% @user.rambles.each do |r| %>
-
 					<div class="each-ramble">
-						<%= div_for(r, class: "foo") do %>
 						<div id="ramble-name-profile"><%= r.name %></div>
-						<% end %>
 						<%= link_to r.destination, ramble_path(r), :class => "r-dest" %>
-
 						<span id="dates"><%= r.start_date %> to <%= r.end_date %></span>
+						<!-- <%= div_for(r, class: "foo") do %> -->
 						<div class="shows">saved notes</div><hr class="ramble-divider">
+						<% end %>
 						<div class="noteshow">
-							<%= div_for(r, class: "bar") do %>
+							<!-- <%= div_for(r, class: "bar") do %> -->
 							<% if r.reddit_thread != nil %>
 							Saved from Reddit: <%= link_to r.reddit_thread, r.reddit_thread %>
 							<% end %>
@@ -68,13 +65,9 @@
 					});
 					</script>
 					<% end %>
-
 				</div>
 				<div class="usernotes"></div>
-
 			</div>
-
 		</div>
-
 	</div>
 </div>

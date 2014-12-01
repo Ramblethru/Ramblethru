@@ -73,16 +73,15 @@ input#ramble-button {
 }
 .ramble-title {
   background-color: $green;
-  height: 170px;
+  height: 240px;
   margin-top: -70px;
   color: $orange;
   font-family: 'menschmensch_regular';
-  padding-top: 60px;
+  padding-top: 120px;
   font-size: 50px;
   margin-bottom: 0px;
 }
   .shift {
-    padding-left: 55px;
   }
 .start-end {
 	font-size: 18px;
@@ -319,14 +318,14 @@ a.edit-note, a.delete-note {
 }
 .note-header {
 	background: $green;
-	height: 150px;
+	height: 200px;
 	margin-top: -74px;
 }
 #note-search-title {
   	font-family: 'menschmensch_regular';
   	color: $orange;
   	font-size: 50px;
-  	padding-top: 50px;
+  	padding-top: 100px;
 }
 input#search.span2 {
 	width: 30%;

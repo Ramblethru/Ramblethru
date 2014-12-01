@@ -83,31 +83,31 @@
 
   <div class="top-bar">
     <% if logged_in? %>
-    <span class="userpics">
-      <% if current_user.avatar.file? %>
-      <%= image_tag current_user.avatar.url(:top), :class => "userpics" %>
-      <% else %>
-      <img src="<%= asset_path ('missing-small.png'), :class => "userpics" %>" />
-      <% end %>
-      </span>
-    Bienvenue, <span class="logspin">
-      <%= link_to current_user.name, user_path(current_user), :class => "top-bar" %>!
-    <i class="fa fa-compass"></i></span>
-    <span class="logspin">  <%= link_to "Log out", logout_path, :class => "top-bar" %>
-      <i class="fa fa-compass"></i></span>
-      <% if current_page?('/') == false %>
-      <%= link_to "Home", root_path, :class => "top-bar" %>
-        <% end %>
+      <span class="userpics">
+        <% if current_user.avatar.file? %>
+          <%= image_tag current_user.avatar.url(:top), :class => "userpics" %>
         <% else %>
-        <span class="logspin">
-          <%=  link_to_modal "New User", new_user_path, :class=>"top-bar" %><i class="fa fa-compass"></i></span>
-          <span class="logspin1">
-            <%=  link_to_modal "Sign in", new_login_path, :class=>"top-bar" %>
-            <i class="fa fa-compass"></i></span><% if current_page?('/') == false %>
-            <%= link_to "Home", root_path, :class => "top-bar" %>
-            <% end %>
-            <% end %>
-          </div>
+          <img src="<%= asset_path ('missing-small.png'), :class => "userpics" %>" />
+        <% end %>
+      </span>
+      Bienvenue, <span class="logspin">
+      <%= link_to current_user.name, user_path(current_user), :class => "top-bar" %>!
+      <i class="fa fa-compass"></i></span>
+      <span class="logspin">  <%= link_to "Log out", logout_path, :class => "top-bar" %>
+      <i class="fa fa-compass"></i></span>
+    <% else %>
+      <span class="logspin">
+        <%=  link_to_modal "New User", new_user_path, :class=>"top-bar" %><i class="fa fa-compass"></i></span>
+      <span class="logspin1">
+        <%=  link_to_modal "Sign in", new_login_path, :class=>"top-bar" %>
+        <i class="fa fa-compass"></i></span>
+    <% end %>
+    <% if current_page?('/') == false %>
+          <%= link_to "Home", root_path, :class => "top-bar" %>
+          <%= render "/discovers/nav_create" %>
+    <% end %>
+
+  </div>
           <ul class="menu">
             <li title="menu"><a href="javascript:;" class="menu-button home">menu</a></li>
           </ul>

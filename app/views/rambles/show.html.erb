@@ -1,7 +1,6 @@
 <div class="ramble-title">
 	<% if @ramble.name !=nil %>
-	<div class="shift"><%= best_in_place @ramble, :name %>
-	<%= link_to 'Edit', edit_ramble_name_path, :class => "edit-ramble-name" %></div>
+	<div class="shift"><%= best_in_place @ramble, :name %></div>
 	<% else %>
 	<%= link_to 'Add a Name!', edit_ramble_name_path, :class => "edit-ramble-name" %>
 	<% end %>

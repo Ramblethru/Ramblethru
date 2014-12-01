@@ -75,10 +75,9 @@ input#ramble-button {
   background-color: $green;
   height: 170px;
   margin-top: -70px;
-  padding-top: 80px;
   color: $orange;
   font-family: 'menschmensch_regular';
-  padding-top: 40px;
+  padding-top: 60px;
   font-size: 50px;
   margin-bottom: 0px;
 }
@@ -226,6 +225,7 @@ a.edit-note, a.delete-note {
 	font-family: monospace, sans-serif;
 	font-color: $light-grey;
 	font-size: 18px;
+	margin-top: -15px;
 }
 .edit-ramble-name {
 	text-decoration: none;

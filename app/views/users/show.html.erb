@@ -17,8 +17,7 @@
 	<div class="userinfo">
 		<div class="name">
 			<span id="user-name-label">Name:</span> <span id="user-name"><%= best_in_place @user, :name %></span>
-<!-- 				<%= link_to 'Edit Name', edit_name_path, :class => "editname" %>
- -->		</div>
+		</div>
 		<div class="lives-in">
 			<span id="user-residence-label">Residence: </span>
 				<span id="user-residence"><%= best_in_place @user, :lives_in %></span>
@@ -35,7 +34,7 @@
 			<div class="userrambles">
 				<% @user.rambles.each do |r| %>
 					<div class="each-ramble">
-            <span class="delete-ramble"><%= link_to 'X', r, method: :delete %></span>
+            <span class="delete-ramble"><%= link_to 'X', r, method: :delete, :class => "x", :data => {:confirm => 'Are you sure?'} %></span>
 					<div id="ramble-name-profile"><%= r.name %></div>
 					<%= link_to r.destination, ramble_path(r), :class => "r-dest" %>
 					<span id="dates"><%= r.start_date %> to <%= r.end_date %></span>

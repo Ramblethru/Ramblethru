@@ -1,7 +1,6 @@
 require "addressable/uri"
 class RamblesController < ApplicationController
   include HTTParty
-  before_action :authenticate
   # before_save { |ramble| ramble.destination.downcase!
 
     def show

@@ -33,7 +33,7 @@ class RamblesController < ApplicationController
     end
 
     def foursquare
-      foursquare = HTTParty.get("http://api.foursquare.com/v2/venues/explore?ll=#{@ramble.latitude},#{@ramble.longitude}&limit=5&oauth_token=3SFP4NBFWJ2LIECDWGR5EU4FA5QXMP21LK2DNWT2GEUWCEIN&v=20141123")
+      foursquare = HTTParty.get("http://api.foursquare.com/v2/venues/explore?ll=#{@ramble.latitude},#{@ramble.longitude}&limit=20&oauth_token=3SFP4NBFWJ2LIECDWGR5EU4FA5QXMP21LK2DNWT2GEUWCEIN&v=20141123")
       foursquare_data = JSON.parse(foursquare.body)
       @foursquare_venue = foursquare_data["response"]["groups"][0]["items"]
       @foursquare_tip = foursquare_data["response"]["groups"][0]["items"]

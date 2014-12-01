@@ -308,7 +308,6 @@ section.toggle {
  background: transparent;
  z-index:10;
  overflow:hidden;
-
 }
 .menu li a{
  display: block;
@@ -491,4 +490,7 @@ input.nav-destination  {
 }
 input.nav-input {
   display: none;
+}
+.menu-button {
+  cursor:pointer;
 }

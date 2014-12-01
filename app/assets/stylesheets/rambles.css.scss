@@ -89,7 +89,7 @@ input#ramble-button {
 	color: $light-grey;
 	margin-top: -7px;
 }
-textarea#note_body, input#note_tag_list {
+textarea#note_body, input#note_tag_list, input#note_title, input#note_address, input#note_url {
 	border: 2px solid $orange;
 	border-radius: 10px;
 	background: transparent;

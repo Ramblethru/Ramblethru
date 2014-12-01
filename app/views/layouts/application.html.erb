@@ -87,7 +87,7 @@
       <% if current_user.avatar.file? %>
       <%= image_tag current_user.avatar.url(:top), :class => "userpics" %>
       <% else %>
-      <img src="<%= asset_path ('missing.png') %>" />
+      <img src="<%= asset_path ('missing-small.png'), :class => "userpics" %>" />
       <% end %>
       </span>
     Bienvenue, <span class="logspin">
@@ -116,6 +116,7 @@
             <li><%= link_to_modal "Search", discovers_path %></li>
             <% if logged_in? %>
             <li><%= link_to "Profile", user_path(current_user) %></li>
+            <li><%= link_to "Search", rambles_path %></li>
             <% else %>
             <li><%= link_to_modal "Sign In", new_login_path %>
               <% end %>

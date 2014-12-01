@@ -2,7 +2,11 @@ class NotesController < ApplicationController
  include Taggable
 
   def index
-    @notes = Note.all
+    if params[:tag]
+      @notes = Note.tagged_with(params[:tag])
+    else
+      @notes = Note.all
+    end
   end
 
   def show

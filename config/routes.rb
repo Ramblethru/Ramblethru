@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   post 'rambles/:id/add_instagram', to: 'rambles#add_instagram', as: :add_instagram
   get '/about' => 'pages#about'
 
+  get 'tags/:tag', to: 'rambles#index', as: :tag
+
   # post '/users/:user_id/rambles/new' => 'rambles#new', as: 'new_user_ramble_post'
 
   # The priority is based upon order of creation: first created -> highest priority.

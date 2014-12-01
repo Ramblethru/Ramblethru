@@ -2,30 +2,11 @@
 	<div class="note-header">
 		<h1 id="note-search-title">Search for Notes on Locations you're interested in</h1>
 	</div>
-		<%= form_tag(rambles_path, :method => "get", class: "search-form") do %>
+		<%= form_tag(rambles_path, :method => "get", class: "search-form", remote:true) do %>
 			<div class="input-append">
 				<%= text_field_tag :search, params[:search], class: "span2", placeholder: "Enter Destination name" %>
 				<button class="btn" type="submit">Search</button>
 			</div>
 		<% end %>
-		<% if @ramble %>
-		  <% @ramble.each do |ramble| %>
-        <% ramble.notes.each do |note| %>
-      <li class="note-search">
-        <div class="note-results">
-          <div class="notesshow">
-            <%= note.body %>
-          </div>
-          <div class="tagshow">
-            Tags: <%= note.tag_list %>
-          </div>
-          <div class="note-destination">
-            <%= ramble.destination.upcase %>
-          </div>
-        </div>
-      </li>
-      <br>
-			<% end %>
-    <% end %>
-		</div>
-	<% end %>
+<div class="note-results1">
+</div>

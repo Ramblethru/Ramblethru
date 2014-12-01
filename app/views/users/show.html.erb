@@ -42,7 +42,7 @@
 						<div class="shows">saved notes</div><hr class="ramble-divider">
 						<% end %>
 						<div class="noteshow">
-							<!-- <%= div_for(r, class: "bar") do %> -->
+							<div data-id="#{r.id}">
 							<% if r.reddit_thread != nil %>
 							Saved from Reddit: <%= link_to r.reddit_thread, r.reddit_thread %>
 							<% end %>
@@ -53,14 +53,18 @@
 							Note: <%= n.body %><br>
 							Tag: <%= n.tag_list %>
 							<% end %>
-							<% end %>
 						</div>
+						<script type="text/javascript">jQuery(function(){
+							$('.show').click(function () {
+								$('#div_' + $(this).attr(data-id)).toggle();
+							});
+						</script>
 					</div>
-					<script type="text/javascript">
-					$(".shows").click(function () {
-						$(".noteshow").toggle();
-					});
-					</script>
+					// <script type="text/javascript">
+					// $(".shows").click(function () {
+					// 	$(".noteshow").toggle();
+					// });
+					// </script>
 					<% end %>
 				</div>
 				<div class="usernotes"></div>

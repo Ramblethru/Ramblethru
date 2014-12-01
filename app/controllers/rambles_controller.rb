@@ -1,12 +1,7 @@
 require "addressable/uri"
 class RamblesController < ApplicationController
   include HTTParty
-<<<<<<< HEAD
-  # before_save { |ramble| ramble.destination.downcase!
-=======
   before_action :authenticate
-  #before_save { |ramble| ramble.destination.downcase! }
->>>>>>> ef178920926c7782a4077125e34e2959a6e0b22e
 
     def show
        @ramble = Ramble.find(params[:id])

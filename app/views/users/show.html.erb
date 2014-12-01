@@ -12,19 +12,7 @@
 			<%= form_for @user do |form| %>
 			<%= form.file_field :avatar %>
 			<%= form.submit "Add", :class => "user-img-add" %>
-<<<<<<< HEAD
-		<% end %>
-	</div>
-	<div class="userinfo">
-		<div class="name">
-			<span id="user-name-label">Name:</span> <span id="user-name"><%= best_in_place @user, :name %></span>
-		</div>
-		<div class="lives-in">
-			<span id="user-residence-label">Residence: </span>
-				<span id="user-residence"><%= best_in_place @user, :lives_in %></span>
-=======
 			<% end %>
->>>>>>> ef178920926c7782a4077125e34e2959a6e0b22e
 		</div>
 		<div class="userinfo">
 			<div class="name">
@@ -47,19 +35,11 @@
 				<div class="userrambles">
 					<% @user.rambles.each do |r| %>
 					<div class="each-ramble">
-<<<<<<< HEAD
-            <span class="delete-ramble"><%= link_to 'X', r, method: :delete, :class => "x", :data => {:confirm => 'Are you sure?'} %></span>
-					<div id="ramble-name-profile"><%= r.name %></div>
-					<%= link_to r.destination, ramble_path(r), :class => "r-dest" %>
-					<span id="dates"><%= r.start_date %> to <%= r.end_date %></span>
-            <% if r.notes.size > 0 %>
-=======
 						<span class="delete-ramble"><%= link_to 'X', r, method: :delete %></span>
 						<div id="ramble-name-profile"><%= r.name %></div>
 						<%= link_to r.destination, ramble_path(r), :class => "r-dest" %>
 						<span id="dates"><%= r.start_date %> to <%= r.end_date %></span>
 						<% if r.notes.size > 0 %>
->>>>>>> ef178920926c7782a4077125e34e2959a6e0b22e
 						<a href="#"> <div class="shows">saved notes</div></a><hr class="ramble-divider">
 						<div class="noteshow">
 							<% if r.reddit_thread != nil %>
@@ -69,13 +49,8 @@
 							Saved from Instagram:<%= link_to image_tag r.instagram_url %>
 							<% end %>
 							<% r.notes.each do |n| %>
-<<<<<<< HEAD
-								Note: <%= n.body %>
-								<div id="user-tag">Tag: <%= n.tag_list %></div>
-=======
 							Note: <%= n.body %><br>
 							Tag: <%= n.tag_list %>
->>>>>>> ef178920926c7782a4077125e34e2959a6e0b22e
 							<% end %>
 						</div>
 						<% else %>

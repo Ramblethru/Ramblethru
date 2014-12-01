@@ -20,9 +20,10 @@
 	margin-top: -40px;
 	width: 400px;
 }
-.map {
+#map {
 	width: 50%;
 	margin: 0 auto;
+	margin-top: 20px;
 }
 .recommended-notes {
 	padding: 10px;
@@ -73,7 +74,7 @@ input#ramble-button {
 .ramble-title {
   background-color: $green;
   height: 170px;
-  margin-top: -37px;
+  margin-top: -70px;
   padding-top: 80px;
   color: $orange;
   font-family: 'menschmensch_regular';

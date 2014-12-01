@@ -38,6 +38,9 @@ GEM
       parser (>= 2.2.0.pre.3, < 3.0)
     awesome_print (1.2.0)
     bcrypt (3.1.9)
+    best_in_place (3.0.0)
+      actionpack (>= 3.2)
+      railties (>= 3.2)
     better_errors (2.0.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -362,6 +365,7 @@ DEPENDENCIES
   addressable
   animate-rails
   bcrypt (~> 3.1.2)
+  best_in_place
   better_errors
   binding_of_caller
   bitters

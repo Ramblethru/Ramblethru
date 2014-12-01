@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+
+
   def show
     @user = User.find(params[:id])
   end
@@ -33,16 +35,16 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-
     render 'users/_edit_form'
   end
 
   def update
     @user = User.find(params[:id])
       if @user.update(user_params)
-        flash[:notice] = 'User was successfully updated.'
-        redirect_to @user
-
+        respond_to do |format|
+          format.html { redirect_to @user}
+          format.json { render json: @user }
+        end
       else
         render :edit
       end

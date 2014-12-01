@@ -87,6 +87,12 @@ article {
 
 .show {
   display:none;
+  max-width: 400px;
+  text-align: justify;
+  font-family: 'menschmensch_regular';
+  font-weight: 700;
+  font-size: 24px;
+  margin: 0 auto 0 auto;
 }
 div.modal.current {
   background: $light-grey;
@@ -267,4 +273,11 @@ div.discover-bottom {
   color: $orange;
   font-family: 'menschmensch_regular';
   margin-top: 3px;
+}
+.nbody {
+  max-width: 400px;
+  text-align: justify;
+  font-family: 'menschmensch_regular';
+  font-size: 20px;
+  margin: 0 auto 20px auto;
 }

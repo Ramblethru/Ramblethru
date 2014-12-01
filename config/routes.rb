@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get '/users/:id/edit_lives_in', to: 'users#edit_lives_in', as: :edit_lives_in
 
   get '/rambles/:id/edit_name', to: 'rambles#edit_name', as: :edit_ramble_name
+  get '/rambles/:id/edit_start_date', to: 'rambles#edit_start_date', as: :edit_ramble_start_date
+  get '/rambles/:id/edit_end_date', to: 'rambles#edit_end_date', as: :edit_ramble_end_date
 
   post 'rambles/:id/add_api', to: 'rambles#add_api', as: :add_api
   post 'rambles/:id/add_instagram', to: 'rambles#add_instagram', as: :add_instagram

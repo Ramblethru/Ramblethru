@@ -1,6 +1,6 @@
 <div class="ramble-title">
 	<% if @ramble.name !=nil %>
-	<div class="shift"><%= @ramble.name %>
+	<div class="shift"><%= best_in_place @ramble, :name %>
 	<%= link_to 'Edit', edit_ramble_name_path, :class => "edit-ramble-name" %></div>
 	<% else %>
 	<%= link_to 'Add a Name!', edit_ramble_name_path, :class => "edit-ramble-name" %>
@@ -14,7 +14,7 @@
 	<% end %>
 	<% if @ramble.start_date && @ramble.end_date %>
 	<div class="start-end">
-		From <%= @ramble.start_date %> to <%= @ramble.end_date %>
+		From <%= best_in_place @ramble, :start_date %> to <%= @ramble.end_date %>
 	</div>
 	<% end %>
 </div>
@@ -47,7 +47,7 @@ L.mapbox.markerLayer({
 		<div id="<%= dom_id(note) %>">
 				<div class="notebody">
 				<% if note.body %><span id="note-label">Note: </span><span id="note-body">
-					<%= note.body %></span> <p><span id="tag-label">Tag(s): </span><span id="note-tag"><%= note.tag_list %></span></p>
+					<%= note.body %></span> <br><br><p><span id="tag-label">Tag(s): </span><span id="note-tag"><%= note.tag_list %></span></p>
 					<% if current_user.rambles.include?(@ramble) %>
 					<i class="fa fa-pencil-square-o"></i>
 					<%= link_to 'Edit', edit_ramble_note_path(@ramble.id, note.id), :class => "edit-note" %>
@@ -187,4 +187,3 @@ L.mapbox.markerLayer({
 				<% end %>
 			</div>
 		</div>
-	</div>

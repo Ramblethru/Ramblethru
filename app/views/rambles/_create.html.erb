@@ -2,7 +2,7 @@
 	<h1 class="ramble-create">Create a Ramble</h1>
 		<%= f.input :name, label:false, placeholder: "Give your ramble a name", id:'ramble_name' %>
     	<%= f.input :destination, label: false, placeholder: "Destination" %>
-    	<%= f.text_field :start_date, label: false, placeholder: "Start Date", id: 'start_date' %>
-    	<%= f.text_field :end_date, label: false, placeholder: "End Date", id: 'end_date' %>
+    	<%= f.text_field :start_date, label: false, placeholder: "Start Date (i.e. 2015-1-1)", id: 'start_date' %>
+    	<%= f.text_field :end_date, label: false, placeholder: "End Date (i.e. 2015-1-5)", id: 'end_date' %>
     	<%= button_to 'Save this Ramble', { :controller => 'rambles', :action => 'create'}, id: 'ramble-button' %>
 <% end %>

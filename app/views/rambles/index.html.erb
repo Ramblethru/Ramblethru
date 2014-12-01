@@ -8,22 +8,24 @@
 				<button class="btn" type="submit">Search</button>
 			</div>
 		<% end %>
-	<div class="container">
 		<% if @ramble %>
 		  <% @ramble.each do |ramble| %>
-		<div class="rambles">
-			<div class="rambles-title">
-			  <% ramble.notes.each do |note| %>
-      </div>
-			  <div class="notesshow">
-				  Note: <%= note.body %>
-			  </div>
-			  <div class="tagshow">
-				  Tag: <%= note.tag_list %>
-			  </div>
-			    <% end %>
-        <% end %>
-      </div>
+        <% ramble.notes.each do |note| %>
+      <li class="note-search">
+        <div class="note-results">
+          <div class="notesshow">
+            <%= note.body %>
+          </div>
+          <div class="tagshow">
+            Tags: <%= note.tag_list %>
+          </div>
+          <div class="note-destination">
+            <%= ramble.destination.upcase %>
+          </div>
+        </div>
+      </li>
+      <br>
+			<% end %>
+    <% end %>
 		</div>
-	</div>
 	<% end %>

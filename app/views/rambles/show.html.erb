@@ -5,6 +5,7 @@
 		<%= link_to 'Add a Name!', edit_ramble_name_path, :class => "edit-ramble-name" %>
 	<% end %>
 	<% if @ramble.destination %>
+
 		<div id="ramble-dest">
 			<%= @ramble.destination.split.map(&:capitalize).join(' ') %>
 		</div>

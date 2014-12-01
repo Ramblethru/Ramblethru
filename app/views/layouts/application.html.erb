@@ -113,7 +113,7 @@
           </ul>
           <ul class="menu-bar">
             <li><%= link_to "Home", root_path %></li>
-            <li><%= link_to_modal "Search", discovers_path %></li>
+            <!--<li><#= link_to_modal "Search", discovers_path %></li>-->
             <% if logged_in? %>
             <li><%= link_to "Profile", user_path(current_user) %></li>
             <li><%= link_to "Search", rambles_path %></li>

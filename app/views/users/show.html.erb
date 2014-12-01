@@ -35,6 +35,7 @@
 			<div class="userrambles">
 				<% @user.rambles.each do |r| %>
 					<div class="each-ramble">
+            <span class="delete-ramble"><%= link_to 'X', r, method: :delete %></span>
 					<div id="ramble-name-profile"><%= r.name %></div>
 					<%= link_to r.destination, ramble_path(r), :class => "r-dest" %>
 					<span id="dates"><%= r.start_date %> to <%= r.end_date %></span>

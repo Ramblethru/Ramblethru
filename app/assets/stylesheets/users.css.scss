@@ -217,3 +217,12 @@ input.register-button {
     background-color: $dark-grey;
   }
  }
+
+.delete-ramble {
+  font-weight: 700;
+  font-size: 20px;
+  display: inline-block;
+  padding: 2px 2px 2px 2px;
+  float: right;
+  margin: -5px 5px 0 0;
+}

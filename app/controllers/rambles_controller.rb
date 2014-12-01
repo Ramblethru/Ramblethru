@@ -104,8 +104,11 @@ class RamblesController < ApplicationController
   end
 
   def destroy
-    @ramble.destroy
-    redirect_to rambles_url
+    @ramble = Ramble.find(params[:id])
+    if @ramble.present?
+      @ramble.destroy
+    end
+    redirect_to :back
   end
 
   def find_ramble

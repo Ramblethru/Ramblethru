@@ -12,38 +12,36 @@
 			<%= form_for @user do |form| %>
 			<%= form.file_field :avatar %>
 			<%= form.submit "Add", :class => "user-img-add" %>
-		<% end %>
-	</div>
-	<div class="userinfo">
-		<div class="name">
-			<span id="user-name-label">Name:</span> <span id="user-name"><%= best_in_place @user, :name %></span>
-<!-- 				<%= link_to 'Edit Name', edit_name_path, :class => "editname" %>
- -->		</div>
-		<div class="lives-in">
-			<span id="user-residence-label">Residence: </span>
+			<% end %>
+		</div>
+		<div class="userinfo">
+			<div class="name">
+				<span id="user-name-label">Name:</span> <span id="user-name"><%= best_in_place @user, :name %></span>
+				<!-- 				<%= link_to 'Edit Name', edit_name_path, :class => "editname" %>
+			-->		</div>
+			<div class="lives-in">
+				<span id="user-residence-label">Residence: </span>
 				<span id="user-residence"><%= best_in_place @user, :lives_in %></span>
+			</div>
+			<br>
+			<div class="bio">
+				<span id="user-bio-label">BIO:</span>
+				<span id="user-bio"><%= best_in_place @user, :bio %><br></span>
+			</div>
 		</div>
-    <br>
-		<div class="bio">
-			<span id="user-bio-label">BIO:</span>
-			<span id="user-bio"><%= best_in_place @user, :bio %><br></span>
-		</div>
-	</div>
-	<div class="container">
-		<div class="usertrips">
-			<div id="my-rambles">Your Rambles</div>
-			<div class="userrambles">
-				<% @user.rambles.each do |r| %>
+		<div class="container">
+			<div class="usertrips">
+				<div id="my-rambles">Your Rambles</div>
+				<div class="userrambles">
+					<% @user.rambles.each do |r| %>
 					<div class="each-ramble">
-            <span class="delete-ramble"><%= link_to 'X', r, method: :delete %></span>
-					<div id="ramble-name-profile"><%= r.name %></div>
-					<%= link_to r.destination, ramble_path(r), :class => "r-dest" %>
-					<span id="dates"><%= r.start_date %> to <%= r.end_date %></span>
-					<!-- <%= div_for(r, class: "foo") do %> -->
-            <% if r.notes.size > 0 %>
+						<span class="delete-ramble"><%= link_to 'X', r, method: :delete %></span>
+						<div id="ramble-name-profile"><%= r.name %></div>
+						<%= link_to r.destination, ramble_path(r), :class => "r-dest" %>
+						<span id="dates"><%= r.start_date %> to <%= r.end_date %></span>
+						<% if r.notes.size > 0 %>
 						<a href="#"> <div class="shows">saved notes</div></a><hr class="ramble-divider">
 						<div class="noteshow">
-							<div data-id="#{r.id}">
 							<% if r.reddit_thread != nil %>
 							Saved from Reddit: <%= link_to r.reddit_thread, r.reddit_thread %>
 							<% end %>
@@ -55,21 +53,23 @@
 							Tag: <%= n.tag_list %>
 							<% end %>
 						</div>
- 					<script type="text/javascript">jQuery(function(){
- 					$('.show').click(function () {
- 					$('#div_' + $(this).attr(data-id)).toggle();
- 					});
- 					</script>
-            <% else %>
-            <span id="no-notes">no notes available</span>
-            <% end %>
-						</div>
-// 					<script type="text/javascript">
-//  $(".shows").click(function () {
-//             $(".noteshow").toggle();
-//         });
-// </script>
-				<% end %>
+						<% else %>
+						<span id="no-notes">no notes available</span>
+						<% end %>
+						<script type="text/javascript">jQuery(function(){
+							$('.show').click(function () {
+								$('#div_' + $(this).attr(data-id)).toggle();
+							});
+							</script>
+					</div>
+					<script type="text/javascript">
+						$(".shows").click(function () {
+							$(".noteshow").toggle();
+						});
+					</script>
+					<% end %>
+				</div>
+				<div class="usernotes"></div>
 			</div>
 		</div>
 	</div>

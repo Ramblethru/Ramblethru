@@ -1,1 +1,1 @@
-$(".rambles").html("<%= j render(@ramble) %>");
+$(".note-results1").html("<%= j render(@ramble) %>");

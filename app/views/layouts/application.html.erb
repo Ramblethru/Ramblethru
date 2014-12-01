@@ -14,8 +14,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<svg id="svg-source" height="0" version="1.1" 
-  xmlns="http://www.w3.org/2000/svg" style="position:absolute; margin-left: -100%" 
+<svg id="svg-source" height="0" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" style="position:absolute; margin-left: -100%"
   xmlns:xlink="http://www.w3.org/1999/xlink">
   <g id="globe" data-iconmelon="Simple Line Icons:19419a395ea0a8c66670aa0042ec6766">
     <g>
@@ -120,12 +120,12 @@
             <% else %>
             <li><%= link_to_modal "Sign In", new_login_path %>
               <% end %>
-            <li><%= link_to "Search", rambles_path %></li>
+            <li><%= link_to "Search", note_search_path %></li>
               <li><%= link_to "About", about_path %></a></li>
             </ul>
                <%= display_alert(:notice) %>
             <%= display_alert(:alert) %>
             <%= yield %>
-         
+
           </body>
           </html>

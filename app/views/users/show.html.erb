@@ -22,15 +22,11 @@
 		<div class="lives-in">
 			<span id="user-residence-label">Residence: </span>
 				<span id="user-residence"><%= best_in_place @user, :lives_in %></span>
-				
-
 		</div>
     <br>
 		<div class="bio">
 			<span id="user-bio-label">BIO:</span>
 			<span id="user-bio"><%= best_in_place @user, :bio %><br></span>
-			<%= link_to 'Edit Bio', edit_bio_path, :class => "editbio" %>
-
 		</div>
 	</div>
 	<div class="container">

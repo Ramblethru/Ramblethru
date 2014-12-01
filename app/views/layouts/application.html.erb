@@ -120,12 +120,12 @@
             <% else %>
             <li><%= link_to_modal "Sign In", new_login_path %>
               <% end %>
-            <li><%= link_to "Search", rambles_path %></li>
+            <li><%= link_to "Search", note_search_path %></li>
               <li><%= link_to "About", about_path %></a></li>
             </ul>
                <%= display_alert(:notice) %>
             <%= display_alert(:alert) %>
             <%= yield %>
-         
+
           </body>
           </html>

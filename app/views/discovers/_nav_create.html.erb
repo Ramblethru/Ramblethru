@@ -1,0 +1,4 @@
+<%= simple_form_for Discover.new, :html => { :class => "nav-destination" } do |f| %>
+    <%= f.input :destination, label: false, placeholder: "Destination", input_html: { class: 'nav-destination' } %>
+    <%= button_to 'Search', { :controller => 'discovers', :action => 'create'}, :class => "nav-input" %>
+<% end %>

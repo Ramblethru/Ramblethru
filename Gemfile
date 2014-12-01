@@ -15,7 +15,6 @@ gem 'rails_12factor',   group: :production
 gem 'jquery-ui-rails'
 gem 'redcarpet'
 gem 'table_print' #for orderly viewing of db contents
-gem 'kaminari' #for pagination
 
 # Make it look good
 gem 'sass-rails', '~> 4.0.3'
@@ -32,7 +31,8 @@ gem 'acts-as-taggable-on'
 gem 'momentjs-rails', '>= 2.8.1'
 gem 'jquery-modal-rails'
 gem 'animate-rails'
-gem "best_in_place"
+gem 'best_in_place'
+gem 'will_paginate'
 
 
 # authenticate

@@ -40,8 +40,8 @@
 						<%= link_to r.destination, ramble_path(r), :class => "r-dest" %>
 						<span id="dates"><%= r.start_date %> to <%= r.end_date %></span>
 						<% if r.notes.size > 0 %>
-						<a href="#"> <div class="shows">saved notes</div></a><hr class="ramble-divider">
-						<div class="noteshow">
+						<div class="shows" data-id="<%= r.id %>">saved notes</div><hr class="ramble-divider">
+						<div class="noteshow" id="div_ramble_<%= r.id %>" >
 							<% if r.reddit_thread != nil %>
 							Saved from Reddit: <%= link_to r.reddit_thread, r.reddit_thread %>
 							<% end %>
@@ -56,18 +56,14 @@
 						<% else %>
 						<span id="no-notes">no notes available</span>
 						<% end %>
-						<script type="text/javascript">jQuery(function(){
-							$('.show').click(function () {
-								$('#div_' + $(this).attr(data-id)).toggle();
-							});
-							</script>
 					</div>
-					<script type="text/javascript">
-						$(".shows").click(function () {
-							$(".noteshow").toggle();
-						});
-					</script>
 					<% end %>
+					<script type="text/javascript">
+					$(".shows").click(function () {
+						var dataId = event.target.getAttribute("data-id");
+						$("#div_ramble_" + dataId).toggle();
+					});
+					</script>
 				</div>
 				<div class="usernotes"></div>
 			</div>

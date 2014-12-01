@@ -39,6 +39,7 @@ class RamblesController < ApplicationController
     end
 
   def new
+    # @discover = Discover.last
     @ramble = Ramble.new
   end
 

@@ -177,7 +177,7 @@
 							<h4>RELEVANT NOTES GO HERE</h4>
 							<% ramble = Ramble.where(:destination => @ramble.destination)  %>
 							<% ramble.each do |r| %>
-							<% if r.user_id != current_user.id %>
+							<% if r.id != @ramble.id %>
 							<% r.notes.each do |n| %>
 							<div class="nbody">Note: <%= n.body %></div>
 							<div class="ntag">Tag: <%= n.tag_list %></div>

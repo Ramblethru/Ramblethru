@@ -30,7 +30,7 @@ class Ramble < ActiveRecord::Base
 
   def self.search(query)
     #where(:destination, query)
-    where("destination like ?", "%#{query}%")
+    where("destination like ?", "%#{query.downcase}%")
   end
 end
 

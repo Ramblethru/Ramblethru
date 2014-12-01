@@ -1,7 +1,6 @@
 require "addressable/uri"
 class RamblesController < ApplicationController
   include HTTParty
-  before_action :authenticate
 
     def show
        @ramble = Ramble.find(params[:id])
@@ -13,7 +12,7 @@ class RamblesController < ApplicationController
 
     def yelp
         params = { term: 'food',
-                   limit: 5,
+                   limit: 20,
                   }
       @yelp = Yelp.client.search("#{@ramble.destination}", params)
     end
@@ -58,20 +57,20 @@ class RamblesController < ApplicationController
 
   def index
     respond_to do |format|
-    format.html do
-      if params[:search]
-      @ramble = Ramble.search(params[:search]).order("created_at DESC")
-    end
-    end
-    format.js do
-     if params[:search]
-        @ramble = Ramble.search(params[:search]).order("created_at DESC")
-        render :search, status: :created
-      else
-        render :create, status: :not_found
+      format.html do
+        if params[:search]
+          @ramble = Ramble.search(params[:search]).order("created_at DESC")
+        end
+      end
+      format.js do
+        if params[:search]
+          @ramble = Ramble.search(params[:search]).order("created_at DESC")
+          render :search, status: :created
+        else
+          render :create, status: :not_found
+        end
       end
     end
-  end
   end
 
   def add_api

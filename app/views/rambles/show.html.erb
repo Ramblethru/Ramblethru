@@ -1,40 +1,23 @@
 <div class="ramble-title">
 	<% if @ramble.name !=nil %>
-<<<<<<< HEAD
-	<div class="shift"><%= best_in_place @ramble, :name %></div>
+		<div class="shift"><%= best_in_place @ramble, :name %></div>
 	<% else %>
-	<%= link_to 'Add a Name!', edit_ramble_name_path, :class => "edit-ramble-name" %>
+		<%= link_to 'Add a Name!', edit_ramble_name_path, :class => "edit-ramble-name" %>
 	<% end %>
 	<% if @ramble.destination %>
-	<div id="ramble-dest">
-		<%= @ramble.destination.split.map(&:capitalize).join(' ') %>
-	</div>
-	<% else %>
-	<h1>NAME OF YOUR RAMBLE HERE</h1>
-	<% end %>
-	<% if @ramble.start_date && @ramble.end_date %>
-	<div class="start-end">
-		From <%= best_in_place @ramble, :start_date %> to <%= @ramble.end_date %>
-=======
-	<div class="shift"><%= best_in_place @ramble, :name %>
-		<%= link_to 'Edit', edit_ramble_name_path, :class => "edit-ramble-name" %></div>
-		<% else %>
-		<%= link_to 'Add a Name!', edit_ramble_name_path, :class => "edit-ramble-name" %>
-		<% end %>
-		<% if @ramble.destination %>
 		<div id="ramble-dest">
 			<%= @ramble.destination.split.map(&:capitalize).join(' ') %>
 		</div>
-		<% else %>
+	<% else %>
 		<h1>NAME OF YOUR RAMBLE HERE</h1>
-		<% end %>
-		<% if @ramble.start_date && @ramble.end_date %>
+	<% end %>
+	<% if @ramble.start_date && @ramble.end_date %>
 		<div class="start-end">
 			From <%= best_in_place @ramble, :start_date %> to <%= @ramble.end_date %>
 		</div>
-		<% end %>
->>>>>>> ef178920926c7782a4077125e34e2959a6e0b22e
-	</div>
+	<% end %>
+</div>
+
 	<div id='map' class='dark'></div>
 	<script type='text/javascript'>
 	var latitude= '<%=@ramble.latitude%>';

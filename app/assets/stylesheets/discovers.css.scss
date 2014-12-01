@@ -96,7 +96,7 @@ div.modal.current {
   left: 50%;
   margin-top: -170px;
   width: 500px;
-  height: 500px;
+  height: 520px;
   border-radius: 10px;
   border: 5px solid $dark-grey;
   }
@@ -129,8 +129,10 @@ h2#login {
   font-size: 40px;
 }
 h2#register, a.register {
-  font-size: 30px;
+  font-size: 20px;
   color: $green;
+  font-family: 'menschmensch_regular';
+  margin-top: 3px;
 }
 a.close-modal {
   text-align: center;
@@ -259,4 +261,10 @@ h4.r-create {
 }
 div.discover-bottom {
   margin-top: 0px;
+}
+#or {
+  font-size: 20px;
+  color: $orange;
+  font-family: 'menschmensch_regular';
+  margin-top: 3px;
 }

@@ -1,6 +1,5 @@
 class LoginsController < ApplicationController
   include LoginsHelper
-  before_filter :store_return_to
   
   def new
   end

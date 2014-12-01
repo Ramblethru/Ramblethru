@@ -174,3 +174,58 @@ hr.ramble-divider {
 	margin-top: -70px;
 	height: 150px;
 }
+<<<<<<< HEAD
+=======
+.reg {
+	width: 60%;
+	margin: 0 auto;
+}
+input#user_email, #user_name, #user_password, #user_password_confirmation {
+	text-align: center;
+	border-radius: 10px;
+	font-family: monospace, sans-serif;
+  	color: $dark-grey;
+  	border: 2px solid $green;
+  	border-radius: 10px;
+  	background-color: transparent;
+}	
+#register {
+	font-size: 40px;
+	font-family: 'menschmensch_bold';
+	color: $orange;
+}
+#login {
+	font-size: 20px;
+	font-family: 'menschmensch_regular';
+	color: $green;
+}
+label {
+	font-family: 'menschmensch_regular';
+	color: $orange;
+	font-size: 20px;
+}
+a.or-login {
+	color: $orange;
+}
+input.register-button {
+  background-color: $orange;
+  color: $green;
+  height: 45px;
+  line-height: .8;
+  font-family: 'menschmensch_regular';
+
+
+  &:hover {
+    background-color: $dark-grey;
+  }
+ }
+
+.delete-ramble {
+  font-weight: 700;
+  font-size: 20px;
+  display: inline-block;
+  padding: 2px 2px 2px 2px;
+  float: right;
+  margin: -5px 5px 0 0;
+}
+>>>>>>> b812d075daeeafdca067cf5ba692f798e9668c87

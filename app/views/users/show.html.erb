@@ -35,12 +35,13 @@
 			<div class="userrambles">
 				<% @user.rambles.each do |r| %>
 					<div class="each-ramble">
-						<div id="ramble-name-profile"><%= r.name %></div>
-						<%= link_to r.destination, ramble_path(r), :class => "r-dest" %>
-						<span id="dates"><%= r.start_date %> to <%= r.end_date %></span>
-						<!-- <%= div_for(r, class: "foo") do %> -->
-						<div class="shows">saved notes</div><hr class="ramble-divider">
-						<% end %>
+            <span class="delete-ramble"><%= link_to 'X', r, method: :delete %></span>
+					<div id="ramble-name-profile"><%= r.name %></div>
+					<%= link_to r.destination, ramble_path(r), :class => "r-dest" %>
+					<span id="dates"><%= r.start_date %> to <%= r.end_date %></span>
+					<!-- <%= div_for(r, class: "foo") do %> -->
+            <% if r.notes.size > 0 %>
+						<a href="#"> <div class="shows">saved notes</div></a><hr class="ramble-divider">
 						<div class="noteshow">
 							<div data-id="#{r.id}">
 							<% if r.reddit_thread != nil %>
@@ -54,20 +55,21 @@
 							Tag: <%= n.tag_list %>
 							<% end %>
 						</div>
-						<script type="text/javascript">jQuery(function(){
-							$('.show').click(function () {
-								$('#div_' + $(this).attr(data-id)).toggle();
-							});
-						</script>
-					</div>
-					// <script type="text/javascript">
-					// $(".shows").click(function () {
-					// 	$(".noteshow").toggle();
-					// });
-					// </script>
-					<% end %>
-				</div>
-				<div class="usernotes"></div>
+ 					<script type="text/javascript">jQuery(function(){
+ 					$('.show').click(function () {
+ 					$('#div_' + $(this).attr(data-id)).toggle();
+ 					});
+ 					</script>
+            <% else %>
+            <span id="no-notes">no notes available</span>
+            <% end %>
+						</div>
+// 					<script type="text/javascript">
+//  $(".shows").click(function () {
+//             $(".noteshow").toggle();
+//         });
+// </script>
+				<% end %>
 			</div>
 		</div>
 	</div>

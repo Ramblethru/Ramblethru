@@ -113,12 +113,14 @@
           </ul>
           <ul class="menu-bar">
             <li><%= link_to "Home", root_path %></li>
+            <!--<li><#= link_to_modal "Search", discovers_path %></li>-->
             <% if logged_in? %>
             <li><%= link_to "Profile", user_path(current_user) %></li>
-            <li><%= link_to "Search", rambles_path %></li>
+              <li><%= link_to "New Ramble", new_ramble_path %></li>
             <% else %>
             <li><%= link_to_modal "Sign In", new_login_path %>
               <% end %>
+            <li><%= link_to "Search", rambles_path %></li>
               <li><%= link_to "About", about_path %></a></li>
             </ul>
                <%= display_alert(:notice) %>

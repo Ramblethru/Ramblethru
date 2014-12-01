@@ -38,7 +38,7 @@
 					<div id="ramble-name-profile"><%= r.name %></div>
 					<%= link_to r.destination, ramble_path(r), :class => "r-dest" %>
 					<span id="dates"><%= r.start_date %> to <%= r.end_date %></span>
-            <% if r.notes %>
+            <% if r.notes.size > 0 %>
 						<a href="#"> <div class="shows">saved notes</div></a><hr class="ramble-divider">
 						<div class="noteshow">
 							<% if r.reddit_thread != nil %>
@@ -53,7 +53,7 @@
 							<% end %>
 						</div>
             <% else %>
-            no notes
+            <span id="no-notes">no notes available</span>
             <% end %>
 						</div>
 					<script type="text/javascript">

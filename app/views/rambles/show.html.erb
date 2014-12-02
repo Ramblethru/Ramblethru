@@ -101,7 +101,6 @@
 										<%= g["text"] %>
 										<% end %>">Save Me!</a>
 									<%= f["venue"]["name"] %><hr>
-
 								</div>
 								<div class="hello"></div>
 								<div class="hello2"></div>
@@ -124,7 +123,7 @@
 							var dataAddress = event.target.getAttribute("data-address")
 							var dataTip = event.target.getAttribute("data-tip")
 							dataTip = dataTip.substring(0, dataTip.indexOf('['));
-							$(".help").html(dataName);
+							$(".hello").html(dataName);
 							$(".hello2").html(dataAddress);
 							$(".hello3").html(dataTip);
 						});
@@ -146,6 +145,13 @@
 						<div class="yelp-results">
 							<li>
 								<span class="yshow">
+									<a class="yelp-save" data-yname="<%= y.name %>",
+										data-yaddress="<%= y.location.address.pop %>",
+										data-ytip="<%= y.snippet_text %>">
+										Save me! </a>
+										<div class="help"></div>
+										<div class="help1"></div>
+										<div class="help2"></div>
 									<%= link_to y.name, y.url, :class => "yelp-venue-title" %>
 									<%= link_to image_tag y.rating_img_url_small %>
 									<span class="y-address"><%= y.location.address.pop %></span><hr>
@@ -156,6 +162,16 @@
 								<hr class="y-tip">
 							</span>
 						</div>
+						<script type="text/javascript">
+						$(".yelp-save").click(function () {
+							var dataYname = event.target.getAttribute("data-yname");
+							var dataYaddress = event.target.getAttribute("data-yaddress");
+							var dataYtip = event.target.getAttribute("data-ytip");
+							$(".help").html(dataYname);
+							$(".help1").html(dataYaddress);
+							$(".help2").html(dataYtip);
+						});
+						</script>
 						<% end %>
 						<% else %>
 						Sorry, there are no Yelp results for this destination.

@@ -233,6 +233,9 @@ input.register-button {
 	font-size: 15px;
 	font-weight: bold;
 }
-#user-note {
-	
+#user-note, #user-title, #user-address, #user-url, #user-tags {
+	color: $green;
+}
+hr#note-each-divider {
+	border: 2px solid $orange;
 }

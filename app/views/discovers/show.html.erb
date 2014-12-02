@@ -109,12 +109,11 @@
     <div class="red-title">Reddit <i class="fa fa-arrow-circle-o-down"></i>
     </div>
     <div class="r-desc">Local subreddits can be a great place to get information about a destination from locals. Here is a list of subreddits related to your destination:</div>
-    <br>
     <div class="r-list">
       <ul>
       <% @reddit_thread.each do |r| %>
         <li>
-          <span class="r-link"><a href="http://www.reddit.com/r/<%= r["name"] %>" target="_blank"></span>
+          <span class="r-link"><a href="http://www.reddit.com/r/<%= r["name"] %>" target="_blank"></span> <span id="slash">//</span>
             <%= r["name"] %>
           </a>
         </li>

@@ -8,11 +8,11 @@ $dark-grey: #7f868e;
 $green: #2e7562;
 
 .hero {
-  background: url('header.png');
+  background: url('road.jpg');
   background-color: $green;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: bottom center;
 	height: 450px;
   margin-top: -37px;
 }
@@ -27,11 +27,10 @@ $green: #2e7562;
 #header-title-first {
 	text-align: center;
 	padding-top: 10px;
-	color: $orange;
+	color: $light-grey;
   display: inline;
 	margin-bottom: 0px;
   font-family: 'menschmensch_bold';
-  -webkit-text-stroke: 5px $green;
   font-size: 165px;
 	}
 

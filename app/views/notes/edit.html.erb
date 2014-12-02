@@ -1,5 +1,10 @@
 <%= simple_form_for [@ramble, @note] do |f| %>
+    <%= f.input :title, label: false, placeholder: "Your note's title" %>
+    <%= f.input :address, label: false, placeholder: "Venue address" %>
     <%= f.input :body, label: false, placeholder: "Your body text" %>
+    <%= f.input :url, label: false, placeholder: "URL" %>
     <%= f.input :tag_list, label: false, :class=>"tag-input", :placeholder=>"Tags" %>
     <%= f.button :submit, "Edit note", :class => "radius" %>
 <% end %>
+
+

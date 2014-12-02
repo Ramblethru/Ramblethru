@@ -2,20 +2,28 @@
 	<div class="container">
 		<% if @ramble %>
 		<% @ramble.each do |ramble| %>
-		<div class="rambles">
-			<div class="note-results">
-			<% ramble.notes.each do |note| %>
-			<div class="notesshow">
-				Note: <%= note.body %>
-			</div>
-			<div class="tagshow">
-				Tag: <%= note.tag_list %>
-				<% end %>
-			</div>
-      <div class="note-destination">
-        <%= ramble.destination.upcase %>
-      </div>
-		</div>
+      <% ramble.notes.each do |note| %>
+        <div class="note-results">
+          <div class="notesshow">
+            Title: <%= note.title %>
+          </div>
+          <div class="notesshow">
+            Address: <%= note.address %>
+          </div>
+          <div class="notesshow">
+            Note: <%= note.body %>
+          </div>
+          <div class="notesshow">
+            URL: <a href="<%= note.url %>" target="_blank"><%= note.url %></a>
+          </div>
+          <div class="tagshow">
+            Tags: <%= note.tag_list %>
+          </div>
+          <div class="note-destination">
+            <%= ramble.destination.upcase %>
+          </div>
+        </div>
+        <% end %>
 		<% end %>
 		<% end %>
 	</div>

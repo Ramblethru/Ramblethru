@@ -156,15 +156,17 @@ a.close-modal {
 }
 h1.discover {
   color: $orange;
+  text-shadow: -3px 3px $green;
   font-family: 'menschmensch_regular';
   padding-top: 130px;
-  font-size: 50px;
+  font-size: 70px;
   margin-bottom: 0px;
 }
 .location {
   color: $light-grey;
   font-family: monospace, sans-serif;
   font-size: 20px;
+  margin-top: -18px;
 }
 div.four-title, div.ins-title {
   font-size: 40px;

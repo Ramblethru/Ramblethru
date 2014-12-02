@@ -67,7 +67,6 @@ input#ramble-button {
   	line-height: .8;
   	font-family: 'menschmensch_thin';
 
-
   &:hover {
     background-color: $dark-grey;
   }
@@ -79,8 +78,9 @@ input#ramble-button {
   color: $orange;
   font-family: 'menschmensch_regular';
   padding-top: 120px;
-  font-size: 50px;
+  font-size: 70px;
   margin-bottom: 0px;
+  font-weight: bold;
 }
   .shift {
   }
@@ -88,6 +88,7 @@ input#ramble-button {
 	font-size: 18px;
 	font-family: monospace, sans-serif;
 	color: $light-grey;
+	margin-top: -7px;
 }
 textarea#note_body, input#note_tag_list, input#note_title, input#note_address, input#note_url {
 	border: 2px solid $orange;
@@ -225,7 +226,7 @@ a.edit-note, a.delete-note {
 	font-family: monospace, sans-serif;
 	font-color: $light-grey;
 	font-size: 18px;
-	margin-top: -15px;
+	margin-top: -28px;
 }
 .edit-ramble-name {
 	text-decoration: none;
@@ -320,13 +321,14 @@ a.edit-note, a.delete-note {
 .note-header {
 	background: $green;
 	height: 200px;
-	margin-top: -74px;
+	margin-top: -85px;
 }
 #note-search-title {
   	font-family: 'menschmensch_regular';
   	color: $orange;
-  	font-size: 50px;
-  	padding-top: 100px;
+  	font-size: 70px;
+  	padding-top: 90px;
+  	margin-bottom: -20px;
 }
 input#search.span2 {
 	width: 30%;
@@ -389,4 +391,15 @@ input#search.span2 {
 
 li.note-search {
   display: inline;
+}
+.y-address {
+	font-family: monospace, sans-serif;
+	color: $green;
+	display: block;
+}
+#on-locations {
+	color: $light-grey;
+	font-size: 30px;
+	font-family: 'menschmensch_regular';
+
 }

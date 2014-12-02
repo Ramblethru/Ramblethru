@@ -47,6 +47,7 @@
 			<% @ramble.notes.each do |note| %>
 			<div id="<%= dom_id(note) %>">
 				<div class="notebody">
+
 					<% if note.body %>
             <p>
               <span id="note-label">Title: </span>
@@ -93,8 +94,9 @@
 						</div>
 						<% @foursquare_venue.each do |f| %>
 						<div class="four-results">
+							<a class="foursquare-save" data-name="<%= f['venue']['name'] %>">Save Me!</a>
 							<li>
-								<span class="fshow">	<div id="f-venue-title">
+								<span class="fshow"><div id="f-venue-title">
 									<%= f["venue"]["name"] %><hr>
 								</div>
 							</span>
@@ -127,7 +129,8 @@
 							<li>
 								<span class="yshow">
 									<%= link_to y.name, y.url, :class => "yelp-venue-title" %>
-									<%= link_to image_tag y.rating_img_url_small %><hr>
+									<%= link_to image_tag y.rating_img_url_small %>
+									<span class="y-address"><%= y.location.address.pop %></span><hr>
 								</span>
 							</li>
 							<span class="yshow">

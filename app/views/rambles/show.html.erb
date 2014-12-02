@@ -237,13 +237,30 @@
 							</script>
 						</div>
 						<div class="recommended-notes">
-							<h4>RELEVANT NOTES GO HERE</h4>
+							<h4>Related Notes</h4>
 							<% ramble = Ramble.where(:destination => @ramble.destination)  %>
 							<% ramble.each do |r| %>
 							<% if r.id != @ramble.id %>
 							<% r.notes.each do |n| %>
-							<div class="nbody">Note: <%= n.body %></div>
-							<div class="ntag">Tag: <%= n.tag_list %></div>
+              <div class="note-results">
+                <div class="notesshow">
+                  Title: <%= n.title %>
+                </div>
+                <div class="notesshow">
+                  Address: <%= n.address %>
+                </div>
+                <div class="notesshow">
+                  Note: <%= n.body %>
+                </div>
+                <div class="notesshow">
+                  URL: <a href="<%= n.url %>" target="_blank"><%= n.url %></a>
+                </div>
+                <div class="tagshow">
+                  Tags: <%= n.tag_list %>
+                </div>
+              </div>
+							<!--<div class="nbody">Note: <#= n.body %></div>-->
+							<!--<div class="ntag">Tags: <#= n.tag_list %></div>-->
 							<% end %>
 							<% end %>
 							<% end %>

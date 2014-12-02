@@ -123,9 +123,9 @@
 							var dataAddress = event.target.getAttribute("data-address")
 							var dataTip = event.target.getAttribute("data-tip")
 							dataTip = dataTip.substring(0, dataTip.indexOf('['));
-							$(".hello").html(dataName);
-							$(".hello2").html(dataAddress);
-							$(".hello3").html(dataTip);
+							$("#note_title").val(dataName);
+							$("#note_address").val(dataAddress);
+							$("#note_body").val(dataTip);
 						});
 						</script>
 						<script type="text/javascript">
@@ -167,9 +167,9 @@
 							var dataYname = event.target.getAttribute("data-yname");
 							var dataYaddress = event.target.getAttribute("data-yaddress");
 							var dataYtip = event.target.getAttribute("data-ytip");
-							$(".help").html(dataYname);
-							$(".help1").html(dataYaddress);
-							$(".help2").html(dataYtip);
+							$("#note_title").val(dataYname);
+							$("#note_address").val(dataYaddress);
+							$("#note_body").val(dataYtip);
 						});
 						</script>
 						<% end %>
@@ -205,7 +205,7 @@
 								<script type="text/javascript">
 								$(".instagram-save").click(function () {
 									var dataIurl = event.target.getAttribute("data-iurl");
-									$(".halp").html(dataIurl);
+									$("#note_url").val(dataIurl);
 								});
 							</script>
 								<script type="text/javascript">

@@ -18,7 +18,6 @@
 //= require_tree .
 //= require mapbox.js
 //= require moment
-
 //= require jquery-ui/datepicker
 //= require jquery.modal
 //= require best_in_place
@@ -31,4 +30,27 @@ $(document).ready(function(){
 $(".menu-button").click(function(){
 $(".menu-bar").toggleClass( "open" );
 })
+});
+$(function (){
+      $('input.datepicker').data({behaviour: "datepicker"}).datepicker();
+
+        $('#start_date').datepicker( {
+           showButtonPanel: true,
+           defaultDate: "+1w",
+           numberOfMonths: 3,
+           onClose: function( selectedDate ) {
+            $( "#end_date" ).datepicker( "option", "minDate", selectedDate );
+      }
+
+        });
+        $('#end_date').datepicker( {
+           showButtonPanel: true,
+           defaultDate: "+1w",
+           changeMonth: true,
+           numberOfMonths: 3,
+           onClose: function( selectedDate ) {
+            $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+      }
+        });
+
 });

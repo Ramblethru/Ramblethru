@@ -213,7 +213,7 @@ a.y-name {
 }
 .r-desc {
   font-family: monospace, sans-serif;
-  color: $orange;
+  color: $light-grey;
   font-size: 16px;
   font-weight: bold;
   width: 450px;
@@ -224,6 +224,7 @@ a.y-name {
   margin: 0 auto 0 auto;
   text-align: justify;
   text-align-last: justify;
+  margin-top: -15px;
 }
 
 .r-list:after {
@@ -282,4 +283,9 @@ div.discover-bottom {
   font-family: 'menschmensch_regular';
   font-size: 20px;
   margin: 0 auto 20px auto;
+}
+#slash {
+  color: $orange;
+  font-family: monospace, sans-serif;
+  font-weight: bold;
 }

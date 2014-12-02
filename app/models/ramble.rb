@@ -20,13 +20,13 @@ class Ramble < ActiveRecord::Base
   #   save!
   # end
 
-  def save_instagram_url
-    instagram = HTTParty.get("https://api.instagram.com/v1/media/search?lat=#{@ramble.latitude}&lng=#{@ramble.longitude}&count=8&client_id=ea93d7b97c444c9bbfcf23cbbcb63ee4")
-    instagram_data = JSON.parse(instagram.body)
-    self.instagram_url = instagram_data["data"][0]["images"]["thumbnail"]["url"]
-    [] << self.instagram_url
-    save!
-  end
+  # def save_instagram_url
+  #   instagram = HTTParty.get("https://api.instagram.com/v1/media/search?lat=#{@ramble.latitude}&lng=#{@ramble.longitude}&count=8&client_id=ea93d7b97c444c9bbfcf23cbbcb63ee4")
+  #   instagram_data = JSON.parse(instagram.body)
+  #   self.instagram_url = instagram_data["data"][0]["images"]["thumbnail"]["url"]
+  #   [] << self.instagram_url
+  #   save!
+  # end
 
   def self.search(query)
     #where(:destination, query)

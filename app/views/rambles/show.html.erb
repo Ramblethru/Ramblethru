@@ -158,7 +158,8 @@
 						<div class="i-images">
 							<% i = @instagram_images.each do |i| %>
 							<span class="ishow">
-								<%= link_to image_tag i["images"]["thumbnail"]["url"], :class => "instagram-thumb" %>
+								  <%= link_to image_tag i["images"]["thumbnail"]["url"], :class => "instagram-thumb" %>
+
 								<%= button_to 'Save this Image', { :controller => 'rambles', :action => 'add_instagram'}, :class => "insta-save" do %>
 								<i class="fa fa-star-o"></i> <span id="save">Save</span></span>
 								<% end %>

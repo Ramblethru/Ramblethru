@@ -5,7 +5,6 @@
 		<%= link_to 'Add a Name!', edit_ramble_name_path, :class => "edit-ramble-name" %>
 	<% end %>
 	<% if @ramble.destination %>
-
 		<div id="ramble-dest">
 			<%= @ramble.destination.split.map(&:capitalize).join(' ') %>
 		</div>
@@ -21,11 +20,11 @@
 
 	<div id='map' class='dark'></div>
 	<script type='text/javascript'>
-	var latitude= '<%=@ramble.latitude%>';
-	var longitude= '<%=@ramble.longitude%>';
-	var destination='<%=@ramble.destination.split.map(&:capitalize).join(' ')%>';
-	var map = L.mapbox.map('map', 'daninyc.14e41ce7').setView([latitude, longitude], 5).setZoom([14]);
-	L.mapbox.markerLayer({
+		var latitude= '<%=@ramble.latitude%>';
+		var longitude= '<%=@ramble.longitude%>';
+		var destination='<%=@ramble.destination.split.map(&:capitalize).join(' ')%>';
+		var map = L.mapbox.map('map', 'daninyc.14e41ce7').setView([latitude, longitude], 5).setZoom([14]);
+		L.mapbox.markerLayer({
 		type: 'Feature',
 		geometry: {
 			type: 'Point',
@@ -37,171 +36,186 @@
 			'marker-size': 'large',
 			'marker-color': '#af703a'
 		}
-	}).addTo(map);
+		}).addTo(map);
 	</script>
+
 	<div class="container">
 		<div class="ramble-notes">
 			<h2 class="notes">NOTES</h2>
 			<%= render "notes/note_form" %>
 			<% if @ramble.notes != nil %>
-			<% @ramble.notes.each do |note| %>
-			<div id="<%= dom_id(note) %>">
-				<div class="notebody">
-
-					<% if note.body %>
-            <p>
-              <span id="note-label">Title: </span>
-              <span id="note-title"><%= note.title %></span>
-            </p>
-            <p>
-              <span id="note-label">Address: </span>
-              <span id="note-address"><%= note.address %></span>
-            </p>
-            <p>
-              <span id="note-label">Note: </span>
-              <span id="note-body"><%= note.body %></span>
-            </p>
-            <p>
-              <span id="note-label">URL: </span>
-              <span id="note-url"><%= note.url %></span>
-            </p>
-						<p>
-              <span id="tag-label">Tag(s): </span>
-							<span id="tag-each"><%= raw note.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></span>
-            </p>
-							<% if current_user.rambles.include?(@ramble) %>
-							<i class="fa fa-pencil-square-o"></i>
-							<%= link_to 'Edit', edit_ramble_note_path(@ramble.id, note.id), :class => "edit-note" %>
-							<i class="fa fa-trash"></i>
-							<%= link_to 'Delete', note, method: :delete, remote: true, :class => "delete-note" %>
+				<% @ramble.notes.each do |note| %>
+					<div id="<%= dom_id(note) %>">
+					<div class="notebody">
+						<% if note.body %>
+           		<p>
+              	<span id="note-label">Title: </span>
+              	<span id="note-title"><%= note.title %></span>
+            	</p>
+           	 	<p>
+              	<span id="note-label">Address: </span>
+              	<span id="note-address"><%= note.address %></span>
+            	</p>
+            	<p>
+              	<span id="note-label">Note: </span>
+              	<span id="note-body"><%= note.body %></span>
+            	</p>
+            	<p>
+              	<span id="note-label">URL: </span>
+              	<span id="note-url"><%= note.url %></span>
+            	</p>
+							<p>
+              	<span id="tag-label">Tag(s): </span>
+								<span id="tag-each"><%= raw note.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></span>
+            			</p>
+								<% if current_user.rambles.include?(@ramble) %>
+									<i class="fa fa-pencil-square-o"></i>
+									<%= link_to 'Edit', edit_ramble_note_path(@ramble.id, note.id), :class => "edit-note" %>
+									<i class="fa fa-trash"></i>
+									<%= link_to 'Delete', note, method: :delete, remote: true, :class => "delete-note" %>
+								<% end %>
 							<% end %>
-							<% end %>
-						</div>
 					</div>
-					<% end %>
-					<% else %>
-					You haven't created any notes yet!
-					<% end %>
-					<div class="end"></div>
+					</div>
+				<% end %>
+			<% else %>
+				You haven't created any notes yet!
+			<% end %>
+			<div class="end"></div>
+		</div>
+		<div class="api-feed">
+			<div id="feed-title">Recommendations</div>
+			<div class="foursq">
+				<div class="shows1" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
+					<i class="fa fa-foursquare ramble"></i><br>
+					<div id="four-title">Foursquare</div>
 				</div>
 
-				<div class="api-feed">
-					<div id="feed-title">Recommendations</div>
-					<div class="foursq">
-						<div class="shows1" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
-							<i class="fa fa-foursquare ramble"></i><br>
-							<div id="four-title">Foursquare</div>
-						</div>
-						<% @foursquare_venue.each do |f| %>
-						<div class="four-results">
-							<a class="foursquare-save" data-name="<%= f['venue']['name'] %>">Save Me!</a>
-							<li>
-								<span class="fshow"><div id="f-venue-title">
+	
+			
+
+
+				<% @foursquare_venue.each do |f| %>
+					<div class="four-results">
+						<a id="foursquare-save" data-name="<%= f['venue']['name'] %>" onClick="copyText()">Save Me!</a>
+						<li>
+							<span class="fshow">
+								<div id="f-venue-title">
 									<%= f["venue"]["name"] %><hr>
 								</div>
 							</span>
 						</li>
 						<span class="fshow">
-							<span id="f-address">Address: <%= f["venue"]["location"]["address"] %></span>
-							<% f["tips"] %></span>
+							<span id="f-address">
+								Address: <%= f["venue"]["location"]["address"] %></span>
+								<% f["tips"] %>
+							</span>
 							<% f["tips"].each do |g| %>
-							<span class="fshow">
-								<article><%= link_to g["text"], g["canonicalUrl"], :class => "four-tip"%></article><hr class="tip">
-							</span>
-						</div>
-						<% end %>
-						<% end %>
-						<script type="text/javascript">
-						$(".shows1").click(function () {
-							$(".fshow").toggle();
-						});
-						</script>
-					</div>
-
-					<div class="ramble-yelp">
-						<div class="shows2" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
-							<i class="fa fa-yelp ramble"></i><br>
-							<div id="yelp-title">Yelp</div>
-						</div>
-						<% if @yelp.businesses != nil %>
-						<% @yelp.businesses.each do |y| %>
-						<div class="yelp-results">
-							<li>
-								<span class="yshow">
-									<%= link_to y.name, y.url, :class => "yelp-venue-title" %>
-									<%= link_to image_tag y.rating_img_url_small %>
-									<span class="y-address"><%= y.location.address.pop %></span><hr>
+								<span class="fshow">
+									<article>
+										<%= link_to g["text"], g["canonicalUrl"], :class => "four-tip"%>
+									</article><hr class="tip">
 								</span>
-							</li>
-							<span class="yshow">
-								<article class="yelp-venue-tip"><%= y.snippet_text %></article>
-								<hr class="y-tip">
-							</span>
-						</div>
-						<% end %>
-						<% else %>
-						Sorry, there are no Yelp results for this destination.
-						<% end %>
-
-						<script type="text/javascript">
-						$(".shows2").click(function () {
-							$(".yshow").toggle();
+							<% end %>
+					</div>
+				<% end %>
+					<script type="text/javascript">
+						function copyText() {
+						var output = document.getElementById("foursquare-save");
+						document.getElementById("note-body").value = output;
+					};
+					</script>
+				<script type="text/javascript">
+					$(".shows1").click(function () {
+					$(".fshow").toggle();
 						});
-						</script>
+				</script>
+		</div>
+		<div class="ramble-yelp">
+			<div class="shows2" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
+				<i class="fa fa-yelp ramble"></i><br>
+				<div id="yelp-title">Yelp</div>
+			</div>
+			<% if @yelp.businesses != nil %>
+				<% @yelp.businesses.each do |y| %>
+					<div class="yelp-results">
+						<li>
+							<span class="yshow">
+								<%= link_to y.name, y.url, :class => "yelp-venue-title" %>
+								<%= link_to image_tag y.rating_img_url_small %>
+								<span class="y-address"><%= y.location.address.pop %></span><hr>
+							</span>
+						</li>
+						<span class="yshow">
+							<article class="yelp-venue-tip"><%= y.snippet_text %></article>
+							<hr class="y-tip">
+						</span>
 					</div>
-
-					<div class="ramble-instagram">
-						<div class="shows3" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
-							<i class="fa fa-instagram ramble"></i><br>
-							<div id="insta-title">Instagram</div>
-						</div>
-						<div class="i-images">
-							<% i = @instagram_images.each do |i| %>
-							<span class="ishow">
-								<%= link_to image_tag i["images"]["thumbnail"]["url"], :class => "instagram-thumb" %>
-								<%= button_to 'Save this Image', { :controller => 'rambles', :action => 'add_instagram'}, :class => "insta-save" do %>
-								<i class="fa fa-star-o"></i> <span id="save">Save</span></span>
-								<% end %>
-								<hr class="i-tip">
-								<% end %>
-								<script type="text/javascript">
-								$(".shows3").click(function () {
-									$(".ishow").toggle();
+				<% end %>
+			<% else %>
+				Sorry, there are no Yelp results for this destination.
+			<% end %>
+			<script type="text/javascript">
+				$(".shows2").click(function () {
+				$(".yshow").toggle();
+						});
+			</script>
+		</div>
+		<div class="ramble-instagram">
+			<div class="shows3" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
+				<i class="fa fa-instagram ramble"></i><br>
+				<div id="insta-title">Instagram</div>
+			</div>
+			<div class="i-images">
+				<% i = @instagram_images.each do |i| %>
+					<span class="ishow">
+					<%= link_to i["images"]["standard_resolution"]["url"], :class => "instagram-thumb" do %>     
+   					<%= image_tag i["images"]["thumbnail"]["url"] %>
+    			<% end %> 	
+						<%= button_to 'Save this Image', { :controller => 'rambles', :action => 'add_instagram'}, :class => "insta-save" do %>
+							<i class="fa fa-star-o"></i> <span id="save">Save</span></span>
+						<% end %>
+						<hr class="i-tip">
+				<% end %>
+				<script type="text/javascript">
+					$(".shows3").click(function () {
+					$(".ishow").toggle();
 								});
-								</script>
-							</div>
-						</div>
-
-						<div class="ramble-reddit">
-							<div class="shows4" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
-								<i class="fa fa-reddit ramble"></i><br>
-								<div id="red-title">Reddit</div>
-							</div>
-							<div class="rshow">
-								<% @reddit_thread.each do |r| %>
-								<li>
-									<span class="rshow"><a href="http://www.reddit.com/r/<%= r["name"] %>" target="_blank"></span>
-										<%= r["name"] %>
-									</a>
-								</li>
-								<% end %>
-							</div>
-							<script type="text/javascript">
-							$(".shows4").click(function () {
-								$(".rshow").toggle();
+				</script>
+			</div>
+		</div>
+		<div class="ramble-reddit">
+			<div class="shows4" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
+				<i class="fa fa-reddit ramble"></i><br>
+				<div id="red-title">Reddit</div>
+			</div>
+			<div class="rshow">
+				<% @reddit_thread.each do |r| %>
+					<li>
+						<span class="rshow">
+							<a href="http://www.reddit.com/r/<%= r["name"] %>" target="_blank">
+						</span>
+							<%= r["name"] %>
+							</a>
+					</li>
+				<% end %>
+			</div>
+			<script type="text/javascript">
+				$(".shows4").click(function () {
+				$(".rshow").toggle();
 							});
-							</script>
-						</div>
-						<div class="recommended-notes">
-							<h4>RELEVANT NOTES GO HERE</h4>
-							<% ramble = Ramble.where(:destination => @ramble.destination)  %>
-							<% ramble.each do |r| %>
-							<% if r.user_id != current_user.id %>
-							<% r.notes.each do |n| %>
-							<div class="nbody">Note: <%= n.body %></div>
-							<div class="ntag">Tag: <%= n.tag_list %></div>
-							<% end %>
-							<% end %>
-							<% end %>
-						</div>
-					</div>
+			</script>
+		</div>
+		<div class="recommended-notes">
+			<h4>RELEVANT NOTES GO HERE</h4>
+			<% ramble = Ramble.where(:destination => @ramble.destination)  %>
+			<% ramble.each do |r| %>
+				<% if r.user_id != current_user.id %>
+					<% r.notes.each do |n| %>
+						<div class="nbody">Note: <%= n.body %></div>
+						<div class="ntag">Tag: <%= n.tag_list %></div>
+					<% end %>
+				<% end %>
+			<% end %>
+		</div>
+	</div>

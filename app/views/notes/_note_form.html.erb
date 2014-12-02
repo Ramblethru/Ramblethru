@@ -1,5 +1,5 @@
 <%= simple_form_for [@ramble, @ramble.notes.build], html: {id: 'noteform' }, remote: true do |f| %>
-    <%= f.input :title, label: false, placeholder: "Your note's title", :class => "note-body" %>
+    <%= f.input :title, label: false, placeholder: "Your note's title", :class => "help", id:"help" %>
     <%= f.input :address, label: false, placeholder: "Venue address", :class => "note-body" %>
     <%= f.input :body, label: false, placeholder: "Your body text", :class => "note-body" %>
     <%= f.input :url, label: false, placeholder: "URL", :class => "note-body" %>

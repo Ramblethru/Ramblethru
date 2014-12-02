@@ -70,6 +70,8 @@ ActiveRecord::Schema.define(version: 20141201220224) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "reddit_thread"
+    t.string   "instagram_url"
     t.float    "latitude"
     t.float    "longitude"
   end

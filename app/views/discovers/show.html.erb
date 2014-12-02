@@ -30,12 +30,24 @@
     <div class="show">
     <% ramble = Ramble.where(:destination => @discover.destination)  %>
     <% ramble.each do |r| %>
-
     <% r.notes.each do |n| %>
-
-      <div class="nbody">Note: <%= n.body %></div>
-      <div class="ntag">Tag: <%= n.tag_list %></div>
-
+      <div class="note-results">
+        <div class="notesshow">
+          Title: <%= n.title %>
+        </div>
+        <div class="notesshow">
+          Address: <%= n.address %>
+        </div>
+        <div class="notesshow">
+          Note: <%= n.body %>
+        </div>
+        <div class="notesshow">
+          URL: <a href="<%= n.url %>" target="_blank"><%= n.url %></a>
+        </div>
+        <div class="tagshow">
+          Tags: <%= n.tag_list %>
+        </div>
+      </div>
     </div>
     <script type="text/javascript">
     $(".showhide").click(function () {

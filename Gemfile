@@ -32,7 +32,7 @@ gem 'momentjs-rails', '>= 2.8.1'
 gem 'jquery-modal-rails'
 gem 'animate-rails'
 gem 'best_in_place'
-gem 'will_paginate'
+gem 'will_paginate', '~> 3.0.6'
 
 
 # authenticate

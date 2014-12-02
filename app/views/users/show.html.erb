@@ -41,19 +41,13 @@
 						<% if r.notes.size > 0 %>
 						<div class="shows" data-id="<%= r.id %>">saved notes</div><hr class="ramble-divider">
 						<div class="noteshow" id="div_ramble_<%= r.id %>" >
-							<% if r.reddit_thread != nil %>
-							Saved from Reddit: <%= link_to r.reddit_thread, r.reddit_thread %>
-							<% end %>
-							<% if r.instagram_url != nil %>
-							Saved from Instagram:<%= link_to image_tag r.instagram_url %>
-							<% end %>
 							<% r.notes.each do |n| %>
-							Note: <%= n.body %><br>
-							Tag: <%= n.tag_list %>
-							<% end %>
+								<span id="user-note">Note:</span><%= n.body %><br>
+								<span id="user-tags">Tags:</span><%= n.tag_list %><br>
+							<% end %>	
 						</div>
 						<% else %>
-						<span id="no-notes">no notes available</span>
+							<span id="no-notes">no notes available</span>
 						<% end %>
 					</div>
 					<% end %>

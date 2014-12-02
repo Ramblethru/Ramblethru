@@ -194,11 +194,13 @@
 								<a class="instagram-save" data-iurl="<%= i["images"]["thumbnail"]["url"] %>">
 									Save me! </a>
 									<div class="halp"></div>
-								<%= link_to image_tag i["images"]["thumbnail"]["url"], :class => "instagram-thumb" %>
-								<%= button_to 'Save this Image', { :controller => 'rambles', :action => 'add_instagram'}, :class => "insta-save" do %>
-								<i class="fa fa-star-o"></i> <span id="save">Save</span></span>
-								<% end %>
-								<hr class="i-tip">
+									<%= link_to i["images"]["standard_resolution"]["url"], :class => "instagram-thumb" do %>
+									<%= image_tag i["images"]["thumbnail"]["url"] %>
+									<% end %>
+									<%= button_to 'Save this Image', { :controller => 'rambles', :action => 'add_instagram'}, :class => "insta-save" do %>
+									<i class="fa fa-star-o"></i> <span id="save">Save</span></span>
+									<% end %>
+									<hr class="i-tip">
 								<% end %>
 								<script type="text/javascript">
 								$(".instagram-save").click(function () {

@@ -87,7 +87,9 @@
 </div>
     <br>
     <% i = @instagram_images.each do |i| %>
-    <%= link_to image_tag i["images"]["thumbnail"]["url"] %>
+    <%= link_to i["images"]["standard_resolution"]["url"] do %>     
+    <%= image_tag i["images"]["thumbnail"]["url"] %>
+    <% end %> 
     <% end %>
   </div>
   <br>

@@ -99,7 +99,7 @@
 </div>
     <br>
     <% i = @instagram_images.each do |i| %>
-    <%= link_to i["images"]["standard_resolution"]["url"] do %>     
+    <%= link_to i["images"]["standard_resolution"]["url"], :target => '_blank' do %>
     <%= image_tag i["images"]["thumbnail"]["url"] %>
     <% end %> 
     <% end %>

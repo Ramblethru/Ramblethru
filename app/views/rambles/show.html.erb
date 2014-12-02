@@ -194,7 +194,7 @@
 								<a class="instagram-save" data-iurl="<%= i["images"]["thumbnail"]["url"] %>">
 									Save me! </a>
 									<div class="halp"></div>
-									<%= link_to i["images"]["standard_resolution"]["url"], :class => "instagram-thumb" do %>
+									<%= link_to i["images"]["standard_resolution"]["url"], :class => "instagram-thumb", :target => '_blank' do %>
 									<%= image_tag i["images"]["thumbnail"]["url"] %>
 									<% end %>
 									<%= button_to 'Save this Image', { :controller => 'rambles', :action => 'add_instagram'}, :class => "insta-save" do %>

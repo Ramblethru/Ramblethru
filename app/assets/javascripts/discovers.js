@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 $(function (){
         $('#start_date').datepicker( {
-           dateFormat: "yy-mm-dd",
+           dateFormat: "mm-dd-yy",
            showButtonPanel: true,
            inline: true,  
            defaultDate: "+1w",
@@ -17,7 +17,7 @@ $(function (){
 
         });
         $('#end_date').datepicker( {
-           dateFormat: "yy-mm-dd",
+           dateFormat: "mm-dd-yy",
            showButtonPanel: true,
            inline: true,  
            defaultDate: "+1w",

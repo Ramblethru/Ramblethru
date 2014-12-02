@@ -494,3 +494,11 @@ input.nav-input {
 .menu-button {
   cursor:pointer;
 }
+
+.modal {
+  z-index: 9990;
+}
+
+.datepicker {
+  z-index: 9999;
+}

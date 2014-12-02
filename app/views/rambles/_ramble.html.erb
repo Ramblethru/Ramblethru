@@ -5,9 +5,18 @@
 		<div class="rambles">
 			<div class="note-results">
 			<% ramble.notes.each do |note| %>
+      <div class="titleshow">
+        Title: <%= note.title %>
+      </div>
+      <div class="addressshow">
+        Address: <%= note.address %>
+      </div>
 			<div class="notesshow">
 				Note: <%= note.body %>
 			</div>
+      <div class="urlshow">
+        URL: <a href="<%= note.url %>" target="_blank"><%= note.url %></a>
+      </div>
 			<div class="tagshow">
 				Tag: <%= note.tag_list %>
 				<% end %>

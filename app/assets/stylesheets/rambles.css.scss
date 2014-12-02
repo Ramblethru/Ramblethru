@@ -14,7 +14,7 @@
   @include span-columns(6);
   text-align: center;
   padding-top: 10px;
-  max-width:400px;
+  max-width:450px;
   overflow: scroll;
   margin-left: 50px;
   margin-top: -40px;
@@ -37,7 +37,7 @@
   padding-left:10px;
   background: transparent;
   border: 2px solid $green;
-  max-width: 450px;
+  max-width: 425px;
 }
 
 .api-feed {
@@ -99,6 +99,19 @@ textarea#note_body, input#note_tag_list, input#note_title, input#note_address, i
   border: 2px solid $orange;
   border-radius: 10px;
   background: transparent;
+  width:420px;
+}
+#note_title {
+  margin-left:15px;
+}
+#note_address {
+  margin-left:15px;
+}
+#note_url {
+margin-left:15px;
+}
+#note_tag_list {
+  margin-left:15px;
 }
 input.btn.radius {
   background-color: $orange;

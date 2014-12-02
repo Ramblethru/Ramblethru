@@ -97,14 +97,14 @@
 								<span class="fshow"><div id="f-venue-title">
 									<a class="foursquare-save" data-name="<%= f['venue']['name'] %>"
 										data-address="<%= f["venue"]["location"]["address"]%>"
+										data-url="<%= f["tips"].each do |g| %>
+										<%= g["canonicalUrl"] %>
+										<% end %>"
 										data-tip="<%= f["tips"].each do |g| %>
 										<%= g["text"] %>
 										<% end %>">Save Me!</a>
 									<%= f["venue"]["name"] %><hr>
 								</div>
-								<div class="hello"></div>
-								<div class="hello2"></div>
-								<div class="hello3"></div>
 							</span>
 						</li>
 						<span class="fshow">
@@ -122,10 +122,13 @@
 							var dataName = event.target.getAttribute("data-name");
 							var dataAddress = event.target.getAttribute("data-address")
 							var dataTip = event.target.getAttribute("data-tip")
+							var dataUrl = event.target.getAttribute("data-url")
 							dataTip = dataTip.substring(0, dataTip.indexOf('['));
+							dataUrl = dataUrl.substring(0, dataUrl.indexOf('['));
 							$("#note_title").val(dataName);
 							$("#note_address").val(dataAddress);
 							$("#note_body").val(dataTip);
+							$("#note_url").val(dataUrl);
 						});
 						</script>
 						<script type="text/javascript">
@@ -149,9 +152,6 @@
 										data-yaddress="<%= y.location.address.pop %>",
 										data-ytip="<%= y.snippet_text %>">
 										Save me! </a>
-										<div class="help"></div>
-										<div class="help1"></div>
-										<div class="help2"></div>
 									<%= link_to y.name, y.url, :class => "yelp-venue-title" %>
 									<%= link_to image_tag y.rating_img_url_small %>
 									<span class="y-address"><%= y.location.address.pop %></span><hr>
@@ -193,7 +193,6 @@
 							<span class="ishow">
 								<a class="instagram-save" data-iurl="<%= i["images"]["thumbnail"]["url"] %>">
 									Save me! </a>
-									<div class="halp"></div>
 									<%= link_to i["images"]["standard_resolution"]["url"], :class => "instagram-thumb", :target => '_blank' do %>
 									<%= image_tag i["images"]["thumbnail"]["url"] %>
 									<% end %>

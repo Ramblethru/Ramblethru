@@ -265,6 +265,10 @@ a.edit-note, a.delete-note {
 .rshow li {
   display: inline;
 }
+.rshow a{
+  color: $orange;
+  font-family: monospace, sans-serif;
+}
 
 .note-show {
   display:none;
@@ -329,12 +333,13 @@ a.edit-note, a.delete-note {
 }
 
 #tag-each {
-  background: rgba(175,112,58,0.5);
-  padding: 10px 10px 10px 10px;
+//  background: rgba(175,112,58,0.5);
+//  padding: 10px 10px 10px 10px;
   font-weight: 700;
 }
 #tag-each a{
-  color: #ffffff;
+  color: $orange;
+  font-family: monospace, sans-serif;
 }
 .note-header {
   background: $green;

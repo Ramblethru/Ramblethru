@@ -8,13 +8,11 @@ $dark-grey: #7f868e;
 $green: #2e7562;
 
 .hero {
-  background: url('road.jpg');
-  background-color: $green;
+  background: url('straight-road.jpg');
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-position: top center;
 	height: 450px;
-  margin-top: -37px;
 }
 #header-title {
   font-size: 150px;
@@ -22,7 +20,7 @@ $green: #2e7562;
   text-align: center;
   height: 180px;
   margin-top: -70px;
-  padding-top: 30px;
+  padding-top: 60px;
 }
 #header-title-first {
 	text-align: center;
@@ -32,24 +30,27 @@ $green: #2e7562;
 	margin-bottom: 0px;
   font-family: 'menschmensch_bold';
   font-size: 165px;
+
 	}
 
 #header-title-last {
   display: inline;
   color: $light-grey;
   font-family: 'menschmensch_thin';
-
 }
 #header-subtitle {
-	text-align: right;
-	color: $orange;
-  font-family: 'dingleberry_solidregular';
+	text-align: center;
+	color: $light-grey;
+  font-family: monospace;
   font-size: 30px;
-  letter-spacing: 7px;
+  letter-spacing: 3px;
   font-weight: bold;
-  margin-right: 340px;
-  padding-top: 30px;
-
+  padding-top: 60px;
+  background: rgba(175,112,58,.3);
+  margin-top: 40px;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 4px;
 }
 .location-search {
 	width: 30%;
@@ -260,5 +261,6 @@ ul {
 }
 div.discover-create {
   margin: 0 auto;
+  margin-top: 10px;
 
 }

@@ -47,7 +47,6 @@
 			<% @ramble.notes.each do |note| %>
 			<div id="<%= dom_id(note) %>">
 				<div class="notebody">
-
 					<% if note.body %>
             <p>
               <span id="note-label">Title: </span>
@@ -94,11 +93,18 @@
 						</div>
 						<% @foursquare_venue.each do |f| %>
 						<div class="four-results">
-							<a class="foursquare-save" data-name="<%= f['venue']['name'] %>">Save Me!</a>
 							<li>
 								<span class="fshow"><div id="f-venue-title">
+									<a class="foursquare-save" data-name="<%= f['venue']['name'] %>"
+										data-address="<%= f["venue"]["location"]["address"]%>"
+										data-tip="<%= f["tips"].each do |g| %>
+										<%= g["text"] %>
+										<% end %>">Save Me!</a>
 									<%= f["venue"]["name"] %><hr>
 								</div>
+								<div class="hello"></div>
+								<div class="hello2"></div>
+								<div class="hello3"></div>
 							</span>
 						</li>
 						<span class="fshow">
@@ -111,6 +117,17 @@
 						</div>
 						<% end %>
 						<% end %>
+						<script type="text/javascript">
+						$(".foursquare-save").click(function () {
+							var dataName = event.target.getAttribute("data-name");
+							var dataAddress = event.target.getAttribute("data-address")
+							var dataTip = event.target.getAttribute("data-tip")
+							dataTip = dataTip.substring(0, dataTip.indexOf('['));
+							$(".hello").html(dataName);
+							$(".hello2").html(dataAddress);
+							$(".hello3").html(dataTip);
+						});
+						</script>
 						<script type="text/javascript">
 						$(".shows1").click(function () {
 							$(".fshow").toggle();
@@ -128,6 +145,13 @@
 						<div class="yelp-results">
 							<li>
 								<span class="yshow">
+									<a class="yelp-save" data-yname="<%= y.name %>",
+										data-yaddress="<%= y.location.address.pop %>",
+										data-ytip="<%= y.snippet_text %>">
+										Save me! </a>
+										<div class="help"></div>
+										<div class="help1"></div>
+										<div class="help2"></div>
 									<%= link_to y.name, y.url, :class => "yelp-venue-title" %>
 									<%= link_to image_tag y.rating_img_url_small %>
 									<span class="y-address"><%= y.location.address.pop %></span><hr>
@@ -138,11 +162,20 @@
 								<hr class="y-tip">
 							</span>
 						</div>
+						<script type="text/javascript">
+						$(".yelp-save").click(function () {
+							var dataYname = event.target.getAttribute("data-yname");
+							var dataYaddress = event.target.getAttribute("data-yaddress");
+							var dataYtip = event.target.getAttribute("data-ytip");
+							$(".help").html(dataYname);
+							$(".help1").html(dataYaddress);
+							$(".help2").html(dataYtip);
+						});
+						</script>
 						<% end %>
 						<% else %>
 						Sorry, there are no Yelp results for this destination.
 						<% end %>
-
 						<script type="text/javascript">
 						$(".shows2").click(function () {
 							$(".yshow").toggle();
@@ -158,13 +191,23 @@
 						<div class="i-images">
 							<% i = @instagram_images.each do |i| %>
 							<span class="ishow">
-								  <%= link_to image_tag i["images"]["thumbnail"]["url"], :class => "instagram-thumb" %>
-
-								<%= button_to 'Save this Image', { :controller => 'rambles', :action => 'add_instagram'}, :class => "insta-save" do %>
-								<i class="fa fa-star-o"></i> <span id="save">Save</span></span>
+								<a class="instagram-save" data-iurl="<%= i["images"]["thumbnail"]["url"] %>">
+									Save me! </a>
+									<div class="halp"></div>
+									<%= link_to i["images"]["standard_resolution"]["url"], :class => "instagram-thumb" do %>
+									<%= image_tag i["images"]["thumbnail"]["url"] %>
+									<% end %>
+									<%= button_to 'Save this Image', { :controller => 'rambles', :action => 'add_instagram'}, :class => "insta-save" do %>
+									<i class="fa fa-star-o"></i> <span id="save">Save</span></span>
+									<% end %>
+									<hr class="i-tip">
 								<% end %>
-								<hr class="i-tip">
-								<% end %>
+								<script type="text/javascript">
+								$(".instagram-save").click(function () {
+									var dataIurl = event.target.getAttribute("data-iurl");
+									$(".halp").html(dataIurl);
+								});
+							</script>
 								<script type="text/javascript">
 								$(".shows3").click(function () {
 									$(".ishow").toggle();
@@ -197,7 +240,7 @@
 							<h4>RELEVANT NOTES GO HERE</h4>
 							<% ramble = Ramble.where(:destination => @ramble.destination)  %>
 							<% ramble.each do |r| %>
-							<% if r.user_id != current_user.id %>
+							<% if r.id != @ramble.id %>
 							<% r.notes.each do |n| %>
 							<div class="nbody">Note: <%= n.body %></div>
 							<div class="ntag">Tag: <%= n.tag_list %></div>

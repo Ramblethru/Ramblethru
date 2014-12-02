@@ -33,4 +33,3 @@ class Ramble < ActiveRecord::Base
     where("destination like ?", "%#{query.downcase}%")
   end
 end
-

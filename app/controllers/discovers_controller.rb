@@ -19,13 +19,13 @@ class DiscoversController < ApplicationController
 
   def show
     #Yelp
-    params = { term: 'food',
-               limit: 5,
-    }
+    params = { limit: 5,
+               sort: 2}
+               
     @yelp = Yelp.client.search("#{@discover.destination}", params)
 
     #Instagram
-    instagram = HTTParty.get("https://api.instagram.com/v1/media/search?lat=#{@discover.latitude}&lng=#{@discover.longitude}&count=8&client_id=ea93d7b97c444c9bbfcf23cbbcb63ee4")
+    instagram = HTTParty.get("https://api.instagram.com/v1/media/search?lat=#{@discover.latitude}&lng=#{@discover.longitude}&count=10&client_id=ea93d7b97c444c9bbfcf23cbbcb63ee4")
     instagram_data = JSON.parse(instagram.body)
     @instagram_images = instagram_data["data"]
     # [0]["images"]["thumbnail"]["url"]

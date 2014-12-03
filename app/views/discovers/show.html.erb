@@ -61,14 +61,17 @@
   <div class="foursq">
     <div class="four-title">Foursquare <i class="fa fa-arrow-circle-o-down"></i></div>
 <br>
-    <% f = @foursquare_venue.each do |f| %>
+    <% @foursquare_venue.each do |f| %>
     <li>
       <div class="f-title">
         <%= f["venue"]["name"] %>
       </div>
     </li>
     <div class="f-tips">
+    <% if f["venue"]["location"]["address"].blank? %>
+      <% else %>
       Address: <%= f["venue"]["location"]["address"] %><br>
+      <% end %>
       <% f["tips"] %>
       <% f["tips"].each do |g| %>
       <article><%= link_to g["text"], g["canonicalUrl"], :class => "f-tips", :target => '_blank' %></article>
@@ -84,6 +87,7 @@
       <li>
         <%= link_to y.name, y.url, :class => "y-name",:target => '_blank'  %>
         <%= image_tag y.rating_img_url_small %>
+        <%= y.location.address.pop %>
       </li>
       <% if y.snippet_text != nil %>
         <article class="y-tips"><%= y.snippet_text %></article>

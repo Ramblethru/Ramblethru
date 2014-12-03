@@ -1,5 +1,9 @@
 require "addressable/uri"
 class Ramble < ActiveRecord::Base
+  include FriendlyId
+
+  friendly_id :destination, use: :slugged
+
   geocoded_by :destination
   after_validation :geocode, :if => :destination_changed?
 
@@ -8,7 +12,6 @@ class Ramble < ActiveRecord::Base
 
   before_save { |ramble| ramble.destination.downcase! }
 
-	
 
   def self.search(query)
     #where(:destination, query)

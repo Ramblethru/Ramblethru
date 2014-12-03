@@ -51,7 +51,7 @@ class DiscoversController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_discover
-    @discover = Discover.find(params[:id])
+    @discover = Discover.friendly.find(params[:id])
   end
 
   def discover_params

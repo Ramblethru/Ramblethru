@@ -2,7 +2,32 @@
 	<h1 class="ramble-create">Create a Ramble</h1>
 		<%= f.input :name, label:false, placeholder: "Give your ramble a name", id:'ramble_name' %>
     	<%= f.input :destination, label: false, placeholder: "Destination (REQUIRED)", id:'ramble_destination' %>
-    	<%= f.input :start_date, label: false, placeholder: "Start Date", id: 'start_date',input_html: { class: "datepicker" } %>
+    	<%= f.text_field :start_date, label: false, placeholder: "Start Date", id: 'start_date',input_html: { class: "datepicker" } %>
     	<%= f.text_field :end_date, label: false, placeholder: "End Date", id: 'end_date' %>
     	<%= button_to 'Save this Ramble', { :controller => 'rambles', :action => 'create'}, id: 'ramble-button' %>
+<script type="text/javascript">
+$(function (){
+      $('input.datepicker').data({behaviour: "datepicker"}).datepicker();
+
+        $('#start_date').datepicker( {
+           showButtonPanel: true,
+           defaultDate: "+1w",
+           numberOfMonths: 3,
+           onClose: function( selectedDate ) {
+            $( "#end_date" ).datepicker( "option", "minDate", selectedDate );
+      }
+
+        });
+        $('#end_date').datepicker( {
+           showButtonPanel: true,
+           defaultDate: "+1w",
+           changeMonth: true,
+           numberOfMonths: 3,
+           onClose: function( selectedDate ) {
+            $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+      }
+        });
+
+});
+</script>
 <% end %>

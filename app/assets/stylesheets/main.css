@@ -1,0 +1,6 @@
+body{background:#eee;font-family:Verdana, Helvetica, Arial, sans-serif;margin:0;padding:0}
+.example{background:#FFF;width:1000px;font-size:80%;border:1px #000 solid;margin:0.5em 10% 0.5em;padding:1em 2em 2em;-moz-border-radius:3px;-webkit-border-radius:3px}
+
+#content p{text-indent:20px;text-align:justify;}
+#pagingControls ul{display:inline;padding-left:0.5em}
+#pagingControls li{display:inline;padding:0 0.5em}

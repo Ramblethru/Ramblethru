@@ -61,20 +61,18 @@ article {
 }
 
 #ui-datepicker-div {
-   width: 216px;
+    width: 216px !important;
     height: auto;
     margin: 5px auto 0;
-    font: 9pt Arial, sans-serif;
+    font: 9pt monospace, sans-serif;
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
     -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
     right: 100px;
     left: 0px;
-    background-color: $orange;
+    background-color: $light-grey;
 }
-#ui-datepicker-div table {
-    width: 100%;
-}
+
 
 .discover-bottom {
   width: 500px;

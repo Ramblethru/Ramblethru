@@ -6,12 +6,13 @@
 	<%= f.text_field :end_date, label: false, placeholder: "End Date", id: 'end_date' %>
 	<%= button_to 'Save this Ramble', { :controller => 'rambles', :action => 'create'}, id: 'ramble-button' %>
 <% end %>
-
 <script type="text/javascript">
   $( "#start_date" ).datepicker({
         showButtonPanel: true,
+        changeYear: true,
         defaultDate: "+1w",
-        numberOfMonths: 3,
+        numberOfMonths: 2,
+        dateFormat:'yy-mm-dd',
         onClose: function( selectedDate ) {
           $( "#end_date" ).datepicker( "option", "minDate", selectedDate );
         }
@@ -19,10 +20,11 @@
   $( "#end_date" ).datepicker({
         showButtonPanel: true,
         defaultDate: "+1w",
-        changeMonth: true,
-        numberOfMonths: 3,
+        changeYear: true,
+        numberOfMonths: 2,
+        dateFormat:'yy-mm-dd',
         onClose: function( selectedDate ) {
-          $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+          $( "#start_date" ).datepicker( "option", "maxDate", selectedDate );
         }
   });
 </script>

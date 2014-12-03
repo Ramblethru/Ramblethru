@@ -2,6 +2,7 @@ require "addressable/uri"
 class Ramble < ActiveRecord::Base
   include FriendlyId
 
+  friendly_id :name, use: :slugged
   friendly_id :destination, use: :slugged
 
   geocoded_by :destination

@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+   include FriendlyId
+
+  friendly_id :name, use: :slugged
 
   has_many :rambles
   has_many :notes, through: :rambles

@@ -1,6 +1,6 @@
 <div class="ramble-title">
 	<% if @ramble.name.empty? %>
-    <%= link_to 'Add a Name!', edit_ramble_name_path, :class => "edit-ramble-name" %>
+    <%= best_in_place @ramble, :name, :place_holder => "add a name!", :class => "best-in-p" %>
 	<% else %>
     <div class="shift"><%= best_in_place @ramble, :name %></div>
 	<% end %>

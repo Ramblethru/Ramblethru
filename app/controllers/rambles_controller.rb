@@ -76,7 +76,7 @@ class RamblesController < ApplicationController
   end
 
   def update
-    @ramble = Ramble.find(params[:id])
+    @ramble = Ramble.friendly.find(params[:id])
     if @ramble.update(ramble_params)
         respond_to do |format|
           format.html { redirect_to @ramble}
@@ -88,7 +88,7 @@ class RamblesController < ApplicationController
   end
 
   def edit_name
-    @ramble = Ramble.find(params[:id])
+    @ramble = Ramble.friendly.find(params[:id])
   end
 
   def destroy

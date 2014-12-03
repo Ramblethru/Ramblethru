@@ -16,7 +16,8 @@
 		</div>
 		<div class="userinfo">
 			<div class="name">
-				<span id="user-name-label">Name:</span> <span id="user-name"><%= best_in_place @user, :name %></span>
+				<span id="user-name-label">Name: </span>
+        <span id="user-name"><%= best_in_place @user, :name %></span>
 			</div>
 			<div class="lives-in">
 				<span id="user-residence-label">Residence: </span>
@@ -24,13 +25,18 @@
 			</div>
 			<br>
 			<div class="bio">
-				<span id="user-bio-label">BIO:</span>
-				<span id="user-bio"><%= best_in_place @user, :bio %><br></span>
+				<span id="user-bio-label">BIO: </span>
+				<span id="user-bio"><%= best_in_place @user, :bio %></span>
+        <br>
 			</div>
 		</div>
 		<div class="container">
 			<div class="usertrips">
-				<div id="my-rambles">Your Rambles</div>
+				<div id="my-rambles">
+          <% if @user.rambles.size > 0 %>Your Rambles
+          <% else %> Click <%= link_to_modal "here", new_ramble_path, :class=>"create-ramble-here" %>  to create a ramble
+          <% end %>
+        </div>
 				<div class="userrambles">
 					<% @user.rambles.each do |r| %>
 					<div class="each-ramble">

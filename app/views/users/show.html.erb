@@ -51,7 +51,7 @@
 								<span id="user-title">Title:</span><%=n.title %><br>
 								<span id="user-address">Address:</span><%=n.address %><br>
 								<span id="user-note">Note:</span><%= n.body %><br>
-								<span id="user-url">URL:</span><%=n.url %><br>
+								<span id="user-url">URL:</span><a href="<%= n.url %>" target="_blank"><%= n.url %></a><br>
 								<span id="user-tags">Tags:</span><%= n.tag_list %><br><hr id="note-each-divider">
 							<% end %>	
 						</div>

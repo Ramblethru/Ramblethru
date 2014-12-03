@@ -248,11 +248,15 @@
               <% ramble.each do |r| %>
                 <% if r.id != @ramble.id %>
               <div id="four-title">
+
                 <%= r.notes.count %> <%= "Note".pluralize(r.notes.count) %>
              </div>
             </div>
                   <% r.notes.each do |n| %>
+
                   <div class="note-show">
+										<div id="savenote" data-ntitle="<%= n.title %>" data-naddress="<%= n.address %>"
+											data-nbody="<%= n.body %>" data-nurl="<%= n.url %>" data-ntag="<%= n.tag_list %>"> Save this note </div>
                     <p>
                       <span id="note-label">Title: </span>
                       <span id="note-body"><%= n.title %></span>
@@ -277,6 +281,20 @@
               <% end %>
             <% end %>
           <% end %>
+					<script type="text/javascript">
+					$("#savenote").click(function () {
+						var dataNtitle = event.target.getAttribute("data-ntitle");
+						var dataNaddress = event.target.getAttribute("data-naddress");
+						var dataNbody = event.target.getAttribute("data-naddress");
+						var dataNurl = event.target.getAttribute("data-nurl");
+						var dataNtag = event.target.getAttribute("data-ntag");
+						$("#note_title").val(dataNtitle);
+						$("#note_address").val(dataNaddress);
+						$("#note_body").val(dataNbody);
+						$("#note_url").val(dataNurl);
+						$("#note_tag_list").val(dataNtag);
+					});
+					</script>
           <script type="text/javascript">
             $(".shows5").click(function () {
               $(".note-show").toggle();

@@ -24,3 +24,10 @@ $(document).bind("ajax:complete", function(event,xhr,status){
     $('#note_tag_list').val('');
   }
 });
+
+$(document).ready(function(){
+$(".menu-button").click(function(){
+$(".menu-bar").toggleClass( "open" );
+})
+})
+

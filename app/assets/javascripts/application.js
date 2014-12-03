@@ -9,27 +9,25 @@
 //
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
-
 //= require jquery
+
 //= require jquery_ujs
 //= require jquery.tagsinput
 //= require jquery-ui/effect-highlight
 //= require jquery-ui/effect-bounce
+//= require jquery-ui/datepicker
+//= require_tree .
 //= require mapbox.js
 //= require moment
-//= require jquery-ui/datepicker
 //= require jquery.modal
 //= require best_in_place
 //= require_tree .
+
+  jQuery(".best_in_place").best_in_place();
 
 
 $(document).ready(function(){
 $(".menu-button").click(function(){
 $(".menu-bar").toggleClass( "open" );
 })
-});
-
-
-$(document).ready(function() {
-  $(".best_in_place").best_in_place();
 });

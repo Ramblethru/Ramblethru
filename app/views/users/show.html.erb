@@ -53,7 +53,11 @@
               <span id="user-note">Note:</span><%= n.body %><br>
               <span id="user-url">URL:</span><a href="<%= n.url %>" target="_blank"><%= n.url %></a><br>
               <span id="user-tags">Tags:</span><%= n.tag_list %><br>
-              <span id="user-created">Created on:</span><%= n.created_at.strftime("%m/%d/%Y") %><br><hr id="note-each-divider">
+              <span id="user-created">Created on:</span><%= n.created_at.strftime("%m/%d/%Y") %><br>
+              <div class="shared">
+              <%= button_to "Mark as private", set_share_path(n.id), method: :patch, remote: true %><br>
+            </div>
+              <hr id="note-each-divider">
               <% end %>
             </div>
             <% else %>

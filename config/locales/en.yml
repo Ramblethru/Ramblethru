@@ -27,3 +27,6 @@ en:
   time:
       formats:
         default: "%m/%d/%Y %H:%M"
+  required:
+        text: 'required'
+        mark: '*'

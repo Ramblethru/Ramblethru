@@ -30,7 +30,6 @@ $body-color: #eff0eb;
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require jquery.tagsinput
  *= require_self
  *= require mapbox
@@ -112,10 +111,7 @@ $body-color: #eff0eb;
 
 }
 
-body {
-  background-image: url('http://i.imgur.com/9OUxrEd.png');
-  overflow-x: hidden;
-}
+/*RESPONSIVE*/
 
 @media (max-width: 1221px) {
   i.fa-foursquare, i.fa-instagram, i.fa-yelp, i.fa-reddit {
@@ -134,7 +130,19 @@ body {
   #header-subtitle {
     font-size: 25px;
     text-align: center;
-    margin: 0px;
+  }
+}
+@media (max-width: 695px) {
+  input#discover_destination {
+    width: 200px;
+    height: 45px;
+  }
+  div.discover-create {
+    width: 500px;
+  }
+  input.input {
+    height: 35px;
+    padding: 0;
   }
 }
 
@@ -184,8 +192,21 @@ body {
     width: 300px;
     height: 300px;
   }
+   input.input {
+    height: 35px;
+    padding: 0;
+    margin-left: 0px;
+    font-size: 20px;
+  }
+  .top-bar {
+    display: inline;
+  }
 }
 
+body {
+  background-image: url('http://i.imgur.com/9OUxrEd.png');
+  overflow-x: hidden;
+}
 
 .topbar {
   font-weight:bold;

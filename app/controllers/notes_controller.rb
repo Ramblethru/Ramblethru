@@ -42,7 +42,7 @@ class NotesController < ApplicationController
     if @note.update(note_params)
       respond_to do |format|
         format.html { redirect_to @ramble}
-        format.json {render json: @ramble}
+        format.json { redirect_to @ramble}
       end
     else
       render :edit

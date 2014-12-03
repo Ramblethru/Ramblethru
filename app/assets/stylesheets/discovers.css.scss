@@ -24,6 +24,7 @@ body {
   width: 60%;
   height: 450px;
   margin: 0 auto 0 auto;
+  border-bottom: 8px solid $orange;
 }
 
 .notes {
@@ -122,7 +123,7 @@ input.login-form {
 }
 .login-button {
   background-color: $orange;
-  color: $green;
+  color: $light-grey;
   height: 45px;
   line-height: .8;
 

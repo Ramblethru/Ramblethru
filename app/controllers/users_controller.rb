@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
-
-  def show
+ def show
     @user = User.find(params[:id])
   end
 
@@ -35,7 +34,6 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    render 'users/_edit_form'
   end
 
   def update

@@ -13,3 +13,30 @@
 .note {
 	padding-top:40px;
 }
+#edit-note-heading {
+  font-family: 'menschmensch_regular';
+  color: $orange;
+  text-align: center;
+  font-size: 40px;
+}
+input.edit-note-title, .edit-note-address,.edit-note-body, .edit-note-tags, .edit-note-url {
+  width: 400px !important;
+  margin: 0 auto !important;
+  margin-top: 10px !important;
+  font-family: monospace, sans-serif;
+  color: $dark-grey;
+}
+.edit-note-all {
+  margin: 0 auto;
+  text-align: center;
+}
+.edit-note-button {
+  background-color: $green !important;
+  font-family: 'menschmensch_bold';
+  color: $light-grey;
+  margin-top: 10px;
+}
+#edit-note-border {
+  border: 1px solid $green;
+  width: 60%;
+}

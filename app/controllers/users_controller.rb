@@ -64,7 +64,7 @@ class UsersController < ApplicationController
   #   else
   #     redirect_to :back, alert: 'Photo cannot be blank.'
   #   end
-  end
+  # end
 
 
   protected

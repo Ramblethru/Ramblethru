@@ -20,7 +20,7 @@
 //= require jquery-ui/datepicker
 //= require jquery.modal
 //= require best_in_place
-//= require_tree .
+
 
 
 $(document).ready(function(){

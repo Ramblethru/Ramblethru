@@ -238,16 +238,15 @@
 						</div>
 
 
-
           <div class="recommended-notes">
             <div class="shows5" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
-              <div id="four-title">Ramblethru<br>Notes</div>
-            </div>
-
-
               <% ramble = Ramble.where(:destination => @ramble.destination)  %>
               <% ramble.each do |r| %>
                 <% if r.id != @ramble.id %>
+              <div id="four-title">
+                <%= r.notes.count %> <%= "Note".pluralize(r.notes.count) %>
+             </div>
+            </div>
                   <% r.notes.each do |n| %>
                   <div class="note-show">
                     <p>

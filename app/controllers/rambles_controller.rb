@@ -14,7 +14,7 @@ class RamblesController < ApplicationController
 
     def yelp
         params = { sort: 2 }
-                  
+
       @yelp = Yelp.client.search("#{@ramble.destination}", params)
     end
 

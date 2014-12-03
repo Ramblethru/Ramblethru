@@ -1,285 +1,303 @@
 <div class="ramble-title">
-  <% if @ramble.name !=nil %>
-    <div class="shift"><%= best_in_place @ramble, :name %></div>
-  <% else %>
-    <%= link_to 'Add a Name!', edit_ramble_name_path, :class => "edit-ramble-name" %>
-  <% end %>
-  <% if @ramble.destination %>
+	<% if @ramble.name.empty? %>
+	<%= best_in_place @ramble, :name, :place_holder => "add a name!", :class => "best-in-p" %>
+	<% else %>
+	<div class="shift"><%= best_in_place @ramble, :name %></div>
+	<% end %>
+	<% if @ramble.destination %>
 
-    <div id="ramble-dest">
-      <%= @ramble.destination.split.map(&:capitalize).join(' ') %>
-    </div>
-  <% else %>
-    <h1>NAME OF YOUR RAMBLE HERE</h1>
-  <% end %>
-  <% if @ramble.start_date && @ramble.end_date %>
-    <div class="start-end">
-      From <%= best_in_place @ramble, :start_date %> to <%= @ramble.end_date %>
-    </div>
-  <% end %>
+	<div id="ramble-dest">
+		<%= @ramble.destination.split.map(&:capitalize).join(' ') %>
+	</div>
+	<% else %>
+	<h1>NAME OF YOUR RAMBLE HERE</h1>
+	<% end %>
+	<% if @ramble.start_date && @ramble.end_date %>
+	<div class="start-end">
+		From <%= best_in_place @ramble, :start_date %> to <%= best_in_place @ramble, :end_date %>
+	</div>
+	<% end %>
 </div>
 
-  <div id='map' class='dark'></div>
-  <script type='text/javascript'>
-  var latitude= '<%=@ramble.latitude%>';
-  var longitude= '<%=@ramble.longitude%>';
-  var destination='<%=@ramble.destination.split.map(&:capitalize).join(' ')%>';
-  var map = L.mapbox.map('map', 'daninyc.14e41ce7').setView([latitude, longitude], 5).setZoom([14]);
-  L.mapbox.markerLayer({
-    type: 'Feature',
-    geometry: {
-      type: 'Point',
-      coordinates: [longitude, latitude ]
-    },
-    properties: {
-      title: destination,
-      description: 'Your destination!',
-      'marker-size': 'large',
-      'marker-color': '#af703a'
-    }
-  }).addTo(map);
-  </script>
-  <div class="container">
-    <div class="ramble-notes">
-      <h2 class="notes">NOTES</h2>
-      <%= render "notes/note_form" %>
-      <div class="notesgohere"></div>
-      <% if @ramble.notes != nil %>
-      <% @ramble.notes.order('created_at desc').each do |note| %>
-      <div id="<%= dom_id(note) %>">
-        <div class="notebody">
-          <% if note.body %>
-            <p>
-              <span id="note-label">Title: </span>
-              <span id="note-body"><%= note.title %></span>
-            </p>
-            <p>
-              <span id="note-label">Address: </span>
-              <span id="note-body"><%= note.address %></span>
-            </p>
-            <p>
-              <span id="note-label">Note: </span>
-              <span id="note-body"><%= note.body %></span>
-            </p>
-            <p>
-              <span id="note-label">URL: </span>
-              <span id="note-body"><a href="<%= note.url %>" target="_blank"><%= note.url %></a></span>
-            </p>
-            <p>
-              <span id="tag-label">Tag(s): </span>
-              <span id="tag-each"><%= raw note.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></span>
-            </p>
-              <% if current_user.rambles.include?(@ramble) %>
-              <i class="fa fa-pencil-square-o"></i>
-              <%= link_to 'Edit', edit_ramble_note_path(@ramble.id, note.id), :class => "edit-note" %>
-              <i class="fa fa-trash"></i>
-              <%= link_to 'Delete', note, method: :delete, remote: true, :class => "delete-note" %>
-              <% end %>
-              <% end %>
-        </div>
-      </div>
-          <% end %>
-          <% else %>
-          You haven't created any notes yet!
-          <% end %>
-          <div class="end"></div>
-    </div>
+<div id='map' class='dark'></div>
+<script type='text/javascript'>
+var latitude= '<%=@ramble.latitude%>';
+var longitude= '<%=@ramble.longitude%>';
+var destination='<%=@ramble.destination.split.map(&:capitalize).join(' ')%>';
+var map = L.mapbox.map('map', 'daninyc.14e41ce7').setView([latitude, longitude], 5).setZoom([14]);
+L.mapbox.markerLayer({
+	type: 'Feature',
+	geometry: {
+		type: 'Point',
+		coordinates: [longitude, latitude ]
+	},
+	properties: {
+		title: destination,
+		description: 'Your destination!',
+		'marker-size': 'large',
+		'marker-color': '#af703a'
+	}
+}).addTo(map);
+</script>
+<div class="container">
+	<div class="ramble-notes">
+		<h2 class="notes">NOTES</h2>
+		<%= render "notes/note_form" %>
+		<div class="notesgohere"></div>
+		<% if @ramble.notes != nil %>
+		<% @ramble.notes.order('created_at desc').each do |note| %>
+		<div id="<%= dom_id(note) %>">
+			<div class="notebody">
+				<p>
+					<span id="note-label">Title: </span>
+					<span id="note-body"><%= note.title %></span>
+				</p>
+				<p>
+					<span id="note-label">Address: </span>
+					<span id="note-body"><%= note.address %></span>
+				</p>
+				<p>
+					<span id="note-label">Note: </span>
+					<span id="note-body"><%= note.body %></span>
+				</p>
+				<p>
+					<span id="note-label">URL: </span>
+					<span id="note-body"><a href="<%= note.url %>" target="_blank"><%= note.url %></a></span>
+				</p>
+				<p>
+					<span id="tag-label">Tag(s): </span>
+					<span id="tag-each"><%= raw note.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></span>
+				</p>
+				<% if current_user.rambles.include?(@ramble) %>
+				<i class="fa fa-pencil-square-o"></i>
+				<%= link_to_modal 'Edit', edit_ramble_note_path(@ramble.id, note.id), :class => "edit-note" %>
+				<i class="fa fa-trash"></i>
+				<%= link_to 'Delete', note, method: :delete, remote: true, :class => "delete-note",:data => {:confirm => 'Are you sure?'} %>
+				<% end %>
+				<% end %>
+			</div>
+		</div>
+		<% end %>
 
-        <div class="api-feed">
-          <div id="feed-title">Recommendations</div>
-          <div class="foursq">
-            <div class="shows1" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
-              <i class="fa fa-foursquare ramble"></i><br>
-              <div id="four-title">Foursquare</div>
-            </div>
-            <% @foursquare_venue.each do |f| %>
-            <div class="four-results">
-              <li>
-                <span class="fshow"><div id="f-venue-title">
-                  <a class="foursquare-save" data-name="<%= f['venue']['name'] %>"
-                    data-address="<%= f["venue"]["location"]["address"]%>"
-                    data-url="<%= f["tips"].each do |g| %>
-                    <%= g["canonicalUrl"] %>
-                    <% end %>"
-                    data-tip="<%= f["tips"].each do |g| %>
-                    <%= g["text"] %>
-                    <% end %>">Save Me!</a>
-                  <%= f["venue"]["name"] %><hr>
-                </div>
-              </span>
-            </li>
-            <span class="fshow">
-              <span id="f-address">Address: <%= f["venue"]["location"]["address"] %></span>
-              <% f["tips"] %></span>
-              <% f["tips"].each do |g| %>
-              <span class="fshow">
-                <article><%= link_to g["text"], g["canonicalUrl"], :class => "four-tip"%></article><hr class="tip">
-              </span>
-            </div>
-            <% end %>
-            <% end %>
-            <script type="text/javascript">
-            $(".foursquare-save").click(function () {
-              var dataName = event.target.getAttribute("data-name");
-              var dataAddress = event.target.getAttribute("data-address")
-              var dataTip = event.target.getAttribute("data-tip")
-              var dataUrl = event.target.getAttribute("data-url")
-              dataTip = dataTip.substring(0, dataTip.indexOf('['));
-              dataUrl = dataUrl.substring(0, dataUrl.indexOf('['));
-              $("#note_title").val(dataName);
-              $("#note_address").val(dataAddress);
-              $("#note_body").val(dataTip);
-              $("#note_url").val(dataUrl);
-            });
-            </script>
-            <script type="text/javascript">
-            $(".shows1").click(function () {
-              $(".fshow").toggle();
-            });
-            </script>
-          </div>
+		<div class="end"></div>
+	</div>
 
-          <div class="ramble-yelp">
-            <div class="shows2" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
-              <i class="fa fa-yelp ramble"></i><br>
-              <div id="yelp-title">Yelp</div>
-            </div>
-            <% if @yelp.businesses != nil %>
-            <% @yelp.businesses.each do |y| %>
-            <div class="yelp-results">
-              <li>
-                <span class="yshow">
-                  <a class="yelp-save" data-yname="<%= y.name %>",
-                    data-yaddress="<%= y.location.address.pop %>",
-                    data-ytip="<%= y.snippet_text %>">
-                    Save me! </a>
-                  <%= link_to y.name, y.url, :class => "yelp-venue-title" %>
-                  <%= link_to image_tag y.rating_img_url_small %>
-                  <span class="y-address"><%= y.location.address.pop %></span><hr>
-                </span>
-              </li>
-              <span class="yshow">
-                <article class="yelp-venue-tip"><%= y.snippet_text %></article>
-                <hr class="y-tip">
-              </span>
-            </div>
-            <script type="text/javascript">
-            $(".yelp-save").click(function () {
-              var dataYname = event.target.getAttribute("data-yname");
-              var dataYaddress = event.target.getAttribute("data-yaddress");
-              var dataYtip = event.target.getAttribute("data-ytip");
-              $("#note_title").val(dataYname);
-              $("#note_address").val(dataYaddress);
-              $("#note_body").val(dataYtip);
-            });
-            </script>
-            <% end %>
-            <% else %>
-            Sorry, there are no Yelp results for this destination.
-            <% end %>
-            <script type="text/javascript">
-            $(".shows2").click(function () {
-              $(".yshow").toggle();
-            });
-            </script>
-          </div>
+	<div class="api-feed">
+		<div id="feed-title">Recommendations</div>
+		<div class="foursq">
+			<div class="shows1" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
+				<i class="fa fa-foursquare ramble"></i><br>
+				<div id="four-title">Foursquare</div>
+			</div>
+			<% if @foursquare_venue != nil %>
+			<% @foursquare_venue.each do |f| %>
+			<div class="four-results">
+				<li>
+					<span class="fshow"><div id="f-venue-title">
+						<% if f["tips"] != nil %>
+						<a class="foursquare-save" data-name="<%= f['venue']['name'] %>"
+							data-address="<%= f["venue"]["location"]["address"]%>"
+							data-url="<%= f["tips"].each do |g| %>
+							<%= g["canonicalUrl"] %>
+							<% end %>"
+							data-tip="<%= f["tips"].each do |g| %>
+							<%= g["text"] %>
+							<% end %>">Save Me!</a>
+							<%= f["venue"]["name"] %><hr>
+						</div>
+					</span>
+				</li>
+				<span class="fshow">
+					<span id="f-address">Address: <%= f["venue"]["location"]["address"] %></span>
+					<% f["tips"] %></span>
+					<% f["tips"].each do |g| %>
+					<span class="fshow">
+						<article><%= link_to g["text"], g["canonicalUrl"], :class => "four-tip"%></article><hr class="tip">
+					</span>
+				</div>
+				<% end %>
+				<% end %>
+				<% end %>
+				<% end %>
+				<script type="text/javascript">
+					$(".foursquare-save").click(function () {
+						var dataName = event.target.getAttribute("data-name");
+						var dataAddress = event.target.getAttribute("data-address")
+						var dataTip = event.target.getAttribute("data-tip")
+						var dataUrl = event.target.getAttribute("data-url")
+						dataTip = dataTip.substring(0, dataTip.indexOf('[')).trim();
+						dataUrl = dataUrl.substring(0, dataUrl.indexOf('[')).trim();
+						$("#note_title").val(dataName);
+						$("#note_address").val(dataAddress);
+						$("#note_body").val(dataTip);
+						$("#note_url").val(dataUrl);
+					});
+				</script>
+				<script type="text/javascript">
+					$(".shows1").click(function () {
+						$(".fshow").toggle();
+					});
+				</script>
+			</div>
 
-          <div class="ramble-instagram">
-            <div class="shows3" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
-              <i class="fa fa-instagram ramble"></i><br>
-              <div id="insta-title">Instagram</div>
-            </div>
-            <div class="i-images">
-              <% i = @instagram_images.each do |i| %>
-              <span class="ishow">
-                <a class="instagram-save" data-iurl="<%= i["images"]["thumbnail"]["url"] %>">
-                  Save me! </a>
-                  <%= link_to i["images"]["standard_resolution"]["url"], :class => "instagram-thumb", :target => '_blank' do %>
-                  <%= image_tag i["images"]["thumbnail"]["url"] %>
-                  <% end %>
-                  <%= button_to 'Save this Image', { :controller => 'rambles', :action => 'add_instagram'}, :class => "insta-save" do %>
-                  <i class="fa fa-star-o"></i> <span id="save">Save</span></span>
-                  <% end %>
-                  <hr class="i-tip">
-                <% end %>
-                <script type="text/javascript">
-                $(".instagram-save").click(function () {
-                  var dataIurl = event.target.getAttribute("data-iurl");
-                  $("#note_url").val(dataIurl);
-                });
-              </script>
-                <script type="text/javascript">
-                $(".shows3").click(function () {
-                  $(".ishow").toggle();
-                });
-                </script>
-              </div>
-            </div>
+			<div class="ramble-yelp">
+				<div class="shows2" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
+					<i class="fa fa-yelp ramble"></i><br>
+					<div id="yelp-title">Yelp</div>
+				</div>
+				<% if @yelp.businesses != nil %>
+				<% @yelp.businesses.each do |y| %>
+				<div class="yelp-results">
+					<li>
+						<span class="yshow">
+							<a class="yelp-save" data-yname="<%= y.name %>",
+								data-yaddress="<%= y.location.address.pop %>",
+								data-ytip="<%= y.snippet_text %>">
+								Save me! </a>
+								<%= link_to y.name, y.url, :class => "yelp-venue-title" %>
+								<%= link_to image_tag y.rating_img_url_small %>
+								<span class="y-address"><%= y.location.address.pop %></span><hr>
+							</span>
+						</li>
+						<span class="yshow">
+							<article class="yelp-venue-tip"><%= y.snippet_text %></article>
+							<hr class="y-tip">
+						</span>
+					</div>
+					<script type="text/javascript">
+						$(".yelp-save").click(function () {
+							var dataYname = event.target.getAttribute("data-yname");
+							var dataYaddress = event.target.getAttribute("data-yaddress");
+							var dataYtip = event.target.getAttribute("data-ytip");
+							$("#note_title").val(dataYname);
+							$("#note_address").val(dataYaddress);
+							$("#note_body").val(dataYtip);
+						});
+					</script>
+					<% end %>
+					<% else %>
+					Sorry, there are no Yelp results for this destination.
+					<% end %>
+					<script type="text/javascript">
+						$(".shows2").click(function () {
+							$(".yshow").toggle();
+						});
+					</script>
+				</div>
 
-            <div class="ramble-reddit">
-              <div class="shows4" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
-                <i class="fa fa-reddit ramble"></i><br>
-                <div id="red-title">Reddit</div>
-              </div>
-              <div class="rshow">
-                <% @reddit_thread.each do |r| %>
-                <li>
-                  <span class="rshow"><a href="http://www.reddit.com/r/<%= r["name"] %>" target="_blank"></span>
-                    <%= r["name"] %>
-                  </a>
-                </li>
-                <% end %>
-              </div>
-              <script type="text/javascript">
-              $(".shows4").click(function () {
-                $(".rshow").toggle();
-              });
-              </script>
-            </div>
+				<div class="ramble-instagram">
+					<div class="shows3" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
+						<i class="fa fa-instagram ramble"></i><br>
+						<div id="insta-title">Instagram</div>
+					</div>
+					<div class="i-images">
+						<% i = @instagram_images.each do |i| %>
+						<span class="ishow">
+							<a class="instagram-save" data-iurl="<%= i["images"]["thumbnail"]["url"] %>">
+								Save me! </a>
+								<%= link_to i["images"]["standard_resolution"]["url"], :class => "instagram-thumb", :target => '_blank' do %>
+								<%= image_tag i["images"]["thumbnail"]["url"] %>
+								<% end %>
+								<%= button_to 'Save this Image', { :controller => 'rambles', :action => 'add_instagram'}, :class => "insta-save" do %>
+								<i class="fa fa-star-o"></i> <span id="save">Save</span></span>
+								<% end %>
+								<hr class="i-tip">
+								<% end %>
+								<script type="text/javascript">
+									$(".instagram-save").click(function () {
+										var dataIurl = event.target.getAttribute("data-iurl");
+										$("#note_url").val(dataIurl);
+									});
+								</script>
+								<script type="text/javascript">
+									$(".shows3").click(function () {
+										$(".ishow").toggle();
+									});
+								</script>
+							</div>
+						</div>
 
-
-
-          <div class="recommended-notes">
-            <div class="shows5" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
-              <div id="four-title">Ramblethru<br>Notes</div>
-            </div>
+						<div class="ramble-reddit">
+							<div class="shows4" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
+								<i class="fa fa-reddit ramble"></i><br>
+								<div id="red-title">Reddit</div>
+							</div>
+							<div class="rshow">
+								<% @reddit_thread.each do |r| %>
+								<li>
+									<span class="rshow"><a href="http://www.reddit.com/r/<%= r["name"] %>" target="_blank"></span>
+										<%= r["name"] %>
+									</a>
+								</li>
+								<% end %>
+							</div>
+							<script type="text/javascript">
+								$(".shows4").click(function () {
+									$(".rshow").toggle();
+								});
+							</script>
+						</div>
 
 
-              <% ramble = Ramble.where(:destination => @ramble.destination)  %>
-              <% ramble.each do |r| %>
-                <% if r.id != @ramble.id %>
-                  <% r.notes.each do |n| %>
-                  <div class="note-show">
-                    <p>
-                      <span id="note-label">Title: </span>
-                      <span id="note-body"><%= n.title %></span>
-                    </p>
-                    <p>
-                      <span id="note-label">Address: </span>
-                      <span id="note-body"><%= n.address %></span>
-                    </p>
-                    <p>
-                      <span id="note-label">Note: </span>
-                      <span id="note-body"><%= n.body %></span>
-                    </p>
-                    <p>
-                      <span id="note-label">URL: </span>
-                      <span id="note-body"><a href="<%= n.url %>" target="_blank"><%= n.url %></a></span>
-                    </p>
-                    <p>
-                      <span id="tag-label">Tag(s): </span>
-                      <span id="tag-each"><%= raw n.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></span>
-                    </p>
-                  </div>
-              <% end %>
-            <% end %>
-          <% end %>
-          <script type="text/javascript">
-            $(".shows5").click(function () {
-              $(".note-show").toggle();
-            });
-          </script>
-        </div>
-      </div>
-    </div>
-  </div>
+						<div class="recommended-notes">
+							<div class="shows5" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
+								<div id="four-title">
+									<% x = Note.where(ramble_id:(Ramble.where(:destination => @ramble.destination))) %>
+									<%= x.where(ramble_id:(Ramble.where.not(user_id: @ramble.user_id))).count %> NOTE(S)
+								</div>
+								<% ramble = Ramble.where(:destination => @ramble.destination)  %>
+								<% ramble.each do |r| %>
+								<% if r.id != @ramble.id %>
+							</div>
+							<% r.notes.each do |n| %>
+							<div class="note-show">
+								<div class="savenote" data-ntitle="<%= n.title %>" data-naddress="<%= n.address %>"
+									data-nbody="<%= n.body %>" data-nurl="<%= n.url %>" data-ntag="<%= n.tag_list %>"> Save this note </div>
+									<p>
+										<span id="note-label">Title: </span>
+										<span id="note-body"><%= n.title %></span>
+									</p>
+									<p>
+										<span id="note-label">Address: </span>
+										<span id="note-body"><%= n.address %></span>
+									</p>
+									<p>
+										<span id="note-label">Note: </span>
+										<span id="note-body"><%= n.body %></span>
+									</p>
+									<p>
+										<span id="note-label">URL: </span>
+										<span id="note-body"><a href="<%= n.url %>" target="_blank"><%= n.url %></a></span>
+									</p>
+									<p>
+										<span id="tag-label">Tag(s): </span>
+										<span id="tag-each"><%= raw n.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></span>
+									</p>
+								</div>
+								<% end %>
+
+								<% end %>
+								<% end %>
+								<script type="text/javascript">
+									$(".savenote").click(function () {
+										var dataNtitle = event.target.getAttribute("data-ntitle");
+										var dataNaddress = event.target.getAttribute("data-naddress");
+										var dataNbody = event.target.getAttribute("data-nbody");
+										var dataNurl = event.target.getAttribute("data-nurl");
+										var dataNtag = event.target.getAttribute("data-ntag");
+										$("#note_title").val(dataNtitle);
+										$("#note_address").val(dataNaddress);
+										$("#note_body").val(dataNbody);
+										$("#note_url").val(dataNurl);
+										$("#note_tag_list").val(dataNtag);
+									});
+								</script>
+								<script type="text/javascript">
+									$(".shows5").click(function () {
+										$(".note-show").toggle();
+									});
+								</script>
+							</div>
+						</div>
+					</div>
+				</div>

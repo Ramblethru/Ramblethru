@@ -21,7 +21,7 @@
 //= require moment
 //= require jquery.modal
 //= require best_in_place
-
+//= require_tree .
 
   jQuery(".best_in_place").best_in_place();
 

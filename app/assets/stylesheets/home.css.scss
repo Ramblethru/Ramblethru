@@ -204,17 +204,18 @@ input.input {
   border-radius: 10px;
 }
 input.input:hover {
-  background-color: $dark-grey;
+  background-color: $green;
 }
 input#discover_destination {
-  border: 4px solid $orange;
+  border: 4px solid rgba(46,116,97, .7);
   background-color: $light-grey;
   font-family: 'menschmensch_regular';
-  font-size: 20px;
+  font-size: 25px;
   text-align: center;
-  border-radius: 20px;
+  border-radius: 10px;
   height: 65px;
   color: $green;
+  width: 300px;
 }
 #map-usa {
   margin: 0 auto;
@@ -265,5 +266,5 @@ ul {
 div.discover-create {
   margin: 0 auto;
   margin-top: 10px;
-
+  width: 800px;
 }

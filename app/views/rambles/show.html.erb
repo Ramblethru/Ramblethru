@@ -14,7 +14,7 @@
 	<% end %>
 	<% if @ramble.start_date && @ramble.end_date %>
 		<div class="start-end">
-			From <%= best_in_place @ramble, :start_date %> to <%= @ramble.end_date %>
+			From <%= best_in_place @ramble, :start_date %> to <%= best_in_place @ramble, :end_date %>
 		</div>
 	<% end %>
 </div>
@@ -48,7 +48,6 @@
 			<% @ramble.notes.order('created_at desc').each do |note| %>
 			<div id="<%= dom_id(note) %>">
 				<div class="notebody">
-					<% if note.body %>
             <p>
               <span id="note-label">Title: </span>
               <span id="note-body"><%= note.title %></span>
@@ -71,17 +70,15 @@
             </p>
 							<% if current_user.rambles.include?(@ramble) %>
 							<i class="fa fa-pencil-square-o"></i>
-							<%= link_to 'Edit', edit_ramble_note_path(@ramble.id, note.id), :class => "edit-note" %>
+							<%= link_to_modal 'Edit', edit_ramble_note_path(@ramble.id, note.id), :class => "edit-note" %>
 							<i class="fa fa-trash"></i>
-							<%= link_to 'Delete', note, method: :delete, remote: true, :class => "delete-note" %>
+							<%= link_to 'Delete', note, method: :delete, remote: true, :class => "delete-note",:data => {:confirm => 'Are you sure?'} %>
 							<% end %>
 							<% end %>
 				</div>
 			</div>
 					<% end %>
-					<% else %>
-					You haven't created any notes yet!
-					<% end %>
+					
 					<div class="end"></div>
 		</div>
 

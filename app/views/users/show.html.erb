@@ -39,7 +39,7 @@
 						<%= link_to r.destination, ramble_path(r), :class => "r-dest" %>
 						<span id="dates"><%= r.start_date %> to <%= r.end_date %></span>
 						<% if r.notes.size > 0 %>
-						<div class="shows" data-id="<%= r.id %>">saved notes</div><hr class="ramble-divider">
+						<div class="shows" data-id="<%= r.id %>"><%= r.notes.size %> saved notes</div><hr class="ramble-divider">
 						<div class="noteshow" id="div_ramble_<%= r.id %>" >
 							<% r.notes.each do |n| %>
 								<span id="user-title">Title:</span><%=n.title %><br>

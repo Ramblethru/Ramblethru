@@ -43,8 +43,9 @@
 		<div class="ramble-notes">
 			<h2 class="notes">NOTES</h2>
 			<%= render "notes/note_form" %>
+			<div class="notesgohere"></div>
 			<% if @ramble.notes != nil %>
-			<% @ramble.notes.each do |note| %>
+			<% @ramble.notes.order('created_at desc').each do |note| %>
 			<div id="<%= dom_id(note) %>">
 				<div class="notebody">
 					<% if note.body %>
@@ -197,7 +198,7 @@
 							<span class="ishow">
 								<a class="instagram-save" data-iurl="<%= i["images"]["thumbnail"]["url"] %>">
 									Save me! </a>
-									<%= link_to i["images"]["standard_resolution"]["url"], :class => "instagram-thumb" do %>
+									<%= link_to i["images"]["standard_resolution"]["url"], :class => "instagram-thumb", :target => '_blank' do %>
 									<%= image_tag i["images"]["thumbnail"]["url"] %>
 									<% end %>
 									<%= button_to 'Save this Image', { :controller => 'rambles', :action => 'add_instagram'}, :class => "insta-save" do %>

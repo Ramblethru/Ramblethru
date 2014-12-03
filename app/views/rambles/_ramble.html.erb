@@ -19,6 +19,9 @@
           <div class="tagshow">
             Tags: <%= note.tag_list %>
           </div>
+					<div class="notesshow">
+						Created on: <%= note.created_at.strftime("%m/%d/%Y") %>
+					</div>
           <div class="note-destination">
             <%= ramble.destination.upcase %>
           </div>

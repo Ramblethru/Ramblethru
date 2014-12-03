@@ -52,8 +52,9 @@
 								<span id="user-address">Address:</span><%=n.address %><br>
 								<span id="user-note">Note:</span><%= n.body %><br>
 								<span id="user-url">URL:</span><a href="<%= n.url %>" target="_blank"><%= n.url %></a><br>
-								<span id="user-tags">Tags:</span><%= n.tag_list %><br><hr id="note-each-divider">
-							<% end %>	
+								<span id="user-tags">Tags:</span><%= n.tag_list %><br>
+                <span id="user-created">Created on:</span><%= n.created_at.strftime("%m/%d/%Y") %><br><hr id="note-each-divider">
+							<% end %>
 						</div>
 						<% else %>
 							<span id="no-notes">no notes available</span>
@@ -72,4 +73,3 @@
 		</div>
 	</div>
 </div>
-

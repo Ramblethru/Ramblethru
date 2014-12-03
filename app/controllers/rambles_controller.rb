@@ -5,7 +5,7 @@ class RamblesController < ApplicationController
   before_action :authenticate, only: [:new, :create]
 
     def show
-       @ramble = Ramble.friendly.find(params[:id])
+       @ramble = Ramble.find(params[:id])
         yelp
         instagram
         reddit

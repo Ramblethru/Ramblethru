@@ -239,3 +239,10 @@ input.register-button {
 hr#note-each-divider {
 	border: 2px solid $orange;
 }
+
+a.create-ramble-here {
+  color: $green;
+}
+a.create-ramble-here:hover {
+  color: $orange;
+}

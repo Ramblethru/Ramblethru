@@ -129,6 +129,7 @@ h2.notes {
 #note-body, #note-tag {
   color: $dark-grey;
   font-family: monospace, sans-serif;
+  word-wrap: break-word;
 }
 
 #note-body a{
@@ -404,6 +405,7 @@ input#search.span2 {
   font-weight: 700;
   font-size: 24px;
   margin: 0 auto 0 auto;
+  word-wrap: break-word;
 }
 
 .tagshow {

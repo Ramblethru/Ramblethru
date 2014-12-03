@@ -128,8 +128,8 @@
 							var dataAddress = event.target.getAttribute("data-address")
 							var dataTip = event.target.getAttribute("data-tip")
 							var dataUrl = event.target.getAttribute("data-url")
-							dataTip = dataTip.substring(0, dataTip.indexOf('['));
-							dataUrl = dataUrl.substring(0, dataUrl.indexOf('['));
+							dataTip = dataTip.substring(0, dataTip.indexOf('[')).trim();
+							dataUrl = dataUrl.substring(0, dataUrl.indexOf('[')).trim();
 							$("#note_title").val(dataName);
 							$("#note_address").val(dataAddress);
 							$("#note_body").val(dataTip);

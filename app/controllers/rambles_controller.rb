@@ -5,7 +5,7 @@ class RamblesController < ApplicationController
   before_action :authenticate, only: [:new, :create]
 
     def show
-       @ramble = Ramble.friendly.find(params[:id])
+       @ramble = Ramble.find(params[:id])
         yelp
         instagram
         reddit
@@ -76,7 +76,7 @@ class RamblesController < ApplicationController
   end
 
   def update
-    @ramble = Ramble.friendly.find(params[:id])
+    @ramble = Ramble.find(params[:id])
     if @ramble.update(ramble_params)
         respond_to do |format|
           format.html { redirect_to @ramble}
@@ -88,7 +88,7 @@ class RamblesController < ApplicationController
   end
 
   def edit_name
-    @ramble = Ramble.friendly.find(params[:id])
+    @ramble = Ramble.find(params[:id])
   end
 
   def destroy

@@ -1,8 +1,8 @@
 <div class="ramble-title">
-	<% if @ramble.name !=nil %>
-		<div class="shift"><%= best_in_place @ramble, :name %></div>
+	<% if @ramble.name.empty? %>
+    <%= link_to 'Add a Name!', edit_ramble_name_path, :class => "edit-ramble-name" %>
 	<% else %>
-		<%= link_to 'Add a Name!', edit_ramble_name_path, :class => "edit-ramble-name" %>
+    <div class="shift"><%= best_in_place @ramble, :name %></div>
 	<% end %>
 	<% if @ramble.destination %>
 
@@ -92,19 +92,21 @@
 							<i class="fa fa-foursquare ramble"></i><br>
 							<div id="four-title">Foursquare</div>
 						</div>
-						<% @foursquare_venue.each do |f| %>
-						<div class="four-results">
-							<li>
-								<span class="fshow"><div id="f-venue-title">
-									<a class="foursquare-save" data-name="<%= f['venue']['name'] %>"
-										data-address="<%= f["venue"]["location"]["address"]%>"
-										data-url="<%= f["tips"].each do |g| %>
-										<%= g["canonicalUrl"] %>
-										<% end %>"
-										data-tip="<%= f["tips"].each do |g| %>
-										<%= g["text"] %>
-										<% end %>">Save Me!</a>
-									<%= f["venue"]["name"] %><hr>
+            <% if @foursquare_venue != nil %>
+						  <% @foursquare_venue.each do |f| %>
+						    <div class="four-results">
+							   <li>
+								  <span class="fshow"><div id="f-venue-title">
+                    <% if f["tips"] != nil %>
+									   <a class="foursquare-save" data-name="<%= f['venue']['name'] %>"
+										  data-address="<%= f["venue"]["location"]["address"]%>"
+										  data-url="<%= f["tips"].each do |g| %>
+										    <%= g["canonicalUrl"] %>
+										  <% end %>"
+										  data-tip="<%= f["tips"].each do |g| %>
+										    <%= g["text"] %>
+										  <% end %>">Save Me!</a>
+									   <%= f["venue"]["name"] %><hr>
 								</div>
 							</span>
 						</li>
@@ -118,6 +120,8 @@
 						</div>
 						<% end %>
 						<% end %>
+            <% end %>
+            <% end %>
 						<script type="text/javascript">
 						$(".foursquare-save").click(function () {
 							var dataName = event.target.getAttribute("data-name");

@@ -5,7 +5,7 @@ class RamblesController < ApplicationController
   before_action :authenticate, only: [:new, :create]
 
     def show
-       @ramble = Ramble.find(params[:id])
+       @ramble = Ramble.friendly.find(params[:id])
         yelp
         instagram
         reddit
@@ -13,14 +13,13 @@ class RamblesController < ApplicationController
     end
 
     def yelp
-        params = { term: 'food',
-                   limit: 20,
-                  }
+        params = { sort: 2 }
+                  
       @yelp = Yelp.client.search("#{@ramble.destination}", params)
     end
 
     def instagram
-      instagram = HTTParty.get("https://api.instagram.com/v1/media/search?lat=#{@ramble.latitude}&lng=#{@ramble.longitude}&count=8&client_id=ea93d7b97c444c9bbfcf23cbbcb63ee4")
+      instagram = HTTParty.get("https://api.instagram.com/v1/media/search?lat=#{@ramble.latitude}&lng=#{@ramble.longitude}&count=30&client_id=ea93d7b97c444c9bbfcf23cbbcb63ee4")
       instagram_data = JSON.parse(instagram.body)
       @instagram_images = instagram_data["data"]
     end
@@ -75,18 +74,6 @@ class RamblesController < ApplicationController
         end
       end
     end
-  end
-
-  def add_api
-    @ramble = Ramble.find(params[:id])
-    @ramble.save_reddit_thread
-    redirect_to @ramble
-  end
-
-  def add_instagram
-    @ramble = Ramble.find(params[:id])
-    @ramble.save_instagram_url
-    redirect_to @ramble
   end
 
   def update

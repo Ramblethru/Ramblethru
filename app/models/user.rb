@@ -26,4 +26,8 @@ class User < ActiveRecord::Base
     auth.user
   end
 
+  #
+  # def should_generate_new_friendly_id?
+  #     name_changed? || super
+  # end
 end

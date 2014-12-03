@@ -73,6 +73,7 @@ div.container {
   overflow-x: hidden !important;
   max-width: 100%;
   margin-top: 10px;
+  margin-bottom: -10px;
 }
 div.homepage-about {
 	text-align: center;
@@ -98,10 +99,11 @@ div.homepage-about {
   margin-bottom: 0px;
 }
 .homepage-about-go {
-  height: 580px;
+  height: 610px;
   background-color: $green;
   overflow-x: hidden;
   text-align: center;
+  margin-bottom: 20px;
 
   }
 

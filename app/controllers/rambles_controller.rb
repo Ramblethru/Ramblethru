@@ -88,7 +88,7 @@ class RamblesController < ApplicationController
     end
   end
 
-  def edit_name
+  def edit
     @ramble = Ramble.find(params[:id])
   end
 

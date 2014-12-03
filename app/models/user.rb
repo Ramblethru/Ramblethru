@@ -1,7 +1,5 @@
 class User < ActiveRecord::Base
-   include FriendlyId
 
-  friendly_id :name, use: [:slugged, :finders]
 
   has_many :rambles
   has_many :notes, through: :rambles
@@ -28,7 +26,8 @@ class User < ActiveRecord::Base
     auth.user
   end
 
-  def should_generate_new_friendly_id?
-    name_changed?
-  end
+  #
+  # def should_generate_new_friendly_id?
+  #     name_changed? || super
+  # end
 end

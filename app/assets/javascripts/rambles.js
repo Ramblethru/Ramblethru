@@ -1,11 +1,5 @@
-  // $(".tag-input").tagsInput({
-  //   width: '100%',
-  //   height: '1rem',
-  // });
 
-$(document).ready(function() {
-  jQuery(".best_in_place").best_in_place();
-});
+
 
 $(function(){
   var stickyHeaderTop = $('.ramble-notes').offset().top;

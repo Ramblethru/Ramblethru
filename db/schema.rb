@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20141203235326) do
+=======
 ActiveRecord::Schema.define(version: 20141203222435) do
+>>>>>>> 2d11b9aad67bb509aeb82bd6af90fa70d8393a2e
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -109,8 +113,8 @@ ActiveRecord::Schema.define(version: 20141203222435) do
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
-    t.text     "bio"
-    t.string   "lives_in"
+    t.string   "bio",                 default: "add a bio!"
+    t.string   "lives_in",            default: "where do you live?"
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"

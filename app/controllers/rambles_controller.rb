@@ -73,18 +73,16 @@ class RamblesController < ApplicationController
   def index
     respond_to do |format|
       format.html do
-        if params[:search] || if params[:tag]
-          @notes = Note.tagged_with(params[:tag])
+        if params[:search]
           @ramble = Ramble.search(params[:search]).order("created_at DESC")
         end
       end
-      end
-      format.json do
+      format.js do
         if params[:search]
           @ramble = Ramble.search(params[:search]).order("created_at DESC")
           render :search, status: :created
         else
-          redirect_to root_path, status: :not_found
+          render :create, status: :not_found
         end
       end
     end

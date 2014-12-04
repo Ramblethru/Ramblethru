@@ -60,6 +60,11 @@
 									<% else %>
 									<%= button_to "Make Public", set_share_path(n.id), method: :patch, remote: true, class:"sharedstatus" %>
 									<% end %>
+									<script>
+									$( "button" ).click(function() {
+										$( ".sharedstatus" ).toggle();
+									});
+									</script>
 								</div>
 								<hr id="note-each-divider">
 								<% end %>

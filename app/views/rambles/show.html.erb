@@ -171,17 +171,15 @@
 						<div class="shows2" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
 							<i class="fa fa-yelp ramble"></i><br>
 							<div id="yelp-title">Yelp</div>
-              <div id="yelpControls"></div>
 						</div>
 
 
-          <div id="yelpcontent">
 
 
 						<% if @yelp.businesses != nil %>
 						<% @yelp.businesses.each do |y| %>
 
-            <div class="yelpz">
+
 
 
 						<div class="yelp-results">
@@ -225,20 +223,6 @@
 						});
 						</script>
 					</div>
-          </div>
-          </div>
-
-
-          <!--script for yelp pagination-->
-          <script type="text/javascript">
-            var pager = new YelpImtech.Pager();
-            $(document).ready(function() {
-              pager.paragraphsPerPage = 5; // set amount elements per page
-              pager.pagingContainer = $('#yelpcontent'); // set of main container
-              pager.paragraphs = $('div.yelpz', pager.pagingContainer); // set of required containers
-              pager.showPage(1);
-            });
-          </script>
 
 
 					<div class="ramble-instagram">
@@ -300,12 +284,17 @@
 								<div id="four-title">
 									<% x = Note.where(ramble_id:(Ramble.where(:destination => @ramble.destination))) %>
 									<%= x.where(ramble_id:(Ramble.where.not(user_id: @ramble.user_id))).count %> NOTE(S)
+                  <div id="pagingControls2"></div>
 								</div>
+                </div>
+
+
+              <div id="content">
 								<% ramble = Ramble.where(:destination => @ramble.destination)  %>
 								<% ramble.each do |r| %>
 								<% if r.id != @ramble.id %>
-							</div>
 							<% r.notes.each do |n| %>
+             <div class="z2">
 							<div class="note-show">
 								<div class="savenote" data-ntitle="<%= n.title %>" data-naddress="<%= n.address %>"
 									data-nbody="<%= n.body %>" data-nurl="<%= n.url %>" data-ntag="<%= n.tag_list %>"> Save this note </div>
@@ -334,9 +323,11 @@
 										<span id="note-body"> <%= n.created_at.strftime("%m/%d/%Y") %>
 										</p>
 								</div>
+               </div>
 								<% end %>
 								<% end %>
 								<% end %>
+               </div>
 								<script type="text/javascript">
 								$(".savenote").click(function () {
 									var dataNtitle = event.target.getAttribute("data-ntitle");
@@ -357,7 +348,19 @@
 								});
 							</script>
 
-                </div>
+
+              <!--script for yelp pagination-->
+              <script type="text/javascript">
+                var pager2 = new Imtech2.Pager();
+                $(document).ready(function() {
+                  pager2.paragraphsPerPage = 5; // set amount elements per page
+                  pager2.pagingContainer = $('#content2'); // set of main container
+                  pager2.paragraphs = $('div.z2', pager2.pagingContainer); // set of required containers
+                  pager2.showPage(1);
+                });
+              </script>
+
+          <!--</div>-->
       </div>
     </div>
   </div>

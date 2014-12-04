@@ -1,46 +1,46 @@
-//var yelpImtech = {};
-//yelpImtech.Pager = function() {
-//    this.paragraphsPerPage = 3;
-//    this.currentPage = 1;
-//    this.pagingControlsContainer = "#yelpControls";
-//    this.pagingContainerPath = "#yelpcontent";
-//
-//    this.numPages = function() {
-//        var numPages = 0;
-//        if (this.paragraphs != null && this.paragraphsPerPage != null) {
-//            numPages = Math.ceil(this.paragraphs.length / this.paragraphsPerPage);
-//        }
-//
-//        return numPages;
-//    };
-//
-//    this.showPage = function(page) {
-//        this.currentPage = page;
-//        var html = "";
-//        for (var i = (page-1)*this.paragraphsPerPage; i < ((page-1)*this.paragraphsPerPage) + this.paragraphsPerPage; i++) {
-//            if (i < this.paragraphs.length) {
-//                var elem = this.paragraphs.get(i);
-//                html += "<" + elem.tagName + ">" + elem.innerHTML + "</" + elem.tagName + ">";
-//            }
-//        }
-//
-//        $(this.pagingContainerPath).html(html);
-//
-//        renderControls(this.pagingControlsContainer, this.currentPage, this.numPages());
-//    }
-//
-//    var renderControls = function(container, currentPage, numPages) {
-//        var pagingControls = "Page: <ul>";
-//        for (var i = 1; i <= numPages; i++) {
-//            if (i != currentPage) {
-//                pagingControls += "<li><a href='#' onclick='pager.showPage(" + i + "); return false;'>" + i + "</a></li>";
-//            } else {
-//                pagingControls += "<li>" + i + "</li>";
-//            }
-//        }
-//
-//        pagingControls += "</ul>";
-//
-//        $(container).html(pagingControls);
-//    }
-//}
+var Imtech2 = {};
+Imtech2.Pager = function() {
+    this.paragraphsPerPage = 3;
+    this.currentPage = 1;
+    this.pagingControlsContainer = "#pagingControls2";
+    this.pagingContainerPath = "#content2";
+
+    this.numPages2 = function() {
+        var numPages2 = 0;
+        if (this.paragraphs != null && this.paragraphsPerPage != null) {
+            numPages2 = Math.ceil(this.paragraphs.length / this.paragraphsPerPage);
+        }
+
+        return numPages2;
+    };
+
+    this.showPage = function(page) {
+        this.currentPage = page;
+        var html2 = "";
+        for (var j = (page-1)*this.paragraphsPerPage; j < ((page-1)*this.paragraphsPerPage) + this.paragraphsPerPage; j++) {
+            if (j < this.paragraphs.length) {
+                var elem2 = this.paragraphs.get(j);
+                html2 += "<" + elem2.tagName + ">" + elem2.innerHTML + "</" + elem2.tagName + ">";
+            }
+        }
+
+        $(this.pagingContainerPath).html(html2);
+
+        renderControls2(this.pagingControlsContainer, this.currentPage, this.numPages2());
+    }
+
+    var renderControls2 = function(container, currentPage, numPages2) {
+        var pagingControls2 = "Page: <ul>";
+        for (var j = 1; j <= numPages2; j++) {
+            if (j != currentPage) {
+                pagingControls2 += "<li><a href='#' onclick='pager2.showPage(" + j + "); return false;'>" + j + "</a></li>";
+            } else {
+                pagingControls2 += "<li>" + j + "</li>";
+            }
+        }
+
+        pagingControls2 += "</ul>";
+
+        $(container).html(pagingControls2);
+    }
+}

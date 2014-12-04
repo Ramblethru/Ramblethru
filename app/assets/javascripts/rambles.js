@@ -21,7 +21,7 @@ $(document).bind("ajax:complete", function(event,xhr,status){
     $('#note_address').val('');
     $('#note_body').val('');
     $('#note_url').val('');
-    $('#note_tag_list').val('');
+    $('#note_tag_list').val(destination);
   }
 });
 

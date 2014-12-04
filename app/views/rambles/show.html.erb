@@ -171,35 +171,37 @@
 						<div class="shows2" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
 							<i class="fa fa-yelp ramble"></i><br>
 							<div id="yelp-title">Yelp</div>
+              <div id="pagingControls3"></div>
 						</div>
 
 
 
-
-						<% if @yelp.businesses != nil %>
-						<% @yelp.businesses.each do |y| %>
-
-
+            <div id="content3">
+              <% if @yelp.businesses != nil %>
+              <% @yelp.businesses.each do |y| %>
 
 
-						<div class="yelp-results">
-							<li>
-								<span class="yshow">
-									<a class="yelp-save" data-yname="<%= y.name %>",
-										data-yaddress="<%= y.location.address.pop %>",
-										data-ytip="<%= y.snippet_text %>">
-										Save me! </a>
-									<%= link_to y.name, y.url, :class => "yelp-venue-title" %>
-									<%= link_to image_tag y.rating_img_url_small %>
-									<span class="y-address"><%= y.location.address.pop %></span><hr>
-								</span>
-							</li>
-							<span class="yshow">
-								<article class="yelp-venue-tip"><%= y.snippet_text %></article>
-								<hr class="y-tip">
-							</span>
-						</div>
+              <div class="z3">
 
+
+                <div class="yelp-results">
+                  <li>
+                    <span class="yshow">
+                      <a class="yelp-save" data-yname="<%= y.name %>",
+                        data-yaddress="<%= y.location.address.pop %>",
+                        data-ytip="<%= y.snippet_text %>">
+                        Save me! </a>
+                      <%= link_to y.name, y.url, :class => "yelp-venue-title" %>
+                      <%= link_to image_tag y.rating_img_url_small %>
+                      <span class="y-address"><%= y.location.address.pop %></span><hr>
+                    </span>
+                  </li>
+                  <span class="yshow">
+                    <article class="yelp-venue-tip"><%= y.snippet_text %></article>
+                    <hr class="y-tip">
+                  </span>
+                </div>
+              </div>
 
 
 
@@ -213,6 +215,8 @@
 							$("#note_body").val(dataYtip);
 						});
 						</script>
+
+
 						<% end %>
 						<% else %>
 						Sorry, there are no Yelp results for this destination.
@@ -225,37 +229,67 @@
 					</div>
 
 
+      <!--code for yelp pagination-->
+          <script type="text/javascript">
+            var pager3 = new Imtech3.Pager();
+            $(document).ready(function() {
+              pager3.paragraphsPerPage = 5; // set amount elements per page
+              pager3.pagingContainer = $('#content3'); // set of main container
+              pager3.paragraphs = $('div.z3', pager3.pagingContainer); // set of required containers
+              pager3.showPage(1);
+            });
+          </script>
+
+
 					<div class="ramble-instagram">
 						<div class="shows3" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
 							<i class="fa fa-instagram ramble"></i><br>
 							<div id="insta-title">Instagram</div>
+              <div id="pagingControls4"></div>
 						</div>
+
+          <div id="content4">
 						<div class="i-images">
 							<% i = @instagram_images.each do |i| %>
-							<span class="ishow">
-								<a class="instagram-save" data-iurl="<%= i["images"]["thumbnail"]["url"] %>">
-									Save me! </a>
-									<%= link_to i["images"]["standard_resolution"]["url"], :class => "instagram-thumb", :target => '_blank' do %>
-									<%= image_tag i["images"]["thumbnail"]["url"] %>
-									<% end %>
-									<%= button_to 'Save this Image', { :controller => 'rambles', :action => 'add_instagram'}, :class => "insta-save" do %>
-									<i class="fa fa-star-o"></i> <span id="save">Save</span></span>
-									<% end %>
-									<hr class="i-tip">
-								<% end %>
-								<script type="text/javascript">
-								$(".instagram-save").click(function () {
-									var dataIurl = event.target.getAttribute("data-iurl");
-									$("#note_url").val(dataIurl);
-								});
-							</script>
-								<script type="text/javascript">
-								$(".shows3").click(function () {
-									$(".ishow").toggle();
-								});
-								</script>
-							</div>
-						</div>
+              <div class="z4">
+                <span class="ishow">
+                  <a class="instagram-save" data-iurl="<%= i["images"]["thumbnail"]["url"] %>">
+                    Save me! </a>
+                    <%= link_to i["images"]["standard_resolution"]["url"], :class => "instagram-thumb", :target => '_blank' do %>
+                    <%= image_tag i["images"]["thumbnail"]["url"] %>
+                    <% end %>
+                    <%= button_to 'Save this Image', { :controller => 'rambles', :action => 'add_instagram'}, :class => "insta-save" do %>
+                    <i class="fa fa-star-o"></i>
+                    <span id="save">Save</span>
+                  </span>
+                </div>
+                <% end %>
+                <hr class="i-tip">
+              <% end %>
+              <script type="text/javascript">
+              $(".instagram-save").click(function () {
+                var dataIurl = event.target.getAttribute("data-iurl");
+                $("#note_url").val(dataIurl);
+              });
+            </script>
+              <script type="text/javascript">
+              $(".shows3").click(function () {
+                $(".ishow").toggle();
+              });
+              </script>
+            </div>
+					</div>
+
+            <!--code for instagram pagination-->
+            <script type="text/javascript">
+              var pager4 = new Imtech4.Pager();
+              $(document).ready(function() {
+                pager4.paragraphsPerPage = 4; // set amount elements per page
+                pager4.pagingContainer = $('#content4'); // set of main container
+                pager4.paragraphs = $('div.z4', pager4.pagingContainer); // set of required containers
+                pager4.showPage(1);
+              });
+            </script>
 
 						<div class="ramble-reddit">
 							<div class="shows4" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
@@ -287,10 +321,11 @@
                   <%= y.where(share: true).count %> NOTE(S)
                   <div id="pagingControls2"></div>
 								</div>
-                </div>
+              </div>
+            </div>
 
 
-              <div id="content">
+              <div id="content2">
 								<% ramble = Ramble.where(:destination => @ramble.destination)  %>
 								<% ramble.each do |r| %>
 								<% if r.id != @ramble.id %>
@@ -354,7 +389,7 @@
               <script type="text/javascript">
                 var pager2 = new Imtech2.Pager();
                 $(document).ready(function() {
-                  pager2.paragraphsPerPage = 5; // set amount elements per page
+                  pager2.paragraphsPerPage = 3; // set amount elements per page
                   pager2.pagingContainer = $('#content2'); // set of main container
                   pager2.paragraphs = $('div.z2', pager2.pagingContainer); // set of required containers
                   pager2.showPage(1);

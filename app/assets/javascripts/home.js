@@ -22,11 +22,13 @@ $(document).ready(function() {
   $('#map-usa').usmap({
   stateStyles: {'fill': '#eff0eb'},
   stateHoverStyles: {fill: '#af703a'},
-  showLabels: false,
-   click: function(event, data) {
-    $('#clicked-state')
-      .text('You clicked: '+data.name)
-  }
+   
+    'click' : function(event, data) {
+      $('#alert')
+        .text('Click '+data.name+'  copy ')
+        .css('color', '#ff0')
+        .animate({color: '#ddd'}, 1000);
+    }
 });
   });
 

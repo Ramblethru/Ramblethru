@@ -106,11 +106,19 @@ class RamblesController < ApplicationController
 
   def destroy
     @ramble = Ramble.find(params[:id])
-    if @ramble.present?
+    respond_to do |format|
+      format.html do
+        @ramble.destroy
+          redirect_to :back
+      end
+    format.js do
       @ramble.destroy
+      render 'rambles/remove', status: :success
     end
-    redirect_to :back
   end
+  end
+
+
 
   def find_ramble
     Ramble.find(:all, :conditions => conditions)

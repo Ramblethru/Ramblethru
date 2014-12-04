@@ -61,21 +61,42 @@ article {
 }
 
 #ui-datepicker-div {
-   width: 216px;
+    width: 216px !important;
     height: auto;
     margin: 5px auto 0;
-    font: 9pt Arial, sans-serif;
+    font: 9pt monospace, sans-serif;
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
     -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
     right: 100px;
     left: 0px;
-    background-color: $orange;
+    background-color: $light-grey;
 }
-#ui-datepicker-div table {
-    width: 100%;
+div.ui-datepicker-header {
+  margin-top: 10px;
 }
 
+a.ui-datepicker-prev, .ui-datepicker-next{
+  color: $orange;
+  font-size: 14px !important;
+}
+a.ui-state-default {
+  color: $green !important;
+}
+button.ui-datepicker-current, .ui-datepicker-close {
+  color: $light-grey;
+  font-family: 'menschmensch_regular';
+  font-size: 18px;
+  font-weight: bold;
+}
+span.ui-icon {
+  font-family: 'menschmensch_regular';
+  font-size: 18px;
+  font-weight: bold;
+}
+span.ui-datepicker-month, .ui-datepicker-year {
+  font-weight: bold;
+}
 .discover-bottom {
   width: 500px;
   margin: 50px auto 30px auto;

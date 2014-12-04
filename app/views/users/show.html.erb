@@ -17,18 +17,19 @@
     <div class="name">
       <span id="user-name-label">Name: </span>
       <span id="user-name"><%= best_in_place @user, :name,:html_attrs => {  :style => 'width:400px; height:50px;font-family: "menschmensch_regular"' } %></span>
-    </div>
-    <div class="lives-in">
-      <span id="user-residence-label">Residence: </span>
-      <span id="user-residence">
-        <%= best_in_place @user, :lives_in, :place_holder => "add your location", :html_attrs => {  :style => 'width:400px; height:50px;font-family: "menschmensch_regular"' } %>
-      </span>
-    </div>
-    <div class="bio">
-      <span id="user-bio-label">BIO: </span>
-      <span id="user-bio"><%= best_in_place @user, :bio, :place_holder => "add bio", :html_attrs => {  :style => 'width:400px; height:50px;font-family: "menschmensch_regular"' } %></span>
-    </div>
-  </div>
+		</div>
+		<div class="lives-in">
+			<span id="user-residence-label">Residence: </span>
+			<span id="user-residence">
+				<%= best_in_place @user, :lives_in, :place_holder => "add your location", :html_attrs => {  :style => 'width:400px; height:50px;font-family: "menschmensch_regular"' } %>
+			</span>
+		</div>
+		<div class="bio">
+			<span id="user-bio-label">BIO: </span>
+			<span id="user-bio"><%= best_in_place @user, :bio, :place_holder => "add bio", :html_attrs => {  :style => 'width:400px; height:50px;font-family: "menschmensch_regular"' } %></span>
+		</div>
+	</div>
+
 </div>
       <div class="usertrips">
         <div id="my-rambles">

@@ -1,35 +1,33 @@
 <div class="row" id="<%= ramble.persisted? ? dom_id(ramble) : "ramble-new" %>">
 	<div class="container">
-		<% if @ramble %>
-		<% @ramble.each do |ramble| %>
-		<% ramble.notes.each do |note| %>
-		<% if note.share == true %>
-		<div class="note-results">
-			<div class="notesshow">
-				Title: <%= note.title %>
-			</div>
-			<div class="notesshow">
-				Address: <%= note.address %>
-			</div>
-			<div class="notesshow">
-				Note: <%= note.body %>
-			</div>
-			<div class="notesshow">
-				URL: <a href="<%= note.url %>" target="_blank"><%= note.url %></a>
-			</div>
-			<div class="tagshow">
-				Tags: <%= note.tag_list %>
-			</div>
-			<div class="notesshow">
-				Created on: <%= note.created_at.strftime("%m/%d/%Y") %>
-			</div>
-			<div class="note-destination">
-				<%= ramble.destination.upcase %>
-			</div>
-		</div>
-		<% end %>
-		<% end %>
-		<% end %>
+		<% if ramble.user_id != current_user.id %>
+			<% ramble.notes.each do |note| %>
+				<% if note.share %>
+					<div class="note-results">
+						<div class="notesshow">
+							Title: <%= note.title %>
+						</div>
+						<div class="notesshow">
+							Address: <%= note.address %>
+						</div>
+						<div class="notesshow">
+							Note: <%= note.body %>
+						</div>
+						<div class="notesshow">
+							URL: <a href="<%= note.url %>" target="_blank"><%= note.url %></a>
+						</div>
+						<div class="tagshow">
+							Tags: <%= note.tag_list %>
+						</div>
+						<div class="notesshow">
+							Created on: <%= note.created_at.strftime("%m/%d/%Y") %>
+						</div>
+						<div class="note-destination">
+							<%= ramble.destination.upcase %>
+						</div>
+					</div>
+				<% end %>
+			<% end %>
 		<% end %>
 	</div>
 </div>

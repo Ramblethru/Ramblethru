@@ -45,31 +45,46 @@ class RamblesController < ApplicationController
   end
 
   def create
-    if current_user
-      @user = current_user
-      @ramble = current_user.rambles.build(ramble_params)
-      @ramble.save!
-      RambleMailer.ramble_created(@ramble.user, @ramble).deliver
-      redirect_to ramble_path(@ramble)
-    else
-      render 'logins/new'
-      flash.now[:notice] = "You must be logged in to create a ramble."
+    respond_to do |format|
+      format.html do
+        if current_user
+          @user = current_user
+          @ramble = current_user.rambles.build(ramble_params)
+          @ramble.save!
+          RambleMailer.ramble_created(@ramble.user, @ramble).deliver
+          redirect_to ramble_path(@ramble)
+        else
+          render 'logins/new'
+          flash.now[:notice] = "You must be logged in to create a ramble."
+        end
+      end
+      format.json do
+        if current_user
+          @user = current_user
+          @ramble = current_user.rambles.build(ramble_params)
+          @ramble.save!
+          RambleMailer.ramble_created(@ramble.user, @ramble).deliver
+          redirect_to ramble_path(@ramble)
+        end
+      end
     end
   end
 
   def index
     respond_to do |format|
       format.html do
-        if params[:search]
+        if params[:search] || if params[:tag]
+          @notes = Note.tagged_with(params[:tag])
           @ramble = Ramble.search(params[:search]).order("created_at DESC")
         end
       end
-      format.js do
+      end
+      format.json do
         if params[:search]
           @ramble = Ramble.search(params[:search]).order("created_at DESC")
           render :search, status: :created
         else
-          render :create, status: :not_found
+          redirect_to root_path, status: :not_found
         end
       end
     end

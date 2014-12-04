@@ -1,6 +1,9 @@
 class HomeController < ApplicationController
-	# def search
-	# 	parameters = { term: params[:term], limit: 16 }
-	# 	render json: Yelp.client.search(‘Place Searched’, parameters)
-	# end
+  # def index
+  #   @rambles = Ramble.all
+  #   respond_to do |format|
+  #     format.html # index.html.erb
+  #     format.json { render json: @rambles }
+  #   end
+  # end
 end

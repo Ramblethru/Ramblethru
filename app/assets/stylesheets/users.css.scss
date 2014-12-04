@@ -71,7 +71,7 @@ div.all {
 .userrambles {
   border-radius: 5px;
   background-image: url('http://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg');
-  padding-top: 400px;
+//  padding-top: 400px; from attempt to stabilize background picture
 }
 
 .noteshow {
@@ -169,7 +169,7 @@ hr.ramble-divider {
 	max-width: 400px;
 	background-color: rgba(239,240,235,.7);
 	border-radius: 10px;
-    margin-top: -400px;
+//    margin-top: -400px; from attempt to stabilize backgound picture
 }
 .profile {
 	background-color: $green;

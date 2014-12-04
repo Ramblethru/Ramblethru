@@ -221,7 +221,7 @@
 						</script>
 
 
-						<% end %>
+						  <% end %>
 						<% else %>
 						Sorry, there are no Yelp results for this destination.
 						<% end %>
@@ -323,8 +323,8 @@
                   <% x = Note.where(ramble_id:(Ramble.where(:destination => @ramble.destination))) %>
                   <% y = x.where(ramble_id:(Ramble.where.not(user_id: @ramble.user_id))) %>
                   <%= y.where(share: true).count %> NOTE(S)
-                  <div id="pagingControls2"></div>
 								</div>
+                <div id="pagingControls2"></div>
               </div>
             </div>
 

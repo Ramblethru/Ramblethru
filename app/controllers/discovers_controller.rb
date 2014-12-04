@@ -25,7 +25,7 @@ class DiscoversController < ApplicationController
     @yelp = Yelp.client.search("#{@discover.destination}", params)
 
     #Instagram
-    instagram = HTTParty.get("https://api.instagram.com/v1/media/search?lat=#{@discover.latitude}&lng=#{@discover.longitude}&count=10&client_id=ea93d7b97c444c9bbfcf23cbbcb63ee4")
+    instagram = HTTParty.get("https://api.instagram.com/v1/media/search?lat=#{@discover.latitude}&lng=#{@discover.longitude}&distance=5000&count=10&client_id=ea93d7b97c444c9bbfcf23cbbcb63ee4")
     instagram_data = JSON.parse(instagram.body)
     @instagram_images = instagram_data["data"]
     # [0]["images"]["thumbnail"]["url"]

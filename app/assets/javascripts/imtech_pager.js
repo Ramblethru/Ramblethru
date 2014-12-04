@@ -30,7 +30,7 @@ Imtech.Pager = function() {
     }
 
     var renderControls = function(container, currentPage, numPages) {
-        var pagingControls = "Page: <ul>";
+        var pagingControls = "<ul>";
         for (var i = 1; i <= numPages; i++) {
             if (i != currentPage) {
                 pagingControls += "<li><a href='#' onclick='pager.showPage(" + i + "); return false;'>" + i + "</a></li>";

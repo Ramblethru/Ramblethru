@@ -284,8 +284,8 @@
 								<div id="four-title">
 									<% x = Note.where(ramble_id:(Ramble.where(:destination => @ramble.destination))) %>
 									<%= x.where(ramble_id:(Ramble.where.not(user_id: @ramble.user_id))).count %> NOTE(S)
-                  <div id="pagingControls2"></div>
 								</div>
+                <div id="pagingControls2"></div>
                 </div>
 
 
@@ -353,7 +353,7 @@
               <script type="text/javascript">
                 var pager2 = new Imtech2.Pager();
                 $(document).ready(function() {
-                  pager2.paragraphsPerPage = 5; // set amount elements per page
+                  pager2.paragraphsPerPage = 3; // set amount elements per page
                   pager2.pagingContainer = $('#content2'); // set of main container
                   pager2.paragraphs = $('div.z2', pager2.pagingContainer); // set of required containers
                   pager2.showPage(1);

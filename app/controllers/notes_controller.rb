@@ -68,9 +68,26 @@ class NotesController < ApplicationController
     end
   end
 
+  def set_share
+    @note = Note.find(params[:id])
+    respond_to do |format|
+      format.html do
+        @note.toggle(:share)
+        @note.save
+        redirect_to root_path
+      end
+      format.js do
+        @note.toggle(:share)
+        @note.save
+        render 'notes/set_share', status: :success
+      end
+    end
+
+  end
+
  private
 
   def note_params
-    params.require(:note).permit(:body, :user_id, :ramble_id, :tag_list, :title, :address, :url)
+    params.require(:note).permit(:body, :user_id, :ramble_id, :tag_list, :title, :address, :url, :share)
   end
 end

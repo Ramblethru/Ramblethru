@@ -519,3 +519,23 @@ input.nav-input {
 .menu-button {
   cursor:pointer;
 }
+
+//pagination for at the very least the APIs (minus Reddit) and relevant notes sections of the ramble show page//
+
+#pagingControls ul{
+  display: inline;
+  padding-left: 0.5em;
+}
+#pagingControls li{
+  display: inline;
+  padding: 0 0.5em;
+}
+
+#yelpControls ul{
+  display: inline;
+  padding-left: 0.5em;
+}
+#yelpControls li{
+  display: inline;
+  padding: 0 0.5em;
+}

@@ -39,29 +39,34 @@
 				<div class="userrambles">
 					<% @user.rambles.each do |r| %>
 					<div class="each-ramble">
-						<span class="delete-ramble"><%= link_to 'X', r, method: :delete, :class => "x",   :data => {:confirm => 'Are you sure you want to delete this ramble?'} %></span>
+						<span class="delete-ramble"><%= link_to 'X', r, method: :delete, :class => "x",   :data => {:confirm => 'Are you sure?'} %></span>
 						<div id="ramble-name-profile"><%= r.name %></div>
 						<%= link_to r.destination, ramble_path(r), :class => "r-dest" %>
 						<span id="dates"><%= r.start_date %> to <%= r.end_date %></span>
 						<% if r.notes.size > 0 %>
 						<div class="shows" data-id="<%= r.id %>"><%= r.notes.count %> saved <%= "note".pluralize(r.notes.count) %></div><hr class="ramble-divider">
 						<div class="noteshow" id="div_ramble_<%= r.id %>" >
-							<% r.notes.each do |n| %>
+							<% r.notes.order('created_at desc').each do |n| %>
+							<span id="<%= dom_id(n) %>">
 								<span id="user-title">Title:</span><%=n.title %><br>
 								<span id="user-address">Address:</span><%=n.address %><br>
 								<span id="user-note">Note:</span><%= n.body %><br>
-								<span id="user-url">URL:</span><a class="note-url" href="<%= n.url %>" target="_blank"><%= n.url %></a><br>
-								<% if n.tag_list.blank? %>
-									<div id="no-tag">No tags yet!</div>
-									<hr id="note-each-divider">
-								<% else %>
-									<span id="user-tags">Tags:</span><%= n.tag_list %>
-									<hr id="note-each-divider">
+								<span id="user-url">URL:</span><a href="<%= n.url %>" target="_blank"><%= n.url %></a><br>
+								<span id="user-tags">Tags:</span><%= n.tag_list %><br>
+								<span id="user-created">Created on:</span><%= n.created_at.strftime("%m/%d/%Y") %><br>
+								<div class="shared">
+									<% if n.share == true %>
+									<%= button_to "Make private", set_share_path(n.id), method: :patch, remote: true, class:"sharedstatus" %><br>
+									<% else %>
+									<%= button_to "Make Public", set_share_path(n.id), method: :patch, remote: true, class:"sharedstatus" %>
+									<% end %>
+								</div>
+								<hr id="note-each-divider">
 								<% end %>
-							<% end %>	
-						</div>
-						<% else %>
+							</div>
+							<% else %>
 							<span id="no-notes">no notes available</span>
+						</span>
 						<% end %>
 					</div>
 					<% end %>
@@ -74,4 +79,3 @@
 				</div>
 				<div class="usernotes"></div>
 			</div>
-

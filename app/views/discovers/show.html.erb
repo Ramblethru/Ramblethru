@@ -30,12 +30,14 @@ L.mapbox.markerLayer({
 
   <div class="shows5" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
     <div id="four-title">
-      <%= Note.where(ramble_id:(Ramble.where(:destination => @discover.destination))).count %> Note(s)
+      <% x = Note.where(ramble_id:(Ramble.where(:destination => @discover.destination))) %>
+      <%= x.where(share: true).count %>
     </div>
     <% ramble = Ramble.where(:destination => @discover.destination) %>
     <% ramble.each do |r| %>
   </div>
   <% r.notes.each do |n| %>
+  <% if n.share == true %>
   <div class="note-show">
     <p>
       <span id="note-label">Title: </span>
@@ -62,6 +64,7 @@ L.mapbox.markerLayer({
       <span id="note-body"> <%= n.created_at.strftime("%m/%d/%Y") %>
    </p>
   </div>
+  <% end %>
   <% end %>
   <% end %>
   <script type="text/javascript">

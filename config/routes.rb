@@ -27,6 +27,8 @@ Rails.application.routes.draw do
 
   get 'tags/:tag', to: 'rambles#index', as: :tag
   get 'note_search', to: 'rambles#index'
+
+  patch 'notes/:id' => 'notes#set_share', as: 'set_share'
   # post '/users/:user_id/rambles/new' => 'rambles#new', as: 'new_user_ramble_post'
 
   # The priority is based upon order of creation: first created -> highest priority.

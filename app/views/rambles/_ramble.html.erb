@@ -1,10 +1,8 @@
 <div class="row" id="<%= ramble.persisted? ? dom_id(ramble) : "ramble-new" %>">
 	<div class="container">
-
-		<% if @ramble %>
-		<% @ramble.each do |ramble| %>
+		<% if ramble.user_id != current_user.id %>
 		<% ramble.notes.each do |note| %>
-		<% if note.share == true %>
+		<% if note.share %>
 		<div class="note-results">
 			<div class="notesshow">
 				Title: <%= note.title %>
@@ -28,7 +26,6 @@
 				<%= ramble.destination.upcase %>
 			</div>
 		</div>
-		<% end %>
 		<% end %>
 		<% end %>
 		<% end %>

@@ -28,9 +28,9 @@
 		 </p>
 				<% if current_user.rambles.include?(@ramble) %>
 				<i class="fa fa-pencil-square-o"></i>
-				<%= link_to 'Edit', edit_ramble_note_path(@ramble.id, note.id), :class => "edit-note" %>
+				<%= link_to_modal 'Edit', edit_ramble_note_path(@ramble.id, note.id), :class => "edit-note" %>
 				<i class="fa fa-trash"></i>
-				<%= link_to 'Delete', note, method: :delete, remote: true, :class => "delete-note" %>
+				<%= link_to 'Delete', note, method: :delete, remote: true, :class => "delete-note",:data => {:confirm => 'Are you sure you want to delete this note?'} %>
 				<% end %>
 				<% end %>
 			</div>

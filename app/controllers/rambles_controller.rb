@@ -5,16 +5,15 @@ class RamblesController < ApplicationController
   before_action :authenticate, only: [:new, :create]
 
     def show
-       @ramble = Ramble.find(params[:id])
-        yelp
-        instagram
-        reddit
-        foursquare
+      @ramble = Ramble.find(params[:id])
+      yelp
+      instagram
+      reddit
+      foursquare
     end
 
     def yelp
-        params = { sort: 2 }
-
+      params = { sort: 2 }
       @yelp = Yelp.client.search("#{@ramble.destination}", params)
     end
 

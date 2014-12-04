@@ -68,10 +68,12 @@ input#ramble_destination, #start_date, #end_date, #ramble_name {
 
 input#ramble-button {
   background-color: $orange;
-  color: $green;
+  color: $light-grey;
   height: 45px;
   line-height: .8;
-  font-family: 'menschmensch_thin';
+  font-family: 'menschmensch_regular';
+  font-weight: bold;
+  font-size: 18px;
 
 &:hover {
   background-color: $dark-grey;
@@ -127,7 +129,7 @@ h2.notes {
   font-weight: bold;
   font-size: 16px;
 }
-#note-body, #note-tag {
+#note-body, #note-tag, #note-title, #note-address, #note-url {
   color: $dark-grey;
   font-family: monospace, sans-serif;
   word-wrap: break-word;

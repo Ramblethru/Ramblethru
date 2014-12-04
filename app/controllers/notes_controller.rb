@@ -52,6 +52,7 @@ class NotesController < ApplicationController
   def edit
     @ramble = Ramble.find(params[:ramble_id])
     @note = @ramble.notes.find(params[:id])
+    render 'notes/_edit'
   end
 
   def destroy

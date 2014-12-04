@@ -46,7 +46,7 @@
 						<% if r.notes.size > 0 %>
 						<div class="shows" data-id="<%= r.id %>"><%= r.notes.count %> saved <%= "note".pluralize(r.notes.count) %></div><hr class="ramble-divider">
 						<div class="noteshow" id="div_ramble_<%= r.id %>" >
-							<% r.notes.each do |n| %>
+							<% r.notes.order('created_at desc').each do |n| %>
 							<span id="<%= dom_id(n) %>">
 								<span id="user-title">Title:</span><%=n.title %><br>
 								<span id="user-address">Address:</span><%=n.address %><br>
@@ -60,11 +60,6 @@
 									<% else %>
 									<%= button_to "Make Public", set_share_path(n.id), method: :patch, remote: true, class:"sharedstatus" %>
 									<% end %>
-									<script>
-									$( "button" ).click(function() {
-										$( ".sharedstatus" ).toggle();
-									});
-									</script>
 								</div>
 								<hr id="note-each-divider">
 								<% end %>

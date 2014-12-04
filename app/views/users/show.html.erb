@@ -2,80 +2,80 @@
 	<h1 class="profile"> Your Profile </h1>
 </div>
 <div class="container">
-	<div class="photo">
-		<% if @user.avatar.file? %>
-			<%= image_tag @user.avatar.url(:medium), :class => "user-img" %>
-		<% else %>
-			<img src="<%= asset_path ('missing.png') %>" />
-		<% end %>
-		<%= form_for @user do |form| %>
-			<%= form.file_field :avatar %>
-			<%= form.submit "Add", :class => "user-img-add" %>
-		<% end %>
-	</div>
-	<div class="userinfo">
-		<div class="name">
-			<span id="user-name-label">Name: </span>
+  <div class="photo">
+    <% if @user.avatar.file? %>
+      <%= image_tag @user.avatar.url(:medium), :class => "user-img" %>
+    <% else %>
+      <img src="<%= asset_path ('missing.png') %>" />
+    <% end %>
+    <%= form_for @user do |form| %>
+      <%= form.file_field :avatar %>
+      <%= form.submit "Add", :class => "user-img-add" %>
+    <% end %>
+  </div>
+  <div class="userinfo">
+    <div class="name">
+      <span id="user-name-label">Name: </span>
       <span id="user-name"><%= best_in_place @user, :name,:html_attrs => {  :style => 'width:400px; height:50px;font-family: "menschmensch_regular"' } %></span>
-		</div>
-		<div class="lives-in">
-			<span id="user-residence-label">Residence: </span>
-			<span id="user-residence">
-				<%= best_in_place @user, :lives_in, :place_holder => "add your location", :html_attrs => {  :style => 'width:400px; height:50px;font-family: "menschmensch_regular"' } %>
-			</span>
-		</div>
-		<div class="bio">
-			<span id="user-bio-label">BIO: </span>
-			<span id="user-bio"><%= best_in_place @user, :bio, :place_holder => "add bio", :html_attrs => {  :style => 'width:400px; height:50px;font-family: "menschmensch_regular"' } %></span>
-		</div>
-	</div>
+    </div>
+    <div class="lives-in">
+      <span id="user-residence-label">Residence: </span>
+      <span id="user-residence">
+        <%= best_in_place @user, :lives_in, :place_holder => "add your location", :html_attrs => {  :style => 'width:400px; height:50px;font-family: "menschmensch_regular"' } %>
+      </span>
+    </div>
+    <div class="bio">
+      <span id="user-bio-label">BIO: </span>
+      <span id="user-bio"><%= best_in_place @user, :bio, :place_holder => "add bio", :html_attrs => {  :style => 'width:400px; height:50px;font-family: "menschmensch_regular"' } %></span>
+    </div>
+  </div>
 </div>
-			<div class="usertrips">
-				<div id="my-rambles">
+      <div class="usertrips">
+        <div id="my-rambles">
           <% if @user.rambles.size > 0 %>Your Rambles
           <% else %> Click <%= link_to_modal "here", new_ramble_path, :class=>"create-ramble-here" %>  to create a ramble
           <% end %>
         </div>
-				<div class="userrambles">
-					<% @user.rambles.each do |r| %>
-					<div class="each-ramble">
-						<span class="delete-ramble"><%= link_to 'X', r, method: :delete, :class => "x",   :data => {:confirm => 'Are you sure?'} %></span>
-						<div id="ramble-name-profile"><%= r.name %></div>
-						<%= link_to r.destination, ramble_path(r), :class => "r-dest" %>
-						<span id="dates"><%= r.start_date %> to <%= r.end_date %></span>
-						<% if r.notes.size > 0 %>
-						<div class="shows" data-id="<%= r.id %>"><%= r.notes.count %> saved <%= "note".pluralize(r.notes.count) %></div><hr class="ramble-divider">
-						<div class="noteshow" id="div_ramble_<%= r.id %>" >
-							<% r.notes.order('created_at desc').each do |n| %>
-							<span id="<%= dom_id(n) %>">
-								<span id="user-title">Title:</span><%=n.title %><br>
-								<span id="user-address">Address:</span><%=n.address %><br>
-								<span id="user-note">Note:</span><%= n.body %><br>
-								<span id="user-url">URL:</span><a href="<%= n.url %>" target="_blank"><%= n.url %></a><br>
-								<span id="user-tags">Tags:</span><%= n.tag_list %><br>
-								<span id="user-created">Created on:</span><%= n.created_at.strftime("%m/%d/%Y") %><br>
-								<div class="shared">
-									<% if n.share == true %>
-									<%= button_to "Make private", set_share_path(n.id), method: :patch, remote: true, class:"sharedstatus" %><br>
-									<% else %>
-									<%= button_to "Make Public", set_share_path(n.id), method: :patch, remote: true, class:"sharedstatus" %>
-									<% end %>
-								</div>
-								<hr id="note-each-divider">
-								<% end %>
-							</div>
-							<% else %>
-							<span id="no-notes">no notes available</span>
-						</span>
-						<% end %>
-					</div>
-					<% end %>
-					<script type="text/javascript">
-					$(".shows").click(function () {
-						var dataId = event.target.getAttribute("data-id");
-						$("#div_ramble_" + dataId).toggle();
-					});
-					</script>
-				</div>
-				<div class="usernotes"></div>
-			</div>
+        <div class="userrambles">
+          <% @user.rambles.each do |r| %>
+          <div class="each-ramble">
+            <span class="delete-ramble"><%= link_to 'X', r, method: :delete, :class => "x",   :data => {:confirm => 'Are you sure?'} %></span>
+            <div id="ramble-name-profile"><%= r.name %></div>
+            <%= link_to r.destination, ramble_path(r), :class => "r-dest" %>
+            <span id="dates"><%= r.start_date %> to <%= r.end_date %></span>
+            <% if r.notes.size > 0 %>
+            <div class="shows" data-id="<%= r.id %>"><%= r.notes.count %> saved <%= "note".pluralize(r.notes.count) %></div><hr class="ramble-divider">
+            <div class="noteshow" id="div_ramble_<%= r.id %>" >
+              <% r.notes.order('created_at desc').each do |n| %>
+              <span id="<%= dom_id(n) %>">
+                <span id="user-title">Title:</span><%=n.title %><br>
+                <span id="user-address">Address:</span><%=n.address %><br>
+                <span id="user-note">Note:</span><%= n.body %><br>
+                <span id="user-url">URL:</span><a href="<%= n.url %>" target="_blank"><%= n.url %></a><br>
+                <span id="user-tags">Tags:</span><%= n.tag_list %><br>
+                <span id="user-created">Created on:</span><%= n.created_at.strftime("%m/%d/%Y") %><br>
+                <div class="shared">
+                  <% if n.share == true %>
+                  <%= button_to "Make private", set_share_path(n.id), method: :patch, remote: true, class:"sharedstatus" %><br>
+                  <% else %>
+                  <%= button_to "Make Public", set_share_path(n.id), method: :patch, remote: true, class:"sharedstatus" %>
+                  <% end %>
+                </div>
+                <hr id="note-each-divider">
+                <% end %>
+              </div>
+              <% else %>
+              <span id="no-notes">no notes available</span>
+            </span>
+            <% end %>
+          </div>
+          <% end %>
+          <script type="text/javascript">
+          $(".shows").click(function () {
+            var dataId = event.target.getAttribute("data-id");
+            $("#div_ramble_" + dataId).toggle();
+          });
+          </script>
+        </div>
+        <div class="usernotes"></div>
+      </div>

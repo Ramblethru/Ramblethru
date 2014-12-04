@@ -4,14 +4,18 @@
 
 $blue: #7f868e;
 
-.container {
-	@include outer-container;
+div.all {
 
-}
+  }
 
 .photo {
-  @include span-columns(5);
-
+	width: 400px;
+	height: auto;
+	border-radius: 10px;
+	display: inline-block;
+	max-height: 450px;
+	max-width: 475px;
+	margin-left: 200px;
 }
 
 .image-form {
@@ -23,8 +27,9 @@ $blue: #7f868e;
 }
 
 .userinfo {
-  @include span-columns(7);
-  text-align: left;
+	float:right;
+	margin-right:500px;
+	// border:1px solid black;
 }
 
 .name {
@@ -34,17 +39,16 @@ $blue: #7f868e;
 }
 
 .bio {
-	width: 70%;
+	max-width: 300px;
 }
 
 .userrambles p{
 }
 
 .usertrips {
-	display: inline;
-	margin-top: 40px;
-	@include span-columns(12);
-
+  display: inline;
+  margin-top: 40px;
+  @include span-columns(12);
 }
 
 .usertrips p {
@@ -62,10 +66,13 @@ $blue: #7f868e;
 	margin-top: 40px;
 }
 
+.container {
+}
 .userrambles {
-	border-radius: 5px;
-	background-image: url('http://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg');
-	}
+  border-radius: 5px;
+  background-image: url('http://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg');
+  padding-top: 400px;
+}
 
 .noteshow {
   display: none;
@@ -159,10 +166,10 @@ hr.ramble-divider {
 .each-ramble {
 	margin-right: auto;
 	margin-left: auto;
-	margin-bottom: 5px;
 	max-width: 400px;
 	background-color: rgba(239,240,235,.7);
 	border-radius: 10px;
+    margin-top: -400px;
 }
 .profile {
 	background-color: $green;
@@ -229,9 +236,6 @@ input.register-button {
 }
 #user-note, #user-title, #user-address, #user-url, #user-tags, #user-created {
 	color: $green;
-}
-a.note-url {
-	word-wrap: break-word;
 }
 hr#note-each-divider {
 	border: 2px solid $orange;

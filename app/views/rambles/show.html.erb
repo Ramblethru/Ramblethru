@@ -1,5 +1,5 @@
 <div class="ramble-title">
-    <%= best_in_place @ramble, :name, :type => "input",:html_attrs => {  :style => 'width:500px; height:110px; margin:0 auto;font-family: "menschmensch_regular"' },:nil => "Click to fill" %>
+    <%= best_in_place @ramble, :name, :html_attrs => {  :style => 'width:500px; height:110px; margin:0 auto;font-family: "menschmensch_regular"' }, :nil => "i am here",:place_holder => "put stuff here"%>
 	<% if @ramble.destination %>
 
 		<div id="ramble-dest">
@@ -82,7 +82,7 @@
 							<i class="fa fa-pencil-square-o"></i>
 							<%= link_to_modal 'Edit', edit_ramble_note_path(@ramble.id, note.id), :class => "edit-note" %>
 							<i class="fa fa-trash"></i>
-							<%= link_to 'Delete', note, method: :delete, remote: true, :class => "delete-note" %>
+							<%= link_to 'Delete', note, method: :delete, remote: true, :class => "delete-note",:data => {:confirm => 'Delete this note?'} %>
 							<% end %>
 							<% end %>
 				</div>

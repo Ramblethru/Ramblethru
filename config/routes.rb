@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   end
   resources :locations
   resources :discovers, :only => [:show, :create, :new]
+  get 'state_select', to: 'discovers#create'
+  
   resources :notes, :only => [:index, :destroy]
   resources :logins, :only => [:new, :create]
   get 'logout' => 'logins#destroy'

@@ -1,6 +1,6 @@
 <div class="row" id="<%= ramble.persisted? ? dom_id(ramble) : "ramble-new" %>">
 	<div class="container">
-		<% if ramble.user_id != current_user.id %>
+		<% if ramble.user_id != current_user.id || current_user == nil %>
 		<% ramble.notes.each do |note| %>
 		<% if note.share %>
 		<div class="note-results">

@@ -1,9 +1,12 @@
 <div class="ramble-title">
+  <span class="delete-ramble"><%= link_to 'Delete this ramble', @ramble, method: :delete, :class => "x",   :data => {:confirm => 'Are you sure?'} %>
+  </span>
     <%= best_in_place @ramble, :name, :type => "input",:html_attrs => {  :style => 'width:500px; height:110px; margin:0 auto;font-family: "menschmensch_regular"' },:nil => "Click to fill" %>
 	<% if @ramble.destination %>
 
 		<div id="ramble-dest">
 			<%= @ramble.destination.split.map(&:capitalize).join(' ') %>
+
 		</div>
 	<% else %>
 		<h1>NAME OF YOUR RAMBLE HERE</h1>

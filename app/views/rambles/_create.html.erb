@@ -9,8 +9,10 @@
 <script type="text/javascript">
   $( "#start_date" ).datepicker({
         showButtonPanel: true,
-        changeYear: true,
+        showOtherMonths: true,
+        selectOtherMonths: true,
         defaultDate: "+1w",
+        showAnim:"slideDown",
         numberOfMonths: 2,
         dateFormat:'yy-mm-dd',
         onClose: function( selectedDate ) {
@@ -20,9 +22,9 @@
   $( "#end_date" ).datepicker({
         showButtonPanel: true,
         defaultDate: "+1w",
-        changeYear: true,
         numberOfMonths: 2,
         dateFormat:'yy-mm-dd',
+        showAnim:"slideDown",
         onClose: function( selectedDate ) {
           $( "#start_date" ).datepicker( "option", "maxDate", selectedDate );
         }

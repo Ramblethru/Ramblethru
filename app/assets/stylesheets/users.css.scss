@@ -4,18 +4,14 @@
 
 $blue: #7f868e;
 
-div.all {
+.container {
+	@include outer-container;
 
-  }
+}
 
 .photo {
-	width: 400px;
-	height: auto;
-	border-radius: 10px;
-	display: inline-block;
-	max-height: 450px;
-	max-width: 475px;
-	margin-left: 200px;
+  @include span-columns(5);
+
 }
 
 .image-form {
@@ -27,9 +23,8 @@ div.all {
 }
 
 .userinfo {
-	float:right;
-	margin-right:500px;
-	// border:1px solid black;
+  @include span-columns(7);
+  text-align: left;
 }
 
 .name {
@@ -39,7 +34,7 @@ div.all {
 }
 
 .bio {
-	max-width: 300px;
+	width: 70%;
 }
 
 .userrambles p{
@@ -67,8 +62,6 @@ div.all {
 	margin-top: 40px;
 }
 
-.container {
-}
 .userrambles {
 	border-radius: 5px;
 	background-image: url('http://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg');
@@ -235,6 +228,9 @@ input.register-button {
 }
 #user-note, #user-title, #user-address, #user-url, #user-tags {
 	color: $green;
+}
+a.note-url {
+	word-wrap: break-word;
 }
 hr#note-each-divider {
 	border: 2px solid $orange;

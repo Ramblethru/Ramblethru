@@ -1,36 +1,35 @@
- <div class="all">
-	<div class="usershow">
-		<div class="profile">
-			<h1 class="profile"> Your Profile </h1>
-		</div>
-		<div class="photo">
-			<% if @user.avatar.file? %>
+<div class="profile">
+	<h1 class="profile"> Your Profile </h1>
+</div>
+<div class="container">
+	<div class="photo">
+		<% if @user.avatar.file? %>
 			<%= image_tag @user.avatar.url(:medium), :class => "user-img" %>
-			<% else %>
+		<% else %>
 			<img src="<%= asset_path ('missing.png') %>" />
-			<% end %>
-			<%= form_for @user do |form| %>
+		<% end %>
+		<%= form_for @user do |form| %>
 			<%= form.file_field :avatar %>
 			<%= form.submit "Add", :class => "user-img-add" %>
-			<% end %>
+		<% end %>
+	</div>
+	<div class="userinfo">
+		<div class="name">
+			<span id="user-name-label">Name: </span>
+      <span id="user-name"><%= best_in_place @user, :name,:html_attrs => {  :style => 'width:400px; height:50px;font-family: "menschmensch_regular"' } %></span>
 		</div>
-		<div class="userinfo">
-			<div class="name">
-				<span id="user-name-label">Name: </span>
-        <span id="user-name"><%= best_in_place @user, :name %></span>
-			</div>
-			<div class="lives-in">
-				<span id="user-residence-label">Residence: </span>
-				<span id="user-residence"><%= best_in_place @user, :lives_in %></span>
-			</div>
-			<br>
-			<div class="bio">
-				<span id="user-bio-label">BIO: </span>
-				<span id="user-bio"><%= best_in_place @user, :bio %></span>
-        <br>
-			</div>
+		<div class="lives-in">
+			<span id="user-residence-label">Residence: </span>
+			<span id="user-residence">
+				<%= best_in_place @user, :lives_in, :place_holder => "add your location", :html_attrs => {  :style => 'width:400px; height:50px;font-family: "menschmensch_regular"' } %>
+			</span>
 		</div>
-		<div class="container">
+		<div class="bio">
+			<span id="user-bio-label">BIO: </span>
+			<span id="user-bio"><%= best_in_place @user, :bio,:maxlength => 150, :place_holder => "add bio", :html_attrs => {  :style => 'width:400px; height:50px;font-family: "menschmensch_regular"' } %></span>
+		</div>
+	</div>
+</div>
 			<div class="usertrips">
 				<div id="my-rambles">
           <% if @user.rambles.size > 0 %>Your Rambles
@@ -40,7 +39,7 @@
 				<div class="userrambles">
 					<% @user.rambles.each do |r| %>
 					<div class="each-ramble">
-						<span class="delete-ramble"><%= link_to 'X', r, method: :delete, :class => "x",   :data => {:confirm => 'Are you sure?'} %></span>
+						<span class="delete-ramble"><%= link_to 'X', r, method: :delete, :class => "x",   :data => {:confirm => 'Are you sure you want to delete this ramble?'} %></span>
 						<div id="ramble-name-profile"><%= r.name %></div>
 						<%= link_to r.destination, ramble_path(r), :class => "r-dest" %>
 						<span id="dates"><%= r.start_date %> to <%= r.end_date %></span>
@@ -51,8 +50,14 @@
 								<span id="user-title">Title:</span><%=n.title %><br>
 								<span id="user-address">Address:</span><%=n.address %><br>
 								<span id="user-note">Note:</span><%= n.body %><br>
-								<span id="user-url">URL:</span><a href="<%= n.url %>" target="_blank"><%= n.url %></a><br>
-								<span id="user-tags">Tags:</span><%= n.tag_list %><br><hr id="note-each-divider">
+								<span id="user-url">URL:</span><a class="note-url" href="<%= n.url %>" target="_blank"><%= n.url %></a><br>
+								<% if n.tag_list.blank? %>
+									<div id="no-tag">No tags yet!</div>
+									<hr id="note-each-divider">
+								<% else %>
+									<span id="user-tags">Tags:</span><%= n.tag_list %>
+									<hr id="note-each-divider">
+								<% end %>
 							<% end %>	
 						</div>
 						<% else %>
@@ -69,7 +74,4 @@
 				</div>
 				<div class="usernotes"></div>
 			</div>
-		</div>
-	</div>
-</div>
 

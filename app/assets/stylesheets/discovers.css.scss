@@ -72,8 +72,31 @@ article {
     left: 0px;
     background-color: $light-grey;
 }
+div.ui-datepicker-header {
+  margin-top: 10px;
+}
 
-
+a.ui-datepicker-prev, .ui-datepicker-next{
+  color: $orange;
+  font-size: 14px !important;
+}
+a.ui-state-default {
+  color: $green !important;
+}
+button.ui-datepicker-current, .ui-datepicker-close {
+  color: $light-grey;
+  font-family: 'menschmensch_regular';
+  font-size: 18px;
+  font-weight: bold;
+}
+span.ui-icon {
+  font-family: 'menschmensch_regular';
+  font-size: 18px;
+  font-weight: bold;
+}
+span.ui-datepicker-month, .ui-datepicker-year {
+  font-weight: bold;
+}
 .discover-bottom {
   width: 500px;
   margin: 50px auto 30px auto;

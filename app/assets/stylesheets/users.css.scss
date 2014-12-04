@@ -75,9 +75,10 @@ div.all {
 	}
 
 .noteshow {
-	display: none;
-	color: $dark-grey;
-	font-family: monospace, sans-serif;
+  display: none;
+  color: $dark-grey;
+  font-family: monospace, sans-serif;
+  word-wrap: break-word;
 }
 h1.profile {
 	font-family: 'menschmensch_regular';

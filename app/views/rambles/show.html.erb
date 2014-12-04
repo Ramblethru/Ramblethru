@@ -95,9 +95,17 @@
 						<div class="shows1" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
 							<i class="fa fa-foursquare ramble"></i><br>
 							<div id="four-title">Foursquare</div>
+              <div id="pagingControls"></div>
 						</div>
+
+
+            <div id="content">
             <% if @foursquare_venue != nil %>
 						  <% @foursquare_venue.each do |f| %>
+
+
+              <div class="z">
+
 						    <div class="four-results">
 							   <li>
 								  <span class="fshow"><div id="f-venue-title">
@@ -122,10 +130,14 @@
 								<article><%= link_to g["text"], g["canonicalUrl"], :class => "four-tip"%></article><hr class="tip">
 							</span>
 						</div>
+         </div>
+
 						<% end %>
 						<% end %>
             <% end %>
             <% end %>
+         </div>
+
 						<script type="text/javascript">
 						$(".foursquare-save").click(function () {
 							var dataName = event.target.getAttribute("data-name");
@@ -143,17 +155,47 @@
 						<script type="text/javascript">
 						$(".shows1").click(function () {
 							$(".fshow").toggle();
+                $("#pagingControls").show();
 						});
 						</script>
+
+
+
+            <!--<script type="text/javascript">-->
+//              $(".shows1").click(function () {
+//                $(".fshow").toggle();
+//              });
+            <!--</script>-->
 					</div>
+
+          <!--script for foursquare pagination-->
+          <script type="text/javascript">
+            var pager = new Imtech.Pager();
+            $(document).ready(function() {
+              pager.paragraphsPerPage = 5; // set amount elements per page
+              pager.pagingContainer = $('#content'); // set of main container
+              pager.paragraphs = $('div.z', pager.pagingContainer); // set of required containers
+              pager.showPage(1);
+            });
+          </script>
 
 					<div class="ramble-yelp">
 						<div class="shows2" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
 							<i class="fa fa-yelp ramble"></i><br>
 							<div id="yelp-title">Yelp</div>
+              <div id="yelpControls"></div>
 						</div>
+
+
+          <div id="yelpcontent">
+
+
 						<% if @yelp.businesses != nil %>
 						<% @yelp.businesses.each do |y| %>
+
+            <div class="yelpz">
+
+
 						<div class="yelp-results">
 							<li>
 								<span class="yshow">
@@ -171,6 +213,10 @@
 								<hr class="y-tip">
 							</span>
 						</div>
+
+
+
+
 						<script type="text/javascript">
 						$(".yelp-save").click(function () {
 							var dataYname = event.target.getAttribute("data-yname");
@@ -191,6 +237,21 @@
 						});
 						</script>
 					</div>
+          </div>
+          </div>
+
+
+          <!--script for yelp pagination-->
+          <script type="text/javascript">
+            var pager = new yelpImtech.Pager();
+            $(document).ready(function() {
+              pager.paragraphsPerPage = 5; // set amount elements per page
+              pager.pagingContainer = $('#yelpcontent'); // set of main container
+              pager.paragraphs = $('div.yelpz', pager.pagingContainer); // set of required containers
+              pager.showPage(1);
+            });
+          </script>
+
 
 					<div class="ramble-instagram">
 						<div class="shows3" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
@@ -310,7 +371,8 @@
 									$(".note-show").toggle();
 								});
 							</script>
-        </div>
+
+                </div>
       </div>
     </div>
   </div>

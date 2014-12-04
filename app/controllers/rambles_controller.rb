@@ -109,7 +109,7 @@ class RamblesController < ApplicationController
     respond_to do |format|
       format.html do
         @ramble.destroy
-          redirect_to :back
+          redirect_to root_path
       end
     format.js do
       @ramble.destroy

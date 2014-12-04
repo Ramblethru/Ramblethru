@@ -68,9 +68,10 @@ $blue: #7f868e;
 	}
 
 .noteshow {
-	display: none;
-	color: $dark-grey;
-	font-family: monospace, sans-serif;
+  display: none;
+  color: $dark-grey;
+  font-family: monospace, sans-serif;
+  word-wrap: break-word;
 }
 h1.profile {
 	font-family: 'menschmensch_regular';
@@ -226,7 +227,7 @@ input.register-button {
 	font-size: 15px;
 	font-weight: bold;
 }
-#user-note, #user-title, #user-address, #user-url, #user-tags {
+#user-note, #user-title, #user-address, #user-url, #user-tags, #user-created {
 	color: $green;
 }
 a.note-url {

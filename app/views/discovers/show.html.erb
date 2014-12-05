@@ -122,13 +122,12 @@ L.mapbox.markerLayer({
       <% else %>
       Address: <%= f["venue"]["location"]["address"] %><br>
       <% end %>
-      <% if f["tips"] =! nil %>
+      <% f["tips"] %>
       <% f["tips"].each do |g| %>
       <article><%= link_to g["text"], g["canonicalUrl"], :class => "f-tips", :target => '_blank' %></article>
       <% end %>
     </div>
     <% end %>
-      <% end %>
   </div>
   <br>
   <% if @yelp.businesses != nil %>

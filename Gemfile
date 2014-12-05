@@ -7,14 +7,12 @@ gem 'pg'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
-# gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
-# gem 'spring',        group: :development
 gem 'rails_12factor',   group: :production
 gem 'jquery-ui-rails'
 gem 'redcarpet'
-gem 'table_print' #for orderly viewing of db contents
+gem 'table_print'
 
 # Make it look good
 gem 'sass-rails', '~> 4.0.3'
@@ -35,18 +33,15 @@ gem 'best_in_place'
 gem 'will_paginate', '~> 3.0.6'
 gem 'friendly_id'
 
-
 # authenticate
 gem 'omniauth-google-oauth2'
 gem 'omniauth-foursquare'
 gem 'omniauth-twitter'
 gem 'bcrypt', '~> 3.1.2'
 
-
 # talk with APIs
 gem 'httparty'
 gem 'twitter'
-gem 'songkickr'
 gem 'foursquare2'
 gem 'yelp', require: 'yelp'
 gem 'instagram'
@@ -67,7 +62,6 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'timecop'
   gem 'poltergeist'
-  # gem 'did_you_mean', '~> 0.7.0'
   gem 'phantomjs'
   gem 'rspec-rails', '~>3.0'
 end
@@ -75,7 +69,7 @@ end
 group :test do
   gem 'shoulda'
   gem 'capybara'
+  gem 'mocha'
   gem 'simplecov', :require => false
 end
 
-gem "mocha", group: :test

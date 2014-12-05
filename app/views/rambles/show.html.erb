@@ -265,7 +265,7 @@
                     <% end %>
 
 
-                  <a class="instagram-save" data-iurl="<%= i["images"]["thumbnail"]["url"] %>"></a>
+                  <a class="instagram-save" data-iurl="<%= i["images"]["thumbnail"]["url"] %>">save me!</a>
                     <%= button_to i["images"]["thumbnail"]["url"], :class => "instagram-save" do %>
                     <i class="fa fa-star-o"></i>
                     <span id="save">Save</span>
@@ -370,31 +370,33 @@
 										<span id="note-body"> <%= n.created_at.strftime("%m/%d/%Y") %>
 										</p>
 								</div>
-               <script type="text/javascript">
-                 $(".savenote").click(function () {
-                   var dataNtitle = event.target.getAttribute("data-ntitle");
-                   var dataNaddress = event.target.getAttribute("data-naddress");
-                   var dataNbody = event.target.getAttribute("data-nbody");
-                   var dataNurl = event.target.getAttribute("data-nurl");
-                   var dataNtag = event.target.getAttribute("data-ntag");
-                   $("#note_title").val(dataNtitle);
-                   $("#note_address").val(dataNaddress);
-                   $("#note_body").val(dataNbody);
-                   $("#note_url").val(dataNurl);
-                   $("#note_tag_list").val(dataNtag);
-                 });
-               </script>
                </div>
 								<% end %>
 								<% end %>
 								<% end %>
                </div>
 
+            <script type="text/javascript">
+              $(".savenote").click(function () {
+                var dataNtitle = event.target.getAttribute("data-ntitle");
+                var dataNaddress = event.target.getAttribute("data-naddress");
+                var dataNbody = event.target.getAttribute("data-nbody");
+                var dataNurl = event.target.getAttribute("data-nurl");
+                var dataNtag = event.target.getAttribute("data-ntag");
+                $("#note_title").val(dataNtitle);
+                $("#note_address").val(dataNaddress);
+                $("#note_body").val(dataNbody);
+                $("#note_url").val(dataNurl);
+                $("#note_tag_list").val(dataNtag);
+              });
+            </script>
+
 							<script type="text/javascript">
 								$(".shows5").click(function () {
 									$(".note-show").toggle();
 								});
 							</script>
+
 
 
               <!--script for yelp pagination-->

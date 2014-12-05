@@ -129,7 +129,7 @@ h2.notes {
   font-weight: bold;
   font-size: 16px;
 }
-#note-body, #note-tag, #note-title, #note-address, #note-url {
+#note-body, #note-tag, #note-title, #note-address, #note-url, #note-created {
   color: $dark-grey;
   font-family: monospace, sans-serif;
   word-wrap: break-word;
@@ -448,4 +448,16 @@ li.note-search {
   font-size: 25px;
   color: $light-grey;
 }
-
+#delete-ramble {
+  display: inline-block;
+  width: 15px;
+  float: none;
+}
+.fa-trash.ramble{
+  margin-left: 0px !important;
+  color: $light-grey;
+  font-weight: normal;
+  font-size: 18px;
+  width: 50px;
+  height: 50px;
+}

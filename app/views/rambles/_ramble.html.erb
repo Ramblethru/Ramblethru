@@ -1,5 +1,6 @@
 <div class="row" id="<%= ramble.persisted? ? dom_id(ramble) : "ramble-new" %>">
 	<div class="container">
+
 		<% if logged_in? %>
 		<% if ramble.user_id != current_user.id %>
 		<% ramble.notes.each do |note| %>

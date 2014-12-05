@@ -7,6 +7,10 @@
 	<%= button_to 'Save this Ramble', { :controller => 'rambles', :action => 'create'}, id: 'ramble-button' %>
 <% end %>
 <script type="text/javascript">
+  $(document).ready(function(){
+  $('#ramble_name').val("title");
+  });
+
   $( "#start_date" ).datepicker({
         showButtonPanel: true,
         showOtherMonths: true,

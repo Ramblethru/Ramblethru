@@ -7,9 +7,4 @@ class Note < ActiveRecord::Base
 
   validates :body, presence: true
 
- #  def self.search(query)
- #    #where("n.tag_list", query)
- #   where("tag_list like ?", "%#{query.downcase}%")
- # end
- #  end
 end

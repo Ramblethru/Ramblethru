@@ -118,12 +118,6 @@ class RamblesController < ApplicationController
     end
   end
 
-
-
-  # def find_ramble
-  #   Ramble.find(:all, :conditions => conditions)
-  # end
-
   private
 
   def ramble_params

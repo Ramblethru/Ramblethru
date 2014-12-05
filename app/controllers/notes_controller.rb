@@ -96,10 +96,6 @@ class NotesController < ApplicationController
 
   end
 
-  def find_note
-    Note.find(:all, :conditions => conditions)
-  end
-
  private
 
   def note_params

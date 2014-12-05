@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :users
-  resources :rambles do
+  resources :rambles, path: "ramble" do
     resources :notes
       get 'notes/:id/delete' => 'notes#destroy'
   end
@@ -27,7 +27,7 @@ Rails.application.routes.draw do
 
   get '/about' => 'pages#about'
 
-  # get 'tags/:tag', to: 'rambles#index', as: :tag
+  get 'tags/:tag', to: 'rambles#index', as: :tag
   get 'note_search', to: 'rambles#index'
 
   patch 'notes/:id' => 'notes#set_share', as: 'set_share'

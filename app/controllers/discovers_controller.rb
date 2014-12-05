@@ -41,7 +41,7 @@ class DiscoversController < ApplicationController
 
   def instagram
     #Instagram
-    instagram = HTTParty.get("https://api.instagram.com/v1/media/search?lat=#{@discover.latitude}&lng=#{@discover.longitude}&distance=5000&count=10&client_id=ea93d7b97c444c9bbfcf23cbbcb63ee4")
+    instagram = HTTParty.get("https://api.instagram.com/v1/media/search?lat=#{@discover.latitude}&lng=#{@discover.longitude}&distance=5000&count=10&client_id=#{ENV["INSTAGRAM_KEY"]}")
     instagram_data = JSON.parse(instagram.body)
     @instagram_images = instagram_data["data"]
     # [0]["images"]["thumbnail"]["url"]
@@ -57,7 +57,7 @@ class DiscoversController < ApplicationController
 
   def foursquare
     #Foursquare
-    foursquare = HTTParty.get("http://api.foursquare.com/v2/venues/explore?ll=#{@discover.latitude},#{@discover.longitude}&limit=5&sortByDistance=true&oauth_token=3SFP4NBFWJ2LIECDWGR5EU4FA5QXMP21LK2DNWT2GEUWCEIN&v=20141123")
+    foursquare = HTTParty.get("http://api.foursquare.com/v2/venues/explore?ll=#{@discover.latitude},#{@discover.longitude}&limit=5&sortByDistance=true&oauth_token=#{ENV["FOURSQUARE_OAUTH"]}&v=20141123")
     foursquare_data = JSON.parse(foursquare.body)
     @foursquare_venue = foursquare_data["response"]["groups"][0]["items"]
     @foursquare_tip = foursquare_data["response"]["groups"][0]["items"]

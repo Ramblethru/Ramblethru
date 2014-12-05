@@ -530,6 +530,13 @@ input.nav-input {
 #pagingControls li{
   display: inline;
   padding: 0 0.5em;
+  color: #7f868e;
+  font-family: 'menschmensch_regular';
+  font-size: 18px;
+}
+
+#pagingControls a {
+  color: $orange;
 }
 
 #pagingControls2 ul{
@@ -539,6 +546,12 @@ input.nav-input {
 #pagingControls2 li{
   display: inline;
   padding: 0 0.5em;
+  color: #7f868e;
+  font-family: 'menschmensch_regular';
+  font-size: 18px;
+}
+#pagingControls2 a {
+  color: $orange;
 }
 
 #pagingControls3 ul{
@@ -548,6 +561,12 @@ input.nav-input {
 #pagingControls3 li{
   display: inline;
   padding: 0 0.5em;
+  color: #7f868e;
+  font-family: 'menschmensch_regular';
+  font-size: 18px;
+}
+#pagingControls3 a {
+  color: $orange;
 }
 
 #pagingControls4 ul{
@@ -557,8 +576,14 @@ input.nav-input {
 #pagingControls4 li{
   display: inline;
   padding: 0 0.5em;
+  color: #7f868e;
+  font-family: 'menschmensch_regular';
+  font-size: 18px;
 }
 .fa-star {
   color: $orange;
   font-size: 18px;
+
+#pagingControls4 a {
+  color: $orange;
 }

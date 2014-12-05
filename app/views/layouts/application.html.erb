@@ -81,6 +81,8 @@
   </filter>
 </svg>
 
+
+
   <div class="top-bar">
     <% if logged_in? %>
         <% if current_user.avatar.file? %>
@@ -106,23 +108,28 @@
     <% end %>
 
   </div>
-          <ul class="menu">
-            <li title="menu"><a class="menu-button home">menu</a></li>
-          </ul>
-          <ul class="menu-bar">
-            <li><%= link_to "Home", root_path %></li>
-            <!--<li><#= link_to_modal "Search", discovers_path %></li>-->
-            <% if logged_in? %>
-            <li><%= link_to "Profile", user_path(current_user) %></li>
-              <li><%= link_to_modal "New Ramble", new_ramble_path %></li>
-            <% else %>
-            <li><%= link_to_modal "Sign In", new_login_path %>
-              <% end %>
-            <li><%= link_to "Search", note_search_path %></li>
-              <li><%= link_to "About", about_path %></a></li>
-            </ul>
+    <button type="button" class="js-menu-trigger sliding-menu-button">
+    <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/menu-white.png" alt="Menu Icon">
+  </button>
+
+  <nav class="js-menu sliding-menu-content">
+    <ul class="sliding-menu">
+      <% if current_page?('/') == false %>
+        <li><%= link_to "Home", root_path %></li>
+      <% end %>
+      <% if logged_in? %>
+        <li><%= link_to "Profile", user_path(current_user)%></li>
+        <li><%= link_to_modal "New Ramble", new_ramble_path %></li>
+      <% else %>
+        <li><%= link_to_modal "Sign In", new_login_path %></li>
+      <% end %>
+      <li><%= link_to "Search", note_search_path %></li>
+      <li><%= link_to "About", about_path %></li>
+    </ul>
+  </nav>
+  <div class="js-menu-screen menu-screen"></div>
             
-               <%= display_alert(:notice) %>
+            <%= display_alert(:notice) %>
             <%= display_alert(:alert) %>
             <%= yield %>
 

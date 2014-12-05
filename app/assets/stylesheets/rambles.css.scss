@@ -53,8 +53,8 @@ input#ramble_destination, #start_date, #end_date, #ramble_name {
   width: 300px;
   margin: 0 auto;
   margin-bottom: 10px;
-  font-family: monospace, sans-serif;
-  color: $dark-grey;
+  font-family: monospace, sans-serif !important;
+  color: $dark-grey !important;
   border: 2px solid $green;
   border-radius: 10px;
   background-color: transparent;

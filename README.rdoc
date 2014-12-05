@@ -16,9 +16,9 @@ Ruby on Rails, Javascript, jQuery, HTML5, CSS3, SASS, Bourbon/Neat/Bitters, Four
 
 
 === Team:
-Greg Burton - Scrum master, frontend, backend
-Danielle Heckman - Project owner, design, frontend
-Noah Holmes - Github master, frontend, backend
+* Greg Burton - Scrum master, frontend, backend
+* Danielle Heckman - Project owner, design, frontend
+* Noah Holmes - Github master, frontend, backend
 
 
 === Additional Specifics:

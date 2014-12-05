@@ -1,5 +1,5 @@
 <div class="ramble-title">
-    <%= best_in_place @ramble, :name, :html_attrs => {  :style => 'width:500px; height:110px; margin:0 auto;font-family: "menschmensch_regular"' }, :nil => "i am here",:place_holder => "put stuff here"%>   
+    <%= best_in_place @ramble, :name, :html_attrs => {  :style => 'width:500px; height:110px; margin:0 auto;font-family: "menschmensch_regular"' }, :nil => "i am here",:place_holder => "put stuff here"%>
     <span id="delete-ramble">
     	<%= button_to @ramble, method: :delete, class: "fa fa-trash ramble", :data => {:confirm => 'Delete this ramble?'}  do %>
       <% end %>
@@ -13,7 +13,7 @@
 	<% end %>
 	<% if @ramble.start_date && @ramble.end_date %>
 		<div class="start-end">
-			From <%= best_in_place @ramble, :start_date,:html_attrs => {  :style => 'width:200px; height:30px; margin:0 auto;margin-top:-25px;font-family: "menschmensch_regular;' } %> to <%= best_in_place @ramble,:end_date,:html_attrs => {  :style => 'width:500px; height:30px; margin:0 auto;margin-top:-25px;text-align:right;font-family: "menschmensch_regular;' } %>
+			From <%= best_in_place @ramble, :start_date,:html_attrs => {  :style => 'width:500px; height:30px; margin:0 auto;margin-top:-25px;text-align:left;font-family: "menschmensch_regular"' } %> to <%= best_in_place @ramble,:end_date,:html_attrs => {  :style => 'width:500px; height:30px; margin:0 auto;margin-top:-25px;text-align:right;font-family: "menschmensch_regular"' } %>
 		</div>
 	<% end %>
 </div>

@@ -1,2 +1,9 @@
 $(".shared").effect("highlight", 250, function() {
 });
+
+
+<% if @note.share == true %>
+$(".sharedstatus").val("make private");
+<% else %>
+$(".sharedstatus").val("make public");
+<% end %>

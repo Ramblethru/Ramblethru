@@ -7,4 +7,12 @@ class Note < ActiveRecord::Base
   belongs_to :ramble
 
   validates :body, presence: true
+
+  def self.search(query)
+    @note = Note.all
+    @note.each do |n|
+    #where("n.tag_list", query)
+   where("n.tag_list like ?", "%#{query.downcase}%")
+ end
+  end
 end

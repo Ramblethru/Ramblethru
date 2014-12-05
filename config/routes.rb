@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   post 'rambles/:id/add_instagram', to: 'rambles#add_instagram', as: :add_instagram
   get '/about' => 'pages#about'
 
-  get 'tags/:tag', to: 'rambles#index', as: :tag
+  # get 'tags/:tag', to: 'rambles#index', as: :tag
   get 'note_search', to: 'rambles#index'
 
   patch 'notes/:id' => 'notes#set_share', as: 'set_share'

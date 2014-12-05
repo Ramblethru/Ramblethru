@@ -1,4 +1,4 @@
-<div class="row" id="<%= note.persisted? ? dom_id(note) : "note-new" %>">
+<div class="row">
 
 	<div class="notebody">
 		<% if note.body %>
@@ -26,7 +26,5 @@
 			<span id="note-label">Created on: </span>
 			<span id="note-created"> <%= note.created_at.strftime("%m/%d/%Y") %>
 			</p>
-		
-			<% end %>
 		</div>
 	</div>

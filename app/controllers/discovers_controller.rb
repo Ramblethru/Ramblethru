@@ -21,7 +21,7 @@ class DiscoversController < ApplicationController
     #Yelp
     params = { limit: 5,
                sort: 2}
-               
+
     @yelp = Yelp.client.search("#{@discover.destination}", params)
 
     #Instagram

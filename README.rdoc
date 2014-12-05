@@ -1,6 +1,6 @@
 == Ramblethru README
 
-= Ramblethru: Crowdsourced Travel Planning
+=== Ramblethru: Crowdsourced Travel Planning
 
 Ramblethru was born as a final project for three newly-minted developers at The Iron Yard Academy in Durham, NC in the Fall of 2014.
 
@@ -11,17 +11,17 @@ In addition to making several browser tabs’ worth of data available in one win
 Adventure awaits.
 
 
-= Technologies:
+=== Technologies:
 Ruby on Rails, Javascript, jQuery, HTML5, CSS3, SASS, Bourbon/Neat/Bitters, Foursquare API, Yelp API, Reddit API, Instagram API, Postgres, Geocoder, Mapbox.js, Paperclip, Photoshop CC, Heroku deployment
 
 
-= Team:
+=== Team:
 Greg Burton - Scrum master, frontend, backend
 Danielle Heckman - Project owner, design, frontend
 Noah Holmes - Github master, frontend, backend
 
 
-= Additional Specifics:
+=== Additional Specifics:
 
 * Ramblethru uses Mailcatcher to send users email notifications.
 

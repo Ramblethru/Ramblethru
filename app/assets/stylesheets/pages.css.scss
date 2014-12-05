@@ -3,37 +3,37 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .fa-linkedin-square, .fa-github-square, .fa-twitter-square, .fa-external-link-square {
-	color: $orange;
+  color: $orange;
 }
 img.face {
-	border-radius: 50%;
-	border: 10px solid $orange;
-	&:hover {
-		-webkit-filter: grayscale(100%);
-	}
+  border-radius: 50%;
+  border: 10px solid $orange;
+  &:hover {
+      -webkit-filter: grayscale(100%);
+  }
 }
 .name {
-	font-family: monospace, sans-serif;
-	color: $dark-grey;
+  font-family: monospace, sans-serif;
+  color: $dark-grey;
 }
 .project-det {
-	font-family: monospace, sans-serif;
-	color: $green;
-	display: block;
-	font-size: 16px;
+  font-family: monospace, sans-serif;
+  color: $green;
+  display: block;
+  font-size: 16px;
 }
 #about {
-	font-family: monospace, sans-serif;
-	color: $dark-grey;
-	font-size: 16px;
-	margin-bottom: 0;
+  font-family: monospace, sans-serif;
+  color: $dark-grey;
+  font-size: 16px;
+  margin-bottom: 0;
 }
 #about-project {
-	font-family: monospace, sans-serif;
-	font-size: 20px;
-	color: $dark-grey;
-	width: 50%;
-	margin: 0 auto;
+  font-family: monospace, sans-serif;
+  font-size: 20px;
+  color: $dark-grey;
+  width: 50%;
+  margin: 0 auto;
 }
 .iconmelon,
 .im {
@@ -54,25 +54,24 @@ img.face {
   height: 100%;
 }
 .gif {
-	display: block;
-	margin: 0 auto;
-	max-width: 300px;
-	max-height: 150px;
-	border-radius: 20px;
-	margin-bottom: 10px;
+  display: block;
+  margin: 0 auto;
+  max-width: 300px;
+  max-height: 150px;
+  border-radius: 20px;
+  margin-bottom: 10px;
 }
 #gif {
-	font-family: monospace;
-	color: $orange;
-	font-size: 16px;
+  font-family: monospace;
+  color: $orange;
+  font-size: 16px;
 }
 #top-bar {
-	height: 130px;
-	background-color: $green;
-	margin-top: -70px;
-	margin-bottom: 10px;
+  height: 130px;
+  background-color: $green;
+  margin-top: -70px;
+  margin-bottom: 10px;
 }
-
 .about-body {
   margin-bottom: 75px;
 }

@@ -116,15 +116,17 @@
 							   <li>
 								  <span class="fshow"><div id="f-venue-title">
                     <% if f["tips"] != nil %>
+
 									   <a class="foursquare-save" data-name="<%= f['venue']['name'] %>"
 										  data-address="<%= f["venue"]["location"]["address"]%>"
 										  data-url="<% f["tips"].each do |g| %>
-										    <%= g["canonicalUrl"] %>
+										  <%= g["canonicalUrl"] %>
 										  <% end %>"
-										  data-tip="<% f["tips"].each do |g| %>
-										    <%= g["text"] %>
-										  <% end %>"><i class="fa fa-star"></i>
+										    data-tip="<% f["tips"].each do |g| %>
+										  <%= g["text"] %>
+										  <% end %>">Save me!
                       </a>
+
                   </span>
 							   <%= f["venue"]["name"] %><hr>
 								</div>
@@ -145,19 +147,22 @@
          </div>
 
 						<script type="text/javascript">
-						jQuery(".foursquare-save").click(function () {
-							var dataName = event.target.getAttribute("data-name");
-							var dataAddress = event.target.getAttribute("data-address")
-							var dataTip = event.target.getAttribute("data-tip")
-							var dataUrl = event.target.getAttribute("data-url")
-							dataTip = dataTip.substring(0, dataTip.indexOf('[')).trim();
-							dataUrl = dataUrl.substring(0, dataUrl.indexOf('[')).trim();
-							jQuery("#note_title").val(dataName);
-							jQuery("#note_address").val(dataAddress);
-							jQuery("#note_body").val(dataTip);
-							jQuery("#note_url").val(dataUrl);
-						});
+            $(document).ready(function () {
+              $(document).on('click', '.foursquare-save', function(event) {
+                var dataName = event.target.getAttribute("data-name");
+                var dataAddress = event.target.getAttribute("data-address")
+                var dataTip = event.target.getAttribute("data-tip")
+                var dataUrl = event.target.getAttribute("data-url")
+                dataTip = dataTip.substring(0, dataTip.indexOf('[')).trim();
+                dataUrl = dataUrl.substring(0, dataUrl.indexOf('[')).trim();
+                $("#note_title").val(dataName);
+                $("#note_address").val(dataAddress);
+                $("#note_body").val(dataTip);
+                $("#note_url").val(dataUrl);
+              });
+            });
 						</script>
+
 						<script type="text/javascript">
 						jQuery(".shows1").click(function () {
 							jQuery(".fshow").toggle();
@@ -165,7 +170,6 @@
 						</script>
 					</div>
 
-          <!--script for foursquare pagination-->
           <script type="text/javascript">
             var pager = new Imtech.Pager();
             jQuery(document).ready(function() {
@@ -195,7 +199,7 @@
                       <a class="yelp-save" data-yname="<%= y.name %>",
                         data-yaddress="<%= y.location.address.pop %>",
                         data-ytip="<%= y.snippet_text %>">
-                        <i class="fa fa-star"></i>
+                        Save me!
                       </a>
                       <%= link_to y.name, y.url, :class => "yelp-venue-title", :target => '_blank'  %>
                       <%= link_to image_tag y.rating_img_url_small %>
@@ -260,7 +264,7 @@
               <div class="z4">
                 <span class="ishow">
                   <a class="instagram-save" data-iurl="<%= i["images"]["thumbnail"]["url"] %>">
-                    <i class="fa fa-star"></i>
+                    Save me!
                   </a>
                     <%= link_to i["images"]["standard_resolution"]["url"], :class => "instagram-thumb", :target => '_blank' do %>
                     <%= image_tag i["images"]["thumbnail"]["url"] %>

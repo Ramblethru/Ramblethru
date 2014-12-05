@@ -134,7 +134,7 @@
 							<% f["tips"] %></span>
 							<% f["tips"].each do |g| %>
 							<span class="fshow">
-								<article><%= link_to g["text"], g["canonicalUrl"], :class => "four-tip"%></article><hr class="tip">
+								<article><%= link_to g["text"], g["canonicalUrl"], :class => "four-tip", :target => '_blank' %></article><hr class="tip">
 							</span>
 						</div>
          </div>
@@ -197,7 +197,7 @@
                         data-ytip="<%= y.snippet_text %>">
                         <i class="fa fa-star"></i>
                       </a>
-                      <%= link_to y.name, y.url, :class => "yelp-venue-title" %>
+                      <%= link_to y.name, y.url, :class => "yelp-venue-title", :target => '_blank'  %>
                       <%= link_to image_tag y.rating_img_url_small %>
                       <span class="y-address"><%= y.location.address.pop %></span><hr>
                     </span>
@@ -260,7 +260,7 @@
               <div class="z4">
                 <span class="ishow">
                   <a class="instagram-save" data-iurl="<%= i["images"]["thumbnail"]["url"] %>">
-                    <i class="fa fa-star"></i>save
+                    <i class="fa fa-star"></i>
                   </a>
                     <%= link_to i["images"]["standard_resolution"]["url"], :class => "instagram-thumb", :target => '_blank' do %>
                     <%= image_tag i["images"]["thumbnail"]["url"] %>

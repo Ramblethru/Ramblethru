@@ -25,9 +25,7 @@ L.mapbox.markerLayer({
 }).addTo(map);
 </script>
 <br>
-
 <div class="recommended-notes">
-
   <div class="shows5" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
     <div id="four-title">
       <% x = Note.where(ramble_id:(Ramble.where(:destination => @discover.destination))) %>
@@ -73,40 +71,6 @@ L.mapbox.markerLayer({
   });
   </script>
 </div>
-</div>
-<!--<div class="recommended-notes">-->
-<!--<div class="showhide"><a href="javascript:;"><h5>Show/hide notes relevant to your destination</h5></a>-->
-<!--</div>-->
-<!--<div class="show">-->
-<!--<# ramble = Ramble.where(:destination => @discover.destination)  %>-->
-<!--<# ramble.each do |r| %>-->
-<!--<# r.notes.each do |n| %>-->
-<!--<div class="note-results">-->
-<!--<div class="notesshow">-->
-<!--Title: <#= n.title %>-->
-<!--</div>-->
-<!--<div class="notesshow">-->
-<!--Address: <#= n.address %>-->
-<!--</div>-->
-<!--<div class="notesshow">-->
-<!--Note: <#= n.body %>-->
-<!--</div>-->
-<!--<div class="notesshow">-->
-<!--URL: <a href="<#= n.url %>" target="_blank"><#= n.url %></a>-->
-<!--</div>-->
-<!--<div class="tagshow">-->
-<!--Tags: <#= n.tag_list %>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--<script type="text/javascript">-->
-<!--//    $(".showhide").click(function () {-->
-<!--//      $(".show").toggle();-->
-<!--//    });-->
-<!--</script>-->
-<!--<# end %>-->
-<!--<# end %>-->
-<!--</div>-->
 <div class="container">
   <div class="foursq">
     <div class="four-title">Foursquare <i class="fa fa-arrow-circle-o-down"></i></div>
@@ -177,12 +141,12 @@ L.mapbox.markerLayer({
   </div>
   <div class="ramble">
     <h4 class="r-create">Like what you see? Create a ramble (itinerary) below! </h4>
-
     <i class="fa fa-arrow-right"></i>
     <%= link_to_modal "Create", new_ramble_path, :class=>"create" %> <i class="fa fa-arrow-left"></i>
-
   </div>
-  <span><h4 class="r-create">or search somewhere new</h4></span>
+  <span>
+    <h4 class="r-create">or search somewhere new</h4>
+  </span>
   <div class="discover-bottom">
     <%= render "/discovers/create" %>
   </div>

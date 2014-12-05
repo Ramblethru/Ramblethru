@@ -20,27 +20,18 @@ $(document).ready(function () {
 
 $(document).ready(function() {
   $('#map-usa').usmap({
-  stateStyles: {'fill': '#eff0eb'},
-  stateHoverStyles: {fill: '#af703a'},
-   
+    stateStyles: {'fill': '#eff0eb'},
+    stateHoverStyles: {fill: '#af703a'},
+     
     'click' : function(event, data) {
-      $('#alert')
-        .text('Click '+data.name+'  copy ')
-        .css('color', '#ff0')
-        .animate({color: '#ddd'}, 1000);
+      window.location.href = "/state_select?discover[destination]=" + data.name
     }
-});
   });
+});
 
 $(document).ready(function(){
 $(".menu-button").click(function(){
 $(".menu-bar").toggleClass( "open" );
 })
-})
+});
 
-// 
-// $(document).ready(function(){
-//   $('.fa-foursquare').mouseenter(function() {
-//     $(this).effect('bounce',1000);
-//   });
-// });

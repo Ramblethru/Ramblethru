@@ -44,7 +44,9 @@
 <script type='text/javascript'>
   var destination='<%=@ramble.destination.split.map(&:capitalize).join(' ')%>';
   $(document).ready(function(){
-  $('#note_tag_list').val(destination);
+  $("#note_tag_list").focus(function() {
+     $("#note_tag_list").val(destination);
+ });
   });
 </script>
 

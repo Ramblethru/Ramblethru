@@ -650,3 +650,21 @@ $sliding-menu-color-hover: #fff;
 ul.sliding-menu {
   margin-top: 0px;
 }
+
+div.alert-box.notice {
+   font-weight: bold;
+   font-family: monospace;
+   font-size: 20px;
+   color: $light-grey; 
+   position: relative;
+   background: rgba(175,112,58,.6);
+   max-width: 550px;
+   width: 300px;
+   margin: 0 auto;
+   border-radius: 10%;
+}
+a.close {
+  font-family: monospace, sans-serif;
+  color: $light-grey;
+  font-size: 20px;
+}

@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       UserMailer.user_created(@user).deliver
-      flash[:success] = 'User Created'
+      flash[:notice] = 'Congratulations, you are now registered!'
       session[:current_user_id] = @user.id
       redirect_to root_path
     else

@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 20141204224008) do
   create_table "rambles", force: true do |t|
     t.date     "start_date"
     t.date     "end_date"
-    t.string   "name"
+    t.string   "name",        default: "give your ramble a title!"
     t.string   "destination"
     t.datetime "created_at"
     t.datetime "updated_at"

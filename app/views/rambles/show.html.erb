@@ -57,27 +57,36 @@
 			<% @ramble.notes.order('created_at desc').each do |note| %>
 			<div id="<%= dom_id(note) %>">
 				<div class="notebody">
-					<% if note.body %>
+                  <% if note.title != "" %>
             <p>
               <span id="note-label">Title: </span>
               <span id="note-body"><%= note.title %></span>
             </p>
+              <% end %>
+              <% if note.address != "" %>
             <p>
               <span id="note-label">Address: </span>
               <span id="note-body"><%= note.address %></span>
             </p>
+                  <% end %>
+                  <% if note.body != %>
             <p>
               <span id="note-label">Note: </span>
               <span id="note-body"><%= note.body %></span>
             </p>
+                      <% end %>
+                  <% if note.url =! "" %>
             <p>
               <span id="note-label">URL: </span>
               <span id="note-body"><a href="<%= note.url %>" target="_blank"><%= note.url %></a></span>
             </p>
-						<p>
+                      <% end %>
+                  <% if note.tag_list != [] %>
+             <p>
               <span id="tag-label">Tag(s): </span>
-							<span id="tag-each"><%= raw note.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></span>
+              <span id="tag-each"><%= raw note.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></span>
             </p>
+                      <% end %>
 						<p>
 							<span id="note-label">Created on: </span>
 							<span id="note-body"> <%= note.created_at.strftime("%m/%d/%Y") %>
@@ -87,7 +96,6 @@
 							<%= link_to_modal 'Edit', edit_ramble_note_path(@ramble.id, note.id), :class => "edit-note" %>
 							<i class="fa fa-trash"></i>
 							<%= link_to 'Delete', note, method: :delete, remote: true, :class => "delete-note",:data => {:confirm => 'Delete this note?'} %>
-							<% end %>
 							<% end %>
 				</div>
 			</div>
@@ -375,8 +383,10 @@
                                           <% end %>
 									</p>
 									<p>
+                                      <% if n.body != "" %>
 										<span id="note-label">Created on: </span>
 										<span id="note-body"> <%= n.created_at.strftime("%m/%d/%Y") %>
+                                      <% end %>
 										</p>
 								</div>
                </div>

@@ -9,10 +9,24 @@
       <img src="<%= asset_path ('missing.png') %>" />
     <% end %>
     <%= form_for @user do |form| %>
-      <%= form.file_field :avatar %>
-      <%= form.submit "Add", :class => "user-img-add" %>
+      <div class="ava">
+        <%= form.file_field :avatar %>
+      </div>
+      <div id="user-avatar">
+        <%= form.submit "Add", :class => "user-img-add" %>
+      </div>
     <% end %>
   </div>
+
+  <script type="text/javascript">
+      $('#user-avatar').hide();
+      $('.ava').click(function() {
+      $('#user-avatar').show();//Form shows on button click
+      });
+  
+      </script>
+
+
   <div class="userinfo">
     <div class="name">
       <span id="user-name-label">Name: </span>
@@ -68,7 +82,7 @@
                 <% end %>
               </div>
               <% else %>
-              <span id="no-notes">no notes available</span>
+              <span id="no-notes">no notes yet</span>
             </span>
             <% end %>
 					</div>

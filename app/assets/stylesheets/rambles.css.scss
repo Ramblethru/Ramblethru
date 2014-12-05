@@ -21,17 +21,14 @@
   // width: 400px;
   max-height:745px;
 }
-
 #map {
   width: 50%;
   margin: 0 auto;
   margin-top: 20px;
   border-bottom: 8px solid $orange;
 }
-
 .recommended-notes {
 }
-
 .notebody {
   margin: 15px auto 15px auto;
   text-align:left;
@@ -40,21 +37,18 @@
   border: 2px solid $green;
   max-width: 425px;
 }
-
 .api-feed {
   @include span-columns(7);
   text-align: center;
   float: right;
   margin-top: 15px;
 }
-
 h1.ramble-create {
   font-family: 'menschmensch_regular';
   color: $orange;
   font-size: 40px;
   margin-bottom: 0px;
 }
-
 input#ramble_destination, #start_date, #end_date, #ramble_name {
   width: 300px;
   margin: 0 auto;
@@ -65,7 +59,6 @@ input#ramble_destination, #start_date, #end_date, #ramble_name {
   border-radius: 10px;
   background-color: transparent;
 }
-
 input#ramble-button {
   background-color: $orange;
   color: $light-grey;
@@ -134,7 +127,6 @@ h2.notes {
   font-family: monospace, sans-serif;
   word-wrap: break-word;
 }
-
 #note-body a{
   color: $orange;
 }
@@ -286,7 +278,6 @@ a.edit-note, a.delete-note {
   color: $orange;
   font-family: monospace, sans-serif;
 }
-
 .note-show {
   display:none;
   margin: 15px auto 15px auto;
@@ -296,7 +287,6 @@ a.edit-note, a.delete-note {
   border: 2px solid $green;
   max-width: 450px;
 }
-
 .shows1 {
   width: 200px;
   background: rgba(255,255,255,0.5);
@@ -304,7 +294,6 @@ a.edit-note, a.delete-note {
   padding: 10px 0 0 0;
   border-radius: 20px;
 }
-
 .shows2 {
   width: 200px;
   background: rgba(255,255,255,0.5);
@@ -312,7 +301,6 @@ a.edit-note, a.delete-note {
   padding: 10px 0 0 0;
   border-radius: 20px;
 }
-
 .shows3 {
   width: 200px;
   background: rgba(255,255,255,0.5);
@@ -320,7 +308,6 @@ a.edit-note, a.delete-note {
   padding: 10px 0 0 0;
   border-radius: 20px;
 }
-
 .shows4 {
   width: 200px;
   background: rgba(255,255,255,0.5);
@@ -328,7 +315,6 @@ a.edit-note, a.delete-note {
   padding: 10px 0 0 0;
   border-radius: 15px;
 }
-
 .shows5 {
   width: 200px;
   background: rgba(255,255,255,0.5);
@@ -336,19 +322,15 @@ a.edit-note, a.delete-note {
   padding: 10px 0 0 0;
   border-radius: 15px;
 }
-
 .yelp-results {
   margin-bottom: -15px;
 }
-
 .four-results {
   margin-bottom: -15px;
 }
-
 #new_note {
   display:none;
 }
-
 #tag-each {
 //  background: rgba(175,112,58,0.5);
 //  padding: 10px 10px 10px 10px;
@@ -400,7 +382,6 @@ input#search.span2 {
   padding: 15px 15px 15px 15px;
   border-radius: 15px;
 }
-
 .notesshow {
   max-width: 400px;
   text-align: justify;
@@ -410,7 +391,6 @@ input#search.span2 {
   margin: 0 auto 0 auto;
   word-wrap: break-word;
 }
-
 .tagshow {
   max-width: 400px;
   text-align: justify;
@@ -418,7 +398,6 @@ input#search.span2 {
   font-size: 20px;
   margin: 0 auto 20px auto;
 }
-
 .note-destination {
   font-weight: 700;
   font-family: 'menschmensch_regular';
@@ -429,7 +408,6 @@ input#search.span2 {
   float: right;
   margin: -21px -7px 0 0;
 }
-
 li.note-search {
   display: inline;
 }

@@ -41,6 +41,6 @@ Imtech2.Pager = function() {
 
         pagingControls2 += "</ul>";
 
-        $(container).html(pagingControls2);
+        jQuery(container).html(pagingControls2);
     }
 }

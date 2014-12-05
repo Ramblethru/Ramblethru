@@ -7,7 +7,6 @@ Rails.application.routes.draw do
     resources :notes#, shallow: true
       get 'notes/:id/delete' => 'notes#destroy'
   end
-  resources :locations
   resources :discovers, :only => [:show, :create, :new]
   get 'state_select', to: 'discovers#create'
   

@@ -128,10 +128,11 @@
     </ul>
   </nav>
   <div class="js-menu-screen menu-screen"></div>
-            
-            <%= display_alert(:notice) %>
-            <%= display_alert(:alert) %>
-            <%= yield %>
+  
+<%= render "shared/flash" %>
+<%= display_alert(:alert) %>
 
-          </body>
-          </html>
+  <%= yield %>
+
+</body>
+</html>

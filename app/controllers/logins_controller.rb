@@ -1,6 +1,12 @@
 class LoginsController < ApplicationController
   include LoginsHelper
-  
+  before_filter :check_user_signed_in, :only => [:create]
+
+
+  def check_user_signed_in
+    logged_in?
+  end
+
   def new
   end
 
@@ -8,11 +14,10 @@ class LoginsController < ApplicationController
     user = User.find_by(email: params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       login(user)
-      flash.now[:notice] = "You've successfully logged in."
-      redirect_to :back   
+      redirect_to :back, :notice => "You have logged in!"
+
     else
-      flash.now[:notice] = 'Invalid email/password combination'
-      render :new
+      redirect_to root_url, :notice => "Your username or password was incorrect."
     end
   end
 

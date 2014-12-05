@@ -4,10 +4,10 @@ Rails.application.routes.draw do
 
   resources :users
   resources :rambles do
-    resources :notes#, shallow: true
+    resources :notes
       get 'notes/:id/delete' => 'notes#destroy'
   end
-  resources :discovers, :only => [:show, :create, :new]
+  resources :discovers, :only => [:show, :create, :new], path: "discover"
   get 'state_select', to: 'discovers#create'
   
   resources :notes, :only => [:index, :destroy]
@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
   post 'rambles/:id/add_api', to: 'rambles#add_api', as: :add_api
   post 'rambles/:id/add_instagram', to: 'rambles#add_instagram', as: :add_instagram
+
   get '/about' => 'pages#about'
 
   # get 'tags/:tag', to: 'rambles#index', as: :tag

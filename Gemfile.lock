@@ -312,8 +312,6 @@ GEM
       simplecov-html (~> 0.8.0)
     simplecov-html (0.8.0)
     slop (3.6.0)
-    songkickr (0.5.4)
-      httparty (>= 0.5.0)
     sprockets (2.11.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -412,7 +410,6 @@ DEPENDENCIES
   shoulda
   simple_form
   simplecov
-  songkickr
   table_print
   tagsinput-rails
   timecop

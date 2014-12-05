@@ -18,7 +18,7 @@ class RamblesController < ApplicationController
     end
 
     def instagram
-      instagram = HTTParty.get("https://api.instagram.com/v1/media/search?lat=#{@ramble.latitude}&lng=#{@ramble.longitude}&distance=5000&count=30&client_id=ea93d7b97c444c9bbfcf23cbbcb63ee4")
+      instagram = HTTParty.get("https://api.instagram.com/v1/media/search?lat=#{@ramble.latitude}&lng=#{@ramble.longitude}&distance=5000&count=30&client_id=#{ENV["INSTAGRAM_KEY"]}")
       instagram_data = JSON.parse(instagram.body)
       @instagram_images = instagram_data["data"]
     end
@@ -31,7 +31,7 @@ class RamblesController < ApplicationController
     end
 
     def foursquare
-      foursquare = HTTParty.get("http://api.foursquare.com/v2/venues/explore?ll=#{@ramble.latitude},#{@ramble.longitude}&limit=20&oauth_token=3SFP4NBFWJ2LIECDWGR5EU4FA5QXMP21LK2DNWT2GEUWCEIN&v=20141123")
+      foursquare = HTTParty.get("http://api.foursquare.com/v2/venues/explore?ll=#{@ramble.latitude},#{@ramble.longitude}&limit=20&oauth_token=#{ENV["FOURSQUARE_OAUTH"]}&v=20141123")
       foursquare_data = JSON.parse(foursquare.body)
       @foursquare_venue = foursquare_data["response"]["groups"][0]["items"]
       @foursquare_tip = foursquare_data["response"]["groups"][0]["items"]

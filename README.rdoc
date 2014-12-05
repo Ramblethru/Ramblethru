@@ -1,34 +1,32 @@
 == Ramblethru README
 
-Assists with travel planning by leveraging the power of social media.
+=== Ramblethru: Crowdsourced Travel Planning
+
+Ramblethru was born as a final project for three newly-minted developers at The Iron Yard Academy in Durham, NC in the Fall of 2014.
+
+The goal of Ramblethru is to streamline the trip planning process, leveraging several APIs to make reviews and tips about restaurants, bars, and other places readily available when the user searches for a destination. As a result, the biggest challenge our team encountered was how to make the site content-rich without creating a cluttered interface. We resolved this issue by employing show/hide and pagination ability to many components--the user has a lot of choice in what pieces they want to view.
+
+In addition to making several browser tabs’ worth of data available in one window, we also provide the ability for users to create an itinerary that they can save notes in about their upcoming trip. Information from APIs can be copied into a note at the click of a button, and users can also search the site for notes other people have created about a given destination to get additional tips. Our site’s design is responsive, to allow for effective use on mobile devices, which is how the user will likely consume notes when they are on their trip. This responsive design is also to account for the fact that our target demographic of 25-35 year olds are heavy smartphone users.
 
 Adventure awaits.
 
-* Ramblethru uses Mailcatcher to send users email notifications. One does not simply include it in the gemfile.
+
+=== Technologies:
+Ruby on Rails, Javascript, jQuery, HTML5, CSS3, SASS, Bourbon/Neat/Bitters, Foursquare API, Yelp API, Reddit API, Instagram API, Postgres, Geocoder, Mapbox.js, Paperclip, Photoshop CC, Heroku deployment
+
+
+=== Team:
+* Greg Burton - Scrum master, frontend, backend
+* Danielle Heckman - Project owner, design, frontend
+* Noah Holmes - Github master, frontend, backend
+
+
+=== Additional Specifics:
+
+* Ramblethru uses Mailcatcher to send users email notifications.
 
 * Built with Ruby 2.1.3 and Rails 4.1.7.
-
-* Uses Bourbon/Neat/Bitters/Refills to look good.
 
 * The database is PostgreSQL.
 
 * Uses RSpec for testing.
-
-
-Other items suggested to mention that have yet to be mentioned:
-
-* System dependencies
-
-* Configuration
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.

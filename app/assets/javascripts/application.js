@@ -27,7 +27,9 @@ jQuery(".best_in_place").best_in_place();
 
 
 $(document).ready(function(){
-$(".menu-button").click(function(){
-$(".menu-bar").toggleClass( "open" );
-})
+  $(".menu-button").click(function(){
+  $(".menu-bar").toggleClass( "open" );
+  })
 });
+
+

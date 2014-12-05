@@ -7,39 +7,31 @@ $orange: #af703a;
 body {
   text-align: center;
 }
-
-
 .ramble {
   color: white;
   font-weight:bold;
   margin: 0 auto;
   width: 50%;
 }
-
 .ramble span {
   color: black;
 }
-
 #map {
   width: 60%;
   height: 450px;
   margin: 0 auto 0 auto;
   border-bottom: 8px solid $orange;
 }
-
 .notes {
   padding-top: 35px;
 }
-
 .api {
   padding-top: 30px;
 }
-
 .ramble {
   padding-top: 30px;
   color: black;
 }
-
 li {
   text-decoration: none;
   list-style-type: none;
@@ -59,18 +51,17 @@ article {
 .ramble_destination {
   color: black;
 }
-
 #ui-datepicker-div {
-    width: 216px !important;
-    height: auto;
-    margin: 5px auto 0;
-    font: 9pt monospace, sans-serif;
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
-    right: 100px;
-    left: 0px;
-    background-color: $light-grey;
+  width: 216px !important;
+  height: auto;
+  margin: 5px auto 0;
+  font: 9pt monospace, sans-serif;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+  right: 100px;
+  left: 0px;
+  background-color: $light-grey;
 }
 div.ui-datepicker-header {
   margin-top: 10px;
@@ -101,12 +92,10 @@ span.ui-datepicker-month, .ui-datepicker-year {
   width: 500px;
   margin: 50px auto 30px auto;
 }
-
 .form-inline div {
 //  width: 375px;
   display: inline-block;
 }
-
 .show {
   display:none;
   max-width: 400px;
@@ -174,7 +163,6 @@ a.close-modal {
   height: 230px;
   margin-top: -104px;
   text-align: center;
-
 }
 h1.discover {
   color: $orange;
@@ -248,13 +236,11 @@ a.y-name {
   text-align-last: justify;
   margin-top: -15px;
 }
-
 .r-list:after {
   content: "";
   display: inline-block;
   width: 100%;
 }
-
 .r-list li {
   display: inline;
 }
@@ -269,11 +255,9 @@ a.y-name {
 .r-list a:active {
   color: $light-grey;
 }
-
 .r-list a:visited {
   color: $light-grey;
 }
-
 .r-list a.create {
   font-family: 'menschmensch_regular';
   color: $orange;
@@ -307,6 +291,11 @@ div.discover-bottom {
   margin: 0 auto 20px auto;
 }
 #slash {
+  color: $orange;
+  font-family: monospace, sans-serif;
+  font-weight: bold;
+}
+#yelp-address {
   color: $orange;
   font-family: monospace, sans-serif;
   font-weight: bold;

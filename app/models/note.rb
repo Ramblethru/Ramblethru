@@ -12,7 +12,7 @@ class Note < ActiveRecord::Base
     @note = Note.all
     @note.each do |n|
     #where("n.tag_list", query)
-   where("n.tag_list like ?", "%#{query.downcase}%")
+   n.having("n.tag_list like ?", "%#{query.downcase}%")
  end
   end
 end

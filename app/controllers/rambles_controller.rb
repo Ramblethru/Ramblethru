@@ -18,7 +18,7 @@ class RamblesController < ApplicationController
     end
 
     def instagram
-      instagram = HTTParty.get("https://api.instagram.com/v1/media/search?lat=#{@ramble.latitude}&lng=#{@ramble.longitude}&distance=5000&count=30&client_id=#{ENV["INSTAGRAM_KEY"]}")
+      instagram = HTTParty.get("https://api.instagram.com/v1/media/search?lat=#{@ramble.latitude}&lng=#{@ramble.longitude}&distance=5000&count=20&client_id=#{ENV["INSTAGRAM_KEY"]}")
       instagram_data = JSON.parse(instagram.body)
       @instagram_images = instagram_data["data"]
     end

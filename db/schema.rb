@@ -39,14 +39,6 @@ ActiveRecord::Schema.define(version: 20141204224008) do
 
   add_index "discovers", ["discovers_id"], name: "index_discovers_on_discovers_id", using: :btree
 
-  create_table "locations", force: true do |t|
-    t.string   "address"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "logins", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"

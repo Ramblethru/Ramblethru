@@ -51,11 +51,21 @@
             <div class="noteshow" id="div_ramble_<%= r.id %>" >
               <% r.notes.order('created_at desc').each do |n| %>
               <span id="<%= dom_id(n) %>">
+                <% if n.title != "" %>
                 <span id="user-title">Title:</span><%=n.title %><br>
+                    <% end %>
+                <% if n.address != "" %>
                 <span id="user-address">Address:</span><%=n.address %><br>
+                    <% end %>
+                <% if n.body != "" %>
                 <span id="user-note">Note:</span><%= n.body %><br>
+                    <% end %>
+                <% if n.url != "" %>
                 <span id="user-url">URL:</span><a href="<%= n.url %>" target="_blank"><%= n.url %></a><br>
+                    <% end %>
+                <% if n.tag_list != [] %>
                 <span id="user-tags">Tags:</span><%= n.tag_list %><br>
+                    <% end %>
                 <span id="user-created">Created on:</span><%= n.created_at.strftime("%m/%d/%Y") %><br>
                 <div class="shared">
                   <% if n.share == true %>

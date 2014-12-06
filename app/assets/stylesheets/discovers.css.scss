@@ -300,3 +300,12 @@ div.discover-bottom {
   font-family: monospace, sans-serif;
   font-weight: bold;
 }
+.note-show-inline {
+  display: inline-flex;
+  margin: 15px auto 15px auto;
+  text-align:left;
+  padding-left:10px;
+  background: transparent;
+  border: 2px solid $green;
+  max-width: 450px;
+}

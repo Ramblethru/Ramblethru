@@ -360,10 +360,11 @@
               <div id="content2">
 								<% ramble = Ramble.where(:destination => @ramble.destination)  %>
 								<% ramble.each do |r| %>
-									<% if r.id != @ramble.id %>
-										<% r.notes.each do |n| %>
-             					<div class="z2">
-												<div class="note-show">
+								<% if r.id != @ramble.id %>
+							<% r.notes.each do |n| %>
+                            <% if n.share == true %>
+             <div class="z2">
+							<div class="note-show">
 
 
                 <img src="<%= asset_path ('fav-star.png') %>" class="savenote" alt="Save as note"                              data-ntitle="<%= n.title %>"
@@ -409,6 +410,7 @@
 										</p>
 								</div>
                </div>
+                                <% end %>
 								<% end %>
 								<% end %>
 								<% end %>

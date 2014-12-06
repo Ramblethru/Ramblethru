@@ -164,6 +164,7 @@
                 $("#note_address").val(dataAddress);
                 $("#note_body").val(dataTip);
                 $("#note_url").val(dataUrl);
+                $("#note_tag_list").val(destination);
               });
             });
 						</script>
@@ -231,6 +232,8 @@
                  $("#note_title").val(dataYname);
                  $("#note_address").val(dataYaddress);
                  $("#note_body").val(dataYtip);
+                 $("#note_url").val('');
+                 $("#note_tag_list").val(destination);
                });
              });
 						</script>
@@ -285,7 +288,11 @@
               $(document).ready(function () {
                 $(document).on('click', '.instagram-save', function (event) {
                   var dataIurl = event.target.getAttribute("data-iurl");
+                  $("#note_title").val('');
+                  $("#note_address").val('');
+                  $("#note_body").val('');
                   $("#note_url").val(dataIurl);
+                  $("#note_tag_list").val(destination);
                 });
               });
               </script>

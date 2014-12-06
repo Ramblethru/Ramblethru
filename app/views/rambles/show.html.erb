@@ -124,17 +124,14 @@
 							   <li>
 								  <span class="fshow"><div id="f-venue-title">
                     <% if f["tips"] != nil %>
-
-									   <a class="foursquare-save" data-name="<%= f['venue']['name'] %>"
-										  data-address="<%= f["venue"]["location"]["address"]%>"
-										  data-url="<% f["tips"].each do |g| %>
+                      <img src="<%= asset_path ('fav-star.png') %>" class="foursquare-save" alt="Save as note" data-name="<%= f['venue']['name'] %>"
+                         data-address="<%= f["venue"]["location"]["address"]%>"
+                         data-url="<% f["tips"].each do |g| %>
 										  <%= g["canonicalUrl"] %>
 										  <% end %>"
-										    data-tip="<% f["tips"].each do |g| %>
+                         data-tip="<% f["tips"].each do |g| %>
 										  <%= g["text"] %>
-										  <% end %>">Save me!
-                      </a>
-
+										  <% end %>" />
                   </span>
 							   <%= f["venue"]["name"] %><hr>
 								</div>
@@ -204,11 +201,13 @@
                 <div class="yelp-results">
                   <li>
                     <span class="yshow">
-                      <a class="yelp-save" data-yname="<%= y.name %>",
+
+
+                      <img src="<%= asset_path ('fav-star.png') %>" class="yelp-save" alt="Save as note"
+                        data-yname="<%= y.name %>",
                         data-yaddress="<%= y.location.address.pop %>",
-                        data-ytip="<%= y.snippet_text %>">
-                        Save me!
-                      </a>
+                        data-ytip="<%= y.snippet_text %>" />
+
                       <%= link_to y.name, y.url, :class => "yelp-venue-title", :target => '_blank'  %>
                       <%= link_to image_tag y.rating_img_url_small %>
                       <span class="y-address"><%= y.location.address.pop %></span><hr>
@@ -273,9 +272,7 @@
 							<% i = @instagram_images.each do |i| %>
               <div class="z4">
                 <span class="ishow">
-                  <a class="instagram-save" data-iurl="<%= i["images"]["thumbnail"]["url"] %>">
-                    Save me!
-                  </a>
+                  <img src="<%= asset_path ('fav-star.png') %>" class="instagram-save" alt="Save as note" data-iurl="<%= i["images"]["thumbnail"]["url"] %>" />
                     <%= link_to i["images"]["standard_resolution"]["url"], :class => "instagram-thumb", :target => '_blank' do %>
                     <%= image_tag i["images"]["thumbnail"]["url"] %>
                     <% end %>
@@ -354,8 +351,13 @@
 							<% r.notes.each do |n| %>
              <div class="z2">
 							<div class="note-show">
-								<div class="savenote" data-ntitle="<%= n.title %>" data-naddress="<%= n.address %>"
-									data-nbody="<%= n.body %>" data-nurl="<%= n.url %>" data-ntag="<%= n.tag_list %>">Save this note</div>
+
+
+                <img src="<%= asset_path ('fav-star.png') %>" class="savenote" alt="Save as note"                              data-ntitle="<%= n.title %>"
+                 data-naddress="<%= n.address %>"
+								 data-nbody="<%= n.body %>"
+                 data-nurl="<%= n.url %>"
+                 data-ntag="<%= n.tag_list %>" />
 									<p>
                                       <% if n.title != "" %>
 										<span id="note-label">Title: </span>

@@ -37,6 +37,10 @@
 			'marker-color': '#af703a'
 		}
 	}).addTo(map);
+  map.touchZoom.disable();
+  map.doubleClickZoom.disable();
+  map.scrollWheelZoom.disable();
+  if (map.tap) map.tap.disable();
 	</script>
 
 

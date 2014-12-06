@@ -660,12 +660,16 @@ div.alert-box.notice {
    position: relative;
    background: rgba(175,112,58,.6);
    max-width: 550px;
-   width: 300px;
    margin: 0 auto;
    border-radius: 10%;
+   margin-top: -10px;
+   text-align: center;
 }
 a.close {
   font-family: monospace, sans-serif;
   color: $light-grey;
   font-size: 20px;
+}
+div.modal.current {
+  z-index: 4352342342 !important;
 }

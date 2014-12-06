@@ -81,8 +81,6 @@
   </filter>
 </svg>
 
-
-
   <div class="top-bar">
     <% if logged_in? %>
         <% if current_user.avatar.file? %>
@@ -106,11 +104,13 @@
           <%= link_to "Home", root_path, :class => "top-bar" %>
           <%= render "/discovers/nav_create" %>
     <% end %>
+        <%= render "shared/flash" %>
 
   </div>
     <button type="button" class="js-menu-trigger sliding-menu-button">
     <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/menu-white.png" alt="Menu Icon">
   </button>
+
 
   <nav class="js-menu sliding-menu-content">
     <ul class="sliding-menu">
@@ -129,7 +129,6 @@
   </nav>
   <div class="js-menu-screen menu-screen"></div>
   
-<%= render "shared/flash" %>
 <%= display_alert(:alert) %>
 
   <%= yield %>

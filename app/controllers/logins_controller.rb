@@ -17,7 +17,7 @@ class LoginsController < ApplicationController
       redirect_to :back, :notice => "You have logged in!"
 
     else
-      redirect_to root_url, :notice => "Your username or password was incorrect."
+      redirect_to :back, :notice => "Your username or password was incorrect."
     end
   end
 

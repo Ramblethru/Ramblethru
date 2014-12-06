@@ -9,6 +9,11 @@
   margin-top: 100px;
   margin-bottom: 10px;
 }
+.note-container {
+  display: inline-flex;
+  margin: 10px;
+  
+}
 
 .ramble-notes {
   @include span-columns(6);
@@ -19,7 +24,7 @@
   margin-left: 50px;
   margin-top: -40px;
   // width: 400px;
-  max-height:710px;
+  max-height:745px;
 }
 #map {
   width: 100%;
@@ -151,6 +156,7 @@ div#f-venue-title {
   font-family: monospace, sans-serif;
   color: $green;
   font-size: 18px;
+  font-weight: bold;
 }
 #f-address {
   font-family: monospace, sans-serif;
@@ -188,6 +194,7 @@ i.fa.fa-yelp.ramble, i.fa.fa-reddit.ramble {
   font-family: monospace, sans-serif;
   color: $orange;
   font-size: 18px;
+  font-weight: bold;
 }
 .yelp-venue-tip {
   color: $dark-grey;
@@ -204,6 +211,8 @@ div.ramble-instagram {
 }
 img.instagram-thumb {
   display: inline;
+  font-family: monospace, sans-serif !important;
+  color: $dark-grey !important;
 }
 button {
   background: $green;
@@ -376,20 +385,24 @@ input#search.span2 {
 //index page//
 
 .note-results {
-  max-width: 440px;
-  background-color: rgba(46,117,98,0.3);
-  margin: 0 auto 20px auto;
-  padding: 15px 15px 15px 15px;
-  border-radius: 15px;
+  text-align:left;
+  padding-left:10px;
+  background: transparent;
+  border: 2px solid $green;
+  max-width: 425px;
+  margin-right: 10px;
+  max-height: 400px;
+  height: auto;
 }
+
 .notesshow {
   max-width: 400px;
-  text-align: justify;
   font-family: 'menschmensch_regular';
   font-weight: 700;
   font-size: 24px;
   margin: 0 auto 0 auto;
   word-wrap: break-word;
+  line-height: 1.2;
 }
 .tagshow {
   max-width: 400px;
@@ -406,7 +419,6 @@ input#search.span2 {
   display: inline-block;
   padding: 2px 2px 2px 2px;
   float: right;
-  margin: -21px -7px 0 0;
 }
 li.note-search {
   display: inline;
@@ -439,7 +451,22 @@ li.note-search {
   width: 50px;
   height: 50px;
 }
-.foursquare-save, .yelp-save, .instagram-save, .savenote {
- cursor: pointer;
- cursor: hand;
+#note-show-title, #note-show-address, #note-show-body, #note-show-tags, #note-show-created {
+  color: $green;
+  font-family: 'menschmensch_regular';
+  font-weight: bold;
+  font-size: 16px;
+}
+#note-title-body, #note-address-body, #note-body-body, .note-url-body, #note-created-body, #note-tags-body {
+  font-family: monospace, sans-serif;
+  color: $dark-grey;
+  font-size: 16px;
+  font-weight: normal;
+}
+a.yelp-tip {
+  color: $dark-grey;
+}
+#reddit-dash {
+  color: $green;
+  font-weight: bold;
 }

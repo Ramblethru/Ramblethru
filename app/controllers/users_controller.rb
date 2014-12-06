@@ -48,21 +48,21 @@ class UsersController < ApplicationController
       end
   end
 
-  # def create_avatar
-  #   @images = Image.all
-  #   @image = Image.new(image_params)
-  #
-  #   if params[:image]
-  #     if @image.save
-  #       redirect_to :back, notice: 'Photo uploaded.'
-  #     else
-  #       @image.errors.delete(:avatar)
-  #       render :new
-  #     end
-  #   else
-  #     redirect_to :back, alert: 'Photo cannot be blank.'
-  #   end
-  # end
+  def create_avatar
+    @images = Image.all
+    @image = Image.new(image_params)
+  
+    if params[:image]
+      if @image.save
+        redirect_to :back, notice: 'Photo uploaded.'
+      else
+        @image.errors.delete(:avatar)
+        render :new
+      end
+    else
+      redirect_to :back, alert: 'Photo cannot be blank.'
+    end
+  end
 
 
   protected
@@ -77,8 +77,8 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :avatar, :bio, :lives_in, :password, :password_confirmation)
   end
 
-  # def image_params
-  #   params.require(:image).permit(:avatar) if params[:image]
-  # end
+  def image_params
+    params.require(:image).permit(:avatar) if params[:image]
+  end
 end
 

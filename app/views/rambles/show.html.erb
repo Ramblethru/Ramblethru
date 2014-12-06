@@ -360,6 +360,7 @@
 								<% ramble.each do |r| %>
 								<% if r.id != @ramble.id %>
 							<% r.notes.each do |n| %>
+                            <% if n.share == true %>
              <div class="z2">
 							<div class="note-show">
 
@@ -407,6 +408,7 @@
 										</p>
 								</div>
                </div>
+                                <% end %>
 								<% end %>
 								<% end %>
 								<% end %>

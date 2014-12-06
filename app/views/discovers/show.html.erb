@@ -28,74 +28,54 @@ map.doubleClickZoom.disable();
 map.scrollWheelZoom.disable();
 if (map.tap) map.tap.disable();
 </script>
-<br>
-<div class="recommended-notes">
-  <div class="shows5" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
-    <div id="four-title">
-      <% x = Note.where(ramble_id:(Ramble.where(:destination => @discover.destination))) %>
-      <%= x.where(share: true).count %> Note(s)
-    </div>
-    <% ramble = Ramble.where(:destination => @discover.destination) %>
-    <% ramble.each do |r| %>
+<div class="recommended-notes"><br>
+  <div id="four-title">
+    <% x = Note.where(ramble_id:(Ramble.where(:destination => @discover.destination))) %>
+    Note(s) <i class="fa fa-arrow-circle-o-down"></i>
   </div>
-  <% r.notes.take(5).each do |n| %>
-  <% if n.share == true %>
-  <div class="note-show-inline">
-    <% if n.title != "" %>
-    <p>
-      <span id="inline-it">
-        <span id="note-label">Title: </span>
-        <span id="note-body"><%= n.title %></span>
-      </span>
-    </p>
-        <% end %>
-    <% if n.address =! "" %>
-    <p>
-      <span id="inline-it">
-        <span id="note-label">Address: </span>
-        <span id="note-body"><%= n.address %></span>
-      </span>
-    </p>
-        <% end %>
-    <% if n.body != "" %>
-    <p>
-      <span id="inline-it">
-        <span id="note-label">Note: </span>
-        <span id="note-body"><%= n.body %></span>
-      </span>
-    </p>
-        <% end %>
-    <% if n.url != "" %>
-    <p>
-      <span id="inline-it">
-        <span id="note-label">URL: </span>
-        <span id="note-body"><a href="<%= n.url %>" target="_blank"><%= n.url %></a></span>
-      </span>
-    </p>
-        <% end %>
-    <% if n.tag_list != [] %>
-    <p>
-      <span id="inline-it">
-        <span id="tag-label">Tag(s): </span>
-        <span id="tag-each"><%= raw n.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></span>
-      </span>
-    </p>
-        <% end %>
-    <p>
-      <span id="inline-it">
-        <span id="note-label">Created on: </span>
-        <span id="note-body"> <%= n.created_at.strftime("%m/%d/%Y") %>
-      </span>
-   </p>
-  </div>
+  <% ramble = Ramble.where(:destination => @discover.destination) %>
+  <% ramble.each do |r| %>
+    <% r.notes.take(5).each do |n| %>
+      <% if n.share == true %>
+        <div class="note-show-inline">
+          <% if n.title != "" %>
+            <p>
+              <span id="note-label">Title: </span>
+              <span id="note-body"><%= n.title %></span>
+            </p>
+          <% end %>
+          <% if n.address =! "" %>
+            <p>
+              <span id="note-label">Address: </span>
+              <span id="note-body"><%= n.address %></span>
+            </p>
+          <% end %>
+          <% if n.body != "" %>
+            <p>
+              <span id="note-label">Note: </span>
+              <span id="note-body"><%= n.body %></span>
+            </p>
+          <% end %>
+          <% if n.url != "" %>
+            <p>
+              <span id="note-label">URL: </span>
+              <span id="note-body"><a href="<%= n.url %>" target="_blank"><%= n.url %></a></span>
+            </p>
+          <% end %>
+          <% if n.tag_list != [] %>
+            <p>
+              <span id="tag-label">Tag(s): </span>
+              <span id="tag-each"><%= raw n.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></span>
+            </p>
+          <% end %>
+          <p>
+            <span id="note-label">Created on: </span>
+            <span id="note-body"> <%= n.created_at.strftime("%m/%d/%Y") %>
+          </p>
+        </div>
+      <% end %>
+    <% end %>
   <% end %>
-  <% end %>
-  <% end %>
-  <script type="text/javascript">
-  $(".shows5").click(function () {
-    $(".note-show").toggle();
-  });
-  </script>
 </div>
 <div class="container">
   <div class="foursq">

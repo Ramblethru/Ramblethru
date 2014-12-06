@@ -33,6 +33,7 @@ if (map.tap) map.tap.disable();
     <% x = Note.where(ramble_id:(Ramble.where(:destination => @discover.destination))) %>
     Note(s) <i class="fa fa-arrow-circle-o-down"></i>
   </div>
+<<<<<<< HEAD
   <% ramble = Ramble.where(:destination => @discover.destination) %>
   <% ramble.each do |r| %>
     <% r.notes.take(5).each do |n| %>

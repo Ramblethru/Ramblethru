@@ -1,3 +1,3 @@
-$("#<%= dom_id(@note) %>").effect("highlight", 250, function() {
+$("#<%= dom_id(@note) %>").effect("highlight", {color: '#af703a'}, 300,function() {
   $("#<%= dom_id(@note) %>").remove();
 });

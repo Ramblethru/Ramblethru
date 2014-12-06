@@ -260,20 +260,21 @@
 
           <div id="content4">
 						<div class="i-images">
-							<% i = @instagram_images.each do |i| %>
-              <div class="z4">
-                <span class="ishow">
-                  <a class="instagram-save" data-iurl="<%= i["images"]["thumbnail"]["url"] %>">
-                    Save me!
-                  </a>
-                    <%= link_to i["images"]["standard_resolution"]["url"], :class => "instagram-thumb", :target => '_blank' do %>
-                    <%= image_tag i["images"]["thumbnail"]["url"] %>
-                    <% end %>
+							<% if @instagram_images.count != nil %>
+								<% @instagram_images.each do |i| %>
+              		<div class="z4">
+                		<span class="ishow">
+                  		<a class="instagram-save" data-iurl="<%= i["images"]["thumbnail"]["url"] %>">
+                    		Save me!
+                  		</a>
+                    	<%= link_to i["images"]["standard_resolution"]["url"], :class => "instagram-thumb", :target => '_blank' do %>
+                    		<%= image_tag i["images"]["thumbnail"]["url"] %><br>
+                    	<% end %>
                   </span>
                 </div>
                 <hr class="i-tip">
               <% end %>
-
+              <% end %>
               <script type="text/javascript">
               jQuery(".instagram-save").click(function () {
                 var dataIurl = event.target.getAttribute("data-iurl");

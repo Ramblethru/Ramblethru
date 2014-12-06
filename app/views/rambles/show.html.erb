@@ -224,14 +224,16 @@
 
 
 						<script type="text/javascript">
-						jQuery(".yelp-save").click(function () {
-							var dataYname = event.target.getAttribute("data-yname");
-							var dataYaddress = event.target.getAttribute("data-yaddress");
-							var dataYtip = event.target.getAttribute("data-ytip");
-							jQuery("#note_title").val(dataYname);
-							jQuery("#note_address").val(dataYaddress);
-							jQuery("#note_body").val(dataYtip);
-						});
+             $(document).ready(function () {
+               $(document).on('click', '.yelp-save', function (event) {
+                 var dataYname = event.target.getAttribute("data-yname");
+                 var dataYaddress = event.target.getAttribute("data-yaddress");
+                 var dataYtip = event.target.getAttribute("data-ytip");
+                 $("#note_title").val(dataYname);
+                 $("#note_address").val(dataYaddress);
+                 $("#note_body").val(dataYtip);
+               });
+             });
 						</script>
 
 
@@ -283,9 +285,11 @@
               <% end %>
 
               <script type="text/javascript">
-              jQuery(".instagram-save").click(function () {
-                var dataIurl = event.target.getAttribute("data-iurl");
-                jQuery("#note_url").val(dataIurl);
+              $(document).ready(function () {
+                $(document).on('click', '.instagram-save', function (event) {
+                  var dataIurl = event.target.getAttribute("data-iurl");
+                  $("#note_url").val(dataIurl);
+                });
               });
               </script>
 
@@ -351,7 +355,7 @@
              <div class="z2">
 							<div class="note-show">
 								<div class="savenote" data-ntitle="<%= n.title %>" data-naddress="<%= n.address %>"
-									data-nbody="<%= n.body %>" data-nurl="<%= n.url %>" data-ntag="<%= n.tag_list %>"> Save this note </div>
+									data-nbody="<%= n.body %>" data-nurl="<%= n.url %>" data-ntag="<%= n.tag_list %>">Save this note</div>
 									<p>
                                       <% if n.title != "" %>
 										<span id="note-label">Title: </span>
@@ -395,18 +399,20 @@
 								<% end %>
                </div>
 								<script type="text/javascript">
-								jQuery(".savenote").click(function () {
-									var dataNtitle = event.target.getAttribute("data-ntitle");
-									var dataNaddress = event.target.getAttribute("data-naddress");
-									var dataNbody = event.target.getAttribute("data-nbody");
-									var dataNurl = event.target.getAttribute("data-nurl");
-									var dataNtag = event.target.getAttribute("data-ntag");
-									jQuery("#note_title").val(dataNtitle);
-									jQuery("#note_address").val(dataNaddress);
-									jQuery("#note_body").val(dataNbody);
-									jQuery("#note_url").val(dataNurl);
-									jQuery("#note_tag_list").val(dataNtag);
-								});
+                $(document).ready(function () {
+                  $(document).on('click', '.savenote', function (event) {
+                    var dataNtitle = event.target.getAttribute("data-ntitle");
+                    var dataNaddress = event.target.getAttribute("data-naddress");
+                    var dataNbody = event.target.getAttribute("data-nbody");
+                    var dataNurl = event.target.getAttribute("data-nurl");
+                    var dataNtag = event.target.getAttribute("data-ntag");
+                    $("#note_title").val(dataNtitle);
+                    $("#note_address").val(dataNaddress);
+                    $("#note_body").val(dataNbody);
+                    $("#note_url").val(dataNurl);
+                    $("#note_tag_list").val(dataNtag);
+                  });
+                });
 							</script>
 							<script type="text/javascript">
 								jQuery(".shows5").click(function () {

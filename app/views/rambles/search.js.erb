@@ -1,2 +1,7 @@
 $("#note-results").html("")
+
+<% if @ramble.count > 0 %>
 $("#note-results").append("<%= j render(@ramble) %>");
+<% else %>
+$("#no-results").append("No results were returned for your search");
+<% end %>

@@ -272,7 +272,7 @@
 							<% i = @instagram_images.each do |i| %>
               <div class="z4">
                 <span class="ishow">
-                  <img src="<%= asset_path ('fav-star.png') %>" class="instagram-save" alt="Save as note" data-iurl="<%= i["images"]["thumbnail"]["url"] %>" />
+                  <img src="<%= asset_path ('fav-star.png') %>" class="instagram-save" alt="Save as note" data-iurl="<%= i["images"]["standard_resolution"]["url"] %>" />
                     <%= link_to i["images"]["standard_resolution"]["url"], :class => "instagram-thumb", :target => '_blank' do %>
                     <%= image_tag i["images"]["thumbnail"]["url"] %>
                     <% end %>

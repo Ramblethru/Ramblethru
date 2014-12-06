@@ -6,10 +6,18 @@ class RamblesController < ApplicationController
 
   def show
     @ramble = Ramble.find(params[:id])
-    yelp
-    instagram
-    reddit
-    foursquare
+    if yelp != nil
+      yelp
+    end
+    if instagram != nil
+      instagram
+    end
+    if reddit != nil
+      reddit
+    end
+    if foursquare != nil
+      foursquare
+    end
   end
 
   def yelp
@@ -54,8 +62,7 @@ class RamblesController < ApplicationController
           RambleMailer.ramble_created(@ramble.user, @ramble).deliver
           redirect_to ramble_path(@ramble)
         else
-          render 'logins/new'
-          flash.now[:notice] = "You must be logged in to create a ramble."
+          render 'logins/new', :notice => "You must be logged in to create a ramble."
         end
       end
       format.json do

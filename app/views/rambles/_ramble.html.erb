@@ -1,5 +1,5 @@
 <div class="row" id="<%= ramble.persisted? ? dom_id(ramble) : "ramble-new" %>">
-	<div class="container">
+	<div class="note-container">
 		<% if logged_in? %>
 		<% if ramble.user_id != current_user.id %>
 		<% ramble.notes.each do |note| %>
@@ -7,31 +7,31 @@
 		<div class="note-results">
           <% if note.title != "" %>
 			<div class="notesshow">
-				Title: <%= note.title %>
+				<span id="note-show-title">Title: </span><span id="note-title-body"><%= note.title %></span>
 			</div>
               <% end %>
           <% if note.address =! "" %>
 			<div class="notesshow">
-				Address: <%= note.address %>
+				<span id="note-show-address">Address: </span> <span id="note-address-body"><%= note.address %></span>
 			</div>
               <% end %>
           <% if note.body != "" %>
 			<div class="notesshow">
-				Note: <%= note.body %>
+				<span id="note-show-body">Note: </span><span id="note-body-body"><%= note.body %></span>
 			</div>
               <% end %>
           <% if note.url != "" %>
 			<div class="notesshow">
-				URL: <a href="<%= note.url %>" target="_blank"><%= note.url %></a>
+				<span id="note-show-url">URL: </span><a href="<%= note.url %>" target="_blank" class="note-url-body"><%= note.url %></a>
 			</div>
               <% end %>
           <% if note.tag_list != [] %>
 			<div class="tagshow">
-				Tags: <%= note.tag_list %>
+				<span id="note-show-tags">Tags: </span><span id="note-tags-body"><%= note.tag_list %></span>
 			</div>
               <% end %>
 			<div class="notesshow">
-				Created on: <%= note.created_at.strftime("%m/%d/%Y") %>
+				<span id="note-show-created">Created on: </span><span id="note-created-body"><%= note.created_at.strftime("%m/%d/%Y") %></span>
 			</div>
 			<div class="note-destination">
 				<%= ramble.destination.upcase %>

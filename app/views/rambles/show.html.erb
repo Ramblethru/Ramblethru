@@ -130,24 +130,25 @@
                     <% if f["tips"] != nil %>
                       <img src="<%= asset_path ('fav-star.png') %>" class="foursquare-save" alt="Save as note" data-name="<%= f['venue']['name'] %>"
                          data-address="<%= f["venue"]["location"]["address"]%>"
+                         data-tip="<% f["tips"].each do |a| %>
+										  		<%= a['text'] %>
+										  	 <% end %>"
                          data-url="<% f["tips"].each do |g| %>
-                                          <%= g["canonicalUrl"] %>
-                                          <% end %>"
-                         data-tip="<% f["tips"].each do |g| %>
-                                          <%= g["text"] %>
-                                          <% end %>" />
-                                  </span>
-                               <%= f["venue"]["name"] %><hr>
-                                </div>
-                        </li>
-                        <span class="fshow">
-                            <span id="f-address">Address: <%= f["venue"]["location"]["address"] %></span>
-                            <% f["tips"] %></span>
-                            <% f["tips"].each do |g| %>
-                            <span class="fshow">
-                                <article><%= link_to g["text"], g["canonicalUrl"], :class => "four-tip", :target => '_blank' %></article><hr class="tip">
-                            </span>
-                        </div>
+										  	 	 <%= g["canonicalUrl"] %>
+										  	 <% end %>
+                       "/>
+                  </span>
+							   <%= f["venue"]["name"] %><hr>
+								</div>
+						</li>
+						<span class="fshow">
+							<span id="f-address">Address: <%= f["venue"]["location"]["address"] %></span>
+							<% f["tips"] %></span>
+							<% f["tips"].each do |g| %>
+							<span class="fshow">
+								<article><%= link_to g["text"], g["canonicalUrl"], :class => "four-tip", :target => '_blank' %></article><hr class="tip">
+							</span>
+						</div>
          </div>
                         <% end %>
                         <% end %>
@@ -213,13 +214,13 @@
                         data-yaddress="<%= y.location.address.pop %>",
                         data-ytip="<%= y.snippet_text %>" />
 
-                      <%= link_to y.name, y.url, :class => "yelp-venue-title", :target => '_blank'  %>
+                      <span class="yelp-venue-title"><%= y.name %></span>
                       <%= link_to image_tag y.rating_img_url_small %>
                       <span class="y-address"><%= y.location.address.pop %></span><hr>
                     </span>
                   </li>
                   <span class="yshow">
-                    <article class="yelp-venue-tip"><%= y.snippet_text %></article>
+                    <article class="yelp-venue-tip"><%= link_to y.snippet_text, y.url, :target => '_blank', :class => "yelp-tip" %></article>
                     <hr class="y-tip">
                   </span>
                 </div>
@@ -275,19 +276,20 @@
                         </div>
 
           <div id="content4">
-                        <div class="i-images">
-                            <% i = @instagram_images.each do |i| %>
-              <div class="z4">
-                <span class="ishow">
-                  <img src="<%= asset_path ('fav-star.png') %>" class="instagram-save" alt="Save as note" data-iurl="<%= i["images"]["standard_resolution"]["url"] %>" />
-                    <%= link_to i["images"]["standard_resolution"]["url"], :class => "instagram-thumb", :target => '_blank' do %>
-                    <%= image_tag i["images"]["thumbnail"]["url"] %>
-                    <% end %>
-                  </span>
+						<div class="i-images">
+							<% if @instagram_images.count != nil %>
+								<% @instagram_images.each do |i| %>
+              		<div class="z4">
+                		<span class="ishow">
+                  		<img src="<%= asset_path ('fav-star.png') %>" class="instagram-save" alt="Save as note" data-iurl="<%= i["images"]["standard_resolution"]["url"] %>" />
+                    	<%= link_to i["images"]["standard_resolution"]["url"], :class => "instagram-thumb", :target => '_blank' do %>
+                    		<%= image_tag i["images"]["thumbnail"]["url"] %><br>
+                    	<% end %>
+                  	</span>
                 </div>
                 <hr class="i-tip">
               <% end %>
-
+              <% end %>
               <script type="text/javascript">
               $(document).ready(function () {
                 $(document).on('click', '.instagram-save', function (event) {
@@ -317,35 +319,35 @@
               });
               </script>
             </div>
-                    </div>
+					</div>
 
 
 
-                        <div class="ramble-reddit">
-                            <div class="shows4" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
-                                <i class="fa fa-reddit ramble"></i><br>
-                                <div id="red-title">Reddit</div>
-                            </div>
-                            <div class="rshow">
-                                <% @reddit_thread.each do |r| %>
-                                <li>
-                                    <span class="rshow"><a href="http://www.reddit.com/r/<%= r["name"] %>" target="_blank"></span>
-                                        <%= r["name"] %>
-                                    </a>
-                                </li>
-                                <% end %>
-                            </div>
-                            <script type="text/javascript">
-                            jQuery(".shows4").click(function () {
-                                jQuery(".rshow").toggle();
-                            });
-                            </script>
-                        </div>
+						<div class="ramble-reddit">
+							<div class="shows4" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
+								<i class="fa fa-reddit ramble"></i><br>
+								<div id="red-title">Reddit</div>
+							</div>
+							<div class="rshow">
+								<% @reddit_thread.each do |r| %>
+								<li>
+									<span class="rshow"><a href="http://www.reddit.com/r/<%= r["name"] %>" target="_blank"></span> <span id="reddit-dash">//</span>
+										<%= r["name"] %>
+									</a>
+								</li>
+								<% end %>
+							</div>
+							<script type="text/javascript">
+							jQuery(".shows4").click(function () {
+								jQuery(".rshow").toggle();
+							});
+							</script>
+						</div>
 
 
-                        <div class="recommended-notes">
-                            <div class="shows5" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
-                                <div id="four-title">
+						<div class="recommended-notes">
+							<div class="shows5" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
+								<div id="four-title">
                   <% x = Note.where(ramble_id:(Ramble.where(:destination => @ramble.destination))) %>
                   <% y = x.where(ramble_id:(Ramble.where.not(user_id: @ramble.user_id))) %>
                   <%= y.where(share: true).count %> NOTE(S)
@@ -402,8 +404,8 @@
                                     </p>
                                     <p>
                                       <% if n.body != "" %>
-                                        <span id="note-label">Created on: </span>
-                                        <span id="note-body"> <%= n.created_at.strftime("%m/%d/%Y") %>
+										<span id="note-label">Created by: </span>
+										<span id="note-body"> <%= n.ramble.user.name %> on <%= n.created_at.strftime("%m/%d/%Y") %>
                                       <% end %>
                                         </p>
                                 </div>

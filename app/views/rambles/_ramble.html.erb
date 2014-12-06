@@ -9,21 +9,31 @@
           <!--<# end %>-->
 		<% if note.share %>
 		<div class="note-results">
+          <% if note.title != "" %>
 			<div class="notesshow">
 				Title: <%= note.title %>
 			</div>
+              <% end %>
+          <% if note.address =! "" %>
 			<div class="notesshow">
 				Address: <%= note.address %>
 			</div>
+              <% end %>
+          <% if note.body != "" %>
 			<div class="notesshow">
 				Note: <%= note.body %>
 			</div>
+              <% end %>
+          <% if note.url != "" %>
 			<div class="notesshow">
 				URL: <a href="<%= note.url %>" target="_blank"><%= note.url %></a>
 			</div>
+              <% end %>
+          <% if note.tag_list != [] %>
 			<div class="tagshow">
 				Tags: <%= note.tag_list %>
 			</div>
+              <% end %>
 			<div class="notesshow">
 				Created on: <%= note.created_at.strftime("%m/%d/%Y") %>
 			</div>
@@ -31,7 +41,6 @@
 				<%= ramble.destination.upcase %>
 			</div>
 		</div>
-
 		<% end %>
 		<% end %>
 		<% end %>
@@ -42,28 +51,38 @@
         <!--<# end %>-->
 		<% if note.share %>
 		<div class="note-results">
-			<div class="notesshow">
-				Title: <%= note.title %>
-			</div>
-			<div class="notesshow">
-				Address: <%= note.address %>
-			</div>
-			<div class="notesshow">
-				Note: <%= note.body %>
-			</div>
-			<div class="notesshow">
-				URL: <a href="<%= note.url %>" target="_blank"><%= note.url %></a>
-			</div>
-			<div class="tagshow">
-				Tags: <%= note.tag_list %>
-			</div>
-			<div class="notesshow">
-				Created on: <%= note.created_at.strftime("%m/%d/%Y") %>
-			</div>
-			<div class="note-destination">
-				<%= ramble.destination.upcase %>
-			</div>
-		</div>
+          <% if note.title != "" %>
+              <div class="notesshow">
+                Title: <%= note.title %>
+              </div>
+          <% end %>
+          <% if note.address =! "" %>
+              <div class="notesshow">
+                Address: <%= note.address %>
+              </div>
+          <% end %>
+          <% if note.body != "" %>
+              <div class="notesshow">
+                Note: <%= note.body %>
+              </div>
+          <% end %>
+          <% if note.url != "" %>
+              <div class="notesshow">
+                URL: <a href="<%= note.url %>" target="_blank"><%= note.url %></a>
+              </div>
+          <% end %>
+          <% if note.tag_list != [] %>
+              <div class="tagshow">
+                Tags: <%= note.tag_list %>
+              </div>
+          <% end %>
+          <div class="notesshow">
+            Created on: <%= note.created_at.strftime("%m/%d/%Y") %>
+          </div>
+          <div class="note-destination">
+            <%= ramble.destination.upcase %>
+          </div>
+        </div>
 		<% end %>
 		<% end %>
 		<% end %>

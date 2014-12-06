@@ -57,27 +57,36 @@
 			<% @ramble.notes.order('created_at desc').each do |note| %>
 			<div id="<%= dom_id(note) %>">
 				<div class="notebody">
-					<% if note.body %>
+                  <% if note.title != "" %>
             <p>
               <span id="note-label">Title: </span>
               <span id="note-body"><%= note.title %></span>
             </p>
+              <% end %>
+              <% if note.address != "" %>
             <p>
               <span id="note-label">Address: </span>
               <span id="note-body"><%= note.address %></span>
             </p>
+                  <% end %>
+                  <% if note.body != %>
             <p>
               <span id="note-label">Note: </span>
               <span id="note-body"><%= note.body %></span>
             </p>
+                      <% end %>
+                  <% if note.url =! "" %>
             <p>
               <span id="note-label">URL: </span>
               <span id="note-body"><a href="<%= note.url %>" target="_blank"><%= note.url %></a></span>
             </p>
-						<p>
+                      <% end %>
+                  <% if note.tag_list != [] %>
+             <p>
               <span id="tag-label">Tag(s): </span>
-							<span id="tag-each"><%= raw note.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></span>
+              <span id="tag-each"><%= raw note.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></span>
             </p>
+                      <% end %>
 						<p>
 							<span id="note-label">Created on: </span>
 							<span id="note-body"> <%= note.created_at.strftime("%m/%d/%Y") %>
@@ -87,7 +96,6 @@
 							<%= link_to_modal 'Edit', edit_ramble_note_path(@ramble.id, note.id), :class => "edit-note" %>
 							<i class="fa fa-trash"></i>
 							<%= link_to 'Delete', note, method: :delete, remote: true, :class => "delete-note",:data => {:confirm => 'Delete this note?'} %>
-							<% end %>
 							<% end %>
 				</div>
 			</div>
@@ -116,17 +124,15 @@
 							   <li>
 								  <span class="fshow"><div id="f-venue-title">
                     <% if f["tips"] != nil %>
-
-									   <a class="foursquare-save" data-name="<%= f['venue']['name'] %>"
-										  data-address="<%= f["venue"]["location"]["address"]%>"
-										  data-url="<% f["tips"].each do |g| %>
-										  <%= g["canonicalUrl"] %>
-										  <% end %>"
-										    data-tip="<% f["tips"].each do |g| %>
-										  <%= g["text"] %>
-										  <% end %>">Save me!
-                      </a>
-
+                      <img src="<%= asset_path ('fav-star.png') %>" class="foursquare-save" alt="Save as note" data-name="<%= f['venue']['name'] %>"
+                         data-address="<%= f["venue"]["location"]["address"]%>"
+                         data-tip="<% f["tips"].each do |a| %>
+										  		<%= a['text'] %>
+										  	 <% end %>"
+                         data-url="<% f["tips"].each do |g| %>
+										  	 	 <%= g["canonicalUrl"] %>
+										  	 <% end %>
+                       "/>
                   </span>
 							   <%= f["venue"]["name"] %><hr>
 								</div>
@@ -196,11 +202,13 @@
                 <div class="yelp-results">
                   <li>
                     <span class="yshow">
-                      <a class="yelp-save" data-yname="<%= y.name %>",
+
+
+                      <img src="<%= asset_path ('fav-star.png') %>" class="yelp-save" alt="Save as note"
+                        data-yname="<%= y.name %>",
                         data-yaddress="<%= y.location.address.pop %>",
-                        data-ytip="<%= y.snippet_text %>">
-                        Save me!
-                      </a>
+                        data-ytip="<%= y.snippet_text %>" />
+
                       <%= link_to y.name, y.url, :class => "yelp-venue-title", :target => '_blank'  %>
                       <%= link_to image_tag y.rating_img_url_small %>
                       <span class="y-address"><%= y.location.address.pop %></span><hr>
@@ -216,14 +224,16 @@
 
 
 						<script type="text/javascript">
-						jQuery(".yelp-save").click(function () {
-							var dataYname = event.target.getAttribute("data-yname");
-							var dataYaddress = event.target.getAttribute("data-yaddress");
-							var dataYtip = event.target.getAttribute("data-ytip");
-							jQuery("#note_title").val(dataYname);
-							jQuery("#note_address").val(dataYaddress);
-							jQuery("#note_body").val(dataYtip);
-						});
+             $(document).ready(function () {
+               $(document).on('click', '.yelp-save', function (event) {
+                 var dataYname = event.target.getAttribute("data-yname");
+                 var dataYaddress = event.target.getAttribute("data-yaddress");
+                 var dataYtip = event.target.getAttribute("data-ytip");
+                 $("#note_title").val(dataYname);
+                 $("#note_address").val(dataYaddress);
+                 $("#note_body").val(dataYtip);
+               });
+             });
 						</script>
 
 
@@ -264,21 +274,21 @@
 								<% @instagram_images.each do |i| %>
               		<div class="z4">
                 		<span class="ishow">
-                  		<a class="instagram-save" data-iurl="<%= i["images"]["thumbnail"]["url"] %>">
-                    		Save me!
-                  		</a>
+                  		<img src="<%= asset_path ('fav-star.png') %>" class="instagram-save" alt="Save as note" data-iurl="<%= i["images"]["standard_resolution"]["url"] %>" />
                     	<%= link_to i["images"]["standard_resolution"]["url"], :class => "instagram-thumb", :target => '_blank' do %>
                     		<%= image_tag i["images"]["thumbnail"]["url"] %><br>
                     	<% end %>
-                  </span>
+                  	</span>
                 </div>
                 <hr class="i-tip">
               <% end %>
               <% end %>
               <script type="text/javascript">
-              jQuery(".instagram-save").click(function () {
-                var dataIurl = event.target.getAttribute("data-iurl");
-                jQuery("#note_url").val(dataIurl);
+              $(document).ready(function () {
+                $(document).on('click', '.instagram-save', function (event) {
+                  var dataIurl = event.target.getAttribute("data-iurl");
+                  $("#note_url").val(dataIurl);
+                });
               });
               </script>
 
@@ -339,35 +349,52 @@
               <div id="content2">
 								<% ramble = Ramble.where(:destination => @ramble.destination)  %>
 								<% ramble.each do |r| %>
-								<% if r.id != @ramble.id %>
-							<% r.notes.each do |n| %>
-             <div class="z2">
-							<div class="note-show">
-								<div class="savenote" data-ntitle="<%= n.title %>" data-naddress="<%= n.address %>"
-									data-nbody="<%= n.body %>" data-nurl="<%= n.url %>" data-ntag="<%= n.tag_list %>"> Save this note </div>
+									<% if r.id != @ramble.id %>
+										<% r.notes.each do |n| %>
+             					<div class="z2">
+												<div class="note-show">
+
+
+                <img src="<%= asset_path ('fav-star.png') %>" class="savenote" alt="Save as note"                              data-ntitle="<%= n.title %>"
+                 data-naddress="<%= n.address %>"
+								 data-nbody="<%= n.body %>"
+                 data-nurl="<%= n.url %>"
+                 data-ntag="<%= n.tag_list %>" />
 									<p>
+                                      <% if n.title != "" %>
 										<span id="note-label">Title: </span>
 										<span id="note-body"><%= n.title %></span>
+                                          <% end %>
 									</p>
 									<p>
+                                      <% if n.address != "" %>
 										<span id="note-label">Address: </span>
 										<span id="note-body"><%= n.address %></span>
+                                          <% end %>
 									</p>
 									<p>
+                                      <% if n.body != "" %>
 										<span id="note-label">Note: </span>
 										<span id="note-body"><%= n.body %></span>
+                                          <% end %>
 									</p>
 									<p>
+                                      <% if n.url != "" %>
 										<span id="note-label">URL: </span>
 										<span id="note-body"><a href="<%= n.url %>" target="_blank"><%= n.url %></a></span>
+                                          <% end %>
 									</p>
 									<p>
+                                      <% if n.tag_list != [] %>
 										<span id="tag-label">Tag(s): </span>
 										<span id="tag-each"><%= raw n.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></span>
+                                          <% end %>
 									</p>
 									<p>
+                                      <% if n.body != "" %>
 										<span id="note-label">Created on: </span>
 										<span id="note-body"> <%= n.created_at.strftime("%m/%d/%Y") %>
+                                      <% end %>
 										</p>
 								</div>
                </div>
@@ -376,18 +403,20 @@
 								<% end %>
                </div>
 								<script type="text/javascript">
-								jQuery(".savenote").click(function () {
-									var dataNtitle = event.target.getAttribute("data-ntitle");
-									var dataNaddress = event.target.getAttribute("data-naddress");
-									var dataNbody = event.target.getAttribute("data-nbody");
-									var dataNurl = event.target.getAttribute("data-nurl");
-									var dataNtag = event.target.getAttribute("data-ntag");
-									jQuery("#note_title").val(dataNtitle);
-									jQuery("#note_address").val(dataNaddress);
-									jQuery("#note_body").val(dataNbody);
-									jQuery("#note_url").val(dataNurl);
-									jQuery("#note_tag_list").val(dataNtag);
-								});
+                $(document).ready(function () {
+                  $(document).on('click', '.savenote', function (event) {
+                    var dataNtitle = event.target.getAttribute("data-ntitle");
+                    var dataNaddress = event.target.getAttribute("data-naddress");
+                    var dataNbody = event.target.getAttribute("data-nbody");
+                    var dataNurl = event.target.getAttribute("data-nurl");
+                    var dataNtag = event.target.getAttribute("data-ntag");
+                    $("#note_title").val(dataNtitle);
+                    $("#note_address").val(dataNaddress);
+                    $("#note_body").val(dataNbody);
+                    $("#note_url").val(dataNurl);
+                    $("#note_tag_list").val(dataNtag);
+                  });
+                });
 							</script>
 							<script type="text/javascript">
 								jQuery(".shows5").click(function () {

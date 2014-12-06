@@ -93,9 +93,8 @@ class NotesController < ApplicationController
         render 'notes/set_share', status: :success
       end
     end
-
   end
-
+ 
  private
 
   def note_params

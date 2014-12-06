@@ -28,7 +28,7 @@ map.doubleClickZoom.disable();
 map.scrollWheelZoom.disable();
 if (map.tap) map.tap.disable();
 </script>
-<div class="recommended-notes"><br>
+<div class="recommended-notes-discover"><br>
   <div id="four-title">
     <% x = Note.where(ramble_id:(Ramble.where(:destination => @discover.destination))) %>
     Note(s) <i class="fa fa-arrow-circle-o-down"></i>

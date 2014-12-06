@@ -113,7 +113,7 @@ a.editname, a.editresidence, a.editbio {
   color: $orange;
   font-size: 55px;
 }
-a.r-dest {
+#r-dest {
   color: $green;
   font-family: monospace, sans-serif;
 }
@@ -130,7 +130,7 @@ a.r-dest {
 hr.ramble-divider {
   margin: 0 auto;
 }
-#ramble-name-profile {
+a.ramble-name-profile {
   display: block;
   font-family: monospace, sans-serif;
   color: $dark-grey;

@@ -214,13 +214,13 @@
                         data-yaddress="<%= y.location.address.pop %>",
                         data-ytip="<%= y.snippet_text %>" />
 
-                      <%= link_to y.name, y.url, :class => "yelp-venue-title", :target => '_blank'  %>
+                      <span class="yelp-venue-title"><%= y.name %></span>
                       <%= link_to image_tag y.rating_img_url_small %>
                       <span class="y-address"><%= y.location.address.pop %></span><hr>
                     </span>
                   </li>
                   <span class="yshow">
-                    <article class="yelp-venue-tip"><%= y.snippet_text %></article>
+                    <article class="yelp-venue-tip"><%= link_to y.snippet_text, y.url, :target => '_blank', :class => "yelp-tip" %></article>
                     <hr class="y-tip">
                   </span>
                 </div>
@@ -331,7 +331,7 @@
 							<div class="rshow">
 								<% @reddit_thread.each do |r| %>
 								<li>
-									<span class="rshow"><a href="http://www.reddit.com/r/<%= r["name"] %>" target="_blank"></span>
+									<span class="rshow"><a href="http://www.reddit.com/r/<%= r["name"] %>" target="_blank"></span> <span id="reddit-dash">//</span>
 										<%= r["name"] %>
 									</a>
 								</li>
@@ -403,8 +403,8 @@
 									</p>
 									<p>
                                       <% if n.body != "" %>
-										<span id="note-label">Created on: </span>
-										<span id="note-body"> <%= n.created_at.strftime("%m/%d/%Y") %>
+										<span id="note-label">Created by: </span>
+										<span id="note-body"> <%= n.ramble.user %> on <%= n.created_at.strftime("%m/%d/%Y") %>
                                       <% end %>
 										</p>
 								</div>

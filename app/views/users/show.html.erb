@@ -57,8 +57,8 @@
             <span class="delete-ramble"><%= link_to 'X', r, method: :delete, :class => "x",   :data => {:confirm => 'Delete this ramble?'}, remote: true %></span>
 						<div id="<%= dom_id(r) %>">
 
-            <div id="ramble-name-profile"><%= r.name %></div>
-            <%= link_to r.destination, ramble_path(r), :class => "r-dest" %>
+            <%= link_to r.name, ramble_path(r), :class => "ramble-name-profile" %>
+            <span id="r-dest"><%= r.destination %></span>
             <span id="dates"><%= r.start_date %> to <%= r.end_date %></span>
             <% if r.notes.size > 0 %>
             <div class="shows" data-id="<%= r.id %>"><%= r.notes.count %> saved <%= "note".pluralize(r.notes.count) %></div><hr class="ramble-divider">

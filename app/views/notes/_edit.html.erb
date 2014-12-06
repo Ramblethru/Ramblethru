@@ -1,12 +1,12 @@
-  <h2 id="edit-note-heading">Edit Your Note</h2><hr id="edit-note-border">
-  <div class="edit-note-all">
+<h2 id="edit-note-heading">Edit Your Note</h2>
+<hr id="edit-note-border">
+<div class="edit-note-all">
 <%= simple_form_for [@ramble, @note] do |f| %>
     <%= f.input :title, label: false, placeholder: "Your note's title", input_html: { class: 'edit-note-title' } %>
-    <%= f.input :address, label: false, placeholder: "Venue address",input_html: { class: 'edit-note-address' } %>
-    <%= f.input :body, label: false, placeholder: "Your body text (REQUIRED)",input_html: { class: 'edit-note-body' } %>
-    <%= f.input :url, label: false, placeholder: "URL",input_html: { class: 'edit-note-url' } %>
-    <%= f.input :tag_list, label: false, input_html: { class: 'edit-note-tags' }, :placeholder=>"Tags" %>
+    <%= f.input :address, label: false, placeholder: "Venue address", input_html: { class: 'edit-note-address' } %>
+    <%= f.input :body, label: false, placeholder: "Your body text (REQUIRED)", input_html: { class: 'edit-note-body' } %>
+    <%= f.input :url, label: false, placeholder: "URL", input_html: { class: 'edit-note-url' } %>
+    <%= f.input :tag_list, label: false, input_html: { class: 'edit-note-tags' }, :placeholder => "Tags" %>
     <%= f.button :submit, "Edit note", { class: 'edit-note-button' } %>
 <% end %>
 </div>
-

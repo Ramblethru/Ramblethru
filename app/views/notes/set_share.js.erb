@@ -1,9 +1,13 @@
 $(".shared").effect("highlight", 250, function() {
 });
-
-
+var dataStatus = event.target.getAttribute("data-status");
+console.log(dataStatus)
 <% if @note.share == true %>
-$(".sharedstatus").val("make private");
+        console.log("hello");
+    $(dataStatus).val("make private");
+});
 <% else %>
-$(".sharedstatus").val("make public");
+        console.log("hello1");
+    $(dataStatus).val("make public");
+});
 <% end %>

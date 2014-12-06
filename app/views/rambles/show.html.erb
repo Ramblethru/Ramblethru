@@ -87,7 +87,7 @@
                       <% end %>
                   <% if note.tag_list != [] %>
              <p>
-              <span id="tag-label">Tag(s): </span>
+              <span id="tag-label">Tags: </span>
               <span id="tag-each"><%= raw note.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></span>
             </p>
                       <% end %>
@@ -398,7 +398,7 @@
 									</p>
 									<p>
                                       <% if n.tag_list != [] %>
-										<span id="tag-label">Tag(s): </span>
+										<span id="tag-label">Tags: </span>
 										<span id="tag-each"><%= raw n.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></span>
                                           <% end %>
 									</p>

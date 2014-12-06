@@ -196,7 +196,7 @@ div.f-tips, a.f-tips {
   font-family: monospace, sans-serif;
   color: $dark-grey
 }
-.yelp {
+.yelp, .recommended-notes-discover {
   background-color: $green;
   padding-bottom: 20px;
 }
@@ -299,4 +299,13 @@ div.discover-bottom {
   color: $orange;
   font-family: monospace, sans-serif;
   font-weight: bold;
+}
+.note-show-inline {
+  display: inline-block;
+  margin: 15px auto 15px auto;
+  background-image: url('http://i.imgur.com/9OUxrEd.png');
+  border: 2px solid $orange;
+  max-width: 450px;
+  text-align: left;
+  padding: 10px 10px 10px 10px;
 }

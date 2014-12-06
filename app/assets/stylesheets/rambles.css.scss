@@ -288,7 +288,6 @@ a.edit-note, a.delete-note {
   font-family: monospace, sans-serif;
 }
 .note-show {
-  display:none;
   margin: 15px auto 15px auto;
   text-align:left;
   padding-left:10px;
@@ -384,12 +383,11 @@ input#search.span2 {
 
 //index page//
 #no-results {
-  text-align: justify;
+  text-align: center;
   font-family: 'menschmensch_regular';
   font-weight: 700;
   font-size: 24px;
-  padding-left:390px;
-  margin-top:50px;
+  margin-top: 50px;
 }
 .note-results {
   text-align:left;

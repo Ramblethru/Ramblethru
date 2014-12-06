@@ -1,12 +1,8 @@
 <div class="row" id="<%= ramble.persisted? ? dom_id(ramble) : "ramble-new" %>">
 	<div class="note-container">
-
 		<% if logged_in? %>
 		<% if ramble.user_id != current_user.id %>
 		<% ramble.notes.each do |note| %>
-          <!--<# if ramble.notes.size = 0 %>-->
-            <!--<div class="note-results">No results found.</div>-->
-          <!--<# end %>-->
 		<% if note.share %>
 		<div class="note-results">
           <% if note.title != "" %>
@@ -46,9 +42,6 @@
 		<% end %>
 		<% else %>
 		<% ramble.notes.each do |note| %>
-        <!--<# if ramble.notes.size = 0 %>-->
-          <!--<div class="note-results">No results found.</div>-->
-        <!--<# end %>-->
 		<% if note.share %>
 		<div class="note-results">
           <% if note.title != "" %>

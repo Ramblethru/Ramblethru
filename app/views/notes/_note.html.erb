@@ -1,26 +1,35 @@
 <div class="row" id="<%= note.persisted? ? dom_id(note) : "note-new" %>">
+  <div class="notebody">
 
-	<div class="notebody">
-		<% if note.body %>
 		<p>
+          <% if note.title != "" %>
 			<span id="note-label">Title: </span>
 			<span id="note-title"><%= note.title %></span>
+              <% end %>
 		</p>
 		<p>
+          <% if note.address != "" %>
 			<span id="note-label">Address: </span>
 			<span id="note-address"><%= note.address %></span>
+              <% end %>
 		</p>
 		<p>
+          <% if note.body != "" %>
 			<span id="note-label">Note: </span>
 			<span id="note-body"><%= note.body %></span>
+              <% end %>
 		</p>
 		<p>
+          <% if note.url != "" %>
 			<span id="note-label">URL: </span>
 			<span id="note-url"><a href="<%= note.url %>" target="_blank"><%= note.url %></a></span>
+              <% end %>
 		</p>
 		<p>
+          <% if note.tag_list != [] %>
 			<span id="tag-label">Tag(s): </span>
 			<span id="note-tag"><%= note.tag_list %></span>
+              <% end %>
 		</p>
 		<p>
 			<span id="note-label">Created on: </span>
@@ -31,7 +40,6 @@
 			<%= link_to_modal 'Edit', edit_ramble_note_path(@ramble.id, note.id), :class => "edit-note" %>
 			<i class="fa fa-trash"></i>
 			<%= link_to 'Delete', note, method: :delete, remote: true, :class => "delete-note",:data => {:confirm => 'Are you sure you want to delete this note?'} %>
-			<% end %>
 			<% end %>
 		</div>
 	</div>

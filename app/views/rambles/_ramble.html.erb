@@ -10,7 +10,7 @@
 				<span id="note-show-title">Title: </span><span id="note-title-body"><%= note.title %></span>
 			</div>
               <% end %>
-          <% if note.address =! "" %>
+          <% if note.address != "" %>
 			<div class="notesshow">
 				<span id="note-show-address">Address: </span> <span id="note-address-body"><%= note.address %></span>
 			</div>
@@ -49,7 +49,7 @@
                 <span id="note-show-title">Title: </span><span id="note-title-body"><%= note.title %></span>
               </div>
           <% end %>
-          <% if note.address =! "" %>
+          <% if note.address != "" %>
               <div class="notesshow">
                <span id="note-show-address">Address: </span><span id="note-address-body"><%= note.address %></span>
               </div>

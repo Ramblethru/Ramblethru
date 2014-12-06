@@ -374,7 +374,14 @@ input#search.span2 {
 }
 
 //index page//
-
+#no-results {
+  text-align: justify;
+  font-family: 'menschmensch_regular';
+  font-weight: 700;
+  font-size: 24px;
+  padding-left:390px;
+  margin-top:50px;
+}
 .note-results {
   max-width: 440px;
   background-color: rgba(46,117,98,0.3);

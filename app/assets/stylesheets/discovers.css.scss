@@ -196,10 +196,10 @@ div.f-tips, a.f-tips {
   font-family: monospace, sans-serif;
   color: $dark-grey
 }
-.yelp, .recommended-notes-discover {
-  background-color: $green;
-  padding-bottom: 20px;
-}
+.yelp {
+   background-color: $green;
+   padding-bottom: 20px;
+ }
 div.y-title, div.red-title {
   color: $orange;
   font-family: 'menschmensch_regular';
@@ -305,7 +305,11 @@ div.discover-bottom {
   margin: 15px auto 15px auto;
   background-image: url('http://i.imgur.com/9OUxrEd.png');
   border: 2px solid $orange;
-  max-width: 450px;
+  width: 450px;
   text-align: left;
   padding: 10px 10px 10px 10px;
+}
+.recommended-notes-discover {
+  background-color: $green;
+  padding-bottom: 20px;
 }

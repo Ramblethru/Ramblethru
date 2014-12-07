@@ -211,7 +211,8 @@
                       <img src="<%= asset_path ('fav-star.png') %>" class="yelp-save" alt="Save as note"
                         data-yname="<%= y.name %>",
                         data-yaddress="<%= y.location.address.pop %>",
-                        data-ytip="<%= y.snippet_text %>" />
+                        data-ytip="<%= y.snippet_text %>",
+                        data-yurl="<%= y.url %>" />
 
                       <span class="yelp-venue-title"><%= y.name %></span>
                       <%= link_to image_tag y.rating_img_url_small %>
@@ -233,10 +234,11 @@
                  var dataYname = event.target.getAttribute("data-yname");
                  var dataYaddress = event.target.getAttribute("data-yaddress");
                  var dataYtip = event.target.getAttribute("data-ytip");
+                 var dataYurl = event.target.getAttribute("data-yurl");
                  $("#note_title").val(dataYname);
                  $("#note_address").val(dataYaddress);
                  $("#note_body").val(dataYtip);
-                 $("#note_url").val('');
+                 $("#note_url").val(dataYurl);
                  $("#note_tag_list").val(destination);
                });
              });

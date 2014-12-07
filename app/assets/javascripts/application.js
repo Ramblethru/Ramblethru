@@ -13,6 +13,7 @@
 
 //= require_tree .
 //= require jquery
+//= require vendor_js
 
 
 

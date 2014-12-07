@@ -263,6 +263,15 @@ a.edit-note, a.delete-note {
       color: $orange;
   }
 }
+.noteshow {
+  display:none;
+  margin: 15px auto 15px auto;
+  text-align:left;
+  padding-left:10px;
+  background: transparent;
+  border: 2px solid $green;
+  max-width: 450px;
+}
 .fshow {
   display:none;
 }

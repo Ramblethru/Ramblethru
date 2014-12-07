@@ -34,47 +34,53 @@ if (map.tap) map.tap.disable();
     Note(s) <i class="fa fa-arrow-circle-o-down"></i>
   </div>
   <% ramble = Ramble.where(:destination => @discover.destination) %>
-  <% ramble.each do |r| %>
-    <% r.notes.take(5).each do |n| %>
-      <% if n.share == true %>
-        <div class="note-show-inline">
-          <% if n.title != "" %>
+  <% if ramble.count > 0 %>
+    <% ramble.each do |r| %>
+      <% r.notes.take(5).each do |n| %>
+        <% if n.share == true %>
+          <div class="note-show-inline">
+            <% if n.title != "" %>
+              <p>
+                <span id="note-label">Title: </span>
+                <span id="note-body"><%= n.title %></span>
+              </p>
+            <% end %>
+            <% if n.address =! "" %>
+              <p>
+                <span id="note-label">Address: </span>
+                <span id="note-body"><%= n.address %></span>
+              </p>
+            <% end %>
+            <% if n.body != "" %>
+              <p>
+                <span id="note-label">Note: </span>
+                <span id="note-body"><%= n.body %></span>
+              </p>
+            <% end %>
+            <% if n.url != "" %>
+              <p>
+                <span id="note-label">URL: </span>
+                <span id="note-body"><a href="<%= n.url %>" target="_blank"><%= n.url %></a></span>
+              </p>
+            <% end %>
+            <% if n.tag_list != [] %>
+              <p>
+                <span id="tag-label">Tag(s): </span>
+                <span id="tag-each">
+                  <%= raw n.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %>
+                </span>
+              </p>
+            <% end %>
             <p>
-              <span id="note-label">Title: </span>
-              <span id="note-body"><%= n.title %></span>
+              <span id="note-label">Created on: </span>
+              <span id="note-body"> <%= n.created_at.strftime("%m/%d/%Y") %>
             </p>
-          <% end %>
-          <% if n.address =! "" %>
-            <p>
-              <span id="note-label">Address: </span>
-              <span id="note-body"><%= n.address %></span>
-            </p>
-          <% end %>
-          <% if n.body != "" %>
-            <p>
-              <span id="note-label">Note: </span>
-              <span id="note-body"><%= n.body %></span>
-            </p>
-          <% end %>
-          <% if n.url != "" %>
-            <p>
-              <span id="note-label">URL: </span>
-              <span id="note-body"><a href="<%= n.url %>" target="_blank"><%= n.url %></a></span>
-            </p>
-          <% end %>
-          <% if n.tag_list != [] %>
-            <p>
-              <span id="tag-label">Tag(s): </span>
-              <span id="tag-each"><%= raw n.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></span>
-            </p>
-          <% end %>
-          <p>
-            <span id="note-label">Created on: </span>
-            <span id="note-body"> <%= n.created_at.strftime("%m/%d/%Y") %>
-          </p>
-        </div>
+          </div>
+        <% end %>
       <% end %>
     <% end %>
+  <% else %>
+    <div id="discover-no-notes">No notes yet. <%= link_to_modal "Create a Ramble", new_ramble_path, :class => "discover-no-notes-link" %> to start sharing notes!</div>
   <% end %>
 </div>
 <div class="container">
@@ -144,12 +150,17 @@ if (map.tap) map.tap.disable();
     <div class="r-desc">Local subreddits can be a great place to get information about a destination from locals. Here is a list of subreddits related to your destination:</div>
     <div class="r-list">
       <ul>
-        <% @reddit_thread.each do |r| %>
-        <li>
-          <span class="r-link"><a href="http://www.reddit.com/r/<%= r["name"] %>" target="_blank"></span> <span id="slash">//</span>
-            <%= r["name"] %>
-          </a>
-        </li>
+        <% if @reddit_thread.count > 0 %>
+          <% @reddit_thread.each do |r| %>
+            <li>
+              <span class="r-link"><a href="http://www.reddit.com/r/<%= r["name"] %>" target="_blank"></span> 
+              <span id="slash">//</span>
+              <%= r["name"] %>
+              </a>
+            </li>
+          <% end %>
+        <% else %>
+          <div id="no-reddit">no reddit results for this location</div>
         <% end %>
       </ul>
     </div>

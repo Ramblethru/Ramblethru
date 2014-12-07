@@ -86,10 +86,17 @@
                 <span id="r-dest"><%= r.destination %></span>
             <span id="dates"><%= r.start_date %> to <%= r.end_date %></span>
             <% if r.notes.size > 0 %>
+                <% if current_user.id == @user.id %>
                 <div class="shows" data-id="<%= r.id %>"><%= r.notes.count %> saved <%= "note".pluralize(r.notes.count) %></div><hr class="ramble-divider">
-                <div class="noteshow" id="div_ramble_<%= r.id %>" >
+                <% else %>
+                    <div class="shows" data-id="<%= r.id %>"> <%= r.notes.where(share:true).count %> saved <%= "note".pluralize(r.notes.count) %></div><hr class="ramble-divider">
+                    <% end %>
+                    <div class="noteshow" id="div_ramble_<%= r.id %>" >
                   <% r.notes.order('created_at desc').each do |n| %>
               <span id="<%= dom_id(n) %>">
+                <% if current_user.id != @user.id %>
+                    <% if n.share == true %>
+
                 <% if n.title != "" %>
                 <span id="user-title">Title:</span><%=n.title %><br>
                     <% end %>
@@ -117,6 +124,8 @@
                       <% end %>
                 </div>
                 <hr id="note-each-divider">
+                    <% end %>
+                    <% end %>
                   <% end %>
                 </div>
             <% else %>

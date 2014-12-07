@@ -1,84 +1,95 @@
 <div class="row" id="<%= ramble.persisted? ? dom_id(ramble) : "ramble-new" %>">
 	<div class="note-container">
 		<% if logged_in? %>
-		<% if ramble.user_id != current_user.id %>
-		<% ramble.notes.each do |note| %>
-		<% if note.share %>
-		<div class="note-results">
-          <% if note.title != "" %>
-			<div class="notesshow">
-				<span id="note-show-title">Title: </span><span id="note-title-body"><%= note.title %></span>
-			</div>
+		  <% if ramble.user_id != current_user.id %>
+		    <% ramble.notes.each do |note| %>
+		      <% if note.share %>
+		        <div class="note-results">
+              <% if note.title != "" %>
+                <div class="notesshow">
+				          <span id="note-show-title">Title: </span>
+                  <span id="note-title-body"><%= note.title %></span>
+			          </div>
               <% end %>
-          <% if note.address != "" %>
-			<div class="notesshow">
-				<span id="note-show-address">Address: </span> <span id="note-address-body"><%= note.address %></span>
-			</div>
+              <% if note.address != "" %>
+  			        <div class="notesshow">
+  				        <span id="note-show-address">Address: </span> 
+                  <span id="note-address-body"><%= note.address %></span>
+  			        </div>
               <% end %>
-          <% if note.body != "" %>
-			<div class="notesshow">
-				<span id="note-show-body">Note: </span><span id="note-body-body"><%= note.body %></span>
-			</div>
+              <% if note.body != "" %>
+  			        <div class="notesshow">
+  				        <span id="note-show-body">Note: </span>
+                  <span id="note-body-body"><%= note.body %></span>
+  			        </div>
               <% end %>
-          <% if note.url != "" %>
-			<div class="notesshow">
-				<span id="note-show-url">URL: </span><a href="<%= note.url %>" target="_blank" class="note-url-body"><%= note.url %></a>
-			</div>
+              <% if note.url != "" %>
+  			        <div class="notesshow">
+  				        <span id="note-show-url">URL: </span>
+                  <a href="<%= note.url %>" target="_blank" class="note-url-body"><%= note.url %></a>
+  			        </div>
               <% end %>
-          <% if note.tag_list != [] %>
-			<div class="tagshow">
-				<span id="note-show-tags">Tags: </span><span id="note-tags-body"><%= note.tag_list %></span>
-			</div>
+              <% if note.tag_list != [] %>
+  			        <div class="tagshow">
+  				        <span id="note-show-tags">Tags: </span>
+                  <span id="note-tags-body"><%= note.tag_list %></span>
+  			        </div>
               <% end %>
-			<div class="notesshow">
-				<span id="note-show-created">Created on: </span><span id="note-created-body"><%= note.created_at.strftime("%m/%d/%Y") %></span>
-			</div>
-			<div class="note-destination">
-				<%= ramble.destination.upcase %>
-			</div>
-		</div>
-		<% end %>
-		<% end %>
-		<% end %>
+  			      <div class="notesshow">
+  				      <span id="note-show-created">Created on: </span>
+                <span id="note-created-body"><%= note.created_at.strftime("%m/%d/%Y") %></span>
+  			      </div>
+  			      <div class="note-destination">
+  				      <%= ramble.destination.upcase %>
+  			      </div>
+		        </div>
+		      <% end %>
+		    <% end %>
+		  <% end %>
 		<% else %>
-		<% ramble.notes.each do |n| %>
-		<% if n.share %>
-		<div class="note-results">
-          <% if note.title != "" %>
+		  <% ramble.notes.each do |n| %>
+		    <% if n.share %>
+		      <div class="note-results">
+            <% if n.title != "" %>
               <div class="notesshow">
-                <span id="note-show-title">Title: </span><span id="note-title-body"><%= note.title %></span>
+                <span id="note-show-title">Title: </span>
+                <span id="note-title-body"><%= n.title %></span>
               </div>
-          <% end %>
-          <% if note.address != "" %>
+            <% end %>
+            <% if n.address != "" %>
               <div class="notesshow">
-               <span id="note-show-address">Address: </span><span id="note-address-body"><%= note.address %></span>
+               <span id="note-show-address">Address: </span>
+               <span id="note-address-body"><%= n.address %></span>
               </div>
-          <% end %>
-          <% if note.body != "" %>
+            <% end %>
+            <% if n.body != "" %>
               <div class="notesshow">
-                <span id="note-show-body">Note: </span><span id="note-body-body"><%= note.body %></span>
+                <span id="note-show-body">Note: </span>
+                <span id="note-body-body"><%= n.body %></span>
               </div>
-          <% end %>
-          <% if note.url != "" %>
+            <% end %>
+            <% if n.url != "" %>
               <div class="notesshow">
-                <span id="note-show-url">URL: </span><a href="<%= note.url %>" target="_blank" class="note-url-body"><%= note.url %></a>
+                <span id="note-show-url">URL: </span>
+                <a href="<%= note.url %>" target="_blank" class="note-url-body"><%= n.url %></a>
               </div>
-          <% end %>
-          <% if note.tag_list != [] %>
+            <% end %>
+            <% if n.tag_list != [] %>
               <div class="tagshow">
-                <span id="note-show-tags">Tags: </span><span id="note-tags-body"><%= note.tag_list %></span>
+                <span id="note-show-tags">Tags: </span>
+                <span id="note-tags-body"><%= n.tag_list %></span>
               </div>
-          <% end %>
-          <div class="notesshow">
-            <span id="note-show-created">Created on: </span><span id="note-created-body"><%= note.created_at.strftime("%m/%d/%Y") %></span>
+            <% end %>
+            <div class="notesshow">
+              <span id="note-show-created">Created on: </span>
+              <span id="note-created-body"><%= n.created_at.strftime("%m/%d/%Y") %></span>
+            </div>
+            <div class="note-destination">
+              <%= ramble.destination.upcase %>
+            </div>
           </div>
-          <div class="note-destination">
-            <%= ramble.destination.upcase %>
-          </div>
-        </div>
-
-		<% end %>
-		<% end %>
-		<% end %>
+		    <% end %>
+	    <% end %>
+    <% end %>
 	</div>
 </div>

@@ -73,79 +73,85 @@
         <div class="each-ramble">
           <div id="<%= dom_id(r) %>">
             <% if current_user.id == @user.id %>
-            <span class="delete-ramble"><%= link_to 'X', r, method: :delete, :class => "x",   :data => {:confirm => 'Delete this ramble?'}, remote: true %></span>
+            <span class="delete-ramble">
+              <%= link_to 'X', r, method: :delete, :class => "x",   :data => {:confirm => 'Delete this ramble?'}, remote: true %>
+            </span>
             <%= link_to r.name, ramble_path(r), :class => "ramble-name-profile" %>
             <% else %>
-                <div class="ramble-name-profile"> <%= r.name %> </div>
-                <% end %>
-                <span id="r-dest"><%= r.destination %></span>
-            <span id="dates"><%= r.start_date %> to <%= r.end_date %></span>
+              <div class="ramble-name-profile"> <%= r.name %> </div>
+            <% end %>
+            <span id="r-dest">
+              <%= r.destination %>
+            </span>
+            <span id="dates">
+              <%= r.start_date %> to <%= r.end_date %>
+            </span>
             <% if r.notes.size > 0 %>
-                <% if current_user.id == @user.id %>
-                <div class="shows" data-id="<%= r.id %>"><%= r.notes.count %> saved <%= "note".pluralize(r.notes.count) %></div><hr class="ramble-divider">
-                <% else %>
-                    <div class="shows" data-id="<%= r.id %>"> <%= r.notes.where(share:true).count %> saved <%= "note".pluralize(r.notes.count) %></div><hr class="ramble-divider">
-                    <% end %>
-                    <div class="noteshow" id="div_ramble_<%= r.id %>" >
-                  <% r.notes.order('created_at desc').each do |n| %>
+              <% if current_user.id == @user.id %>
+              <div class="shows" data-id="<%= r.id %>"><%= r.notes.count %> saved <%= "note".pluralize(r.notes.count) %></div><hr class="ramble-divider">
+              <% else %>
+              <div class="shows" data-id="<%= r.id %>"> <%= r.notes.where(share:true).count %> saved <%= "note".pluralize(r.notes.count) %></div><hr class="ramble-divider">
+              <% end %>
+              <div class="noteshow" id="div_ramble_<%= r.id %>" >
+                <% r.notes.order('created_at desc').each do |n| %>
               <span id="<%= dom_id(n) %>">
                 <% if current_user.id != @user.id %>
-                    <% if n.share == true %>
-
-                <% if n.title != "" %>
-                <span id="user-title">Title:</span><%=n.title %><br>
-                    <% end %>
-                <% if n.address != "" %>
-                <span id="user-address">Address:
-                </span>
-                <%=n.address %><br>
-                <% end %>
-                <% if n.body != "" %>
-                <span id="user-note">Note:
-                </span>
-                <%= n.body %><br>
-                <% end %>
-                <% if n.url != "" %>
-                <span id="user-url">URL:
-                </span>
-                <a href="<%= n.url %>" target="_blank"><%= n.url %></a><br>
-                <% end %>
-                <% if n.tag_list != [] %>
-                <span id="user-tags">Tags:
-                </span>
-                <%= n.tag_list %><br>
-                <% end %>
-                <span id="user-created">Created on:
-                </span>
-                <%= n.created_at.strftime("%m/%d/%Y") %><br>
-                <div class="shared" >
-                  <% if current_user.id == @user.id %>
                   <% if n.share == true %>
-                    <%= button_to "Make private", set_share_path(n.id), method: :patch, remote: true, class:"sharedstatus",  id: n.id %>
-                    <br>
-                  <% else %>
-                    <%= button_to "Make Public", set_share_path(n.id), method: :patch, remote: true, class:"sharedstatus", id: n.id %>
-                  <% end %>
+                    <% if n.title != "" %>
+                    <span id="user-title">Title:
+                    </span><%=n.title %><br>
+                    <% end %>
+                    <% if n.address != "" %>
+                    <span id="user-address">Address:
+                    </span>
+                    <%=n.address %><br>
+                    <% end %>
+                    <% if n.body != "" %>
+                    <span id="user-note">Note:
+                    </span>
+                    <%= n.body %><br>
+                    <% end %>
+                    <% if n.url != "" %>
+                    <span id="user-url">URL:
+                    </span>
+                    <a href="<%= n.url %>" target="_blank"><%= n.url %></a><br>
+                    <% end %>
+                    <% if n.tag_list != [] %>
+                    <span id="user-tags">Tags:
+                    </span>
+                    <%= n.tag_list %><br>
+                    <% end %>
+                    <span id="user-created">Created on:
+                    </span>
+                    <%= n.created_at.strftime("%m/%d/%Y") %><br>
+                    <div class="shared">
+                    <% if current_user.id == @user.id %>
+                      <% if n.share == true %>
+                      <%= button_to "Make private", set_share_path(n.id), method: :patch, remote: true, class:"sharedstatus",  id: n.id %>
+                      <br>
+                      <% else %>
+                      <%= button_to "Make Public", set_share_path(n.id), method: :patch, remote: true, class:"sharedstatus", id: n.id %>
                       <% end %>
-                </div>
-                <hr id="note-each-divider">
+                    <% end %>
+                    </div>
+                    <hr id="note-each-divider">
                     <% end %>
                     <% end %>
                   <% end %>
+                    </div>
+                <% else %>
+                    <span id="no-notes">No notes yet.
+                    </span>
+                <% end %>
+                  </div>
                 </div>
-            <% else %>
-                <span id="no-notes">No notes yet.
-                </span>
             <% end %>
+            <script type="text/javascript">
+            $(".shows").click(function () {
+                var dataId = event.target.getAttribute("data-id");
+                $("#div_ramble_" + dataId).toggle();
+            });
+            </script>
           </div>
+          <div class="usernotes"></div>
         </div>
-    <% end %>
-    <script type="text/javascript">
-        $(".shows").click(function () {
-            var dataId = event.target.getAttribute("data-id");
-            $("#div_ramble_" + dataId).toggle();
-        });
-    </script>
-  </div>
-  <div class="usernotes"></div>
-</div>

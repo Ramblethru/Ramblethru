@@ -353,7 +353,7 @@
                   <% y = x.where(ramble_id:(Ramble.where.not(user_id: @ramble.user_id))) %>
                   <%= y.where(share: true).count %> NOTE(S)
                   <div id="pagingControls2"></div>
-                                </div>
+                </div>
               </div>
             </div>
 
@@ -399,13 +399,8 @@
                                     </p>
                                     <p>
                                       <% if n.tag_list != [] %>
-<<<<<<< HEAD
 										<span id="tag-label">Tags: </span>
 										<span id="tag-each"><%= raw n.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></span>
-=======
-                                        <span id="tag-label">Tag(s): </span>
-                                        <span id="tag-each"><%= n.tag_list %></span>
->>>>>>> dd64512b91a9c662c4615e415987347c581c9128
                                           <% end %>
                                     </p>
                                     <p>
@@ -443,8 +438,6 @@
                                 });
                             </script>
 
-
-              <!--script for yelp pagination-->
               <script type="text/javascript">
                 var pager2 = new Imtech2.Pager();
                 jQuery(document).ready(function() {
@@ -454,8 +447,6 @@
                   pager2.showPage(1);
                 });
               </script>
-
-          <!--</div>-->
       </div>
     </div>
   </div>

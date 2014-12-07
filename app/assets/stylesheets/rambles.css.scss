@@ -473,3 +473,8 @@ a.yelp-tip {
   color: $green;
   font-weight: bold;
 }
+
+.instagram-save, .savenote, .yelp-save, .foursquare-save {
+  cursor: pointer;
+  cursor: hand;
+}

@@ -36,8 +36,8 @@
         </p>
       <% end %>
       <p>
-        <span id="note-label">Created on: </span>
-<span id="note-body"> <%= n.created_at.strftime("%m/%d/%Y") %>
+        <span id="note-label">Created by: </span>
+        <span id="note-body"> <%= n.ramble.user.name %> on <%= n.created_at.strftime("%m/%d/%Y") %> </span>
       </p>
       <div class="note-destination">
         <%= ramble.destination.upcase %>

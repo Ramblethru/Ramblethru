@@ -365,9 +365,7 @@
                             <% r.notes.each do |n| %>
                             <% if n.share == true %>
              <div class="z2">
-                            <div class="note-show">
-
-
+                            <div class="noteshow">
                 <img src="<%= asset_path ('fav-star.png') %>" class="savenote" alt="Save as note"                              data-ntitle="<%= n.title %>"
                  data-naddress="<%= n.address %>"
                                  data-nbody="<%= n.body %>"
@@ -434,7 +432,7 @@
                             </script>
                             <script type="text/javascript">
                                 jQuery(".shows5").click(function () {
-                                    jQuery(".note-show").toggle();
+                                    jQuery(".noteshow").toggle();
                                 });
                             </script>
 

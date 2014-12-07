@@ -13,7 +13,12 @@
     <% end %>
     <% if @ramble.start_date && @ramble.end_date %>
         <div class="start-end">
-            From <%= best_in_place @ramble, :start_date,:html_attrs => {  :style => 'width:500px; height:30px; margin:0 auto;margin-top:-25px;text-align:left;font-family: "menschmensch_regular"' } %> to <%= best_in_place @ramble,:end_date,:html_attrs => {  :style => 'width:500px; height:30px; margin:0 auto;margin-top:-25px;text-align:right;font-family: "menschmensch_regular"' } %>
+          <div class="start-date">
+            <%= best_in_place @ramble, :start_date,:html_attrs => {  :style => 'width: 215px; height: 30px; background-color: #2E7562; margin: -30px 0 0 335px; text-align: right; font-family: "monospace"; font-weight: 500;' } %>
+          </div> to
+          <div class="end-date">
+            <%= best_in_place @ramble,:end_date,:html_attrs => {  :style => 'width: 215px; height: 30px; background-color: #2E7562; margin: -30px 0 0 670px; text-align: right; font-family: "monospace"; font-weight: 500;' } %>
+          </div>
         </div>
     <% end %>
 </div>

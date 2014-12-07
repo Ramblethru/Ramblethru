@@ -11,7 +11,7 @@
           <span id="note-body"><%= n.title %></span>
         </p>
       <% end %>
-      <% if n.address =! "" %>
+      <% if n.address != "" %>
         <p>
           <span id="note-label">Address: </span>
           <span id="note-body"><%= n.address %></span>
@@ -88,8 +88,9 @@
         <%= ramble.destination.upcase %>
       </div>
     </div>
-    <% end %>
-    <% end %>
-    <% end %>
-  </div>
+		<% end %>
+		<% end %>
+		<% end %>
+	</div>
 </div>
+

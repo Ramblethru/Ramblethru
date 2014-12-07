@@ -79,7 +79,7 @@
               <span id="note-body"><%= note.body %></span>
             </p>
                       <% end %>
-                  <% if note.url =! "" %>
+                  <% if note.url != "" %>
             <p>
               <span id="note-label">URL: </span>
               <span id="note-body"><a href="<%= note.url %>" target="_blank"><%= note.url %></a></span>

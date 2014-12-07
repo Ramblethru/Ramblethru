@@ -20,10 +20,10 @@
               <% end %>
 		</p>
 		<p>
-
+          <% if note.url != "" %>
 			<span id="note-label">URL: </span>
 			<span id="note-url"><a href="<%= note.url %>" target="_blank"><%= note.url %></a></span>
-              
+              <% end %>
 		</p>
 		<p>
           <% if note.tag_list != [] %>

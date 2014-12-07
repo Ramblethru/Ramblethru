@@ -34,9 +34,9 @@
     </div>
     <div class="lives-in">
       <span id="user-residence-label">Residence: </span>
-			<span id="user-residence">
-				<%= best_in_place @user, :lives_in, :place_holder => "add your location", :html_attrs => {  :style => 'width:400px; height:50px;font-family: "menschmensch_regular"' } %>
-			</span>
+      <span id="user-residence">
+        <%= best_in_place @user, :lives_in, :place_holder => "add your location", :html_attrs => {  :style => 'width:400px; height:50px;font-family: "menschmensch_regular"' } %>
+      </span>
     </div>
     <div class="bio">
       <span id="user-bio-label">BIO: </span>
@@ -52,9 +52,12 @@
     <% end %>
   </div>
   <div class="userrambles">
+            <ul class="bxslider">
+
     <% @user.rambles.each do |r| %>
         <div class="each-ramble">
           <div id="<%= dom_id(r) %>">
+            <li>
             <span class="delete-ramble"><%= link_to 'X', r, method: :delete, :class => "x",   :data => {:confirm => 'Delete this ramble?'}, remote: true %></span>
             <%= link_to r.name, ramble_path(r), :class => "ramble-name-profile" %>
             <span id="r-dest"><%= r.destination %></span>
@@ -96,7 +99,8 @@
                 <span id="no-notes">no notes yet</span>
                 </span>
             <% end %>
-          </div>
+            </div>
+          </li>
         </div>
     <% end %>
     <script type="text/javascript">
@@ -106,5 +110,13 @@
         });
     </script>
   </div>
+  </ul>
   <div class="usernotes"></div>
 </div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.bxslider').bxSlider();
+
+  });
+ </script>
+

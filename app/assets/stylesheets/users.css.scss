@@ -223,3 +223,9 @@ a.create-ramble-here {
 a.create-ramble-here:hover {
   color: $orange;
 }
+div.bx-viewport {
+  overflow: visible !important;
+}
+.bx-pager-item {
+  display: none;
+}

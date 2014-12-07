@@ -73,6 +73,11 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
+
+  require 'jquery/modal/rails'
+  require 'jquery/modal/filters'
+  require 'jquery/modal/helpers'
+  
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
   config.cache_classes = true
@@ -80,7 +85,4 @@ Rails.application.configure do
   config.assets.compile = true
   config.assets.digest = true
 
-  require 'jquery/modal/rails'
-  require 'jquery/modal/filters'
-  require 'jquery/modal/helpers'
 end

@@ -23,7 +23,7 @@
   margin-left: 50px;
   margin-top: -40px;
   // width: 400px;
-  max-height:745px;
+  max-height:720px;
 }
 #map {
   width: 100%;
@@ -454,7 +454,7 @@ li.note-search {
   width: 50px;
   height: 50px;
 }
-#note-show-title, #note-show-address, #note-show-body, #note-show-tags, #note-show-created {
+#note-show-title, #note-show-address, #note-show-body, #note-show-tags, #note-show-created, #note-show-url {
   color: $green;
   font-family: 'menschmensch_regular';
   font-weight: bold;

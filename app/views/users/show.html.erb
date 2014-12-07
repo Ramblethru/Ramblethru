@@ -1,5 +1,9 @@
 <div class="profile">
+  <% if current_user.id == @user.id %>
   <h1 class="profile"> Your Profile </h1>
+      <% else %>
+  <h1 class="profile"> <%= @user.name %>'s Profile </h1>
+      <% end %>
 </div>
 <div class="container">
   <div class="photo">
@@ -8,13 +12,15 @@
     <% else %>
       <img src="<%= asset_path ('missing.png') %>" />
     <% end %>
+    <% if current_user.id == @user.id %>
     <%= form_for @user do |form| %>
-       <div class="ava">
-         <%= form.file_field :avatar %>
-       </div>
-       <div id="user-avatar">
-         <%= form.submit "Add", :class => "user-img-add" %>
-       </div>
+        <div class="ava">
+          <%= form.file_field :avatar %>
+        </div>
+        <div id="user-avatar">
+          <%= form.submit "Add", :class => "user-img-add" %>
+        </div>
+            <% end %>
     <% end %>
   </div>
   <script type="text/javascript">
@@ -26,53 +32,69 @@
   <div class="userinfo">
     <div class="name">
       <span id="user-name-label">Name: </span>
-      <span id="user-name"><%= best_in_place @user, :name,:html_attrs => {  :style => 'width:400px; height:50px;font-family: "menschmensch_regular"' } %></span>
+      <% if current_user.id == @user.id %>
+      <span id="user-name"><%= best_in_place @user, :name, :html_attrs => {  :style => 'width:400px; height:50px;font-family: "menschmensch_regular"' } %></span>
+    <% else %>
+      <span id="user-name"> <%= @user.name %> </span>
+      <% end %>
     </div>
     <div class="lives-in">
       <span id="user-residence-label">Residence: </span>
+      <% if current_user.id == @user.id %>
 			<span id="user-residence">
 				<%= best_in_place @user, :lives_in, :place_holder => "add your location", :html_attrs => {  :style => 'width:400px; height:50px;font-family: "menschmensch_regular"' } %>
 			</span>
+          <% else %>
+      <span id="user-residence"> <%= @user.lives_in %> </span>
+          <% end %>
     </div>
     <div class="bio">
       <span id="user-bio-label">BIO: </span>
+      <% if current_user.id == @user.id %>
       <span id="user-bio"><%= best_in_place @user, :bio, :place_holder => "add bio", :html_attrs => {  :style => 'width:400px; height:50px;font-family: "menschmensch_regular"' } %></span>
-    </div>
+        <% else %>
+      <span id="user-bio"> <%= @user.bio %>
+          <% end %>
+          </div>
   </div>
 </div>
 <div class="usertrips">
   <div id="my-rambles">
+    <% if current_user.id == @user.id %>
     <% if @user.rambles.size > 0 %>Your Rambles
     <% else %> Click <%= link_to_modal "here", new_ramble_path, :class=>"create-ramble-here" %>  to create a ramble
     <% end %>
+        <% else %>
+    <%= @user.name %>'s Rambles
+        <% end %>
   </div>
   <div class="userrambles">
     <% @user.rambles.each do |r| %>
         <div class="each-ramble">
           <div id="<%= dom_id(r) %>">
-            <span class="delete-ramble">
-              <%= link_to 'X', r, method: :delete, :class => "x",   :data => {:confirm => 'Delete this ramble?'}, remote: true %>
-            </span>
+            <% if current_user.id == @user.id %>
+            <span class="delete-ramble"><%= link_to 'X', r, method: :delete, :class => "x",   :data => {:confirm => 'Delete this ramble?'}, remote: true %></span>
             <%= link_to r.name, ramble_path(r), :class => "ramble-name-profile" %>
-            <span id="r-dest">
-              <%= r.destination %>
-            </span>
-            <span id="dates">
-              <%= r.start_date %> to <%= r.end_date %>
-            </span>
+            <% else %>
+                <div class="ramble-name-profile"> <%= r.name %> </div>
+                <% end %>
+                <span id="r-dest"><%= r.destination %></span>
+            <span id="dates"><%= r.start_date %> to <%= r.end_date %></span>
             <% if r.notes.size > 0 %>
-              <div class="shows" data-id="<%= r.id %>">
-                <%= r.notes.count %> saved <%= "note".pluralize(r.notes.count) %>
-              </div>
-              <hr class="ramble-divider">
-               <div class="noteshow" id="div_ramble_<%= r.id %>">
-                 <% r.notes.order('created_at desc').each do |n| %>
-                  <span id="<%= dom_id(n) %>">
-                  <% if n.title != "" %>
-                  <span id="user-title">Title:
-                  </span>
-                  <%=n.title %><br>
-                  <% end %>
+                <% if current_user.id == @user.id %>
+                <div class="shows" data-id="<%= r.id %>"><%= r.notes.count %> saved <%= "note".pluralize(r.notes.count) %></div><hr class="ramble-divider">
+                <% else %>
+                    <div class="shows" data-id="<%= r.id %>"> <%= r.notes.where(share:true).count %> saved <%= "note".pluralize(r.notes.count) %></div><hr class="ramble-divider">
+                    <% end %>
+                    <div class="noteshow" id="div_ramble_<%= r.id %>" >
+                  <% r.notes.order('created_at desc').each do |n| %>
+              <span id="<%= dom_id(n) %>">
+                <% if current_user.id != @user.id %>
+                    <% if n.share == true %>
+
+                <% if n.title != "" %>
+                <span id="user-title">Title:</span><%=n.title %><br>
+                    <% end %>
                 <% if n.address != "" %>
                 <span id="user-address">Address:
                 </span>
@@ -97,15 +119,19 @@
                 </span>
                 <%= n.created_at.strftime("%m/%d/%Y") %><br>
                 <div class="shared" >
+                  <% if current_user.id == @user.id %>
                   <% if n.share == true %>
                     <%= button_to "Make private", set_share_path(n.id), method: :patch, remote: true, class:"sharedstatus",  id: n.id %>
                     <br>
                   <% else %>
                     <%= button_to "Make Public", set_share_path(n.id), method: :patch, remote: true, class:"sharedstatus", id: n.id %>
                   <% end %>
+                      <% end %>
                 </div>
                 <hr id="note-each-divider">
-                <% end %>
+                    <% end %>
+                    <% end %>
+                  <% end %>
                 </div>
             <% else %>
                 <span id="no-notes">No notes yet.

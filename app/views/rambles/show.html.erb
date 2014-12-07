@@ -79,7 +79,7 @@
               <span id="note-body"><%= note.body %></span>
             </p>
                       <% end %>
-                  <% if note.url =! "" %>
+                  <% if note.url != "" %>
             <p>
               <span id="note-label">URL: </span>
               <span id="note-body"><a href="<%= note.url %>" target="_blank"><%= note.url %></a></span>
@@ -87,7 +87,7 @@
                       <% end %>
                   <% if note.tag_list != [] %>
              <p>
-              <span id="tag-label">Tag(s): </span>
+              <span id="tag-label">Tags: </span>
               <span id="tag-each"><%= note.tag_list %></span>
             </p>
                       <% end %>
@@ -211,7 +211,8 @@
                       <img src="<%= asset_path ('fav-star.png') %>" class="yelp-save" alt="Save as note"
                         data-yname="<%= y.name %>",
                         data-yaddress="<%= y.location.address.pop %>",
-                        data-ytip="<%= y.snippet_text %>" />
+                        data-ytip="<%= y.snippet_text %>",
+                        data-yurl="<%= y.url %>" />
 
                       <span class="yelp-venue-title"><%= y.name %></span>
                       <%= link_to image_tag y.rating_img_url_small %>
@@ -233,10 +234,11 @@
                  var dataYname = event.target.getAttribute("data-yname");
                  var dataYaddress = event.target.getAttribute("data-yaddress");
                  var dataYtip = event.target.getAttribute("data-ytip");
+                 var dataYurl = event.target.getAttribute("data-yurl");
                  $("#note_title").val(dataYname);
                  $("#note_address").val(dataYaddress);
                  $("#note_body").val(dataYtip);
-                 $("#note_url").val('');
+                 $("#note_url").val(dataYurl);
                  $("#note_tag_list").val(destination);
                });
              });
@@ -397,14 +399,19 @@
                                     </p>
                                     <p>
                                       <% if n.tag_list != [] %>
+<<<<<<< HEAD
+										<span id="tag-label">Tags: </span>
+										<span id="tag-each"><%= raw n.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></span>
+=======
                                         <span id="tag-label">Tag(s): </span>
                                         <span id="tag-each"><%= n.tag_list %></span>
+>>>>>>> dd64512b91a9c662c4615e415987347c581c9128
                                           <% end %>
                                     </p>
                                     <p>
                                       <% if n.body != "" %>
-										<span id="note-label">Created by: </span>
-										<span id="note-body"> <%= n.ramble.user.name %> on <%= n.created_at.strftime("%m/%d/%Y") %>
+                                          <span id="note-label">Created by: </span>
+                                          <span id="note-body"> <%= link_to n.ramble.user.name, n.ramble.user %> on <%= n.created_at.strftime("%m/%d/%Y") %> </span>
                                       <% end %>
                                         </p>
                                 </div>

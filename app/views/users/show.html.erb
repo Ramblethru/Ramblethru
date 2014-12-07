@@ -124,7 +124,37 @@
                       <% end %>
                 </div>
                 <hr id="note-each-divider">
+                         <% end %>
+                        <% else %>
+
+                <% if n.title != "" %>
+                <span id="user-title">Title:</span><%=n.title %><br>
                     <% end %>
+                        <% if n.address != "" %>
+                <span id="user-address">Address:</span><%=n.address %><br>
+                    <% end %>
+                        <% if n.body != "" %>
+                <span id="user-note">Note:</span><%= n.body %><br>
+                    <% end %>
+                        <% if n.url != "" %>
+                <span id="user-url">URL:</span><a href="<%= n.url %>" target="_blank"><%= n.url %></a><br>
+                    <% end %>
+                        <% if n.tag_list != [] %>
+                <span id="user-tags">Tags:</span><%= n.tag_list %><br>
+                    <% end %>
+                        <span id="user-created">Created on:</span><%= n.created_at.strftime("%m/%d/%Y") %><br>
+                <div class="shared" >
+                  <% if current_user.id == @user.id %>
+                      <% if n.share == true %>
+                          <%= button_to "Make private", set_share_path(n.id), method: :patch, remote: true, class:"sharedstatus",  id: n.id %>
+                          <br>
+                      <% else %>
+                          <%= button_to "Make Public", set_share_path(n.id), method: :patch, remote: true, class:"sharedstatus", id: n.id %>
+                      <% end %>
+                  <% end %>
+                </div>
+                <hr id="note-each-divider">
+
                     <% end %>
                   <% end %>
                 </div>

@@ -11,8 +11,8 @@
 // about supported directives.
 
 
-//= require_tree .
 //= require jquery
+//= require_tree .
 //= require vendor_js
 //= require jquery_ujs
 //= require jquery.tagsinput

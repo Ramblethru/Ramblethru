@@ -1,6 +1,9 @@
 <div class="searchpage">
 	<div class="note-header">
-		<h1 id="note-search-title">Search for Notes</h1><div id="on-locations">about destinations you're interested in</div>
+		<h1 id="note-search-title">Search for Notes</h1>
+    <div id="on-locations">
+      about destinations you're interested in
+    </div>
 	</div>
 	<%= form_tag(rambles_path, :method => "get", class: "search-form", remote:true) do %>
 	<div class="input-append">
@@ -8,9 +11,8 @@
 		<button class="btn" type="submit">Search</button>
 	</div>
 	<% end %>
-	<!--<li class="note-search">-->
-    <div id="note-results">
-	  </div>
+  <div id="note-results">
+  </div>
   <div id="no-results">
   </div>
-  <!--</li>-->
+</div>

@@ -91,14 +91,15 @@
       Bienvenue, <span class="logspin">
       <%= link_to current_user.name, user_path(current_user), :class => "top-bar" %>!
       <i class="fa fa-compass"></i></span>
-      <span class="logspin">  <%= link_to "Log out", logout_path, :class => "top-bar" %>
-      <i class="fa fa-compass"></i></span>
+      <span class="logspin"><%= link_to "Log out", logout_path, :class => "top-bar" %><i class="fa fa-compass"></i>
+      </span>
     <% else %>
       <span class="logspin">
-        <%=  link_to_modal "New User", new_user_path, :class=>"top-bar" %><i class="fa fa-compass"></i></span>
+        <%=  link_to_modal "New User", new_user_path, :class => "top-bar" %><i class="fa fa-compass"></i>
+      </span>
       <span class="logspin1">
-        <%=  link_to_modal "Sign in", new_login_path, :class=>"top-bar" %>
-        <i class="fa fa-compass"></i></span>
+        <%=  link_to_modal "Sign in", new_login_path, :class => "top-bar" %><i class="fa fa-compass"></i>
+      </span>
     <% end %>
     <% if current_page?('/') == false %>
           <%= link_to "Home", root_path, :class => "top-bar" %>

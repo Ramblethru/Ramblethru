@@ -1,35 +1,35 @@
 <div class="row" id="<%= note.persisted? ? dom_id(note) : "note-new" %>">
   <div class="notebody">
-		<p>
-          <% if note.title != "" %>
-			<span id="note-label">Title: </span>
-			<span id="note-title"><%= note.title %></span>
-              <% end %>
-		</p>
-		<p>
-          <% if note.address != "" %>
-			<span id="note-label">Address: </span>
-			<span id="note-address"><%= note.address %></span>
-              <% end %>
-		</p>
-		<p>
-          <% if note.body != "" %>
-			<span id="note-label">Note: </span>
-			<span id="note-body"><%= note.body %></span>
-              <% end %>
-		</p>
-		<p>
-          <% if note.url != "" %>
-			<span id="note-label">URL: </span>
-			<span id="note-url"><a href="<%= note.url %>" target="_blank"><%= note.url %></a></span>
-              <% end %>
-		</p>
-		<p>
-          <% if note.tag_list != [] %>
-			<span id="tag-label">Tag(s): </span>
-			<span id="note-tag"><%= note.tag_list %></span>
-              <% end %>
-		</p>
+    <% if note.title != "" %>
+        <p>
+          <span id="note-label">Title: </span>
+          <span id="note-body"><%= note.title %></span>
+        </p>
+    <% end %>
+    <% if note.address != "" %>
+        <p>
+          <span id="note-label">Address: </span>
+          <span id="note-body"><%= note.address %></span>
+        </p>
+    <% end %>
+    <% if note.body != %>
+        <p>
+          <span id="note-label">Note: </span>
+          <span id="note-body"><%= note.body %></span>
+        </p>
+    <% end %>
+    <% if note.url != "" %>
+        <p>
+          <span id="note-label">URL: </span>
+          <span id="note-body"><a href="<%= note.url %>" target="_blank"><%= note.url %></a></span>
+        </p>
+    <% end %>
+    <% if note.tag_list != [] %>
+        <p>
+          <span id="tag-label">Tags: </span>
+          <span id="tag-each"><%= note.tag_list %></span>
+        </p>
+        <% end %>
 		<p>
 			<span id="note-label">Created on: </span>
 			<span id="note-created"> <%= note.created_at.strftime("%m/%d/%Y") %>

@@ -19,8 +19,8 @@
 //= require_tree .
 //= require mapbox.js
 //= require moment
-//= require jquery.modal
 //= require best_in_place
+//= require jquery.modal
 
 
 jQuery(".best_in_place").best_in_place();

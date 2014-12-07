@@ -12,6 +12,7 @@ class Ramble < ActiveRecord::Base
 
   before_save { |ramble| ramble.destination.downcase! }
 
+
   def self.search(query)
     #where(:destination, query)
     where("destination like ?", "%#{query.downcase}%")

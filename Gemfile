@@ -13,6 +13,7 @@ gem 'rails_12factor',   group: :production
 gem 'jquery-ui-rails'
 gem 'redcarpet'
 gem 'table_print'
+gem 'unicorn'
 
 # Make it look good
 gem 'sass-rails', '~> 4.0.3'

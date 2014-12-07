@@ -688,3 +688,8 @@ a.close {
 div.modal.current {
   z-index: 4352342342 !important;
 }
+
+#user-url a {
+  word-wrap: break-word;
+  color: $orange;
+}

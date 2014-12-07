@@ -32,7 +32,7 @@
       <% if n.tag_list != [] %>
         <p>
           <span id="tag-label">Tag(s): </span>
-          <span id="tag-each"><%= raw n.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></span>
+          <span id="tag-each"><%= n.tag_list %></span>
         </p>
       <% end %>
       <p>

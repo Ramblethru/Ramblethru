@@ -405,8 +405,8 @@
                                     </p>
                                     <p>
                                       <% if n.body != "" %>
-										<span id="note-label">Created by: </span>
-										<span id="note-body"> <%= n.ramble.user.name %> on <%= n.created_at.strftime("%m/%d/%Y") %> </span>
+                                          <span id="note-label">Created by: </span>
+                                          <span id="note-body"> <%= link_to n.ramble.user.name, n.ramble.user %> on <%= n.created_at.strftime("%m/%d/%Y") %> </span>
                                       <% end %>
                                         </p>
                                 </div>

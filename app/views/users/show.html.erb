@@ -4,29 +4,25 @@
 <div class="container">
   <div class="photo">
     <% if @user.avatar.file? %>
-        <%= image_tag @user.avatar.url(:medium), :class => "user-img" %>
+      <%= image_tag @user.avatar.url(:medium), :class => "user-img" %>
     <% else %>
-        <img src="<%= asset_path ('missing.png') %>" />
+      <img src="<%= asset_path ('missing.png') %>" />
     <% end %>
     <%= form_for @user do |form| %>
-        <div class="ava">
-          <%= form.file_field :avatar %>
-        </div>
-        <div id="user-avatar">
-          <%= form.submit "Add", :class => "user-img-add" %>
-        </div>
+       <div class="ava">
+         <%= form.file_field :avatar %>
+       </div>
+       <div id="user-avatar">
+         <%= form.submit "Add", :class => "user-img-add" %>
+       </div>
     <% end %>
   </div>
-
   <script type="text/javascript">
       $('#user-avatar').hide();
       $('.ava').click(function() {
           $('#user-avatar').show();//Form shows on button click
       });
-
   </script>
-
-
   <div class="userinfo">
     <div class="name">
       <span id="user-name-label">Name: </span>
@@ -43,7 +39,6 @@
       <span id="user-bio"><%= best_in_place @user, :bio, :place_holder => "add bio", :html_attrs => {  :style => 'width:400px; height:50px;font-family: "menschmensch_regular"' } %></span>
     </div>
   </div>
-
 </div>
 <div class="usertrips">
   <div id="my-rambles">
@@ -55,45 +50,65 @@
     <% @user.rambles.each do |r| %>
         <div class="each-ramble">
           <div id="<%= dom_id(r) %>">
-            <span class="delete-ramble"><%= link_to 'X', r, method: :delete, :class => "x",   :data => {:confirm => 'Delete this ramble?'}, remote: true %></span>
+            <span class="delete-ramble">
+              <%= link_to 'X', r, method: :delete, :class => "x",   :data => {:confirm => 'Delete this ramble?'}, remote: true %>
+            </span>
             <%= link_to r.name, ramble_path(r), :class => "ramble-name-profile" %>
-            <span id="r-dest"><%= r.destination %></span>
-            <span id="dates"><%= r.start_date %> to <%= r.end_date %></span>
+            <span id="r-dest">
+              <%= r.destination %>
+            </span>
+            <span id="dates">
+              <%= r.start_date %> to <%= r.end_date %>
+            </span>
             <% if r.notes.size > 0 %>
-                <div class="shows" data-id="<%= r.id %>"><%= r.notes.count %> saved <%= "note".pluralize(r.notes.count) %></div><hr class="ramble-divider">
-                <div class="noteshow" id="div_ramble_<%= r.id %>" >
-                  <% r.notes.order('created_at desc').each do |n| %>
-              <span id="<%= dom_id(n) %>">
-                <% if n.title != "" %>
-                <span id="user-title">Title:</span><%=n.title %><br>
-                    <% end %>
+              <div class="shows" data-id="<%= r.id %>">
+                <%= r.notes.count %> saved <%= "note".pluralize(r.notes.count) %>
+              </div>
+              <hr class="ramble-divider">
+               <div class="noteshow" id="div_ramble_<%= r.id %>">
+                 <% r.notes.order('created_at desc').each do |n| %>
+                  <span id="<%= dom_id(n) %>">
+                  <% if n.title != "" %>
+                  <span id="user-title">Title:
+                  </span>
+                  <%=n.title %><br>
+                  <% end %>
                 <% if n.address != "" %>
-                <span id="user-address">Address:</span><%=n.address %><br>
-                    <% end %>
+                <span id="user-address">Address:
+                </span>
+                <%=n.address %><br>
+                <% end %>
                 <% if n.body != "" %>
-                <span id="user-note">Note:</span><%= n.body %><br>
-                    <% end %>
+                <span id="user-note">Note:
+                </span>
+                <%= n.body %><br>
+                <% end %>
                 <% if n.url != "" %>
-                <span id="user-url">URL:</span><a href="<%= n.url %>" target="_blank"><%= n.url %></a><br>
-                    <% end %>
+                <span id="user-url">URL:
+                </span>
+                <a href="<%= n.url %>" target="_blank"><%= n.url %></a><br>
+                <% end %>
                 <% if n.tag_list != [] %>
-                <span id="user-tags">Tags:</span><%= n.tag_list %><br>
-                    <% end %>
-                <span id="user-created">Created on:</span><%= n.created_at.strftime("%m/%d/%Y") %><br>
+                <span id="user-tags">Tags:
+                </span>
+                <%= n.tag_list %><br>
+                <% end %>
+                <span id="user-created">Created on:
+                </span>
+                <%= n.created_at.strftime("%m/%d/%Y") %><br>
                 <div class="shared" >
                   <% if n.share == true %>
-                      <%= button_to "Make private", set_share_path(n.id), method: :patch, remote: true, class:"sharedstatus",  id: n.id %>
-                      <br>
+                    <%= button_to "Make private", set_share_path(n.id), method: :patch, remote: true, class:"sharedstatus",  id: n.id %>
+                    <br>
                   <% else %>
-                      <%= button_to "Make Public", set_share_path(n.id), method: :patch, remote: true, class:"sharedstatus", id: n.id %>
+                    <%= button_to "Make Public", set_share_path(n.id), method: :patch, remote: true, class:"sharedstatus", id: n.id %>
                   <% end %>
-
                 </div>
                 <hr id="note-each-divider">
-                  <% end %>
+                <% end %>
                 </div>
             <% else %>
-                <span id="no-notes">no notes yet</span>
+                <span id="no-notes">No notes yet.
                 </span>
             <% end %>
           </div>

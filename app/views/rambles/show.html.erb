@@ -351,7 +351,7 @@
                   <% y = x.where(ramble_id:(Ramble.where.not(user_id: @ramble.user_id))) %>
                   <%= y.where(share: true).count %> NOTE(S)
                   <div id="pagingControls2"></div>
-                                </div>
+                </div>
               </div>
             </div>
 
@@ -436,8 +436,6 @@
                                 });
                             </script>
 
-
-              <!--script for yelp pagination-->
               <script type="text/javascript">
                 var pager2 = new Imtech2.Pager();
                 jQuery(document).ready(function() {
@@ -447,8 +445,6 @@
                   pager2.showPage(1);
                 });
               </script>
-
-          <!--</div>-->
       </div>
     </div>
   </div>

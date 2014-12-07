@@ -96,7 +96,6 @@
               <span id="<%= dom_id(n) %>">
                 <% if current_user.id != @user.id %>
                     <% if n.share == true %>
-
                 <% if n.title != "" %>
                 <span id="user-title">Title:</span><%=n.title %><br>
                     <% end %>
@@ -125,6 +124,7 @@
                 </div>
                 <hr id="note-each-divider">
                          <% end %>
+
                         <% else %>
 
                 <% if n.title != "" %>
@@ -154,7 +154,6 @@
                   <% end %>
                 </div>
                 <hr id="note-each-divider">
-
                     <% end %>
                   <% end %>
                 </div>

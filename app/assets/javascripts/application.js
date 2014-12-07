@@ -14,7 +14,15 @@
 //= require_tree .
 //= require jquery
 //= require vendor_js
-
+//= require jquery_ujs
+//= require jquery.tagsinput
+//= require jquery-ui/effect-highlight
+//= require jquery-ui/effect-bounce
+//= require jquery-ui/datepicker
+//= require mapbox.js
+//= require moment
+//= require best_in_place
+//= require jquery.modal
 
 
 jQuery(".best_in_place").best_in_place();

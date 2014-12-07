@@ -130,13 +130,12 @@
                     <% if f["tips"] != nil %>
                       <img src="<%= asset_path ('fav-star.png') %>" class="foursquare-save" alt="Save as note" data-name="<%= f['venue']['name'] %>"
                          data-address="<%= f["venue"]["location"]["address"]%>"
-                         data-tip="<% f["tips"].each do |a| %>
+                         data-tip="<%= f["tips"].each do |a| %>
 										  		<%= a['text'] %>
 										  	 <% end %>"
-                         data-url="<% f["tips"].each do |g| %>
+                         data-url="<%= f["tips"].each do |g| %>
 										  	 	 <%= g["canonicalUrl"] %>
-										  	 <% end %>
-                       "/>
+										  	 <% end %>" />
                   </span>
 							   <%= f["venue"]["name"] %><hr>
 								</div>

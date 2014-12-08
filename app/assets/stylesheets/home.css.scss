@@ -7,6 +7,14 @@ $light-grey: #eff0eb;
 $dark-grey: #7f868e;
 $green: #2e7562;
 
+ @media only screen
+    and (min-width : 320px)
+    and (max-width : 480px) {
+
+  button.sliding-menu-button {
+    margin-top: 40px !important;
+  }
+}
 .hero {
   background: url('straight-road.jpg');
   background-attachment: fixed;

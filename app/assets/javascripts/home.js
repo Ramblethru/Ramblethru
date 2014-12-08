@@ -17,6 +17,8 @@ $(document).ready(function() {
   $('#map-usa').usmap({
     stateStyles: {'fill': '#eff0eb'},
     stateHoverStyles: {fill: '#af703a'},
+//    labelBackingStyles: {'fill': '#eff0eb'},
+//    labelBackingHoverStyles: {fill: '#af703a'}
      
     'click' : function(event, data) {
       window.location.href = "/state_select?discover[destination]=" + data.name

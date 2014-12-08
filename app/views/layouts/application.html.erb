@@ -88,7 +88,7 @@
         <% else %>
           <img src="<%= asset_path ('missing-small.png'), :class => "missing-pic" %>" />
         <% end %>
-      Bienvenue, <span class="logspin">
+      <%= ["Bienvenue", "Aloha", "Welcome", "Bienvenido"].sample + "," %> <span class="logspin">
       <%= link_to current_user.name, user_path(current_user), :class => "top-bar" %>!
       <i class="fa fa-compass"></i></span>
       <span class="logspin"><%= link_to "Log out", logout_path, :class => "top-bar" %><i class="fa fa-compass"></i>

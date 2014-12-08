@@ -77,7 +77,7 @@
                 <span id="user-note">Note:</span><%= n.body %><br>
                     <% end %>
                 <% if n.url != "" %>
-                <span id="user-url">URL:</span><a href="<%= n.url %>" target="_blank"><%= n.url %></a><br>
+                <span id="user-url">URL:</span><a href="<%= n.url %>" target="_blank" class="notes-url"><%= n.url %></a><br>
                     <% end %>
                 <% if n.tag_list != [] %>
                 <span id="user-tags">Tags:</span><%= n.tag_list %><br>
@@ -112,11 +112,11 @@
   </div>
   </ul>
   <div class="usernotes"></div>
-</div>
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('.bxslider').bxSlider();
-
-  });
+  <script type="text/javascript">
+    $(window).scroll(function() {
+      $('.bxslider').bxSlider()
+       });
  </script>
+</div>
+
 

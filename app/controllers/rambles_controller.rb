@@ -116,7 +116,8 @@ class RamblesController < ApplicationController
     respond_to do |format|
       format.html do
         @ramble.destroy
-        redirect_to root_path, flash.now[:notice] = "you deleted your ramble"
+        redirect_to root_path 
+        flash[:notice] = "you deleted your ramble"
       end
       format.js do
         @ramble.destroy

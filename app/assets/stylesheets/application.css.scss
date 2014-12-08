@@ -152,7 +152,7 @@ $body-color: #eff0eb;
     font-size: 20px;
   }
 }
-@media (max-width: 300px) {
+@media (max-device-width: 500px) {
   h1.what-we-do, h2.discover, h2.go, h2.create {
     font-size: 25px;
   }

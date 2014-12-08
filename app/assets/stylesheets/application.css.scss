@@ -152,9 +152,15 @@ $body-color: #eff0eb;
     font-size: 20px;
   }
 }
-@media (max-width: 500px) {
+ @media only screen
+    and (min-width : 319px)
+    and (max-width : 480px) {
+
   h1.what-we-do, h2.discover, h2.go, h2.create {
     font-size: 25px;
+  }
+  h1.profile {
+    font-size: 20px;
   }
   span.best_in_place {
     display: block;
@@ -224,6 +230,7 @@ $body-color: #eff0eb;
     display: inline;
   }
 }
+
 body {
   background-image: url('http://i.imgur.com/9OUxrEd.png');
   overflow-x: hidden;

@@ -62,7 +62,8 @@ class RamblesController < ApplicationController
           RambleMailer.ramble_created(@ramble.user, @ramble).deliver
           redirect_to ramble_path(@ramble)
         else
-          render 'logins/new', :notice => "You must be logged in to create a ramble."
+          render 'logins/new'
+          flash.now[:notice] = "You must be logged in to create a ramble."
         end
       end
       format.json do

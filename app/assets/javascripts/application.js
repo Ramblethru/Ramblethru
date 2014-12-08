@@ -11,8 +11,9 @@
 // about supported directives.
 
 //= require jquery
-//= require_tree .
 //= require jquery_ujs
+//= require bxslider
+//= require_tree .
 //= require jquery.tagsinput
 //= require jquery-ui/effect-highlight
 //= require jquery-ui/effect-bounce
@@ -21,7 +22,6 @@
 //= require moment
 //= require best_in_place
 //= require jquery.modal
-//= require bxslider
 
 
 jQuery(".best_in_place").best_in_place();

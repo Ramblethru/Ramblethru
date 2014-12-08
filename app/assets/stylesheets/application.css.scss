@@ -414,9 +414,11 @@ input.nav-input {
   font-family: 'menschmensch_regular';
   font-size: 18px;
 }
+
 #pagingControls a {
   color: $orange;
 }
+
 #pagingControls2 ul{
   display: inline;
   padding-left: 0.5em;
@@ -446,6 +448,7 @@ input.nav-input {
 #pagingControls3 a {
   color: $orange;
 }
+
 #pagingControls4 ul{
   display: inline;
   padding-left: 0.5em;
@@ -457,30 +460,13 @@ input.nav-input {
   font-family: 'menschmensch_regular';
   font-size: 18px;
 }
-#pagingControls4 a {
-  color: $orange;
-}
-#pagingControls5 ul{
-  display: inline;
-  padding-left: 0.5em;
-}
-#pagingControls5 li{
-  display: inline;
-  padding: 0 0.5em;
-  color: #7f868e;
-  font-family: 'menschmensch_regular';
-  font-size: 18px;
-}
-#pagingControls5 a {
-  color: $orange;
-}
-
-
 .fa-star {
   color: $orange;
   font-size: 18px;
 }
-
+#pagingControls4 a {
+  color: $orange;
+}
 $sliding-menu-border-color: $orange;
 $sliding-menu-background: lighten($sliding-menu-border-color, 4);
 $sliding-menu-color: #fff;
@@ -565,7 +551,6 @@ div.alert-box.notice {
    border-radius: 10%;
    margin-top: -10px;
    text-align: center;
-
 }
 a.close {
   font-family: monospace, sans-serif;
@@ -574,9 +559,4 @@ a.close {
 }
 div.modal.current {
   z-index: 4352342342 !important;
-}
-
-#user-url a {
-  word-wrap: break-word;
-  color: $orange;
 }

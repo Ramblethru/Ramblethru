@@ -1,8 +1,8 @@
 <div class="profile">
   <% if current_user.id == @user.id %>
-      <div class="profile"> Your Profile </div>
+      <h1 class="profile"> Your Profile </h1>
   <% else %>
-      <div class="profile"> <%= @user.name %>'s Profile </div>
+      <h1 class="profile"> <%= @user.name %>'s Profile </h1>
   <% end %>
 </div>
 <div class="container">

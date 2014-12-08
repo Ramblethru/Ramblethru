@@ -156,6 +156,12 @@ $body-color: #eff0eb;
     and (min-width : 320px)
     and (max-width : 480px) {
 
+  img.missing-pic, a.top-bar, .fa-compass, span.logspin, #lang-welcome{
+    display: none;
+  }
+  button.sliding-menu-button {
+    margin-top: 80px !important;
+  }
   h1.what-we-do, h2.discover, h2.go, h2.create {
     font-size: 25px;
   }
@@ -185,11 +191,10 @@ $body-color: #eff0eb;
     font-size: 15px !important;
   }
   #header-title-last {
-    font-size: 75px;
+    font-size: 55px;
   }
   #header-title-first {
-    -webkit-text-stroke: 2px $green;
-    font-size: 75px;
+    font-size: 55px;
   }
   #header-subtitle {
     font-size: 15px;
@@ -199,6 +204,7 @@ $body-color: #eff0eb;
   }
   h1.profile {
     font-size: 40px;
+    text-align: right;
   }
   .profile {
     height: 170px;

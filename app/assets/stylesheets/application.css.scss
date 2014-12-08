@@ -153,14 +153,11 @@ $body-color: #eff0eb;
   }
 }
  @media only screen
-    and (min-width : 319px)
+    and (min-width : 320px)
     and (max-width : 480px) {
 
   h1.what-we-do, h2.discover, h2.go, h2.create {
     font-size: 25px;
-  }
-  h1.profile {
-    font-size: 20px;
   }
   span.best_in_place {
     display: block;
@@ -200,6 +197,9 @@ $body-color: #eff0eb;
   div.discover-create {
     width: 300px;
   }
+  h1.profile {
+    font-size: 40px;
+  }
   input.input {
     font-size: 14px;
     height: 45px;
@@ -230,9 +230,8 @@ $body-color: #eff0eb;
     display: inline;
   }
 }
-
 body {
-  background-image: url('http://i.imgur.com/9OUxrEd.png');
+  background-image: url('https://i.imgur.com/9OUxrEd.png');
   overflow-x: hidden;
 }
 .topbar {

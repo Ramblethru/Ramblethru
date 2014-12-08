@@ -3,8 +3,7 @@
  * http://bitters.bourbon.io
  * Copyright 2013–2014 thoughtbot, inc.
  * MIT License */
-@import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css");
-/* line 1, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/extends/_button.scss */
+/* line 1, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/extends/_button.scss */
 button,
 input[type="submit"] {
   -webkit-font-smoothing: antialiased;
@@ -18,20 +17,20 @@ input[type="submit"] {
   padding: 0.75em 1em;
   text-decoration: none;
 }
-/* line 13, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/extends/_button.scss */
+/* line 13, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/extends/_button.scss */
 button:hover,
 input[type="submit"]:hover {
   background-color: #2c5999;
   color: white;
 }
-/* line 18, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/extends/_button.scss */
+/* line 18, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/extends/_button.scss */
 button:disabled,
 input[type="submit"]:disabled {
   cursor: not-allowed;
   opacity: 0.5;
 }
 
-/* line 1, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_typography.scss */
+/* line 1, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_typography.scss */
 body {
   -webkit-font-smoothing: antialiased;
   background-color: white;
@@ -41,7 +40,7 @@ body {
   line-height: 1.5;
 }
 
-/* line 15, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_typography.scss */
+/* line 15, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_typography.scss */
 h1,
 h2,
 h3,
@@ -54,42 +53,42 @@ h6 {
   text-rendering: optimizeLegibility;
 }
 
-/* line 22, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_typography.scss */
+/* line 22, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_typography.scss */
 h1 {
   font-size: 2.25em;
 }
 
-/* line 26, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_typography.scss */
+/* line 26, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_typography.scss */
 h2 {
   font-size: 2em;
 }
 
-/* line 30, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_typography.scss */
+/* line 30, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_typography.scss */
 h3 {
   font-size: 1.75em;
 }
 
-/* line 34, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_typography.scss */
+/* line 34, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_typography.scss */
 h4 {
   font-size: 1.5em;
 }
 
-/* line 38, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_typography.scss */
+/* line 38, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_typography.scss */
 h5 {
   font-size: 1.25em;
 }
 
-/* line 42, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_typography.scss */
+/* line 42, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_typography.scss */
 h6 {
   font-size: 1em;
 }
 
-/* line 46, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_typography.scss */
+/* line 46, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_typography.scss */
 p {
   margin: 0 0 0.75em;
 }
 
-/* line 50, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_typography.scss */
+/* line 50, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_typography.scss */
 a {
   -webkit-transition: color 0.1s linear;
   -moz-transition: color 0.1s linear;
@@ -97,17 +96,17 @@ a {
   color: #477dca;
   text-decoration: none;
 }
-/* line 55, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_typography.scss */
+/* line 55, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_typography.scss */
 a:hover {
   color: #2c5999;
 }
-/* line 59, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_typography.scss */
+/* line 59, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_typography.scss */
 a:active, a:focus {
   color: #2c5999;
   outline: none;
 }
 
-/* line 65, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_typography.scss */
+/* line 65, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_typography.scss */
 hr {
   border-bottom: 1px solid #dddddd;
   border-left: none;
@@ -116,14 +115,14 @@ hr {
   margin: 1.5em 0;
 }
 
-/* line 74, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_typography.scss */
+/* line 74, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_typography.scss */
 img,
 picture {
   margin: 0;
   max-width: 100%;
 }
 
-/* line 79, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_typography.scss */
+/* line 79, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_typography.scss */
 blockquote {
   border-left: 2px solid #dddddd;
   color: #595959;
@@ -131,17 +130,17 @@ blockquote {
   padding-left: 0.75em;
 }
 
-/* line 86, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_typography.scss */
+/* line 86, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_typography.scss */
 cite {
   color: #737373;
   font-style: italic;
 }
-/* line 90, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_typography.scss */
+/* line 90, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_typography.scss */
 cite:before {
   content: "\2014 \00A0";
 }
 
-/* line 1, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_forms.scss */
+/* line 1, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_forms.scss */
 fieldset {
   background: #f7f7f7;
   border: 1px solid #dddddd;
@@ -149,7 +148,7 @@ fieldset {
   padding: 1.5em;
 }
 
-/* line 10, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_forms.scss */
+/* line 10, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_forms.scss */
 input,
 label,
 select {
@@ -158,21 +157,21 @@ select {
   font-size: 1em;
 }
 
-/* line 16, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_forms.scss */
+/* line 16, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_forms.scss */
 label {
   font-weight: bold;
   margin-bottom: 0.375em;
 }
-/* line 20, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_forms.scss */
+/* line 20, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_forms.scss */
 label.required:after {
   content: "*";
 }
-/* line 24, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_forms.scss */
+/* line 24, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_forms.scss */
 label abbr {
   display: none;
 }
 
-/* line 31, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_forms.scss */
+/* line 31, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_forms.scss */
 textarea,
 input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"],
 select[multiple=multiple] {
@@ -192,13 +191,13 @@ select[multiple=multiple] {
   padding: 0.5em 0.5em;
   width: 100%;
 }
-/* line 44, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_forms.scss */
+/* line 44, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_forms.scss */
 textarea:hover,
 input[type="email"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="url"]:hover, input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="month"]:hover, input[type="time"]:hover, input[type="week"]:hover,
 select[multiple=multiple]:hover {
   border-color: #c4c4c4;
 }
-/* line 48, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_forms.scss */
+/* line 48, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_forms.scss */
 textarea:focus,
 input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
 select[multiple=multiple]:focus {
@@ -207,12 +206,12 @@ select[multiple=multiple]:focus {
   outline: none;
 }
 
-/* line 55, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_forms.scss */
+/* line 55, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_forms.scss */
 textarea {
   resize: vertical;
 }
 
-/* line 59, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_forms.scss */
+/* line 59, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_forms.scss */
 input[type="search"] {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -221,27 +220,27 @@ input[type="search"] {
   appearance: none;
 }
 
-/* line 64, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_forms.scss */
+/* line 64, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_forms.scss */
 input[type="checkbox"],
 input[type="radio"] {
   display: inline;
   margin-right: 0.375em;
 }
 
-/* line 69, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_forms.scss */
+/* line 69, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_forms.scss */
 input[type="file"] {
   padding-bottom: 0.75em;
   width: 100%;
 }
 
-/* line 74, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_forms.scss */
+/* line 74, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_forms.scss */
 select {
   margin-bottom: 1.5em;
   max-width: 100%;
   width: auto;
 }
 
-/* line 1, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_tables.scss */
+/* line 1, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_tables.scss */
 table {
   border-collapse: collapse;
   margin: 0.75em 0;
@@ -249,7 +248,7 @@ table {
   width: 100%;
 }
 
-/* line 8, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_tables.scss */
+/* line 8, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_tables.scss */
 th {
   border-bottom: 1px solid #b7b7b7;
   font-weight: bold;
@@ -257,41 +256,41 @@ th {
   text-align: left;
 }
 
-/* line 15, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_tables.scss */
+/* line 15, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_tables.scss */
 td {
   border-bottom: 1px solid #dddddd;
   padding: 0.75em 0;
 }
 
-/* line 22, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_tables.scss */
+/* line 22, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_tables.scss */
 tr,
 td,
 th {
   vertical-align: middle;
 }
 
-/* line 2, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_lists.scss */
+/* line 2, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_lists.scss */
 ul,
 ol {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-/* line 20, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_lists.scss */
+/* line 20, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_lists.scss */
 dl {
   margin-bottom: 0.75em;
 }
-/* line 23, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_lists.scss */
+/* line 23, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_lists.scss */
 dl dt {
   font-weight: bold;
   margin-top: 0.75em;
 }
-/* line 28, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_lists.scss */
+/* line 28, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_lists.scss */
 dl dd {
   margin: 0;
 }
 
-/* line 2, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/base/_buttons.scss */
+/* line 2, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/base/_buttons.scss */
 button,
 input[type="submit"] {
   -webkit-appearance: none;
@@ -6620,7 +6619,7 @@ Copyright (c) 2013 Daniel Eden
   animation-name: zoomOutUp;
 }
 
-/* line 10, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 10, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 .hero {
   background: url("straight-road.jpg");
   background-attachment: fixed;
@@ -6629,7 +6628,7 @@ Copyright (c) 2013 Daniel Eden
   height: 450px;
 }
 
-/* line 17, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 17, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 #header-title {
   font-size: 150px;
   margin: 0 auto;
@@ -6639,7 +6638,7 @@ Copyright (c) 2013 Daniel Eden
   padding-top: 60px;
 }
 
-/* line 25, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 25, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 #header-title-first {
   text-align: center;
   padding-top: 10px;
@@ -6650,14 +6649,14 @@ Copyright (c) 2013 Daniel Eden
   font-size: 165px;
 }
 
-/* line 35, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 35, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 #header-title-last {
   display: inline;
   color: #eff0eb;
   font-family: 'menschmensch_thin';
 }
 
-/* line 40, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 40, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 #header-subtitle {
   text-align: center;
   color: #eff0eb;
@@ -6673,25 +6672,25 @@ Copyright (c) 2013 Daniel Eden
   border-radius: 4px;
 }
 
-/* line 54, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 54, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 .location-search {
   width: 30%;
   margin: 0 auto;
   padding-top: 240px;
 }
 
-/* line 59, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 59, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 .search-form {
   text-align: center;
   padding: 10px;
 }
 
-/* line 63, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 63, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 form {
   display: inline;
 }
 
-/* line 66, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 66, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 div.container {
   margin-left: auto;
   margin-right: auto;
@@ -6701,7 +6700,7 @@ div.container {
   margin-bottom: -10px;
 }
 
-/* line 74, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 74, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 div.homepage-about {
   text-align: center;
   height: 280px;
@@ -6710,18 +6709,18 @@ div.homepage-about {
   color: #2e7562;
   margin-top: 0;
 }
-/* line 81, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 81, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 div.homepage-about h1 {
   margin-top: 0;
 }
-/* line 84, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 84, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 div.homepage-about h1 {
   text-align: center;
   font-family: 'menschmensch_regular';
   margin-bottom: 0px;
 }
 
-/* line 90, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 90, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 .homepage-about-discover {
   text-align: center;
   height: 500px;
@@ -6730,7 +6729,7 @@ div.homepage-about h1 {
   margin-bottom: 0px;
 }
 
-/* line 97, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 97, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 .homepage-about-go {
   height: 610px;
   background-color: #2e7562;
@@ -6739,7 +6738,7 @@ div.homepage-about h1 {
   margin-bottom: 20px;
 }
 
-/* line 104, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 104, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 .homepage-about-create {
   background-color: #eff0eb;
   background-image: url("http://i.imgur.com/9OUxrEd.png");
@@ -6749,18 +6748,18 @@ div.homepage-about h1 {
   margin-bottom: 20px;
 }
 
-/* line 112, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 112, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 div.discover:last-child {
   margin-right: auto;
 }
 
-/* line 115, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 115, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 .login-register {
   text-align: center;
   padding-top: 20px;
 }
 
-/* line 119, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 119, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 a.discover, .create, h2 {
   text-align: center;
   width: 100%;
@@ -6770,7 +6769,7 @@ a.discover, .create, h2 {
   margin-top: 25px;
 }
 
-/* line 127, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 127, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 .accordion-tabs-minimal {
   margin: 0 auto;
   width: 50%;
@@ -6783,12 +6782,12 @@ a.discover, .create, h2 {
   clear: both;
 }
 @media screen and (min-width: 40em) {
-  /* line 141, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+  /* line 141, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
   .accordion-tabs-minimal li.tab-header-and-content {
     display: inline;
   }
 }
-/* line 147, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 147, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 .accordion-tabs-minimal a.tab-link {
   background-color: white;
   border-top: 1px solid #dddddd;
@@ -6798,7 +6797,7 @@ a.discover, .create, h2 {
   padding: 0.75em 1.618em;
 }
 @media screen and (min-width: 40em) {
-  /* line 147, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+  /* line 147, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
   .accordion-tabs-minimal a.tab-link {
     display: inline-block;
     vertical-align: baseline;
@@ -6808,44 +6807,44 @@ a.discover, .create, h2 {
     border-top: 0;
   }
 }
-/* line 160, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 160, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 .accordion-tabs-minimal a.tab-link:hover {
   color: #477dca;
 }
-/* line 164, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 164, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 .accordion-tabs-minimal a.tab-link:focus {
   outline: none;
 }
-/* line 167, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 167, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 .accordion-tabs-minimal a.tab-link.is-open {
   margin: 0 auto;
 }
-/* line 171, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 171, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 .accordion-tabs-minimal a.tab-link.is-active {
   border-bottom: 0;
 }
 @media screen and (min-width: 40em) {
-  /* line 171, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+  /* line 171, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
   .accordion-tabs-minimal a.tab-link.is-active {
     border: 1px solid #dddddd;
     border-bottom-color: white;
     margin-bottom: -1px;
   }
 }
-/* line 182, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 182, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 .accordion-tabs-minimal .tab-content {
   display: none;
   padding: 1.5em 1.618em;
 }
 @media screen and (min-width: 40em) {
-  /* line 182, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+  /* line 182, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
   .accordion-tabs-minimal .tab-content {
     border-top: 1px solid #dddddd;
     float: left;
   }
 }
 
-/* line 192, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 192, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 input.input {
   background-color: #af703a;
   font-family: 'menschmensch_regular';
@@ -6855,12 +6854,12 @@ input.input {
   border-radius: 10px;
 }
 
-/* line 200, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 200, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 input.input:hover {
   background-color: #2e7562;
 }
 
-/* line 203, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 203, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 input#discover_destination {
   border: 4px solid rgba(46, 116, 97, 0.7);
   background-color: #eff0eb;
@@ -6873,14 +6872,14 @@ input#discover_destination {
   width: 300px;
 }
 
-/* line 214, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 214, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 #map-usa {
   margin: 0 auto;
   height: 350px;
   width: 500px;
 }
 
-/* line 219, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 219, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 #discover-about, #go-about {
   color: #eff0eb;
   width: 50%;
@@ -6889,7 +6888,7 @@ input#discover_destination {
   font-size: 16px;
 }
 
-/* line 226, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 226, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 #create-about, #about {
   color: #7f868e;
   width: 50%;
@@ -6898,7 +6897,7 @@ input#discover_destination {
   font-size: 16px;
 }
 
-/* line 233, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 233, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 .fa-foursquare, .fa-yelp {
   color: #2e7562;
   font-size: 150px;
@@ -6907,7 +6906,7 @@ input#discover_destination {
   padding-right: 200px;
 }
 
-/* line 240, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 240, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 .fa-instagram {
   color: #af703a;
   font-size: 150px;
@@ -6916,7 +6915,7 @@ input#discover_destination {
   padding-right: 200px;
 }
 
-/* line 247, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 247, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 .fa-reddit {
   color: #af703a;
   font-size: 150px;
@@ -6924,25 +6923,25 @@ input#discover_destination {
   text-align: center;
 }
 
-/* line 253, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 253, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 .fa-plane, .fa-bus, .fa-car {
   font-size: 100px;
   color: #eff0eb;
 }
 
-/* line 257, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 257, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 ul {
   margin-top: 30px;
 }
 
-/* line 260, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/home.css.scss */
+/* line 260, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/home.css.scss */
 div.discover-create {
   margin: 0 auto;
   margin-top: 10px;
   width: 800px;
 }
 
-/* line 7, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 7, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 .container {
   max-width: 68em;
   margin-left: auto;
@@ -6955,7 +6954,7 @@ div.discover-create {
   clear: both;
 }
 
-/* line 10, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 11, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 .photo {
   float: left;
   display: block;
@@ -6967,17 +6966,17 @@ div.discover-create {
   margin-right: 0;
 }
 
-/* line 13, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 14, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 .image-form {
   margin-left: 100px;
 }
 
-/* line 16, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 17, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 .usershow h1 {
   text-align: center;
 }
 
-/* line 19, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 20, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 .userinfo {
   float: left;
   display: block;
@@ -6990,19 +6989,19 @@ div.discover-create {
   margin-right: 0;
 }
 
-/* line 23, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 24, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 .name {
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 40px;
 }
 
-/* line 28, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 29, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 .bio {
   width: 70%;
 }
 
-/* line 33, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 34, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 .usertrips {
   display: inline;
   margin-top: 40px;
@@ -7016,17 +7015,17 @@ div.discover-create {
   margin-right: 0;
 }
 
-/* line 38, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 39, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 .usertrips p {
   display: inline-block;
 }
 
-/* line 41, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 42, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 .usertrips h3 {
   margin-bottom: 70px;
 }
 
-/* line 44, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 45, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 .saved {
   text-align: center;
   float: left;
@@ -7040,20 +7039,20 @@ div.discover-create {
   margin-right: 0;
 }
 
-/* line 49, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 50, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 .userrambles {
   border-radius: 5px;
   background-image: url("http://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg");
 }
 
-/* line 53, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 54, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 .noteshow {
   display: none;
   color: #7f868e;
   font-family: monospace, sans-serif;
 }
 
-/* line 58, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 59, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 h1.profile {
   font-family: 'menschmensch_regular';
   color: #af703a;
@@ -7061,26 +7060,26 @@ h1.profile {
   padding-top: 120px;
 }
 
-/* line 67, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 68, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 .userinfo {
   margin-top: 30px;
 }
 
-/* line 70, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 71, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 img.user-img {
   border: 8px solid #2e7562;
   border-radius: 10px;
   margin-top: 40px;
 }
 
-/* line 75, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 76, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 input#user_avatar {
   display: block;
   margin: 0 auto;
   width: 50%;
 }
 
-/* line 80, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 81, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 input.user-img-add {
   background: #af703a;
   color: #eff0eb;
@@ -7088,12 +7087,12 @@ input.user-img-add {
   height: 30px;
   line-height: .5;
 }
-/* line 86, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 87, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 input.user-img-add:hover {
   background: #2e7562;
 }
 
-/* line 90, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 91, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 span#user-name-label, span#user-residence-label, span#user-bio-label {
   font-family: 'menschmensch_regular';
   color: #af703a;
@@ -7101,15 +7100,16 @@ span#user-name-label, span#user-residence-label, span#user-bio-label {
   font-weight: normal;
 }
 
-/* line 96, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 97, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 span#user-name, span#user-residence, span#user-bio {
   font-family: monospace, sans-serif;
   color: #7f868e;
   font-size: 20px;
   font-weight: normal;
+  word-break: break-all;
 }
 
-/* line 102, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 105, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 a.editname, a.editresidence, a.editbio {
   font-family: 'menschmensch_regular';
   color: #2e7562;
@@ -7117,45 +7117,45 @@ a.editname, a.editresidence, a.editbio {
   display: block;
 }
 
-/* line 108, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 111, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 .lives-in {
   margin-bottom: 40px;
 }
 
-/* line 111, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 114, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 #my-rambles {
   font-family: 'menschmensch_regular';
   color: #af703a;
   font-size: 55px;
 }
 
-/* line 116, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 119, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 #r-dest {
   color: #2e7562;
   font-family: monospace, sans-serif;
 }
 
-/* line 120, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 123, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 #dates {
   font-family: monospace, sans-serif;
   color: #7f868e;
   display: block;
 }
 
-/* line 125, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 128, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 .shows {
   cursor: pointer;
   font-family: monospace, sans-serif;
   color: #af703a;
 }
 
-/* line 130, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 133, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 hr.ramble-divider {
   margin: 0 auto;
 }
 
-/* line 133, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
-a.ramble-name-profile {
+/* line 136, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
+.ramble-name-profile {
   display: block;
   font-family: monospace, sans-serif;
   color: #7f868e;
@@ -7163,7 +7163,7 @@ a.ramble-name-profile {
   font-weight: bold;
 }
 
-/* line 140, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 143, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 .each-ramble {
   margin-right: auto;
   margin-left: auto;
@@ -7173,20 +7173,20 @@ a.ramble-name-profile {
   border-radius: 10px;
 }
 
-/* line 148, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 151, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 .profile {
   background-color: #2e7562;
   margin-top: -70px;
   height: 200px;
 }
 
-/* line 153, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 156, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 .reg {
   width: 60%;
   margin: 0 auto;
 }
 
-/* line 157, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 160, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 input#user_email, #user_name, #user_password, #user_password_confirmation {
   text-align: center;
   border-radius: 10px;
@@ -7197,33 +7197,33 @@ input#user_email, #user_name, #user_password, #user_password_confirmation {
   background-color: transparent;
 }
 
-/* line 166, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 169, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 #register {
   font-size: 40px;
   font-family: 'menschmensch_bold';
   color: #af703a;
 }
 
-/* line 171, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 174, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 #login {
   font-size: 20px;
   font-family: 'menschmensch_regular';
   color: #2e7562;
 }
 
-/* line 176, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 179, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 label {
   font-family: 'menschmensch_regular';
   color: #af703a;
   font-size: 20px;
 }
 
-/* line 181, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 184, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 a.or-login {
   color: #af703a;
 }
 
-/* line 184, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 187, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 input.register-button {
   background-color: #af703a;
   color: #eff0eb;
@@ -7231,12 +7231,12 @@ input.register-button {
   line-height: .8;
   font-family: 'menschmensch_regular';
 }
-/* line 192, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 195, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 input.register-button:hover {
   background-color: #7f868e;
 }
 
-/* line 197, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 200, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 .delete-ramble {
   font-weight: 700;
   font-size: 20px;
@@ -7246,7 +7246,7 @@ input.register-button:hover {
   margin: -5px 5px 0 0;
 }
 
-/* line 205, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 208, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 .x {
   color: #af703a;
   font-family: monospace, sans-serif;
@@ -7254,32 +7254,66 @@ input.register-button:hover {
   font-weight: bold;
 }
 
-/* line 211, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
-#user-note, #user-title, #user-address, #user-url, #user-tags {
+/* line 214, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
+#user-note, #user-title, #user-address, #user-tags {
   color: #2e7562;
+  word-wrap: break-word;
 }
 
-/* line 214, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 218, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
+#user-url {
+  color: #2e7562;
+  word-wrap: break-word;
+}
+
+/* line 223, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
+#user-url a {
+  color: #af703a;
+  word-wrap: break-word;
+}
+
+/* line 228, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 a.note-url {
   word-wrap: break-word;
 }
 
-/* line 217, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 231, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 hr#note-each-divider {
   border: 2px solid #af703a;
 }
 
-/* line 220, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 234, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 a.create-ramble-here {
   color: #2e7562;
 }
 
-/* line 223, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/users.css.scss */
+/* line 237, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
 a.create-ramble-here:hover {
   color: #af703a;
 }
 
-/* line 7, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 240, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
+div.bx-viewport {
+  overflow: visible !important;
+}
+
+/* line 243, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
+.bx-pager-item {
+  display: none;
+}
+
+/* line 246, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
+a.notes-url {
+  word-wrap: break-word;
+  color: #af703a;
+}
+
+/* line 253, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/users.css.scss */
+#user-created {
+  color: #2e7562;
+}
+
+/* line 7, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .container {
   max-width: 68em;
   margin-left: auto;
@@ -7294,12 +7328,12 @@ a.create-ramble-here:hover {
   clear: both;
 }
 
-/* line 12, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 12, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .note-container {
   margin: 10px;
 }
 
-/* line 17, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 17, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .ramble-notes {
   float: left;
   display: block;
@@ -7311,14 +7345,14 @@ a.create-ramble-here:hover {
   overflow: scroll;
   margin-left: 50px;
   margin-top: -40px;
-  max-height: 745px;
+  max-height: 720px;
 }
 /* line 38, /Users/danielleheckman/.rvm/gems/ruby-2.1.3/gems/neat-1.5.1/app/assets/stylesheets/grid/_span-columns.scss */
 .ramble-notes:last-child {
   margin-right: 0;
 }
 
-/* line 28, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 28, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 #map {
   width: 100%;
   margin: 0 auto;
@@ -7326,7 +7360,7 @@ a.create-ramble-here:hover {
   border-bottom: 8px solid #af703a;
 }
 
-/* line 36, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 36, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .notebody {
   margin: 15px auto 15px auto;
   text-align: left;
@@ -7336,7 +7370,7 @@ a.create-ramble-here:hover {
   max-width: 425px;
 }
 
-/* line 44, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 44, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .api-feed {
   float: left;
   display: block;
@@ -7351,7 +7385,7 @@ a.create-ramble-here:hover {
   margin-right: 0;
 }
 
-/* line 50, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 50, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 h1.ramble-create {
   font-family: 'menschmensch_regular';
   color: #af703a;
@@ -7359,7 +7393,7 @@ h1.ramble-create {
   margin-bottom: 0px;
 }
 
-/* line 56, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 56, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 input#ramble_destination, #start_date, #end_date, #ramble_name {
   width: 300px;
   margin: 0 auto;
@@ -7371,7 +7405,7 @@ input#ramble_destination, #start_date, #end_date, #ramble_name {
   background-color: transparent;
 }
 
-/* line 66, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 66, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 input#ramble-button {
   background-color: #af703a;
   color: #eff0eb;
@@ -7381,12 +7415,12 @@ input#ramble-button {
   font-weight: bold;
   font-size: 18px;
 }
-/* line 75, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 75, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 input#ramble-button:hover {
   background-color: #7f868e;
 }
 
-/* line 79, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 79, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .ramble-title {
   background-color: #2e7562;
   height: 250px;
@@ -7399,15 +7433,16 @@ input#ramble-button:hover {
   font-weight: bold;
 }
 
-/* line 92, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 92, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .start-end {
   font-size: 18px;
   font-family: monospace, sans-serif;
   color: #eff0eb;
   margin-top: -7px;
+  width: 100%;
 }
 
-/* line 98, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 99, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 textarea#note_body, input#note_tag_list, input#note_title, input#note_address, input#note_url {
   border: 2px solid #af703a;
   border-radius: 10px;
@@ -7415,38 +7450,38 @@ textarea#note_body, input#note_tag_list, input#note_title, input#note_address, i
   width: 420px;
 }
 
-/* line 104, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 105, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 #note_title {
   margin-left: 15px;
 }
 
-/* line 107, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 108, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 #note_address {
   margin-left: 15px;
 }
 
-/* line 110, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 111, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 #note_url {
   margin-left: 15px;
 }
 
-/* line 113, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 114, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 #note_tag_list {
   margin-left: 15px;
 }
 
-/* line 116, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 117, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 input.btn.radius {
   background-color: #af703a;
   font-family: 'menschmensch_regular';
 }
 
-/* line 120, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 121, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 h2.notes {
   color: #2e7562;
 }
 
-/* line 123, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 124, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 #note-label, #tag-label {
   color: #2e7562;
   font-family: 'menschmensch_regular';
@@ -7454,19 +7489,19 @@ h2.notes {
   font-size: 16px;
 }
 
-/* line 129, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 130, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 #note-body, #note-tag, #note-title, #note-address, #note-url, #note-created {
   color: #7f868e;
   font-family: monospace, sans-serif;
   word-wrap: break-word;
 }
 
-/* line 134, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 135, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 #note-body a {
   color: #af703a;
 }
 
-/* line 137, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 138, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 div#feed-title {
   font-size: 60px;
   font-family: 'menschmensch_regular';
@@ -7474,7 +7509,7 @@ div#feed-title {
   font-weight: bold;
 }
 
-/* line 143, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 144, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 #four-title, #insta-title {
   color: #af703a;
   font-family: 'menschmensch_regular';
@@ -7482,14 +7517,14 @@ div#feed-title {
   margin-top: -10px;
 }
 
-/* line 149, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 150, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 #yelp-title, #red-title {
   color: #2e7562;
   font-family: 'menschmensch_regular';
   font-size: 40px;
 }
 
-/* line 154, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 155, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 div#f-venue-title {
   font-family: monospace, sans-serif;
   color: #2e7562;
@@ -7497,55 +7532,55 @@ div#f-venue-title {
   font-weight: bold;
 }
 
-/* line 160, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 161, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 #f-address {
   font-family: monospace, sans-serif;
   color: #af703a;
 }
 
-/* line 164, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 165, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 hr {
   width: 200px;
   margin: 0 auto;
 }
 
-/* line 168, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 169, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 hr.tip {
   width: 300px;
   border: 3px solid #af703a;
 }
 
-/* line 172, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 173, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 li {
   padding-top: 15px;
 }
 
-/* line 175, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 176, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 a.four-tip, a.reddit-thread-title {
   color: #7f868e;
   font-family: monospace, sans-serif;
 }
 
-/* line 179, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 180, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 i.fa.fa-foursquare.ramble, i.fa.fa-instagram.ramble {
   font-size: 35px;
   padding: 0px;
   color: #af703a;
 }
 
-/* line 184, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 185, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 i.fa.fa-yelp.ramble, i.fa.fa-reddit.ramble {
   font-size: 35px;
   padding: 0px;
   color: #2e7562;
 }
 
-/* line 189, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 190, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .ramble-yelp {
   margin-top: 20px;
 }
 
-/* line 192, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 193, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .yelp-venue-title {
   font-family: monospace, sans-serif;
   color: #af703a;
@@ -7553,44 +7588,44 @@ i.fa.fa-yelp.ramble, i.fa.fa-reddit.ramble {
   font-weight: bold;
 }
 
-/* line 198, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 199, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .yelp-venue-tip {
   color: #7f868e;
   font-family: monospace, sans-serif;
   font-weight: bold;
 }
 
-/* line 203, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 204, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 hr.y-tip, hr.i-tip {
   width: 300px;
   border: 3px solid #2e7562;
   margin-bottom: 10px;
 }
 
-/* line 208, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 209, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 div.ramble-instagram {
   margin-top: 20px;
 }
 
-/* line 211, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 212, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 img.instagram-thumb {
   display: inline;
   font-family: monospace, sans-serif !important;
   color: #7f868e !important;
 }
 
-/* line 216, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 217, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 button {
   background: #2e7562;
   margin: 10px !important;
 }
 
-/* line 220, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 221, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 button:hover {
   background-color: #7f868e;
 }
 
-/* line 223, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 224, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 #save {
   font-family: 'menschmensch_regular';
   color: #af703a;
@@ -7598,30 +7633,30 @@ button:hover {
   font-size: 22px;
 }
 
-/* line 229, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 230, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .fa-star-o {
   color: #af703a;
   font-size: 22px;
 }
 
-/* line 233, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 234, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .ramble-reddit {
   margin-top: 20px;
 }
 
-/* line 236, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 237, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 a.edit-note, a.delete-note {
   color: #7f868e;
   font-family: 'menschmensch_bold';
 }
 
-/* line 241, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 242, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .fa-pencil-square-o, .fa-trash {
   color: #7f868e;
   font-size: 18px;
 }
 
-/* line 245, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 246, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 #no-notes {
   font-family: monospace, sans-serif;
   font-size: 18px;
@@ -7629,7 +7664,7 @@ a.edit-note, a.delete-note {
   color: #7f868e;
 }
 
-/* line 251, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 252, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 #ramble-dest {
   font-family: monospace, sans-serif;
   font-color: #eff0eb;
@@ -7637,33 +7672,44 @@ a.edit-note, a.delete-note {
   margin-top: -28px;
 }
 
-/* line 257, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 258, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .edit-ramble-name {
   text-decoration: none;
   font-size: 18px;
   color: #eff0eb;
 }
-/* line 262, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 263, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .edit-ramble-name:hover {
   color: #af703a;
 }
 
-/* line 266, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 267, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
+.noteshow {
+  display: none;
+  margin: 15px auto 15px auto;
+  text-align: left;
+  padding-left: 10px;
+  background: transparent;
+  border: 2px solid #2e7562;
+  max-width: 450px;
+}
+
+/* line 276, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .fshow {
   display: none;
 }
 
-/* line 269, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 279, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .yshow {
   display: none;
 }
 
-/* line 272, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 282, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .ishow {
   display: none;
 }
 
-/* line 275, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 285, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .rshow {
   display: none;
   margin: 0 auto 0 auto;
@@ -7672,18 +7718,18 @@ a.edit-note, a.delete-note {
   max-width: 300px;
 }
 
-/* line 282, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 292, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .rshow li {
   display: inline;
 }
 
-/* line 285, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 295, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .rshow a {
   color: #af703a;
   font-family: monospace, sans-serif;
 }
 
-/* line 289, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 299, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .note-show {
   margin: 15px auto 15px auto;
   text-align: left;
@@ -7693,7 +7739,7 @@ a.edit-note, a.delete-note {
   max-width: 450px;
 }
 
-/* line 297, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 307, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .shows1 {
   width: 200px;
   background: rgba(255, 255, 255, 0.5);
@@ -7702,7 +7748,7 @@ a.edit-note, a.delete-note {
   border-radius: 20px;
 }
 
-/* line 304, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 314, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .shows2 {
   width: 200px;
   background: rgba(255, 255, 255, 0.5);
@@ -7711,7 +7757,7 @@ a.edit-note, a.delete-note {
   border-radius: 20px;
 }
 
-/* line 311, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 321, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .shows3 {
   width: 200px;
   background: rgba(255, 255, 255, 0.5);
@@ -7720,7 +7766,7 @@ a.edit-note, a.delete-note {
   border-radius: 20px;
 }
 
-/* line 318, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 328, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .shows4 {
   width: 200px;
   background: rgba(255, 255, 255, 0.5);
@@ -7729,7 +7775,7 @@ a.edit-note, a.delete-note {
   border-radius: 15px;
 }
 
-/* line 325, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 335, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .shows5 {
   width: 200px;
   background: rgba(255, 255, 255, 0.5);
@@ -7738,40 +7784,40 @@ a.edit-note, a.delete-note {
   border-radius: 15px;
 }
 
-/* line 332, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 342, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .yelp-results {
   margin-bottom: -15px;
 }
 
-/* line 335, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 345, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .four-results {
   margin-bottom: -15px;
 }
 
-/* line 338, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 348, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 #new_note {
   display: none;
 }
 
-/* line 341, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 351, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 #tag-each {
-  font-weight: 700;
-}
-
-/* line 346, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
-#tag-each a {
-  color: #af703a;
+  color: #7f868e;
   font-family: monospace, sans-serif;
 }
 
-/* line 350, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 358, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
+#tag-each a {
+  color: #af703a;
+}
+
+/* line 361, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .note-header {
   background: #2e7562;
   height: 200px;
   margin-top: -85px;
 }
 
-/* line 355, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 366, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 #note-search-title {
   font-family: 'menschmensch_regular';
   color: #af703a;
@@ -7780,7 +7826,7 @@ a.edit-note, a.delete-note {
   margin-bottom: -20px;
 }
 
-/* line 362, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 373, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 input#search.span2 {
   width: 30%;
   margin: 0 auto;
@@ -7794,7 +7840,7 @@ input#search.span2 {
   font-size: 20px;
 }
 
-/* line 374, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 385, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .btn {
   background: #af703a;
   font-family: 'menschmensch_regular';
@@ -7804,7 +7850,7 @@ input#search.span2 {
   border-radius: 10px;
 }
 
-/* line 384, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 395, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 #no-results {
   text-align: center;
   font-family: 'menschmensch_regular';
@@ -7813,7 +7859,7 @@ input#search.span2 {
   margin-top: 50px;
 }
 
-/* line 391, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 402, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .note-results {
   display: inline-block;
   text-align: left;
@@ -7824,7 +7870,7 @@ input#search.span2 {
   padding: 10px 10px 10px 10px;
 }
 
-/* line 401, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 412, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .notesshow {
   max-width: 400px;
   font-family: 'menschmensch_regular';
@@ -7835,7 +7881,7 @@ input#search.span2 {
   line-height: 1.2;
 }
 
-/* line 410, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 421, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .tagshow {
   max-width: 400px;
   text-align: justify;
@@ -7844,7 +7890,7 @@ input#search.span2 {
   margin: 0 auto 20px auto;
 }
 
-/* line 417, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 428, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .note-destination {
   font-weight: 700;
   font-family: 'menschmensch_regular';
@@ -7855,40 +7901,40 @@ input#search.span2 {
   float: right;
 }
 
-/* line 426, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 437, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 li.note-search {
   display: inline;
 }
 
-/* line 429, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 440, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .y-address {
   font-family: monospace, sans-serif;
   color: #2e7562;
   display: block;
 }
 
-/* line 434, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 445, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 #on-locations {
   color: #eff0eb;
   font-size: 30px;
   font-family: 'menschmensch_regular';
 }
 
-/* line 439, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 450, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .best-in-p {
   font-family: 'menschmensch_regular';
   font-size: 25px;
   color: #eff0eb;
 }
 
-/* line 444, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 455, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 #delete-ramble {
   display: inline-block;
   width: 15px;
   float: none;
 }
 
-/* line 449, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 460, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 .fa-trash.ramble {
   margin-left: 0px !important;
   color: #eff0eb;
@@ -7898,15 +7944,15 @@ li.note-search {
   height: 50px;
 }
 
-/* line 457, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
-#note-show-title, #note-show-address, #note-show-body, #note-show-tags, #note-show-created {
+/* line 468, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
+#note-show-title, #note-show-address, #note-show-body, #note-show-tags, #note-show-created, #note-show-url {
   color: #2e7562;
   font-family: 'menschmensch_regular';
   font-weight: bold;
   font-size: 16px;
 }
 
-/* line 463, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 474, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 #note-title-body, #note-address-body, #note-body-body, .note-url-body, #note-created-body, #note-tags-body {
   font-family: monospace, sans-serif;
   color: #7f868e;
@@ -7914,33 +7960,56 @@ li.note-search {
   font-weight: normal;
 }
 
-/* line 469, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 480, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
+a.note-url {
+  color: #af703a;
+}
+
+/* line 483, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 a.yelp-tip {
   color: #7f868e;
 }
 
-/* line 472, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/rambles.css.scss */
+/* line 486, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
 #reddit-dash {
   color: #2e7562;
   font-weight: bold;
 }
 
-/* line 5, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/notes.css.scss */
+/* line 491, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
+.instagram-save, .savenote, .yelp-save, .foursquare-save {
+  cursor: pointer;
+  cursor: hand;
+}
+
+/* line 496, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
+.start-date {
+  margin-right: 10px;
+  display: inline;
+}
+
+/* line 501, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/rambles.css.scss */
+.end-date {
+  margin-left: 10px;
+  display: inline;
+}
+
+/* line 5, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/notes.css.scss */
 .location-search {
   width: 30%;
 }
 
-/* line 9, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/notes.css.scss */
+/* line 9, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/notes.css.scss */
 .header {
   text-align: center;
 }
 
-/* line 13, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/notes.css.scss */
+/* line 13, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/notes.css.scss */
 .note {
   padding-top: 40px;
 }
 
-/* line 16, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/notes.css.scss */
+/* line 16, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/notes.css.scss */
 #edit-note-heading {
   font-family: 'menschmensch_regular';
   color: #af703a;
@@ -7948,7 +8017,7 @@ a.yelp-tip {
   font-size: 40px;
 }
 
-/* line 22, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/notes.css.scss */
+/* line 22, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/notes.css.scss */
 input.edit-note-title, .edit-note-address, .edit-note-body, .edit-note-tags, .edit-note-url {
   width: 400px !important;
   margin: 0 auto !important;
@@ -7957,13 +8026,13 @@ input.edit-note-title, .edit-note-address, .edit-note-body, .edit-note-tags, .ed
   color: #7f868e;
 }
 
-/* line 29, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/notes.css.scss */
+/* line 29, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/notes.css.scss */
 .edit-note-all {
   margin: 0 auto;
   text-align: center;
 }
 
-/* line 33, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/notes.css.scss */
+/* line 33, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/notes.css.scss */
 .edit-note-button {
   background-color: #2e7562 !important;
   font-family: 'menschmensch_bold';
@@ -7971,18 +8040,18 @@ input.edit-note-title, .edit-note-address, .edit-note-body, .edit-note-tags, .ed
   margin-top: 10px;
 }
 
-/* line 39, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/notes.css.scss */
+/* line 39, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/notes.css.scss */
 #edit-note-border {
   border: 1px solid #2e7562;
   width: 60%;
 }
 
-/* line 7, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 7, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 body {
   text-align: center;
 }
 
-/* line 10, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 10, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .ramble {
   color: white;
   font-weight: bold;
@@ -7990,12 +8059,12 @@ body {
   width: 50%;
 }
 
-/* line 16, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 16, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .ramble span {
   color: black;
 }
 
-/* line 19, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 19, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 #map {
   width: 100%;
   height: 450px;
@@ -8003,52 +8072,52 @@ body {
   border-bottom: 8px solid #af703a;
 }
 
-/* line 25, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 25, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .notes {
   padding-top: 35px;
 }
 
-/* line 28, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 28, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .api {
   padding-top: 30px;
 }
 
-/* line 31, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 31, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .ramble {
   padding-top: 30px;
   color: black;
 }
 
-/* line 35, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 35, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 li {
   text-decoration: none;
   list-style-type: none;
 }
 
-/* line 39, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 39, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 article {
   width: 50%;
   margin: 0 auto;
 }
 
-/* line 43, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 43, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .title {
   font-weight: bold;
 }
 
-/* line 46, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 46, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .map {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 51, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 51, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .ramble_destination {
   color: black;
 }
 
-/* line 54, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 54, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 #ui-datepicker-div {
   width: 216px !important;
   height: auto;
@@ -8062,23 +8131,23 @@ article {
   background-color: #eff0eb;
 }
 
-/* line 66, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 66, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 div.ui-datepicker-header {
   margin-top: 10px;
 }
 
-/* line 70, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 70, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 a.ui-datepicker-prev, .ui-datepicker-next {
   color: #af703a;
   font-size: 14px !important;
 }
 
-/* line 74, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 74, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 a.ui-state-default {
   color: #2e7562 !important;
 }
 
-/* line 77, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 77, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 button.ui-datepicker-current, .ui-datepicker-close {
   color: #eff0eb;
   font-family: 'menschmensch_regular';
@@ -8086,30 +8155,30 @@ button.ui-datepicker-current, .ui-datepicker-close {
   font-weight: bold;
 }
 
-/* line 83, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 83, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 span.ui-icon {
   font-family: 'menschmensch_regular';
   font-size: 18px;
   font-weight: bold;
 }
 
-/* line 88, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 88, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 span.ui-datepicker-month, .ui-datepicker-year {
   font-weight: bold;
 }
 
-/* line 91, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 91, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .discover-bottom {
   width: 500px;
   margin: 50px auto 30px auto;
 }
 
-/* line 95, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 95, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .form-inline div {
   display: inline-block;
 }
 
-/* line 99, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 99, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .show {
   display: none;
   max-width: 400px;
@@ -8120,7 +8189,7 @@ span.ui-datepicker-month, .ui-datepicker-year {
   margin: 0 auto 0 auto;
 }
 
-/* line 108, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 108, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 div.modal.current {
   background: #eff0eb;
   margin-left: -245px;
@@ -8134,7 +8203,7 @@ div.modal.current {
   border: 5px solid #7f868e;
 }
 
-/* line 120, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 120, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .login-form {
   width: 300px;
   margin: 0 auto;
@@ -8143,7 +8212,7 @@ div.modal.current {
   font-size: 20px;
 }
 
-/* line 127, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 127, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 input.login-form {
   font-family: monospace, sans-serif;
   color: #7f868e;
@@ -8152,25 +8221,25 @@ input.login-form {
   background-color: transparent;
 }
 
-/* line 134, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 134, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .login-button {
   background-color: #af703a;
   color: #eff0eb;
   height: 45px;
   line-height: .8;
 }
-/* line 140, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 140, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .login-button:hover {
   background-color: #7f868e;
 }
 
-/* line 144, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 144, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 h2#login {
   text-align: center;
   font-size: 40px;
 }
 
-/* line 148, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 148, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 h2#register, a.register {
   font-size: 20px;
   color: #2e7562;
@@ -8178,7 +8247,7 @@ h2#register, a.register {
   margin-top: 3px;
 }
 
-/* line 154, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 154, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 a.close-modal {
   text-align: center;
   width: 100px;
@@ -8187,7 +8256,7 @@ a.close-modal {
   color: #2e7562;
 }
 
-/* line 161, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 161, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .pagename {
   background-color: #2e7562;
   height: 230px;
@@ -8195,7 +8264,7 @@ a.close-modal {
   text-align: center;
 }
 
-/* line 167, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 167, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 h1.discover {
   color: #af703a;
   text-shadow: -3px 3px #2e7562;
@@ -8205,7 +8274,7 @@ h1.discover {
   margin-bottom: 0px;
 }
 
-/* line 175, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 175, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .location {
   color: #eff0eb;
   font-family: monospace, sans-serif;
@@ -8213,7 +8282,7 @@ h1.discover {
   margin-top: -18px;
 }
 
-/* line 181, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 181, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 div.four-title, div.ins-title {
   font-size: 40px;
   font-family: 'menschmensch_regular';
@@ -8221,31 +8290,31 @@ div.four-title, div.ins-title {
   margin-bottom: -20px;
 }
 
-/* line 187, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 187, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .fa-arrow-circle-o-down {
   color: #af703a;
 }
 
-/* line 190, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 190, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 div.f-title {
   color: #af703a;
   font-family: monospace, sans-serif;
   font-size: 18px;
 }
 
-/* line 195, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 195, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 div.f-tips, a.f-tips {
   font-family: monospace, sans-serif;
   color: #7f868e;
 }
 
-/* line 199, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 199, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .yelp {
   background-color: #2e7562;
   padding-bottom: 20px;
 }
 
-/* line 203, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 203, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 div.y-title, div.red-title {
   color: #af703a;
   font-family: 'menschmensch_regular';
@@ -8253,14 +8322,14 @@ div.y-title, div.red-title {
   padding-top: 30px;
 }
 
-/* line 209, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 209, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 a.y-name {
   font-family: monospace, sans-serif;
   color: #eff0eb;
   font-size: 18px;
 }
 
-/* line 214, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 214, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .y-tips {
   font-family: monospace, sans-serif;
   color: #eff0eb;
@@ -8268,13 +8337,13 @@ a.y-name {
   font-weight: bold;
 }
 
-/* line 220, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 220, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .reddit {
   background-color: #2e7562;
-  height: 400px;
+  height: 420px;
 }
 
-/* line 224, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 224, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .r-desc {
   font-family: monospace, sans-serif;
   color: #eff0eb;
@@ -8284,7 +8353,7 @@ a.y-name {
   margin: 0 auto 0 auto;
 }
 
-/* line 232, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 232, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .r-list {
   max-width: 450px;
   margin: 0 auto 0 auto;
@@ -8293,70 +8362,70 @@ a.y-name {
   margin-top: -15px;
 }
 
-/* line 239, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 239, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .r-list:after {
   content: "";
   display: inline-block;
   width: 100%;
 }
 
-/* line 244, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 244, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .r-list li {
   display: inline;
 }
 
-/* line 247, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 247, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .r-list a {
   font-family: monospace, sans-serif;
   color: #eff0eb;
   font-size: 18px;
 }
 
-/* line 252, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 252, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .r-list a:hover {
   color: #7f868e;
 }
 
-/* line 255, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 255, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .r-list a:active {
   color: #eff0eb;
 }
 
-/* line 258, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 258, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .r-list a:visited {
   color: #eff0eb;
 }
 
-/* line 261, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 261, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .r-list a.create {
   font-family: 'menschmensch_regular';
   color: #af703a;
   font-size: 35px;
 }
 
-/* line 266, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 266, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 a.create:hover {
   color: #2e7562;
 }
 
-/* line 269, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 269, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 h4.r-create {
   font-family: monospace, sans-serif;
   color: #2e7562;
 }
 
-/* line 273, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 273, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .fa-arrow-right, .fa-arrow-left {
   color: #2e7562;
   font-size: 30px;
 }
 
-/* line 277, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 277, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 div.discover-bottom {
   margin-top: 0px;
 }
 
-/* line 280, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 280, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 #or {
   font-size: 20px;
   color: #af703a;
@@ -8364,7 +8433,7 @@ div.discover-bottom {
   margin-top: 3px;
 }
 
-/* line 286, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 286, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .nbody {
   max-width: 400px;
   text-align: justify;
@@ -8373,21 +8442,21 @@ div.discover-bottom {
   margin: 0 auto 20px auto;
 }
 
-/* line 293, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 293, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 #slash {
   color: #af703a;
   font-family: monospace, sans-serif;
   font-weight: bold;
 }
 
-/* line 298, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 298, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 #yelp-address {
   color: #af703a;
   font-family: monospace, sans-serif;
   font-weight: bold;
 }
 
-/* line 303, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 303, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .note-show-inline {
   display: inline-block;
   margin: 15px auto 15px auto;
@@ -8398,34 +8467,59 @@ div.discover-bottom {
   padding: 10px 10px 10px 10px;
 }
 
-/* line 312, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/discovers.css.scss */
+/* line 312, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
 .recommended-notes-discover {
   background-color: #2e7562;
   padding-bottom: 20px;
 }
 
-/* line 5, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/pages.css.scss */
+/* line 316, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
+#no-reddit {
+  font-family: monospace, sans-serif;
+  color: #af703a;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* line 323, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
+#discover-no-notes {
+  color: #eff0eb;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: monospace, sans-serif;
+}
+
+/* line 329, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/discovers.css.scss */
+a.discover-no-notes-link {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: monospace, sans-serif;
+  color: #af703a;
+}
+
+/* line 5, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/pages.css.scss */
 .fa-linkedin-square, .fa-github-square, .fa-twitter-square, .fa-external-link-square {
   color: #af703a;
 }
 
-/* line 8, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/pages.css.scss */
+/* line 8, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/pages.css.scss */
 img.face {
   border-radius: 50%;
   border: 10px solid #af703a;
 }
-/* line 11, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/pages.css.scss */
+/* line 11, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/pages.css.scss */
 img.face:hover {
   -webkit-filter: grayscale(100%);
 }
 
-/* line 15, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/pages.css.scss */
+/* line 15, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/pages.css.scss */
 .name {
   font-family: monospace, sans-serif;
   color: #7f868e;
 }
 
-/* line 19, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/pages.css.scss */
+/* line 19, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/pages.css.scss */
 .project-det {
   font-family: monospace, sans-serif;
   color: #2e7562;
@@ -8433,7 +8527,7 @@ img.face:hover {
   font-size: 16px;
 }
 
-/* line 25, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/pages.css.scss */
+/* line 25, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/pages.css.scss */
 #about {
   font-family: monospace, sans-serif;
   color: #7f868e;
@@ -8441,7 +8535,7 @@ img.face:hover {
   margin-bottom: 0;
 }
 
-/* line 31, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/pages.css.scss */
+/* line 31, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/pages.css.scss */
 #about-project {
   font-family: monospace, sans-serif;
   font-size: 20px;
@@ -8450,7 +8544,7 @@ img.face:hover {
   margin: 0 auto;
 }
 
-/* line 39, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/pages.css.scss */
+/* line 39, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/pages.css.scss */
 .iconmelon,
 .im {
   position: relative;
@@ -8461,7 +8555,7 @@ img.face:hover {
   margin: 0 auto;
 }
 
-/* line 48, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/pages.css.scss */
+/* line 48, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/pages.css.scss */
 .iconmelon:after,
 .im:after {
   content: '';
@@ -8472,7 +8566,7 @@ img.face:hover {
   height: 100%;
 }
 
-/* line 56, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/pages.css.scss */
+/* line 56, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/pages.css.scss */
 .gif {
   display: block;
   margin: 0 auto;
@@ -8482,14 +8576,14 @@ img.face:hover {
   margin-bottom: 10px;
 }
 
-/* line 64, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/pages.css.scss */
+/* line 64, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/pages.css.scss */
 #gif {
   font-family: monospace;
   color: #af703a;
   font-size: 16px;
 }
 
-/* line 69, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/pages.css.scss */
+/* line 69, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/pages.css.scss */
 #top-bar {
   height: 130px;
   background-color: #2e7562;
@@ -8497,12 +8591,12 @@ img.face:hover {
   margin-bottom: 10px;
 }
 
-/* line 75, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/pages.css.scss */
+/* line 75, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/pages.css.scss */
 .about-body {
   margin-bottom: 75px;
 }
 
-/* line 78, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/pages.css.scss */
+/* line 78, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/pages.css.scss */
 .noah {
   margin-top: 75px;
 }
@@ -8521,6 +8615,7 @@ img.face:hover {
  *
  *= require jquery.tagsinput
  *= require_self
+ *= require bxslider
  *= require mapbox
  *= require jquery-ui/datepicker
  *= require jquery.ui.all
@@ -8579,116 +8674,155 @@ img.face:hover {
 
 /*RESPONSIVE*/
 @media (max-width: 1221px) {
-  /* line 115, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+  /* line 116, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
   i.fa-foursquare, i.fa-instagram, i.fa-yelp, i.fa-reddit {
     font-size: 90px;
     padding: 0px;
   }
 
-  /* line 119, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+  /* line 120, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
   h1.what-we-do, h2.discover, h2.go, h2.create {
     font-size: 45px;
   }
 }
 @media (max-width: 795px) {
-  /* line 125, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+  /* line 126, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
   #header-title-first, #header-title-last {
     font-size: 120px;
   }
 
-  /* line 128, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+  /* line 129, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
   #header-subtitle {
     font-size: 25px;
     text-align: center;
   }
 }
 @media (max-width: 695px) {
-  /* line 134, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+  /* line 135, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
   input#discover_destination {
     width: 200px;
     height: 45px;
   }
 
-  /* line 138, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+  /* line 139, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
   div.discover-create {
     width: 500px;
   }
 
-  /* line 141, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+  /* line 142, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
   input.input {
     height: 35px;
     padding: 0;
   }
 }
 @media (max-width: 580px) {
-  /* line 147, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+  /* line 148, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
   #header-title-first, #header-title-last {
     font-size: 90px;
   }
 
-  /* line 150, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+  /* line 151, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
   #header-subtitle {
     font-size: 20px;
   }
 }
 @media (max-width: 500px) {
-  /* line 155, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+  /* line 156, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
   h1.what-we-do, h2.discover, h2.go, h2.create {
     font-size: 25px;
   }
 
-  /* line 158, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+  /* line 159, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
+  span.best_in_place {
+    display: block;
+    font-size: 16px;
+  }
+
+  /* line 163, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
+  .container {
+    width: 350px;
+  }
+
+  /* line 166, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
+  .userinfo {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* line 171, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
+  .bio {
+    width: 100%;
+  }
+
+  /* line 174, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
+  #user-name-label, #user-residence-label, #user-bio-label {
+    text-align: center;
+  }
+
+  /* line 177, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
+  .photo {
+    width: 100%;
+  }
+
+  /* line 180, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
+  a.top-bar, div.top-bar {
+    margin-right: 0px !important;
+    font-size: 15px !important;
+  }
+
+  /* line 184, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
   #header-title-last {
     font-size: 75px;
   }
 
-  /* line 161, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+  /* line 187, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
   #header-title-first {
     -webkit-text-stroke: 2px #2e7562;
     font-size: 75px;
   }
 
-  /* line 165, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+  /* line 191, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
   #header-subtitle {
     font-size: 15px;
   }
 
-  /* line 168, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+  /* line 194, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
   div.discover-create {
     width: 300px;
   }
 
-  /* line 171, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+  /* line 197, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
   input.input {
     font-size: 14px;
     height: 45px;
     margin-left: 60px;
   }
 
-  /* line 176, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+  /* line 202, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
   i.fa-foursquare, i.fa-instagram, i.fa-yelp, i.fa-reddit {
     font-size: 50px;
     padding: 0px;
     display: inline-block;
   }
 
-  /* line 181, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+  /* line 207, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
   i.fa-bus, i.fa-car, i.fa-plane {
     font-size: 60px;
   }
 
-  /* line 184, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+  /* line 210, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
   section.homepage-about-go, .homepage-about-create, .homepage-about-discover {
     height: 250px;
   }
 
-  /* line 187, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+  /* line 213, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
   #map-usa {
     width: 300px;
     height: 300px;
   }
 
-  /* line 191, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+  /* line 217, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
   input.input {
     height: 35px;
     padding: 0;
@@ -8696,46 +8830,46 @@ img.face:hover {
     font-size: 20px;
   }
 
-  /* line 197, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+  /* line 223, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
   .top-bar {
     display: inline;
   }
 }
-/* line 201, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 227, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 body {
   background-image: url("http://i.imgur.com/9OUxrEd.png");
   overflow-x: hidden;
 }
 
-/* line 205, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 231, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 .topbar {
   font-weight: bold;
   background-color: red;
 }
 
-/* line 209, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 235, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 .discover-create {
   width: 375px;
   margin: 300px auto 30px auto;
 }
 
-/* line 213, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 239, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 a {
   font-weight: bold;
 }
 
-/* line 217, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 243, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 .or-signup {
   margin: -20px 0 15px 0;
 }
 
-/* line 221, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 247, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 .tag-div {
   width: 350px;
   margin: 30px auto 30px auto;
 }
 
-/* line 225, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 251, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 .hsContainer {
   display: table;
   table-layout: fixed;
@@ -8746,7 +8880,7 @@ a {
   opacity: 0;
 }
 
-/* line 234, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 260, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 .hsContent {
   max-width: 450px;
   margin: -150px auto 0 auto;
@@ -8757,7 +8891,7 @@ a {
   text-align: center;
 }
 
-/* line 243, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 269, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 .bcg {
   background-position: center center;
   background-repeat: no-repeat;
@@ -8768,12 +8902,12 @@ a {
 }
 
 /* Slide 1 */
-/* line 252, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 278, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 #slide-1 .bcg {
   background-image: url("../img/bcg_slide-1.jpg");
 }
 
-/* line 254, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 280, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 #wrapper {
   position: relative;
   z-index: 10;
@@ -8786,38 +8920,38 @@ a {
   transition: all 0.3s;
 }
 
-/* line 265, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 291, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 section {
   margin-bottom: 30px;
 }
 
-/* line 268, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 294, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 section h1 {
   font-family: "Oswald", sans-serif;
   margin-bottom: 10px;
 }
 
-/* line 272, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 298, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 section p {
   margin-bottom: 30px;
 }
 
-/* line 275, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 301, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 section p:last-child {
   margin-bottom: 0;
 }
 
-/* line 278, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 304, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 section:last-child {
   margin-bottom: 0;
 }
 
-/* line 281, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 307, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 section.toggle {
   text-align: center;
 }
 
-/* line 284, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 310, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 .mask {
   position: fixed;
   top: 0;
@@ -8828,7 +8962,7 @@ section.toggle {
   background: rgba(0, 0, 0, 0.8);
 }
 
-/* line 293, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 319, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 .top-bar, a.top-bar {
   text-align: right;
   font-family: 'menschmensch_regular';
@@ -8839,232 +8973,48 @@ section.toggle {
   margin-right: 10px;
   margin-top: -1px;
 }
-/* line 303, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 329, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 .top-bar a:hover, a.top-bar a:hover {
   background-color: #af703a;
   color: #eff0eb;
 }
 
-/* ------------------------------------------------------------ *\
-|* ------------------------------------------------------------ *|
-|* Menus
-|* ------------------------------------------------------------ *|
-\* ------------------------------------------------------------ */
-/* general style for all menus */
-/* line 315, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
-.menu, .menu-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  background: transparent;
-  z-index: 10;
-  overflow: hidden;
-}
-
-/* line 327, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
-.menu li a {
-  display: block;
-  text-indent: -500em;
-  height: 5em;
-  width: 5em;
-  line-height: 5em;
-  text-align: center;
-  color: #72739f;
-  position: relative;
-  transition: background 0.1s ease-in-out;
-}
-
-/* line 338, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
-.menu li a:before {
-  font-family: FontAwesome;
-  speak: none;
-  text-indent: 0em;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  font-size: 1.4em;
-}
-
-/* line 349, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
-.menu li a.search:before {
-  content: "\f002";
-}
-
-/* line 352, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
-.menu li a.archive:before {
-  content: "\f187";
-}
-
-/* line 355, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
-.menu li a.pencil:before {
-  content: "\f040";
-}
-
-/* line 358, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
-.menu li a.contact:before {
-  content: "\f003";
-}
-
-/* line 361, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
-.menu li a.about:before {
-  content: "\f007";
-}
-
-/* line 364, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
-.menu li a.home:before {
-  content: "\f039";
-}
-
-/* line 369, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
-.menu li a:hover,
-.menu-bar li a:hover,
-.menu li:first-child a {
-  color: #af703a;
-}
-
-/* line 372, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
-.menu-bar {
-  overflow: hidden;
-  left: 5em;
-  z-index: 5;
-  width: 0;
-  height: 0;
-  transition: all 0.1s ease-in-out;
-}
-
-/* line 380, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
-.menu-bar li a {
-  display: block;
-  height: 4em;
-  line-height: 4em;
-  text-align: center;
-  color: #2e7562;
-  text-decoration: none;
-  position: relative;
-  font-family: 'menschmensch_regular';
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  transition: background 0.1s ease-in-out;
-}
-
-/* line 392, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
-.menu-bar li:first-child a {
-  height: 4em;
-  background: #af703a;
-  color: #2e7562;
-  line-height: 4;
-}
-
-/* line 398, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
-.para {
-  color: #033f72;
-  padding-left: 100px;
-  font-size: 3em;
-  margin-bottom: 20px;
-}
-
-/* line 404, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
-.open {
-  width: 6em;
-  height: 55%;
-  background: #eff0eb;
-}
-
-@media all and (max-width: 500px) {
-  /* line 410, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
-  .container {
-    margin-top: 100px;
-  }
-
-  /* line 413, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
-  .menu {
-    height: 5em;
-    width: 100%;
-  }
-
-  /* line 417, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
-  .menu li {
-    display: inline-block;
-    float: left;
-  }
-
-  /* line 421, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
-  .menu-bar li a {
-    width: 100%;
-  }
-
-  /* line 424, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
-  .menu-bar {
-    width: 100%;
-    left: 0;
-    height: 0;
-  }
-
-  /* line 429, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
-  .open {
-    width: 100%;
-    height: auto;
-  }
-
-  /* line 433, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
-  .para {
-    padding-left: 5px;
-  }
-}
-@media screen and (max-height: 34em) {
-  /* line 439, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
-  .menu li,
-  .menu-bar {
-    font-size: 60%;
-  }
-}
-@media screen and (max-height: 34em) and (max-width: 500px) {
-  /* line 444, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
-  .menu {
-    height: 3.5em;
-  }
-}
-/* line 448, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 335, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 .fa-compass {
   -webkit-transition: -webkit-transform 0.6s ease-out;
   -moz-transition: -moz-transform 0.6s ease-out;
   transition: transform 0.6s ease-out;
 }
 
-/* line 454, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 341, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 .fa-compass:hover {
   -webkit-transform: rotateZ(360deg);
   -moz-transform: rotateZ(360deg);
   transform: rotateZ(360deg);
 }
 
-/* line 460, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 347, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 .logspin:hover .fa-compass {
   -webkit-transform: rotateZ(360deg);
   -moz-transform: rotateZ(360deg);
   transform: rotateZ(360deg);
 }
 
-/* line 465, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 352, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 .logspin1:hover .fa-compass {
   -webkit-transform: rotateZ(360deg);
   -moz-transform: rotateZ(360deg);
   transform: rotateZ(360deg);
 }
 
-/* line 470, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 357, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 .logspin2:hover .fa-compass {
   -webkit-transform: rotateZ(360deg);
   -moz-transform: rotateZ(360deg);
   transform: rotateZ(360deg);
 }
 
-/* line 475, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 362, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 .userpics {
   border-radius: 30px;
   margin-top: 4px;
@@ -9072,28 +9022,28 @@ section.toggle {
   padding-top: 1px;
 }
 
-/* line 481, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 368, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 img {
   margin-top: 4px;
 }
 
-/* line 484, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 371, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 #green {
   color: #2e7562;
 }
 
-/* line 487, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 374, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 a.four-auth, a.twit-auth {
   color: #af703a;
   display: block;
 }
 
-/* line 491, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 378, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 input[type="text"]:focus {
   background-color: transparent;
 }
 
-/* line 495, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 382, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 input.nav-destination {
   border: 2px solid #af703a !important;
   background-color: #eff0eb;
@@ -9109,23 +9059,23 @@ input.nav-destination {
   margin-top: 3px;
 }
 
-/* line 509, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 396, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 input.nav-input {
   display: none;
 }
 
-/* line 512, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 399, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 .menu-button {
   cursor: pointer;
 }
 
-/* line 519, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 406, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 #pagingControls ul {
   display: inline;
   padding-left: 0.5em;
 }
 
-/* line 523, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 410, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 #pagingControls li {
   display: inline;
   padding: 0 0.5em;
@@ -9134,18 +9084,18 @@ input.nav-input {
   font-size: 18px;
 }
 
-/* line 531, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 418, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 #pagingControls a {
   color: #af703a;
 }
 
-/* line 535, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 422, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 #pagingControls2 ul {
   display: inline;
   padding-left: 0.5em;
 }
 
-/* line 539, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 426, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 #pagingControls2 li {
   display: inline;
   padding: 0 0.5em;
@@ -9154,18 +9104,18 @@ input.nav-input {
   font-size: 18px;
 }
 
-/* line 546, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 433, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 #pagingControls2 a {
   color: #af703a;
 }
 
-/* line 550, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 437, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 #pagingControls3 ul {
   display: inline;
   padding-left: 0.5em;
 }
 
-/* line 554, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 441, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 #pagingControls3 li {
   display: inline;
   padding: 0 0.5em;
@@ -9174,18 +9124,18 @@ input.nav-input {
   font-size: 18px;
 }
 
-/* line 561, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 448, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 #pagingControls3 a {
   color: #af703a;
 }
 
-/* line 565, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 452, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 #pagingControls4 ul {
   display: inline;
   padding-left: 0.5em;
 }
 
-/* line 569, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 456, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 #pagingControls4 li {
   display: inline;
   padding: 0 0.5em;
@@ -9194,18 +9144,18 @@ input.nav-input {
   font-size: 18px;
 }
 
-/* line 576, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 463, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 .fa-star {
   color: #af703a;
   font-size: 18px;
 }
 
-/* line 580, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 467, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 #pagingControls4 a {
   color: #af703a;
 }
 
-/* line 590, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 477, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 .sliding-menu-button {
   display: block;
   cursor: pointer;
@@ -9219,12 +9169,12 @@ input.nav-input {
   margin-top: -20px !important;
   z-index: 9999;
 }
-/* line 603, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 490, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 .sliding-menu-button img {
   height: 1.3em;
 }
 
-/* line 608, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 495, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 .sliding-menu-content {
   position: fixed;
   top: 0px;
@@ -9245,7 +9195,7 @@ input.nav-input {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
-/* line 618, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 505, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 .sliding-menu-content li a {
   border-bottom: 2px solid #af703a;
   color: white;
@@ -9255,12 +9205,12 @@ input.nav-input {
   font-family: 'menschmensch_regular';
   font-size: 20px;
 }
-/* line 627, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 514, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 .sliding-menu-content li a:hover {
   background-color: #af703a;
   color: white;
 }
-/* line 633, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 520, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 .sliding-menu-content.is-visible {
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
@@ -9269,7 +9219,7 @@ input.nav-input {
   transform: translateX(0);
 }
 
-/* line 638, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 525, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 .menu-screen {
   position: fixed;
   top: 0px;
@@ -9284,18 +9234,18 @@ input.nav-input {
   visibility: hidden;
   z-index: 999998;
 }
-/* line 646, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 533, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 .menu-screen.is-visible {
   opacity: .4;
   visibility: visible;
 }
 
-/* line 651, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 538, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 ul.sliding-menu {
   margin-top: 0px;
 }
 
-/* line 655, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 542, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 div.alert-box.notice {
   font-weight: bold;
   font-family: monospace;
@@ -9310,14 +9260,14 @@ div.alert-box.notice {
   text-align: center;
 }
 
-/* line 668, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 555, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 a.close {
   font-family: monospace, sans-serif;
   color: #eff0eb;
   font-size: 20px;
 }
 
-/* line 673, /Users/danielleheckman/tiy/ramblethru/app/assets/stylesheets/application.css.scss */
+/* line 560, /Users/danielleheckman/TIY/Ramblethru/app/assets/stylesheets/application.css.scss */
 div.modal.current {
   z-index: 4352342342 !important;
 }

@@ -1,4 +1,4 @@
-(function($, document, window, Raphael, undefined) {
+(function($, document, window, undefined) {
   // jQuery Plugin Factory
   function jQueryPluginFactory( $, name, methods, getters ){
     getters = getters instanceof Array ? getters : [];
@@ -614,4 +614,4 @@
   // Create the plugin
   jQueryPluginFactory($, 'usmap', methods, getters);
 
-})(jQuery, document, window, Raphael);
+})(jQuery, document, window);

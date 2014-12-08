@@ -32,6 +32,7 @@ $body-color: #eff0eb;
  *
  *= require jquery.tagsinput
  *= require_self
+ *= require bxslider
  *= require mapbox
  *= require jquery-ui/datepicker
  *= require jquery.ui.all
@@ -151,22 +152,62 @@ $body-color: #eff0eb;
     font-size: 20px;
   }
 }
-@media (max-width: 500px) {
+ @media only screen
+    and (min-width : 320px)
+    and (max-width : 480px) {
+
+  img.missing-pic, a.top-bar, .fa-compass, span.logspin, #lang-welcome, img.userpics{
+    display: none;
+  }
+  button.sliding-menu-button {
+    margin-top: 80px !important;
+  }
   h1.what-we-do, h2.discover, h2.go, h2.create {
     font-size: 25px;
   }
+  span.best_in_place {
+    display: block;
+    font-size: 16px;
+  }
+  .container {
+    width: 350px;
+  }
+  .userinfo {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .bio {
+    width: 100%;
+  }
+  #user-name-label, #user-residence-label, #user-bio-label {
+    text-align: center;
+  }
+  .photo {
+    width: 100%;
+  }
+  a.top-bar, div.top-bar {
+    margin-right: 0px !important;
+    font-size: 15px !important;
+  }
   #header-title-last {
-    font-size: 75px;
+    font-size: 55px;
   }
   #header-title-first {
-    -webkit-text-stroke: 2px $green;
-    font-size: 75px;
+    font-size: 55px;
   }
   #header-subtitle {
     font-size: 15px;
   }
   div.discover-create {
     width: 300px;
+  }
+  h1.profile {
+    font-size: 40px;
+    text-align: right;
+  }
+  .profile {
+    height: 170px;
   }
   input.input {
     font-size: 14px;
@@ -199,7 +240,7 @@ $body-color: #eff0eb;
   }
 }
 body {
-  background-image: url('http://i.imgur.com/9OUxrEd.png');
+  background-image: url('https://i.imgur.com/9OUxrEd.png');
   overflow-x: hidden;
 }
 .topbar {
@@ -305,146 +346,7 @@ section.toggle {
     color: $light-grey;
   }
 }
-/* ------------------------------------------------------------ *\
-|* ------------------------------------------------------------ *|
-|* Menus
-|* ------------------------------------------------------------ *|
-\* ------------------------------------------------------------ */
-/* general style for all menus */
-@import url("//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css");
-.menu, .menu-bar {
- position: fixed;
- top: 0;
- left: 0;
- height: 100%;
- list-style-type: none;
- margin: 0;
- padding: 0;
- background: transparent;
- z-index:10;
- overflow:hidden;
-}
-.menu li a{
- display: block;
- text-indent: -500em;
- height: 5em;
- width: 5em;
- line-height: 5em;
- text-align:center;
- color: #72739f;
- position: relative;
- transition: background 0.1s ease-in-out;
-}
-.menu li a:before {
- font-family: FontAwesome;
- speak: none;
- text-indent: 0em;
- position: absolute;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- font-size: 1.4em;
-}
-.menu li a.search:before {
- content: "\f002";
-}
-.menu li a.archive:before {
- content: "\f187";
-}
-.menu li a.pencil:before {
- content: "\f040";
-}
-.menu li a.contact:before {
- content: "\f003";
-}
-.menu li a.about:before {
- content: "\f007";
-}
-.menu li a.home:before {
- content: "\f039";
-}
-.menu li a:hover,
-.menu-bar li a:hover,
-.menu li:first-child a {
- color: $orange;
-}
-.menu-bar{
- overflow:hidden;
- left:5em;
- z-index:5;
- width:0;
- height:0;
- transition: all 0.1s ease-in-out;
-}
-.menu-bar li a{
- display: block;
- height: 4em;
- line-height: 4em;
- text-align:center;
- color: $green;
- text-decoration:none;
- position: relative;
- font-family: 'menschmensch_regular';
- border-bottom: 1px solid rgba(0, 0, 0, 0.05);
- transition: background 0.1s ease-in-out;
-}
-.menu-bar li:first-child a{
- height:4em;
- background: $orange;
- color: $green;
- line-height:4
-}
-.para{
-    color:#033f72;
-    padding-left:100px;
-    font-size:3em;
-    margin-bottom:20px;
-}
-.open{
- width: 6em;
- height: 55%;
- background: $light-grey;
-}
-@media all and (max-width: 500px) {
-    .container{
-        margin-top:100px;
-    }
-    .menu{
-        height:5em;
-        width:100%;
-    }
-    .menu li{
-        display:inline-block;
-        float:left;
-    }
-    .menu-bar li a{
-        width:100%;
-    }
-    .menu-bar{
-        width:100%;
-        left:0;
-        height:0;
-    }
-    .open{
-        width:100%;
-        height:auto;
-    }
-    .para{
-    padding-left:5px;
-}
-}
-@media screen and (max-height: 34em){
-  .menu li,
-  .menu-bar {
-    font-size: 60%;
-  }
-}
-@media screen and (max-height: 34em) and (max-width: 500px){
-  .menu{
-        height:3.5em;
-    }
-}
+
 .fa-compass {
   -webkit-transition: -webkit-transform 0.6s ease-out;
   -moz-transition: -moz-transform 0.6s ease-out;
@@ -527,9 +429,11 @@ input.nav-input {
   font-family: 'menschmensch_regular';
   font-size: 18px;
 }
+
 #pagingControls a {
   color: $orange;
 }
+
 #pagingControls2 ul{
   display: inline;
   padding-left: 0.5em;
@@ -559,6 +463,7 @@ input.nav-input {
 #pagingControls3 a {
   color: $orange;
 }
+
 #pagingControls4 ul{
   display: inline;
   padding-left: 0.5em;
@@ -570,30 +475,13 @@ input.nav-input {
   font-family: 'menschmensch_regular';
   font-size: 18px;
 }
-#pagingControls4 a {
-  color: $orange;
-}
-#pagingControls5 ul{
-  display: inline;
-  padding-left: 0.5em;
-}
-#pagingControls5 li{
-  display: inline;
-  padding: 0 0.5em;
-  color: #7f868e;
-  font-family: 'menschmensch_regular';
-  font-size: 18px;
-}
-#pagingControls5 a {
-  color: $orange;
-}
-
-
 .fa-star {
   color: $orange;
   font-size: 18px;
 }
-
+#pagingControls4 a {
+  color: $orange;
+}
 $sliding-menu-border-color: $orange;
 $sliding-menu-background: lighten($sliding-menu-border-color, 4);
 $sliding-menu-color: #fff;
@@ -678,7 +566,6 @@ div.alert-box.notice {
    border-radius: 10%;
    margin-top: -10px;
    text-align: center;
-
 }
 a.close {
   font-family: monospace, sans-serif;
@@ -687,9 +574,4 @@ a.close {
 }
 div.modal.current {
   z-index: 4352342342 !important;
-}
-
-#user-url a {
-  word-wrap: break-word;
-  color: $orange;
 }

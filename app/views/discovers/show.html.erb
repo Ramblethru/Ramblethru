@@ -168,7 +168,12 @@ if (map.tap) map.tap.disable();
   <div class="ramble">
     <h4 class="r-create">Like what you see? Create a ramble (itinerary) below! </h4>
     <i class="fa fa-arrow-right"></i>
-    <%= link_to_modal "Create", new_ramble_path, :class=>"create" %> <i class="fa fa-arrow-left"></i>
+    <% if logged_in? %>
+      <%= link_to_modal "Create", new_ramble_path, :class=>"create" %> 
+    <% else %>
+      <%= link_to_modal "Sign In to get started", new_login_path, :class => "create" %>
+    <% end %>
+    <i class="fa fa-arrow-left"></i>
   </div>
   <span>
     <h4 class="r-create">or search somewhere new</h4>

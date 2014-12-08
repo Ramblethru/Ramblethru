@@ -7,6 +7,14 @@ $light-grey: #eff0eb;
 $dark-grey: #7f868e;
 $green: #2e7562;
 
+ @media only screen
+    and (min-width : 320px)
+    and (max-width : 480px) {
+
+  button.sliding-menu-button {
+    margin-top: 40px !important;
+  }
+}
 .hero {
   background: url('straight-road.jpg');
   background-attachment: fixed;
@@ -218,14 +226,12 @@ input#discover_destination {
 }
 #discover-about, #go-about {
   color: $light-grey;
-  width: 50%;
   margin: 0 auto;
   font-family: monospace, sans-serif;
   font-size: 16px;
 }
 #create-about, #about {
   color: $dark-grey;
-  width: 50%;
   margin: 0 auto 25px;
   font-family: monospace, sans-serif;
   font-size: 16px;

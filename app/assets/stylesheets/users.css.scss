@@ -253,3 +253,22 @@ div.each-ramble.bx-clone {
 #user-created {
   color: $green;
 }
+.note-show-url {
+  word-wrap: break-word;
+  color: $orange;
+
+  &:hover {
+    color: $green;
+  }
+}
+input.sharedstatus {
+  background-color: $orange;
+  font-family: 'menschmensch_regular';
+
+  &:hover {
+    background-color: $green;
+  }
+}
+.bx-clone{
+   display: none !important;
+}

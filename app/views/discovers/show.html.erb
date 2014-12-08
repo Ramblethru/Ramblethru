@@ -31,7 +31,7 @@ if (map.tap) map.tap.disable();
 <div class="recommended-notes-discover"><br>
   <div id="four-title">
     <% x = Note.where(ramble_id:(Ramble.where(:destination => @discover.destination))) %>
-    Note(s) <i class="fa fa-arrow-circle-o-down"></i>
+    Notes <i class="fa fa-arrow-circle-o-down"></i>
   </div>
   <% ramble = Ramble.where(:destination => @discover.destination) %>
   <% if ramble.count > 0 %>
@@ -67,7 +67,7 @@ if (map.tap) map.tap.disable();
               <p>
                 <span id="tag-label">Tag(s): </span>
                 <span id="tag-each">
-                  <%= raw n.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %>
+                  <%= n.tag_list %>
                 </span>
               </p>
             <% end %>

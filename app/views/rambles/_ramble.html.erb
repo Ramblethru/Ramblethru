@@ -11,7 +11,7 @@
           <span id="note-body"><%= n.title %></span>
         </p>
       <% end %>
-      <% if n.address =! "" %>
+      <% if n.address != "" %>
         <p>
           <span id="note-label">Address: </span>
           <span id="note-body"><%= n.address %></span>
@@ -32,12 +32,12 @@
       <% if n.tag_list != [] %>
         <p>
           <span id="tag-label">Tag(s): </span>
-          <span id="tag-each"><%= raw n.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></span>
+          <span id="tag-each"><%= n.tag_list %></span>
         </p>
       <% end %>
       <p>
-        <span id="note-label">Created on: </span>
-<span id="note-body"> <%= n.created_at.strftime("%m/%d/%Y") %>
+        <span id="note-label">Created by: </span>
+        <span id="note-body"> <%= link_to n.ramble.user.name, n.ramble.user %> on <%= n.created_at.strftime("%m/%d/%Y") %> </span>
       </p>
       <div class="note-destination">
         <%= ramble.destination.upcase %>
@@ -77,7 +77,7 @@
       <% if n.tag_list != [] %>
       <p>
         <span id="tag-label">Tag(s): </span>
-        <span id="tag-each"><%= raw n.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></span>
+        <span id="tag-each"><%= n.tag_list %></span>
       </p>
       <% end %>
       <p>
@@ -88,8 +88,9 @@
         <%= ramble.destination.upcase %>
       </div>
     </div>
-    <% end %>
-    <% end %>
-    <% end %>
-  </div>
+		<% end %>
+		<% end %>
+		<% end %>
+	</div>
 </div>
+

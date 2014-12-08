@@ -13,7 +13,12 @@
     <% end %>
     <% if @ramble.start_date && @ramble.end_date %>
         <div class="start-end">
-            From <%= best_in_place @ramble, :start_date,:html_attrs => {  :style => 'width:500px; height:30px; margin:0 auto;margin-top:-25px;text-align:left;font-family: "menschmensch_regular"' } %> to <%= best_in_place @ramble,:end_date,:html_attrs => {  :style => 'width:500px; height:30px; margin:0 auto;margin-top:-25px;text-align:right;font-family: "menschmensch_regular"' } %>
+          <div class="start-date">
+            <%= best_in_place @ramble, :start_date,:html_attrs => {  :style => 'width: 215px; height: 30px; background-color: #2E7562; float: left; text-align: right; font-family: "monospace"; font-weight: 500;' } %>
+          </div> to
+          <div class="end-date">
+            <%= best_in_place @ramble,:end_date,:html_attrs => {  :style => 'width: 215px; height: 30px; background-color: #2E7562; float: right; text-align: right; font-family: "monospace"; font-weight: 500;' } %>
+          </div>
         </div>
     <% end %>
 </div>
@@ -79,7 +84,7 @@
               <span id="note-body"><%= note.body %></span>
             </p>
                       <% end %>
-                  <% if note.url =! "" %>
+                  <% if note.url != "" %>
             <p>
               <span id="note-label">URL: </span>
               <span id="note-body"><a href="<%= note.url %>" target="_blank"><%= note.url %></a></span>
@@ -211,7 +216,8 @@
                       <img src="<%= asset_path ('fav-star.png') %>" class="yelp-save" alt="Save as note"
                         data-yname="<%= y.name %>",
                         data-yaddress="<%= y.location.address.pop %>",
-                        data-ytip="<%= y.snippet_text %>" />
+                        data-ytip="<%= y.snippet_text %>",
+                        data-yurl="<%= y.url %>" />
 
                       <span class="yelp-venue-title"><%= y.name %></span>
                       <%= link_to image_tag y.rating_img_url_small %>
@@ -233,10 +239,11 @@
                  var dataYname = event.target.getAttribute("data-yname");
                  var dataYaddress = event.target.getAttribute("data-yaddress");
                  var dataYtip = event.target.getAttribute("data-ytip");
+                 var dataYurl = event.target.getAttribute("data-yurl");
                  $("#note_title").val(dataYname);
                  $("#note_address").val(dataYaddress);
                  $("#note_body").val(dataYtip);
-                 $("#note_url").val('');
+                 $("#note_url").val(dataYurl);
                  $("#note_tag_list").val(destination);
                });
              });
@@ -351,7 +358,7 @@
                   <% y = x.where(ramble_id:(Ramble.where.not(user_id: @ramble.user_id))) %>
                   <%= y.where(share: true).count %> NOTE(S)
                   <div id="pagingControls2"></div>
-                                </div>
+                </div>
               </div>
             </div>
 
@@ -363,9 +370,7 @@
                             <% r.notes.each do |n| %>
                             <% if n.share == true %>
              <div class="z2">
-                            <div class="note-show">
-
-
+                            <div class="noteshow">
                 <img src="<%= asset_path ('fav-star.png') %>" class="savenote" alt="Save as note"                              data-ntitle="<%= n.title %>"
                  data-naddress="<%= n.address %>"
                                  data-nbody="<%= n.body %>"
@@ -399,12 +404,13 @@
                                       <% if n.tag_list != [] %>
                                         <span id="tag-label">Tag(s): </span>
                                         <span id="tag-each"><%= n.tag_list %></span>
+
                                           <% end %>
                                     </p>
                                     <p>
                                       <% if n.body != "" %>
-										<span id="note-label">Created by: </span>
-										<span id="note-body"> <%= n.ramble.user.name %> on <%= n.created_at.strftime("%m/%d/%Y") %>
+                                          <span id="note-label">Created by: </span>
+                                          <span id="note-body"> <%= link_to n.ramble.user.name, n.ramble.user %> on <%= n.created_at.strftime("%m/%d/%Y") %> </span>
                                       <% end %>
                                         </p>
                                 </div>
@@ -414,30 +420,28 @@
                                 <% end %>
                                 <% end %>
                </div>
-                                <script type="text/javascript">
-                $(document).ready(function () {
-                  $(document).on('click', '.savenote', function (event) {
-                    var dataNtitle = event.target.getAttribute("data-ntitle");
-                    var dataNaddress = event.target.getAttribute("data-naddress");
-                    var dataNbody = event.target.getAttribute("data-nbody");
-                    var dataNurl = event.target.getAttribute("data-nurl");
-                    var dataNtag = event.target.getAttribute("data-ntag");
-                    $("#note_title").val(dataNtitle);
-                    $("#note_address").val(dataNaddress);
-                    $("#note_body").val(dataNbody);
-                    $("#note_url").val(dataNurl);
-                    $("#note_tag_list").val(dataNtag);
-                  });
+              <script type="text/javascript">
+              $(document).ready(function () {
+                $(document).on('click', '.savenote', function (event) {
+                  var dataNtitle = event.target.getAttribute("data-ntitle");
+                  var dataNaddress = event.target.getAttribute("data-naddress");
+                  var dataNbody = event.target.getAttribute("data-nbody");
+                  var dataNurl = event.target.getAttribute("data-nurl");
+                  var dataNtag = event.target.getAttribute("data-ntag");
+                  $("#note_title").val(dataNtitle);
+                  $("#note_address").val(dataNaddress);
+                  $("#note_body").val(dataNbody);
+                  $("#note_url").val(dataNurl);
+                  $("#note_tag_list").val(dataNtag);
                 });
-                            </script>
-                            <script type="text/javascript">
-                                jQuery(".shows5").click(function () {
-                                    jQuery(".note-show").toggle();
-                                });
-                            </script>
+              });
+              </script>
+              <script type="text/javascript">
+                  jQuery(".shows5").click(function () {
+                      jQuery(".noteshow").toggle();
+                  });
+              </script>
 
-
-              <!--script for yelp pagination-->
               <script type="text/javascript">
                 var pager2 = new Imtech2.Pager();
                 jQuery(document).ready(function() {
@@ -447,8 +451,6 @@
                   pager2.showPage(1);
                 });
               </script>
-
-          <!--</div>-->
       </div>
     </div>
   </div>

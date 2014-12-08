@@ -133,7 +133,7 @@ a.editname, a.editresidence, a.editbio {
 hr.ramble-divider {
   margin: 0 auto;
 }
-a.ramble-name-profile {
+.ramble-name-profile {
   display: block;
   font-family: monospace, sans-serif;
   color: $dark-grey;
@@ -211,9 +211,20 @@ input.register-button {
   font-size: 15px;
   font-weight: bold;
 }
-#user-note, #user-title, #user-address, #user-url, #user-tags {
+#user-note, #user-title, #user-address, #user-tags {
   color: $green;
+  word-wrap: break-word;
 }
+#user-url {
+  color: $green;
+  word-wrap: break-word;
+}
+
+#user-url a {
+  color: $orange;
+  word-wrap: break-word;
+}
+
 a.note-url {
   word-wrap: break-word;
 }
@@ -238,4 +249,7 @@ a.notes-url {
 }
 div.each-ramble.bx-clone {
   
+
+#user-created {
+  color: $green;
 }

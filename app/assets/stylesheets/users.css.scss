@@ -208,9 +208,20 @@ input.register-button {
   font-size: 15px;
   font-weight: bold;
 }
-#user-note, #user-title, #user-address, #user-url, #user-tags {
+#user-note, #user-title, #user-address, #user-tags {
   color: $green;
+  word-wrap: break-word;
 }
+#user-url {
+  color: $green;
+  word-wrap: break-word;
+}
+
+#user-url a {
+  color: $orange;
+  word-wrap: break-word;
+}
+
 a.note-url {
   word-wrap: break-word;
 }
@@ -222,4 +233,8 @@ a.create-ramble-here {
 }
 a.create-ramble-here:hover {
   color: $orange;
+}
+
+#user-created {
+  color: $green;
 }

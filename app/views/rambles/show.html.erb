@@ -13,7 +13,12 @@
     <% end %>
     <% if @ramble.start_date && @ramble.end_date %>
         <div class="start-end">
-            From <%= best_in_place @ramble, :start_date,:html_attrs => {  :style => 'width:500px; height:30px; margin:0 auto;margin-top:-25px;text-align:left;font-family: "menschmensch_regular"' } %> to <%= best_in_place @ramble,:end_date,:html_attrs => {  :style => 'width:500px; height:30px; margin:0 auto;margin-top:-25px;text-align:right;font-family: "menschmensch_regular"' } %>
+          <div class="start-date">
+            <%= best_in_place @ramble, :start_date,:html_attrs => {  :style => 'width: 215px; height: 30px; background-color: #2E7562; float: left; text-align: right; font-family: "monospace"; font-weight: 500;' } %>
+          </div> to
+          <div class="end-date">
+            <%= best_in_place @ramble,:end_date,:html_attrs => {  :style => 'width: 215px; height: 30px; background-color: #2E7562; float: right; text-align: right; font-family: "monospace"; font-weight: 500;' } %>
+          </div>
         </div>
     <% end %>
 </div>
@@ -398,7 +403,7 @@
                                     <p>
                                       <% if n.tag_list != [] %>
 										<span id="tag-label">Tags: </span>
-										<span id="tag-each"><%= raw n.tag_list.map { |t| link_to t, tag_path(t)}.join(', ') %></span>
+										<span id="tag-each"><%= n.tag_list %></span>
                                           <% end %>
                                     </p>
                                     <p>
@@ -414,27 +419,27 @@
                                 <% end %>
                                 <% end %>
                </div>
-                                <script type="text/javascript">
-                $(document).ready(function () {
-                  $(document).on('click', '.savenote', function (event) {
-                    var dataNtitle = event.target.getAttribute("data-ntitle");
-                    var dataNaddress = event.target.getAttribute("data-naddress");
-                    var dataNbody = event.target.getAttribute("data-nbody");
-                    var dataNurl = event.target.getAttribute("data-nurl");
-                    var dataNtag = event.target.getAttribute("data-ntag");
-                    $("#note_title").val(dataNtitle);
-                    $("#note_address").val(dataNaddress);
-                    $("#note_body").val(dataNbody);
-                    $("#note_url").val(dataNurl);
-                    $("#note_tag_list").val(dataNtag);
-                  });
+              <script type="text/javascript">
+              $(document).ready(function () {
+                $(document).on('click', '.savenote', function (event) {
+                  var dataNtitle = event.target.getAttribute("data-ntitle");
+                  var dataNaddress = event.target.getAttribute("data-naddress");
+                  var dataNbody = event.target.getAttribute("data-nbody");
+                  var dataNurl = event.target.getAttribute("data-nurl");
+                  var dataNtag = event.target.getAttribute("data-ntag");
+                  $("#note_title").val(dataNtitle);
+                  $("#note_address").val(dataNaddress);
+                  $("#note_body").val(dataNbody);
+                  $("#note_url").val(dataNurl);
+                  $("#note_tag_list").val(dataNtag);
                 });
-                            </script>
-                            <script type="text/javascript">
-                                jQuery(".shows5").click(function () {
-                                    jQuery(".noteshow").toggle();
-                                });
-                            </script>
+              });
+              </script>
+              <script type="text/javascript">
+                  jQuery(".shows5").click(function () {
+                      jQuery(".noteshow").toggle();
+                  });
+              </script>
 
               <script type="text/javascript">
                 var pager2 = new Imtech2.Pager();

@@ -79,7 +79,7 @@
           <div id="<%= dom_id(r) %>">
             <% if current_user.id == @user.id %>
                 <span class="delete-ramble"><%= link_to 'X', r, method: :delete, :class => "x",   :data => {:confirm => 'Delete this ramble?'}, remote: true %></span>
-                <%= link_to r.name, ramble_path(r), :class => "ramble-name-profile" %>
+                <%= link_to r.name, ramble_path(r), :class => "ramble-name-profile", :target => "_blank" %>
             <% else %>
                 <div class="ramble-name-profile"> <%= r.name %> </div>
             <% end %>

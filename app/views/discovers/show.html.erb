@@ -153,7 +153,7 @@ if (map.tap) map.tap.disable();
         <% if @reddit_thread.count > 0 %>
           <% @reddit_thread.each do |r| %>
             <li>
-              <span class="r-link"><a href="http://www.reddit.com/r/<%= r["name"] %>/search?q=visit%2C+to+do&restrict_sr=on&sort=relevance&t=all" target="_blank"></span>
+              <span class="r-link"><a href="http://www.reddit.com/r/<%= r["name"] %>/search?q='visit'+OR+'to+do'&restrict_sr=on" target="_blank"></span>
               <span id="slash">//</span>
               <%= r["name"] %>
               </a>

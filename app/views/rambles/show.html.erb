@@ -337,7 +337,7 @@
 							<div class="rshow">
 								<% @reddit_thread.each do |r| %>
 								<li>
-									<span class="rshow"><a href="http://www.reddit.com/r/<%= r["name"] %>/search?q=visit%2C+to+do&restrict_sr=on&sort=relevance&t=all" target="_blank"></span> <span id="reddit-dash">//</span>
+									<span class="rshow"><a href="http://www.reddit.com/r/<%= r["name"] %>/search?q=;'visit'+OR+'to+do'&restrict_sr=on" target="_blank"></span> <span id="reddit-dash">//</span>
 										<%= r["name"] %>
 									</a>
 								</li>

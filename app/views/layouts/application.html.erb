@@ -90,7 +90,9 @@
         <% else %>
           <img src="<%= asset_path ('missing-small.png'), :class => "missing-pic" %>" class="missing-pic" />
         <% end %>
-      <span id="lang-welcome">Bienvenue,</span> <span class="logspin">
+      <span id="lang-welcome"><%= ["Bienvenue", "Aloha", "Welcome", "Bienvenido", "Welkom", "Namaste", "Willkommen", "Bem-Vindo", "Karibu"].sample + "," %>
+        </span>
+        <span class="logspin">
       <%= link_to current_user.name, user_path(current_user), :class => "top-bar" %>!
       <i class="fa fa-compass"></i></span>
       <span class="logspin"><%= link_to "Log out", logout_path, :class => "top-bar" %><i class="fa fa-compass"></i>

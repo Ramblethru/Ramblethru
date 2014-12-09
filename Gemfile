@@ -33,6 +33,8 @@ gem 'animate-rails'
 gem 'best_in_place'
 gem 'will_paginate', '~> 3.0.6'
 gem 'friendly_id'
+gem 'bxslider-rails'
+
 
 # authenticate
 gem 'omniauth-google-oauth2'

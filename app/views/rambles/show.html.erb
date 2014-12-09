@@ -87,7 +87,7 @@
                   <% if note.url != "" %>
             <p>
               <span id="note-label">URL: </span>
-              <span id="note-body"><a href="<%= note.url %>" target="_blank"><%= note.url %></a></span>
+              <span id="note-body"><a href="<%= note.url %>" target="_blank" class="note-url"><%= note.url %></a></span>
             </p>
                       <% end %>
                   <% if note.tag_list != [] %>
@@ -398,13 +398,14 @@
                                     <p>
                                       <% if n.url != "" %>
                                         <span id="note-label">URL: </span>
-                                        <span id="note-body"><a href="<%= n.url %>" target="_blank"><%= n.url %></a></span>
+                                        <span id="note-body"><a href="<%= n.url %>" target="_blank" class="notes-url "><%= n.url %></a></span>
                                           <% end %>
                                     </p>
                                     <p>
                                       <% if n.tag_list != [] %>
-										<span id="tag-label">Tags: </span>
-										<span id="tag-each"><%= n.tag_list %></span>
+                                        <span id="tag-label">Tag(s): </span>
+                                        <span id="tag-each"><%= n.tag_list %></span>
+
                                           <% end %>
                                     </p>
                                     <p>

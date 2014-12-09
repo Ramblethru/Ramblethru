@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>Ramblethru</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
   <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
   <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
@@ -86,9 +88,11 @@
         <% if current_user.avatar.file? %>
           <%= image_tag current_user.avatar.url(:top), :class => "userpics" %>
         <% else %>
-          <img src="<%= asset_path ('missing-small.png'), :class => "missing-pic" %>" />
+          <img src="<%= asset_path ('missing-small.png'), :class => "missing-pic" %>" class="missing-pic" />
         <% end %>
-      <%= ["Bienvenue", "Aloha", "Welcome", "Bienvenido", "Welkom", "Namaste", "Willkommen", "Bem-Vindo", "Karibu"].sample + "," %> <span class="logspin">
+      <span id="lang-welcome"><%= ["Bienvenue", "Aloha", "Welcome", "Bienvenido", "Welkom", "Namaste", "Willkommen", "Bem-Vindo", "Karibu"].sample + "," %>
+        </span>
+        <span class="logspin">
       <%= link_to current_user.name, user_path(current_user), :class => "top-bar" %>!
       <i class="fa fa-compass"></i></span>
       <span class="logspin"><%= link_to "Log out", logout_path, :class => "top-bar" %><i class="fa fa-compass"></i>
@@ -108,6 +112,7 @@
         <%= render "shared/flash" %>
 
   </div>
+
     <button type="button" class="js-menu-trigger sliding-menu-button">
     <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/menu-white.png" alt="Menu Icon">
   </button>
@@ -133,6 +138,5 @@
 <%= display_alert(:alert) %>
 
   <%= yield %>
-
 </body>
 </html>

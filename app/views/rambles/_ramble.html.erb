@@ -25,7 +25,7 @@
       <% if n.url != "" %>
         <p>
           <span id="note-label">URL: </span>
-          <span id="note-body"><a href="<%= n.url %>" target="_blank"><%= n.url %></a></span>
+          <span id="note-body"><a href="<%= n.url %>" target="_blank" class="note-url"><%= n.url %></a></span>
         </p>
       <% end %>
       <% if n.tag_list != [] %>

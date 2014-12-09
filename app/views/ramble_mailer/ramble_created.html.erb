@@ -6,7 +6,7 @@
 <body>
 	<h1> Hi there, <%= @user.name %>!</h1>
 
-  <p>It looks like you just created the Ramble "<%= @ramble.name %>." Your destination is <%= @ramble.destination %>, and your travel dates are <%= @ramble.start_date %> to <%= @ramble.end_date %>.</p>
+  <p>It looks like you just created the Ramble "<%= @ramble.name %>." Your destination is <%= @ramble.destination.split.map(&:capitalize).join(' ') %>, and your travel dates are <%= @ramble.start_date %> to <%= @ramble.end_date %>.</p>
   <p>To view your ramble, just follow this <%= link_to 'link', @ramble %>.
   </p>
   <br>

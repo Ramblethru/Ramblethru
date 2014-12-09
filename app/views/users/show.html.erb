@@ -66,7 +66,9 @@
 <div class="usertrips">
   <div id="my-rambles">
     <% if current_user.id == @user.id %>
-        <% if @user.rambles.size > 0 %>Your Rambles
+        <% if @user.rambles.size > 0 %><span id="your-rambles">Your Rambles</span><br>
+          <span id="slider-prev"> </span> <span id="slider-next"> </span>
+
         <% else %> Click <%= link_to_modal "here", new_ramble_path, :class=>"create-ramble-here" %>  to create a ramble
         <% end %>
     <% else %>
@@ -179,7 +181,14 @@
 
 <script type="text/javascript">
   $(document).ready(function(){
-    $('.bxslider').bxSlider();
+    $('.bxslider').bxSlider({
+      nextSelector: '#slider-next',
+      prevSelector: '#slider-prev',
+      controls: true,
+      pager: false,
+      nextText: '<i class="fa fa-arrow-circle-right"></i>',
+      prevText: '<i class="fa fa-arrow-circle-left"></i>'
+    });
   });
  </script>
 

@@ -8,5 +8,3 @@ $(document).bind("ajax:complete", function(event,xhr,status){
     $('#note_tag_list').val(destination);
   }
 });
-
-

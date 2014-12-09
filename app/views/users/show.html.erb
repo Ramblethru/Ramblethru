@@ -45,9 +45,9 @@
     <div class="lives-in">
       <span id="user-residence-label">Residence: </span>
       <% if current_user.id == @user.id %>
-			<span id="user-residence">
-				<%= best_in_place @user, :lives_in, :place_holder => "add your location", :html_attrs => {  :style => 'width:400px; height:50px;font-family: "menschmensch_regular"' } %>
-			</span>
+      <span id="user-residence">
+        <%= best_in_place @user, :lives_in, :place_holder => "add your location", :html_attrs => {  :style => 'width:400px; height:50px;font-family: "menschmensch_regular"' } %>
+      </span>
       <% else %>
           <span id="user-residence"> <%= @user.lives_in %> </span>
       <% end %>
@@ -74,6 +74,8 @@
     <% end %>
   </div>
   <div class="userrambles">
+    <ul class="bxslider">
+
     <% @user.rambles.each do |r| %>
         <div class="each-ramble">
           <div id="<%= dom_id(r) %>">
@@ -137,7 +139,7 @@
                 <span id="user-note">Note: </span><%= n.body %><br>
                     <% end %>
                     <% if n.url != "" %>
-                <div id="user-url">URL:</div><a href="<%= n.url %>" target="_blank"><%= n.url %></a><br>
+                <div id="user-url">URL:</div><a href="<%= n.url %>" target="_blank" class="note-show-url"><%= n.url %></a><br>
                     <% end %>
                     <% if n.tag_list != [] %>
                 <span id="user-tags">Tags: </span><%= n.tag_list %><br>
@@ -153,7 +155,6 @@
                       <% end %>
                   <% end %>
                 </div>
-                <hr id="note-each-divider">
                     <% end %>
                   <% end %>
                 </div>
@@ -165,11 +166,20 @@
         </div>
     <% end %>
     <script type="text/javascript">
-        $(".shows").click(function () {
+        $(document).on('click', ".shows", function () {
             var dataId = event.target.getAttribute("data-id");
             $("#div_ramble_" + dataId).toggle();
         });
     </script>
+    </ul>
   </div>
   <div class="usernotes"></div>
 </div>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.bxslider').bxSlider();
+  });
+ </script>
+

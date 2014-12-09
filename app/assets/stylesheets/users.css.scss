@@ -7,6 +7,7 @@ $blue: #7f868e;
 .container {
   @include outer-container;
 }
+
 .photo {
   @include span-columns(5);
 }
@@ -98,6 +99,8 @@ span#user-name, span#user-residence, span#user-bio {
   color: $dark-grey;
   font-size: 20px;
   font-weight: normal;
+  word-break: break-all;
+
 }
 a.editname, a.editresidence, a.editbio {
   font-family: 'menschmensch_regular';
@@ -234,7 +237,38 @@ a.create-ramble-here {
 a.create-ramble-here:hover {
   color: $orange;
 }
+div.bx-viewport {
+  overflow: visible !important;
+}
+.bx-pager-item {
+  display: none;
+}
+a.notes-url {
+  word-wrap: break-word;
+  color: $orange;
+}
+div.each-ramble.bx-clone {
+  }
 
 #user-created {
   color: $green;
+}
+.note-show-url {
+  word-wrap: break-word;
+  color: $orange;
+
+  &:hover {
+    color: $green;
+  }
+}
+input.sharedstatus {
+  background-color: $orange;
+  font-family: 'menschmensch_regular';
+
+  &:hover {
+    background-color: $green;
+  }
+}
+.bx-clone{
+   display: none !important;
 }

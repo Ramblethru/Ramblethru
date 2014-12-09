@@ -11,4 +11,3 @@ Rails.application.config.assets.precompile += %w( jquery.usmap.js )
 Rails.application.config.assets.precompile += %w( raphael.js )
 Rails.application.config.assets.precompile += %w( animate.css )
 Rails.application.config.assets.precompile += %w( font-awesome-animation.min.css )
-  

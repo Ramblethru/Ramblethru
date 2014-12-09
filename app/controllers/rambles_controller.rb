@@ -62,7 +62,8 @@ class RamblesController < ApplicationController
           RambleMailer.ramble_created(@ramble.user, @ramble).deliver
           redirect_to ramble_path(@ramble)
         else
-          render 'logins/new', :notice => "You must be logged in to create a ramble."
+          render 'logins/new'
+          flash.now[:notice] = "You must be logged in to create a ramble."
         end
       end
       format.json do
@@ -116,7 +117,8 @@ class RamblesController < ApplicationController
     respond_to do |format|
       format.html do
         @ramble.destroy
-        redirect_to root_path, flash.now[:notice] = "you deleted your ramble"
+        redirect_to root_path 
+        flash[:notice] = "you deleted your ramble"
       end
       format.js do
         @ramble.destroy

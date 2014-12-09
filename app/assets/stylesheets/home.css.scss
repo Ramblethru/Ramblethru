@@ -79,7 +79,7 @@ div.container {
   margin-top: 10px;
   margin-bottom: -10px;
 }
-.homepage-about {
+div.homepage-about {
   text-align: center;
   height: 280px;
   font-family: 'menschmensch_regular';
@@ -226,12 +226,14 @@ input#discover_destination {
 }
 #discover-about, #go-about {
   color: $light-grey;
+  width: 50%;
   margin: 0 auto;
   font-family: monospace, sans-serif;
   font-size: 16px;
 }
 #create-about, #about {
   color: $dark-grey;
+  width: 50%;
   margin: 0 auto 25px;
   font-family: monospace, sans-serif;
   font-size: 16px;

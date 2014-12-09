@@ -159,6 +159,18 @@ $body-color: #eff0eb;
   img.missing-pic, a.top-bar, .fa-compass, span.logspin, #lang-welcome, img.userpics{
     display: none;
   }
+  div.homepage-about {
+    height: auto;
+  }
+  article {
+    width: 100%;
+  }
+  #about {
+  width: 100%;
+  }
+  #go-about {
+    width: 100%;
+  }
   button.sliding-menu-button {
     margin-top: 80px !important;
   }

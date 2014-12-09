@@ -1,7 +1,7 @@
 
 $(document).bind("ajax:complete", function(event,xhr,status){
   if($("#submit_note").length > 0) {
-    $('#note_title').val('');
+    $('#note_title').val('');  // resets all note form fields to blank upon note submit
     $('#note_address').val('');
     $('#note_body').val('');
     $('#note_url').val('');

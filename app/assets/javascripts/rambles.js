@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
   $(function(){
-    var stickyHeaderTop = $('.ramble-notes').offset().top;
+    var stickyHeaderTop = $('.ramble-notes').offset().top;  // JS for note form/area keeping with page
     $(window).scroll(function(){
       if( $(window).scrollTop() > stickyHeaderTop ) {
         $('.ramble-notes').css({position: 'fixed', top: '0px'});

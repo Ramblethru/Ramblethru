@@ -12,7 +12,7 @@ Adventure awaits.
 
 
 === Technologies:
-Ruby on Rails, Javascript, jQuery, HTML5, CSS3, SASS, Bourbon/Neat/Bitters, Foursquare API, Yelp API, Reddit API, Instagram API, Postgres, Geocoder, Mapbox.js, Paperclip, Photoshop CC, Heroku deployment
+Ruby on Rails, Javascript, jQuery, HTML5, CSS3, SASS, Bourbon/Neat/Bitters, Foursquare API, Yelp API, Reddit API, Instagram API, Postgres, Geocoder, Mapbox.js, Photoshop CC, Paperclip, AWS S3, Heroku
 
 
 === Team:

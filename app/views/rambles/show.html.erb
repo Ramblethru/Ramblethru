@@ -164,7 +164,7 @@
             $(document).ready(function () {
               $(document).on('click', '.foursquare-save', function(event) {
                 var dataName = event.target.getAttribute("data-name");
-                var dataAddress = event.target.getAttribute("data-address")  // Pulls Foursquare venue info to notes on click
+                var dataAddress = event.target.getAttribute("data-address")
                 var dataTip = event.target.getAttribute("data-tip")
                 var dataUrl = event.target.getAttribute("data-url")
                 dataTip = dataTip.substring(0, dataTip.indexOf('[')).trim();
@@ -236,7 +236,7 @@
                         <script type="text/javascript">
              $(document).ready(function () {
                $(document).on('click', '.yelp-save', function (event) {
-                 var dataYname = event.target.getAttribute("data-yname");   // Pulls Yelp venue info to notes on click
+                 var dataYname = event.target.getAttribute("data-yname");   // Pulls yelp venue
                  var dataYaddress = event.target.getAttribute("data-yaddress");
                  var dataYtip = event.target.getAttribute("data-ytip");
                  var dataYurl = event.target.getAttribute("data-yurl");
@@ -299,7 +299,7 @@
               <script type="text/javascript">
               $(document).ready(function () {
                 $(document).on('click', '.instagram-save', function (event) {
-                  var dataIurl = event.target.getAttribute("data-iurl");  // Pulls Instagram url to notes on click
+                  var dataIurl = event.target.getAttribute("data-iurl");
                   $("#note_title").val('');
                   $("#note_address").val('');
                   $("#note_body").val('Photo from Instagram');
@@ -425,7 +425,7 @@
               $(document).ready(function () {
                 $(document).on('click', '.savenote', function (event) {
                   var dataNtitle = event.target.getAttribute("data-ntitle");
-                  var dataNaddress = event.target.getAttribute("data-naddress");  // Pulls relevant note information to notes on click
+                  var dataNaddress = event.target.getAttribute("data-naddress");
                   var dataNbody = event.target.getAttribute("data-nbody");
                   var dataNurl = event.target.getAttribute("data-nurl");
                   var dataNtag = event.target.getAttribute("data-ntag");

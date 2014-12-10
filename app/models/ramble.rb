@@ -12,6 +12,7 @@ class Ramble < ActiveRecord::Base
 
   before_save { |ramble| ramble.destination.downcase! }
 
+  validates :destination, presence: true
 
   def self.search(query)
     #where(:destination, query)

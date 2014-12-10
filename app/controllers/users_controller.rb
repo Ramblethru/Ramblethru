@@ -16,8 +16,8 @@ class UsersController < ApplicationController
       session[:current_user_id] = @user.id
       redirect_to root_path
     else
-      flash[:error] = 'There was a problem creating your account.'
-      render :new
+      flash[:notice] = 'There was a problem creating your account.'
+      redirect_to root_path
     end
   end
 

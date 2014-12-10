@@ -116,6 +116,11 @@ div.modal.current {
   height: 520px;
   border-radius: 10px;
   border: 5px solid $dark-grey;
+  top: -25%;
+  -webkit-transition: opacity 0.5s linear, top 0.5s ease-out;
+     -moz-transition: opacity 0.5s linear, top 0.5s ease-out;
+       -o-transition: opacity 0.5s linear, top 0.5s ease-out;
+          transition: opacity 0.5s linear, top 0.5s ease-out;
   }
 .login-form {
   width: 300px;

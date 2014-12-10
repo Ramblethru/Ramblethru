@@ -11,7 +11,7 @@ RSpec.describe Ramble, :type => :model do
     expect(ramble.destination).to eq("Durham, NC")
   end
 
-  it "should be valid Ramble" do
+  it "should create valid Ramble" do
     ramble = Ramble.new(destination: "Durham", name: "Going to Durham!", start_date: "2014-11-30", end_date: "2015-01-04")
     expect(ramble).to be_valid
   end

@@ -81,4 +81,3 @@ class UsersController < ApplicationController
     params.require(:image).permit(:avatar) if params[:image]
   end
 end
-

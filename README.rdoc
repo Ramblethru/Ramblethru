@@ -12,7 +12,7 @@ Adventure awaits.
 
 
 === Technologies:
-Ruby on Rails, Javascript, jQuery, HTML5, CSS3, SASS, Bourbon/Neat/Bitters, Foursquare API, Yelp API, Reddit API, Instagram API, Postgres, Geocoder, Mapbox.js, Photoshop CC, Paperclip, AWS S3, Heroku
+Ruby on Rails, Javascript, jQuery, HTML5, CSS3, SASS, Bourbon/Neat/Bitters, Foursquare API, Yelp API, Reddit API, Instagram API, PostgreSQL, Geocoder, Mapbox.js, SendGrid, RSpec, Photoshop CC, Paperclip, AWS S3, Heroku
 
 
 === Team:
@@ -23,10 +23,4 @@ Ruby on Rails, Javascript, jQuery, HTML5, CSS3, SASS, Bourbon/Neat/Bitters, Four
 
 === Additional Specifics:
 
-* Ramblethru uses Mailcatcher to send users email notifications.
-
 * Built with Ruby 2.1.3 and Rails 4.1.7.
-
-* The database is PostgreSQL.
-
-* Uses RSpec for testing.

@@ -2,7 +2,6 @@ class LoginsController < ApplicationController
   include LoginsHelper
   before_filter :check_user_signed_in, :only => [:create]
 
-
   def check_user_signed_in
     logged_in?
   end

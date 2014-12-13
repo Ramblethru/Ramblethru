@@ -12,8 +12,6 @@
 
 $body-color: #eff0eb;
 
-
-
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -354,19 +352,16 @@ section.toggle {
     color: $light-grey;
   }
 }
-
 .fa-compass {
   -webkit-transition: -webkit-transform 0.6s ease-out;
   -moz-transition: -moz-transform 0.6s ease-out;
   transition: transform 0.6s ease-out;
 }
-
 .fa-compass:hover{
   -webkit-transform: rotateZ(360deg);
   -moz-transform: rotateZ(360deg);
   transform: rotateZ(360deg);
 }
-
 .logspin:hover .fa-compass {
   -webkit-transform: rotateZ(360deg);
   -moz-transform: rotateZ(360deg);
@@ -401,7 +396,6 @@ a.four-auth, a.twit-auth {
 input[type="text"]:focus {
   background-color: transparent;
 }
-
 input.nav-destination  {
   border: 2px solid $orange !important;
   background-color: $light-grey;
@@ -422,10 +416,6 @@ input.nav-input {
 .menu-button {
   cursor:pointer;
 }
-
-
-//pagination for at the very least the APIs (minus Reddit) and relevant notes sections of the ramble show page//
-
 #pagingControls ul{
   display: inline;
   padding-left: 0.5em;
@@ -437,11 +427,9 @@ input.nav-input {
   font-family: 'menschmensch_regular';
   font-size: 18px;
 }
-
 #pagingControls a {
   color: $orange;
 }
-
 #pagingControls2 ul{
   display: inline;
   padding-left: 0.5em;
@@ -456,7 +444,6 @@ input.nav-input {
 #pagingControls2 a {
   color: $orange;
 }
-
 #pagingControls3 ul{
   display: inline;
   padding-left: 0.5em;
@@ -471,7 +458,6 @@ input.nav-input {
 #pagingControls3 a {
   color: $orange;
 }
-
 #pagingControls4 ul{
   display: inline;
   padding-left: 0.5em;
@@ -514,7 +500,6 @@ $sliding-menu-color-hover: #fff;
     height: 1.3em;
   }
 }
-
 .sliding-menu-content {
   @include position(fixed, 0px auto 0px 0px);
   width: 170px;
@@ -544,7 +529,6 @@ $sliding-menu-color-hover: #fff;
     @include transform(translateX(0));
   }
 }
-
 .menu-screen {
   @include position(fixed, 0px 0px 0px 0px);
   @include transition;
@@ -561,7 +545,6 @@ $sliding-menu-color-hover: #fff;
 ul.sliding-menu {
   margin-top: 0px;
 }
-
 div.alert-box.notice {
    font-weight: bold;
    font-family: monospace;

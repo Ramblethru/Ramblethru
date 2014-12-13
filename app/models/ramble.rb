@@ -3,7 +3,6 @@ class Ramble < ActiveRecord::Base
   include FriendlyId
 
   friendly_id :destination, use:[:slugged, :finders]
-
   geocoded_by :destination
   after_validation :geocode, :if => :destination_changed?
 

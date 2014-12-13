@@ -3,11 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $blue: #7f868e;
-
 .container {
   @include outer-container;
 }
-
 .photo {
   @include span-columns(5);
 }
@@ -196,7 +194,6 @@ input.register-button {
     background-color: $dark-grey;
   }
 }
-
 .delete-ramble {
   font-weight: 700;
   font-size: 20px;

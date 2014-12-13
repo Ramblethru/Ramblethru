@@ -1,23 +1,23 @@
 class NotesController < ApplicationController
  include Taggable
 
- def index
-   respond_to do |format|
-     format.html do
-       if params[:search]
-         @note = Note.search(params[:search]).order("created_at DESC")
-       end
-     end
-     format.js do
-       if params[:search]
-         @note = Note.search(params[:search])
-         render 'notes/search', status: :created
-       else
-         render :create, status: :not_found
-       end
-     end
-   end
- end
+  def index
+    respond_to do |format|
+      format.html do
+        if params[:search]
+          @note = Note.search(params[:search]).order("created_at DESC")
+        end
+      end
+      format.js do
+        if params[:search]
+          @note = Note.search(params[:search])
+          render 'notes/search', status: :created
+        else
+          render :create, status: :not_found
+        end
+      end
+    end
+  end
 
   def show
     @note = Note.find(params[:id])

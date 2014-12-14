@@ -2,7 +2,7 @@ $("#<%= @note.id %>").effect("highlight", 250, function() {
 });
 
 <% if @note.share == true %>
-$("#<%= @note.id %>").val("Make private");
+  $("#<%= @note.id %>").val("Make private");
 <% else %>
-$("#<%= @note.id %>").val("Make Public");
+  $("#<%= @note.id %>").val("Make Public");
 <% end %>

@@ -1,6 +1,6 @@
 <% if logged_in? %>
-    <% if ramble.user_id != current_user.id %>
-    <div class="note-container">
+  <% if ramble.user_id != current_user.id %>
+  <div class="note-container">
     <% ramble.notes.each do |n| %>
     <% if n.share %>
     <div class="note-results">
@@ -42,54 +42,54 @@
         <%= ramble.destination.upcase %>
       </div>
     </div>
-   </div>
-    <% end %>
-    <% end %>
-    <% end %>
-    <% else %>
-          <div class="note-container">
+  </div>
+  <% end %>
+  <% end %>
+  <% end %>
+  <% else %>
+    <div class="note-container">
     <% ramble.notes.each do |n| %>
     <% if n.share %>
-    <div class="note-results">
+      <div class="note-results">
       <% if n.title != "" %>
-      <p>
-        <span id="note-label">Title: </span>
-        <span id="note-body"><%= n.title %></span>
-      </p>
+        <p>
+          <span id="note-label">Title: </span>
+          <span id="note-body"><%= n.title %></span>
+        </p>
       <% end %>
       <% if n.address =! "" %>
-      <p>
-        <span id="note-label">Address: </span>
-        <span id="note-body"><%= n.address %></span>
-      </p>
+        <p>
+          <span id="note-label">Address: </span>
+          <span id="note-body"><%= n.address %></span>
+        </p>
       <% end %>
       <% if n.body != "" %>
-      <p>
-        <span id="note-label">Note: </span>
-        <span id="note-body"><%= n.body %></span>
-      </p>
+        <p>
+          <span id="note-label">Note: </span>
+          <span id="note-body"><%= n.body %></span>
+        </p>
       <% end %>
       <% if n.url != "" %>
-      <p>
-        <span id="note-label">URL: </span>
-        <span id="note-body"><a href="<%= n.url %>" target="_blank"><%= n.url %></a></span>
-      </p>
+        <p>
+          <span id="note-label">URL: </span>
+          <span id="note-body"><a href="<%= n.url %>" target="_blank"><%= n.url %></a></span>
+        </p>
       <% end %>
       <% if n.tag_list != [] %>
-      <p>
-        <span id="tag-label">Tag(s): </span>
-        <span id="tag-each"><%= n.tag_list %></span>
-      </p>
+        <p>
+          <span id="tag-label">Tag(s): </span>
+          <span id="tag-each"><%= n.tag_list %></span>
+        </p>
       <% end %>
-      <p>
-        <span id="note-label">Created on: </span>
-        <span id="note-body"> <%= n.created_at.strftime("%m/%d/%Y") %>
-      </p>
+        <p>
+          <span id="note-label">Created on: </span>
+          <span id="note-body"> <%= n.created_at.strftime("%m/%d/%Y") %>
+        </p>
       <div class="note-destination">
         <%= ramble.destination.upcase %>
       </div>
     </div>
   </div>
-		<% end %>
-		<% end %>
-		<% end %>
+  <% end %>
+  <% end %>
+<% end %>

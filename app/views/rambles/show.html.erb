@@ -1,54 +1,51 @@
 <div class="ramble-title">
-    <%= best_in_place @ramble, :name, :html_attrs => {  :style => 'width:500px; height:110px; margin:0 auto;font-family: "menschmensch_regular"' }, :nil => "i am here",:place_holder => "put stuff here"%>
-    <span id="delete-ramble">
-        <%= button_to @ramble, method: :delete, class: "fa fa-trash ramble", :data => {:confirm => 'Delete this ramble?'}  do %>
-      <% end %>
-    </span>
-    <% if @ramble.destination %>
-        <div id="ramble-dest">
-            <%= @ramble.destination.split.map(&:capitalize).join(' ') %>
-        </div>
-    <% else %>
-        <h1>NAME OF YOUR RAMBLE HERE</h1>
-    <% end %>
-    <% if @ramble.start_date && @ramble.end_date %>
-        <div class="start-end">
-          <div class="start-date">
-            <%= best_in_place @ramble, :start_date,:html_attrs => {  :style => 'width: 215px; height: 30px; background-color: #2E7562; float: left; text-align: right; font-family: "monospace"; font-weight: 500;' } %>
-          </div> to
-          <div class="end-date">
-            <%= best_in_place @ramble,:end_date,:html_attrs => {  :style => 'width: 215px; height: 30px; background-color: #2E7562; float: right; text-align: right; font-family: "monospace"; font-weight: 500;' } %>
-          </div>
-        </div>
-    <% end %>
+  <%= best_in_place @ramble, :name, :html_attrs => {  :style => 'width:500px; height:110px; margin:0 auto;font-family: "menschmensch_regular"' }, :nil => "i am here",:place_holder => "put stuff here"%>
+  <span id="delete-ramble">
+    <%= button_to @ramble, method: :delete, class: "fa fa-trash ramble", :data => {:confirm => 'Delete this ramble?'}  do %>
+  <% end %>
+  </span>
+  <% if @ramble.destination %>
+    <div id="ramble-dest">
+        <%= @ramble.destination.split.map(&:capitalize).join(' ') %>
+    </div>
+  <% else %>
+    <h1>NAME OF YOUR RAMBLE HERE</h1>
+  <% end %>
+  <% if @ramble.start_date && @ramble.end_date %>
+    <div class="start-end">
+      <div class="start-date">
+        <%= best_in_place @ramble, :start_date,:html_attrs => {  :style => 'width: 215px; height: 30px; background-color: #2E7562; float: left; text-align: right; font-family: "monospace"; font-weight: 500;' } %>
+      </div> to
+      <div class="end-date">
+        <%= best_in_place @ramble,:end_date,:html_attrs => {  :style => 'width: 215px; height: 30px; background-color: #2E7562; float: right; text-align: right; font-family: "monospace"; font-weight: 500;' } %>
+      </div>
+    </div>
+  <% end %>
 </div>
-
-    <div id='map' class='dark'></div>
-    <script type='text/javascript'>
-    var latitude= '<%=@ramble.latitude%>';
-    var longitude= '<%=@ramble.longitude%>';
-    var destination='<%=@ramble.destination.split.map(&:capitalize).join(' ')%>';
-    var map = L.mapbox.map('map', 'daninyc.14e41ce7').setView([latitude, longitude], 5).setZoom([14]);
-    L.mapbox.markerLayer({
-        type: 'Feature',
-        geometry: {
-            type: 'Point',
-            coordinates: [longitude, latitude ]
-        },
-        properties: {
-            title: destination,
-            description: 'Your destination!',
-            'marker-size': 'large',
-            'marker-color': '#af703a'
-        }
-    }).addTo(map);
+<div id='map' class='dark'></div>
+<script type='text/javascript'>
+  var latitude= '<%=@ramble.latitude%>';
+  var longitude= '<%=@ramble.longitude%>';
+  var destination='<%=@ramble.destination.split.map(&:capitalize).join(' ')%>';
+  var map = L.mapbox.map('map', 'daninyc.14e41ce7').setView([latitude, longitude], 5).setZoom([14]);
+  L.mapbox.markerLayer({
+      type: 'Feature',
+      geometry: {
+          type: 'Point',
+          coordinates: [longitude, latitude ]
+      },
+      properties: {
+          title: destination,
+          description: 'Your destination!',
+          'marker-size': 'large',
+          'marker-color': '#af703a'
+      }
+  }).addTo(map);
   map.touchZoom.disable();
   map.doubleClickZoom.disable();
   map.scrollWheelZoom.disable();
   if (map.tap) map.tap.disable();
-    </script>
-
-
+</script>
 <script type='text/javascript'>
   var destination='<%=@ramble.destination.split.map(&:capitalize).join(' ')%>';
   jQuery(document).ready(function(){
@@ -57,246 +54,226 @@
  });
   });
 </script>
-    <div class="container">
-        <div class="ramble-notes">
-            <h2 class="notes">NOTES</h2>
-            <%= render "notes/note_form" %>
-            <div class="notesgohere"></div>
-            <% if @ramble.notes != nil %>
-            <% @ramble.notes.order('created_at desc').each do |note| %>
-            <div id="<%= dom_id(note) %>">
-                <div class="notebody">
-                  <% if note.title != "" %>
+  <div class="container">
+    <div class="ramble-notes">
+      <h2 class="notes">NOTES</h2>
+      <%= render "notes/note_form" %>
+      <div class="notesgohere"></div>
+      <% if @ramble.notes != nil %>
+        <% @ramble.notes.order('created_at desc').each do |note| %>
+        <div id="<%= dom_id(note) %>">
+          <div class="notebody">
+            <% if note.title != "" %>
+              <p>
+                <span id="note-label">Title: </span>
+                <span id="note-body"><%= note.title %></span>
+              </p>
+            <% end %>
+            <% if note.address != "" %>
+              <p>
+                <span id="note-label">Address: </span>
+                <span id="note-body"><%= note.address %></span>
+              </p>
+            <% end %>
+            <% if note.body != %>
+              <p>
+                <span id="note-label">Note: </span>
+                <span id="note-body"><%= note.body %></span>
+              </p>
+            <% end %>
+            <% if note.url != "" %>
+              <p>
+                <span id="note-label">URL: </span>
+                <span id="note-body"><a href="<%= note.url %>" target="_blank" class="note-url"><%= note.url %></a></span>
+              </p>
+            <% end %>
+            <% if note.tag_list != [] %>
+              <p>
+                <span id="tag-label">Tags: </span>
+                <span id="tag-each"><%= note.tag_list %></span>
+              </p>
+            <% end %>
             <p>
-              <span id="note-label">Title: </span>
-              <span id="note-body"><%= note.title %></span>
+              <span id="note-label">Created on: </span>
+              <span id="note-body"> <%= note.created_at.strftime("%m/%d/%Y") %>
             </p>
-              <% end %>
-              <% if note.address != "" %>
-            <p>
-              <span id="note-label">Address: </span>
-              <span id="note-body"><%= note.address %></span>
-            </p>
-                  <% end %>
-                  <% if note.body != %>
-            <p>
-              <span id="note-label">Note: </span>
-              <span id="note-body"><%= note.body %></span>
-            </p>
-                      <% end %>
-                  <% if note.url != "" %>
-            <p>
-              <span id="note-label">URL: </span>
-              <span id="note-body"><a href="<%= note.url %>" target="_blank" class="note-url"><%= note.url %></a></span>
-            </p>
-                      <% end %>
-                  <% if note.tag_list != [] %>
-             <p>
-              <span id="tag-label">Tags: </span>
-              <span id="tag-each"><%= note.tag_list %></span>
-            </p>
-                      <% end %>
-                        <p>
-                            <span id="note-label">Created on: </span>
-                            <span id="note-body"> <%= note.created_at.strftime("%m/%d/%Y") %>
-                     </p>
-                            <% if current_user.rambles.include?(@ramble) %>
-                            <i class="fa fa-pencil-square-o"></i>
-                            <%= link_to_modal 'Edit', edit_ramble_note_path(@ramble.id, note.id), :class => "edit-note" %>
-                            <i class="fa fa-trash"></i>
-                            <%= link_to 'Delete', note, method: :delete, remote: true, :class => "delete-note",:data => {:confirm => 'Delete this note?'} %>
-                            <% end %>
-                </div>
-            </div>
-                    <% end %>
-                    <% else %>
-                    You haven't created any notes yet!
-                    <% end %>
-                    <div class="end"></div>
+            <% if current_user.rambles.include?(@ramble) %>
+              <i class="fa fa-pencil-square-o"></i>
+              <%= link_to_modal 'Edit', edit_ramble_note_path(@ramble.id, note.id), :class => "edit-note" %>
+              <i class="fa fa-trash"></i>
+              <%= link_to 'Delete', note, method: :delete, remote: true, :class => "delete-note",:data => {:confirm => 'Delete this note?'} %>
+            <% end %>
+          </div>
         </div>
-
-                <div class="api-feed">
-                    <div id="feed-title">Recommendations</div>
-                    <div class="foursq">
-                        <div class="shows1" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
-                            <i class="fa fa-foursquare ramble"></i><br>
-                            <div id="four-title">Foursquare</div>
-              <div id="pagingControls"></div>
-                        </div>
-
-
-            <div id="content">
-            <% if @foursquare_venue != nil %>
-                          <% @foursquare_venue.each do |f| %>
+        <% end %>
+        <% else %>
+          You haven't created any notes yet!
+        <% end %>
+        <div class="end"></div>
+      </div>
+      <div class="api-feed">
+        <div id="feed-title">Recommendations</div>
+        <div class="foursq">
+          <div class="shows1" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
+            <i class="fa fa-foursquare ramble"></i><br>
+            <div id="four-title">Foursquare</div>
+            <div id="pagingControls"></div>
+          </div>
+          <div id="content">
+          <% if @foursquare_venue != nil %>
+            <% @foursquare_venue.each do |f| %>
               <div class="z">
-                            <div class="four-results">
-                               <li>
-                                  <span class="fshow"><div id="f-venue-title">
-                    <% if f["tips"] != nil %>
-                      <img src="<%= asset_path ('fav-star.png') %>" class="foursquare-save" alt="Save as note" data-name="<%= f['venue']['name'] %>"
-                         data-address="<%= f["venue"]["location"]["address"]%>"
-                         data-tip="<%= f["tips"].each do |a| %>
-										  		<%= a['text'] %>
-										  	 <% end %>"
-                         data-url="<%= f["tips"].each do |g| %>
-										  	 	 <%= g["canonicalUrl"] %>
-										  	 <% end %>" />
-                  </span>
-							   <%= f["venue"]["name"] %><hr>
-								</div>
-						</li>
-						<span class="fshow">
-							<span id="f-address">Address: <%= f["venue"]["location"]["address"] %></span>
-							<% f["tips"] %></span>
-							<% f["tips"].each do |g| %>
-							<span class="fshow">
-								<article><%= link_to g["text"], g["canonicalUrl"], :class => "four-tip", :target => '_blank' %></article><hr class="tip">
-							</span>
-						</div>
-         </div>
-                        <% end %>
-                        <% end %>
-            <% end %>
-            <% end %>
-         </div>
-
-                        <script type="text/javascript">
-            $(document).ready(function () {
-              $(document).on('click', '.foursquare-save', function(event) {
-                var dataName = event.target.getAttribute("data-name");
-                var dataAddress = event.target.getAttribute("data-address")
-                var dataTip = event.target.getAttribute("data-tip")
-                var dataUrl = event.target.getAttribute("data-url")
-                dataTip = dataTip.substring(0, dataTip.indexOf('[')).trim();
-                dataUrl = dataUrl.substring(0, dataUrl.indexOf('[')).trim();
-                $("#note_title").val(dataName);
-                $("#note_address").val(dataAddress);
-                $("#note_body").val(dataTip);
-                $("#note_url").val(dataUrl);
-                $("#note_tag_list").val(destination);
-              });
-            });
-                        </script>
-
-                        <script type="text/javascript">
-                        jQuery(".shows1").click(function () {
-                            jQuery(".fshow").toggle();
-                        });
-                        </script>
-                    </div>
-
-          <script type="text/javascript">
-            var pager = new Imtech.Pager();
-            jQuery(document).ready(function() {
-              pager.paragraphsPerPage = 5; // set amount elements per page
-              pager.pagingContainer = jQuery('#content'); // set of main container
-              pager.paragraphs = jQuery('div.z', pager.pagingContainer); // set of required containers
-              pager.showPage(1);
-            });
-          </script>
-
-                    <div class="ramble-yelp">
-                        <div class="shows2" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
-                            <i class="fa fa-yelp ramble"></i><br>
-                            <div id="yelp-title">Yelp</div>
-              <div id="pagingControls3"></div>
-                        </div>
-
-
-
-            <div id="content3">
-              <% if @yelp.businesses != nil %>
-              <% @yelp.businesses.each do |y| %>
-              <div class="z3">
-                <div class="yelp-results">
+                <div class="four-results">
                   <li>
-                    <span class="yshow">
+                    <span class="fshow">
+                      <div id="f-venue-title">
+                        <% if f["tips"] != nil %>
+                          <img src="<%= asset_path ('fav-star.png') %>" class="foursquare-save" alt="Save as note" data-name="<%= f['venue']['name'] %>"
+                             data-address="<%= f["venue"]["location"]["address"]%>"
+                             data-tip="<%= f["tips"].each do |a| %>
+                              <%= a['text'] %>
+                             <% end %>"
+                             data-url="<%= f["tips"].each do |g| %>
+                               <%= g["canonicalUrl"] %>
+                             <% end %>" />
 
-
-                      <img src="<%= asset_path ('fav-star.png') %>" class="yelp-save" alt="Save as note"
-                        data-yname="<%= y.name %>",
-                        data-yaddress="<%= y.location.address.pop %>",
-                        data-ytip="<%= y.snippet_text %>",
-                        data-yurl="<%= y.url %>" />
-
-                      <span class="yelp-venue-title"><%= y.name %></span>
-                      <%= link_to image_tag y.rating_img_url_small %>
-                      <span class="y-address"><%= y.location.address.pop %></span><hr>
+                  <%= f["venue"]["name"] %><hr>
+                      </div>
                     </span>
                   </li>
-                  <span class="yshow">
-                    <article class="yelp-venue-tip"><%= link_to y.snippet_text, y.url, :target => '_blank', :class => "yelp-tip" %></article>
-                    <hr class="y-tip">
-                  </span>
-                </div>
-              </div>
-
-
-
-                        <script type="text/javascript">
-             $(document).ready(function () {
-               $(document).on('click', '.yelp-save', function (event) {
-                 var dataYname = event.target.getAttribute("data-yname");   // Pulls yelp venue
-                 var dataYaddress = event.target.getAttribute("data-yaddress");
-                 var dataYtip = event.target.getAttribute("data-ytip");
-                 var dataYurl = event.target.getAttribute("data-yurl");
-                 $("#note_title").val(dataYname);
-                 $("#note_address").val(dataYaddress);
-                 $("#note_body").val(dataYtip);
-                 $("#note_url").val(dataYurl);
-                 $("#note_tag_list").val(destination);
-               });
-             });
-                        </script>
-
-
-                        <% end %>
-                        <% else %>
-                        Sorry, there are no Yelp results for this destination.
-                        <% end %>
-                        <script type="text/javascript">
-                        jQuery(".shows2").click(function () {
-                            jQuery(".yshow").toggle();
-                        });
-                        </script>
-                    </div>
-
-
-      <!--code for yelp pagination-->
-          <script type="text/javascript">
-            var pager3 = new Imtech3.Pager();
-            jQuery(document).ready(function() {
-              pager3.paragraphsPerPage = 5; // set amount elements per page
-              pager3.pagingContainer = jQuery('#content3'); // set of main container
-              pager3.paragraphs = jQuery('div.z3', pager3.pagingContainer); // set of required containers
-              pager3.showPage(1);
+                  <span class="fshow">
+                    <span id="f-address">Address: <%= f["venue"]["location"]["address"] %></span>
+                    <% f["tips"] %></span>
+                    <% f["tips"].each do |g| %>
+                    <span class="fshow">
+                      <article><%= link_to g["text"], g["canonicalUrl"], :class => "four-tip", :target => '_blank' %></article>
+                      <hr class="tip">
+                    </span>
+                  </div>
+               </div>
+            <% end %>
+            <% end %>
+          <% end %>
+          <% end %>
+       </div>
+       <script type="text/javascript">
+        $(document).ready(function () {
+          $(document).on('click', '.foursquare-save', function(event) {
+            var dataName = event.target.getAttribute("data-name");
+            var dataAddress = event.target.getAttribute("data-address")
+            var dataTip = event.target.getAttribute("data-tip")
+            var dataUrl = event.target.getAttribute("data-url")
+            dataTip = dataTip.substring(0, dataTip.indexOf('[')).trim();
+            dataUrl = dataUrl.substring(0, dataUrl.indexOf('[')).trim();
+            $("#note_title").val(dataName);
+            $("#note_address").val(dataAddress);
+            $("#note_body").val(dataTip);
+            $("#note_url").val(dataUrl);
+            $("#note_tag_list").val(destination);
+          });
+        });
+      </script>
+      <script type="text/javascript">
+      jQuery(".shows1").click(function () {
+          jQuery(".fshow").toggle();
+      });
+      </script>
+    </div>
+    <script type="text/javascript">
+      var pager = new Imtech.Pager();
+      jQuery(document).ready(function() {
+        pager.paragraphsPerPage = 5; // set amount elements per page
+        pager.pagingContainer = jQuery('#content'); // set of main container
+        pager.paragraphs = jQuery('div.z', pager.pagingContainer); // set of required containers
+        pager.showPage(1);
+      });
+    </script>
+    <div class="ramble-yelp">
+      <div class="shows2" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
+        <i class="fa fa-yelp ramble"></i><br>
+        <div id="yelp-title">Yelp</div>
+        <div id="pagingControls3"></div>
+      </div>
+      <div id="content3">
+        <% if @yelp.businesses != nil %>
+        <% @yelp.businesses.each do |y| %>
+        <div class="z3">
+          <div class="yelp-results">
+            <li>
+              <span class="yshow">
+                <img src="<%= asset_path ('fav-star.png') %>" class="yelp-save" alt="Save as note"
+                  data-yname="<%= y.name %>",
+                  data-yaddress="<%= y.location.address.pop %>",
+                  data-ytip="<%= y.snippet_text %>",
+                  data-yurl="<%= y.url %>" />
+                <span class="yelp-venue-title"><%= y.name %></span>
+                <%= link_to image_tag y.rating_img_url_small %>
+                <span class="y-address"><%= y.location.address.pop %></span>
+                <hr>
+              </span>
+            </li>
+            <span class="yshow">
+              <article class="yelp-venue-tip"><%= link_to y.snippet_text, y.url, :target => '_blank', :class => "yelp-tip" %></article>
+              <hr class="y-tip">
+            </span>
+          </div>
+        </div>
+        <script type="text/javascript">
+          $(document).ready(function () {
+            $(document).on('click', '.yelp-save', function (event) {
+              var dataYname = event.target.getAttribute("data-yname");   // Pulls yelp venue
+              var dataYaddress = event.target.getAttribute("data-yaddress");
+              var dataYtip = event.target.getAttribute("data-ytip");
+              var dataYurl = event.target.getAttribute("data-yurl");
+              $("#note_title").val(dataYname);
+              $("#note_address").val(dataYaddress);
+              $("#note_body").val(dataYtip);
+              $("#note_url").val(dataYurl);
+              $("#note_tag_list").val(destination);
             });
-          </script>
-
-
-                    <div class="ramble-instagram">
-                        <div class="shows3" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
-                            <i class="fa fa-instagram ramble"></i><br>
-                            <div id="insta-title">Instagram</div>
-              <div id="pagingControls4"></div>
-                        </div>
-
-          <div id="content4">
-						<div class="i-images">
-							<% if @instagram_images.count != nil %>
-								<% @instagram_images.each do |i| %>
-              		<div class="z4">
-                		<span class="ishow">
-                  		<img src="<%= asset_path ('fav-star.png') %>" class="instagram-save" alt="Save as note" data-iurl="<%= i["images"]["standard_resolution"]["url"] %>" />
-                    	<%= link_to i["images"]["standard_resolution"]["url"], :class => "instagram-thumb", :target => '_blank' do %>
-                    		<%= image_tag i["images"]["thumbnail"]["url"] %><br>
-                    	<% end %>
-                  	</span>
+          });
+        </script>
+        <% end %>
+        <% else %>
+        Sorry, there are no Yelp results for this destination.
+        <% end %>
+        <script type="text/javascript">
+        jQuery(".shows2").click(function () {
+            jQuery(".yshow").toggle();
+        });
+        </script>
+      </div>
+      <script type="text/javascript">
+        var pager3 = new Imtech3.Pager();
+        jQuery(document).ready(function() {
+          pager3.paragraphsPerPage = 5; // set amount elements per page
+          pager3.pagingContainer = jQuery('#content3'); // set of main container
+          pager3.paragraphs = jQuery('div.z3', pager3.pagingContainer); // set of required containers
+          pager3.showPage(1);
+        });
+      </script>
+      <div class="ramble-instagram">
+        <div class="shows3" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
+          <i class="fa fa-instagram ramble"></i><br>
+          <div id="insta-title">Instagram</div>
+          <div id="pagingControls4"></div>
+        </div>
+        <div id="content4">
+          <div class="i-images">
+            <% if @instagram_images.count != nil %>
+              <% @instagram_images.each do |i| %>
+                <div class="z4">
+                  <span class="ishow">
+                    <img src="<%= asset_path ('fav-star.png') %>" class="instagram-save" alt="Save as note" data-iurl="<%= i["images"]["standard_resolution"]["url"] %>" />
+                    <%= link_to i["images"]["standard_resolution"]["url"], :class => "instagram-thumb", :target => '_blank' do %>
+                      <%= image_tag i["images"]["thumbnail"]["url"] %><br>
+                    <% end %>
+                  </span>
                 </div>
                 <hr class="i-tip">
               <% end %>
-              <% end %>
-              <script type="text/javascript">
+            <% end %>
+            <script type="text/javascript">
               $(document).ready(function () {
                 $(document).on('click', '.instagram-save', function (event) {
                   var dataIurl = event.target.getAttribute("data-iurl");
@@ -307,9 +284,8 @@
                   $("#note_tag_list").val(destination);
                 });
               });
-              </script>
-
-              <script type="text/javascript"> // code for instagram pagination
+            </script>
+            <script type="text/javascript"> // code for instagram pagination
               var pager4 = new Imtech4.Pager();
               jQuery(document).ready(function() {
                 pager4.paragraphsPerPage = 4; // set amount elements per page
@@ -317,141 +293,132 @@
                 pager4.paragraphs = jQuery('div.z4', pager4.pagingContainer); // set of required containers
                 pager4.showPage(1);
               });
-              </script>
-
-              <script type="text/javascript">
+            </script>
+            <script type="text/javascript">
               jQuery(".shows3").click(function () {
                 jQuery(".ishow").toggle();
               });
-              </script>
+            </script>
+          </div>
+        </div>
+        <div class="ramble-reddit">
+          <div class="shows4" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
+            <i class="fa fa-reddit ramble"></i><br>
+            <div id="red-title">Reddit</div>
+          </div>
+          <div class="rshow">
+            <% @reddit_thread.each do |r| %>
+            <li>
+              <span class="rshow"><a href="http://www.reddit.com/r/<%= r["name"] %>/search?q=;'visit'+OR+'to+do'&restrict_sr=on" target="_blank"></span> <span id="reddit-dash">//</span>
+                <%= r["name"] %>
+              </a>
+            </li>
+            <% end %>
+          </div>
+          <script type="text/javascript">
+            jQuery(".shows4").click(function () {
+              jQuery(".rshow").toggle();
+            });
+          </script>
+        </div>
+        <div class="recommended-notes">
+          <div class="shows5" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
+            <i class="fa fa-pencil-square-o ramble"></i><br>
+            <div id="four-title">
+              <% x = Note.where(ramble_id:(Ramble.where(:destination => @ramble.destination))) %>
+              <% y = x.where(ramble_id:(Ramble.where.not(user_id: @ramble.user_id))) %>
+              <%= y.where(share: true).count %> NOTE(S)</div>
+              <div id="pagingControls2"></div>
             </div>
-					</div>
+          </div>
+        </div>
+        <div id="content2">
+          <% ramble = Ramble.where(:destination => @ramble.destination)  %>
+          <% ramble.each do |r| %>
+          <% if r.id != @ramble.id %>
+            <% r.notes.each do |n| %>
+              <% if n.share == true %>
+                <div class="z2">
+                  <div class="noteshow">
+                    <img src="<%= asset_path ('fav-star.png') %>" class="savenote" alt="Save as note"                                   data-ntitle="<%= n.title %>"
+                      data-naddress="<%= n.address %>"
+                      data-nbody="<%= n.body %>"
+                      data-nurl="<%= n.url %>"
+                      data-ntag="<%= n.tag_list %>" />
+                    <p>
+                      <% if n.title != "" %>
+                        <span id="note-label">Title: </span>
+                        <span id="note-body"><%= n.title %></span>
+                      <% end %>
+                    </p>
+                    <p>
+                      <% if n.address != "" %>
+                        <span id="note-label">Address: </span>
+                        <span id="note-body"><%= n.address %></span>
+                      <% end %>
+                    </p>
+                    <p>
+                      <% if n.body != "" %>
+                        <span id="note-label">Note: </span>
+                        <span id="note-body"><%= n.body %></span>
+                      <% end %>
+                    </p>
+                    <p>
+                      <% if n.url != "" %>
+                        <span id="note-label">URL: </span>
+                        <span id="note-body"><a href="<%= n.url %>" target="_blank" class="notes-url "><%= n.url %></a></span>
+                      <% end %>
+                    </p>
+                    <p>
+                      <% if n.tag_list != [] %>
+                        <span id="tag-label">Tag(s): </span>
+                        <span id="tag-each"><%= n.tag_list %></span>
 
-
-
-						<div class="ramble-reddit">
-							<div class="shows4" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
-								<i class="fa fa-reddit ramble"></i><br>
-								<div id="red-title">Reddit</div>
-							</div>
-							<div class="rshow">
-								<% @reddit_thread.each do |r| %>
-								<li>
-									<span class="rshow"><a href="http://www.reddit.com/r/<%= r["name"] %>/search?q=;'visit'+OR+'to+do'&restrict_sr=on" target="_blank"></span> <span id="reddit-dash">//</span>
-										<%= r["name"] %>
-									</a>
-								</li>
-								<% end %>
-							</div>
-							<script type="text/javascript">
-							jQuery(".shows4").click(function () {
-								jQuery(".rshow").toggle();
-							});
-							</script>
-						</div>
-
-
-						<div class="recommended-notes">
-							<div class="shows5" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
-                <i class="fa fa-pencil-square-o ramble"></i><br>
-								<div id="four-title">
-                  <% x = Note.where(ramble_id:(Ramble.where(:destination => @ramble.destination))) %>
-                  <% y = x.where(ramble_id:(Ramble.where.not(user_id: @ramble.user_id))) %>
-                  <%= y.where(share: true).count %> NOTE(S)</div>
-                  <div id="pagingControls2"></div>
+                      <% end %>
+                    </p>
+                    <p>
+                      <% if n.body != "" %>
+                          <span id="note-label">Created by: </span>
+                          <span id="note-body"> <%= link_to n.ramble.user.name, n.ramble.user %> on <%= n.created_at.strftime("%m/%d/%Y") %> </span>
+                      <% end %>
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </div>
-
-
-              <div id="content2">
-                                <% ramble = Ramble.where(:destination => @ramble.destination)  %>
-                                <% ramble.each do |r| %>
-                                <% if r.id != @ramble.id %>
-                            <% r.notes.each do |n| %>
-                            <% if n.share == true %>
-             <div class="z2">
-                            <div class="noteshow">
-                <img src="<%= asset_path ('fav-star.png') %>" class="savenote" alt="Save as note"                              data-ntitle="<%= n.title %>"
-                 data-naddress="<%= n.address %>"
-                                 data-nbody="<%= n.body %>"
-                 data-nurl="<%= n.url %>"
-                 data-ntag="<%= n.tag_list %>" />
-                                    <p>
-                                      <% if n.title != "" %>
-                                        <span id="note-label">Title: </span>
-                                        <span id="note-body"><%= n.title %></span>
-                                          <% end %>
-                                    </p>
-                                    <p>
-                                      <% if n.address != "" %>
-                                        <span id="note-label">Address: </span>
-                                        <span id="note-body"><%= n.address %></span>
-                                          <% end %>
-                                    </p>
-                                    <p>
-                                      <% if n.body != "" %>
-                                        <span id="note-label">Note: </span>
-                                        <span id="note-body"><%= n.body %></span>
-                                          <% end %>
-                                    </p>
-                                    <p>
-                                      <% if n.url != "" %>
-                                        <span id="note-label">URL: </span>
-                                        <span id="note-body"><a href="<%= n.url %>" target="_blank" class="notes-url "><%= n.url %></a></span>
-                                          <% end %>
-                                    </p>
-                                    <p>
-                                      <% if n.tag_list != [] %>
-                                        <span id="tag-label">Tag(s): </span>
-                                        <span id="tag-each"><%= n.tag_list %></span>
-
-                                          <% end %>
-                                    </p>
-                                    <p>
-                                      <% if n.body != "" %>
-                                          <span id="note-label">Created by: </span>
-                                          <span id="note-body"> <%= link_to n.ramble.user.name, n.ramble.user %> on <%= n.created_at.strftime("%m/%d/%Y") %> </span>
-                                      <% end %>
-                                        </p>
-                                </div>
-               </div>
-                                <% end %>
-                                <% end %>
-                                <% end %>
-                                <% end %>
-               </div>
-              <script type="text/javascript">
-              $(document).ready(function () {
-                $(document).on('click', '.savenote', function (event) {
-                  var dataNtitle = event.target.getAttribute("data-ntitle");
-                  var dataNaddress = event.target.getAttribute("data-naddress");
-                  var dataNbody = event.target.getAttribute("data-nbody");
-                  var dataNurl = event.target.getAttribute("data-nurl");
-                  var dataNtag = event.target.getAttribute("data-ntag");
-                  $("#note_title").val(dataNtitle);
-                  $("#note_address").val(dataNaddress);
-                  $("#note_body").val(dataNbody);
-                  $("#note_url").val(dataNurl);
-                  $("#note_tag_list").val(dataNtag);
-                });
-              });
-              </script>
-              <script type="text/javascript">
-                  jQuery(".shows5").click(function () {
-                      jQuery(".noteshow").toggle();
-                  });
-              </script>
-
-              <script type="text/javascript">
-                var pager2 = new Imtech2.Pager();
-                jQuery(document).ready(function() {
-                  pager2.paragraphsPerPage = 3; // set amount elements per page
-                  pager2.pagingContainer = jQuery('#content2'); // set of main container
-                  pager2.paragraphs = jQuery('div.z2', pager2.pagingContainer); // set of required containers
-                  pager2.showPage(1);
-                });
-              </script>
-      </div>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% end %>
+        </div>
+        <script type="text/javascript">
+          $(document).ready(function () {
+            $(document).on('click', '.savenote', function (event) {
+              var dataNtitle = event.target.getAttribute("data-ntitle");
+              var dataNaddress = event.target.getAttribute("data-naddress");
+              var dataNbody = event.target.getAttribute("data-nbody");
+              var dataNurl = event.target.getAttribute("data-nurl");
+              var dataNtag = event.target.getAttribute("data-ntag");
+              $("#note_title").val(dataNtitle);
+              $("#note_address").val(dataNaddress);
+              $("#note_body").val(dataNbody);
+              $("#note_url").val(dataNurl);
+              $("#note_tag_list").val(dataNtag);
+            });
+          });
+        </script>
+        <script type="text/javascript">
+            jQuery(".shows5").click(function () {
+                jQuery(".noteshow").toggle();
+            });
+        </script>
+        <script type="text/javascript">
+          var pager2 = new Imtech2.Pager();
+          jQuery(document).ready(function() {
+            pager2.paragraphsPerPage = 3; // set amount elements per page
+            pager2.pagingContainer = jQuery('#content2'); // set of main container
+            pager2.paragraphs = jQuery('div.z2', pager2.pagingContainer); // set of required containers
+            pager2.showPage(1);
+          });
+        </script>
     </div>
   </div>
+</div>

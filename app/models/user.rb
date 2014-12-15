@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
 
-
   has_many :rambles
   has_many :notes, through: :rambles
   has_many :authorizations

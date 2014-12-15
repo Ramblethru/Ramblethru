@@ -1,6 +1,3 @@
-
-
-
 $(function (){
         $('#start_date').datepicker( {
            dateFormat: "mm-dd-yy",

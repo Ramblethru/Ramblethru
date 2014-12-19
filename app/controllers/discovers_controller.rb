@@ -33,22 +33,18 @@ class DiscoversController < ApplicationController
   end
 
   def yelp
-    #Yelp
     params = { limit: 5,
                sort: 2}
     @yelp = Yelp.client.search("#{@discover.destination}", params)
   end
 
   def instagram
-    #Instagram
     instagram = HTTParty.get("https://api.instagram.com/v1/media/search?lat=#{@discover.latitude}&lng=#{@discover.longitude}&distance=5000&count=10&client_id=#{ENV["INSTAGRAM_KEY"]}")
     instagram_data = JSON.parse(instagram.body)
     @instagram_images = instagram_data["data"]
-    # [0]["images"]["thumbnail"]["url"]
   end
 
   def reddit
-    #Reddit
     uri = Addressable::URI.parse("http://www.reddit.com/api/subreddits_by_topic.json?query=#{@discover.destination}")
     reddit = HTTParty.get(uri.normalize)
     reddit_data = JSON.parse(reddit.body)
@@ -56,7 +52,6 @@ class DiscoversController < ApplicationController
   end
 
   def foursquare
-    #Foursquare
     foursquare = HTTParty.get("http://api.foursquare.com/v2/venues/explore?ll=#{@discover.latitude},#{@discover.longitude}&limit=5&sortByDistance=true&oauth_token=#{ENV["FOURSQUARE_OAUTH"]}&v=20141123")
     foursquare_data = JSON.parse(foursquare.body)
     @foursquare_venue = foursquare_data["response"]["groups"][0]["items"]

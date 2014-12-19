@@ -30,5 +30,5 @@ module LoginsHelper
   def redirect_back
     redirect_to(session[:return_to])
     session[:return_to] = nil
-end
+  end
 end

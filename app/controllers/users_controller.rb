@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
- def show
+  def show
     @user = User.find(params[:id])
   end
 
@@ -48,13 +48,10 @@ class UsersController < ApplicationController
       end
   end
 
-
-
-
   protected
 
   def auth_hash
-      request.env['omniauth.auth']
+    request.env['omniauth.auth']
   end
 
   private
@@ -62,7 +59,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :avatar, :bio, :lives_in, :password, :password_confirmation)
   end
-
-
 end
 

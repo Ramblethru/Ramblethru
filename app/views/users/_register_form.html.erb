@@ -10,12 +10,10 @@
     </div>
   <% end %>
   <div class="reg">
-  <%= f.input :name, :class => "register-name" %>
-  <%= f.input :email, placeholder: 'user@domain.com', :class => "register-email" %>
-  <%= f.input :password, :class => "register-pass" %>
-  <%= f.input :password_confirmation, :class => "register-pass" %>
-
-  <%= f.button :submit, "Register", :class => "register-button" %>
-</div>
-
+    <%= f.input :name, :class => "register-name" %>
+    <%= f.input :email, placeholder: 'user@domain.com', :class => "register-email" %>
+    <%= f.input :password, :class => "register-pass" %>
+    <%= f.input :password_confirmation, :class => "register-pass" %>
+    <%= f.button :submit, "Register", :class => "register-button" %>
+  </div>
 <% end %>

@@ -110,7 +110,8 @@
                     <% if n.tag_list != [] %>
                       <span id="user-tags">Tags: </span><%= n.tag_list %><br>
                     <% end %>
-                    <span id="user-created">Created on: </span><%= n.created_at.strftime("%m/%d/%Y") %><br>
+                    <span id="user-created">Created on: </span><%= n.created_at.strftime("%m/%d/%Y") %>
+                    <br>
                     <div class="shared" >
                       <% if current_user.id == @user.id %>
                         <% if n.share == true %>
@@ -121,7 +122,7 @@
                         <% end %>
                       <% end %>
                     </div>
-                    <hr id="note-each-divider">
+                    <hr id="note-each-divider"><br>
                   <% end %>
                   <% else %>
                     <% if n.title != "" %>
@@ -140,7 +141,8 @@
                     <% if n.tag_list != [] %>
                       <span id="user-tags">Tags: </span><%= n.tag_list %><br>
                     <% end %>
-                    <span id="user-created">Created on: </span><%= n.created_at.strftime("%m/%d/%Y") %><br>
+                    <span id="user-created">Created on: </span><%= n.created_at.strftime("%m/%d/%Y") %>
+                    <br>
                     <div class="shared">
                       <% if current_user.id == @user.id %>
                         <% if n.share == true %>
@@ -151,9 +153,11 @@
                         <% end %>
                       <% end %>
                     </div>
+                    <hr id="note-each-divider"><br>
                   <% end %>
                 <% end %>
                 </div>
+
               <% else %>
               <span id="no-notes">no notes yet</span>
               <% end %>

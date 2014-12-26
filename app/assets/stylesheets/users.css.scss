@@ -221,6 +221,10 @@ input.register-button {
 #user-url a {
   color: $orange;
   word-wrap: break-word;
+
+  &:hover {
+    color: $green;
+  }
 }
 
 a.note-url {
@@ -251,16 +255,16 @@ div.each-ramble.bx-clone {
 #user-created {
   color: $green;
 }
-.note-show-url {
-  word-wrap: break-word;
-  color: $orange;
-
-  &:hover {
-    color: $green;
-  }
-}
+//.note-show-url {
+//  word-wrap: break-word;
+//  color: $orange;
+//
+//  &:hover {
+//    color: $green;
+//  }
+//}
 .shared {
-  padding-left: 125px;
+  padding-left: 120px;
 }
 input.sharedstatus {
   background-color: $orange;

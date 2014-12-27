@@ -255,15 +255,10 @@ div.each-ramble.bx-clone {
 #user-created {
   color: $green;
 }
-//.note-show-url {
-//  word-wrap: break-word;
-//  color: $orange;
-//
-//  &:hover {
-//    color: $green;
-//  }
-//}
 .shared {
+  padding-left: 120px;
+}
+.sharedstatus {
   padding-left: 120px;
 }
 input.sharedstatus {

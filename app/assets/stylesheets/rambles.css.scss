@@ -233,6 +233,9 @@ button:hover {
 .ramble-reddit {
   margin-top: 20px;
 }
+.ramble-songkick {
+  margin-top: 20px;
+}
 a.edit-note, a.delete-note {
   color: $dark-grey;
   font-family: 'menschmensch_bold';
@@ -279,6 +282,9 @@ a.edit-note, a.delete-note {
   display:none;
 }
 .ishow {
+  display:none;
+}
+.songshow {
   display:none;
 }
 .rshow {
@@ -332,6 +338,13 @@ a.edit-note, a.delete-note {
   border-radius: 15px;
 }
 .shows5 {
+  width: 200px;
+  background: rgba(255,255,255,0.5);
+  margin: 0 auto 20px auto;
+  padding: 10px 0 0 0;
+  border-radius: 15px;
+}
+.shows6 {
   width: 200px;
   background: rgba(255,255,255,0.5);
   margin: 0 auto 20px auto;

@@ -20,6 +20,14 @@ class RamblesController < ApplicationController
     end
   end
 
+  def foursquare
+    foursquare = HTTParty.get("http://api.foursquare.com/v2/venues/explore?ll=#{@ramble.latitude},#{@ramble.longitude}&limit=20&oauth_token=#{ENV["FOURSQUARE_OAUTH"]}&v=20141123")
+    foursquare_data = JSON.parse(foursquare.body)
+    @foursquare_venue = foursquare_data["response"]["groups"][0]["items"]
+    @foursquare_tip = foursquare_data["response"]["groups"][0]["items"]
+    @foursquare_venue_url = foursquare_data["response"]["groups"][0]["items"][0]["venue"]["name"]
+  end
+
   def yelp
     params = { sort: 2 }
     @yelp = Yelp.client.search("#{@ramble.destination}", params)
@@ -36,14 +44,6 @@ class RamblesController < ApplicationController
     reddit = HTTParty.get(uri.normalize)
     reddit_data = JSON.parse(reddit.body)
     @reddit_thread = reddit_data
-  end
-
-  def foursquare
-    foursquare = HTTParty.get("http://api.foursquare.com/v2/venues/explore?ll=#{@ramble.latitude},#{@ramble.longitude}&limit=20&oauth_token=#{ENV["FOURSQUARE_OAUTH"]}&v=20141123")
-    foursquare_data = JSON.parse(foursquare.body)
-    @foursquare_venue = foursquare_data["response"]["groups"][0]["items"]
-    @foursquare_tip = foursquare_data["response"]["groups"][0]["items"]
-    @foursquare_venue_url = foursquare_data["response"]["groups"][0]["items"][0]["venue"]["name"]
   end
 
   def new

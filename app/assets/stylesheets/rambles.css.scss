@@ -14,11 +14,11 @@
   @include span-columns(6);
   text-align: center;
   padding-top: 10px;
-  max-width:450px;
+  max-width: 450px;
   overflow: scroll;
   margin-left: 50px;
   margin-top: -40px;
-  max-height:725px;
+  max-height: 725px;
 }
 #map {
   width: 100%;
@@ -28,8 +28,8 @@
 }
 .notebody {
   margin: 15px auto 15px auto;
-  text-align:left;
-  padding-left:10px;
+  text-align: left;
+  padding-left: 10px;
   background: transparent;
   border: 2px solid $green;
   max-width: 425px;
@@ -65,9 +65,9 @@ input#ramble-button {
   font-weight: bold;
   font-size: 18px;
 
-&:hover {
-  background-color: $dark-grey;
-}
+  &:hover {
+    background-color: $dark-grey;
+  }
 }
 .ramble-title {
   background-color: $green;
@@ -94,7 +94,7 @@ textarea#note_body, input#note_tag_list, input#note_title, input#note_address, i
   width:420px;
 }
 #note_title, #note_address, #note_url, #note_tag_list {
-  margin-left:15px;
+  margin-left: 15px;
 }
 input.btn.radius {
   background-color: $orange;
@@ -219,7 +219,6 @@ button:hover {
 a.edit-note, a.delete-note {
   color: $dark-grey;
   font-family: 'menschmensch_bold';
-
 }
 .fa-pencil-square-o, .fa-trash {
   color: $dark-grey;
@@ -247,19 +246,19 @@ a.edit-note, a.delete-note {
   }
 }
 .noteshow {
-  display:none;
+  display: none;
   margin: 15px auto 15px auto;
-  text-align:left;
-  padding-left:10px;
+  text-align: left;
+  padding-left: 10px;
   background: transparent;
   border: 2px solid $green;
   max-width: 450px;
 }
 .fshow, .yshow, .ishow, .songshow {
-  display:none;
+  display: none;
 }
 .rshow {
-  display:none;
+  display: none;
   margin: 0 auto 0 auto;
   text-align: justify;
   text-align-last: justify;
@@ -274,8 +273,8 @@ a.edit-note, a.delete-note {
 }
 .note-show {
   margin: 15px auto 15px auto;
-  text-align:left;
-  padding-left:10px;
+  text-align: left;
+  padding-left: 10px;
   background: transparent;
   border: 2px solid $green;
   max-width: 450px;
@@ -305,7 +304,7 @@ a.edit-note, a.delete-note {
   margin-bottom: -15px;
 }
 #new_note {
-  display:none;
+  display: none;
 }
 #tag-each {
 //  background: rgba(175,112,58,0.5);

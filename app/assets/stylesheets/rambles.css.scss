@@ -2,8 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
 .container {
   @include outer-container;
   margin-top: 100px;
@@ -11,9 +9,7 @@
 }
 .note-container {
   margin: 10px;
-  
 }
-
 .ramble-notes {
   @include span-columns(6);
   text-align: center;
@@ -29,8 +25,6 @@
   margin: 0 auto;
   margin-top: 20px;
   border-bottom: 8px solid $orange;
-}
-.recommended-notes {
 }
 .notebody {
   margin: 15px auto 15px auto;
@@ -86,8 +80,6 @@ input#ramble-button {
   margin-bottom: 0px;
   font-weight: bold;
 }
-  .shift {
-  }
 .start-end {
   font-size: 18px;
   font-family: monospace, sans-serif;
@@ -221,7 +213,7 @@ button:hover {
   color: $orange;
   font-size: 22px;
 }
-.ramble-reddit,.ramble-songkick {
+.ramble-reddit, .ramble-songkick {
   margin-top: 20px;
 }
 a.edit-note, a.delete-note {
@@ -263,7 +255,7 @@ a.edit-note, a.delete-note {
   border: 2px solid $green;
   max-width: 450px;
 }
-.fshow,.yshow,.ishow,.songshow {
+.fshow, .yshow, .ishow, .songshow {
   display:none;
 }
 .rshow {
@@ -288,7 +280,7 @@ a.edit-note, a.delete-note {
   border: 2px solid $green;
   max-width: 450px;
 }
-.shows1,.shows2 {
+.shows1, .shows2 {
   width: 200px;
   background: rgba(255,255,255,0.5);
   margin: 0 auto 0 auto;
@@ -302,14 +294,14 @@ a.edit-note, a.delete-note {
   padding: 10px 0 0 0;
   border-radius: 20px;
 }
-.shows4,.shows5,.shows6 {
+.shows4, .shows5, .shows6 {
   width: 200px;
   background: rgba(255,255,255,0.5);
   margin: 0 auto 20px auto;
   padding: 10px 0 0 0;
   border-radius: 15px;
 }
-.yelp-results,.four-results {
+.yelp-results, .four-results {
   margin-bottom: -15px;
 }
 #new_note {
@@ -465,4 +457,18 @@ a.yelp-tip {
 .end-date {
   margin-left: 10px;
   display: inline;
+}
+#pagingControls ul, #pagingControls2 ul, #pagingControls3 ul, #pagingControls4 ul, #pagingControls5 ul{
+  display: inline;
+  padding-left: 0.5em;
+}
+#pagingControls li, #pagingControls2 li, #pagingControls3 li, #pagingControls4 li, #pagingControls5 li{
+  display: inline;
+  padding: 0 0.5em;
+  color: #7f868e;
+  font-family: 'menschmensch_regular';
+  font-size: 18px;
+}
+#pagingControls a, #pagingControls2 a, #pagingControls3 a, #pagingControls4 a, #pagingControls5 a {
+  color: $orange;
 }

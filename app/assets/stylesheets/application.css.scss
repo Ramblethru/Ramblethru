@@ -228,12 +228,20 @@ $body-color: #eff0eb;
   i.fa-bus, i.fa-car, i.fa-plane {
     font-size: 60px;
   }
-  section.homepage-about-go, .homepage-about-create, .homepage-about-discover {
-    height: 250px;
+  .homepage-about-create {
+    height: 300px;
+  }
+  section.homepage-about-go {
+    height: 425px;
+  }
+   .homepage-about-discover {
+    height: 400px;
   }
   #map-usa {
     width: 300px;
-    height: 300px;
+    height: 200px;
+    padding-left: 20px;
+    padding-top: 25px;
   }
    input.input {
     height: 35px;

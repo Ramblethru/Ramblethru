@@ -101,16 +101,7 @@ textarea#note_body, input#note_tag_list, input#note_title, input#note_address, i
   background: transparent;
   width:420px;
 }
-#note_title {
-  margin-left:15px;
-}
-#note_address {
-  margin-left:15px;
-}
-#note_url {
-  margin-left:15px;
-}
-#note_tag_list {
+#note_title, #note_address, #note_url, #note_tag_list {
   margin-left:15px;
 }
 input.btn.radius {

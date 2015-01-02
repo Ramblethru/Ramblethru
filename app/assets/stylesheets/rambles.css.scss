@@ -108,7 +108,7 @@ textarea#note_body, input#note_tag_list, input#note_title, input#note_address, i
   margin-left:15px;
 }
 #note_url {
-margin-left:15px;
+  margin-left:15px;
 }
 #note_tag_list {
   margin-left:15px;
@@ -230,10 +230,7 @@ button:hover {
   color: $orange;
   font-size: 22px;
 }
-.ramble-reddit {
-  margin-top: 20px;
-}
-.ramble-songkick {
+.ramble-reddit,.ramble-songkick {
   margin-top: 20px;
 }
 a.edit-note, a.delete-note {
@@ -275,16 +272,7 @@ a.edit-note, a.delete-note {
   border: 2px solid $green;
   max-width: 450px;
 }
-.fshow {
-  display:none;
-}
-.yshow {
-  display:none;
-}
-.ishow {
-  display:none;
-}
-.songshow {
+.fshow,.yshow,.ishow,.songshow {
   display:none;
 }
 .rshow {
@@ -309,14 +297,7 @@ a.edit-note, a.delete-note {
   border: 2px solid $green;
   max-width: 450px;
 }
-.shows1 {
-  width: 200px;
-  background: rgba(255,255,255,0.5);
-  margin: 0 auto 0 auto;
-  padding: 10px 0 0 0;
-  border-radius: 20px;
-}
-.shows2 {
+.shows1,.shows2 {
   width: 200px;
   background: rgba(255,255,255,0.5);
   margin: 0 auto 0 auto;
@@ -330,31 +311,14 @@ a.edit-note, a.delete-note {
   padding: 10px 0 0 0;
   border-radius: 20px;
 }
-.shows4 {
+.shows4,.shows5,.shows6 {
   width: 200px;
   background: rgba(255,255,255,0.5);
   margin: 0 auto 20px auto;
   padding: 10px 0 0 0;
   border-radius: 15px;
 }
-.shows5 {
-  width: 200px;
-  background: rgba(255,255,255,0.5);
-  margin: 0 auto 20px auto;
-  padding: 10px 0 0 0;
-  border-radius: 15px;
-}
-.shows6 {
-  width: 200px;
-  background: rgba(255,255,255,0.5);
-  margin: 0 auto 20px auto;
-  padding: 10px 0 0 0;
-  border-radius: 15px;
-}
-.yelp-results {
-  margin-bottom: -15px;
-}
-.four-results {
+.yelp-results,.four-results {
   margin-bottom: -15px;
 }
 #new_note {

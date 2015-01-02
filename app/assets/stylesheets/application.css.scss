@@ -228,12 +228,20 @@ $body-color: #eff0eb;
   i.fa-bus, i.fa-car, i.fa-plane {
     font-size: 60px;
   }
-  section.homepage-about-go, .homepage-about-create, .homepage-about-discover {
-    height: 250px;
+  .homepage-about-create {
+    height: 300px;
+  }
+  section.homepage-about-go {
+    height: 425px;
+  }
+   .homepage-about-discover {
+    height: 400px;
   }
   #map-usa {
     width: 300px;
-    height: 300px;
+    height: 200px;
+    padding-left: 20px;
+    padding-top: 25px;
   }
    input.input {
     height: 35px;
@@ -416,65 +424,9 @@ input.nav-input {
 .menu-button {
   cursor:pointer;
 }
-#pagingControls ul{
-  display: inline;
-  padding-left: 0.5em;
-}
-#pagingControls li{
-  display: inline;
-  padding: 0 0.5em;
-  color: #7f868e;
-  font-family: 'menschmensch_regular';
-  font-size: 18px;
-}
-#pagingControls a {
-  color: $orange;
-}
-#pagingControls2 ul{
-  display: inline;
-  padding-left: 0.5em;
-}
-#pagingControls2 li{
-  display: inline;
-  padding: 0 0.5em;
-  color: #7f868e;
-  font-family: 'menschmensch_regular';
-  font-size: 18px;
-}
-#pagingControls2 a {
-  color: $orange;
-}
-#pagingControls3 ul{
-  display: inline;
-  padding-left: 0.5em;
-}
-#pagingControls3 li{
-  display: inline;
-  padding: 0 0.5em;
-  color: #7f868e;
-  font-family: 'menschmensch_regular';
-  font-size: 18px;
-}
-#pagingControls3 a {
-  color: $orange;
-}
-#pagingControls4 ul{
-  display: inline;
-  padding-left: 0.5em;
-}
-#pagingControls4 li{
-  display: inline;
-  padding: 0 0.5em;
-  color: #7f868e;
-  font-family: 'menschmensch_regular';
-  font-size: 18px;
-}
 .fa-star {
   color: $orange;
   font-size: 18px;
-}
-#pagingControls4 a {
-  color: $orange;
 }
 $sliding-menu-border-color: $orange;
 $sliding-menu-background: lighten($sliding-menu-border-color, 4);

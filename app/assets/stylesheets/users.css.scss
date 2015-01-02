@@ -61,9 +61,6 @@ h1.profile {
   font-size: 70px;
   padding-top: 120px;
 }
-.usershow {
-
-}
 .userinfo {
   margin-top: 30px;
 }
@@ -190,7 +187,6 @@ input.register-button {
   line-height: .8;
   font-family: 'menschmensch_regular';
 
-
   &:hover {
     background-color: $dark-grey;
   }
@@ -209,15 +205,10 @@ input.register-button {
   font-size: 15px;
   font-weight: bold;
 }
-#user-note, #user-title, #user-address, #user-tags {
+#user-note, #user-title, #user-address, #user-tags, #user-url {
   color: $green;
   word-wrap: break-word;
 }
-#user-url {
-  color: $green;
-  word-wrap: break-word;
-}
-
 #user-url a {
   color: $orange;
   word-wrap: break-word;
@@ -226,7 +217,6 @@ input.register-button {
     color: $green;
   }
 }
-
 a.note-url {
   word-wrap: break-word;
 }
@@ -255,10 +245,7 @@ div.each-ramble.bx-clone {
 #user-created {
   color: $green;
 }
-.shared {
-  padding-left: 120px;
-}
-.sharedstatus {
+.shared,.sharedstatus {
   padding-left: 120px;
 }
 input.sharedstatus {
@@ -276,4 +263,3 @@ input.sharedstatus {
   font-size: 30px !important;
   color: $green !important;
 }
-

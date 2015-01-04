@@ -106,7 +106,7 @@ $body-color: #eff0eb;
 
 /*RESPONSIVE*/
 
-@media (max-width: 1221px) {
+@media (max-width: 1268px) {
   i.fa-foursquare, i.fa-instagram, i.fa-yelp, i.fa-reddit {
     font-size: 90px;
     padding: 0px;
@@ -114,7 +114,9 @@ $body-color: #eff0eb;
    h1.what-we-do, h2.discover, h2.go, h2.create {
     font-size: 45px;
   }
-
+  .homepage-about-discover {
+    height: 525px;
+  }
 }
 @media (max-width: 795px) {
   #header-title-first, #header-title-last {

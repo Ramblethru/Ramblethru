@@ -118,6 +118,16 @@ $body-color: #eff0eb;
     height: 525px;
   }
 }
+@media (max-width: 1075px) {
+  i.fa-bus, i.fa-car, i.fa-plane {
+    font-size: 80px;
+  }
+}
+@media (max-width: 885px) {
+  .homepage-about-discover {
+    height: 550px;
+  }
+}
 @media (max-width: 795px) {
   #header-title-first, #header-title-last {
     font-size: 120px;
@@ -125,6 +135,11 @@ $body-color: #eff0eb;
   #header-subtitle {
     font-size: 25px;
     text-align: center;
+  }
+}
+@media (max-width: 769px) {
+  .homepage-about-discover {
+    height: 570px;
   }
 }
 @media (max-width: 695px) {
@@ -146,6 +161,11 @@ $body-color: #eff0eb;
   }
   #header-subtitle {
     font-size: 20px;
+  }
+}
+@media (max-width: 578px) {
+  .homepage-about-discover {
+    height: 590px;
   }
 }
  @media only screen

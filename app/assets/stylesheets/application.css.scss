@@ -137,19 +137,21 @@ $body-color: #eff0eb;
     text-align: center;
   }
 }
-/* "what we do" section text is overlapping into "discover" section between 788px and 481px wide, and at 480px and less of width has too much space at the bottom */
-
-/* "discover" section is great except for the javascript map not resizing automatically as div resizes, and will only resize to accomodate page width when you refresh page at the new page width */
-
-/* "create" section is great at all widths; no further work needed */
-
-/* "go" section needs work between 729px page width and 481px page width */
-
+@media (max-width: 789px) {
+  div.homepage-about {
+    height: auto;
+  }
+}
 @media (max-width: 769px) {
   .homepage-about-discover {
     height: 570px;
   }
 }
+@media (max-width: 730px) {
+
+}
+/* "go" section needs work between 729px page width and 481px page width */
+
 @media (max-width: 695px) {
   input#discover_destination {
     width: 200px;

@@ -106,7 +106,7 @@ $body-color: #eff0eb;
 
 /*RESPONSIVE*/
 
-@media (max-width: 1221px) {
+@media (max-width: 1268px) {
   i.fa-foursquare, i.fa-instagram, i.fa-yelp, i.fa-reddit {
     font-size: 90px;
     padding: 0px;
@@ -114,7 +114,19 @@ $body-color: #eff0eb;
    h1.what-we-do, h2.discover, h2.go, h2.create {
     font-size: 45px;
   }
-
+  .homepage-about-discover {
+    height: 525px;
+  }
+}
+@media (max-width: 1075px) {
+  i.fa-bus, i.fa-car, i.fa-plane {
+    font-size: 80px;
+  }
+}
+@media (max-width: 885px) {
+  .homepage-about-discover {
+    height: 550px;
+  }
 }
 @media (max-width: 795px) {
   #header-title-first, #header-title-last {
@@ -125,6 +137,24 @@ $body-color: #eff0eb;
     text-align: center;
   }
 }
+@media (max-width: 789px) {
+  div.homepage-about {
+    height: auto;
+  }
+}
+@media (max-width: 769px) {
+  .homepage-about-discover {
+    height: 570px;
+  }
+}
+@media (max-width: 730px) {
+  div#go-about {
+    width: 75%
+  }
+}
+
+/* "go" section needs work between 729px page width and 481px page width */
+
 @media (max-width: 695px) {
   input#discover_destination {
     width: 200px;
@@ -144,6 +174,11 @@ $body-color: #eff0eb;
   }
   #header-subtitle {
     font-size: 20px;
+  }
+}
+@media (max-width: 578px) {
+  .homepage-about-discover {
+    height: 590px;
   }
 }
  @media only screen
@@ -232,7 +267,7 @@ $body-color: #eff0eb;
     height: 300px;
   }
   section.homepage-about-go {
-    height: 425px;
+    height: 475px;
   }
    .homepage-about-discover {
     height: 400px;

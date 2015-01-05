@@ -148,8 +148,11 @@ $body-color: #eff0eb;
   }
 }
 @media (max-width: 730px) {
-
+  div#go-about {
+    width: 75%
+  }
 }
+
 /* "go" section needs work between 729px page width and 481px page width */
 
 @media (max-width: 695px) {
@@ -264,7 +267,7 @@ $body-color: #eff0eb;
     height: 300px;
   }
   section.homepage-about-go {
-    height: 425px;
+    height: 475px;
   }
    .homepage-about-discover {
     height: 400px;

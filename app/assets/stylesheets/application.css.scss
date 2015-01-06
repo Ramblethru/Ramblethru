@@ -152,9 +152,6 @@ $body-color: #eff0eb;
     width: 75%
   }
 }
-
-/* "go" section needs work between 729px page width and 481px page width */
-
 @media (max-width: 695px) {
   input#discover_destination {
     width: 200px;
@@ -278,6 +275,7 @@ $body-color: #eff0eb;
     padding-left: 20px;
     padding-top: 25px;
   }
+  svg
    input.input {
     height: 35px;
     padding: 0;

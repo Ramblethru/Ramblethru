@@ -152,9 +152,6 @@ $body-color: #eff0eb;
     width: 75%
   }
 }
-
-/* "go" section needs work between 729px page width and 481px page width */
-
 @media (max-width: 695px) {
   input#discover_destination {
     width: 200px;
@@ -243,17 +240,17 @@ $body-color: #eff0eb;
   div.discover-create {
     width: 300px;
   }
+  input.input {
+    height: 35px;
+    padding: 0;
+    margin: -10px auto 0 auto;
+  }
   h1.profile {
     font-size: 40px;
     text-align: right;
   }
   .profile {
     height: 170px;
-  }
-  input.input {
-    font-size: 14px;
-    height: 45px;
-    margin-left: 60px;
   }
   i.fa-foursquare, i.fa-instagram, i.fa-yelp, i.fa-reddit {
     font-size: 50px;
@@ -278,6 +275,7 @@ $body-color: #eff0eb;
     padding-left: 20px;
     padding-top: 25px;
   }
+  svg
    input.input {
     height: 35px;
     padding: 0;

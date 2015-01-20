@@ -224,7 +224,7 @@ a.y-name {
 }
 .reddit {
   background-color: $green;
-  height: 420px;
+  min-height: 420px;
 }
 .r-desc {
   font-family: monospace, sans-serif;
@@ -240,6 +240,7 @@ a.y-name {
   text-align: justify;
   text-align-last: justify;
   margin-top: -15px;
+  padding: 0 10px 0 10px;
 }
 .r-list:after {
   content: "";

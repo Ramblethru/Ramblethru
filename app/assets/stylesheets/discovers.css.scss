@@ -27,6 +27,11 @@ body {
   margin: 0 auto 0 auto;
   border-bottom: 8px solid $orange;
 }
+@media (max-height: 750px) {
+  #map {
+    height: 275px;
+  }
+}
 .notes {
   padding-top: 35px;
 }
@@ -310,7 +315,7 @@ h4.r-create {
   margin: 15px auto 15px auto;
   background-image: url('http://i.imgur.com/9OUxrEd.png');
   border: 2px solid $orange;
-  width: 450px;
+  max-width: 450px;
   text-align: left;
   padding: 10px 10px 10px 10px;
 }

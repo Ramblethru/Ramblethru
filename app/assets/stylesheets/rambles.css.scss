@@ -319,7 +319,7 @@ a.edit-note, a.delete-note {
 }
 .note-header {
   background: $green;
-  height: 200px;
+  min-height: 200px;
   margin-top: -85px;
 }
 #note-search-title {
@@ -363,7 +363,7 @@ input#search.span2 {
   text-align: left;
   background: transparent;
   border: 2px solid $green;
-  width: 450px;
+  max-width: 450px;
   margin: 15px auto 15px auto;
   padding: 10px 10px 10px 10px;
 }

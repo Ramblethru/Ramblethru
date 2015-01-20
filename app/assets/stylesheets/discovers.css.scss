@@ -11,9 +11,15 @@ body {
   font-weight:bold;
   margin: 0 auto;
   width: 50%;
+  padding-top: 30px;
 }
 .ramble span {
   color: black;
+}
+@media (max-width: 520px) {
+  .ramble {
+    width: 80%;
+  }
 }
 #map {
   width: 100%;
@@ -26,10 +32,6 @@ body {
 }
 .api {
   padding-top: 30px;
-}
-.ramble {
-  padding-top: 30px;
-  color: black;
 }
 li {
   text-decoration: none;
@@ -88,7 +90,7 @@ span.ui-datepicker-month, .ui-datepicker-year {
   font-weight: bold;
 }
 .discover-bottom {
-  width: 500px;
+  max-width: 500px;
   margin: 50px auto 30px auto;
 }
 .form-inline div {
@@ -285,9 +287,6 @@ h4.r-create {
 .fa-arrow-right, .fa-arrow-left {
   color: $green;
   font-size: 30px;
-}
-div.discover-bottom {
-  margin-top: 0px;
 }
 #or {
   font-size: 20px;

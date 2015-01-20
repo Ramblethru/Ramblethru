@@ -164,7 +164,7 @@ a.close-modal {
 }
 .pagename {
   background-color: $green;
-  height: 230px;
+  min-height: 230px;
   margin-top: -104px;
   text-align: center;
 }
@@ -175,6 +175,12 @@ h1.discover {
   padding-top: 130px;
   font-size: 70px;
   margin-bottom: 0px;
+}
+@media (max-width: 480px) {
+  h1.discover {
+    font-size: 40px;
+    padding: 180px 0 10px 0;
+  }
 }
 .location {
   color: $light-grey;

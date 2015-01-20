@@ -27,6 +27,11 @@ body {
   margin: 0 auto 0 auto;
   border-bottom: 8px solid $orange;
 }
+@media (max-height: 750px) {
+  #map {
+    height: 275px;
+  }
+}
 .notes {
   padding-top: 35px;
 }

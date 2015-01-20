@@ -131,6 +131,17 @@ if (map.tap) map.tap.disable();
     Sorry, there are no Yelp results for this destination!
     <% end %>
   </div>
+
+  <div class="sup">
+  <div class='y-title'> Songkick <i class="fa fa-arrow-circle-o-down"></i></div>
+  <div > <% @response3.each do |s| %> 
+    <% s['performance'].each do |o| %>
+    <%= o['displayName'] %>
+    <% end %>
+    <% end %>
+  </div>
+  </div>
+
   <br>
   <div class="instagram">
     <div class="ins-title">Instagram <i class="fa fa-arrow-circle-o-down"></i>

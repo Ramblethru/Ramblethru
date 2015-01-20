@@ -117,7 +117,7 @@ if (map.tap) map.tap.disable();
     <div class="y-title">Yelp <i class="fa fa-arrow-circle-o-down"></i></div>
     <% @yelp.businesses.each do |y| %>
     <li>
-      <%= link_to y.name, y.url, :class => "y-name",:target => '_blank'  %>
+      <%= link_to y.name, y.url, :class => "y-name", :target => '_blank'  %>
       <%= image_tag y.rating_img_url_small %>
       <div id="yelp-address">
         <%= y.location.address.pop %>
@@ -132,15 +132,19 @@ if (map.tap) map.tap.disable();
     <% end %>
   </div>
 
+  <% if @response3 != nil %>
   <div class="sup">
   <div class='y-title'> Songkick <i class="fa fa-arrow-circle-o-down"></i></div>
-  <div > <% @response3.each do |s| %> 
+  <div> <% @response3.each do |s| %>
     <% s['performance'].each do |o| %>
-    <%= o['displayName'] %>
+      <li>
+    <%= link_to o['displayName'], o['uri'], :target => '_blank' %>
+  </li>
     <% end %>
     <% end %>
   </div>
   </div>
+  <% end %>
 
   <br>
   <div class="instagram">

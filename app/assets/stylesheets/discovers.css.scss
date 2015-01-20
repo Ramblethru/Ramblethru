@@ -91,10 +91,9 @@ span.ui-datepicker-month, .ui-datepicker-year {
 }
 .discover-bottom {
   max-width: 500px;
-  margin: 50px auto 30px auto;
+  margin: 20px auto 30px auto;
 }
 .form-inline div {
-//  width: 375px;
   display: inline-block;
 }
 .show {
@@ -337,4 +336,18 @@ a.discover-no-notes-link {
   font-weight: bold;
   font-family: monospace, sans-serif;
   color: $orange;
+}
+@media (max-width: 1370px) {
+  a.create {
+    font-size: 40px;
+  }
+  .fa-arrow-right, .fa-arrow-left {
+    color: $green;
+    font-size: 30px;
+  }
+}
+@media (max-width: 968px) {
+  .fa-arrow-right, .fa-arrow-left {
+    display: none;
+  }
 }

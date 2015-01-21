@@ -437,13 +437,14 @@
           <div class="z5">
             <div class="song-results">
                 <span class="songshow">
+                  <li>
                   <img src="<%= asset_path ('fav-star.png') %>" class="savenote" alt="Save as note" 
                       data-stitle="<%= s['venue']['displayName'] %>"
                       data-sbody="<% s['performance'].each do |o| %>
                   <%= o['displayName'] %>
                   <% end %>"
                       data-surl="<%= s['venue']['uri'] %>" />
-                  <li>
+                  
                   <% s['performance'].each do |o| %>
                   <%= link_to o['displayName'], o['uri'], :target => '_blank' %>
                   <% end %>

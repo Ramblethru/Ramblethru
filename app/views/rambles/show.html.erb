@@ -432,12 +432,17 @@
           </div>
         </div>
         <div id="content5">
-
         <% if @songkick != nil %>
         <div> <% @songkick.each do |s| %>
           <div class="z5">
             <div class="song-results">
                 <span class="songshow">
+                  <img src="<%= asset_path ('fav-star.png') %>" class="savenote" alt="Save as note" 
+                      data-stitle="<%= s['venue']['displayName'] %>"
+                      data-sbody="<% s['performance'].each do |o| %>
+                  <%= o['displayName'] %>
+                  <% end %>"
+                      data-surl="<%= s['venue']['uri'] %>" />
                   <li>
                   <% s['performance'].each do |o| %>
                   <%= link_to o['displayName'], o['uri'], :target => '_blank' %>
@@ -456,8 +461,18 @@
             </div>
           </div>
         </div>
-
-
+        <script type="text/javascript">
+          $(document).ready(function () {
+            $(document).on('click', '.savenote', function (event) {
+              var dataStitle = event.target.getAttribute("data-stitle");
+              var dataSbody = event.target.getAttribute("data-sbody");
+              var dataSurl = event.target.getAttribute("data-surl");
+              $("#note_title").val(dataStitle);
+              $("#note_body").val(dataSbody);
+              $("#note_url").val(dataSurl);
+            });
+          });
+        </script>
         <script type="text/javascript">
           jQuery(".shows6").click(function () {
             jQuery(".songshow").toggle();
@@ -472,7 +487,6 @@
             pager5.showPage(1);
           });
         </script>
-
     </div>
   </div>
 </div>

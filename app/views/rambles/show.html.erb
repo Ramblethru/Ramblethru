@@ -467,6 +467,7 @@
               var dataStitle = event.target.getAttribute("data-stitle");
               var dataSbody = event.target.getAttribute("data-sbody");
               var dataSurl = event.target.getAttribute("data-surl");
+              dataSbody = dataSbody.replace(/\s+/g, ' ');
               $("#note_title").val(dataStitle);
               $("#note_body").val(dataSbody);
               $("#note_url").val(dataSurl);

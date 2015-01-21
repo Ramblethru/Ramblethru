@@ -132,18 +132,22 @@ if (map.tap) map.tap.disable();
     <% end %>
   </div>
 
-  <% if @response3 != nil %>
+  <% if @songkick != nil %>
   <div class="sup">
   <div class='y-title'> Songkick <i class="fa fa-arrow-circle-o-down"></i></div>
-  <div> <% @response3.each do |s| %>
+  <div> <% @songkick.each do |s| %>
+    <li>
+
     <% s['performance'].each do |o| %>
-      <li>
     <%= link_to o['displayName'], o['uri'], :target => '_blank' %>
-  </li>
+  
     <% end %>
-    <% end %>
+  
+</li>
+    
   </div>
   </div>
+  <% end %>
   <% end %>
 
   <br>

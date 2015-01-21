@@ -18,6 +18,9 @@ class RamblesController < ApplicationController
     if foursquare != nil
       foursquare
     end
+    if songkick != nil
+      songkick
+    end
   end
 
   def foursquare
@@ -44,6 +47,13 @@ class RamblesController < ApplicationController
     reddit = HTTParty.get(uri.normalize)
     reddit_data = JSON.parse(reddit.body)
     @reddit_thread = reddit_data
+  end
+
+  def songkick
+    response = HTTParty.get("http://api.songkick.com/api/3.0/search/locations.json?location=geo:#{@ramble.latitude},#{@ramble.longitude}&apikey=lGTZHFaEbYG6IaNj")
+    response1 = response['resultsPage']['results']['location'][0]['metroArea']['id']
+    response2 = HTTParty.get("http://api.songkick.com/api/3.0/metro_areas/#{response1}/calendar.json?apikey=lGTZHFaEbYG6IaNj")
+    @songkick = response2['resultsPage']['results']['event']
   end
 
   def new

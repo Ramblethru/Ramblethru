@@ -423,8 +423,6 @@
 
 
 
-<!-- Show/hide and pagination for Songkick API
-
         <div class="ramble-songkick">
           <div class="shows6" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
             (Songkick icon goes here, per Songkick's requirements for embedding content. There's no font awesome icon.)<br>
@@ -434,42 +432,48 @@
         </div>
         <div id="content5">
 
-        ( erb: if songkick results != nil )
-        ( erb: songkick results each do |s| )
-
+        <% if @songkick != nil %>
+        <div> <% @songkick.each do |s| %>
           <div class="z5">
             <div class="song-results">
-              <li>
                 <span class="songshow">
-
-                  (code to render API results goes here)
-
+                  <li>
+                  <% s['performance'].each do |o| %>
+                  <%= link_to o['displayName'], o['uri'], :target => '_blank' %>
+                  <% end %>
+                  At
+                  <%=  link_to s['venue']['displayName'], s['venue']['uri'], :target => '_blank' %>
+                  -
+                  <% date = s['start']['date'] %>
+                  <%= Date.parse(date).strftime("%m/%d/%Y") %>
+                </div>
+                </div>
+                <% end %>
+                <% end %>
+                </li>
                 </span>
-              </li>
             </div>
           </div>
         </div>
 
 
         <script type="text/javascript">
-          /*
+          
           jQuery(".shows6").click(function () {
             jQuery(".songshow").toggle();
           });
-          */
+        
         </script>
         <script type="text/javascript">
-          /*
           var pager5 = new Imtech5.Pager();
           jQuery(document).ready(function() {
-            pager5.paragraphsPerPage = 4; // set amount elements per page
+            pager5.paragraphsPerPage = 5; // set amount elements per page
             pager5.pagingContainer = jQuery('#content5'); // set of main container
             pager5.paragraphs = jQuery('div.z5', pager5.pagingContainer); // set of required containers
             pager5.showPage(1);
           });
-          */
         </script>
--->
+
     </div>
   </div>
 </div>

@@ -30,6 +30,9 @@ class DiscoversController < ApplicationController
     if foursquare != nil
       foursquare
     end
+    if songkick != nil
+      songkick
+    end
   end
 
   def yelp
@@ -59,12 +62,19 @@ class DiscoversController < ApplicationController
     @foursquare_venue_url = foursquare_data["response"]["groups"][0]["items"][0]["venue"]["name"]
   end
 
+  def songkick
+    response = HTTParty.get("http://api.songkick.com/api/3.0/search/locations.json?location=geo:#{@discover.latitude},#{@discover.longitude}&apikey=lGTZHFaEbYG6IaNj")
+    response1 = response['resultsPage']['results']['location'][0]['metroArea']['id']
+    response2 = HTTParty.get("http://api.songkick.com/api/3.0/metro_areas/#{response1}/calendar.json?apikey=lGTZHFaEbYG6IaNj")
+    @songkick = response2['resultsPage']['results']['event']
+  end
+  
   def create_ramble
     @ramble = Ramble.new(ramble_params)
   end
 
   private
-  # Use callbacks to share common setup or constraints between actions.
+  
   def set_discover
     @discover = Discover.friendly.find(params[:id])
   end

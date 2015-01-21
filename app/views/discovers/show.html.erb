@@ -140,15 +140,17 @@ if (map.tap) map.tap.disable();
 
     <% s['performance'].each do |o| %>
     <%= link_to o['displayName'], o['uri'], :target => '_blank' %>
-  
     <% end %>
-    At 
+
+    At
+
     <%=  link_to s['venue']['displayName'], s['venue']['uri'], :target => '_blank' %>
+    
     -
+
     <% date = s['start']['date'] %>
     <%= Date.parse(date).strftime("%m/%d/%Y") %>
 </li>
-    
   </div>
   </div>
   <% end %>

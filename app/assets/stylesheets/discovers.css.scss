@@ -289,7 +289,7 @@ h4.r-create {
   color: $green;
 }
 div.song-results {
-  padding-left: 7.2em;
+  padding: 0 10px 0 8em;
   font-family: monospace, sans-serif;
   font-weight: bold;
   color: $dark-grey;
@@ -297,6 +297,31 @@ div.song-results {
   width: 50%;
   margin: 0 auto 0 auto;
   text-indent: -7.2em;
+}
+@media (max-width: 900px) {
+  div.song-results {
+    width: 60%;
+  }
+}
+@media (max-width: 750px) {
+  div.song-results {
+    width: 70%;
+  }
+}
+@media (max-width: 600px) {
+  div.song-results {
+    width: 80%;
+  }
+}
+@media (max-width: 550px) {
+  div.song-results {
+    width: 90%%;
+  }
+}
+@media (max-width: 480px) {
+  div.song-results {
+    width: 100%;
+  }
 }
 a.song-results {
   color: $orange;

@@ -176,6 +176,7 @@ if (map.tap) map.tap.disable();
             <% s['performance'].each do |o| %>
               <%= link_to o['displayName'], o['uri'], :target => '_blank', :class => 'song-results' %>
             <% end %>
+            <br>
             at
             <%=  link_to s['venue']['displayName'], s['venue']['uri'], :target => '_blank', class: 'song-venue' %>
           </li>

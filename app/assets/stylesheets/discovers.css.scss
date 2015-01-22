@@ -194,7 +194,7 @@ h1.discover {
   font-size: 20px;
   margin-top: -18px;
 }
-div.four-title, div.ins-title {
+div.four-title, div.ins-title, div.song-title {
   font-size: 40px;
   font-family: 'menschmensch_regular';
   color: $green;
@@ -287,6 +287,24 @@ a.create:hover {
 h4.r-create {
   font-family: monospace, sans-serif;
   color: $green;
+}
+div.song-results {
+  padding-left: 7.2em;
+  font-family: monospace, sans-serif;
+  font-weight: bold;
+  color: $dark-grey;
+  text-align: left;
+  width: 50%;
+  margin: 0 auto 0 auto;
+  text-indent: -7.2em;
+}
+a.song-results {
+  color: $orange;
+  font-family: monospace, sans-serif;
+}
+a.song-venue {
+  color: $green;
+  font-family: monospace, sans-serif;
 }
 .fa-arrow-right, .fa-arrow-left {
   color: $green;

@@ -131,31 +131,6 @@ if (map.tap) map.tap.disable();
     Sorry, there are no Yelp results for this destination!
     <% end %>
   </div>
-
-  <% if @songkick != nil %>
-  <div class="sup">
-  <div class='y-title'> Songkick <i class="fa fa-arrow-circle-o-down"></i></div>
-  <div> <% @songkick.each do |s| %>
-    <li>
-
-    <% s['performance'].each do |o| %>
-    <%= link_to o['displayName'], o['uri'], :target => '_blank' %>
-    <% end %>
-
-    at
-
-    <%=  link_to s['venue']['displayName'], s['venue']['uri'], :target => '_blank' %>
-    
-    -
-
-    <% date = s['start']['date'] %>
-    <%= Date.parse(date).strftime("%m/%d/%Y") %>
-</li>
-  </div>
-  </div>
-  <% end %>
-  <% end %>
-
   <br>
   <div class="instagram">
     <div class="ins-title">Instagram <i class="fa fa-arrow-circle-o-down"></i>
@@ -189,6 +164,27 @@ if (map.tap) map.tap.disable();
       </ul>
     </div>
   </div>
+  <br>
+  <% if @songkick != nil %>
+  <div class="songkick">
+    <div class='song-title'> Songkick <i class="fa fa-arrow-circle-o-down"></i></div><br>
+      <div class="song-results">
+        <% @songkick.each do |s| %>
+          <li>
+            <% date = s['start']['date'] %>
+            <%= Date.parse(date).strftime("%m/%d/%Y") %>:
+            <% s['performance'].each do |o| %>
+              <%= link_to o['displayName'], o['uri'], :target => '_blank', :class => 'song-results' %>
+            <% end %>
+            at
+            <%=  link_to s['venue']['displayName'], s['venue']['uri'], :target => '_blank', class: 'song-venue' %>
+          </li>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <br><br>
   <div class="ramble">
     <h4 class="r-create">Like what you see? Create a ramble (itinerary) below! </h4>
     <i class="fa fa-arrow-right"></i>

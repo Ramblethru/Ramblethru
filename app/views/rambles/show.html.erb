@@ -446,7 +446,7 @@
                       data-surl="<%= s['venue']['uri'] %>" />
                   
                   <% s['performance'].each do |o| %>
-                  <%= link_to o['displayName'], o['uri'], :target => '_blank' %>
+                  <%= link_to o['displayName'], o['artist']['uri'], :target => '_blank' %>
                   <% end %>
                   At
                   <%=  link_to s['venue']['displayName'], s['venue']['uri'], :target => '_blank' %>

@@ -50,10 +50,17 @@ class RamblesController < ApplicationController
   end
 
   def songkick
-    response = HTTParty.get("http://api.songkick.com/api/3.0/search/locations.json?location=geo:#{@ramble.latitude},#{@ramble.longitude}&apikey=#{ENV["SONGKICK_KEY"]}")
-    response1 = response['resultsPage']['results']['location'][0]['metroArea']['id']
-    response2 = HTTParty.get("http://api.songkick.com/api/3.0/metro_areas/#{response1}/calendar.json?apikey=#{ENV["SONGKICK_KEY"]}&per_page=35")
-    @songkick = response2['resultsPage']['results']['event']
+    if @ramble.start_date != nil && @ramble.end_date != nil
+      response = HTTParty.get("http://api.songkick.com/api/3.0/search/locations.json?location=geo:#{@ramble.latitude},#{@ramble.longitude}&apikey=#{ENV["SONGKICK_KEY"]}")
+      response1 = response['resultsPage']['results']['location'][0]['metroArea']['id']
+      response2 = HTTParty.get("http://api.songkick.com/api/3.0/metro_areas/#{response1}/calendar.json?apikey=#{ENV["SONGKICK_KEY"]}&per_page=35&min_date=#{@ramble.start_date.to_time.strftime('%F')}&max_date=#{@ramble.end_date.to_time.strftime('%F')}")
+      @songkick = response2['resultsPage']['results']['event']
+    else
+      response = HTTParty.get("http://api.songkick.com/api/3.0/search/locations.json?location=geo:#{@ramble.latitude},#{@ramble.longitude}&apikey=#{ENV["SONGKICK_KEY"]}")
+      response1 = response['resultsPage']['results']['location'][0]['metroArea']['id']
+      response2 = HTTParty.get("http://api.songkick.com/api/3.0/metro_areas/#{response1}/calendar.json?apikey=#{ENV["SONGKICK_KEY"]}&per_page=35")
+      @songkick = response2['resultsPage']['results']['event']
+    end
   end
 
   def new

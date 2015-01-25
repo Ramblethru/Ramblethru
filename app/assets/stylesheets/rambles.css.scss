@@ -18,7 +18,6 @@
   overflow: scroll;
   margin-left: 50px;
   margin-top: -40px;
-//  max-height: 725px;
   max-height: 825px;
 }
 #map {
@@ -489,6 +488,9 @@ a.yelp-tip {
 #pagingControls a, #pagingControls2 a, #pagingControls3 a, #pagingControls4 a, #pagingControls5 a {
   color: $orange;
 }
+
+// for songkick
+
 .ramble-song-results {
   padding: 0 0 0 4em;
   font-family: monospace, sans-serif;

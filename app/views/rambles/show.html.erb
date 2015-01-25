@@ -478,7 +478,7 @@
                     <% s['performance'].each do |o| %>
                       <%= link_to o['displayName'], o['artist']['uri'], :target => '_blank', :class => 'song-results' %>
                     <% end %>
-                    at
+                    <br>at
                     <%=  link_to s['venue']['displayName'], s['venue']['uri'], :target => '_blank', class: 'song-venue' %>
                   </li>
                 </span>

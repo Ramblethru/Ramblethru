@@ -172,7 +172,7 @@ if (map.tap) map.tap.disable();
         <% @songkick.each do |s| %>
           <li>
             <% date = s['start']['date'] %>
-            <%= Date.parse(date).strftime("%-m/%d/%Y") %>:
+            <%= Date.parse(date).strftime("%-m/%-d/%Y") %>:
             <% s['performance'].each do |o| %>
               <%= link_to o['displayName'], o['artist']['uri'], :target => '_blank', :class => 'song-results' %>
             <% end %>

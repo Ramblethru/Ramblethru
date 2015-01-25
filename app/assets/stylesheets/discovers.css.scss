@@ -288,19 +288,15 @@ h4.r-create {
   font-family: monospace, sans-serif;
   color: $green;
 }
-//#kick-img {
-//  position: relative;
-//  margin-top: 50px;
-//}
 div.song-results {
-  padding: 0 0 0 4em;
+  padding: 0 10px 0 8em;
   font-family: monospace, sans-serif;
   font-weight: bold;
   color: $dark-grey;
   text-align: left;
-  width: 70%;
+  width: 50%;
   margin: 0 auto 0 auto;
-  text-indent: -1.9em;
+  text-indent: -6.6em;
 }
 @media (max-width: 900px) {
   div.song-results {

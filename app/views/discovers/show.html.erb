@@ -167,12 +167,12 @@ if (map.tap) map.tap.disable();
   <br>
   <% if @songkick != nil %>
   <div class="songkick">
-    <div class='song-title'> Songkick <i class="fa fa-arrow-circle-o-down"></i></div><br>
+    <div class='song-title'> Songkick <span id="kick-img"><img src="<%= asset_path ('songkick-orange.png') %>" /></span></div><br>
       <div class="song-results">
         <% @songkick.each do |s| %>
           <li>
             <% date = s['start']['date'] %>
-            <%= Date.parse(date).strftime("%m/%d/%Y") %>:
+            <%= Date.parse(date).strftime("%-m/%d/%Y") %>:
             <% s['performance'].each do |o| %>
               <%= link_to o['displayName'], o['artist']['uri'], :target => '_blank', :class => 'song-results' %>
             <% end %>
@@ -185,7 +185,7 @@ if (map.tap) map.tap.disable();
     </div>
   </div>
   <% end %>
-  <br><br>
+  <br><br><hr>
   <div class="ramble">
     <h4 class="r-create">Like what you see? Create a ramble (itinerary) below! </h4>
     <i class="fa fa-arrow-right"></i>

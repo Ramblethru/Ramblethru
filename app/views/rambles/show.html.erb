@@ -431,37 +431,64 @@
             <div id="pagingControls5"></div>
           </div>
         </div>
+        <!--
         <div id="content5">
-        <% if @songkick != nil %>
-        <div> <% @songkick.each do |s| %>
-          <div class="z5">
-            <div class="song-results">
-                <span class="songshow">
-                  <li>
-                  <img src="<%= asset_path ('fav-star.png') %>" class="savenote" alt="Save as note" 
-                      data-stitle="<%= s['venue']['displayName'] %>"
-                      data-sbody="<% s['performance'].each do |o| %>
-                  <%= o['displayName'] %>
-                  <% end %>"
-                      data-surl="<%= s['venue']['uri'] %>" />
-                  
-                  <% s['performance'].each do |o| %>
-                  <%= link_to o['displayName'], o['artist']['uri'], :target => '_blank' %>
-                  <% end %>
-                  At
-                  <%=  link_to s['venue']['displayName'], s['venue']['uri'], :target => '_blank' %>
-                  -
-                  <% date = s['start']['date'] %>
-                  <%= Date.parse(date).strftime("%m/%d/%Y") %>
-                </div>
-                </div>
-                <% end %>
-                <% end %>
+        <1 if @songkick != nil %>
+          <1 @songkick.each do |s| %>
+            <div class="z5">
+              <div class="songshow">
+                <li>
+                    <img src="<1= asset_path ('fav-star.png') %>" class="savenote" alt="Save as note"
+                        data-stitle="<1= s['venue']['displayName'] %>"
+                        data-sbody="<1 s['performance'].each do |o| %>
+                        <1= o['displayName'] %>
+                        <1 end %>"
+                        data-surl="<1= s['venue']['uri'] %>" />
+                    <1 date = s['start']['date'] %>
+                    <1= Date.parse(date).strftime("%m/%d/%Y") %>:
+                    <1 s['performance'].each do |o| %>
+                    <1= link_to o['displayName'], o['artist']['uri'], :target => '_blank', :class => 'song-results' %>
+                    <1 end %>
+                    at
+                    <1=  link_to s['venue']['displayName'], s['venue']['uri'], :target => '_blank', class: 'song-venue' %>
+                  <1 end %>
+                  <1 end %>
                 </li>
-                </span>
             </div>
           </div>
+          -->
+
+
+      <div id="content5">
+        <% if @songkick != nil %>
+          <div> <% @songkick.each do |s| %>
+            <div class="z5">
+              <div class="ramble-song-results">
+                <span class="songshow">
+                  <li>
+                    <img src="<%= asset_path ('fav-star.png') %>" class="savenote" alt="Save as note"
+                         data-stitle="<%= s['venue']['displayName'] %>"
+                         data-sbody="<% s['performance'].each do |o| %>
+                         <%= o['displayName'] %>
+                         <% end %>"
+                         data-surl="<%= s['venue']['uri'] %>"
+                    />
+                    <% date = s['start']['date'] %>
+                    <%= Date.parse(date).strftime("%-m/%d/%Y") %>:
+                    <% s['performance'].each do |o| %>
+                      <%= link_to o['displayName'], o['artist']['uri'], :target => '_blank', :class => 'song-results' %>
+                    <% end %>
+                    <br>at
+                    <%=  link_to s['venue']['displayName'], s['venue']['uri'], :target => '_blank', class: 'song-venue' %>
+                  </li>
+                </span>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
         </div>
+
+
         <script type="text/javascript">
           $(document).ready(function () {
             $(document).on('click', '.savenote', function (event) {

@@ -489,3 +489,13 @@ a.yelp-tip {
 #pagingControls a, #pagingControls2 a, #pagingControls3 a, #pagingControls4 a, #pagingControls5 a {
   color: $orange;
 }
+.ramble-song-results {
+  padding: 0 0 0 4em;
+  font-family: monospace, sans-serif;
+  font-weight: bold;
+  color: $dark-grey;
+  text-align: left;
+  width: 70%;
+  margin: 0 auto 0 auto;
+  text-indent: -1.9em;
+}

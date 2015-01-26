@@ -34,7 +34,6 @@ $body-color: #eff0eb;
  *= require font-awesome
  *= require animate
 
-
  *= require 'discovers'
  *= require 'rambles'
 
@@ -272,7 +271,6 @@ $body-color: #eff0eb;
     height: 475px;
   }
    .homepage-about-discover {
-//     height: 200px;
     height: 400px;
   }
   #map-usa {
@@ -282,7 +280,6 @@ $body-color: #eff0eb;
     height: 200px;
     padding-left: 20px;
     padding-top: 25px;
-//    display: none;
   }
   svg
    input.input {

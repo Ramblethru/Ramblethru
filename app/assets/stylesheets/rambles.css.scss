@@ -377,9 +377,26 @@ input#search.span2 {
   text-align: left;
   background: transparent;
   border: 2px solid $green;
-  max-width: 450px;
-  margin: 15px auto 15px auto;
+  max-width: 440px;
+  margin: 15px 0 15px 0;
   padding: 10px 10px 10px 10px;
+  align: left;
+}
+
+@media (max-width: 480px) {
+  #note-results {
+    max-width: 480px;
+    margin: 0 auto 0 auto;
+  }
+  .note-results {
+    display: inline-block;
+    text-align: left;
+    background: transparent;
+    border: 2px solid $green;
+    width: 90%;
+    margin: 15px 0 15px 0;
+    padding: 10px 10px 10px 10px;
+  }
 }
 
 .notesshow {

@@ -129,7 +129,7 @@ div#feed-title {
   font-size: 40px;
   margin-top: -10px;
 }
-#yelp-title, #red-title {
+#yelp-title, #red-title, #song-title {
   color: $green;
   font-family: 'menschmensch_regular';
   font-size: 40px;
@@ -254,7 +254,10 @@ a.edit-note, a.delete-note {
   border: 2px solid $green;
   max-width: 450px;
 }
-.fshow, .yshow, .ishow, .songshow {
+.fshow, .yshow, .ishow {
+  display: none;
+}
+.songshow {
   display: none;
 }
 .rshow {

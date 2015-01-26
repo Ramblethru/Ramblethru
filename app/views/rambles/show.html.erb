@@ -425,7 +425,7 @@
         <div class="ramble-songkick">
           <div class="shows6" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
             <img src="<%= asset_path ('songkick-green.png') %>" >
-            <div id="yelp-title">Songkick</div>
+            <div id="song-title">Songkick</div>
             <div id="pagingControls5"></div>
           </div>
         </div>
@@ -476,6 +476,10 @@
         <script type="text/javascript">
           jQuery(".shows6").click(function () {
             jQuery(".songshow").toggle();
+
+            if ($("#content5").is(':visible')) {
+              $("html, body").animate({scrollTop: $("#content5").offset().top});
+            }
           });
         </script>
         <script type="text/javascript">

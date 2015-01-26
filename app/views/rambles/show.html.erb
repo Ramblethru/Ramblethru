@@ -422,89 +422,64 @@
           });
         </script>
 
-
-
         <div class="ramble-songkick">
           <div class="shows6" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
             <img src="<%= asset_path ('songkick-green.png') %>" >
-            <div id="yelp-title">Songkick</div>
+            <div id="song-title">Songkick</div>
             <div id="pagingControls5"></div>
           </div>
         </div>
-        <!--
+
         <div id="content5">
-        <1 if @songkick != nil %>
-          <1 @songkick.each do |s| %>
-            <div class="z5">
-              <div class="songshow">
-                <li>
-                    <img src="<1= asset_path ('fav-star.png') %>" class="savenote" alt="Save as note"
-                        data-stitle="<1= s['venue']['displayName'] %>"
-                        data-sbody="<1 s['performance'].each do |o| %>
-                        <1= o['displayName'] %>
-                        <1 end %>"
-                        data-surl="<1= s['venue']['uri'] %>" />
-                    <1 date = s['start']['date'] %>
-                    <1= Date.parse(date).strftime("%m/%d/%Y") %>:
-                    <1 s['performance'].each do |o| %>
-                    <1= link_to o['displayName'], o['artist']['uri'], :target => '_blank', :class => 'song-results' %>
-                    <1 end %>
-                    at
-                    <1=  link_to s['venue']['displayName'], s['venue']['uri'], :target => '_blank', class: 'song-venue' %>
-                  <1 end %>
-                  <1 end %>
-                </li>
-            </div>
-          </div>
-          -->
-
-
-      <div id="content5">
-        <% if @songkick != nil %>
-          <div> <% @songkick.each do |s| %>
-            <div class="z5">
-              <div class="ramble-song-results">
-                <span class="songshow">
-                  <li>
-                    <img src="<%= asset_path ('fav-star.png') %>" class="savenote" alt="Save as note"
-                         data-stitle="<%= s['venue']['displayName'] %>"
-                         data-sbody="<% s['performance'].each do |o| %>
-                         <%= o['displayName'] %>
-                         <% end %>"
-                         data-surl="<%= s['venue']['uri'] %>"
-                    />
-                    <% date = s['start']['date'] %>
-                    <%= Date.parse(date).strftime("%-m/%-d/%Y") %>:
-                    <% s['performance'].each do |o| %>
-                      <%= link_to o['displayName'], o['artist']['uri'], :target => '_blank', :class => 'song-results' %>
-                    <% end %>
-                    <br>at
-                    <%=  link_to s['venue']['displayName'], s['venue']['uri'], :target => '_blank', class: 'song-venue' %>
-                  </li>
-                </span>
+          <% if @songkick != nil %>
+            <div> <% @songkick.each do |s| %>
+              <div class="z5">
+                <div class="ramble-song-results">
+                  <span class="songshow">
+                    <li>
+                      <img src="<%= asset_path ('fav-star.png') %>" class="savenote" alt="Save as note"
+                           data-sbody="(at <%= s['venue']['displayName'] %>)"
+                           data-stitle="<% date = s['start']['date'] %><%= Date.parse(date).strftime("%-m/%-d/%Y") %>: <% s['performance'].each do |o| %> <%= o['displayName'] %><% end %>"
+                           data-surl="<%= s['uri'] %>"
+                           data-saddress=""
+                      />
+                      <% date = s['start']['date'] %>
+                      <%= Date.parse(date).strftime("%-m/%-d/%Y") %>:
+                      <% s['performance'].each do |o| %>
+                        <%= link_to o['displayName'], o['artist']['uri'], :target => '_blank', :class => 'song-results' %>
+                      <% end %>
+                      <br>at
+                      <%= link_to s['venue']['displayName'], s['venue']['uri'], :target => '_blank', class: 'song-venue' %>
+                    </li>
+                  </span>
+                </div>
               </div>
-            </div>
+            <% end %>
           <% end %>
-        <% end %>
         </div>
-
 
         <script type="text/javascript">
           $(document).ready(function () {
             $(document).on('click', '.savenote', function (event) {
               var dataStitle = event.target.getAttribute("data-stitle");
+              var dataSaddress = event.target.getAttribute("data-saddress");
               var dataSbody = event.target.getAttribute("data-sbody");
               var dataSurl = event.target.getAttribute("data-surl");
               dataSbody = dataSbody.replace(/\s+/g, ' ');
               $("#note_title").val(dataStitle);
+              $("#note_address").val(dataSaddress);
               $("#note_body").val(dataSbody);
               $("#note_url").val(dataSurl);
             });
           });
         </script>
         <script type="text/javascript">
-          jQuery(".shows6").click(function () {
+          jQuery(".shows6").click(function() {
             jQuery(".songshow").toggle();
+
+            if ($("#content5").is(':visible')) {
+              $("html, body").animate({scrollTop: $("#content5").offset().top});
+            }
           });
         </script>
         <script type="text/javascript">

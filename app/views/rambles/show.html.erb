@@ -438,12 +438,10 @@
                   <span class="songshow">
                     <li>
                       <img src="<%= asset_path ('fav-star.png') %>" class="savenote" alt="Save as note"
-                           data-stitle="<%= s['venue']['displayName'] %>"
-                           data-sbody="<% date = s['start']['date'] %>
-                      <%= Date.parse(date).strftime("%-m/%-d/%Y") %>: <% s['performance'].each do |o| %>
-                           <%= o['displayName'] %>
-                           <% end %>"
-                           data-surl="<%= s['venue']['uri'] %>"
+                           data-sbody="(at <%= s['venue']['displayName'] %>)"
+                           data-stitle="<% date = s['start']['date'] %><%= Date.parse(date).strftime("%-m/%-d/%Y") %>: <% s['performance'].each do |o| %> <%= o['displayName'] %><% end %>"
+                           data-surl="<%= s['uri'] %>"
+                           data-saddress=""
                       />
                       <% date = s['start']['date'] %>
                       <%= Date.parse(date).strftime("%-m/%-d/%Y") %>:
@@ -451,7 +449,7 @@
                         <%= link_to o['displayName'], o['artist']['uri'], :target => '_blank', :class => 'song-results' %>
                       <% end %>
                       <br>at
-                      <%=  link_to s['venue']['displayName'], s['venue']['uri'], :target => '_blank', class: 'song-venue' %>
+                      <%= link_to s['venue']['displayName'], s['venue']['uri'], :target => '_blank', class: 'song-venue' %>
                     </li>
                   </span>
                 </div>
@@ -464,10 +462,12 @@
           $(document).ready(function () {
             $(document).on('click', '.savenote', function (event) {
               var dataStitle = event.target.getAttribute("data-stitle");
+              var dataSaddress = event.target.getAttribute("data-saddress");
               var dataSbody = event.target.getAttribute("data-sbody");
               var dataSurl = event.target.getAttribute("data-surl");
               dataSbody = dataSbody.replace(/\s+/g, ' ');
               $("#note_title").val(dataStitle);
+              $("#note_address").val(dataSaddress);
               $("#note_body").val(dataSbody);
               $("#note_url").val(dataSurl);
             });

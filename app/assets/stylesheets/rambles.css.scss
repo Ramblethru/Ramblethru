@@ -40,6 +40,29 @@
   float: right;
   margin-top: 15px;
 }
+@media (max-width: 1240px) {
+  .api-feed {
+    @include span-columns(7);
+    text-align: center;
+    float: left;
+    margin-top: 500px;
+  }
+  .ramble-notes {
+    @include span-columns(6);
+    text-align: center;
+    padding-top: 10px;
+    max-width: 450px;
+    overflow: scroll;
+//    margin-left: 50px;
+    margin-top: -40px;
+    max-height: 825px;
+    background: #F7F7F7;
+    border-radius: 20px;
+  }
+  div.notesgohere {
+    display: none;
+  }
+}
 h1.ramble-create {
   font-family: 'menschmensch_regular';
   color: $orange;

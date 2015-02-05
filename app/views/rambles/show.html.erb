@@ -29,6 +29,20 @@
   var longitude= '<%=@ramble.longitude%>';
   var destination='<%=@ramble.destination.split.map(&:capitalize).join(' ')%>';
   var map = L.mapbox.map('map', 'daninyc.14e41ce7').setView([latitude, longitude], 5).setZoom([14]);
+  L.mapbox.markerLayer({
+      type: 'Feature',
+      geometry: {
+          type: 'Point',
+          coordinates: [longitude, latitude ]
+      },
+      properties: {
+          title: destination,
+          description: 'Your destination!',
+          'marker-size': 'large',
+          'marker-color': '#af703a'
+        /* to do: add in code to display markers for Foursquare and Yelp venue results for ramble destination. */
+      }
+  }).addTo(map);
     <% @songkick.each do |latlong| %>
   var latitudeS = '<%= latlong['venue']['lat'] %>';
   var longitudeS = '<%= latlong['venue']['lng'] %>';

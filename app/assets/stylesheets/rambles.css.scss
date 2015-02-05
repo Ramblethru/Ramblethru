@@ -45,15 +45,14 @@
     @include span-columns(7);
     text-align: center;
     float: left;
-    margin-top: 500px;
+    margin: 500px 0 0 50px;
   }
   .ramble-notes {
     @include span-columns(6);
     text-align: center;
-    padding-top: 10px;
-    max-width: 450px;
+    padding: 10px 0 10px 0;
+    width: 450px;
     overflow: scroll;
-//    margin-left: 50px;
     margin-top: -40px;
     max-height: 825px;
     background: #F7F7F7;

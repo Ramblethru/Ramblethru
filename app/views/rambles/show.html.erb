@@ -33,27 +33,57 @@
   var latitudeS = '<%= latlong['venue']['lat'] %>';
   var longitudeS = '<%= latlong['venue']['lng'] %>';
   var nameS = '<%= latlong['venue']['displayName'] %>' ;
-  L.mapbox.markerLayer({
-    
-    type: 'Feature',
-    geometry: {
-        type: 'Point',
-        coordinates: [ longitudeS, latitudeS ]
+
+
+var myLayer = L.mapbox.featureLayer().addTo(map);
+
+var geoJson = [{
+    "type": "Feature",
+    "geometry": {
+        "type": "Point",
+        "coordinates": [longitudeS, latitudeS]
     },
-    properties: {
-        'title': nameS,
-        'marker-size': 'large',
-        'marker-color': '#BE9A6B',
-        'marker-symbol': 'monument'
-    }
-    
-  }).addTo(map);
+    "properties": {
+        "title": nameS,
+        "icon": {
+            "iconUrl": "<%= asset_path ('songkick-green.png') %>",
+            "iconSize": [15, 15], // size of the icon
+            // "iconAnchor": [15, 15], // point of the icon which will correspond to marker's location
+            // "popupAnchor": [0, -25], // point from which the popup should open relative to the iconAnchor
+            "className": "dot"
+        }
+      }
+}];
+
+// Set a custom icon on each marker based on feature properties.
+myLayer.on('layeradd', function(e) {
+    var marker = e.layer,
+        feature = marker.feature;
+
+    marker.setIcon(L.icon(feature.properties.icon));
+});
+
+// Add features to the map.
+myLayer.setGeoJSON(geoJson);
+
+  // L.mapbox.markerLayer({    # code for regular symbols
+  //   type: 'Feature',
+  //   geometry: {
+  //       type: 'Point',
+  //       coordinates: [ longitudeS, latitudeS ]
+  //   },
+  //   properties: {
+  //       'title': nameS,
+  //       'marker-size': 'large',
+  //       'marker-color': '#BE9A6B',
+  //       'marker-symbol': 'monument'
+  //   }
+  // }).addTo(map);
   map.touchZoom.disable();
   map.doubleClickZoom.disable();
   map.scrollWheelZoom.disable();
   if (map.tap) map.tap.disable();
   <% end %>
-  
 </script>
 
 

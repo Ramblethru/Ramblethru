@@ -44,8 +44,9 @@
   .api-feed {
     @include span-columns(7);
     text-align: center;
-    float: left;
-    margin: 500px 0 0 50px;
+//    float: left;
+    margin: 500px 0 50px 50px;
+    align-self: left;
   }
   .ramble-notes {
     @include span-columns(6);
@@ -53,7 +54,7 @@
     padding: 10px 0 10px 0;
     width: 450px;
     overflow: scroll;
-    margin-top: -40px;
+//    margin-top: -40px;
     max-height: 825px;
     background: #F7F7F7;
     border-radius: 20px;
@@ -145,13 +146,13 @@ div#feed-title {
   color: $green;
   font-weight: bold;
 }
-#four-title, #insta-title {
+#four-title, #insta-title, #song-title {
   color: $orange;
   font-family: 'menschmensch_regular';
   font-size: 40px;
   margin-top: -10px;
 }
-#yelp-title, #red-title, #song-title {
+#yelp-title, #red-title, #note-title {
   color: $green;
   font-family: 'menschmensch_regular';
   font-size: 40px;
@@ -181,12 +182,12 @@ a.four-tip, a.reddit-thread-title {
   color: $dark-grey;
   font-family: monospace, sans-serif;
 }
-i.fa.fa-foursquare.ramble, i.fa.fa-instagram.ramble, i.fa.fa-pencil-square-o.ramble {
+i.fa.fa-foursquare.ramble, i.fa.fa-instagram.ramble {
   font-size: 35px;
   padding: 0px;
   color: $orange;
 }
-i.fa.fa-yelp.ramble, i.fa.fa-reddit.ramble {
+i.fa.fa-yelp.ramble, i.fa.fa-reddit.ramble, i.fa.fa-pencil-square-o.ramble {
   font-size: 35px;
   padding: 0px;
   color: $green;

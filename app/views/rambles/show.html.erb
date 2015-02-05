@@ -23,6 +23,7 @@
   <% end %>
 </div>
 <div id='map' class='dark'></div>
+
 <script type='text/javascript'>
   var latitude= '<%=@ramble.latitude%>';
   var longitude= '<%=@ramble.longitude%>';
@@ -42,11 +43,64 @@
         /* to do: add in code to display markers for Foursquare and Yelp venue results for ramble destination. */
       }
   }).addTo(map);
+    <% @songkick.each do |latlong| %>
+  var latitudeS = '<%= latlong['venue']['lat'] %>';
+  var longitudeS = '<%= latlong['venue']['lng'] %>';
+  var nameS = '<%= latlong['venue']['displayName'] %>' ;
+
+
+var myLayer = L.mapbox.featureLayer().addTo(map);
+
+var geoJson = [{
+    "type": "Feature",
+    "geometry": {
+        "type": "Point",
+        "coordinates": [longitudeS, latitudeS]
+    },
+    "properties": {
+        "title": nameS,
+        "icon": {
+            "iconUrl": "<%= asset_path ('songkick-green.png') %>",
+            "iconSize": [15, 15], // size of the icon
+            // "iconAnchor": [15, 15], // point of the icon which will correspond to marker's location
+            // "popupAnchor": [0, -25], // point from which the popup should open relative to the iconAnchor
+            "className": "dot"
+        }
+      }
+}];
+
+// Set a custom icon on each marker based on feature properties.
+myLayer.on('layeradd', function(e) {
+    var marker = e.layer,
+        feature = marker.feature;
+
+    marker.setIcon(L.icon(feature.properties.icon));
+});
+
+// Add features to the map.
+myLayer.setGeoJSON(geoJson);
+
+  // L.mapbox.markerLayer({    # code for regular symbols
+  //   type: 'Feature',
+  //   geometry: {
+  //       type: 'Point',
+  //       coordinates: [ longitudeS, latitudeS ]
+  //   },
+  //   properties: {
+  //       'title': nameS,
+  //       'marker-size': 'large',
+  //       'marker-color': '#BE9A6B',
+  //       'marker-symbol': 'monument'
+  //   }
+  // }).addTo(map);
   map.touchZoom.disable();
   map.doubleClickZoom.disable();
   map.scrollWheelZoom.disable();
   if (map.tap) map.tap.disable();
+  <% end %>
 </script>
+
+
 <script type='text/javascript'>
   var destination='<%=@ramble.destination.split.map(&:capitalize).join(' ')%>';
   jQuery(document).ready(function(){
@@ -55,6 +109,7 @@
  });
   });
 </script>
+
   <div class="container">
     <div class="ramble-notes">
       <h2 class="notes">NOTES</h2>
@@ -327,6 +382,76 @@
           </script>
         </div>
 
+        <div class="ramble-songkick">
+          <div class="shows6" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
+            <img src="<%= asset_path ('songkick-green.png') %>" >
+            <div id="song-title">Songkick</div>
+            <div id="pagingControls5"></div>
+          </div>
+        </div>
+        <div id="content5">
+          <% if @songkick != nil %>
+            <div> <% @songkick.each do |s| %>
+              <div class="z5">
+                <div class="ramble-song-results">
+                  <span class="songshow">
+                    <li>
+                      <img src="<%= asset_path ('fav-star.png') %>" class="savenote" alt="Save as note"
+                           data-sbody="(at <%= s['venue']['displayName'] %>)"
+                           data-stitle="<% date = s['start']['date'] %><%= Date.parse(date).strftime("%-m/%-d/%Y") %>: <% s['performance'].each do |o| %> <%= o['displayName'] %><% end %>"
+                           data-surl="<%= s['uri'] %>"
+                           data-saddress=""/>
+                      <% date = s['start']['date'] %>
+                      <%= Date.parse(date).strftime("%-m/%-d/%Y") %>:
+                      <% s['performance'].each do |o| %>
+                        <%= link_to o['displayName'], o['artist']['uri'], :target => '_blank', :class => 'song-results' %>
+                      <% end %>
+                      <br>at
+                      <%= link_to s['venue']['displayName'], s['venue']['uri'], :target => '_blank', class: 'song-venue' %>
+                    </li>
+                  </span>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+
+        <script type="text/javascript">
+          $(document).ready(function () {
+            $(document).on('click', '.savenote', function (event) {
+              var dataStitle = event.target.getAttribute("data-stitle");
+              var dataSaddress = event.target.getAttribute("data-saddress");
+              var dataSbody = event.target.getAttribute("data-sbody");
+              var dataSurl = event.target.getAttribute("data-surl");
+              dataSbody = dataSbody.replace(/\s+/g, ' ');
+              $("#note_title").val(dataStitle);
+              $("#note_address").val(dataSaddress);
+              $("#note_body").val(dataSbody);
+              $("#note_url").val(dataSurl);
+            });
+          });
+        </script>
+        <script type="text/javascript">
+          jQuery(".shows6").click(function() {
+            jQuery(".songshow").toggle();
+
+            if ($("#content5").is(':visible')) {
+              $("html, body").animate({scrollTop: $("#content5").offset().top});
+            }
+          });
+        </script>
+        <script type="text/javascript">
+          var pager5 = new Imtech5.Pager();
+          jQuery(document).ready(function() {
+            pager5.paragraphsPerPage = 5;
+            pager5.pagingContainer = jQuery('#content5');
+            pager5.paragraphs = jQuery('div.z5', pager5.pagingContainer);
+            pager5.showPage(1);
+          });
+        </script>
+    </div>
+  </div>
+
         <div class="recommended-notes">
           <div class="shows5" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
             <i class="fa fa-pencil-square-o ramble"></i><br>
@@ -426,75 +551,5 @@
           });
         </script>
 
-        <div class="ramble-songkick">
-          <div class="shows6" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
-            <img src="<%= asset_path ('songkick-green.png') %>" >
-            <div id="song-title">Songkick</div>
-            <div id="pagingControls5"></div>
-          </div>
-        </div>
-
-        <div id="content5">
-          <% if @songkick != nil %>
-            <div> <% @songkick.each do |s| %>
-              <div class="z5">
-                <div class="ramble-song-results">
-                  <span class="songshow">
-                    <li>
-                      <img src="<%= asset_path ('fav-star.png') %>" class="savenote" alt="Save as note"
-                           data-sbody="(at <%= s['venue']['displayName'] %>)"
-                           data-stitle="<% date = s['start']['date'] %><%= Date.parse(date).strftime("%-m/%-d/%Y") %>: <% s['performance'].each do |o| %> <%= o['displayName'] %><% end %>"
-                           data-surl="<%= s['uri'] %>"
-                           data-saddress=""
-                      />
-                      <% date = s['start']['date'] %>
-                      <%= Date.parse(date).strftime("%-m/%-d/%Y") %>:
-                      <% s['performance'].each do |o| %>
-                        <%= link_to o['displayName'], o['artist']['uri'], :target => '_blank', :class => 'song-results' %>
-                      <% end %>
-                      <br>at
-                      <%= link_to s['venue']['displayName'], s['venue']['uri'], :target => '_blank', class: 'song-venue' %>
-                    </li>
-                  </span>
-                </div>
-              </div>
-            <% end %>
-          <% end %>
-        </div>
-
-        <script type="text/javascript">
-          $(document).ready(function () {
-            $(document).on('click', '.savenote', function (event) {
-              var dataStitle = event.target.getAttribute("data-stitle");
-              var dataSaddress = event.target.getAttribute("data-saddress");
-              var dataSbody = event.target.getAttribute("data-sbody");
-              var dataSurl = event.target.getAttribute("data-surl");
-              dataSbody = dataSbody.replace(/\s+/g, ' ');
-              $("#note_title").val(dataStitle);
-              $("#note_address").val(dataSaddress);
-              $("#note_body").val(dataSbody);
-              $("#note_url").val(dataSurl);
-            });
-          });
-        </script>
-        <script type="text/javascript">
-          jQuery(".shows6").click(function() {
-            jQuery(".songshow").toggle();
-
-            if ($("#content5").is(':visible')) {
-              $("html, body").animate({scrollTop: $("#content5").offset().top});
-            }
-          });
-        </script>
-        <script type="text/javascript">
-          var pager5 = new Imtech5.Pager();
-          jQuery(document).ready(function() {
-            pager5.paragraphsPerPage = 5; // set amount elements per page
-            pager5.pagingContainer = jQuery('#content5'); // set of main container
-            pager5.paragraphs = jQuery('div.z5', pager5.pagingContainer); // set of required containers
-            pager5.showPage(1);
-          });
-        </script>
-    </div>
-  </div>
+        
 </div>

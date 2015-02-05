@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $blue: #7f868e;
+
 .container {
   @include outer-container;
 }
@@ -262,4 +263,8 @@ input.sharedstatus {
 .fa-arrow-circle-right, .fa-arrow-circle-left {
   font-size: 30px !important;
   color: $green !important;
+}
+.slider-wrap {
+  float: left;
+  width: 100%;
 }

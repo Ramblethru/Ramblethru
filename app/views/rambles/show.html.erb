@@ -60,8 +60,8 @@ var geoJson = [{
     "properties": {
         "title": nameS,
         "icon": {
-            "iconUrl": "<%= asset_path ('songkick-green.png') %>",
-            "iconSize": [15, 15], // size of the icon
+            "iconUrl": "<%= asset_path ('songkick-pin.png') %>",
+            "iconSize": [30, 30], // size of the icon
             // "iconAnchor": [15, 15], // point of the icon which will correspond to marker's location
             // "popupAnchor": [0, -25], // point from which the popup should open relative to the iconAnchor
             "className": "dot"
@@ -114,58 +114,62 @@ myLayer.setGeoJSON(geoJson);
     <div class="ramble-notes">
       <h2 class="notes">NOTES</h2>
       <%= render "notes/note_form" %>
-      <div class="notesgohere"></div>
-      <% if @ramble.notes != nil %>
-        <% @ramble.notes.order('created_at desc').each do |note| %>
-        <div id="<%= dom_id(note) %>">
-          <div class="notebody">
-            <% if note.title != "" %>
+
+
+
+      <div class="notesgohere">
+        <% if @ramble.notes != nil %>
+          <% @ramble.notes.order('created_at desc').each do |note| %>
+          <div id="<%= dom_id(note) %>">
+            <div class="notebody">
+              <% if note.title != "" %>
+                <p>
+                  <span id="note-label">Title: </span>
+                  <span id="note-body"><%= note.title %></span>
+                </p>
+              <% end %>
+              <% if note.address != "" %>
+                <p>
+                  <span id="note-label">Address: </span>
+                  <span id="note-body"><%= note.address %></span>
+                </p>
+              <% end %>
+              <% if note.body != %>
+                <p>
+                  <span id="note-label">Note: </span>
+                  <span id="note-body"><%= note.body %></span>
+                </p>
+              <% end %>
+              <% if note.url != "" %>
+                <p>
+                  <span id="note-label">URL: </span>
+                  <span id="note-body"><a href="<%= note.url %>" target="_blank" class="note-url"><%= note.url %></a></span>
+                </p>
+              <% end %>
+              <% if note.tag_list != [] %>
+                <p>
+                  <span id="tag-label">Tags: </span>
+                  <span id="tag-each"><%= note.tag_list %></span>
+                </p>
+              <% end %>
               <p>
-                <span id="note-label">Title: </span>
-                <span id="note-body"><%= note.title %></span>
+                <span id="note-label">Created on: </span>
+                <span id="note-body"> <%= note.created_at.strftime("%m/%d/%Y") %>
               </p>
-            <% end %>
-            <% if note.address != "" %>
-              <p>
-                <span id="note-label">Address: </span>
-                <span id="note-body"><%= note.address %></span>
-              </p>
-            <% end %>
-            <% if note.body != %>
-              <p>
-                <span id="note-label">Note: </span>
-                <span id="note-body"><%= note.body %></span>
-              </p>
-            <% end %>
-            <% if note.url != "" %>
-              <p>
-                <span id="note-label">URL: </span>
-                <span id="note-body"><a href="<%= note.url %>" target="_blank" class="note-url"><%= note.url %></a></span>
-              </p>
-            <% end %>
-            <% if note.tag_list != [] %>
-              <p>
-                <span id="tag-label">Tags: </span>
-                <span id="tag-each"><%= note.tag_list %></span>
-              </p>
-            <% end %>
-            <p>
-              <span id="note-label">Created on: </span>
-              <span id="note-body"> <%= note.created_at.strftime("%m/%d/%Y") %>
-            </p>
-            <% if current_user.rambles.include?(@ramble) %>
-              <i class="fa fa-pencil-square-o"></i>
-              <%= link_to_modal 'Edit', edit_ramble_note_path(@ramble.id, note.id), :class => "edit-note" %>
-              <i class="fa fa-trash"></i>
-              <%= link_to 'Delete', note, method: :delete, remote: true, :class => "delete-note",:data => {:confirm => 'Delete this note?'} %>
-            <% end %>
+              <% if current_user.rambles.include?(@ramble) %>
+                <i class="fa fa-pencil-square-o"></i>
+                <%= link_to_modal 'Edit', edit_ramble_note_path(@ramble.id, note.id), :class => "edit-note" %>
+                <i class="fa fa-trash"></i>
+                <%= link_to 'Delete', note, method: :delete, remote: true, :class => "delete-note",:data => {:confirm => 'Delete this note?'} %>
+              <% end %>
+            </div>
           </div>
+          <% end %>
+          <% else %>
+            You haven't created any notes yet!
+          <% end %>
+          <div class="end"></div>
         </div>
-        <% end %>
-        <% else %>
-          You haven't created any notes yet!
-        <% end %>
-        <div class="end"></div>
       </div>
       <div class="api-feed">
         <div id="feed-title">Recommendations</div>
@@ -380,7 +384,7 @@ myLayer.setGeoJSON(geoJson);
 
         <div class="ramble-songkick">
           <div class="shows6" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
-            <img src="<%= asset_path ('songkick-green.png') %>" >
+            <img src="<%= asset_path ('songkick-orange.png') %>" >
             <div id="song-title">Songkick</div>
             <div id="pagingControls5"></div>
           </div>
@@ -430,10 +434,6 @@ myLayer.setGeoJSON(geoJson);
         <script type="text/javascript">
           jQuery(".shows6").click(function() {
             jQuery(".songshow").toggle();
-
-            if ($("#content5").is(':visible')) {
-              $("html, body").animate({scrollTop: $("#content5").offset().top});
-            }
           });
         </script>
         <script type="text/javascript">
@@ -451,7 +451,7 @@ myLayer.setGeoJSON(geoJson);
         <div class="recommended-notes">
           <div class="shows5" onmouseover="this.style.background='rgba(46,117,98,0.2)';" onmouseout="this.style.background='rgba(255,255,255,0.5)';">
             <i class="fa fa-pencil-square-o ramble"></i><br>
-            <div id="four-title">
+            <div id="note-title">
               <% x = Note.where(ramble_id:(Ramble.where(:destination => @ramble.destination))) %>
               <% y = x.where(ramble_id:(Ramble.where.not(user_id: @ramble.user_id))) %>
               <%= y.where(share: true).count %> NOTE(S)</div>
@@ -535,6 +535,10 @@ myLayer.setGeoJSON(geoJson);
         <script type="text/javascript">
             jQuery(".shows5").click(function () {
                 jQuery(".noteshow").toggle();
+
+              if ($("#content2").is(':visible')) {
+                $("html, body").animate({scrollTop: $("#content2").offset().top});
+              }
             });
         </script>
         <script type="text/javascript">

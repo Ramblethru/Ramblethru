@@ -153,9 +153,21 @@ myLayerF.setGeoJSON(geoJson);
       <h2 class="notes">NOTES</h2>
       <%= render "notes/note_form" %>
 
+      <script type="text/javascript" language="JavaScript"><!--
+      function HideContent(d) {
+        document.getElementById(d).style.display = "block";
+      }
+      function ShowContent(d) {
+        document.getElementById(d).style.display = "none";
+      }
+      function ReverseDisplay(d) {
+        if(document.getElementById(d).style.display == "block") { document.getElementById(d).style.display = "none"; }
+        else { document.getElementById(d).style.display = "block"; }
+      }
+      //--></script>
 
 
-      <div class="notesgohere">
+      <div id="notesgohere">
         <% if @ramble.notes != nil %>
           <% @ramble.notes.order('created_at desc').each do |note| %>
           <div id="<%= dom_id(note) %>">

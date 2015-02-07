@@ -59,6 +59,11 @@
     border-radius: 20px;
   }
 }
+@media (min-width: 1025px) {
+  div#ramble-notes-show-hide {
+    display: none;
+  }
+}
 @media (max-width: 1024px) {
   .api-feed {
     @include span-columns(6);
@@ -69,9 +74,23 @@
     padding: 10px 0 10px 50px;
     width: 450px;
   }
-    div.notesgohere {
-      display: none;
+  #notesgohere {
+    display: none;
+  }
+  div#ramble-notes-show-hide {
+    a:link {
+      color: $orange;
     }
+    a:visited {
+      color: $orange;
+    }
+    a:hover {
+      color: $orange;
+    }
+    a:active {
+      color: $orange;
+    }
+  }
 }
 h1.ramble-create {
   font-family: 'menschmensch_regular';

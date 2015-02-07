@@ -42,11 +42,10 @@
 }
 @media (max-width: 1240px) {
   .api-feed {
-    @include span-columns(7);
+    @include span-columns(6);
     text-align: center;
-//    float: left;
-    margin: 500px 0 50px 50px;
-    align-self: left;
+    float: right;
+    margin-top: 15px;
   }
   .ramble-notes {
     @include span-columns(6);
@@ -59,9 +58,20 @@
     background: #F7F7F7;
     border-radius: 20px;
   }
-  div.notesgohere {
-    display: none;
+}
+@media (max-width: 1024px) {
+  .api-feed {
+    @include span-columns(6);
+    text-align: center;
+    //    float: left;
+    margin: 500px 0 0 10px;
+    align-self: left;
+    padding: 10px 0 10px 50px;
+    width: 450px;
   }
+    div.notesgohere {
+      display: none;
+    }
 }
 h1.ramble-create {
   font-family: 'menschmensch_regular';

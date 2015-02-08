@@ -40,7 +40,30 @@
   float: right;
   margin-top: 15px;
 }
+.ramble-title {
+  background-color: $green;
+  height: 250px;
+  margin-top: -70px;
+  color: $orange;
+  font-family: 'menschmensch_regular';
+  padding-top: 120px;
+  font-size: 70px;
+  margin-bottom: 0px;
+  font-weight: bold;
+}
+#ramble-dest {
+  font-family: monospace, sans-serif;
+  font-color: $light-grey;
+  font-size: 18px;
+  margin-top: -28px;
+}
 @media (max-width: 1240px) {
+  .ramble-title {
+    font-size: 50px;
+  }
+  #ramble-dest {
+    margin-top: -18px;
+  }
   .api-feed {
     @include span-columns(6);
     text-align: center;
@@ -65,6 +88,9 @@
   }
 }
 @media (max-width: 1024px) {
+  .ramble-title {
+    font-size: 45px;
+  }
   .api-feed {
     @include span-columns(6);
     text-align: center;
@@ -120,17 +146,6 @@ input#ramble-button {
   &:hover {
     background-color: $dark-grey;
   }
-}
-.ramble-title {
-  background-color: $green;
-  height: 250px;
-  margin-top: -70px;
-  color: $orange;
-  font-family: 'menschmensch_regular';
-  padding-top: 120px;
-  font-size: 70px;
-  margin-bottom: 0px;
-  font-weight: bold;
 }
 .start-end {
   font-size: 18px;
@@ -282,12 +297,6 @@ a.edit-note, a.delete-note {
   margin-top: 10px;
   color: $dark-grey;
 }
-#ramble-dest {
-  font-family: monospace, sans-serif;
-  font-color: $light-grey;
-  font-size: 18px;
-  margin-top: -28px;
-}
 .edit-ramble-name {
   text-decoration: none;
   font-size: 18px;
@@ -383,16 +392,49 @@ a.edit-note, a.delete-note {
   padding-top: 90px;
   margin-bottom: -20px;
 }
+@media (max-width: 850px) {
+  .ramble-title {
+    font-size: 35px;
+  }
+}
+@media (max-width: 675px) {
+  .ramble-title {
+    font-size: 30px;
+  }
+}
 @media (max-width: 557px) {
+  .ramble-title {
+    font-size: 25px;
+  }
   #note-search-title {
     font-size: 55px;
     padding: 110px 0 10px 0;
   }
 }
 @media (max-width: 480px) {
+  .ramble-title {
+    font-size: 25px;
+    padding-top: 150px;
+    padding-bottom: 110px;
+  }
+  #ramble-dest {
+    margin-top: -40px;
+    margin-bottom: -25px;
+    font-size: 12px;
+  }
+  .start-end {
+    margin-top: 10px;
+    font-size: 12px;
+    .best_in_place {
+      font-size: 12px;
+    }
+  }
   #note-search-title {
     font-size: 40px;
     padding: 180px 0 10px 0;
+  }
+  .fa-trash {
+    display: none;
   }
 }
 input#search.span2 {

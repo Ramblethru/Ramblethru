@@ -43,14 +43,12 @@
         /* to do: add in code to display markers for Foursquare and Yelp venue results for ramble destination. */
       }
   }).addTo(map);
+
     <% @songkick.each do |latlong| %>
   var latitudeS = '<%= latlong['venue']['lat'] %>';
   var longitudeS = '<%= latlong['venue']['lng'] %>';
   var nameS = '<%= latlong['venue']['displayName'] %>' ;
-
-
 var myLayer = L.mapbox.featureLayer().addTo(map);
-
 var geoJson = [{
     "type": "Feature",
     "geometry": {
@@ -68,16 +66,12 @@ var geoJson = [{
         }
       }
 }];
-
-// Set a custom icon on each marker based on feature properties.
 myLayer.on('layeradd', function(e) {
     var marker = e.layer,
         feature = marker.feature;
 
     marker.setIcon(L.icon(feature.properties.icon));
 });
-
-// Add features to the map.
 myLayer.setGeoJSON(geoJson);
 <% end %>
 
@@ -85,10 +79,7 @@ myLayer.setGeoJSON(geoJson);
   var latitudeF = '<%= latlongF['venue']['location']['lat'] %>';
   var longitudeF = '<%= latlongF['venue']['location']['lng'] %>';
   var nameF = '<%= latlongF['venue']['name'] %>' ;
-
-
 var myLayerF = L.mapbox.featureLayer().addTo(map);
-
 var geoJson = [{
     "type": "Feature",
     "geometry": {
@@ -106,7 +97,6 @@ var geoJson = [{
         }
       }
 }];
-
 // Set a custom icon on each marker based on feature properties.
 myLayerF.on('layeradd', function(e) {
     var marker = e.layer,
@@ -114,7 +104,6 @@ myLayerF.on('layeradd', function(e) {
 
     marker.setIcon(L.icon(feature.properties.icon));
 });
-
 // Add features to the map.
 myLayerF.setGeoJSON(geoJson);
  <% end %>
@@ -135,7 +124,6 @@ myLayerF.setGeoJSON(geoJson);
   map.doubleClickZoom.disable();
   map.scrollWheelZoom.disable();
   if (map.tap) map.tap.disable();
- 
 </script>
 
 

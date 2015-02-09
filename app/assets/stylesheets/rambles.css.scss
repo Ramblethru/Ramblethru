@@ -104,6 +104,8 @@
     display: none;
   }
   div#ramble-notes-show-hide {
+    font-family:'menschmensch_regular';
+    margin-top: 10px;
     a:link {
       color: $orange;
     }
@@ -395,6 +397,9 @@ a.edit-note, a.delete-note {
 @media (max-width: 850px) {
   .ramble-title {
     font-size: 35px;
+  }
+  #ramble-dest {
+    margin-top: -10px;
   }
 }
 @media (max-width: 675px) {

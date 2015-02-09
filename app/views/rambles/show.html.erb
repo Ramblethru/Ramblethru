@@ -47,6 +47,7 @@
   var latitudeS = '<%= latlong['venue']['lat'] %>';
   var longitudeS = '<%= latlong['venue']['lng'] %>';
   var nameS = '<%= latlong['venue']['displayName'] %>' ;
+  var addressS = '<a href="<%= latlong['venue']['uri'] %>" target="_blank">Venue Info</a>' ;
 var myLayer = L.mapbox.featureLayer().addTo(map);
 var geoJson = [{
     "type": "Feature",
@@ -56,6 +57,7 @@ var geoJson = [{
     },
     "properties": {
         "title": nameS,
+        "description": addressS,
         "icon": {
             "iconUrl": "<%= asset_path ('songkick-pin.png') %>",
             "iconSize": [24, 24],
@@ -76,6 +78,7 @@ myLayer.setGeoJSON(geoJson);
   var latitudeF = '<%= latlongF['venue']['location']['lat'] %>';
   var longitudeF = '<%= latlongF['venue']['location']['lng'] %>';
   var nameF = '<%= latlongF['venue']['name'] %>' ;
+  var addressF = '<%= latlongF['venue']['location']['address'] %>' ;
 var myLayerF = L.mapbox.featureLayer().addTo(map);
 var geoJson = [{
     "type": "Feature",
@@ -85,6 +88,7 @@ var geoJson = [{
     },
     "properties": {
         "title": nameF,
+        "description": addressF,
         "icon": {
             "iconUrl": "<%= asset_path ('foursquare.png') %>",
             "iconSize": [24, 24],

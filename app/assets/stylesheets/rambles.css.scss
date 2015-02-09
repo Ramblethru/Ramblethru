@@ -42,11 +42,10 @@
 }
 @media (max-width: 1240px) {
   .api-feed {
-    @include span-columns(7);
+    @include span-columns(6);
     text-align: center;
-//    float: left;
-    margin: 500px 0 50px 50px;
-    align-self: left;
+    float: right;
+    margin-top: 15px;
   }
   .ramble-notes {
     @include span-columns(6);
@@ -59,8 +58,38 @@
     background: #F7F7F7;
     border-radius: 20px;
   }
-  div.notesgohere {
+}
+@media (min-width: 1025px) {
+  div#ramble-notes-show-hide {
     display: none;
+  }
+}
+@media (max-width: 1024px) {
+  .api-feed {
+    @include span-columns(6);
+    text-align: center;
+    //    float: left;
+    margin: 500px 0 0 10px;
+    align-self: left;
+    padding: 10px 0 10px 50px;
+    width: 450px;
+  }
+  #notesgohere {
+    display: none;
+  }
+  div#ramble-notes-show-hide {
+    a:link {
+      color: $orange;
+    }
+    a:visited {
+      color: $orange;
+    }
+    a:hover {
+      color: $orange;
+    }
+    a:active {
+      color: $orange;
+    }
   }
 }
 h1.ramble-create {

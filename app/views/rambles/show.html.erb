@@ -59,7 +59,7 @@ var geoJson = [{
         "title": nameS,
         "icon": {
             "iconUrl": "<%= asset_path ('songkick-pin.png') %>",
-            "iconSize": [30, 30], // size of the icon
+            "iconSize": [24, 24], // size of the icon
             // "iconAnchor": [15, 15], // point of the icon which will correspond to marker's location
             // "popupAnchor": [0, -25], // point from which the popup should open relative to the iconAnchor
             "className": "dot"
@@ -90,7 +90,7 @@ var geoJson = [{
         "title": nameF,
         "icon": {
             "iconUrl": "<%= asset_path ('foursquare.png') %>",
-            "iconSize": [30, 30], // size of the icon
+            "iconSize": [24, 24], // size of the icon
             // "iconAnchor": [15, 15], // point of the icon which will correspond to marker's location
             // "popupAnchor": [0, -25], // point from which the popup should open relative to the iconAnchor
             "className": "dot"
@@ -141,9 +141,21 @@ myLayerF.setGeoJSON(geoJson);
       <h2 class="notes">NOTES</h2>
       <%= render "notes/note_form" %>
 
+      <script type="text/javascript" language="JavaScript"><!--
+      function HideContent(d) {
+        document.getElementById(d).style.display = "block";
+      }
+      function ShowContent(d) {
+        document.getElementById(d).style.display = "none";
+      }
+      function ReverseDisplay(d) {
+        if(document.getElementById(d).style.display == "block") { document.getElementById(d).style.display = "none"; }
+        else { document.getElementById(d).style.display = "block"; }
+      }
+      //--></script>
 
 
-      <div class="notesgohere">
+      <div id="notesgohere">
         <% if @ramble.notes != nil %>
           <% @ramble.notes.order('created_at desc').each do |note| %>
           <div id="<%= dom_id(note) %>">

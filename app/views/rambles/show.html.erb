@@ -47,6 +47,7 @@
   var latitudeS = '<%= latlong['venue']['lat'] %>';
   var longitudeS = '<%= latlong['venue']['lng'] %>';
   var nameS = '<%= latlong['venue']['displayName'] %>' ;
+  var addressS = '<a href="<%= latlong['venue']['uri'] %>" target="_blank">Venue Info</a>' ;
 var myLayer = L.mapbox.featureLayer().addTo(map);
 var geoJson = [{
     "type": "Feature",
@@ -56,6 +57,7 @@ var geoJson = [{
     },
     "properties": {
         "title": nameS,
+        "description": addressS,
         "icon": {
             "iconUrl": "<%= asset_path ('songkick-pin.png') %>",
             "iconSize": [24, 24],

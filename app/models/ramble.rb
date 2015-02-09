@@ -4,6 +4,7 @@ class Ramble < ActiveRecord::Base
 
   friendly_id :destination, use:[:slugged, :finders]
   geocoded_by :destination
+  after_validation :yelp_business
   after_validation :geocode, :if => :destination_changed?
 
 	belongs_to :user
@@ -14,7 +15,7 @@ class Ramble < ActiveRecord::Base
   validates :destination, presence: true
 
   def self.search(query)
-    #where(:destination, query)
     where("destination like ?", "%#{query.downcase}%")
   end
+
 end

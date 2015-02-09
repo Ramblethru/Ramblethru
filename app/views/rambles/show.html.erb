@@ -40,17 +40,14 @@
           description: 'Your destination!',
           'marker-size': 'large',
           'marker-color': '#af703a'
-        /* to do: add in code to display markers for Foursquare and Yelp venue results for ramble destination. */
       }
   }).addTo(map);
+
     <% @songkick.each do |latlong| %>
   var latitudeS = '<%= latlong['venue']['lat'] %>';
   var longitudeS = '<%= latlong['venue']['lng'] %>';
   var nameS = '<%= latlong['venue']['displayName'] %>' ;
-
-
 var myLayer = L.mapbox.featureLayer().addTo(map);
-
 var geoJson = [{
     "type": "Feature",
     "geometry": {
@@ -61,23 +58,17 @@ var geoJson = [{
         "title": nameS,
         "icon": {
             "iconUrl": "<%= asset_path ('songkick-pin.png') %>",
-            "iconSize": [24, 24], // size of the icon
-            // "iconAnchor": [15, 15], // point of the icon which will correspond to marker's location
-            // "popupAnchor": [0, -25], // point from which the popup should open relative to the iconAnchor
+            "iconSize": [24, 24],
             "className": "dot"
         }
       }
 }];
-
-// Set a custom icon on each marker based on feature properties.
 myLayer.on('layeradd', function(e) {
     var marker = e.layer,
         feature = marker.feature;
 
     marker.setIcon(L.icon(feature.properties.icon));
 });
-
-// Add features to the map.
 myLayer.setGeoJSON(geoJson);
 <% end %>
 
@@ -85,10 +76,7 @@ myLayer.setGeoJSON(geoJson);
   var latitudeF = '<%= latlongF['venue']['location']['lat'] %>';
   var longitudeF = '<%= latlongF['venue']['location']['lng'] %>';
   var nameF = '<%= latlongF['venue']['name'] %>' ;
-
-
 var myLayerF = L.mapbox.featureLayer().addTo(map);
-
 var geoJson = [{
     "type": "Feature",
     "geometry": {
@@ -99,45 +87,24 @@ var geoJson = [{
         "title": nameF,
         "icon": {
             "iconUrl": "<%= asset_path ('foursquare.png') %>",
-            "iconSize": [24, 24], // size of the icon
-            // "iconAnchor": [15, 15], // point of the icon which will correspond to marker's location
-            // "popupAnchor": [0, -25], // point from which the popup should open relative to the iconAnchor
+            "iconSize": [24, 24],
             "className": "dot"
         }
       }
 }];
-
-// Set a custom icon on each marker based on feature properties.
 myLayerF.on('layeradd', function(e) {
     var marker = e.layer,
         feature = marker.feature;
 
     marker.setIcon(L.icon(feature.properties.icon));
 });
-
-// Add features to the map.
 myLayerF.setGeoJSON(geoJson);
  <% end %>
-  // L.mapbox.markerLayer({    # code for regular symbols
-  //   type: 'Feature',
-  //   geometry: {
-  //       type: 'Point',
-  //       coordinates: [ longitudeS, latitudeS ]
-  //   },
-  //   properties: {
-  //       'title': nameS,
-  //       'marker-size': 'large',
-  //       'marker-color': '#BE9A6B',
-  //       'marker-symbol': 'monument'
-  //   }
-  // }).addTo(map);
   map.touchZoom.disable();
   map.doubleClickZoom.disable();
   map.scrollWheelZoom.disable();
   if (map.tap) map.tap.disable();
- 
 </script>
-
 
 <script type='text/javascript'>
   var destination='<%=@ramble.destination.split.map(&:capitalize).join(' ')%>';
@@ -164,7 +131,7 @@ myLayerF.setGeoJSON(geoJson);
         if(document.getElementById(d).style.display == "block") { document.getElementById(d).style.display = "none"; }
         else { document.getElementById(d).style.display = "block"; }
       }
-      //--></script>
+      </script>
 
 
       <div id="notesgohere">
@@ -600,6 +567,5 @@ myLayerF.setGeoJSON(geoJson);
             pager2.showPage(1);
           });
         </script>
-
         
 </div>

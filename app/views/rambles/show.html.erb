@@ -76,6 +76,7 @@ myLayer.setGeoJSON(geoJson);
   var latitudeF = '<%= latlongF['venue']['location']['lat'] %>';
   var longitudeF = '<%= latlongF['venue']['location']['lng'] %>';
   var nameF = '<%= latlongF['venue']['name'] %>' ;
+  var addressF = '<%= latlongF['venue']['location']['address'] %>' ;
 var myLayerF = L.mapbox.featureLayer().addTo(map);
 var geoJson = [{
     "type": "Feature",
@@ -85,6 +86,7 @@ var geoJson = [{
     },
     "properties": {
         "title": nameF,
+        "description": addressF,
         "icon": {
             "iconUrl": "<%= asset_path ('foursquare.png') %>",
             "iconSize": [24, 24],

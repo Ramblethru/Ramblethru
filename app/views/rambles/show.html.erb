@@ -43,11 +43,11 @@
       }
   }).addTo(map);
 
-    <% @songkick.each do |latlong| %>
-  var latitudeS = '<%= latlong['venue']['lat'] %>';
-  var longitudeS = '<%= latlong['venue']['lng'] %>';
-  var nameS = '<%= latlong['venue']['displayName'] %>' ;
-  var addressS = '<a href="<%= latlong['venue']['uri'] %>" target="_blank">Venue Info</a>' ;
+/*    <x @songkick.each do |latlong| %>
+  var latitudeS = '<x= latlong['venue']['lat'] %>';
+  var longitudeS = '<x= latlong['venue']['lng'] %>';
+  var nameS = '<x= latlong['venue']['displayName'] %>' ;
+  var addressS = '<a href="<x= latlong['venue']['uri'] %>" target="_blank">Venue Info</a>' ;
 var myLayer = L.mapbox.featureLayer().addTo(map);
 var geoJson = [{
     "type": "Feature",
@@ -59,7 +59,7 @@ var geoJson = [{
         "title": nameS,
         "description": addressS,
         "icon": {
-            "iconUrl": "<%= asset_path ('songkick-pin.png') %>",
+            "iconUrl": "<x= asset_path ('songkick-pin.png') %>",
             "iconSize": [24, 24],
             "className": "dot"
         }
@@ -72,7 +72,7 @@ myLayer.on('layeradd', function(e) {
     marker.setIcon(L.icon(feature.properties.icon));
 });
 myLayer.setGeoJSON(geoJson);
-<% end %>
+<x end %> */
 
 <% @foursquare_lat_long.each do |latlongF| %>
   var latitudeF = '<%= latlongF['venue']['location']['lat'] %>';

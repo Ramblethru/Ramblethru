@@ -60,6 +60,7 @@ class DiscoversController < ApplicationController
     @foursquare_venue = foursquare_data["response"]["groups"][0]["items"]
     @foursquare_tip = foursquare_data["response"]["groups"][0]["items"]
     @foursquare_venue_url = foursquare_data["response"]["groups"][0]["items"][0]["venue"]["name"]
+    @foursquare_lat_long = foursquare_data["response"]["groups"][0]["items"]
   end
 
   def songkick

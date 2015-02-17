@@ -23,6 +23,37 @@ L.mapbox.markerLayer({
     'marker-color': '#af703a'
   }
 }).addTo(map);
+
+<% @foursquare_lat_long.each do |latlongF| %>
+var latitudeF = '<%= latlongF['venue']['location']['lat'] %>';
+var longitudeF = '<%= latlongF['venue']['location']['lng'] %>';
+var nameF = '<%= latlongF['venue']['name'] %>' ;
+var addressF = '<%= latlongF['venue']['location']['address'] %>' ;
+var myLayerF = L.mapbox.featureLayer().addTo(map);
+var geoJson = [{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [longitudeF, latitudeF]
+  },
+  "properties": {
+    "title": nameF,
+    "description": addressF,
+    "icon": {
+      "iconUrl": "<%= asset_path ('foursquare.png') %>",
+      "iconSize": [24, 24],
+      "className": "dot"
+    }
+  }
+}];
+myLayerF.on('layeradd', function(e) {
+  var marker = e.layer,
+    feature = marker.feature;
+
+  marker.setIcon(L.icon(feature.properties.icon));
+});
+myLayerF.setGeoJSON(geoJson);
+<% end %>
 map.touchZoom.disable();
 map.doubleClickZoom.disable();
 map.scrollWheelZoom.disable();

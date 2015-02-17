@@ -24,7 +24,7 @@ L.mapbox.markerLayer({
   }
 }).addTo(map);
 
-/*    <% @songkick.each do |latlong| %>
+/*    <x @songkick.each do |latlong| %>
   var latitudeS = '<x= latlong['venue']['lat'] %>';
   var longitudeS = '<x= latlong['venue']['lng'] %>';
   var nameS = '<x= latlong['venue']['displayName'] %>' ;
@@ -53,7 +53,7 @@ myLayer.on('layeradd', function(e) {
     marker.setIcon(L.icon(feature.properties.icon));
 });
 myLayer.setGeoJSON(geoJson);
-<% end %> */
+<x end %> */
 
 <% @foursquare_lat_long.each do |latlongF| %>
 var latitudeF = '<%= latlongF['venue']['location']['lat'] %>';

@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
   $(function(){
     var stickyHeaderTop = $('.ramble-notes').offset().top;  // JS for note form/area keeping with page

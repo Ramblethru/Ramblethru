@@ -21,5 +21,4 @@ $(function (){
             $( "#from" ).datepicker( "option", "maxDate", selectedDate );
       }
         });
-
 });
